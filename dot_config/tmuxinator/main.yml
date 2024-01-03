@@ -1,0 +1,53 @@
+# ~/.config/tmuxinator/main.yml
+
+# tmuxiniator start main
+# mux main
+# ctrl-a : kill-session
+
+name: main
+root: ~/
+
+### quick docs
+# even-horizontal even-vertical main-horizontal main-vertical tiled
+
+windows:
+  - toy:
+      panes:
+        - toy:
+          - clear
+          - nitch
+  # - editor:
+  #     layout: even-vertical
+  #     # Synchronize all panes of this window, can be enabled before or after the pane commands run.
+  #     # 'before' represents legacy functionality and will be deprecated in a future release, in favour of 'after'
+  #     # synchronize: after
+  #     panes:
+  #       - ranger
+  #       - cd ~/_fav
+  #       - cd ~/txtNotes
+  - nixos:
+      layout: even-vertical
+      panes:
+        - nix-edit:
+          - cd ~/nix
+          - nvim -p myos-configuration.nix configuration.nix hardware-configuration.nix
+        - build:
+          - cd /tmp 
+          - clear && echo "> hint ; sudo nixos-rebuild dry-activate"
+  - config:
+      layout: even-vertical
+      panes:
+        - config-mine:
+          - cd ~/.config
+          - clear
+        - config-theirs:
+          - cd
+          - clear
+  - kbt:
+      layout: even-vertical
+      panes:
+        #- kbt: ### requires x, not wayland compatible
+        #- kbt
+        #- up
+        #- Enter
+        - ttyper
