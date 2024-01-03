@@ -1,0 +1,23 @@
+[user]
+	name = Dominic Dang
+	email = dtdd1153@live.com
+[core]
+	editor = vim
+[alias]
+	edit = add
+	opened = status
+[filter "lfs"]
+	process = git-lfs filter-process
+	required = true
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
+[include]
+	path = ~/.gitconfig-local
+{{- if lookPath "gh" }}
+[credential "https://github.com"]
+	helper = 
+	helper = !{{- lookPath "gh" }} auth git-credential
+[credential "https://gist.github.com"]
+	helper = 
+	helper = !{{- lookPath "gh" }} auth git-credential
+{{- end }}
