@@ -7,11 +7,11 @@
 ## Import files (Colors, Fonts, Etc)
 import:
   - ~/.config/alacritty/colors.yml
-  - ~/.config/alacritty/fonts.yml
+  #- ~/.config/alacritty/fonts.yml
 
 ## Set environment variables
 env:
-  TERM: alacritty
+  #TERM: alacritty
   WINIT_X11_SCALE_FACTOR: '1.0'
 
 ## Terminal window settings
@@ -47,7 +47,7 @@ cursor:
 live_config_reload: true
 
 ## Shell
-shell:
-  program: /run/current-system/sw/bin/zsh
-  args:
-    - --login
+#shell:
+#  program: /run/current-system/sw/bin/zsh
+#  args:
+#    - --login
