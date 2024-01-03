@@ -1,0 +1,143 @@
+#!/bin/bash
+
+### "${FUNCNAME[0]} bash
+### "${funcstack[0]} zsh
+
+# === scripts ===
+# recursivly set files and folders to be non-executable
+function fixperms() {
+  find ${1} -type d -exec chmod 755 {} +
+  find ${1} -type f -exec chmod 644 {} +
+}
+
+# === general unix commands ===
+# interactive rm instead of no prompt
+alias sx="source ~/.bash_profile"
+alias xx='vim ~/.bash_profile'
+alias xxa='vim ~/.alias'
+alias untargz='tar xvf'
+alias rm='rm -i'
+alias cp='cp -i'
+alias ff="find . -name "
+alias dirsize="du -sh"
+alias l="ls -lh"
+alias la="ls -lah"
+alias hist="history"
+alias dirsize="du -sh"
+alias dirsizecurrent="echo 'Calculating...'; du -shc ./* | sort -rh"
+alias diffleft="diff --changed-group-format='%<' --unchanged-group-format=''"
+alias diffright="diff --changed-group-format='%>' --unchanged-group-format=''"
+alias where="whereis" # test... seems whereis works when where doesnt exist
+alias chexe='find . -maxdepth 1 -type f -print0 | xargs -0 chmod 644 >& /dev/null; find . -maxdepth 1 -type f \( -name "*.csh" -o -name "*.sh" -o -name "zoix.sim" -name "simv" \) -print0 | xargs -0 chmod 755 >& /dev/null'
+alias grep='grep --color=auto'
+alias fgrep='fgrep --color=auto'
+alias egrep='egrep --color=auto'
+alias pn=pnpm
+alias mux=tmuxinator
+# alias dirsizecurrent="du -sh ./*"
+# VVV maybe linux only? (no mac os)
+# alias ls='ls --color=auto'
+
+# === general unix commands ===
+### VVV move to its own react alias...
+# npm related aliases ; hardcode paths for now lol...
+scriptfldr="$HOME/fav/personal-rc-files/scripts"
+if [ -d $scriptfldr ]; then
+#   ### TODO: add package flows (react, vite, tailwind, etc)
+#   ### cp more scripts for debug, install, run
+#   ### that... and an empty vite project
+#   ### have run.csh check for node_modules , else npm install
+  alias addnpmscripts="cp $scriptfldr/node/viteReactTemplate/*.sh ."
+  alias cleannoderecursive="$scriptfldr/node/cleannoderecursive.sh"
+
+  function createViteReact() {
+    if [ -z "$1" ]; then
+      echo "createViteReact: Please supply a project (folder) name"
+    elif [ -d "$1" ]; then
+      echo "createViteReact: Folder '$1' already exists"
+    else
+      ### npm init vite $1 -y
+      ### vite v4.2.0 😎 react 18.2.0
+      mkdir -p $1
+      cd $1
+      cp -r $scriptfldr/node/viteReactTemplate/* .
+      cp -r $scriptfldr/node/viteReactTemplate/.gitignore .
+      mkdir -p public
+      echo "Project folder '$1' created (also now in directory)'"
+    fi
+  }
+fi
+
+### VVV use S and ^D for non-hacky flow
+function r() {
+  if [ -z `hash ranger` ]; then
+    ranger $@ --choosedir=$HOME/.rangerdir;
+    LASTDIR=`cat $HOME/.rangerdir`; 
+    cd "$LASTDIR"
+  else
+    echo "ranger not found or installed"
+  fi
+}
+
+### VVV cant figure out how to make this work in mac zsh / bash
+function tkd() {
+  if [ -z `hash tkdiff` ]; then
+    echo "ALIAS: Backgrounding this for you with &"
+    # $(which tkdiff) $@ &
+    $(which tkdiff) $@ &
+  else
+    echo "tkdiff not found or installed"
+  fi
+}
+
+# multililne aliases
+function golink() {
+  ### note this assumes your in the same directory...
+  if [ -n "$1" ]; then
+    if [ ! -L $1 ]; then
+      echo "$1 is not a symlink"
+    else
+      p=$PWD;
+      l=$(readlink $1);
+      echo "$l"
+      if [ -d "$l" ]; then
+        cd $l;
+      elif [ -f "$l" ]; then
+        d=$(dirname $l);
+        cd $d;
+      else
+        echo "$1 appears to be a broken link or unhandled scenario"
+      fi
+    fi
+  else
+    echo "usage: golink <symlink-file>"
+    echo "  e.g. golink ~/.vimrc"
+  fi
+}
+
+function si() {
+  if [ -n "$1" ]; then
+    grep "$1" . -ri "${@:2}" --exclude-dir="node_modules";
+  else
+    echo "usage: si <search-term> [<args>]"
+  fi
+}
+
+function sii() {
+  if [ -n "$1" ]; then
+    grep "$1" . -ri --include="$2" "${@:3}" --exclude-dir="node_modules";
+  else
+    echo "usage: sii <search-term> <filter-pattern> [<args>]"
+    echo "  e.g. sii main *.c"
+  fi
+}
+
+function cdf() {
+  if [ -n "$1" ]; then
+    cd $(dirname $1)
+  else
+    echo "usage: cdf <filepath>"
+    echo "  e.g. cdf ~/personal-files/.vimrc"
+  fi
+}
+

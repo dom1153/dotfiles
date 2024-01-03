@@ -1,0 +1,92 @@
+set nocompatible        " be IMproved, required
+filetype off            " required
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
+Plugin 'VundleVim/Vundle.vim'
+Plugin 'tpope/vim-commentary'       " gcc to comment
+Plugin 'tpope/vim-surround'         " s command for surround
+Plugin 'tpope/vim-repeat'           " repeat with surround, etc
+Plugin 'wellle/targets.vim'         " motions go to nearby {} (e.g. cin{)
+Plugin 'adelarsq/vim-matchit'       " % now works for <tags>
+Plugin 'godlygeek/tabular'          " Align with :Tabular or :Tab command
+Plugin 'kien/ctrlp.vim'             " ctrlp
+Plugin 'preservim/nerdtree'         " NERDtree, netrw replacement
+" Plugin 'easymotion/vim-easymotion'  " easy finding with <leader><leader>
+" Plugin 'bkad/CamelCaseMotion'       " camelcase with <leader>
+
+if isdirectory(expand('~/.vim/bundle/hl_matchit.vim'))
+  let g:hl_matchit_enable_on_vim_startup = 1
+  let glhl_matchit_speed_level = 1
+endif
+
+" if isdirectory(expand('~/.vim/bundle/CamelCaseMotion'))
+"     let g:camelcasemotion_key = '<leader>'
+"     map <silent> w <Plug>CamelCaseMotion_w
+"     map <silent> b <Plug>CamelCaseMotion_b
+"     map <silent> e <Plug>CamelCaseMotion_e
+"     map <silent> ge <Plug>CamelCaseMotion_ge
+"     sunmap w
+"     sunmap b
+"     sunmap e
+"     sunmap ge
+"     omap <silent> iw <Plug>CamelCaseMotion_iw
+"     xmap <silent> iw <Plug>CamelCaseMotion_iw
+"     omap <silent> ib <Plug>CamelCaseMotion_ib
+"     xmap <silent> ib <Plug>CamelCaseMotion_ib
+"     omap <silent> ie <Plug>CamelCaseMotion_ie
+"     xmap <silent> ie <Plug>CamelCaseMotion_ie
+"     imap <silent> <S-Left> <C-o><Plug>CamelCaseMotion_b
+"     imap <silent> <S-Right> <C-o><Plug>CamelCaseMotion_w
+" endif
+
+" lightline (status line)
+if ((&t_Co == 256) || has("gui_running"))
+    Plugin 'itchyny/lightline.vim'
+    if isdirectory(expand('~/.vim/bundle/lightline.vim'))
+        let g:lightline = {
+                    \ 'active': {
+                    \   'left': [ [ 'mode', 'paste' ],
+                    \             [ 'filename', 'modified', 'helloworld' ],
+                    \             [ 'readonly' ] ],
+                    \   'right': [ ['mylinecount' ],  [ 'mylineinfo' ], ['filetype' ] ] },
+                    \ 'component': {
+                    \   'mylineinfo': '%l:%v %02p%%',
+                    \   'mylinecount': '%L Lines'
+                    \ },
+                    \ 'mode_map': {
+                    \ 'n' : 'N',
+                    \ 'i' : 'I',
+                    \ 'R' : 'R',
+                    \ 'v' : 'V',
+                    \ 'V' : 'VL',
+                    \ "\<C-v>": 'VB',
+                    \ 'c' : 'C',
+                    \ 's' : 'S',
+                    \ 'S' : 'SL',
+                    \ "\<C-s>": 'SB',
+                    \ 't': 'T',
+                    \ },
+                    \ }
+        set noshowmode
+    endif
+endif
+
+" use <leader-p> due to conflicts with (my) next buffer command
+if isdirectory(expand('~/.vim/bundle/ctrlp.vim'))
+    let g:ctrlp_map = '<leader>p'
+    " let g:ctrlp_extensions = ['tag']
+endif
+
+if isdirectory(expand('~/.vim/bundle/nerdtree'))
+  let NERDTreeShowLineNumbers = 0
+  map <leader>n :NERDTreeFocus<CR>
+else
+endif
+
+" netrw settings (basically a built-in plugin)
+" 3 = tree view
+let g:netrw_liststyle = 3
+let g:netrw_banner = 0
+
+call vundle#end()
+filetype plugin indent on
