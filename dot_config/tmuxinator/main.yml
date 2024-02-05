@@ -30,7 +30,7 @@ windows:
       panes:
         - nix-edit:
           - cd ~/nix
-          - nvim -p myos-configuration.nix configuration.nix hardware-configuration.nix
+          - nvim -p myos-configuration.nix pkgs.nix unused.nix configuration.nix hardware-configuration.nix
         - build:
           - cd /tmp 
           - clear && echo "> hint ; sudo nixos-rebuild dry-activate"
@@ -50,4 +50,4 @@ windows:
         #- kbt
         #- up
         #- Enter
-        - ttyper
+        - ttyper -w 10
