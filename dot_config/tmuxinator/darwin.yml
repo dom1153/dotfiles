@@ -1,0 +1,40 @@
+# ~/.config/tmuxinator/main.yml
+
+# tmuxiniator start main
+# mux main
+# ctrl-a : kill-session
+
+name: main
+root: ~/
+
+### quick docs
+# even-horizontal even-vertical main-horizontal main-vertical tiled
+
+windows:
+  - toy:
+      panes:
+        - toy:
+          - clear
+          - neofetch
+  - nixos:
+      layout: even-vertical
+      panes:
+        - nix-edit:
+          - cd ~/.config/nix/darwin
+          - nvim -p darwin-configuration.nix darwin-configuration.nix.vanilla
+        - build:
+          - cd /tmp 
+          - clear && echo "> hint ; darwin-rebuild build|switch"
+  - config:
+      layout: even-vertical
+      panes:
+        - config-mine:
+          - cd ~/.config
+          - ranger
+        - config-toybox:
+          - cd
+          - clear
+  - ponysay:
+      layout: even-vertical
+      panes:
+        - ponysay foobar

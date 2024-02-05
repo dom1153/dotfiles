@@ -1,0 +1,46 @@
+layout {
+     default_tab_template {
+        pane size=1 borderless=true {
+            plugin location="zellij:tab-bar"
+        }
+        pane split_direction="horizontal" {
+            children
+        }
+        pane size=2 borderless=true {
+            plugin location="zellij:status-bar"
+        }
+    }
+
+    tab name="toy" focus=true {
+        pane command="neofetch"
+        pane name="hello" focus=true
+    }
+
+    tab name="nixos" {
+        pane name="darwin-configuration.nix" size="80%" {
+            cwd "~/.config/nix/darwin"
+            command "nvim"
+            args "-p" "darwin-configuration.nix" "darwin-configuration.nix.vanilla"
+            start_suspended true
+        }
+        pane name="darwin-rebuild (no sudo)"{
+            cwd "/tmp"
+        }
+    }
+
+    tab name=".config" cwd="~/.config" {
+        pane name="ranger/cli" command="ranger" start_suspended=true
+        pane name="ls .config" command="ls" size="20%"
+        pane name="launch vscode" size="10%" {
+            command "code"
+            args "."
+            start_suspended true
+        }
+    }
+
+    tab name="haha" {
+        pane name="ponysay" command="ponysay" {
+            args "haha pony speak funni words"
+        } 
+    }
+}

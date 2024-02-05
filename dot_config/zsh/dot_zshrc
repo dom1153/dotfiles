@@ -1,0 +1,16 @@
+# === Sourced by default via $ZDOTDIR defined in .zshenv
+
+### source general settings
+source $ZDOTDIR/prompt.zsh
+source $ZDOTDIR/completion.zsh
+source $ZDOTDIR/omz.zsh
+source $ZDOTDIR/path.zsh
+
+### source alias and shell functions
+### create an alias/local.zsh or function/local.zsh for testing if need be
+for alias in $ZDOTDIR/alias/*.zsh; do
+    source $alias
+done
+for func in $ZDOTDIR/functions/*.zsh; do
+    source $func
+done
