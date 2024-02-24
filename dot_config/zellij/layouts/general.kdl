@@ -1,0 +1,63 @@
+layout {
+     default_tab_template {
+        pane size=1 borderless=true {
+            plugin location="zellij:tab-bar"
+        }
+        pane split_direction="horizontal" {
+            children
+        }
+        pane size=2 borderless=true {
+            plugin location="zellij:status-bar"
+        }
+    }
+
+    tab name="toy" focus=true {
+        pane command="neofetch"
+        pane name="hello" focus=true
+    }
+
+        // pane name="darwin-configuration.nix" size="80%" {
+            // cwd "~/.config/nix"
+            // command "nvim"
+            // args "-p" "flake.nix"
+            // start_suspended true
+        // }
+    tab name="nixos" cwd="~/.config/nix/" {
+        pane name="cli"
+        pane name="nixos build" {
+            command "nixos-rebuild"
+            args "build" "--flake" "."
+            start_suspended true
+        }
+        pane name="nixos test (sudo)" {
+            command "sudo"
+            args "nixos-rebuild" "test" "--flake" "."
+            start_suspended true
+        }
+        pane name="home-manager build" {
+            command "home-manager"
+            args "build" "--flake" "."
+            start_suspended true
+        }
+        pane name="home-manager switch" {
+            command "home-manager"
+            args "switch" "--flake" "."
+            start_suspended true
+        }
+        pane name="launch vscode" size="10%" {
+            command "code"
+            args ""
+            start_suspended true
+        }
+    }
+
+    tab name=".config" cwd="~/.config" {
+        pane name="cli"
+        // pane name="ls .config" command="ls" size="20%"
+        pane name="launch vscode" size="10%" {
+            command "code"
+            args "."
+            start_suspended true
+        }
+    }
+}

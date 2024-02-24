@@ -15,10 +15,10 @@
 
   ### updated nix-channels and now this is complaining... guess we need to learn flakes
   nixpkgs.config.permittedInsecurePackages = [
-    #"electron-25.9.0" ### for obsidian
+    # "electron-25.9.0" ### for obsidian
   ];
 
-  nix.settings.experimental-features = [ "nix-command" "flakes" ];
+  # nix.settings.experimental-features = [ "nix-command" "flakes" ];
 
   ### let clock work with windows
   time.hardwareClockInLocalTime = true;
@@ -27,7 +27,7 @@
   ### mount data drive. nofail should make this not bork the system if it's missing
   ### type ntfs3 stopped working at some point??? use regular ntfs
   fileSystems."/run/media/archoo/DomData" =
-  { 
+  {
     device = "/dev/sda2";
     fsType = "ntfs";
     options = [
@@ -55,12 +55,12 @@
 
   programs.zsh = {
     enable = true;
-    enableCompletion = true; ### not to be confused with autocomplete
-    autosuggestions.enable = true;
-    zsh-autoenv.enable = true;
+    enableCompletion = false; ### not to be confused with autocomplete
+    autosuggestions.enable = false;
+    # zsh-autoenv.enable = true;
     #syntaxHighlighting.enable = true;
   };
-  users.users.archoo.shell = pkgs.zsh;
+  users.defaultUserShell = pkgs.zsh;
 
   ### home manager
   #users.users.archoo.isNormalUser = true;
@@ -72,4 +72,6 @@
     #};
     #home.stateVersion = "23.11";
   #};
+
+  
 }
