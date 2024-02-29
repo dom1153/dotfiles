@@ -32,6 +32,10 @@
         specialArgs = {inherit inputs outputs;};
         modules = [./nixos/os-flake-configuration.nix];
       };
+      archoo-server = nixpkgs.lib.nixosSystem {
+        specialArgs = {inherit inputs outputs;};
+        modules = [./server/os-flake-configuration.nix];
+      };
     };
 
     darwinConfigurations = {
@@ -55,6 +59,11 @@
         pkgs = nixpkgs.legacyPackages.aarch64-darwin;
         extraSpecialArgs = {inherit inputs outputs;};
         modules = [./home-manager/darwin.nix];
+      };
+      "archoo@archoo-server" = home-manager.lib.homeManagerConfiguration {
+        pkgs = nixpkgs.legacyPackages.x86_64-linux;
+        extraSpecialArgs = {inherit inputs outputs;};
+        modules = [./home-manager/server-home.nix];
       };
     };
   };
