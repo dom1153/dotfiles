@@ -101,6 +101,12 @@
     pulse.enable = true;
   };
 
+  services.avahi = {
+    enable = true;
+    nssmdns = true;
+    openFirewall = true;
+  };
+
   # time and language locale
   time.timeZone = "America/Chicago";
   i18n.defaultLocale = "en_US.UTF-8";
@@ -130,6 +136,7 @@
       isNormalUser = true;
       openssh.authorizedKeys.keys = [
         # TODO: Add your SSH public key(s) here, if you plan on using SSH to connect
+        "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABgQDBpCqdq34vYCMrqWxsjFss3Yu5bN4pAsN34H+y1Sgsaoe9hLgjrJ7zFN2TBjIW43C4YpfH5NvOr2pLx8LIaZT0FZh747Q/ze6FYPbOR9Y5K6WE7JDLhuHNlS5l1r1ccKjgfL6NILljaufH4uUk1+YmRt4CKE7taf2xWAho+Mlq3rGrjgOm/Ipm1BF8UNHis/nyISQEqSNxO7ggsjQKL+Ot0RPpv+S7zmNzNg2cgX7PED/Ot0DB6J43SVX9nBTXDyZrw6e9t28y+0JCNOMLW7TeQQoS+i/ZpP5CXaD6+ZHb1f98Z/IMhELdyKR6BApe1u6kGuFz98JTW3Cqdw6p/Xu+Z7a48WkGjOHEKiHf5qRvBx/6zgcJIYy5z7BaDO2CDcTa1vq9pxgordpguo8+Q+Q04loqNWFJKmIK/d046mr29vEs0aQvoZ7WcPI5fEvvjcL5n1XKv+KEqxpEAuoxmRdCh1i9MmnDDH9T+7oGzjl8bvPc+NRbMejga+D+PheCgws= archoo@Dominics-MacBook-Pro.local"
       ];
       # TODO: Be sure to add any other groups you need (such as networkmanager, audio, docker, etc)
       ### "users" "networkmanager"

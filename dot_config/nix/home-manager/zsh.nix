@@ -5,6 +5,10 @@
     enable = true;
     enableAutosuggestions = true;
     enableCompletion = false; ### disable for zsh-autocomplete
+    shellAliases = {
+        "ls" = "eza";
+        "cat" = "bat";
+    };
     # envExtra = ''
     #   export XDG_CONFIG_HOME="$HOME/.config"
     #   export ZDOTDIR="$XDG_CONFIG_HOME/zsh"

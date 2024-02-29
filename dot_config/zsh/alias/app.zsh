@@ -2,7 +2,8 @@
 if ! type "trash" > /dev/null; then
   alias rm='rm -i'
 else
-  alias rm='echo "Trashing..." && trash'
+  # alias rm='echo "Trashing..." && trash'
+  alias rm=trash
 fi
 
 if type "pnpm" > /dev/null; then
