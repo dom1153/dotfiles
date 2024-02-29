@@ -149,15 +149,15 @@
     enable = true;
     openFirewall = true;
     user="archoo";
-  }
+  };
 
   services = {
     syncthing = {
       enable = true;
       user = "archoo";
       configDir = "/home/archoo/.config/syncthing";
-    }
-  }
+    };
+  };
 
   programs.zsh = {
     enable = true;
