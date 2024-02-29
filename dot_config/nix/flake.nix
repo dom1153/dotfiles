@@ -3,9 +3,11 @@
 
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs/nixos-23.11";
+    nixpkgs-unstable.url = "github:nixos/nixpkgs/nixos-unstable";
     home-manager.url = "github:nix-community/home-manager/release-23.11";
-    home-manager.inputs.nixpkgs.follows = "nixpkgs";
-
+    home-manager.inputs.nixpkgs.follows = "nixpkgs-unstable";
+    nix-darwin.url = "github:LnL7/nix-darwin";
+    nix-darwin.inputs.nixpkgs.follows = "nixpkgs-unstable";
     # TODO: Add any other flake you might need
     # hardware.url = "github:nixos/nixos-hardware";
 
@@ -18,6 +20,7 @@
     self,
     nixpkgs,
     home-manager,
+    nix-darwin,
     ...
   } @ inputs: let
     inherit (self) outputs;
@@ -31,6 +34,15 @@
       };
     };
 
+    darwinConfigurations = {
+      ### darwin-rebuild switch --flake .
+      Dominics-MacBook-Pro = nix-darwin.lib.darwinSystem {
+        system = "aarch64-darwin";
+        specialArgs = {inherit inputs outputs;};
+        modules = [./nix-darwin/configuration.nix];
+      };
+    };
+
     # Standalone home-manager configuration entrypoint
     # Available through 'home-manager --flake .#your-username@your-hostname'
     homeConfigurations = {
@@ -38,6 +50,11 @@
         pkgs = nixpkgs.legacyPackages.x86_64-linux; # Home-manager requires 'pkgs' instance
         extraSpecialArgs = {inherit inputs outputs;};
         modules = [./home-manager/home.nix];
+      };
+      "archoo@Dominics-MacBook-Pro" = home-manager.lib.homeManagerConfiguration {
+        pkgs = nixpkgs.legacyPackages.aarch64-darwin;
+        extraSpecialArgs = {inherit inputs outputs;};
+        modules = [./home-manager/darwin.nix];
       };
     };
   };

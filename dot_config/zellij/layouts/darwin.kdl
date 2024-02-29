@@ -17,20 +17,22 @@ layout {
     }
 
     tab name="nixos" {
-        pane name="darwin-configuration.nix" size="80%" {
-            cwd "~/.config/nix/darwin"
-            command "nvim"
-            args "-p" "darwin-configuration.nix" "darwin-configuration.nix.vanilla"
-            start_suspended true
-        }
-        pane name="darwin-rebuild (no sudo)"{
-            cwd "/tmp"
+        // pane name="darwin-configuration.nix" size="80%" {
+        //     cwd "~/.config/nix/darwin"
+        //     command "nvim"
+        //     args "-p" "darwin-configuration.nix" "darwin-configuration.nix.vanilla" "../nix-darwin/flake.nix" "../nix-darwin/configuration.nix"
+        //     start_suspended true
+        // }
+        pane name="darwin-rebuild build --flake . (no sudo)"{
+            //cwd "/tmp"
+            cwd "~/.config/nix"
         }
     }
 
     tab name=".config" cwd="~/.config" {
-        pane name="ranger/cli" command="ranger" start_suspended=true
-        pane name="ls .config" command="ls" size="20%"
+        //pane name="ranger/cli" command="ranger" start_suspended=true
+        pane name="cli"
+        //pane name="ls .config" command="ls" size="20%"
         pane name="launch vscode" size="10%" {
             command "code"
             args "."
