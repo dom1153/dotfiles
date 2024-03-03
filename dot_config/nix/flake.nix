@@ -3,6 +3,7 @@
 
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs/nixos-23.11";
+    #nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
     nixpkgs-unstable.url = "github:nixos/nixpkgs/nixos-unstable";
     home-manager.url = "github:nix-community/home-manager/release-23.11";
     home-manager.inputs.nixpkgs.follows = "nixpkgs-unstable";
@@ -36,6 +37,10 @@
         specialArgs = {inherit inputs outputs;};
         modules = [./server/os-flake-configuration.nix];
       };
+      t460 = nixpkgs.lib.nixosSystem {
+        specialArgs = {inherit inputs outputs;};
+        modules = [./t460/os-flake-configuration.nix];
+      };
     };
 
     darwinConfigurations = {
@@ -64,6 +69,11 @@
         pkgs = nixpkgs.legacyPackages.x86_64-linux;
         extraSpecialArgs = {inherit inputs outputs;};
         modules = [./home-manager/server-home.nix];
+      };
+      "archoo@t460" = home-manager.lib.homeManagerConfiguration {
+        pkgs = nixpkgs.legacyPackages.x86_64-linux;
+        extraSpecialArgs = {inherit inputs outputs;};
+        modules = [./home-manager/t460-home.nix];
       };
     };
   };
