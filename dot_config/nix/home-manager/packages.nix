@@ -1,7 +1,9 @@
-{ config, pkgs, ... }:
-
 {
-  home.packages = with pkgs; [ 
+  config,
+  pkgs,
+  ...
+}: {
+  home.packages = with pkgs; [
     ### gui services
     bazecor
     qbittorrent
@@ -19,10 +21,10 @@
 
     ### gui art
     krita
-    pureref		### fixed with custom appimage
+    pureref ### fixed with custom appimage
 
     ### gui development
-    geany		### plasma kate exists
+    geany ### plasma kate exists
     vscode
 
     ### gui apps
@@ -52,7 +54,7 @@
     tmuxinator
     trash-cli
     wget
-    wl-clipboard	### hyprland
+    wl-clipboard ### hyprland
     xclip
     xsel
     zoxide
@@ -60,7 +62,7 @@
 
     ### tui apps
     #ponysay
-    ncdu    ### ncurses du (disk management)
+    ncdu ### ncurses du (disk management)
     ani-cli
     fastfetch
     mc
@@ -78,7 +80,7 @@
     #llvmPackages_9.libcxxClang	### for qmk , and probably more
 
     ### other
-    wayland-utils          ### wayland-info and more
+    wayland-utils ### wayland-info and more
 
     ### Hyprland 'must have'
     kitty
@@ -92,6 +94,6 @@
     # hyprpaper
     # waybar
 
-    # ponysay htop fortune 
+    # ponysay htop fortune
   ];
 }

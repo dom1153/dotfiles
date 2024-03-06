@@ -1,7 +1,9 @@
-{ config, pkgs, ... }:
-
 {
-  home.packages = with pkgs; [ 
+  config,
+  pkgs,
+  ...
+}: {
+  home.packages = with pkgs; [
     ### gui services
     bitwarden
 
@@ -13,7 +15,7 @@
     #foot
 
     ### gui development
-    geany		### plasma kate exists
+    geany ### plasma kate exists
     vscode
 
     ### gui apps
@@ -45,7 +47,7 @@
 
     ### tui apps
     ponysay
-    ncdu    ### ncurses du (disk management)
+    ncdu ### ncurses du (disk management)
     ani-cli
     fastfetch
     mc

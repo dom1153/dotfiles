@@ -5,24 +5,32 @@
 }: {
   home.packages = with pkgs; [
     ### cli tools and services
+    alejandra
     bat
+    cheat
     chezmoi
+    entr
     eza
     fzf
     gh
     ripgrep
     starship
-    trash-cli
+    tldr
+    trashy
+    wget ### required for vscode server
+    wslu
+    xclip
+    xsel
     zoxide
 
     ### tui apps
     fastfetch
     mc
-    ncdu ### ncurses du (disk management)
+    ncdu
     neofetch
     neovim
     nitch
-    ranger
+    ponysay
     ttyper
     vim
     zellij

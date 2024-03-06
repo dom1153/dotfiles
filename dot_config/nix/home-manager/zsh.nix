@@ -1,13 +1,15 @@
-{ config, pkgs, ... }:
-
 {
+  config,
+  pkgs,
+  ...
+}: {
   programs.zsh = {
     enable = true;
     enableAutosuggestions = true;
     enableCompletion = false; ### disable for zsh-autocomplete
     shellAliases = {
-        "ls" = "eza";
-        "cat" = "bat";
+      "ls" = "eza";
+      "cat" = "bat";
     };
     # envExtra = ''
     #   export XDG_CONFIG_HOME="$HOME/.config"
