@@ -5,6 +5,7 @@
 }: {
   home.packages = with pkgs; [
     ### cli tools and services
+    alejandra
     bat
     chezmoi
     eza
@@ -13,12 +14,13 @@
     ripgrep
     starship
     trash-cli
+    xclip
     zoxide
 
     ### tui apps
     fastfetch
     mc
-    ncdu ### ncurses du (disk management)
+    ncdu
     neofetch
     neovim
     nitch
