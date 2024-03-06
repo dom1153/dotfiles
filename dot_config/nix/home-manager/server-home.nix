@@ -7,7 +7,7 @@
 }: {
   imports = [
     ./server-packages.nix
-    ./zsh.nix
+    ./zsh-basic.nix
   ];
 
   nixpkgs = {
