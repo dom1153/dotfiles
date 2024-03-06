@@ -1,35 +1,15 @@
 ### 'Determinate Systems' nixpkgs installer -> nix-darwin
-{ config, pkgs, ... }:
-
 {
+  config,
+  pkgs,
+  ...
+}: {
   # List packages installed in system profile. To search by name, run:
   # $ nix-env -qaP | grep wget
-  environment.systemPackages = with pkgs; [ 
-    ### cli
-    # cheat
-    # chezmoi
-    # curlFull
-    # darwin.trash
-    # gh
-    # git
+  environment.systemPackages = with pkgs; [
     home-manager
-    # kbt
-    # lf
-    # neofetch
-    # neovim
-    # ponysay
-    # qmk
-    # ranger
-    # tldr
-    # tmux
-    # tmuxinator
-    # ttyper
-    # wget
-    # zellij
 
     ### misc
-    #corepack_21 ### npm
-    #eza
     #terminal-colors
     #pyenv
     #python3
@@ -42,41 +22,33 @@
     enable = true;
     brews = []; ### likely use nixpkgs instead
     casks = [
+      ### essential
       "affinity-designer"
       "affinity-photo"
       "affinity-publisher"
-      "alacritty"
-      "alfred"
       "alt-tab"
-      "anydesk"
       "arc"
       "bartender"
       "bazecor"
       "betterdisplay"
-      "codux"
       "discord"
-      "docker"
-      "drawpile"
-      "duckduckgo"
       "figma"
       "firefox-developer-edition"
       "font-meslo-lg-nerd-font"
       "font-monaspace"
       "google-chrome"
       "iterm2"
-      "karabiner-elements"
       "kitty"
       "logi-options-plus"
       "macvim"
       "microsoft-edge"
-      "mos"
+      "mos" ### mouse wheel
       "obsidian"
       "parsec"
       "processing"
       "qbittorrent"
       "qmk-toolbox"
-      "runjs"
-      "shortcat"      ### macos keyboard navigation concept
+      "sigmaos"
       "signal"
       "spotify"
       "steam"
@@ -84,13 +56,24 @@
       "vial"
       "visual-studio-code"
       "vlc"
+      ### experimental / extra
+      "codux"
+      "docker"
+      "drawpile"
+      "duckduckgo"
+      "raycast"
+      "runjs"
+      "shortcat" ### macos keyboard navigation concept
       "zed"
+      #"alacritty"
+      #"alfred"
+      #"anydesk"
       #"blender"
       #"firefox"
+      #"karabiner-elements"
       #"logseq"
       #"playcover-community"
       #"runelite""
-      #"sigmaos""
       #"vivaldi""
     ];
     taps = [
@@ -127,7 +110,7 @@
   # nix.package = pkgs.nix;
 
   # Create /etc/zshrc that loads the nix-darwin environment.
-  programs.zsh.enable = true;  # default shell on catalina
+  programs.zsh.enable = true; # default shell on catalina
 
   ### without this it may try to reconfigure nix as x86_64-darwin
   nixpkgs.hostPlatform = "aarch64-darwin";
