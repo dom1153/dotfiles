@@ -18,7 +18,9 @@
 
     # Import your generated (nixos-generate-config) hardware configuration
     ./hardware-configuration.nix
-    ./myos-configuration.nix
+    ./plasma.nix
+    ./pkgs.nix
+    # ./myos-configuration.nix
   ];
 
   nixpkgs = {
@@ -70,6 +72,7 @@
   };
 
   ### type ntfs3 stopped working at some point??? use regular ntfs
+  boot.supportedFilesystems = [ "ntfs" ];
   fileSystems."/run/media/archoo/DomData" =
   {
     device = "/dev/sda2";
@@ -90,6 +93,12 @@
   boot.loader.systemd-boot.enable = true;
   boot.loader.systemd-boot.configurationLimit = 5;
 
+  hardware.bluetooth.enable = true; # enables support for Bluetooth
+  hardware.bluetooth.powerOnBoot = true; # powers up the default Bluetooth controller on boot
+
+  ### let clock work with windows
+  time.hardwareClockInLocalTime = true;
+
   # Enable sound with pipewire.
   sound.enable = true;
   hardware.pulseaudio.enable = false;
@@ -102,8 +111,8 @@
   };
 
   services.avahi = {
-    enable = true;
-    nssmdns = true;
+    enable = false;
+    nssmdns4 = true;
     openFirewall = true;
   };
 
@@ -134,19 +143,31 @@
   users.users = {
     archoo = {
       isNormalUser = true;
-      openssh.authorizedKeys.keys = [
-        # TODO: Add your SSH public key(s) here, if you plan on using SSH to connect
-        "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABgQDBpCqdq34vYCMrqWxsjFss3Yu5bN4pAsN34H+y1Sgsaoe9hLgjrJ7zFN2TBjIW43C4YpfH5NvOr2pLx8LIaZT0FZh747Q/ze6FYPbOR9Y5K6WE7JDLhuHNlS5l1r1ccKjgfL6NILljaufH4uUk1+YmRt4CKE7taf2xWAho+Mlq3rGrjgOm/Ipm1BF8UNHis/nyISQEqSNxO7ggsjQKL+Ot0RPpv+S7zmNzNg2cgX7PED/Ot0DB6J43SVX9nBTXDyZrw6e9t28y+0JCNOMLW7TeQQoS+i/ZpP5CXaD6+ZHb1f98Z/IMhELdyKR6BApe1u6kGuFz98JTW3Cqdw6p/Xu+Z7a48WkGjOHEKiHf5qRvBx/6zgcJIYy5z7BaDO2CDcTa1vq9pxgordpguo8+Q+Q04loqNWFJKmIK/d046mr29vEs0aQvoZ7WcPI5fEvvjcL5n1XKv+KEqxpEAuoxmRdCh1i9MmnDDH9T+7oGzjl8bvPc+NRbMejga+D+PheCgws= archoo@Dominics-MacBook-Pro.local"
-      ];
-      # TODO: Be sure to add any other groups you need (such as networkmanager, audio, docker, etc)
-      ### "users" "networkmanager"
       extraGroups = ["networkmanager" "wheel"];
     };
   };
 
+  programs.zsh = {
+    enable = true;
+    enableCompletion = false; ### not to be confused with autocomplete
+    autosuggestions.enable = false;
+    # zsh-autoenv.enable = true;
+    #syntaxHighlighting.enable = true;
+  };
+  users.defaultUserShell = pkgs.zsh;
+
   # Enable automatic login for the user.
   services.xserver.displayManager.autoLogin.enable = true;
   services.xserver.displayManager.autoLogin.user = "archoo";
+
+  services.syncthing = {
+      enable = true;
+      user = "archoo";
+      dataDir = "/home/archoo/Documents";    # Default folder for new synced folders
+      configDir = "/home/archoo/Documents/.config/syncthing";   # Folder for Syncthing's settings and keys
+  };
+
+  services.flatpak.enable = true;
 
   # This setups a SSH server. Very important if you're setting up a headless system.
   # Feel free to remove if you don't need it.

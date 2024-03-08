@@ -5,13 +5,11 @@
   services.xserver = {
     enable = true;
     # Configure keymap in X11
-    layout = "us";
-    xkbVariant = "";
+    xkb.layout = "us";
 
-    desktopManager.plasma5.enable = true;
+    desktopManager.plasma6.enable = true;
     ### using lightdm fixes plasma wayland auto-login issue
-    displayManager.lightdm.enable = true;
-    displayManager.defaultSession = "plasmawayland";
+    displayManager.defaultSession = "plasma";
   };
 
   # Optional, hint electron apps to use wayland:

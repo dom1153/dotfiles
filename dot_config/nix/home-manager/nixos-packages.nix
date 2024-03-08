@@ -8,7 +8,8 @@
     bazecor
     qbittorrent
     bitwarden
-    eww-wayland
+    #eww-wayland
+    eww
 
     ### gui tools
     anydesk
@@ -31,24 +32,24 @@
     brave
     discord
     microsoft-edge
-    # obsidian
+    obsidian
     signal-desktop
     spotify
     osu-lazer-bin
 
     ### cli tools and services
+    alejandra
     bat
     cheat
     chezmoi
     curlWithGnuTls
-    eza
-    gh
-    # git
-    ripgrep
-    qemu
     entr
-    qmk
+    eza
     fzf
+    gh
+    qemu
+    qmk
+    ripgrep
     starship
     tldr
     tmuxinator
@@ -58,7 +59,6 @@
     xclip
     xsel
     zoxide
-    # home-manager
 
     ### tui apps
     #ponysay
@@ -89,6 +89,7 @@
     # pipewire
     # wireplumber
     # qt6.qtwayland
+
     ### optionally
     # wofi
     # hyprpaper
