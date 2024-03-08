@@ -28,7 +28,6 @@
       "affinity-publisher"
       "alt-tab"
       "arc"
-      "bartender"
       "bazecor"
       "betterdisplay"
       "discord"
@@ -68,6 +67,7 @@
       #"alacritty"
       #"alfred"
       #"anydesk"
+      #"bartender"
       #"blender"
       #"firefox"
       #"karabiner-elements"
@@ -110,7 +110,7 @@
   # nix.package = pkgs.nix;
 
   # Create /etc/zshrc that loads the nix-darwin environment.
-  programs.zsh.enable = true; # default shell on catalina
+  programs.zsh.enable = true;
 
   ### without this it may try to reconfigure nix as x86_64-darwin
   nixpkgs.hostPlatform = "aarch64-darwin";
