@@ -12,37 +12,39 @@ layout {
     }
 
     tab name="toy" focus=true {
-        pane command="neofetch"
         pane name="hello" focus=true
     }
 
-    tab name="nixos" {
-        // pane name="darwin-configuration.nix" size="80%" {
-        //     cwd "~/.config/nix/darwin"
-        //     command "nvim"
-        //     args "-p" "darwin-configuration.nix" "darwin-configuration.nix.vanilla" "../nix-darwin/flake.nix" "../nix-darwin/configuration.nix"
-        //     start_suspended true
-        // }
-        pane name="darwin-rebuild build --flake . (no sudo)"{
-            //cwd "/tmp"
-            cwd "~/.config/nix"
-        }
-    }
-
-    tab name=".config" cwd="~/.config" {
-        //pane name="ranger/cli" command="ranger" start_suspended=true
+    tab name="nix-darwin" cwd="~/.config/nix/" {
         pane name="cli"
-        //pane name="ls .config" command="ls" size="20%"
+        pane name="nix-darwin build" {
+            command "darwin-rebuild"
+            args "build" "--flake" "."
+            start_suspended true
+        }
+        pane name="nix-darwin test (sudo)" {
+            command "sudo"
+            args "darwin-rebuild" "test" "--flake" "."
+            start_suspended true
+        }
+        pane name="home-manager build" {
+            command "home-manager"
+            args "build" "--flake" "."
+            start_suspended true
+        }
+        pane name="home-manager switch" {
+            command "home-manager"
+            args "switch" "--flake" "."
+            start_suspended true
+        }
         pane name="launch vscode" size="10%" {
             command "code"
-            args "."
+            args ""
             start_suspended true
         }
     }
 
-    tab name="haha" {
-        pane name="ponysay" command="ponysay" {
-            args "haha pony speak funni words"
-        } 
+    tab name=".config" cwd="~/.config" {
+        pane name="cli"
     }
 }

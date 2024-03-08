@@ -12,16 +12,9 @@ layout {
     }
 
     tab name="toy" focus=true {
-        // pane command="neofetch"
         pane name="hello" focus=true
     }
 
-        // pane name="darwin-configuration.nix" size="80%" {
-            // cwd "~/.config/nix"
-            // command "nvim"
-            // args "-p" "flake.nix"
-            // start_suspended true
-        // }
     tab name="nixos" cwd="~/.config/nix/" {
         pane name="cli"
         pane name="nixos build" {
@@ -53,6 +46,5 @@ layout {
 
     tab name=".config" cwd="~/.config" {
         pane name="cli"
-        // pane name="ls .config" command="ls" size="20%"
     }
 }
