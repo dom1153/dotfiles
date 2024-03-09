@@ -2,14 +2,14 @@
   description = "Archoo NixOS Config";
 
   inputs = {
-    #nixpkgs.url = "github:nixos/nixpkgs/nixos-23.11";
     nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
     nixpkgs-unstable.url = "github:nixos/nixpkgs/nixos-unstable";
     home-manager.url = "github:nix-community/home-manager";
     home-manager.inputs.nixpkgs.follows = "nixpkgs-unstable";
     nix-darwin.url = "github:LnL7/nix-darwin";
     nix-darwin.inputs.nixpkgs.follows = "nixpkgs-unstable";
-    # TODO: Add any other flake you might need
+    nixvim.url = "github:nix-community/nixvim";
+    nixvim.inputs.nixpkgs.follows = "nixpkgs-unstable";
     # hardware.url = "github:nixos/nixos-hardware";
 
     # Shameless plug: looking for a way to nixify your themes and make
@@ -22,6 +22,7 @@
     nixpkgs,
     home-manager,
     nix-darwin,
+    nixvim,
     ...
   } @ inputs: let
     inherit (self) outputs;
@@ -58,7 +59,10 @@
       "archoo@artpro" = home-manager.lib.homeManagerConfiguration {
         pkgs = nixpkgs.legacyPackages.x86_64-linux; # Home-manager requires 'pkgs' instance
         extraSpecialArgs = {inherit inputs outputs;};
-        modules = [./home-manager/nixos-home.nix];
+        modules = [
+          ./home-manager/nixos-home.nix
+          nixvim.homeManagerModules.nixvim
+        ];
       };
       "archoo@Dominics-MacBook-Pro" = home-manager.lib.homeManagerConfiguration {
         pkgs = nixpkgs.legacyPackages.aarch64-darwin;

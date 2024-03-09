@@ -7,7 +7,7 @@
 }: {
   imports = [
     ./nixos-packages.nix
-    #./nvim.nix
+    ./nixvim/init.nix
     ./vim.nix
     ./zsh.nix
   ];

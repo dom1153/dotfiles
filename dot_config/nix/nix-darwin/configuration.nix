@@ -1,9 +1,14 @@
 ### 'Determinate Systems' nixpkgs installer -> nix-darwin
 {
+  # inputs,
   config,
   pkgs,
   ...
 }: {
+  # imports = [
+  #   inputs.nixvim.homeManagerModules.nixvim
+  # ];
+
   # List packages installed in system profile. To search by name, run:
   # $ nix-env -qaP | grep wget
   environment.systemPackages = with pkgs; [
