@@ -3,8 +3,8 @@
 export XDG_CONFIG_HOME="$HOME/.config"
 export ZDOTDIR="$XDG_CONFIG_HOME/zsh"
 
-if type "nvim" > /dev/null; then
+if type "nvim" >/dev/null; then
   export EDITOR="nvim"
-elif type "vim" > /dev/null; then
+elif type "vim" >/dev/null; then
   export EDITOR="vim"
 fi

@@ -16,6 +16,7 @@
     neovim
     ponysay
     ranger
+    ripgrep
     starship
     tldr
     ttyper

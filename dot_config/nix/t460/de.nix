@@ -1,6 +1,8 @@
-{ config, pkgs, ... }:
-
 {
+  config,
+  pkgs,
+  ...
+}: {
   ### for pulseaudio fixes?
   nixpkgs.config.pulseaudio = true;
 

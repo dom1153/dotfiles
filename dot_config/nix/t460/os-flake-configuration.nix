@@ -27,7 +27,7 @@
     overlays = [
       # If you want to use overlays exported from other flakes:
       # neovim-nightly-overlay.overlays.default
-      
+
       # Or define it inline, for example:
       # (final: prev: {
       #   hi = final.hello.overrideAttrs (oldAttrs: {
@@ -110,7 +110,7 @@
   hardware.pulseaudio.enable = true;
   security.rtkit.enable = true;
   services.pipewire = {
-    enable = false;   ### xfce does not like pipewire
+    enable = false; ### xfce does not like pipewire
     alsa.enable = true;
     alsa.support32Bit = true;
     pulse.enable = true;

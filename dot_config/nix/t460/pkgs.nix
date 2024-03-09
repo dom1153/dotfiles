@@ -1,6 +1,8 @@
-{ config, pkgs, ... }:
-
 {
+  config,
+  pkgs,
+  ...
+}: {
   ### allow unfree packages (steam etc)
   nixpkgs.config.allowUnfree = true;
 
@@ -12,7 +14,7 @@
     #cozette
     dina-font
     monaspace
-    (nerdfonts.override { fonts = [ "FiraCode" "CascadiaCode" ]; })
+    (nerdfonts.override {fonts = ["FiraCode" "CascadiaCode"];})
   ];
 
   ### steam

@@ -8,8 +8,8 @@
     bazecor
     qbittorrent
     bitwarden
-    #eww-wayland
     eww
+    parsec-bin
 
     ### gui tools
     anydesk
@@ -22,7 +22,7 @@
 
     ### gui art
     krita
-    pureref ### fixed with custom appimage
+    pureref
 
     ### gui development
     geany ### plasma kate exists
@@ -42,7 +42,6 @@
     bat
     cheat
     chezmoi
-    curlWithGnuTls
     entr
     eza
     fzf
@@ -55,29 +54,44 @@
     tmuxinator
     trash-cli
     wget
-    wl-clipboard ### hyprland
+    wl-clipboard
     xclip
     xsel
     zoxide
 
     ### tui apps
     #ponysay
-    ncdu ### ncurses du (disk management)
     ani-cli
     fastfetch
+    lazygit
     mc
+    ncdu
     neofetch
     neovim
+    nitch
     ranger
     tmux
-    zellij
     ttyper
-    vim
-    nitch
+    # vim
+    zellij
 
-    ### cli development
-    #python3
-    #llvmPackages_9.libcxxClang	### for qmk , and probably more
+    ### zsh
+    zsh-autocomplete
+    nix-zsh-completions
+
+    ### neovim (plugin dependencies)
+    cargo
+    curl
+    fd
+    gnumake
+    llvmPackages_9.libcxxClang
+    nodejs_21
+    rustc
+    rustfmt
+    stylua
+    tree-sitter
+    unzip
+    shfmt
 
     ### other
     wayland-utils ### wayland-info and more

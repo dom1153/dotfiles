@@ -1,5 +1,3 @@
-# This is your system's configuration file.
-# Use this to configure your system environment (it replaces /etc/nixos/configuration.nix)
 {
   inputs,
   lib,
@@ -7,44 +5,15 @@
   pkgs,
   ...
 }: {
-  # You can import other NixOS modules here
   imports = [
-    # If you want to use modules from other flakes (such as nixos-hardware):
-    # inputs.hardware.nixosModules.common-cpu-amd
-    # inputs.hardware.nixosModules.common-ssd
-
-    # You can also split up your configuration and import pieces of it here:
-    # ./users.nix
-
-    # Import your generated (nixos-generate-config) hardware configuration
     ./hardware-configuration.nix
     ./plasma.nix
-    ./pkgs.nix
-    # ./myos-configuration.nix
   ];
 
   nixpkgs = {
-    # You can add overlays here
     overlays = [
-      # If you want to use overlays exported from other flakes:
-      # neovim-nightly-overlay.overlays.default
-      
-      # Or define it inline, for example:
-      # (final: prev: {
-      #   hi = final.hello.overrideAttrs (oldAttrs: {
-      #     patches = [ ./change-hello-to-hi.patch ];
-      #   });
-      # })
-
-      # (final: prev: {
-      #   hi = final.hello.overrideAttrs (oldAttrs: {
-      #     patches = [ ./change-hello-to-hi.patch ];
-      #   });
-      # })
     ];
-    # Configure your nixpkgs instance
     config = {
-      # Disable if you don't want unfree packages
       allowUnfree = true;
     };
   };
@@ -65,16 +34,13 @@
     config.nix.registry;
 
   nix.settings = {
-    # Enable flakes and new 'nix' command
     experimental-features = "nix-command flakes";
-    # Deduplicate and optimize nix store
-    #auto-optimise-store = true;
+    # auto-optimise-store = true;
   };
 
-  ### type ntfs3 stopped working at some point??? use regular ntfs
-  boot.supportedFilesystems = [ "ntfs" ];
-  fileSystems."/run/media/archoo/DomData" =
-  {
+  ### mount extra drives
+  boot.supportedFilesystems = ["ntfs"];
+  fileSystems."/run/media/archoo/DomData" = {
     device = "/dev/sda2";
     fsType = "ntfs";
     options = [
@@ -82,21 +48,22 @@
     ];
   };
 
-  # enable gpu drivers
-  services.xserver.videoDrivers = [ "amdgpu" ];
+  ### enable gpu drivers
+  services.xserver.videoDrivers = ["amdgpu"];
 
-  # host name
+  ### host name
   networking.hostName = "artpro";
   networking.networkmanager.enable = true;
 
-  # boot manager
+  ### bootloader management
   boot.loader.systemd-boot.enable = true;
   boot.loader.systemd-boot.configurationLimit = 5;
 
+  ### bluetooth
   hardware.bluetooth.enable = true; # enables support for Bluetooth
   hardware.bluetooth.powerOnBoot = true; # powers up the default Bluetooth controller on boot
 
-  ### let clock work with windows
+  ### let hardware clock work with windows
   time.hardwareClockInLocalTime = true;
 
   # Enable sound with pipewire.
@@ -151,8 +118,6 @@
     enable = true;
     enableCompletion = false; ### not to be confused with autocomplete
     autosuggestions.enable = false;
-    # zsh-autoenv.enable = true;
-    #syntaxHighlighting.enable = true;
   };
   users.defaultUserShell = pkgs.zsh;
 
@@ -161,12 +126,13 @@
   services.xserver.displayManager.autoLogin.user = "archoo";
 
   services.syncthing = {
-      enable = true;
-      user = "archoo";
-      dataDir = "/home/archoo/Documents";    # Default folder for new synced folders
-      configDir = "/home/archoo/Documents/.config/syncthing";   # Folder for Syncthing's settings and keys
+    enable = true;
+    user = "archoo";
+    dataDir = "/home/archoo/Documents"; # Default folder for new synced folders
+    configDir = "/home/archoo/Documents/.config/syncthing"; # Folder for Syncthing's settings and keys
   };
 
+  ### runescape
   services.flatpak.enable = true;
 
   # This setups a SSH server. Very important if you're setting up a headless system.
@@ -180,6 +146,27 @@
       PasswordAuthentication = false;
     };
   };
+
+  environment.systemPackages = with pkgs; [
+    home-manager
+  ];
+
+  fonts.packages = with pkgs; [
+    #cozette
+    dina-font
+    monaspace
+    (nerdfonts.override {fonts = ["FiraCode" "CascadiaCode"];})
+  ];
+
+  ### steam
+  programs.steam = {
+    enable = true;
+    remotePlay.openFirewall = true;
+    dedicatedServer.openFirewall = true;
+  };
+
+  ### fix udev rules for qmk
+  hardware.keyboard.qmk.enable = true;
 
   # https://nixos.wiki/wiki/FAQ/When_do_I_update_stateVersion
   system.stateVersion = "23.11";

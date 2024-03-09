@@ -1,8 +1,8 @@
 if [[ -d "$HOME/.oh-my-zsh" ]]; then
   ### disable auto-update check
   DISABLE_UPDATE_PROMPT=true
-  
-  # === THEME 
+
+  # === THEME
   # bira
   # robbyrussell  # A very fast, minimal theme
   # agnoster      # is fun but a slow theme

@@ -6,10 +6,10 @@
   environment.systemPackages = with pkgs; [
     ### gui services
     authy
-    baobab 		### gnome disk usage analyzer, slow. try ncdu
+    baobab ### gnome disk usage analyzer, slow. try ncdu
     heroic
     qbittorent
-    screenkey		### works with non-wayland apps
+    screenkey ### works with non-wayland apps
     syncthing
     syncthingtray
 
@@ -55,7 +55,7 @@
     calcure
     kbt
     micro
-    ncdu    ### ncurses du (disk management)
+    ncdu ### ncurses du (disk management)
     peaclock
     pfetch-rs
     pokeget-rs
@@ -140,13 +140,12 @@
     };
   };
 
-
   ### exclude kde packages
   environment.plasma5.excludePackages = with pkgs.libsForQt5; [
-    elisa 	### music player
-    gwenview	### image viewer
-    okular	### document viewer
-    oxygen	### widget apperances or smth
+    elisa ### music player
+    gwenview ### image viewer
+    okular ### document viewer
+    oxygen ### widget apperances or smth
     khelpcenter
     konsole
     plasma-browser-integration

@@ -1,5 +1,8 @@
 # === Sourced by default via $ZDOTDIR defined in .zshenv
 
+local XDG_CONFIG_HOME="$HOME/.config"
+local ZDOTDIR="$XDG_CONFIG_HOME/zsh"
+
 ### source general settings
 source $ZDOTDIR/prompt.zsh
 source $ZDOTDIR/completion.zsh
