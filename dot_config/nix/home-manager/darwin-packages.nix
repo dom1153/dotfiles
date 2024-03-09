@@ -13,7 +13,6 @@
     gh
     lf
     neofetch
-    neovim
     ponysay
     ranger
     ripgrep

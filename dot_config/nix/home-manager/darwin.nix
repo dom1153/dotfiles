@@ -8,6 +8,7 @@
   imports = [
     ./darwin-packages.nix
     ./vim.nix
+    ./nixvim/init.nix
     ./zsh.nix
   ];
 

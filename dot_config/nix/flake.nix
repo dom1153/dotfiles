@@ -67,7 +67,10 @@
       "archoo@Dominics-MacBook-Pro" = home-manager.lib.homeManagerConfiguration {
         pkgs = nixpkgs.legacyPackages.aarch64-darwin;
         extraSpecialArgs = {inherit inputs outputs;};
-        modules = [./home-manager/darwin.nix];
+        modules = [
+          ./home-manager/darwin.nix
+          nixvim.homeManagerModules.nixvim
+        ];
       };
       "archoo@archoo-server" = home-manager.lib.homeManagerConfiguration {
         pkgs = nixpkgs.legacyPackages.x86_64-linux;
