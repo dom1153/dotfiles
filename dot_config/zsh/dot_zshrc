@@ -1,13 +1,15 @@
 # === Sourced by default via $ZDOTDIR defined in .zshenv
 
+### only do rc in interactive mode
+[[ $- != *i* ]] && return
+
 local XDG_CONFIG_HOME="$HOME/.config"
 local ZDOTDIR="$XDG_CONFIG_HOME/zsh"
 
 ### source general settings
-source $ZDOTDIR/prompt.zsh
-source $ZDOTDIR/completion.zsh
-source $ZDOTDIR/omz.zsh
-source $ZDOTDIR/path.zsh
+for alias in $ZDOTDIR/features/*.zsh; do
+    source $alias
+done
 
 ### source alias and shell functions
 ### create an alias/local.zsh or function/local.zsh for testing if need be

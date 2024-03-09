@@ -46,10 +46,12 @@
     eza
     fzf
     gh
+    mosh
     qemu
     qmk
     ripgrep
     starship
+    thefuck
     tldr
     tmuxinator
     trash-cli
@@ -67,7 +69,7 @@
     mc
     ncdu
     neofetch
-    neovim
+    # neovim
     nitch
     ranger
     tmux
@@ -78,6 +80,7 @@
     ### zsh
     zsh-autocomplete
     nix-zsh-completions
+    zsh-nix-shell
 
     ### neovim (plugin dependencies)
     cargo

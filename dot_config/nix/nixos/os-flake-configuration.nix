@@ -11,8 +11,7 @@
   ];
 
   nixpkgs = {
-    overlays = [
-    ];
+    overlays = [];
     config = {
       allowUnfree = true;
     };
@@ -120,6 +119,8 @@
     autosuggestions.enable = false;
   };
   users.defaultUserShell = pkgs.zsh;
+
+  # programs.mosh.enable = true;
 
   # Enable automatic login for the user.
   services.xserver.displayManager.autoLogin.enable = true;
