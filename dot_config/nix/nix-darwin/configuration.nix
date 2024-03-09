@@ -110,7 +110,10 @@
   # nix.package = pkgs.nix;
 
   # Create /etc/zshrc that loads the nix-darwin environment.
-  programs.zsh.enable = true;
+  programs.zsh = {
+    enable = true;
+    enableCompletion = false; ### not to be confused with autocomplete
+  };
 
   ### without this it may try to reconfigure nix as x86_64-darwin
   nixpkgs.hostPlatform = "aarch64-darwin";

@@ -7,7 +7,8 @@
 }: {
   imports = [
     ./darwin-packages.nix
-    ./zsh-darwin.nix
+    ./vim.nix
+    ./zsh.nix
   ];
 
   nixpkgs = {
@@ -25,6 +26,13 @@
     sessionVariables = {
       EDITOR = "nvim";
     };
+  };
+
+  home.file = {
+    ".local/share/zsh/zsh-autocomplete".source = "${pkgs.zsh-autocomplete}/share/zsh-autocomplete";
+    ".local/share/zsh/nix-zsh-completions".source = "${pkgs.nix-zsh-completions}/share/zsh/plugins/nix";
+    # ".local/share/zsh/zsh-fast-syntax-highlighting".source =
+    #   "${pkgs.zsh-fast-syntax-highlighting}/share/zsh-fast-syntax-highlighting";
   };
 
   # Enable home-manager and git
