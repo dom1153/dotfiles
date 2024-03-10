@@ -7,7 +7,9 @@
 }: {
   imports = [
     ./wsl-artpro-packages.nix
-    ./zsh-basic.nix
+    ./zsh.nix
+    ./vim.nix
+    ./nixvim/init.nix
   ];
 
   nixpkgs = {
@@ -23,7 +25,16 @@
     homeDirectory = "/home/archoo";
     sessionVariables = {
       EDITOR = "nvim";
+      VISUAL = "code --wait";
     };
+  };
+
+  home.file = {
+    ".local/share/zsh/zsh-autocomplete".source = "${pkgs.zsh-autocomplete}/share/zsh-autocomplete";
+    ".local/share/zsh/nix-zsh-completions".source = "${pkgs.nix-zsh-completions}/share/zsh/plugins/nix";
+    ".local/share/zsh/zsh-nix-shell".source = "${pkgs.zsh-nix-shell}/share/zsh-nix-shell";
+    # ".local/share/zsh/zsh-fast-syntax-highlighting".source =
+    #   "${pkgs.zsh-fast-syntax-highlighting}/share/zsh-fast-syntax-highlighting";
   };
 
   programs.home-manager.enable = true;

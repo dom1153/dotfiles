@@ -23,16 +23,19 @@
     xsel
     zoxide
 
+    ### zsh
+    zsh-autocomplete
+    nix-zsh-completions
+    zsh-nix-shell
+
     ### tui apps
     fastfetch
     mc
     ncdu
     neofetch
-    neovim
     nitch
     ponysay
     ttyper
-    vim
     zellij
   ];
 }

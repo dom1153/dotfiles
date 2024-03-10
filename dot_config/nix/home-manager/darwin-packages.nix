@@ -23,6 +23,11 @@
     zellij
     zoxide
 
+    ### zsh
+    zsh-autocomplete
+    nix-zsh-completions
+    zsh-nix-shell
+
     ### misc
     #terminal-colors
     #pyenv
