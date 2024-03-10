@@ -1,0 +1,7 @@
+.zcompdump
+.zsh_history
+completion.zsh
+omz.zsh
+path.zsh
+prompt.zsh
+unused.zsh
