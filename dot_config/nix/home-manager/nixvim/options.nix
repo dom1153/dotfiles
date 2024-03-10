@@ -1,8 +1,4 @@
-{
-  config,
-  pkgs,
-  ...
-}: {
+{...}: {
   programs.nixvim = {
     ### See `:help vim.opt` and `:help option-list`
     options = {
@@ -22,22 +18,29 @@
       ###  See `:help 'clipboard'`
       clipboard = "unnamedplus";
 
-      ### Enable break indent
+      ### indent wrapped lines
       breakindent = true;
-
-      ### Save undo history
-      undofile = true;
 
       ### Case-insensitive searching UNLESS \C or capital in search
       ignorecase = true;
       smartcase = true;
+      grepprg = "rg --vimgrep";
+      grepformat = "%f:%l:%c:%m";
 
-      ### Keep signcolumn on by default
+      ### Keep signcolumn on by default, prevents the screen from jumping
       signcolumn = "yes";
 
       ### Decrease update time
-      updatetime = 250;
-      timeoutlen = 300;
+      updatetime = 250; ### 4000ms by default, try 50
+      timeoutlen = 300; ### try 10
+
+      # Set completeopt to have a better completion experience
+      completeopt = ["menuone" "noselect" "noinsert"]; # mostly just for cmp
+
+      # Enable persistent undo history
+      swapfile = false;
+      backup = false;
+      undofile = true;
 
       ### Configure how new splits should be opened
       splitright = true;
@@ -51,6 +54,7 @@
         tab = "» ";
         trail = "·";
         nbsp = "␣";
+        # eol = "↲";
       };
 
       ### Preview substitutions live, as you type!
@@ -60,13 +64,26 @@
       cursorline = true;
 
       ### Minimal number of screen lines to keep above and below the cursor.
-      scrolloff = 10;
+      scrolloff = 8;
 
       ### Set highlight on search, but clear on pressing <Esc> in normal mod
       hlsearch = true;
 
       ### Enables 24-bit RGB color in the |TUI|.
       termguicolors = true;
+
+      # Set encoding type
+      encoding = "utf-8";
+      fileencoding = "utf-8";
+
+      # More space in the neovim command line for displaying messages
+      cmdheight = 2;
+
+      # Maximum number of items to show in the popup menu (0 means "use available screen space")
+      pumheight = 0;
+
+      # Use conform-nvim for gq formatting. ('formatexpr' is set to vim.lsp.formatexpr(), so you can format lines via gq if the language server supports it)
+      formatexpr = "v:lua.require'conform'.formatexpr()";
     };
   };
 }

@@ -6,10 +6,11 @@
   home.packages = with pkgs; [
     ### gui services
     bazecor
-    qbittorrent
     bitwarden
     eww
+    neovide
     parsec-bin
+    qbittorrent
 
     ### gui tools
     anydesk
@@ -63,18 +64,19 @@
 
     ### tui apps
     #ponysay
+    # neovim
+    # vim
     ani-cli
+    diff-so-fancy
     fastfetch
     lazygit
     mc
     ncdu
     neofetch
-    # neovim
     nitch
     ranger
     tmux
     ttyper
-    # vim
     zellij
 
     ### zsh

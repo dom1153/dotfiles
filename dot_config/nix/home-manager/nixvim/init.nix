@@ -2,17 +2,15 @@
   imports = [
     ./options.nix
     ./globals.nix
-    ./keymap.nix
-    ./plugins.nix
+    ./keymaps.nix
+
+    ./colorschemes/catppuccin.nix
+
     ./autocmd.nix
+    ./plugins.nix
   ];
+
   programs.nixvim = {
     enable = true;
-
-    colorschemes.catppuccin = {
-      enable = true;
-      flavour = "mocha";
-      transparentBackground = true;
-    };
   };
 }

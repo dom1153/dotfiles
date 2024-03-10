@@ -9,6 +9,7 @@
     cheat
     chezmoi
     darwin.trash
+    diff-so-fancy
     eza
     gh
     lf

@@ -3,6 +3,7 @@
 	email = dtdd1153@live.com
 [core]
 	editor = vim
+	pager = diff-so-fancy | less --tabs=4 -RF
 [alias]
 	edit = add
 	opened = status
@@ -13,9 +14,26 @@
 	smudge = git-lfs smudge -- %f
 {{- if lookPath "gh" }}
 [credential "https://github.com"]
-	helper = 
+	helper =
 	helper = !{{- lookPath "gh" }} auth git-credential
 [credential "https://gist.github.com"]
-	helper = 
+	helper =
 	helper = !{{- lookPath "gh" }} auth git-credential
 {{- end }}
+[interactive]
+	diffFilter = diff-so-fancy --patch
+[color]
+	ui = true
+[color "diff-highlight"]
+	oldNormal = red bold
+	oldHighlight = red bold 52
+	newNormal = green bold
+	newHighlight = green bold 22
+[color "diff"]
+	meta = 11
+	frag = magenta bold
+	func = 146 bold
+	commit = yellow bold
+	old = red bold
+	new = green bold
+	whitespace = red reverse

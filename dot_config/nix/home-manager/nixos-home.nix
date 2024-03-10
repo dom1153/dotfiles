@@ -13,8 +13,7 @@
   ];
 
   nixpkgs = {
-    overlays = [
-    ];
+    overlays = [ ];
     config = {
       allowUnfree = true;
       allowUnfreePredicate = _: true;
@@ -25,7 +24,7 @@
     username = "archoo";
     homeDirectory = "/home/archoo";
     sessionVariables = {
-      EDITOR = "vim";
+      EDITOR = "nvim";
       ### add flatpak bin paths (runescape)
       # XDG_DATA_DIRS = "$XDG_DATA_DIRS:/usr/share:/var/lib/flatpak/exports/share:$HOME/.local/share/flatpak/exports/share";
     };
