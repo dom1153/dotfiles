@@ -8,6 +8,7 @@
     bazecor
     bitwarden
     eww
+    kdePackages.krdc
     neovide
     parsec-bin
     qbittorrent

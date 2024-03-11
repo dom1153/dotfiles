@@ -14,6 +14,13 @@
     displayManager.defaultSession = "plasma";
   };
 
+  ### works in theory, but probably have to disable default session or something...
+  services.xrdp = {
+    enable = false;
+    defaultWindowManager = "startplasma-wayland";
+    openFirewall = true;
+  };
+
   environment.plasma6.excludePackages = with pkgs.kdePackages; [
     plasma-browser-integration
   ];

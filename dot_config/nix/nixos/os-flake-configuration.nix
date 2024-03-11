@@ -169,6 +169,12 @@
   ### fix udev rules for qmk
   hardware.keyboard.qmk.enable = true;
 
+  ### vnc
+  #services.guacamole-server.enable = true;
+  #services.guacamole-client.enable = true;
+  #services.guacamole-client.enableWebserver = true;
+  #services.x2goserver.enable = true;
+
   # https://nixos.wiki/wiki/FAQ/When_do_I_update_stateVersion
   system.stateVersion = "23.11";
 }
