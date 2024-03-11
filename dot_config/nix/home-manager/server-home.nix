@@ -7,12 +7,13 @@
 }: {
   imports = [
     ./server-packages.nix
-    ./zsh-basic.nix
+    ./zsh.nix
+    ./nixvim/init.nix
+    ./vim.nix
   ];
 
   nixpkgs = {
-    overlays = [
-    ];
+    overlays = [];
     config = {
       allowUnfree = true;
       allowUnfreePredicate = _: true;
@@ -23,7 +24,7 @@
     username = "archoo";
     homeDirectory = "/home/archoo";
     sessionVariables = {
-      EDITOR = "nvim";
+      EDITOR = "nvim"; ### use vim until nvim is better config'd
     };
   };
 

@@ -5,15 +5,24 @@
 }: {
   ### currently static ip is configured via router
 
-  services.xserver.videoDrivers = ["amdgpu"];
+  services.xserver = {
+    videoDrivers = ["amdgpu"];
+    # Set automatic login for the user.
+    displayManager.autoLogin.enable = false;
+    displayManager.autoLogin.user = "archoo";
+    desktopManager.xfce.enable = false; ### disabled
+  };
 
-  # Set automatic login for the user.
-  services.xserver.displayManager.autoLogin.enable = false;
-  services.xserver.displayManager.autoLogin.user = "archoo";
+  ### works, but we don't have any desktop applications installed
+  services.xrdp = {
+    enable = false; ### disabled
+    defaultWindowManager = "xfce4-session";
+    openFirewall = false; ### disabled
+  };
 
   services.avahi = {
     enable = true;
-    nssmdns = true;
+    nssmdns4 = true;
     openFirewall = true;
   };
 

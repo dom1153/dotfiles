@@ -8,6 +8,7 @@
     alejandra
     bat
     chezmoi
+    diff-so-fancy
     eza
     fzf
     gh
@@ -22,11 +23,9 @@
     mc
     ncdu
     neofetch
-    neovim
     nitch
     ranger
     ttyper
-    vim
     zellij
   ];
 }

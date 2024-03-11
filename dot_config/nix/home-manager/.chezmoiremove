@@ -1,3 +1,4 @@
 home.nix
 packages.nix
 result
+nvim.nix
