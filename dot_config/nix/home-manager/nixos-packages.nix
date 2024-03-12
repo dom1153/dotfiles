@@ -12,6 +12,7 @@
     neovide
     parsec-bin
     qbittorrent
+    #localsend
 
     ### gui tools
     anydesk

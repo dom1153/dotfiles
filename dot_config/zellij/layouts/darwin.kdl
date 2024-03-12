@@ -12,24 +12,14 @@ layout {
     }
 
     tab name="toy" focus=true {
-        pane name="hello" focus=true
+        pane name="shell" focus=true
     }
 
-    tab name="nix-darwin" cwd="~/.config/nix/" {
+    tab name="darwin" cwd="~/.config/nix/" {
         pane name="cli"
-        pane name="nix-darwin build" {
-            command "darwin-rebuild"
-            args "build" "--flake" "."
-            start_suspended true
-        }
-        pane name="nix-darwin test (sudo)" {
-            command "sudo"
-            args "darwin-rebuild" "test" "--flake" "."
-            start_suspended true
-        }
-        pane name="home-manager build" {
-            command "home-manager"
-            args "build" "--flake" "."
+        pane name="chezmoi apply" {
+            command "chezmoi"
+            args "apply"
             start_suspended true
         }
         pane name="home-manager switch" {
@@ -37,14 +27,20 @@ layout {
             args "switch" "--flake" "."
             start_suspended true
         }
-        pane name="launch vscode" size="10%" {
-            command "code"
-            args ""
+        pane name="darwin switch" {
+            command "darwin-rebuild"
+            args "switch" "--flake" "."
             start_suspended true
         }
     }
 
-    tab name=".config" cwd="~/.config" {
-        pane name="cli"
+    tab name="chezmoi" cwd="~/.config/nix" {
+        // todo: start in chezmoi edit ; ~/.local/share/chezmoi
+        pane name="chezmoi edit ; chezmoi apply"
+        pane name="chezmoi apply" {
+            command "chezmoi"
+            args "apply"
+            start_suspended true
+        }
     }
 }

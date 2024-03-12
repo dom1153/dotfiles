@@ -13,7 +13,7 @@
   ];
 
   nixpkgs = {
-    overlays = [ ];
+    overlays = [];
     config = {
       allowUnfree = true;
       allowUnfreePredicate = _: true;
@@ -25,8 +25,9 @@
     homeDirectory = "/home/archoo";
     sessionVariables = {
       EDITOR = "nvim";
+      ### https://github.com/USA-RedDragon/jagex-launcher-flatpak
       ### add flatpak bin paths (runescape)
-      # XDG_DATA_DIRS = "$XDG_DATA_DIRS:/usr/share:/var/lib/flatpak/exports/share:$HOME/.local/share/flatpak/exports/share";
+      XDG_DATA_DIRS = "$XDG_DATA_DIRS:/usr/share:/var/lib/flatpak/exports/share:$HOME/.local/share/flatpak/exports/share";
     };
   };
 
