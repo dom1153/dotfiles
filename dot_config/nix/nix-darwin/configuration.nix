@@ -60,6 +60,7 @@
       "vial"
       "visual-studio-code"
       "vlc"
+      # "mpv"
       ### experimental / extra
       "codux"
       "docker"

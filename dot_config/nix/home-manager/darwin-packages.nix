@@ -23,6 +23,7 @@
     wget
     zellij
     zoxide
+    # mas ### mac app store
 
     ### zsh
     zsh-autocomplete

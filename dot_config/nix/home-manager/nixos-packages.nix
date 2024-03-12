@@ -9,15 +9,17 @@
     bitwarden
     eww
     kdePackages.krdc
+    localsend
     neovide
     parsec-bin
     qbittorrent
-    #localsend
+    quickemu
 
     ### gui tools
     anydesk
     vial
-    vlc
+    # vlc
+    mpv
 
     ### gui terminal emulators
     alacritty
@@ -36,9 +38,9 @@
     discord
     microsoft-edge
     obsidian
+    osu-lazer-bin
     signal-desktop
     spotify
-    osu-lazer-bin
 
     ### cli tools and services
     alejandra
@@ -52,22 +54,24 @@
     mosh
     qemu
     qmk
+    quickemu
+    quickgui
     ripgrep
     starship
     thefuck
     tldr
     tmuxinator
     trash-cli
+    watchman
     wget
     wl-clipboard
     xclip
     xsel
     zoxide
+    # speedtest-lci
+    # imagemagick
 
     ### tui apps
-    #ponysay
-    # neovim
-    # vim
     ani-cli
     diff-so-fancy
     fastfetch
@@ -80,6 +84,10 @@
     tmux
     ttyper
     zellij
+    # neovim
+    # ponysay
+    # taskell
+    # vim
 
     ### zsh
     zsh-autocomplete

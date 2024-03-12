@@ -109,7 +109,7 @@
   users.users = {
     archoo = {
       isNormalUser = true;
-      extraGroups = ["networkmanager" "wheel"];
+      extraGroups = ["networkmanager" "wheel" "docker"];
     };
   };
 
@@ -174,6 +174,9 @@
   #services.guacamole-client.enable = true;
   #services.guacamole-client.enableWebserver = true;
   #services.x2goserver.enable = true;
+
+  virtualisation.waydroid.enable = true;
+  virtualisation.docker.enable = true;
 
   # https://nixos.wiki/wiki/FAQ/When_do_I_update_stateVersion
   system.stateVersion = "23.11";
