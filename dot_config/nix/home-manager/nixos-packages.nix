@@ -6,7 +6,7 @@
   home.packages = with pkgs; [
     ### gui services
     bazecor
-    bitwarden
+    # bitwarden ### always seems to be logged out...
     eww
     kdePackages.krdc
     localsend

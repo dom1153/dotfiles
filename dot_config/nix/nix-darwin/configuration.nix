@@ -99,7 +99,7 @@
     # Sidekick (browser)
     # Shirabe Jisho
     # Synergy
-    # "bitwarden"  ### use app store version instead for better integration
+    # "bitwarden"  ### don't use brew or appstore ; had issues powering off pc due to processing not quitting
     # "windscribe" ### does not seem to add gui, maybe only the vpn aspect
     # "tabby"
     # "warp"

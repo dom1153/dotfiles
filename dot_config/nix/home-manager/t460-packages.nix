@@ -5,7 +5,6 @@
 }: {
   home.packages = with pkgs; [
     ### gui services
-    bitwarden
 
     ### gui tools
     vlc
