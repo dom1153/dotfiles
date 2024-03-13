@@ -5,42 +5,45 @@
 }: {
   home.packages = with pkgs; [
     ### gui services
-    bazecor
-    # bitwarden ### always seems to be logged out...
+    # bazecor ### seems to be bugged
     eww
-    kdePackages.krdc
+    font-manager
     localsend
     neovide
-    parsec-bin
     qbittorrent
-    quickemu
+    # gnome.gnome-font-viewer ### too many chefs
+    # kdePackages.krdc
+    # parsec-bin ### can't host on wayland
+    # bitwarden ### always seems to be logged out...
 
     ### gui tools
-    anydesk
     vial
-    # vlc
     mpv
+    # anydesk
+    # vlc
 
     ### gui terminal emulators
     alacritty
     foot
 
     ### gui art
-    krita
+    drawpile
+    kolourpaint ### windows 98 style
     pureref
+    # krita
 
     ### gui development
-    geany ### plasma kate exists
     vscode
+    # geany ### plasma kate exists
 
     ### gui apps
-    brave
     discord
     microsoft-edge
     obsidian
     osu-lazer-bin
     signal-desktop
     spotify
+    # brave
 
     ### cli tools and services
     alejandra
@@ -62,19 +65,21 @@
     tldr
     tmuxinator
     trash-cli
-    watchman
+    watchman ### for chezmoi
+    wayland-utils ### wayland-info and more (useful for plasma)
     wget
     wl-clipboard
     xclip
-    xsel
     zoxide
+    # xsel ### already have xclip right?
     # speedtest-lci
     # imagemagick
+    # fortune
 
     ### tui apps
     ani-cli
+    btop
     diff-so-fancy
-    fastfetch
     lazygit
     mc
     ncdu
@@ -84,10 +89,14 @@
     tmux
     ttyper
     zellij
+    # htop
+    # fastfetch
     # neovim
     # ponysay
     # taskell
     # vim
+    # nmon
+    # vtop
 
     ### zsh
     zsh-autocomplete
@@ -95,21 +104,18 @@
     zsh-nix-shell
 
     ### neovim (plugin dependencies)
-    cargo
-    curl
-    fd
-    gnumake
-    llvmPackages_9.libcxxClang
-    nodejs_21
-    rustc
-    rustfmt
-    stylua
-    tree-sitter
-    unzip
-    shfmt
-
-    ### other
-    wayland-utils ### wayland-info and more
+    # cargo
+    # curl
+    # fd
+    # gnumake
+    # llvmPackages_9.libcxxClang
+    # nodejs_21
+    # rustc
+    # rustfmt
+    # stylua
+    # tree-sitter
+    # unzip
+    # shfmt
 
     ### Hyprland 'must have'
     kitty
@@ -123,7 +129,5 @@
     # wofi
     # hyprpaper
     # waybar
-
-    # ponysay htop fortune
   ];
 }

@@ -1,4 +1,4 @@
-export PS1="╭─ %F{green}%n@%m%f | %F{blue}%W | %t %f
+export PS1="╭─ %F{green}%n@%m%f | %F{blue}%W%f | %F{blue}%t %f
 │ %1~
 ╰─%# "
 

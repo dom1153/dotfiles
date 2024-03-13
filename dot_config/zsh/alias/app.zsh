@@ -40,3 +40,24 @@ fi
 if type "zellij" >/dev/null; then
   alias zl="zellij --layout"
 fi
+
+if type "chezmoi" >/dev/null; then
+  alias ce="chezmoi edit"
+  alias ca="chezmoi apply"
+  alias cdiff="chezmoi diff"
+  alias cu="chezmoi unmanaged ."
+  alias cup="chezmoi update"
+  alias ccd="chezmoi update"
+  alias cr="chezmoi remove"
+fi
+
+if type "chezmoi" >/dev/null; then
+  alias ce="chezmoi edit"
+  alias ca="chezmoi apply"
+  alias cadd="chezmoi add"
+  alias cdiff="chezmoi diff"
+  alias cunm="chezmoi unmanaged ."
+  alias cu="chezmoi update"
+  alias cdd="chezmoi cd"
+  alias cr="chezmoi remove"
+fi

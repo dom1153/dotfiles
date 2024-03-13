@@ -1,27 +1,44 @@
+"$schema" = 'https://starship.rs/config-schema.json'
+
+palette = "catppuccin_mocha"
+
+### 'pure prompt '
 format = """
 $username\
 $hostname\
+$linebreak\
 $directory\
 $git_branch\
 $git_state\
 $git_status\
 $nix_shell\
 $cmd_duration\
+$jobs\
+$status\
 $line_break\
 $python\
 $character"""
 
+[hostname]
+ssh_symbol = "@ "
+format = '[$ssh_symbol](blue)[$hostname](red) '
+trim_at = '.'
+
+[username]
+style_user = 'yellow'
+format = '[$user]($style) '
+
 [directory]
-style = "blue"
+style = "blue bold"
 
 [character]
-success_symbol = "[❯](purple)"
-error_symbol = "[❯](red)"
-vimcmd_symbol = "[❮](green)"
+success_symbol = "[>](green bold)"
+error_symbol = "[>](red bold)"
+vimcmd_symbol = "[<](green bold)"
 
 [git_branch]
 format = "[$branch]($style)"
-style = "bright-black"
+style = "subtext0"
 
 [git_status]
 format = "[[(*$conflicted$untracked$modified$staged$renamed$deleted)](218) ($ahead_behind$stashed)]($style)"
@@ -34,6 +51,7 @@ renamed = "​"
 deleted = "​"
 stashed = "≡"
 
+### progress for rebasing, bisecting
 [git_state]
 format = '\([$state( $progress_current/$progress_total)]($style)\) '
 style = "bright-black"
@@ -42,13 +60,68 @@ style = "bright-black"
 format = "[$duration]($style) "
 style = "yellow"
 
+### for python virtualenv
 [python]
 format = "[$virtualenv]($style) "
 style = "bright-black"
 
 [nix_shell]
-impure_msg = '[impure shell](bold red)'
-pure_msg = '[pure shell](bold green)'
-unknown_msg = '[unknown shell](bold yellow)'
-format = 'via [$state( \($name\))](bold blue) '
+impure_msg = '[impure](red)'
+pure_msg = '[pure](green)'
+unknown_msg = '[unknown](yellow)'
+format = '[$state( \($name\))](blue) '
 
+[jobs]
+number_threshold = 1
+style = "mauve"
+format = '[jobs\[$number\]]($style) '
+
+[shlvl]
+disabled = false
+style = 'peach'
+threshold = 2
+format = '[shlvl\($shlvl\)]($style) '
+
+[status]
+style = 'red bold'
+# symbol = '▲'
+format = '[X $int$signal_name]($style) '
+map_symbol = false
+disabled = false
+
+[time]
+disabled = false
+format = '[$time]($style) '
+style = "subtext1"
+time_format = '%T'
+utc_time_offset = '-5'
+# time_range = '10:00:00-14:00:00'
+
+# palette tables should be last in the config ⚓️
+[palettes.catppuccin_mocha]
+rosewater = "#f5e0dc"
+flamingo = "#f2cdcd"
+pink = "#f5c2e7"
+mauve = "#cba6f7"
+red = "#f38ba8"
+maroon = "#eba0ac"
+peach = "#fab387"
+yellow = "#f9e2af"
+green = "#a6e3a1"
+teal = "#94e2d5"
+sky = "#89dceb"
+sapphire = "#74c7ec"
+blue = "#89b4fa"
+lavender = "#b4befe"
+text = "#cdd6f4"
+subtext1 = "#bac2de"
+subtext0 = "#a6adc8"
+overlay2 = "#9399b2"
+overlay1 = "#7f849c"
+overlay0 = "#6c7086"
+surface2 = "#585b70"
+surface1 = "#45475a"
+surface0 = "#313244"
+base = "#1e1e2e"
+mantle = "#181825"
+crust = "#11111b"

@@ -90,7 +90,7 @@
           ### - sr)'  - [S]urround [R]eplace [)] [']
           surround = {};
 
-          pairs = {};
+          # pairs = {};
         };
       };
 
