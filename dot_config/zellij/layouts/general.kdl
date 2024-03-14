@@ -17,11 +17,6 @@ layout {
 
     tab name="nixos" cwd="~/.config/nix/" {
         pane name="cli"
-        pane name="chezmoi apply" {
-            command "chezmoi"
-            args "apply"
-            start_suspended true
-        }
         pane name="home-manager switch" {
             command "home-manager"
             args "switch" "--flake" "."
@@ -37,9 +32,8 @@ layout {
     tab name="chezmoi" cwd="~/.config/nix" {
         // todo: start in chezmoi edit ; ~/.local/share/chezmoi
         pane name="chezmoi edit ; chezmoi apply"
-        pane name="chezmoi apply" {
-            command "chezmoi"
-            args "apply"
+        pane name="chezmoi watchman" {
+            command "~/.config/custom-scripts/watchmanchezmoi.sh"
             start_suspended true
         }
     }

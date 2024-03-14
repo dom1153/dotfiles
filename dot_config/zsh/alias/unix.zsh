@@ -1,7 +1,12 @@
 #!/bin/bash
 
 # === UNIX ===
-alias sx="source $ZDOTDIR/.zshrc"
+### nix setups will generate home ~/.zshrc
+if [ -f $HOME/.zshrc ]; then
+    alias sx="source $HOME/.zshrc"
+else
+    alias sx="source $ZDOTDIR/.zshrc"
+fi
 alias xx="vim $ZDOTDIR/.zshrc"
 alias untargz='tar xvf'
 alias cp='cp -i'

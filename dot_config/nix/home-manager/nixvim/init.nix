@@ -2,7 +2,7 @@
   imports = [
     ./options.nix
     ./globals.nix
-    ./keymaps.nix
+    ./keymaps/keymaps.nix
 
     ./colorschemes/catppuccin.nix
 

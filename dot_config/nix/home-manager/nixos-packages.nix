@@ -13,7 +13,7 @@
     qbittorrent
     # gnome.gnome-font-viewer ### too many chefs
     # kdePackages.krdc
-    # parsec-bin ### can't host on wayland
+    parsec-bin
     # bitwarden ### always seems to be logged out...
 
     ### gui tools
@@ -28,6 +28,7 @@
 
     ### gui art
     drawpile
+    blender
     kolourpaint ### windows 98 style
     pureref
     # krita
@@ -39,6 +40,7 @@
     ### gui apps
     discord
     microsoft-edge
+    firefox
     obsidian
     osu-lazer-bin
     signal-desktop
@@ -56,7 +58,6 @@
     gh
     mosh
     qemu
-    qmk
     quickemu
     quickgui
     ripgrep
@@ -71,6 +72,7 @@
     wl-clipboard
     xclip
     zoxide
+    # qmk ### try flake inside qmk repo
     # xsel ### already have xclip right?
     # speedtest-lci
     # imagemagick
