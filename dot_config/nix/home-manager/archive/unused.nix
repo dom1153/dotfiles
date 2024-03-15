@@ -7,17 +7,23 @@
     ### gui services
     authy
     baobab ### gnome disk usage analyzer, slow. try ncdu
+    bitwarden ### always seems to be logged out...
+    gnome.gnome-font-viewer ### too many chefs
     heroic
     qbittorent
     screenkey ### works with non-wayland apps
     syncthing
     syncthingtray
+    kdePackages.krdc
 
     ### gui tools
     anki-bin
+    anydesk ### parsec, or cli tools
     itch
+    vlc ### mpv is better?
 
     ### gui terminal emulators
+    alacritty ### kitty is better
     warp-terminal
 
     ### gui art
@@ -28,9 +34,10 @@
     inkscape
 
     ### gui development
-    docker
+    docker ### use as service
     docker-client
     firefox-devedition
+    geany ### plasma kate exists
     godot_4
     meld
     neovide
@@ -38,6 +45,7 @@
     unityhub
 
     ### gui apps
+    brave ### use declared firefox with incognito
     google-chrome
     libreoffice
     vivaldi
@@ -46,12 +54,20 @@
 
     ### cli tools and services
     bottles
+    fortune
+    imagemagick
     keymapviz
+    mosh
+    qmk ### try flake inside qmk repo
+    speedtest-cli
     steam-tui
     steamPackages.steamcmd
-    trashy
+    trashy ### I think trash-cli was better?
+    xsel ### already have xclip right?
+    yt-dlp
 
     ### tui apps
+    terminal-colors
     calcure
     kbt
     micro
@@ -64,10 +80,19 @@
     spotify-tui
     typioca
     youtube-tui
+    neovim
+    fastfetch
+    taskell ### trello in haskell
+    vim
+    htop
+    nmon ### another top
+    vtop
 
     ### cli development
     nodejs_21
     rustc
+    pyenv
+    python3
 
     ### other
     fish
@@ -89,6 +114,32 @@
     ### Hyprland 'must have'
     ksnip
     jq ### steam script?
+
+    ### neovim (plugin dependencies)
+    cargo
+    curl
+    fd
+    gnumake
+    llvmPackages_9.libcxxClang
+    nodejs_21
+    rustc
+    rustfmt
+    stylua
+    tree-sitter
+    unzip
+    shfmt
+
+    ### hyprland things?
+    dunst
+    mako
+    pipewire
+    wireplumber
+    qt6.qtwayland
+
+    ### optionally
+    wofi
+    hyprpaper
+    waybar
   ];
 
   fonts.packages = with pkgs; [

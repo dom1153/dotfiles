@@ -11,6 +11,8 @@
     darwin.trash
     diff-so-fancy
     eza
+    fd
+    fzf
     gh
     lf
     neofetch
@@ -30,12 +32,5 @@
     zsh-autocomplete
     nix-zsh-completions
     zsh-nix-shell
-
-    ### misc
-    #terminal-colors
-    #pyenv
-    #python3
-    #yt-dlp
-    #mosh
   ];
 }

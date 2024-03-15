@@ -1,8 +1,4 @@
-{
-  config,
-  pkgs,
-  ...
-}: {
+{pkgs, ...}: {
   home.packages = with pkgs; [
     ### gui services
     # bazecor ### seems to be bugged
@@ -11,19 +7,14 @@
     localsend
     neovide
     qbittorrent
-    # gnome.gnome-font-viewer ### too many chefs
-    # kdePackages.krdc
     parsec-bin
-    # bitwarden ### always seems to be logged out...
 
     ### gui tools
     vial
     mpv
-    # anydesk
-    # vlc
 
     ### gui terminal emulators
-    alacritty
+    kitty
     foot
 
     ### gui art
@@ -35,7 +26,6 @@
 
     ### gui development
     vscode
-    # geany ### plasma kate exists
 
     ### gui apps
     discord
@@ -45,7 +35,6 @@
     osu-lazer-bin
     signal-desktop
     spotify
-    # brave
 
     ### cli tools and services
     alejandra
@@ -54,6 +43,7 @@
     chezmoi
     entr
     eza
+    fd
     fzf
     gh
     mosh
@@ -72,11 +62,6 @@
     wl-clipboard
     xclip
     zoxide
-    # qmk ### try flake inside qmk repo
-    # xsel ### already have xclip right?
-    # speedtest-lci
-    # imagemagick
-    # fortune
 
     ### tui apps
     ani-cli
@@ -91,45 +76,10 @@
     tmux
     ttyper
     zellij
-    # htop
-    # fastfetch
-    # neovim
-    # ponysay
-    # taskell
-    # vim
-    # nmon
-    # vtop
 
     ### zsh
     zsh-autocomplete
     nix-zsh-completions
     zsh-nix-shell
-
-    ### neovim (plugin dependencies)
-    # cargo
-    # curl
-    # fd
-    # gnumake
-    # llvmPackages_9.libcxxClang
-    # nodejs_21
-    # rustc
-    # rustfmt
-    # stylua
-    # tree-sitter
-    # unzip
-    # shfmt
-
-    ### Hyprland 'must have'
-    kitty
-    # dunst
-    # mako
-    # pipewire
-    # wireplumber
-    # qt6.qtwayland
-
-    ### optionally
-    # wofi
-    # hyprpaper
-    # waybar
   ];
 }

@@ -10,7 +10,9 @@ fi
 alias xx="vim $ZDOTDIR/.zshrc"
 alias untargz='tar xvf'
 alias cp='cp -i'
-alias ff="find . -name "
+if ! type "fd" >/dev/null; then
+    alias ff="find . -name "
+fi
 alias dirsize="du -sh"
 alias l="ls -lh"
 alias la="ls -lah"

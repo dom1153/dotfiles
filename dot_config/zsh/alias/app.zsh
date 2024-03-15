@@ -62,3 +62,8 @@ if type "git" >/dev/null; then
   alias gpull="git pull"
   alias gs="git status"
 fi
+
+### | xargs nvim
+if type "fd" >/dev/null; then
+  alias ff="fd --type f --hidden --exclude .git | fzf --reverse"
+fi
