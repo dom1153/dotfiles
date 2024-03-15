@@ -1,7 +1,10 @@
 {...}: {
   imports = [
-    ./which-key.nix
+    # ./which-key.nix
     ./persistence.nix
+    ./tab.nix
+    ./window.nix
+    ./option.nix
   ];
 
   programs.nixvim = {

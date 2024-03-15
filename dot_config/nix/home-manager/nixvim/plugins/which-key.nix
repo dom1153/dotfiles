@@ -1,13 +1,16 @@
 {...}: {
   imports = [
-    ./tab.nix
-    ./window.nix
-    ./option.nix
   ];
 
   programs.nixvim = {
+    plugins = {
+      ### displays a popup with possible key bindings of the command you started typing
+      which-key = {
+        enable = true;
+      };
+    };
+
     keymaps = [
-      ### define helper labels for ui discovery
       ### tab.nix
       {
         mode = "n";
@@ -34,9 +37,24 @@
         key = "<leader>q";
         action = "+session";
       }
-    ];
 
-    extraConfigLua = ''
-    '';
+      {
+        mode = "n";
+        key = "<leader>g";
+        action = "+git";
+      }
+
+      {
+        mode = "n";
+        key = "<leader>f";
+        action = "+find";
+      }
+
+      {
+        mode = "n";
+        key = "<leader>s";
+        action = "+search";
+      }
+    ];
   };
 }

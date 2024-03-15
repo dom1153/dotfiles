@@ -7,7 +7,7 @@
     ./colorschemes/catppuccin.nix
 
     ./autocmd.nix
-    ./plugins.nix
+    ./plugins/plugins.nix
   ];
 
   programs.nixvim = {

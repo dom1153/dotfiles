@@ -41,6 +41,11 @@
             };
           };
         };
+        ### disable italics
+        styles = {
+          conditionals = [];
+          comments = [];
+        };
       };
     };
   };

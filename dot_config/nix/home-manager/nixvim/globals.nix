@@ -1,7 +1,7 @@
 {...}: {
   programs.nixvim = {
-    ### See `:help mapleader`
     globals = {
+      ### See `:help mapleader`
       mapleader = " ";
       maplocalleader = " ";
 

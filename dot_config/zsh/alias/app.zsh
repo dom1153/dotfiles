@@ -44,10 +44,11 @@ fi
 if type "chezmoi" >/dev/null; then
   alias ce="chezmoi edit"
   alias ca="chezmoi apply"
+  alias cadd="chezmoi add"
   alias cdiff="chezmoi diff"
   alias cu="chezmoi unmanaged ."
   alias cup="chezmoi update"
-  alias ccd="chezmoi update"
+  alias cdd="chezmoi cd"
   alias cr="chezmoi remove"
 fi
 
@@ -55,6 +56,7 @@ if type "git" >/dev/null; then
   alias ga="git add"
   alias gaa="git add *"
   alias gd="git diff"
+  alias gdd="git diff --cached"
   alias gcm="git commit -m"
   alias gpush="git push"
   alias gpull="git pull"

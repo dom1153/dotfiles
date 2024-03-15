@@ -16,7 +16,6 @@ $cmd_duration\
 $jobs\
 $status\
 $line_break\
-$python\
 $character"""
 
 [hostname]
@@ -59,11 +58,6 @@ style = "bright-black"
 [cmd_duration]
 format = "[$duration]($style) "
 style = "yellow"
-
-### for python virtualenv
-[python]
-format = "[$virtualenv]($style) "
-style = "bright-black"
 
 [nix_shell]
 impure_msg = '[impure](red)'
