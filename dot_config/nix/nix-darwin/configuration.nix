@@ -38,6 +38,7 @@
       "discord"
       "figma"
       "firefox-developer-edition"
+      "font-fira-code-nerd-font"
       "font-meslo-lg-nerd-font"
       "font-monaspace"
       "google-chrome"

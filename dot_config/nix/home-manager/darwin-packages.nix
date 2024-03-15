@@ -20,6 +20,7 @@
     starship
     tldr
     ttyper
+    watchman
     wget
     zellij
     zoxide
