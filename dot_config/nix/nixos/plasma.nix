@@ -1,8 +1,4 @@
-{
-  config,
-  pkgs,
-  ...
-}: {
+{pkgs, ...}: {
   # Enable the X11 windowing system.
   services.xserver = {
     enable = true;
@@ -14,6 +10,13 @@
     ### using lightdm fixes plasma wayland auto-login issue
     # displayManager.defaultSession = "plasma"; ### wayland default on plasma6
     displayManager.defaultSession = "plasmawayland"; ### only for plasma5
+
+    ### enable gpu drivers
+    videoDrivers = ["amdgpu"];
+
+    # Enable automatic login for the user.
+    displayManager.autoLogin.enable = true;
+    displayManager.autoLogin.user = "archoo";
   };
 
   ### works in theory, but probably have to disable default session or something...

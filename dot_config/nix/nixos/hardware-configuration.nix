@@ -4,7 +4,6 @@
 {
   config,
   lib,
-  pkgs,
   modulesPath,
   ...
 }: {
@@ -14,7 +13,8 @@
 
   boot.initrd.availableKernelModules = ["nvme" "xhci_pci" "ahci" "thunderbolt" "usb_storage" "usbhid" "sd_mod"];
   boot.initrd.kernelModules = [];
-  boot.kernelModules = ["amdgpu"];
+  ### amdgpu kernal module does not work with hyprland
+  boot.kernelModules = ["kvm-amd"]; ### amdgpu , kvm-amd
   boot.extraModulePackages = [];
 
   fileSystems."/" = {

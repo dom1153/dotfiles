@@ -81,5 +81,6 @@
     zsh-nix-shell
 
     ### development test
+    pavucontrol ### pulse audio volume adjust
   ];
 }

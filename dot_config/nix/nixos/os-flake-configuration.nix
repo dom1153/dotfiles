@@ -7,7 +7,8 @@
 }: {
   imports = [
     ./hardware-configuration.nix
-    ./plasma.nix
+    # ./plasma.nix
+    ./hyprland.nix
   ];
 
   nixpkgs = {
@@ -47,9 +48,6 @@
     ];
   };
 
-  ### enable gpu drivers
-  services.xserver.videoDrivers = ["amdgpu"];
-
   ### host name
   networking.hostName = "artpro";
   networking.networkmanager.enable = true;
@@ -57,6 +55,7 @@
   ### bootloader management
   boot.loader.systemd-boot.enable = true;
   boot.loader.systemd-boot.configurationLimit = 5;
+  # boot.loader.systemd-boot.netbootxyz.enable = false; ### unsure how to use this yet
 
   ### bluetooth
   hardware.bluetooth.enable = true; # enables support for Bluetooth
@@ -122,10 +121,6 @@
 
   # programs.mosh.enable = true;
 
-  # Enable automatic login for the user.
-  services.xserver.displayManager.autoLogin.enable = true;
-  services.xserver.displayManager.autoLogin.user = "archoo";
-
   services.syncthing = {
     enable = true;
     user = "archoo";
@@ -175,7 +170,7 @@
   #services.guacamole-client.enableWebserver = true;
   #services.x2goserver.enable = true;
 
-  virtualisation.waydroid.enable = false;
+  virtualisation.waydroid.enable = true;
   virtualisation.docker.enable = true;
 
   services.kmscon = {
