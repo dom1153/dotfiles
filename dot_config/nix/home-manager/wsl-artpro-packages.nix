@@ -1,10 +1,10 @@
 {pkgs, ...}: {
   home.packages = with pkgs; [
     ### cli tools and services
-    alejandra
     bat
     cheat
     chezmoi
+    diff-so-fancy
     entr
     eza
     fzf
@@ -33,5 +33,9 @@
     ponysay
     ttyper
     zellij
+
+    ### vscode
+    alejandra
+    nil
   ];
 }
