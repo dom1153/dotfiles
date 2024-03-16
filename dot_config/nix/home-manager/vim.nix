@@ -1,8 +1,4 @@
-{
-  config,
-  pkgs,
-  ...
-}: {
+{pkgs, ...}: {
   programs.vim = {
     enable = true;
     plugins = with pkgs.vimPlugins; [
@@ -14,7 +10,7 @@
     settings = {
     };
     extraConfig = ''
-      source ~/.vimrc
+      source ~/.vim/vimrc
     '';
   };
 }

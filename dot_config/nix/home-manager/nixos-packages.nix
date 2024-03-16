@@ -25,7 +25,6 @@
     # krita
 
     ### gui development
-    vscode
 
     ### gui apps
     discord
@@ -37,7 +36,6 @@
     spotify
 
     ### cli tools and services
-    alejandra
     bat
     cheat
     chezmoi
@@ -81,5 +79,7 @@
     zsh-autocomplete
     nix-zsh-completions
     zsh-nix-shell
+
+    ### development test
   ];
 }

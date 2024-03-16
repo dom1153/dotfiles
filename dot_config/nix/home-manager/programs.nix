@@ -1,8 +1,4 @@
-{
-  config,
-  pkgs,
-  ...
-}: {
+{pkgs, ...}: {
   # programs.git = {
   #   enable = true;
   #   userName = "";
@@ -23,6 +19,4 @@
   #   "image/*" = ...;
   #   "video/*" = ...;
   # }
-
-  ### thefuck eza ripgrep
 }

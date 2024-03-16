@@ -1,10 +1,4 @@
-{
-  inputs,
-  lib,
-  config,
-  pkgs,
-  ...
-}: {
+{pkgs, ...}: {
   imports = [
     ./darwin-packages.nix
     ./vim.nix

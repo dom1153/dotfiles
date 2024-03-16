@@ -1,0 +1,46 @@
+{
+	"folders": [
+		{
+			"path": "..",
+			"name": "chezmoi (edit)"
+		},
+		{
+			"path": "nix",
+			"name": "nix (config)"
+		},
+		{
+			"path": "nix/home-manager/nixvim",
+			"name": "nixvim (config)"
+		},
+		{
+			"path": "zsh",
+			"name": "zsh (config)"
+		},
+		{
+			"path": "foot",
+			"name": "foot (config)"
+		},
+		{
+			"path": "zellij",
+			"name": "zellij (config)"
+		},
+		{
+			"path": "kitty",
+			"name": "kitty (config)"
+		},
+		{
+			"path": "nvim",
+			"name": "nvim init.lua (debug)"
+		},
+		{
+			"path": "chezmoi",
+			"name": "chezmoi (toml)"
+		},
+	],
+	"settings": {
+		"workbench.colorTheme": "Catppuccin Mocha",
+		"catppuccin.accentColor": "green",
+		"nix.enableLanguageServer": true,
+		"nix.serverPath": "nil",
+	}
+}

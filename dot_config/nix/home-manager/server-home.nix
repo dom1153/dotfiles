@@ -1,10 +1,4 @@
-{
-  inputs,
-  lib,
-  config,
-  pkgs,
-  ...
-}: {
+{pkgs, ...}: {
   imports = [
     ./server-packages.nix
     ./zsh.nix

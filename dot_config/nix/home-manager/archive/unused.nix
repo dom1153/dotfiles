@@ -34,7 +34,8 @@
     inkscape
 
     ### gui development
-    docker ### use as service
+    vscode ### use programs.vscode (fhs)
+    docker ### use virtualisation config
     docker-client
     firefox-devedition
     geany ### plasma kate exists

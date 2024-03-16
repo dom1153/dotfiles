@@ -1,10 +1,4 @@
-{
-  inputs,
-  lib,
-  config,
-  pkgs,
-  ...
-}: {
+{pkgs, ...}: {
   imports = [
     ./wsl-artpro-packages.nix
     ./zsh.nix

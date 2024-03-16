@@ -1,0 +1,14 @@
+.alias
+.alias-local
+.alias-perforce
+.alias-windows
+.bash_profile
+.bash.pathsettings
+.bashrc
+.vimrc
+.vimrc.pluginsettings
+.tmux.conf
+.tmux.conf.local
+.zshrc.bak
+.zshrc.backup
+.zshenv.backup

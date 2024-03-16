@@ -1,13 +1,7 @@
 # This is your home-manager configuration file
 # Use this to configure your home environment (it replaces ~/.config/nixpkgs/home.nix)
 # Docs at https://nix-community.github.io/home-manager/options.xhtml
-{
-  inputs,
-  lib,
-  config,
-  pkgs,
-  ...
-}: {
+{pkgs, ...}: {
   # You can import other home-manager modules here
   imports = [
     # If you want to use home-manager modules from other flakes (such as nix-colors):

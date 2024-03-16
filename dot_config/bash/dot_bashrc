@@ -26,10 +26,10 @@ function trysource() {
 # ===
 # === SOURCE FILES
 # ===
-trysource ~/.alias
-trysource ~/.alias-perforce
-trysource ~/.alias-local
-trysource ~/.bash.pathsettings
+trysource .alias
+trysource .alias-perforce
+trysource .alias-local
+trysource .bash.pathsettings
 
 # ===
 # === TERM SETTINGS
@@ -124,7 +124,7 @@ case $(uname) in
       # export DISPLAY="127.0.0.1:0.0"
       # ... current status, just let wsl set the status, dont set manually
       export winhome="$(wslvar USERPROFILE)"
-      trysource ~/.alias-windows
+      trysource .alias-windows
     fi
 
     # turn off some dumb highlighting with folders with ls
@@ -146,13 +146,3 @@ if [ $isbash = true ]; then
   endcolor="\[\033[0m\]"
   export PS1="${white}╭─${endcolor}${green} \u@\h${endcolor} | ${cyan}\d${endcolor} | ${cyan}\@${endcolor} | ${cyan}$shellos${endcolor}\n│ ${yello}\w${endcolor}\n╰─$ "
 fi
-
-### node version manager
-export NVM_DIR="$HOME/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
-if [ $isbash = true ]; then
-  [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
-fi
-
-### cargo for rust
-[ -d "$HOME/.cargo" ] && . "$HOME/.cargo/env"

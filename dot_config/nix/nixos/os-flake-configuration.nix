@@ -175,7 +175,7 @@
   #services.guacamole-client.enableWebserver = true;
   #services.x2goserver.enable = true;
 
-  virtualisation.waydroid.enable = true;
+  virtualisation.waydroid.enable = false;
   virtualisation.docker.enable = true;
 
   services.kmscon = {
