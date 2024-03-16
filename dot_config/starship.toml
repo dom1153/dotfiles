@@ -19,13 +19,13 @@ $line_break\
 $character"""
 
 [hostname]
-ssh_symbol = "@ "
 format = '[$ssh_symbol](blue)[$hostname](red) '
+ssh_symbol = "@ "
 trim_at = '.'
 
 [username]
-style_user = 'yellow'
 format = '[$user]($style) '
+style_user = 'yellow'
 
 [directory]
 style = "blue bold"
@@ -40,7 +40,7 @@ format = "[$branch]($style)"
 style = "subtext0"
 
 [git_status]
-format = "[[(*$conflicted$untracked$modified$staged$renamed$deleted)](218) ($ahead_behind$stashed)]($style)"
+format = "[[(*$conflicted$untracked$modified$staged$renamed$deleted)](218)($ahead_behind$stashed)]($style) "
 style = "cyan"
 conflicted = "​"
 untracked = "​"
@@ -60,28 +60,28 @@ format = "[$duration]($style) "
 style = "yellow"
 
 [nix_shell]
+format = '[$state( \($name\))](blue) '
 impure_msg = '[impure](red)'
 pure_msg = '[pure](green)'
 unknown_msg = '[unknown](yellow)'
-format = '[$state( \($name\))](blue) '
 
 [jobs]
-number_threshold = 1
-style = "mauve"
 format = '[jobs\[$number\]]($style) '
+style = "mauve"
+number_threshold = 1
 
 [shlvl]
 disabled = false
+format = '[shlvl\($shlvl\)]($style) '
 style = 'peach'
 threshold = 2
-format = '[shlvl\($shlvl\)]($style) '
 
 [status]
+disabled = false
+format = '[X $int$signal_name]($style) '
 style = 'red bold'
 # symbol = '▲'
-format = '[X $int$signal_name]($style) '
 map_symbol = false
-disabled = false
 
 [time]
 disabled = false
