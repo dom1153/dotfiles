@@ -10,27 +10,25 @@
   gtk = {
     enable = true;
     theme = {
-      package = pkgs.flat-remix-gtk;
-      name = "Flat-Remix-GTK-Grey-Darkest";
+      package = pkgs.kdePackages.breeze-gtk;
+      name = "Breeze-Dark";
     };
 
     iconTheme = {
-      package = pkgs.gnome.adwaita-icon-theme;
-      name = "Adwaita";
+      package = pkgs.kdePackages.breeze-icons;
+      name = "Breeze-Dark";
     };
 
-    font = {
-      name = "Sans";
-      size = 11;
-    };
+    # font = {
+    #   name = "Sans";
+    #   size = 11;
+    # };
   };
 
   qt = {
     enable = true;
-    platformTheme = "gnome";
-    style = {
-      name = "adwaita-dark";
-    };
+    platformTheme = "kde";
+    style.name = "breeze-dark";
   };
 
   home.packages = with pkgs; [
