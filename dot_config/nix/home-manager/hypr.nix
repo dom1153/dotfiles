@@ -8,7 +8,7 @@
   };
 
   gtk = {
-    enable = true;
+    enable = false;
     theme = {
       package = pkgs.kdePackages.breeze-gtk;
       name = "Breeze-Dark";
