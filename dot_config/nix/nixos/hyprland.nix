@@ -40,7 +40,6 @@
     wofi
     wl-clipboard
     networkmanagerapplet
-    # libsForQt5.dolphin
   ];
 
   ### for file handling ui

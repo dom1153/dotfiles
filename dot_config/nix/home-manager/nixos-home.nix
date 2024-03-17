@@ -4,6 +4,7 @@
     ./nixvim/init.nix
     ./vim.nix
     ./zsh.nix
+    ./hypr.nix
   ];
 
   nixpkgs = {
