@@ -63,7 +63,19 @@ if type "git" >/dev/null; then
   alias gs="git status"
 fi
 
-### | xargs nvim
-if type "fd" >/dev/null; then
-  alias ff="fd --type f --hidden --exclude .git | fzf --reverse"
+if type "btop" >/dev/null; then
+  alias top="btop"
+fi
+
+if ! type "rg" >/dev/null; then
+    source ../functions/si.zsh
+else
+    alias si="rg"
+fi
+
+if ! type "fd" >/dev/null; then
+    alias ff="find . -name "
+else
+    alias ff="fd --type f --hidden --exclude .git | fzf --reverse"
+    alias ffe="fd --type f --hidden --exclude .git | fzf --reverse | xargs $EDITOR -"
 fi
