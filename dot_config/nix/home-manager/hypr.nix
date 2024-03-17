@@ -28,11 +28,19 @@
   qt = {
     enable = true;
     platformTheme = "kde";
-    style.name = "breeze-dark";
+    style.name = "Breeze";
   };
 
   home.packages = with pkgs; [
-    dolphin
+    # dolphin
     nwg-look ### gtk3 settings editor
   ];
+
+  ### KDE
+  # Application Style Breeze; Plasma Style Breeze;
+  # Colors Breeze Dark
+  # Decorations Breeze
+  # Icons Breeze Dark
+  # Cursor Breeze
+  # Font Noto Sans (10pt) ; Hack (10pt);
 }

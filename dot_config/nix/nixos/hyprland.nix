@@ -16,6 +16,7 @@
       wayland = true;
     };
 
+    desktopManager.plasma6.enable = true;
     displayManager.defaultSession = "hyprland";
   };
 

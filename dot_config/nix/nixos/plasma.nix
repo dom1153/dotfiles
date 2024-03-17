@@ -5,11 +5,11 @@
     # Configure keymap in X11
     xkb.layout = "us";
 
-    desktopManager.plasma5.enable = true;
-    # desktopManager.plasma6.enable = true;
+    # desktopManager.plasma5.enable = true;
+    desktopManager.plasma6.enable = true;
     ### using lightdm fixes plasma wayland auto-login issue
     # displayManager.defaultSession = "plasma"; ### wayland default on plasma6
-    displayManager.defaultSession = "plasmawayland"; ### only for plasma5
+    # displayManager.defaultSession = "plasmawayland"; ### only for plasma5
 
     ### enable gpu drivers
     videoDrivers = ["amdgpu"];

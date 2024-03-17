@@ -38,13 +38,14 @@
     # auto-optimise-store = true;
   };
 
-  ### mount extra drives
-  boot.supportedFilesystems = ["ntfs"];
+  ### mount extra drives ; I think we need ntfs-3g for these drives
+  boot.supportedFilesystems = ["ntfs" "ntfs-3g"];
   fileSystems."/run/media/archoo/DomData" = {
     device = "/dev/sda2";
-    fsType = "ntfs";
+    fsType = "ntfs-3g";
     options = [
       "nofail"
+      "rw"
     ];
   };
 
