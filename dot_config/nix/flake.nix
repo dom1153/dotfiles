@@ -63,7 +63,7 @@
         ### system must be specified (no hardware-configuration.nix)
         system = "aarch64-darwin";
         specialArgs = {inherit inputs outputs;};
-        modules = [./hosts/stella-hoshii.nix];
+        modules = [./hosts/stella-hoshii];
       };
     };
 
