@@ -62,14 +62,14 @@
       # };
     };
 
-    # darwinConfigurations = {
-    #   ### darwin-rebuild switch --flake .
-    #   Dominics-MacBook-Pro = nix-darwin.lib.darwinSystem {
-    #     system = "aarch64-darwin";
-    #     specialArgs = {inherit inputs outputs;};
-    #     modules = [./nix-darwin/configuration.nix];
-    #   };
-    # };
+    darwinConfigurations = {
+      ### darwin-rebuild switch --flake .
+      Dominics-MacBook-Pro = nix-darwin.lib.darwinSystem {
+        system = "aarch64-darwin";
+        specialArgs = {inherit inputs outputs;};
+        modules = [./host/alma-armas.nix];
+      };
+    };
 
     # Standalone home-manager configuration entrypoint
     # Available through 'home-manager --flake .#your-username@your-hostname'

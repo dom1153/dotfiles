@@ -1,27 +1,4 @@
-### 'Determinate Systems' nixpkgs installer -> nix-darwin
-{
-  # inputs,
-  config,
-  pkgs,
-  ...
-}: {
-  # imports = [
-  #   inputs.nixvim.homeManagerModules.nixvim
-  # ];
-
-  # List packages installed in system profile. To search by name, run:
-  # $ nix-env -qaP | grep wget
-  environment.systemPackages = with pkgs; [
-    home-manager
-
-    ### misc
-    #terminal-colors
-    #pyenv
-    #python3
-    #yt-dlp
-    #mosh
-  ];
-
+{...}: {
   ### manages homebrew, homebrew itself must be installed manually!
   homebrew = {
     enable = true;
@@ -105,27 +82,4 @@
     # "tabby"
     # "warp"
   };
-
-  #extra-platforms = aarch64-darwin x86_64-darwin
-  ### enable flakes and nix-command
-  nix.extraOptions = ''
-    experimental-features = nix-command flakes
-  '';
-
-  # Auto upgrade nix package and the daemon service.
-  services.nix-daemon.enable = true;
-  # nix.package = pkgs.nix;
-
-  # Create /etc/zshrc that loads the nix-darwin environment.
-  programs.zsh = {
-    enable = true;
-    enableCompletion = false; ### not to be confused with autocomplete
-  };
-
-  ### without this it may try to reconfigure nix as x86_64-darwin
-  nixpkgs.hostPlatform = "aarch64-darwin";
-
-  # Used for backwards compatibility, please read the changelog before changing.
-  # $ darwin-rebuild changelog
-  system.stateVersion = 4;
 }

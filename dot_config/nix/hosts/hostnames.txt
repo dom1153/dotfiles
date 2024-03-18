@@ -2,7 +2,7 @@
 jill-stingray   artpro-nixos
 sei-asagiri     t460
 stella-hoshii   mbp-14-m2
-Anna Graem      archoo-server (B450 Ryzen 3)
+Alma Armas      archoo-server (B450 Ryzen 3)
 Gillian         artpro-wsl
 
 ### Keep under 15 characters
