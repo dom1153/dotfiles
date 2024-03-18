@@ -4,6 +4,9 @@
 
     ../../editors/nixvim
     ../../editors/vim
+    ../../editors/vscode
+
+    ../../programs
 
     ../../terminal/programs
 
@@ -15,7 +18,9 @@
     };
 
     packages = with pkgs; [
+      qbittorrent
       trash-cli
+      ttyper
     ];
 
     # https://nixos.wiki/wiki/FAQ/When_do_I_update_stateVersion

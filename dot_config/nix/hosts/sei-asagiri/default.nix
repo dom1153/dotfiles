@@ -15,22 +15,17 @@
     ../../system/nix
 
     ../../system/programs/fonts.nix
-    ../../system/programs/hyprland.nix
     ../../system/programs/steam.nix
-    ../../system/programs/xdg.nix
     ../../system/programs/zsh.nix
 
     ../../system/services/avahi.nix
-    ../../system/services/docker.nix
-    ../../system/services/flatpak.nix
+    ../../system/services/xfce.nix
     ../../system/services/home-manager.nix
-    ../../system/services/kde.nix
     ../../system/services/kmscon.nix
     ../../system/services/openssh.nix
-    ../../system/services/pipewire.nix
+    ../../system/services/pulseaudio.nix
     ../../system/services/syncthing.nix
     ../../system/services/udev.nix
-    ../../system/services/waydroid.nix
     ../../system/services/xserver.nix
 
     ./hardware-configuration.nix
@@ -38,20 +33,20 @@
   ];
 
   ### Builds home-manager with nixos-rebuild
-  home-manager.users."archoo" = import ../../home/profiles/jill-stingray;
+  home-manager.users."archoo" = import ../../home/profiles/sei-asagiri;
 
-  networking.hostName = "jill-stingray";
+  networking.hostName = "sei-asagiri";
 
-  boot.loader.systemd-boot.configurationLimit = 5;
+  ### efi partition baby-sized
+  boot.loader.systemd-boot.configurationLimit = 3;
+
+  ### xfce works with pulseaudio not pipewire
+  # hardware.pulseaudio.package = pkgs.pulseaudioFull;
+  # nixpkgs.config.pulseaudio = true;
 
   services.syncthing = {
     dataDir = "/home/archoo/Documents"; # Default folder for new synced folders
     configDir = "/home/archoo/Documents/.config/syncthing"; # Folder for Syncthing's settings and keys
-  };
-
-  services.xserver = {
-    videoDrivers = ["amdgpu"];
-    displayManager.defaultSession = "hyprland"; ### alt: "plasma"
   };
 
   # https://nixos.wiki/wiki/FAQ/When_do_I_update_stateVersion

@@ -1,8 +1,4 @@
-{
-  config,
-  pkgs,
-  ...
-}: {
+{...}: {
   ### lsblk -o name,mountpoint,label,size,uuid
   fileSystems."/run/media/archoo/lamp-700G" = {
     device = "/dev/disk/by-uuid/66C5574E674DAEDD";

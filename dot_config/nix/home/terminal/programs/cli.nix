@@ -15,6 +15,7 @@
 
     ### tools
     chezmoi
+    wget
 
     ### services
     entr

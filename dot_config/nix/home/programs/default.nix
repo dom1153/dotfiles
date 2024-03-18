@@ -10,7 +10,6 @@
     vial
     mpv
     spotify
-    wget
 
     ### art
     kolourpaint ### windows 98 style

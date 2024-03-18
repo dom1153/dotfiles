@@ -3,7 +3,7 @@
   ### at least for plasma...
   services.xrdp = {
     enable = true;
-    defaultWindowManager = "startplasma-wayland";
+    defaultWindowManager = "startplasma-wayland"; ### xfce4-session
     openFirewall = true;
   };
 }
