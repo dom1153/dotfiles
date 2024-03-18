@@ -3,15 +3,16 @@
     ### gui services
 
     ### gui tools
-    vlc
+    mpv
 
     ### gui terminal emulators
     #alacritty
     #foot
 
+    watchman
+
     ### gui development
     geany ### plasma kate exists
-    vscode
 
     ### gui apps
     discord
@@ -47,12 +48,10 @@
     fastfetch
     mc
     neofetch
-    neovim
     ranger
     tmux
     zellij
     ttyper
-    vim
     nitch
 
     ### Hyprland 'must have'
