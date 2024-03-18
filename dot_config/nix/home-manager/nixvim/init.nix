@@ -1,4 +1,4 @@
-{...}: {
+{inputs, ...}: {
   imports = [
     ./options.nix
     ./globals.nix
@@ -8,6 +8,8 @@
 
     ./autocmd.nix
     ./plugins/plugins.nix
+
+    inputs.nixvim.homeManagerModules.nixvim
   ];
 
   programs.nixvim = {

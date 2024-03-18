@@ -7,7 +7,7 @@
             "label": "Home Manager Switch",
             "type": "shell",
             "options": {
-                "cwd": "${userHome}/.config/nix"
+                "cwd": "${userHome}/.local/share/chezmoi/dot_config/nix"
             },
             "command": "home-manager switch --flake .",
             "problemMatcher": [],
@@ -27,7 +27,7 @@
             "options": {
                 "cwd": "/tmp"
             },
-            "command": "home-manager build --flake ${userHome}/.config/nix",
+            "command": "home-manager build --flake ${userHome}/.local/share/chezmoi/dot_config/nix",
             "problemMatcher": [],
             "group": {
                 "kind": "build",
@@ -48,7 +48,7 @@
             "options": {
                 "cwd": "/tmp",
             },
-            "command": "nixos-rebuild build --flake ${userHome}/.config/nix",
+            "command": "nixos-rebuild build --flake ${userHome}/.local/share/chezmoi/dot_config/nix",
             "problemMatcher": [],
             "group": {
                 "kind": "build",

@@ -7,14 +7,6 @@
     ./hypr.nix
   ];
 
-  nixpkgs = {
-    overlays = [];
-    config = {
-      allowUnfree = true;
-      allowUnfreePredicate = _: true;
-    };
-  };
-
   home = {
     username = "archoo";
     homeDirectory = "/home/archoo";

@@ -17,3 +17,11 @@ This will copy and appply the dotfiles to your home directory
 Assumes chezmoi (dotfile manager) is installed
 
 [Chezmoi install](https://www.chezmoi.io/install/)
+
+# Inspiration
+
+https://github.com/Misterio77/nix-starter-configs
+
+https://github.com/fufexan/dotfiles
+
+https://github.com/budimanjojo/dotfiles

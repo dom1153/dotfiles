@@ -32,85 +32,87 @@
     ...
   } @ inputs: let
     inherit (self) outputs;
+    system = "x86_64-linux";
   in {
     # NixOS configuration entrypoint
     # Available through 'nixos-rebuild build --flake .#your-hostname'
     nixosConfigurations = {
-      artpro = nixpkgs.lib.nixosSystem {
-        specialArgs = {inherit inputs outputs;};
-        modules = [./nixos/os-flake-configuration.nix];
-      };
-      archoo-server = nixpkgs.lib.nixosSystem {
-        specialArgs = {inherit inputs outputs;};
-        modules = [./server/os-flake-configuration.nix];
-      };
-      wsl-artpro = nixpkgs.lib.nixosSystem {
-        system = "x86_64-linux";
+      jill-stingray = nixpkgs.lib.nixosSystem {
         specialArgs = {inherit inputs outputs;};
         modules = [
-          ./wsl-artpro/os-flake-configuration.nix
-          vscode-server.nixosModules.default
-          nixos-wsl.nixosModules.default
+          ./hosts/jill-stingray
         ];
       };
-      t460 = nixpkgs.lib.nixosSystem {
-        specialArgs = {inherit inputs outputs;};
-        modules = [./t460/os-flake-configuration.nix];
-      };
+      # archoo-server = nixpkgs.lib.nixosSystem {
+      #   specialArgs = {inherit inputs outputs;};
+      #   modules = [./hosts/anna-graem];
+      # };
+      # wsl-artpro = nixpkgs.lib.nixosSystem {
+      #   system = "x86_64-linux";
+      #   specialArgs = {inherit inputs outputs;};
+      #   modules = [
+      #     ./wsl-artpro/os-flake-configuration.nix
+      #     vscode-server.nixosModules.default
+      #     nixos-wsl.nixosModules.default
+      #   ];
+      # };
+      # t460 = nixpkgs.lib.nixosSystem {
+      #   specialArgs = {inherit inputs outputs;};
+      #   modules = [./t460/os-flake-configuration.nix];
+      # };
     };
 
-    darwinConfigurations = {
-      ### darwin-rebuild switch --flake .
-      Dominics-MacBook-Pro = nix-darwin.lib.darwinSystem {
-        system = "aarch64-darwin";
-        specialArgs = {inherit inputs outputs;};
-        modules = [./nix-darwin/configuration.nix];
-      };
-    };
+    # darwinConfigurations = {
+    #   ### darwin-rebuild switch --flake .
+    #   Dominics-MacBook-Pro = nix-darwin.lib.darwinSystem {
+    #     system = "aarch64-darwin";
+    #     specialArgs = {inherit inputs outputs;};
+    #     modules = [./nix-darwin/configuration.nix];
+    #   };
+    # };
 
     # Standalone home-manager configuration entrypoint
     # Available through 'home-manager --flake .#your-username@your-hostname'
     homeConfigurations = {
-      "archoo@artpro" = home-manager.lib.homeManagerConfiguration {
-        pkgs = nixpkgs.legacyPackages.x86_64-linux; # Home-manager requires 'pkgs' instance
+      "archoo@jill-stingray" = home-manager.lib.homeManagerConfiguration {
+        pkgs = nixpkgs.legacyPackages.${system};
         extraSpecialArgs = {inherit inputs outputs;};
         modules = [
           ./home-manager/nixos-home.nix
-          nixvim.homeManagerModules.nixvim
         ];
       };
-      "archoo@Dominics-MacBook-Pro" = home-manager.lib.homeManagerConfiguration {
-        pkgs = nixpkgs.legacyPackages.aarch64-darwin;
-        extraSpecialArgs = {inherit inputs outputs;};
-        modules = [
-          ./home-manager/darwin.nix
-          nixvim.homeManagerModules.nixvim
-        ];
-      };
-      "archoo@archoo-server" = home-manager.lib.homeManagerConfiguration {
-        pkgs = nixpkgs.legacyPackages.x86_64-linux;
-        extraSpecialArgs = {inherit inputs outputs;};
-        modules = [
-          ./home-manager/server-home.nix
-          nixvim.homeManagerModules.nixvim
-        ];
-      };
-      "archoo@wsl-artpro" = home-manager.lib.homeManagerConfiguration {
-        pkgs = nixpkgs.legacyPackages.x86_64-linux;
-        extraSpecialArgs = {inherit inputs outputs;};
-        modules = [
-          ./home-manager/wsl-artpro-home.nix
-          nixvim.homeManagerModules.nixvim
-        ];
-      };
-      "archoo@t460" = home-manager.lib.homeManagerConfiguration {
-        pkgs = nixpkgs.legacyPackages.x86_64-linux;
-        extraSpecialArgs = {inherit inputs outputs;};
-        modules = [
-          ./home-manager/t460-home.nix
-          nixvim.homeManagerModules.nixvim
-        ];
-      };
+      #   "archoo@Dominics-MacBook-Pro" = home-manager.lib.homeManagerConfiguration {
+      #     pkgs = nixpkgs.legacyPackages.aarch64-darwin;
+      #     extraSpecialArgs = {inherit inputs outputs;};
+      #     modules = [
+      #       ./home-manager/darwin.nix
+      #       nixvim.homeManagerModules.nixvim
+      #     ];
+      #   };
+      #   "archoo@archoo-server" = home-manager.lib.homeManagerConfiguration {
+      #     pkgs = nixpkgs.legacyPackages.x86_64-linux;
+      #     extraSpecialArgs = {inherit inputs outputs;};
+      #     modules = [
+      #       ./home-manager/server-home.nix
+      #       nixvim.homeManagerModules.nixvim
+      #     ];
+      #   };
+      #   "archoo@wsl-artpro" = home-manager.lib.homeManagerConfiguration {
+      #     pkgs = nixpkgs.legacyPackages.x86_64-linux;
+      #     extraSpecialArgs = {inherit inputs outputs;};
+      #     modules = [
+      #       ./home-manager/wsl-artpro-home.nix
+      #       nixvim.homeManagerModules.nixvim
+      #     ];
+      #   };
+      #   "archoo@t460" = home-manager.lib.homeManagerConfiguration {
+      #     pkgs = nixpkgs.legacyPackages.x86_64-linux;
+      #     extraSpecialArgs = {inherit inputs outputs;};
+      #     modules = [
+      #       ./home-manager/t460-home.nix
+      #       nixvim.homeManagerModules.nixvim
+      #     ];
+      #   };
     };
   };
 }

@@ -1,0 +1,31 @@
+### lscpu ; lspci (pciutils) ; dmidecode -t 2 ; nix-info (useless)
+jill-stingray   artpro-nixos
+sei-asagiri     t460
+stella-hoshii   mbp-14-m2
+Anna Graem      archoo-server (B450 Ryzen 3)
+Gillian         artpro-wsl
+
+### Keep under 15 characters
+Julianne Stingray   Julianne-Sting
+Sei Asagiri
+Stella Hoshii
+Dana Zane
+Gillian
+Rad Shiba
+Dorothy Haze
+Alma Armas
+Virgilio Armandio   Virgilio-Armand
+Kira Miki
+Kimberly La Vallete Kim-La-Vallete
+Donovan D. Dawson   Dovovan-Dawson
+Art von Delay
+Jamie
+Beatrice Albert (Betty)
+Nicole Chen
+Deal
+Ingram McDougal
+Lenore
+Gaby
+Anna Graem         Anna-Graem
+Sam
+Mario

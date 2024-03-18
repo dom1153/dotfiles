@@ -12,6 +12,8 @@ addArgs=""
 #    esac
 # done
 
+### TODO: ignore flake.nix...
+
 dotdir="$HOME/.config"
 dotfiles=(hypr alacritty bash foot nix kitty nvim.kickstart tmux waybar wofi windows zellij zsh)
 for d in ${dotfiles[*]}
