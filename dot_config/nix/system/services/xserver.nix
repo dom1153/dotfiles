@@ -1,4 +1,4 @@
-{...}: {
+{pkgs, ...}: {
   services.xserver = {
     enable = true;
 
@@ -16,4 +16,10 @@
 
   # Hint electron apps to use wayland:
   environment.sessionVariables.NIXOS_OZONE_WL = "1";
+
+  environment.systemPackages = with pkgs; [
+    wayland-utils ### wayland-info and more (useful for plasma)
+    wl-clipboard
+    xclip
+  ];
 }

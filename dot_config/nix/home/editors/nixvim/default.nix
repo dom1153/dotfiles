@@ -1,5 +1,7 @@
 {inputs, ...}: {
   imports = [
+    inputs.nixvim.homeManagerModules.nixvim
+
     ./options.nix
     ./globals.nix
     ./keymaps/keymaps.nix
@@ -8,11 +10,11 @@
 
     ./autocmd.nix
     ./plugins/plugins.nix
-
-    inputs.nixvim.homeManagerModules.nixvim
   ];
 
   programs.nixvim = {
     enable = true;
   };
+
+  home.sessionVariables.EDITOR = "nvim";
 }

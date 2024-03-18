@@ -1,8 +1,4 @@
-{
-  pkgs,
-  inputs,
-  ...
-}: {
+{inputs, ...}: {
   imports = [
     inputs.home-manager.nixosModules.default
 
@@ -19,23 +15,29 @@
     ../../system/nix
 
     ../../system/programs/fonts.nix
+    ../../system/programs/hyprland.nix
+    ../../system/programs/steam.nix
     ../../system/programs/xdg.nix
     ../../system/programs/zsh.nix
 
     ../../system/services/avahi.nix
+    ../../system/services/docker.nix
     ../../system/services/flatpak.nix
     ../../system/services/home-manager.nix
+    ../../system/services/kmscon.nix
     ../../system/services/openssh.nix
     ../../system/services/pipewire.nix
     ../../system/services/syncthing.nix
+    ../../system/services/waydroid.nix
     ../../system/services/udev.nix
+    ../../system/services/xserver.nix
 
     ./hardware-configuration.nix
     ./mount.nix
   ];
 
   ### Builds home-manager with nixos-rebuild
-  home-manager.users."archoo" = import ../../home-manager/nixos-home.nix;
+  home-manager.users."archoo" = import ../../home/profiles/jill-stingray;
 
   networking.hostName = "jill-stingray";
 

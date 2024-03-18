@@ -4,7 +4,6 @@
     # bazecor ### seems to be bugged
     eww
     font-manager
-    localsend
     neovide
     qbittorrent
     parsec-bin

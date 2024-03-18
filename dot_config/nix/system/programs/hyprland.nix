@@ -14,6 +14,7 @@
     wofi
     wl-clipboard
     networkmanagerapplet
+    pavucontrol ### pulse audio volume adjust
   ];
 
   ### for file handling ui
