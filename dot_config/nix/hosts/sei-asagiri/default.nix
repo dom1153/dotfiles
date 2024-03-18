@@ -19,17 +19,16 @@
     ../../system/programs/zsh.nix
 
     ../../system/services/avahi.nix
-    ../../system/services/xfce.nix
     ../../system/services/home-manager.nix
     ../../system/services/kmscon.nix
     ../../system/services/openssh.nix
     ../../system/services/pulseaudio.nix
     ../../system/services/syncthing.nix
     ../../system/services/udev.nix
+    ../../system/services/xfce.nix
     ../../system/services/xserver.nix
 
     ./hardware-configuration.nix
-    ./mount.nix
   ];
 
   ### Builds home-manager with nixos-rebuild
@@ -47,6 +46,12 @@
   services.syncthing = {
     dataDir = "/home/archoo/Documents"; # Default folder for new synced folders
     configDir = "/home/archoo/Documents/.config/syncthing"; # Folder for Syncthing's settings and keys
+  };
+
+  services.xserver = {
+    # videoDrivers = [];
+    displayManager.autoLogin.enable = true;
+    displayManager.defaultSession = "xfce";
   };
 
   # https://nixos.wiki/wiki/FAQ/When_do_I_update_stateVersion

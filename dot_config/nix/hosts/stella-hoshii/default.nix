@@ -14,7 +14,7 @@
   home-manager.users."archoo" = import ../../home/profiles/alma-armas;
 
   ### TODO: does this work?
-  networking.hostName = "stella-hoshii";
+  networking.hostName = "alma-armas";
 
   ### Auto upgrade nix package and the daemon service.
   # services.nix-daemon.enable = true;

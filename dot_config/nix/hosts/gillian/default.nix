@@ -17,8 +17,6 @@
     ### TODO: can you ssh to wsl?
     ../../system/services/openssh.nix
     ../../system/services/syncthing.nix
-
-    ./mount.nix
   ];
 
   ### Builds home-manager with nixos-rebuild

@@ -17,6 +17,9 @@
     pavucontrol ### pulse audio volume adjust
   ];
 
+  # Hint electron apps to use wayland:
+  environment.sessionVariables.NIXOS_OZONE_WL = "1";
+
   ### for file handling ui
   xdg.portal.enable = true;
   xdg.portal.extraPortals = [pkgs.xdg-desktop-portal-gtk];

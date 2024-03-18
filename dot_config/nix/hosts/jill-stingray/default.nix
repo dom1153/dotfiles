@@ -23,8 +23,9 @@
     ../../system/services/avahi.nix
     ../../system/services/docker.nix
     ../../system/services/flatpak.nix
+    ../../system/services/gdm.nix
     ../../system/services/home-manager.nix
-    ../../system/services/kde.nix
+    ../../system/services/kde-plasma.nix
     ../../system/services/kmscon.nix
     ../../system/services/openssh.nix
     ../../system/services/pipewire.nix
@@ -51,7 +52,8 @@
 
   services.xserver = {
     videoDrivers = ["amdgpu"];
-    displayManager.defaultSession = "hyprland"; ### alt: "plasma"
+    displayManager.autoLogin.enable = true;
+    displayManager.defaultSession = "hyprland";
   };
 
   # https://nixos.wiki/wiki/FAQ/When_do_I_update_stateVersion
