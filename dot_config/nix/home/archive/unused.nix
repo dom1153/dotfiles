@@ -1,4 +1,4 @@
-{
+{pkgs, ...}: {
   ### choose default session chosen by lightdm / sddm
   #displayManager.sddm.enable = true;
 
