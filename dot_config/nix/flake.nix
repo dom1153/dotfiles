@@ -32,16 +32,14 @@
     ...
   } @ inputs: let
     inherit (self) outputs;
-    system = "x86_64-linux";
+    system = "x86_64-linux"; # for homeConfigurations; if used
   in {
     # NixOS configuration entrypoint
     # Available through 'nixos-rebuild build --flake .#your-hostname'
     nixosConfigurations = {
       jill-stingray = nixpkgs.lib.nixosSystem {
         specialArgs = {inherit inputs outputs;};
-        modules = [
-          ./hosts/jill-stingray
-        ];
+        modules = [./hosts/jill-stingray];
       };
       # archoo-server = nixpkgs.lib.nixosSystem {
       #   specialArgs = {inherit inputs outputs;};
@@ -63,8 +61,8 @@
     };
 
     darwinConfigurations = {
-      ### darwin-rebuild switch --flake .
-      Dominics-MacBook-Pro = nix-darwin.lib.darwinSystem {
+      ### darwin-rebuild switch --flake .#your-hostname
+      alma-armas = nix-darwin.lib.darwinSystem {
         system = "aarch64-darwin";
         specialArgs = {inherit inputs outputs;};
         modules = [./host/alma-armas.nix];
