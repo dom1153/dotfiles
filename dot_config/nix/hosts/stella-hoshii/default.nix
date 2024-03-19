@@ -8,6 +8,7 @@
     ../../system/programs/zsh.nix
 
     ../../system/services/home-manager-darwin.nix
+    ../../system/services/brew.nix
   ];
 
   home-manager.users.archoo = import ../../home/profiles/stella-hoshii;

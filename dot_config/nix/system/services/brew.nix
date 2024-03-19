@@ -1,8 +1,4 @@
 {inputs, ...}: {
-  imports = [
-    inputs.home-manager.darwinModules.default
-  ];
-
   ### manages homebrew, homebrew itself must be installed manually!
   homebrew = {
     enable = true;
@@ -41,8 +37,7 @@
       "syncthing"
       "vial"
       "visual-studio-code"
-      "vlc"
-      # "mpv"
+      "mpv"
       ### experimental / extra
       "codux"
       "docker"
@@ -52,17 +47,18 @@
       "runjs"
       "shortcat" ### macos keyboard navigation concept
       "zed"
-      #"alacritty"
-      #"alfred"
-      #"anydesk"
-      #"bartender"
-      #"blender"
-      #"firefox"
-      #"karabiner-elements"
-      #"logseq"
-      #"playcover-community"
-      #"runelite""
-      #"vivaldi""
+      # "vlc"
+      # "alacritty"
+      # "alfred"
+      # "anydesk"
+      # "bartender"
+      # "blender"
+      # "firefox"
+      # "karabiner-elements"
+      # "logseq"
+      # "playcover-community"
+      # "runelite""
+      # "vivaldi""
     ];
     taps = [
       "homebrew/cask-fonts"

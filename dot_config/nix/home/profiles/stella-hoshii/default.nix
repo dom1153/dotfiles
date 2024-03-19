@@ -1,11 +1,9 @@
 {pkgs, ...}: {
   imports = [
-    # ../../../home
+    ../../../home
 
-    # ../../editors/nixvim
+    ../../editors/nixvim
     ../../editors/vim
-    ### TODO: try vscode
-    # ../../editors/vscode
 
     ../../terminal/programs
 
@@ -13,14 +11,13 @@
   ];
 
   home = {
-    username = "archoo";
-    homeDirectory = "/Users/archoo";
+    ### homeDirectory is defined at 'user' level
 
     sessionVariables = {
     };
 
     packages = with pkgs; [
-      # ### vscode deps
+      # ### vscode extension deps
       alejandra
       nil
 
@@ -30,10 +27,4 @@
     # https://nixos.wiki/wiki/FAQ/When_do_I_update_stateVersion
     stateVersion = "23.11";
   };
-
-  # Let home-manager manage itself when in standalone mode
-  programs.home-manager.enable = true;
-
-  # Nicely reload system units when changing configs
-  systemd.user.startServices = "sd-switch";
 }
