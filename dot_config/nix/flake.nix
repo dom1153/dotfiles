@@ -65,15 +65,6 @@
         specialArgs = {inherit inputs outputs;};
         modules = [
           ./hosts/stella-hoshii
-          home-manager.darwinModules.home-manager
-          {
-            home-manager.useGlobalPkgs = true;
-            home-manager.useUserPackages = true;
-            home-manager.users.archoo = import ./home/profiles/stella-hoshii;
-            home-manager.extraSpecialArgs = {inherit inputs outputs;}; # test
-            # Optionally, use home-manager.extraSpecialArgs to pass
-            # arguments to home.nix
-          }
         ];
       };
     };

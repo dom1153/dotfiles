@@ -1,26 +1,16 @@
 ### TODO: homebrew should be manually installed
 {inputs, ...}: {
   imports = [
-    # inputs.home-manager.darwinModule.defaults
+    inputs.home-manager.darwinModule
 
     ../../system/nix
 
     ../../system/programs/zsh.nix
 
-    # ../../system/services/home-manager-darwin.nix
+    ../../system/services/home-manager-darwin.nix
   ];
 
-  # home-manager.useGlobalPkgs = true;
-  # home-manager.useUserPackages = true;
-  # home-manager.users.archoo = import ./home/profiles/stella-hoshii;
-  # home-manager.extraSpecialArgs = {inherit inputs;};
-
-  ### Builds home-manager with nixos-rebuild
-  # home-manager = {
-  #  useGlobalPkgs = true;
-  #  useUserPackages = true;
-  #  users."archoo" = import ../../home/profiles/stella-hoshii;
-  # };
+  home-manager.users.archoo = import ../../home/profiles/stella-hoshii;
 
   users.users.archoo = {
     name = "archoo";

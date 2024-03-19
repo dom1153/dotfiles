@@ -1,6 +1,6 @@
 {inputs, ...}: {
   imports = [
-    inputs.home-manager.darwinModules.default
+    inputs.home-manager.darwinModules.home-manager
   ];
 
   home-manager = {
