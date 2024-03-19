@@ -6,7 +6,6 @@
 
   wsl.enable = true;
   wsl.defaultUser = "archoo";
-  wsl.wslConf.network.hostname = "wsl-artpro";
 
   services.vscode-server.enable = true;
 }
