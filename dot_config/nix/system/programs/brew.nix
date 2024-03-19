@@ -1,4 +1,8 @@
-{...}: {
+{inputs, ...}: {
+  imports = [
+    inputs.home-manager.darwinModules.default
+  ];
+
   ### manages homebrew, homebrew itself must be installed manually!
   homebrew = {
     enable = true;

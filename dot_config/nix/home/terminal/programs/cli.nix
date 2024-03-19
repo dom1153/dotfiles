@@ -19,9 +19,9 @@
 
     ### services
     entr
-    qemu
-    quickemu
-    quickgui
+    #qemu
+    #quickemu
+    #quickgui
     starship
     watchman ### for chezmoi
 

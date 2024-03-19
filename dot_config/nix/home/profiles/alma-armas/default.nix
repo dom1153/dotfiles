@@ -11,6 +11,8 @@
   ];
 
   home = {
+    homeDirectory = "/home/archoo";
+
     sessionVariables = {
     };
 

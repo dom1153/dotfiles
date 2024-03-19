@@ -5,8 +5,6 @@ echo 'Setting up watchman part 1'
 watchman watch "${CHEZMOI_SOURCE_PATH}"
 echo 'Setting up watchman part 2'
 watchman -j <<EOT
-
-### "command": ["chezmoi", "apply", "--force"]
 ["trigger", "${CHEZMOI_SOURCE_PATH}", {
   "name": "chezmoi-apply",
   "command": ["chezmoi", "apply"]
@@ -14,4 +12,5 @@ watchman -j <<EOT
 EOT
 echo 'Script complete. "watchman shutdown-server" when complete'
 
+### "command": ["chezmoi", "apply", "--force"]
 ### watchman shutdown-server

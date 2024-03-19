@@ -9,11 +9,14 @@
     ../../programs
 
     ../../terminal/programs
+    ../../terminal/programs/qemu.nix
 
     ../../terminal/shell/zsh.nix
   ];
 
   home = {
+    homeDirectory = "/home/archoo";
+
     sessionVariables = {
     };
 

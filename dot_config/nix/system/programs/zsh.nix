@@ -4,8 +4,7 @@
 
   programs.zsh = {
     enable = true;
-    ### disable completion and auto-suggestsions for zsh-auto-completion plugin
+    ### disable completion for zsh-auto-completion plugin
     enableCompletion = false;
-    autosuggestions.enable = false;
   };
 }

@@ -1,23 +1,34 @@
 ### TODO: homebrew should be manually installed
 {inputs, ...}: {
   imports = [
-    inputs.home-manager.nixosModules.default
+    # inputs.home-manager.darwinModule.defaults
 
     ../../system/nix
 
     ../../system/programs/zsh.nix
 
-    ../../system/services/home-manager.nix
+    # ../../system/services/home-manager-darwin.nix
   ];
 
-  ### Builds home-manager with nixos-rebuild
-  home-manager.users."archoo" = import ../../home/profiles/alma-armas;
+  # home-manager.useGlobalPkgs = true;
+  # home-manager.useUserPackages = true;
+  # home-manager.users.archoo = import ./home/profiles/stella-hoshii;
+  # home-manager.extraSpecialArgs = {inherit inputs;};
 
-  ### TODO: does this work?
-  networking.hostName = "alma-armas";
+  ### Builds home-manager with nixos-rebuild
+  # home-manager = {
+  #  useGlobalPkgs = true;
+  #  useUserPackages = true;
+  #  users."archoo" = import ../../home/profiles/stella-hoshii;
+  # };
+
+  users.users.archoo = {
+    name = "archoo";
+    home = "/Users/archoo";
+  };
 
   ### Auto upgrade nix package and the daemon service.
-  # services.nix-daemon.enable = true;
+  services.nix-daemon.enable = true;
 
   ### without this it may try to reconfigure nix as x86_64-darwin
   nixpkgs.hostPlatform = "aarch64-darwin";

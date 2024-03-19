@@ -12,4 +12,6 @@ cd $nhome
 
 chezmoi apply
 
+### --option eval-cache false
+### --show-trace
 nixos-rebuild switch --flake $nhome

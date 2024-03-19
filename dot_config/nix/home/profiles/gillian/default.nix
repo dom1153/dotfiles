@@ -15,6 +15,8 @@
   ];
 
   home = {
+    homeDirectory = "/home/archoo";
+
     sessionVariables = {
       ### https://github.com/USA-RedDragon/jagex-launcher-flatpak
       ### add flatpak bin paths (runescape)

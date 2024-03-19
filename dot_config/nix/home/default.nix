@@ -1,8 +1,8 @@
 {...}: {
   home = {
     username = "archoo";
-    homeDirectory = "/home/archoo";
   };
+
   # Let home-manager manage itself when in standalone mode
   programs.home-manager.enable = true;
 
