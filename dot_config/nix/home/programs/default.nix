@@ -13,7 +13,6 @@
 
     ### art
     kolourpaint ### windows 98 style
-    pureref
 
     ### terminal emulators
     kitty
