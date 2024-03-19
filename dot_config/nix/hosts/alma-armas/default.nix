@@ -18,7 +18,6 @@
     ../../system/services/openssh.nix
     ../../system/services/plex.nix
     ../../system/services/syncthing.nix
-    ../../system/services/xserver.nix
 
     ./hardware-configuration.nix
     ./mount.nix

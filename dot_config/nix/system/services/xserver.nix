@@ -1,3 +1,4 @@
+### ps -e | grep X
 {pkgs, ...}: {
   services.xserver = {
     enable = true;
