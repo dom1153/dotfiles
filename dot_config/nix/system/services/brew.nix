@@ -1,4 +1,4 @@
-{inputs, ...}: {
+{...}: {
   ### manages homebrew, homebrew itself must be installed manually!
   homebrew = {
     enable = true;
@@ -9,6 +9,7 @@
       "affinity-photo"
       "affinity-publisher"
       "alt-tab"
+      "amethyst"
       "arc"
       "bazecor"
       "betterdisplay"
@@ -21,10 +22,13 @@
       "google-chrome"
       "iterm2"
       "kitty"
+      "launchpad-manager"
       "logi-options-plus"
       "macvim"
       "microsoft-edge"
       "mos" ### mouse wheel
+      "mpv"
+      "neovide"
       "obsidian"
       "parsec"
       "processing"
@@ -37,7 +41,6 @@
       "syncthing"
       "vial"
       "visual-studio-code"
-      "mpv"
       ### experimental / extra
       "codux"
       "docker"
@@ -47,7 +50,6 @@
       "runjs"
       "shortcat" ### macos keyboard navigation concept
       "zed"
-      # "vlc"
       # "alacritty"
       # "alfred"
       # "anydesk"
@@ -59,6 +61,7 @@
       # "playcover-community"
       # "runelite""
       # "vivaldi""
+      # "vlc"
     ];
     taps = [
       "homebrew/cask-fonts"
