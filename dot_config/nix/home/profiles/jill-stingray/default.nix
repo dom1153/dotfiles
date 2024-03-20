@@ -33,6 +33,7 @@
       ### gui art
       drawpile
       blender
+      pureref
       # krita
 
       ### gui apps

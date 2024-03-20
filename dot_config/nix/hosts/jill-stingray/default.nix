@@ -41,7 +41,13 @@
   ### Builds home-manager with nixos-rebuild
   home-manager.users."archoo" = import ../../home/profiles/jill-stingray;
 
-  networking.hostName = "jill-stingray";
+  networking = {
+    hostName = "jill-stingray";
+    ### 53317: LocalSend
+    # firewall.enable = false;
+    firewall.allowedTCPPorts = [53317];
+    firewall.allowedUDPPorts = [53317];
+  };
 
   boot.loader.systemd-boot.configurationLimit = 5;
 

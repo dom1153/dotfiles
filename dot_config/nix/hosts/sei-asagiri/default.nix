@@ -34,7 +34,12 @@
   ### Builds home-manager with nixos-rebuild
   home-manager.users."archoo" = import ../../home/profiles/sei-asagiri;
 
-  networking.hostName = "sei-asagiri";
+  networking = {
+    hostName = "sei-asagiri";
+    ### 53317: LocalSend
+    firewall.allowedTCPPorts = [53317];
+    firewall.allowedUDPPorts = [];
+  };
 
   ### efi partition baby-sized
   boot.loader.systemd-boot.configurationLimit = 3;
