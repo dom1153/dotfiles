@@ -19,9 +19,6 @@
 
     ### services
     entr
-    #qemu
-    #quickemu
-    #quickgui
     starship
     watchman ### for chezmoi
 
@@ -36,6 +33,7 @@
     ani-cli
     lazygit
     mc
+    navi
     ncdu
     neofetch
     zellij

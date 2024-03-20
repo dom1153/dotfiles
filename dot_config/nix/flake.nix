@@ -38,21 +38,21 @@
     nixosConfigurations = {
       jill-stingray = nixpkgs.lib.nixosSystem {
         specialArgs = {inherit inputs outputs;};
-        modules = [./hosts/jill-stingray];
+        modules = [./os/jill-stingray];
       };
       alma-armas = nixpkgs.lib.nixosSystem {
         specialArgs = {inherit inputs outputs;};
-        modules = [./hosts/alma-armas];
+        modules = [./os/alma-armas];
       };
       sei-asagiri = nixpkgs.lib.nixosSystem {
         specialArgs = {inherit inputs outputs;};
-        modules = [./hosts/sei-asagiri];
+        modules = [./os/sei-asagiri];
       };
       gillian = nixpkgs.lib.nixosSystem {
         ### system must be specified (no hardware-configuration.nix)
         system = "x86_64-linux";
         specialArgs = {inherit inputs outputs;};
-        modules = [./hosts/gillian];
+        modules = [./os/gillian];
       };
     };
 
@@ -64,7 +64,7 @@
         system = "aarch64-darwin";
         specialArgs = {inherit inputs outputs;};
         modules = [
-          ./hosts/stella-hoshii
+          ./os/stella-hoshii
         ];
       };
     };
