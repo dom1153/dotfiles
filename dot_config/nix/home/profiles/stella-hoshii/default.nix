@@ -1,14 +1,7 @@
-{
-  inputs,
-  pkgs,
-  ...
-}: {
+{pkgs, ...}: {
   imports = [
-    # inputs.nixvim.nixDarwinModules.nixvim
-
     ../../../home
 
-    # ../../editors/nixvim/default-darwin.nix
     ../../editors/nixvim
     ../../editors/vim
 
