@@ -2,14 +2,18 @@
 	"folders": [
 		{
 			"path": "..",
-			"name": "chezmoi (edit)"
+			"name": "chezmoi root (~)"
+		},
+		{
+			"path": ".",
+			"name": "dot_config (config)"
 		},
 		{
 			"path": "nix",
 			"name": "nix (config)"
 		},
 		{
-			"path": "nix/home-manager/nixvim",
+			"path": "nix/home/editors/nixvim",
 			"name": "nixvim (config)"
 		},
 		{

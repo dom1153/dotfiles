@@ -10,7 +10,8 @@ case $(uname) in
     export PATH="$PATH:/Applications/Visual Studio Code.app/Contents/Resources/app/bin"
 
     ### prioritize nixos bin over homebrew bin (e.g. neovim)
-    export PATH="$HOME/.nix-profile/bin:$PATH"
+    # export PATH="$HOME/.nix-profile/bin:$PATH"
+    export PATH="/etc/profiles/per-user/$USER/bin:$PATH"
 
     shellos="MAC"
     ;;

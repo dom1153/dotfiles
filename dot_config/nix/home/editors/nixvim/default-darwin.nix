@@ -1,12 +1,12 @@
 {inputs, ...}: {
   imports = [
-    inputs.nixvim.homeManagerModules.nixvim
+    inputs.nixvim.nixDarwinModules.nixvim
 
     ./options.nix
     ./globals.nix
     ./keymaps/keymaps.nix
 
-    # ./colorschemes/catppuccin.nix
+    ./colorschemes/catppuccin.nix
 
     ./autocmd.nix
     ./plugins/plugins.nix
