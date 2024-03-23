@@ -33,10 +33,6 @@
 			"name": "kitty (config)"
 		},
 		{
-			"path": "nvim",
-			"name": "nvim init.lua (debug)"
-		},
-		{
 			"path": "chezmoi",
 			"name": "chezmoi (toml)"
 		},

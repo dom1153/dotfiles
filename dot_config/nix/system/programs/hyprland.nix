@@ -15,6 +15,9 @@
     wl-clipboard
     networkmanagerapplet
     pavucontrol ### pulse audio volume adjust
+    overskride ### bluetooth gui, alternativly use bluetoothctl
+    blueberry ### another bluetooth, has a tray
+    hyprshade ### night light
   ];
 
   # Hint electron apps to use wayland:
