@@ -36,6 +36,7 @@
 
     ./hardware-configuration.nix
     ./mount.nix
+    ./nfs.nix
   ];
 
   ### Builds home-manager with nixos-rebuild
