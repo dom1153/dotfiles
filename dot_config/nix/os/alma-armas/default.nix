@@ -28,9 +28,35 @@
 
   networking = {
     hostName = "alma-armas";
-    ### syncthing gui outside of localhost
-    firewall.allowedTCPPorts = [8384 22000];
-    firewall.allowedUDPPorts = [22000 21027];
+    ### Syncthing Gui:
+    ###   TCP 8384 22000
+    ###   UDP 21027 22000
+    ### NFS:
+    ###   TCP 2049 111 2049 4000 4001 4002 20048
+    ###   UDP 111 2049 4000 4001 4002 20048
+    firewall = {
+      allowedTCPPorts = [
+        111
+        20048
+        2049
+        2049
+        22000
+        4000
+        4001
+        4002
+        8384
+      ];
+      allowedUDPPorts = [
+        111
+        20048
+        2049
+        21027
+        22000
+        4000
+        4001
+        4002
+      ];
+    };
   };
 
   # boot.loader.systemd-boot.configurationLimit = 5;
