@@ -5,6 +5,10 @@ stella-hoshii   mbp-14-m2
 Alma Armas      archoo-server (B450 Ryzen 3)
 Gillian         artpro-wsl
 
+nfs:deal        super-4T
+nfs:betty       lamp-700G
+nfs:dawson      fuzzy-500G
+
 ### Keep under 15 characters
 Julianne Stingray   Julianne-Sting
 Sei Asagiri
