@@ -23,6 +23,7 @@
       "iterm2"
       "kitty"
       "launchpad-manager"
+      "localsend"
       "logi-options-plus"
       "macvim"
       "microsoft-edge"
@@ -42,7 +43,6 @@
       "vial"
       "visual-studio-code"
       ### experimental / extra
-      "codux"
       "docker"
       "drawpile"
       "duckduckgo"
@@ -55,6 +55,7 @@
       # "anydesk"
       # "bartender"
       # "blender"
+      # "codux"
       # "firefox"
       # "karabiner-elements"
       # "logseq"
@@ -67,6 +68,7 @@
       "homebrew/cask-fonts"
       "homebrew/cask-versions"
       "osx-cross/arm"
+      "localsend/localsend"
     ];
     ### excluded due to not existing on homebrew or on appstore
     # Aesprite
