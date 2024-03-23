@@ -48,6 +48,12 @@
     # firewall.enable = false;
     firewall.allowedTCPPorts = [53317];
     firewall.allowedUDPPorts = [53317];
+
+    ### /etc/hosts
+    # extraHosts = ''
+    #   127.0.0.2 other-localhost
+    #   10.0.0.1 server
+    # '';
   };
 
   boot.loader.systemd-boot.configurationLimit = 5;

@@ -9,11 +9,12 @@
     extraNfsdConfig = '''';
 
     ### actual server mounts, and which IPs can access them
+    ### jill-stingray.local
     exports = ''
-      /export         jill-stingray.local(rw,fsid=0,no_subtree_check) stella-hoshii.local(rw,fsid=0,no_subtree_check)
-      /export/deal    jill-stingray.local(rw,nohide,insecure,no_subtree_check) stella-hoshii.local(rw,nohide,insecure,no_subtree_check)
-      /export/betty   jill-stingray.local(rw,nohide,insecure,no_subtree_check) stella-hoshii.local(rw,nohide,insecure,no_subtree_check)
-      /export/dawson  jill-stingray.local(rw,nohide,insecure,no_subtree_check) stella-hoshii.local(rw,nohide,insecure,no_subtree_check)
+      /export         10.0.0.12(rw,fsid=0,no_subtree_check) stella-hoshii.local(rw,fsid=0,no_subtree_check)
+      /export/deal    10.0.0.12(rw,nohide,insecure,no_subtree_check) stella-hoshii.local(rw,nohide,insecure,no_subtree_check)
+      /export/betty   10.0.0.12(rw,nohide,insecure,no_subtree_check) stella-hoshii.local(rw,nohide,insecure,no_subtree_check)
+      /export/dawson  10.0.0.12(rw,nohide,insecure,no_subtree_check) stella-hoshii.local(rw,nohide,insecure,no_subtree_check)
     '';
   };
 
