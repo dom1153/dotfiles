@@ -57,6 +57,7 @@
     # videoDrivers = [];
     displayManager.autoLogin.enable = true;
     displayManager.defaultSession = "xfce";
+    libinput.touchpad.disableWhileTyping = true;
   };
 
   # https://nixos.wiki/wiki/FAQ/When_do_I_update_stateVersion

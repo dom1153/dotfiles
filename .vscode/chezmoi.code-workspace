@@ -5,35 +5,39 @@
 			"name": "chezmoi root (~)"
 		},
 		{
-			"path": ".",
+			"path": "../dot_config",
 			"name": "dot_config (config)"
 		},
 		{
-			"path": "nix",
+			"path": "../dot_config/nix",
 			"name": "nix (config)"
 		},
 		{
-			"path": "nix/home/editors/nixvim",
+			"path": "../dot_config/nix/home/editors/nixvim",
 			"name": "nixvim (config)"
 		},
 		{
-			"path": "zsh",
+			"path": "../dot_config/hypr",
+			"name": "hyprland (config)"
+		},
+		{
+			"path": "../dot_config/zsh",
 			"name": "zsh (config)"
 		},
 		{
-			"path": "foot",
+			"path": "../dot_config/foot",
 			"name": "foot (config)"
 		},
 		{
-			"path": "zellij",
+			"path": "../dot_config/zellij",
 			"name": "zellij (config)"
 		},
 		{
-			"path": "kitty",
+			"path": "../dot_config/kitty",
 			"name": "kitty (config)"
 		},
 		{
-			"path": "chezmoi",
+			"path": "../dot_config/chezmoi",
 			"name": "chezmoi (toml)"
 		},
 	],
