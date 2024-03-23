@@ -58,6 +58,12 @@
         4002
       ];
     };
+
+    ### /etc/hosts
+    extraHosts = ''
+      10.0.0.12 jill-stingray
+      10.0.0.39 stella-hoshii
+    '';
   };
 
   # boot.loader.systemd-boot.configurationLimit = 5;

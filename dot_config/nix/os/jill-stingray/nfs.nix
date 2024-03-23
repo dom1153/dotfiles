@@ -1,4 +1,5 @@
 {...}: {
+  ### alma-armas.local
   fileSystems."/run/media/archoo/deal" = {
     device = "alma-armas.local:/deal";
     fsType = "nfs";
