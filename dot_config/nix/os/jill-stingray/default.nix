@@ -15,15 +15,13 @@
     ../../system/nix
 
     ../../system/programs/fonts.nix
-    ../../system/programs/hyprland.nix
+    # ../../system/programs/hyprland
     ../../system/programs/steam.nix
-    ../../system/programs/xdg.nix
     ../../system/programs/zsh.nix
 
     ../../system/services/avahi.nix
     ../../system/services/docker.nix
     ../../system/services/flatpak.nix
-    ../../system/services/gdm.nix
     ../../system/services/home-manager.nix
     ../../system/services/kde-plasma.nix
     ../../system/services/kmscon.nix
@@ -66,7 +64,8 @@
   services.xserver = {
     videoDrivers = ["amdgpu"];
     displayManager.autoLogin.enable = true;
-    displayManager.defaultSession = "hyprland";
+    # displayManager.defaultSession = "hyprland";
+    displayManager.defaultSession = "plasma";
   };
 
   # https://nixos.wiki/wiki/FAQ/When_do_I_update_stateVersion

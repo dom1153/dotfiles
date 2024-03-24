@@ -10,13 +10,15 @@ Original created with normal dotfiles in mind, but expaned over time to nixos.
 
 # Usage
 
+These dotfiles are configured with [chezmoi](https://www.chezmoi.io/)
+
+To copy these to your own config directory, run:
+
 `chezmoi init --apply dom1153`
 
-This will copy and appply the dotfiles to your home directory
+This will download the dotfiles to your home directory.
 
-Assumes chezmoi (dotfile manager) is installed
-
-[Chezmoi install](https://www.chezmoi.io/install/)
+Will not override existing files by default.
 
 # Inspiration
 

@@ -2,7 +2,44 @@
 name = "vibrance"
 default = true    # shader to use during times when there is no other shader scheduled
 
+# [[shades]]
+# name = "blue-light-filter"
+# start_time = 19:00:00
+# end_time = 06:00:00        # optional if you have more than one shade with start_time
+
 [[shades]]
-name = "blue-light-filter"
-start_time = 19:00:00
-end_time = 06:00:00        # optional if you have more than one shade with start_time
+name = "blf-1"
+start_time = 19:00:00 # # 7 PM
+
+[[shades]]
+name = "blf-2"
+start_time = 20:00:00
+
+[[shades]]
+name = "blf-3"
+start_time = 21:00:00
+
+[[shades]]
+name = "blf-4"
+start_time = 22:00:00
+
+[[shades]]
+name = "blf-5"
+start_time = 23:00:00
+
+[[shades]]
+name = "blf-6"
+start_time = 00:00:00
+
+[[shades]]
+name = "blf-7"
+start_time = 01:00:00
+
+[[shades]]
+name = "blf-8"
+start_time = 02:00:00
+
+[[shades]]
+name = "blf-9"
+start_time = 03:00:00
+end_time = 06:00:00

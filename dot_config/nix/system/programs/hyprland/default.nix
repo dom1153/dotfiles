@@ -1,4 +1,19 @@
 {pkgs, ...}: {
+  ### these dependancies are being configured for just hyprland, not in general
+  ### otherwise I would move them to the services folder
+  imports = [
+    "./gdm.nix"
+    "./gnome-services.nix"
+    "./greetd.nix"
+    "./kwallet.nix"
+    "./xdg.nix"
+  ];
+
+  ### optional dependancies:
+  ###   kwallet.nix - keyring (e.g. vscode)
+  ###   gdm.nix - autologin / autostart
+  ###   xdg.nix - portals
+  ###   gtk.nix / qt.nix (via home-manager)
   programs.hyprland = {
     enable = true;
   };

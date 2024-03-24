@@ -10,6 +10,7 @@
     vial
     mpv
     spotify
+    imv ### image viewer
 
     ### art
     kolourpaint ### windows 98 style

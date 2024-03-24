@@ -8,6 +8,7 @@
 
     ../../programs
     ../../programs/hyprland
+    # ../../programs/mime.nix
 
     ../../terminal/programs
     ../../terminal/programs/qemu.nix
