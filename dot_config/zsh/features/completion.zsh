@@ -8,6 +8,13 @@ if [ -f "$HOME/.local/share/zsh/zsh-autocomplete/zsh-autocomplete.plugin.zsh" ] 
     if type nixos-version >/dev/null; then
         bindkey "''${key[Up]}" up-line-or-search
     fi
+
+    ### pass arguments to compinit
+    zstyle '*:compinit' arguments -D -i -u -C -w
+
+    ### Make Tab go straight to the menu and cycle there
+    bindkey '\t' menu-select "$terminfo[kcbt]" menu-select
+    bindkey -M menuselect '\t' menu-complete "$terminfo[kcbt]" reverse-menu-complete
 else
     autoload -Uz compinit
     compinit
