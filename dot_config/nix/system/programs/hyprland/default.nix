@@ -2,11 +2,11 @@
   ### these dependancies are being configured for just hyprland, not in general
   ### otherwise I would move them to the services folder
   imports = [
-    "./gdm.nix"
-    "./gnome-services.nix"
-    "./greetd.nix"
-    "./kwallet.nix"
-    "./xdg.nix"
+    ./gdm.nix
+    # ./gnome-services.nix
+    # ./greetd.nix
+    # ./kwallet.nix
+    ./xdg.nix
   ];
 
   ### optional dependancies:
@@ -37,8 +37,4 @@
 
   # Hint electron apps to use wayland:
   environment.sessionVariables.NIXOS_OZONE_WL = "1";
-
-  ### for file handling ui
-  xdg.portal.enable = true;
-  xdg.portal.extraPortals = [pkgs.xdg-desktop-portal-gtk];
 }
