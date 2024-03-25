@@ -4,17 +4,29 @@
 if [ -f "$HOME/.local/share/zsh/zsh-autocomplete/zsh-autocomplete.plugin.zsh" ] && [ -z $SSH_CONNECTION ] && ! type "wslvar" >/dev/null ; then
     source $HOME/.local/share/zsh/zsh-autocomplete/zsh-autocomplete.plugin.zsh
 
-    # todo: need to add wslvar check
+    ### todo: need to add wslvar check
     if type nixos-version >/dev/null; then
-        bindkey "''${key[Up]}" up-line-or-search
+        bindkey "''${key[Up]}" up-line-or-search 
+        # bindkey "''${key[Up]}" up-line-or-history
     fi
 
-    ### pass arguments to compinit
-    zstyle '*:compinit' arguments -D -i -u -C -w
+    # ### pass arguments to compinit
+    # zstyle '*:compinit' arguments -D -i -u -C -w
 
-    ### Make Tab go straight to the menu and cycle there
+    # ### Make Tab go straight to the menu and cycle there
     bindkey '\t' menu-select "$terminfo[kcbt]" menu-select
     bindkey -M menuselect '\t' menu-complete "$terminfo[kcbt]" reverse-menu-complete
+
+    ### perhaps how to let history show older entries intstead of wrapping
+    ### Autocompletion
+    # zstyle -e ':autocomplete:list-choices:*' list-lines 'reply=( $(( LINES / 3 )) )'
+
+    ### Override history search.
+    # zstyle ':autocomplete:history-incremental-search-backward:*' list-lines 8
+
+    ### History menu.
+    # zstyle ':autocomplete:history-search-backward:*' list-lines 128
+    zstyle ':autocomplete:history-search-backward:*' list-lines 128
 else
     autoload -Uz compinit
     compinit

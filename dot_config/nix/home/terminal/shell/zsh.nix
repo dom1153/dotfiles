@@ -3,8 +3,10 @@
     enable = true;
     enableAutosuggestions = true;
     enableCompletion = false; ### disable for zsh-autocomplete
-    initExtra = ''
+    initExtraFirst = ''
       source ~/.config/zsh/.zshrc
+    '';
+    initExtra = ''
     '';
   };
 
