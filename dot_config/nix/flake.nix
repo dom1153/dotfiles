@@ -67,6 +67,14 @@
           ./os/stella-hoshii
         ];
       };
+      dorothy-haze = nix-darwin.lib.darwinSystem {
+        ### system must be specified (no hardware-configuration.nix)
+        system = "aarch64-darwin";
+        specialArgs = {inherit inputs outputs;};
+        modules = [
+          ./os/dorothy-haze
+        ];
+      };
     };
 
     ### Standalone home-manager configuration entrypoint
