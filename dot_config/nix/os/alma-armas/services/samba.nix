@@ -1,48 +1,37 @@
 ### https://nixos.wiki/wiki/Samba
-### https://gist.github.com/vy-let/a030c1079f09ecae4135aebf1e121ea6 (see comments)
+### https://gist.github.com/vy-let/a030c1079f09ecae4135aebf1e121ea6 (see comments in gist)
+### configure login with smbpasswd (based on users already on the system)
 {pkgs, ...}: {
   services.samba = {
     enable = true;
-    # VVV `samba4Full` is compiled with avahi, ldap, AD etc support (compared to the default package, `samba`
+    ### `samba4Full` is compiled with avahi, ldap, AD etc support (compared to the default package, `samba`
+    ### note: took a few hours to build...
     package = pkgs.samba4Full;
 
     securityType = "user";
     openFirewall = true;
     extraConfig = ''
       browseable = yes
-      ### VVV Note: Breaks `smbclient -L <ip/host> -U%` by default, might require the client to set `client min protocol`?
+      ### Note: Breaks `smbclient -L <ip/host> -U%` by default, might require the client to set `client min protocol`?
       smb encrypt = required
       server min protocol = SMB3_00
     '';
     shares = {
-      test = {
-        path = "/export/dawson";
+      betty = {
+        path = "/export/betty";
         writable = "true";
-        comment = "Hello World!";
+        comment = "4T";
       };
-      # public = {
-      #   path = "/exort/dawson";
-      #   browseable = "yes"; # note: each home will be browseable; the "homes" share will not.
-      #   "read only" = "no";
-      #   "guest ok" = "no";
-      #   # browseable = "yes";
-      #   # "read only" = "no";
-      #   # "guest ok" = "yes";
-      #   # "create mask" = "0644";
-      #   # "directory mask" = "0755";
-      #   # "force user" = "username";
-      #   # "force group" = "groupname";
-      # };
-      # private = {
-      #   path = "/export/dawson";
-      #   browseable = "yes";
-      #   "read only" = "no";
-      #   "guest ok" = "no";
-      #   "create mask" = "0644";
-      #   "directory mask" = "0755";
-      #   "force user" = "username";
-      #   "force group" = "groupname";
-      # };
+      deal = {
+        path = "/export/deal";
+        writable = "true";
+        comment = "700G";
+      };
+      radshiba = {
+        path = "/export/radshiba";
+        writable = "true";
+        comment = "500G";
+      };
     };
   };
 
@@ -51,21 +40,4 @@
     enable = true;
     openFirewall = true;
   };
-
-  ### bind mounts so we don't have to move them
-  ### named and organized based on abc order
-  # fileSystems."/export/shares/private/4T" = {
-  #   device = "/run/media/archoo/super-4T";
-  #   options = ["bind"];
-  # };
-
-  # fileSystems."/export/deal" = {
-  #   device = "/run/media/archoo/lamp-700G";
-  #   options = ["bind"];
-  # };
-
-  # fileSystems."/export/dawson" = {
-  #   device = "/run/media/archoo/fuzzy-500G";
-  #   options = ["bind"];
-  # };
 }

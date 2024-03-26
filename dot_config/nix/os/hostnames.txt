@@ -6,9 +6,9 @@ Alma Armas      archoo-server (B450 Ryzen 3)
 Gillian         artpro-wsl
 Dorothy Haze    mac-mini-m1
 
-nfs:deal        super-4T
-nfs:betty       lamp-700G
-nfs:dawson      fuzzy-500G
+nfs:betty       super-4T
+nfs:deal        lamp-700G
+nfs:radshiba    fuzzy-500G
 
 ### Keep under 15 characters
 Julianne Stingray   Julianne-Sting
@@ -34,3 +34,4 @@ Gaby
 Anna Graem         Anna-Graem
 Sam
 Mario
+Rad Shiba

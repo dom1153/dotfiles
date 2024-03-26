@@ -43,10 +43,14 @@
 
   networking = {
     hostName = "jill-stingray";
-    ### 53317: LocalSend
+    ### LocalSend:
+    ###   TCP 53317
     # firewall.enable = false;
-    firewall.allowedTCPPorts = [53317];
-    firewall.allowedUDPPorts = [53317];
+    firewall.allowedTCPPorts = [
+      53317
+    ];
+    firewall.allowedUDPPorts = [
+    ];
   };
 
   boot.loader.systemd-boot.configurationLimit = 3;

@@ -36,8 +36,14 @@
 
   networking = {
     hostName = "sei-asagiri";
-    ### 53317: LocalSend
-    firewall.allowedTCPPorts = [53317];
+    ### LocalSend:
+    ###   TCP 53317
+    ### Wireguard:
+    ###   TCP 51820
+    firewall.allowedTCPPorts = [
+      51820
+      53317
+    ];
     firewall.allowedUDPPorts = [];
   };
 

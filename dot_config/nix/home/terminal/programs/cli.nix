@@ -21,6 +21,7 @@
     entr
     starship
     watchman ### for chezmoi
+    wireguard-tools ### vpn
 
     ### cheatsheets
     cheat

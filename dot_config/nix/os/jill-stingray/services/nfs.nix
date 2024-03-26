@@ -19,8 +19,8 @@
     ];
   };
 
-  fileSystems."/run/media/archoo/dawson" = {
-    device = "alma-armas.local:/dawson";
+  fileSystems."/run/media/archoo/radshiba" = {
+    device = "alma-armas.local:/radshiba";
     fsType = "nfs";
     options = [
       "x-systemd.automount"

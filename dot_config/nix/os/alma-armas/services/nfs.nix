@@ -1,3 +1,4 @@
+### https://nixos.wiki/wiki/NFS
 {...}: {
   services.nfs.server = {
     enable = true;
@@ -9,12 +10,13 @@
     extraNfsdConfig = '''';
 
     ### actual server mounts, and which IPs can access them
-    ### using /etc/hosts for convenience ; avahi names (.local) do NOT work here
+    ### using /etc/hosts for convenience ; avahi names (.local) do NOT seem to work here
+    ### only using linux hosts; couldn't figure this out for mac. use samba share for cross platform.
     exports = ''
-      /export         jill-stingray(rw,fsid=0,no_subtree_check) stella-hoshii(rw,fsid=0,no_subtree_check)
-      /export/deal    jill-stingray(rw,nohide,insecure,no_subtree_check) stella-hoshii(rw,nohide,insecure,no_subtree_check)
-      /export/betty   jill-stingray(rw,nohide,insecure,no_subtree_check) stella-hoshii(rw,nohide,insecure,no_subtree_check)
-      /export/dawson  jill-stingray(rw,nohide,insecure,no_subtree_check) stella-hoshii(rw,nohide,insecure,no_subtree_check)
+      /export         jill-stingray(rw,fsid=0,no_subtree_check)
+      /export/deal    jill-stingray(rw,nohide,insecure,no_subtree_check)
+      /export/betty   jill-stingray(rw,nohide,insecure,no_subtree_check)
+      /export/radshiba  jill-stingray(rw,nohide,insecure,no_subtree_check)
     '';
   };
 
@@ -30,7 +32,7 @@
     options = ["bind"];
   };
 
-  fileSystems."/export/dawson" = {
+  fileSystems."/export/radshiba" = {
     device = "/run/media/archoo/fuzzy-500G";
     options = ["bind"];
   };
