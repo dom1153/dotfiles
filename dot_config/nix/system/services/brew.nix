@@ -63,6 +63,8 @@
       # "runelite""
       # "vivaldi""
       # "vlc"
+      # "tabby"
+      # "warp"
     ];
     taps = [
       "homebrew/cask-fonts"
@@ -85,7 +87,6 @@
     # Synergy
     # "bitwarden"  ### don't use brew or appstore ; had issues powering off pc due to processing not quitting
     # "windscribe" ### does not seem to add gui, maybe only the vpn aspect
-    # "tabby"
-    # "warp"
+    # wireguard ### use appstoreß
   };
 }

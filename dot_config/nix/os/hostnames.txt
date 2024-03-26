@@ -5,6 +5,7 @@ stella-hoshii   mbp-14-m2
 Alma Armas      archoo-server (B450 Ryzen 3)
 Gillian         artpro-wsl
 Dorothy Haze    mac-mini-m1
+Ingram McDougal iphone 11 (wireguard)
 
 nfs:betty       super-4T
 nfs:deal        lamp-700G
