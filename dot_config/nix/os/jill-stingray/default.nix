@@ -54,7 +54,7 @@
     # '';
   };
 
-  boot.loader.systemd-boot.configurationLimit = 5;
+  boot.loader.systemd-boot.configurationLimit = 3;
 
   services.syncthing = {
     dataDir = "/home/archoo/Documents"; # Default folder for new synced folders
