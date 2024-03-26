@@ -11,6 +11,7 @@
     securityType = "user";
     openFirewall = true;
     extraConfig = ''
+      ### probably don't need browseable but w/e
       browseable = yes
       ### Note: Breaks `smbclient -L <ip/host> -U%` by default, might require the client to set `client min protocol`?
       smb encrypt = required
