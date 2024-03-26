@@ -57,9 +57,9 @@
       # "blender"
       # "codux"
       # "firefox"
+      # "playcover-community"
       # "karabiner-elements"
       # "logseq"
-      # "playcover-community"
       # "runelite""
       # "vivaldi""
       # "vlc"
@@ -69,6 +69,7 @@
       "homebrew/cask-versions"
       "osx-cross/arm"
       "localsend/localsend"
+      # "PlayCover/playcover"
     ];
     ### excluded due to not existing on homebrew or on appstore
     # Aesprite
