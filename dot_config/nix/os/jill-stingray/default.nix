@@ -32,9 +32,10 @@
     ../../system/services/waydroid.nix
     ../../system/services/xserver.nix
 
+    ./services/mount.nix
+    ./services/nfs.nix
+
     ./hardware-configuration.nix
-    ./mount.nix
-    ./nfs.nix
   ];
 
   ### Builds home-manager with nixos-rebuild
@@ -46,12 +47,6 @@
     # firewall.enable = false;
     firewall.allowedTCPPorts = [53317];
     firewall.allowedUDPPorts = [53317];
-
-    ### /etc/hosts
-    # extraHosts = ''
-    #   127.0.0.2 other-localhost
-    #   10.0.0.1 server
-    # '';
   };
 
   boot.loader.systemd-boot.configurationLimit = 3;

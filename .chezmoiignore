@@ -1,3 +1,18 @@
-.
-gitconfig
+
+gitconfig ### symlink for vscode filetyping
+
+.gitconfig
+.gitignore
+
 README.md
+
+### uses translated names, not dot_ convention
+.parsec/
+.parsec/**
+
+.ssh_template/
+.ssh_template/**
+
+### already being ignored but just in case for the future
+.vscode/
+.vscode/**
