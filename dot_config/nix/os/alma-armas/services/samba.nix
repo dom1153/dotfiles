@@ -1,43 +1,57 @@
 ### https://nixos.wiki/wiki/Samba
+### https://gist.github.com/vy-let/a030c1079f09ecae4135aebf1e121ea6 (see comments)
 {...}: {
   services.samba = {
     enable = true;
+    # VVV `samba4Full` is compiled with avahi, ldap, AD etc support (compared to the default package, `samba`
+    package = pkgs.samba4Full;
+
     securityType = "user";
     openFirewall = true;
     extraConfig = ''
-      workgroup = WORKGROUP
-      server string = smbnix
-      netbios name = smbnix
-      security = user
-      #use sendfile = yes
-      #max protocol = smb2
-      # note: localhost is the ipv6 localhost ::1
-      hosts allow = 192.168.0. 127.0.0.1 localhost
-      hosts deny = 0.0.0.0/0
-      guest account = nobody
-      map to guest = bad user
+      browseable = yes
+      ### VVV Note: Breaks `smbclient -L <ip/host> -U%` by default, might require the client to set `client min protocol`?
+      smb encrypt = required
+      server min protocol = SMB3_00
     '';
     shares = {
-      public = {
-        path = "/exort/deal";
-        browseable = "yes";
-        "read only" = "no";
-        "guest ok" = "yes";
-        "create mask" = "0644";
-        "directory mask" = "0755";
-        "force user" = "username";
-        "force group" = "groupname";
-      };
-      private = {
+      test = {
         path = "/export/dawson";
-        browseable = "yes";
-        "read only" = "no";
-        "guest ok" = "no";
-        "create mask" = "0644";
-        "directory mask" = "0755";
-        "force user" = "username";
-        "force group" = "groupname";
+        writable = "true";
+        comment = "Hello World!";
       };
+      # public = {
+      #   path = "/exort/dawson";
+      #   browseable = "yes"; # note: each home will be browseable; the "homes" share will not.
+      #   "read only" = "no";
+      #   "guest ok" = "no";
+      #   # browseable = "yes";
+      #   # "read only" = "no";
+      #   # "guest ok" = "yes";
+      #   # "create mask" = "0644";
+      #   # "directory mask" = "0755";
+      #   # "force user" = "username";
+      #   # "force group" = "groupname";
+      # };
+      # private = {
+      #   path = "/export/dawson";
+      #   browseable = "yes";
+      #   "read only" = "no";
+      #   "guest ok" = "no";
+      #   "create mask" = "0644";
+      #   "directory mask" = "0755";
+      #   "force user" = "username";
+      #   "force group" = "groupname";
+      # };
+    };
+
+    avahi = {
+      publish.userServices = true;
+      # ^^ Needed to allow samba to automatically register mDNS records (without the need for an `extraServiceFile`
+      nssmdns4 = true;
+      # ^^ Not one hundred percent sure if this is needed- if it aint broke, don't fix it
+      enable = true;
+      openFirewall = true;
     };
   };
 

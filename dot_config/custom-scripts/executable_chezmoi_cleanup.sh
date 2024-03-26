@@ -29,7 +29,7 @@ do
       echo "SCRIPT: Skipping $curdir, no unmanaged files"
     else
       echo "curdir: $curdir"
-      ### xargs -p : interactive, -I {} command "{}" should quote each argument
+      ### xargs -p : interactive, -I {} command "{}" should quote each argument (to handle whitespace)
       chezmoi unmanaged -p absolute . | xargs -p -I {} trash "{}"
     fi
   fi
