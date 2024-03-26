@@ -1,6 +1,6 @@
 ### https://nixos.wiki/wiki/Samba
 ### https://gist.github.com/vy-let/a030c1079f09ecae4135aebf1e121ea6 (see comments)
-{...}: {
+{pkgs, ...}: {
   services.samba = {
     enable = true;
     # VVV `samba4Full` is compiled with avahi, ldap, AD etc support (compared to the default package, `samba`
