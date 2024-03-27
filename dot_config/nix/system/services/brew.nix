@@ -39,6 +39,7 @@
       "qmk-toolbox"
       "raycast"
       "sigmaos"
+      "signal" ### keep installed for launchpad organization
       "spotify"
       "steam"
       "syncthing"
@@ -61,7 +62,6 @@
       # "runelite"
       # "runjs"
       # "shortcat" ### macos keyboard navigation concept
-      # "signal"
       # "tabby"
       # "vivaldi""
       # "vlc"
