@@ -22,6 +22,7 @@
     starship
     watchman ### for chezmoi
     wireguard-tools ### vpn
+    mosh
 
     ### cheatsheets
     cheat

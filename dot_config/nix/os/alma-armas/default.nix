@@ -15,6 +15,7 @@
     ../../system/services/avahi.nix
     ../../system/services/home-manager.nix
     ../../system/services/kmscon.nix
+    ../../system/services/mosh-server.nix
     ../../system/services/openssh.nix
     ../../system/services/plex.nix
     ../../system/services/syncthing.nix
@@ -24,6 +25,7 @@
     ./services/nfs.nix
     ./services/samba.nix
     ./services/syncthing.nix
+    ./services/wireguard.nix
 
     ./hardware-configuration.nix
   ];
