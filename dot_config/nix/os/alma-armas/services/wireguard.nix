@@ -5,7 +5,7 @@
   networking = {
     nat = {
       enable = true;
-      externalInterface = "eth0";
+      externalInterface = "enp37s0"; ### ip a
       internalInterfaces = ["wg0aa"]; ### must match interface name below
     };
   };
