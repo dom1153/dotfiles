@@ -25,7 +25,7 @@
     ./services/nfs.nix
     ./services/samba.nix
     ./services/syncthing.nix
-    ./services/wireguard.nix
+    ./services/tailscale.nix
 
     ./hardware-configuration.nix
   ];

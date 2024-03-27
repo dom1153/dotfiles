@@ -48,6 +48,7 @@
       "duckduckgo"
       "raycast"
       "runjs"
+      "openvpn-connect"
       "shortcat" ### macos keyboard navigation concept
       "zed"
       # "alacritty"
