@@ -2,11 +2,12 @@
 ### https://wireguard.how/client/macos/
 ### /etc/wireguard/*.conf
 {pkgs, ...}: {
-  networking.nat.enable = true;
-  networking.nat.externalInterface = "eth0";
-  networking.nat.internalInterfaces = ["wg0"];
-  networking.firewall = {
-    allowedUDPPorts = [51820];
+  networking = {
+    nat = {
+      enable = true;
+      externalInterface = "eth0";
+      internalInterfaces = ["wg0aa"]; ### must match interface name below
+    };
   };
 
   networking.wireguard.interfaces = {
