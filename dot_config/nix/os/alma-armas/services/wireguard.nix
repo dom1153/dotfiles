@@ -6,13 +6,13 @@
     nat = {
       enable = true;
       externalInterface = "enp37s0"; ### ip a
-      internalInterfaces = ["wg0aa"]; ### must match interface name below
+      internalInterfaces = ["wg0"]; ### must match interface name below
     };
   };
 
   networking.wireguard.interfaces = {
-    ### "wg0aa" is the network interface name. You can name the interface arbitrarily.
-    wg0aa = {
+    ### "wg0" is the network interface name. You can name the interface arbitrarily.
+    wg0 = {
       ### Determines the IP address and subnet of the server's end of the tunnel interface.
       ips = ["10.100.0.1/24"];
 
@@ -36,7 +36,7 @@
 
       peers = [
         {
-          publicKey = "AG/ktphWmXKGmX0pD3bYybxy6GCuVTkX6899wzGTfCU=";
+          publicKey = "Y4pnr4ebsjwpUJisOYwQ9cla1nGbLCQ/3usBOsHqDXQ=";
           # List of IPs assigned to this peer within the tunnel subnet. Used to configure routing.
           allowedIPs = ["10.100.0.2/32"];
         }
