@@ -15,7 +15,7 @@
     ../../system/nix
 
     ../../system/programs/fonts.nix
-    # ../../system/programs/hyprland
+    ../../system/programs/hyprland
     ../../system/programs/steam.nix
     ../../system/programs/zsh.nix
 
@@ -63,9 +63,10 @@
   services.xserver = {
     videoDrivers = ["amdgpu"];
     displayManager.autoLogin.enable = true;
-    # displayManager.defaultSession = "hyprland";
+    displayManager.defaultSession = "hyprland";
     # displayManager.defaultSession = "plasma";
-    displayManager.defaultSession = "plasmawayland";
+    # services.xserver.displayManager.sddm.enable = true;
+    # displayManager.defaultSession = "plasmawayland";
   };
 
   # https://nixos.wiki/wiki/FAQ/When_do_I_update_stateVersion
