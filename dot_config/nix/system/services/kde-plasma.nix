@@ -1,5 +1,5 @@
 {pkgs, ...}: {
-  desktopManager.plasma6.enable = true;
+  services.desktopManager.plasma6.enable = true;
 
   # Hint electron apps to use wayland:
   environment.sessionVariables.NIXOS_OZONE_WL = "1";
