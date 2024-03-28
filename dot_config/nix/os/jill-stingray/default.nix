@@ -64,7 +64,8 @@
     videoDrivers = ["amdgpu"];
     displayManager.autoLogin.enable = true;
     # displayManager.defaultSession = "hyprland";
-    displayManager.defaultSession = "plasma";
+    # displayManager.defaultSession = "plasma";
+    displayManager.defaultSession = "plasmawayland";
   };
 
   # https://nixos.wiki/wiki/FAQ/When_do_I_update_stateVersion
