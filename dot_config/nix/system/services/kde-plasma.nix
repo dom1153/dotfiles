@@ -1,8 +1,5 @@
 {pkgs, ...}: {
-  services.xserver = {
-    desktopManager.plasma6.enable = true;
-    # displayManager.defaultSession = "plasma";
-  };
+  desktopManager.plasma6.enable = true;
 
   # Hint electron apps to use wayland:
   environment.sessionVariables.NIXOS_OZONE_WL = "1";

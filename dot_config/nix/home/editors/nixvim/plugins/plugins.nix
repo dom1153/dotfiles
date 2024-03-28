@@ -28,7 +28,8 @@
 
     plugins = {
       ### comment lines with gc command
-      comment-nvim.enable = true;
+      # comment-nvim.enable = true;
+      plugins.comment.enable = true;
 
       ### file formatter
       conform-nvim = {
