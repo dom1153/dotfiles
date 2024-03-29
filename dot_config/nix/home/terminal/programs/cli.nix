@@ -37,6 +37,7 @@
     lazygit
     mc
     navi
+    nap ### snippet manager
     ncdu
     neofetch
     zellij
