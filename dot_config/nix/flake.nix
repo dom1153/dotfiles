@@ -33,6 +33,12 @@
   } @ inputs: let
     inherit (self) outputs;
   in {
+    ### can be formatted using `nix fmt` recursively
+    formatter = {
+      x86_64-linux = nixpkgs.legacyPackages.x86_64-linux.alejandra;
+      aarch64-darwin = nixpkgs.legacyPackages.aarch64-darwin.alejandra;
+    };
+
     ### NixOS configuration entrypoint
     ### Available through 'nixos-rebuild build --flake .#your-hostname'
     nixosConfigurations = {

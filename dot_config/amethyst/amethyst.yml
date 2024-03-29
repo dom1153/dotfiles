@@ -15,7 +15,6 @@
 
 # layouts - Ordered list of layouts to use by layout key (default tall, wide, fullscreen, and column).
 layouts:
-
   - tall
   - fullscreen
   # - bsp
@@ -263,14 +262,17 @@ window-minimum-width: 0
 # Pathname can also be gathered app from finder onto cli
 # otherwise add to amethyst via gui then copy it back here
 floating: [
+  ### current plan is one per desktop (aside from vscode / terminal)
+  ### actual tile management is too janky on OSX
+  ### I'm just here for auto maximize with GAPS for aesthetic
   com.microsoft.VSCode,
-  net.kovidgoyal.kitty,
   com.sigmaos.sigmaos.macos,
   company.thebrowser.Browser,
   md.obsidian,
-  com.apple.Safari,
-  com.microsoft.edgemac,
-  com.neovide.neovide,
+  net.kovidgoyal.kitty,
+  # com.apple.Safari,
+  # com.microsoft.edgemac,
+  # com.neovide.neovide,
 ]
 
 # Boolean flag determining behavior of the floating list. true if the applications should be floating and all others tiled. false if the applications should be tiled and all others floating (default true).

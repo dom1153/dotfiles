@@ -2,27 +2,28 @@
   home.packages = with pkgs; [
     ### unix alternative
     bat
-    eza
-    fzf
-    fd
-    ripgrep
     btop
     diff-so-fancy
-    zoxide
-    zip
-    unzip
+    eza
+    fd
+    fzf
+    ripgrep
     unrar
+    unzip
+    zip
+    zoxide
 
     ### tools
     chezmoi
+    speedtest-cli
     wget
+    ### fast-cli ### does not work on darwin
 
     ### services
     entr
+    mosh
     starship
     watchman ### for chezmoi
-    wireguard-tools ### vpn
-    mosh
 
     ### cheatsheets
     cheat

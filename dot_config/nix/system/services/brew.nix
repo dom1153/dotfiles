@@ -71,8 +71,8 @@
     taps = [
       "homebrew/cask-fonts"
       "homebrew/cask-versions"
-      "osx-cross/arm"
       "localsend/localsend"
+      "osx-cross/arm"
       # "PlayCover/playcover"
     ];
     ### excluded due to not existing on homebrew or on appstore
