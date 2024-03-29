@@ -57,7 +57,7 @@
       # "karabiner-elements"
       # "logseq"
       # "openvpn-connect"
-      # "playcover-community"
+      # "playcover-nightly" ### community version not good enough at 3.0.0
       # "processing"
       # "runelite"
       # "runjs"
