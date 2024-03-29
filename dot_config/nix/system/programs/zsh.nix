@@ -6,6 +6,5 @@
     enable = true;
     ### disable completion for zsh-auto-completion plugin
     enableCompletion = false;
-    # autosuggestion.enable = false;
   };
 }

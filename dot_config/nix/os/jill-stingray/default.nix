@@ -65,6 +65,8 @@
     displayManager.autoLogin.enable = true;
     displayManager.defaultSession = "hyprland";
     # displayManager.defaultSession = "plasma";
+    # services.xserver.displayManager.sddm.enable = true;
+    # displayManager.defaultSession = "plasmawayland";
   };
 
   # https://nixos.wiki/wiki/FAQ/When_do_I_update_stateVersion

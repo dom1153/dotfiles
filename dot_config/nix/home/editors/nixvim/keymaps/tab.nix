@@ -1,10 +1,10 @@
 {...}: {
   programs.nixvim = {
     keymaps = [
-      # Tab magement via <leader><tab>
+      # Tab magement via <leader>t
       {
         mode = "n";
-        key = "<leader><tab>n";
+        key = "<leader>tn";
         action = "<cmd>tabnew<cr>";
         options = {
           silent = true;
@@ -14,7 +14,7 @@
 
       {
         mode = "n";
-        key = "<leader><tab>t";
+        key = "<leader>tt";
         action = "<cmd>tabnext<cr>";
         options = {
           silent = true;
@@ -24,7 +24,7 @@
 
       {
         mode = "n";
-        key = "<leader><tab>x";
+        key = "<leader>tx";
         action = "<cmd>tabclose<cr>";
         options = {
           silent = true;
@@ -34,7 +34,7 @@
 
       {
         mode = "n";
-        key = "<leader><tab>T";
+        key = "<leader>tT";
         action = "<cmd>tabprevious<cr>";
         options = {
           silent = true;

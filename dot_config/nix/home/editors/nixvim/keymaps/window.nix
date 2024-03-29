@@ -14,11 +14,11 @@
 
       {
         mode = "n";
-        key = "<leader>wd";
+        key = "<leader>wx";
         action = "<C-W>c";
         options = {
           silent = true;
-          desc = "Delete window";
+          desc = "Close window";
         };
       }
 
