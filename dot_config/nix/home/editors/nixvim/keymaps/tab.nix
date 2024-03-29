@@ -34,7 +34,7 @@
 
       {
         mode = "n";
-        key = "<leader>tT";
+        key = "<leader>tp";
         action = "<cmd>tabprevious<cr>";
         options = {
           silent = true;
