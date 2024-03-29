@@ -3,7 +3,11 @@
 # === UNIX ===
 ### nix setups will generate home ~/.zshrc
 if [ -f $HOME/.zshrc ]; then
-    alias sx="source $HOME/.zshrc"
+    if type "chezmoi" >/dev/null; then
+      alias sx='chezmoi apply && source $HOME/.zshrc'
+    else
+      alias sx="source $HOME/.zshrc"
+    fi
 else
     alias sx="source $ZDOTDIR/.zshrc"
 fi

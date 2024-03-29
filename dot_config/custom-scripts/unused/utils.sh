@@ -43,6 +43,12 @@ fi
 if ! type "trash" >/dev/null; then
   alias rm='rm -i'
 else
-  # alias rm='echo "Trashing..." && trash'
   alias rm=trash
+fi
+
+### zsh (and maybe bash) check path
+p=$HOME/.config/custom-scripts
+if [ -d "$p" ]; then
+  alias nr="$p/rebuild.sh"
+  alias cclean="$p/chezmoi_cleanup.sh"
 fi
