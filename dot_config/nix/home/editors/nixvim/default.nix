@@ -4,17 +4,18 @@
 
     ./options.nix
     ./globals.nix
-    ./keymaps/keymaps.nix
+    ./keymaps
 
     ./colorschemes/catppuccin.nix
 
     ./autocmd.nix
-    ./plugins/plugins.nix
+    ./plugins
   ];
 
   programs.nixvim = {
     enable = true;
   };
 
+  ### VVV TODO this should be a module enable feature with possibility to override
   home.sessionVariables.EDITOR = "nvim";
 }
