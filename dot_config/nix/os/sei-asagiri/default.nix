@@ -61,6 +61,9 @@
     configDir = "/home/archoo/Documents/.config/syncthing"; # Folder for Syncthing's settings and keys
   };
 
+  ### for vscode
+  services.gnome.gnome-keyring.enable = true;
+
   services.xserver = {
     # videoDrivers = [];
     displayManager.autoLogin.enable = true;
