@@ -1,6 +1,5 @@
 #!/usr/bin/env bash
 
-
 ### prompt_yns: yes / no / skip prompt
 ### usage: `if prompt_yns "test prompt"; then`
 ### 'no' exits the entire script
@@ -19,10 +18,10 @@ function prompt_yns {
 ### os specific branching
 case $OSTYPE in
   darwin*)
-    export PNPM_HOME="$HOME/Library/pnpm"
+    echo "darwin specific code"
     ;;
   linux-*)
-    export PNPM_HOME="$HOME/.local/share/pnpm"
+    echo "linux specific code"
     ;;
   *)
     echo "catch all... I think"
@@ -30,9 +29,9 @@ case $OSTYPE in
 esac
 
 ### check if command had output
-cs=$(ls -l)
 ### https://stackoverflow.com/questions/12137431/test-if-a-command-outputs-an-empty-string
 ### Note: $cs will be inline text, so consider running again for line breaks?
+cs=$(ls -l)
 if [[ $cs ]]; then
   echo "has output"
 else
@@ -40,10 +39,17 @@ else
 fi
 
 ### zsh style checking if exe exists
-if ! type "trash" >/dev/null; then
-  alias rm='rm -i'
+if type "trash" >/dev/null; then
+  echo "I have this command"
 else
-  alias rm=trash
+  echo "I do NOT have this command"
+fi
+
+### bash variant of above
+if type "trash" >/dev/null 2>&1; then
+  echo "I have this command"
+else
+  echo "I do NOT have this command"
 fi
 
 ### zsh (and maybe bash) check path

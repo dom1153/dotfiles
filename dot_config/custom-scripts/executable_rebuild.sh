@@ -19,6 +19,7 @@
 ###     b. I think the best way is to do this automatically... (with echo to tell user)
 ### 7. only use 'prompt' for rebuild if out of date... otherwise go straight to build script
 ### 8. diff flake.lock prompt as well (update, etc) -> probably do it's own script
+### 9. check if build is succesful before asking for reboot
 ### update utils.sh as needed
 
 function prompt_yns {
@@ -80,7 +81,7 @@ if prompt_yns "==> Continue to rebuild?"; then
     linux-*)
         ### if switch, require sudo, else
         ### --fast
-        if type "doas" >/dev/null; then
+        if type "doas" >/dev/null 2>&1; then
             myecho ">> doas nixos-rebuild boot --flake . --option eval-cache false"
             doas nixos-rebuild boot --flake . --option eval-cache false
             if prompt_yns "Would you like to reboot?"; then
