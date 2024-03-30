@@ -47,6 +47,10 @@
       53317
     ];
     firewall.allowedUDPPorts = [];
+
+    extraHosts = ''
+      alma-armas.flamingo-universe.ts.net alma-armas-tail
+    '';
   };
 
   ### note: efi partition baby-sized (configLimit is only visiual)

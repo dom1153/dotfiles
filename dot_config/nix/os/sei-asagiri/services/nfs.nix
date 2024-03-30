@@ -1,6 +1,6 @@
 {...}: {
   fileSystems."/run/media/archoo/deal" = {
-    device = "alma-armas:/deal";
+    device = "alma-armas.flamingo-universe.ts.net:/deal";
     fsType = "nfs";
     options = [
       "x-systemd.automount"
@@ -10,7 +10,7 @@
   };
 
   fileSystems."/run/media/archoo/betty" = {
-    device = "alma-armas:/betty";
+    device = "alma-armas.flamingo-universe.ts.net:/betty";
     fsType = "nfs";
     options = [
       "x-systemd.automount"
@@ -20,7 +20,7 @@
   };
 
   fileSystems."/run/media/archoo/radshiba" = {
-    device = "alma-armas:/radshiba";
+    device = "alma-armas.flamingo-universe.ts.net:/radshiba";
     fsType = "nfs";
     options = [
       "x-systemd.automount"

@@ -4,5 +4,5 @@ tags: [  ]
 ### login
 sudo tailscale login
 
-### setup ssh
+### setup ssh (sets this host to be connectable via automatic authentication)
 sudo tailscale set --ssh
