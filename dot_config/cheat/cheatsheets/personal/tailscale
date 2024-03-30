@@ -1,0 +1,8 @@
+---
+tags: [  ]
+---
+### login
+sudo tailscale login
+
+### setup ssh
+sudo tailscale set --ssh

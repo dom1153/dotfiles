@@ -81,14 +81,22 @@ if prompt_yns "==> Continue to rebuild?"; then
         ### if switch, require sudo, else
         ### --fast
         if type "doas" >/dev/null; then
-            myecho ">> doas nixos-rebuild switch --flake . --option eval-cache false"
-            doas nixos-rebuild switch --flake . --option eval-cache false
+            myecho ">> doas nixos-rebuild boot --flake . --option eval-cache false"
+            doas nixos-rebuild boot --flake . --option eval-cache false
+            if prompt_yns "Would you like to reboot?"; then
+                doas reboot
+            fi
         else
-            myecho ">> sudo nixos-rebuild switch --flake . --option eval-cache false"
-            sudo nixos-rebuild switch --flake . --option eval-cache false
+            myecho ">> sudo nixos-rebuild boot --flake . --option eval-cache false"
+            sudo nixos-rebuild boot --flake . --option eval-cache false
+            if prompt_yns "Would you like to reboot?"; then
+                sudo reboot
+            fi
         fi
         ;;
     esac
 else
   echo "==> Done"
 fi
+
+echo "==> Script Ends"
