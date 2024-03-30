@@ -18,6 +18,7 @@
     ### terminal emulators
     kitty
     foot
+    cool-retro-term
 
     ### apps
     discord

@@ -80,8 +80,13 @@ if prompt_yns "==> Continue to rebuild?"; then
     linux-*)
         ### if switch, require sudo, else
         ### --fast
-        myecho ">> sudo nixos-rebuild switch --flake . --option eval-cache false"
-        sudo nixos-rebuild switch --flake . --option eval-cache false
+        if type "doas" >/dev/null; then
+            myecho ">> doas nixos-rebuild switch --flake . --option eval-cache false"
+            doas nixos-rebuild switch --flake . --option eval-cache false
+        else
+            myecho ">> sudo nixos-rebuild switch --flake . --option eval-cache false"
+            sudo nixos-rebuild switch --flake . --option eval-cache false
+        fi
         ;;
     esac
 else

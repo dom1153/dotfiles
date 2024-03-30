@@ -21,6 +21,7 @@
     anydesk ### parsec, or cli tools
     itch
     vlc ### mpv is better?
+    polybar ### x based status bar
 
     ### gui terminal emulators
     alacritty ### kitty is better
@@ -53,7 +54,8 @@
     waydroid
     youtube-music
 
-    ### cli tools and services
+    ### cli tools
+    gitui ### lazygit - like
     bottles
     fortune
     imagemagick

@@ -4,6 +4,7 @@
     bat
     btop
     diff-so-fancy
+    delta ### git diff specifically
     eza
     fd
     fzf
@@ -12,6 +13,7 @@
     unzip
     zip
     zoxide
+    micro ### nano alternative
 
     ### tools
     chezmoi

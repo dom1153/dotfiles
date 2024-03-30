@@ -27,6 +27,7 @@
     mpvpaper
     swww
     wofi
+    fuzzel
     wl-clipboard
     networkmanagerapplet
     pavucontrol ### pulse audio volume adjust
