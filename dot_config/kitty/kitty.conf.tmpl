@@ -26,6 +26,8 @@ bold_italic_font auto
 
 {{- if eq .chezmoi.hostname "jill-stingray" }}
 font_size 10.0
+{{- else if eq .chezmoi.hostname "sei-asagiri" }}
+font_size 10.0
 {{- else }}
 font_size 12.0
 {{- end }}
