@@ -7,6 +7,7 @@
     size = 40;
   };
 
+  ### fights with KDE if installed
   # gtk = {
   #   enable = true;
   #   theme = {

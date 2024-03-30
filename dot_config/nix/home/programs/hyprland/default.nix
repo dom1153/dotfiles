@@ -5,6 +5,7 @@
   ];
 
   home.packages = with pkgs; [
-    dolphin
+    libsForQt5.dolphin
+    # kdePackages.dolphin
   ];
 }

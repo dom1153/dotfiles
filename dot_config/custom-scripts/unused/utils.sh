@@ -58,3 +58,10 @@ if [ -d "$p" ]; then
   alias nr="$p/rebuild.sh"
   alias cclean="$p/chezmoi_cleanup.sh"
 fi
+
+### bash way of check if command returns 0
+if command ; then
+    echo "Command succeeded"
+else
+    echo "Command failed"
+fi
