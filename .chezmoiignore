@@ -1,7 +1,6 @@
 
 gitconfig ### symlink for vscode filetyping
 
-.gitconfig
 .gitignore
 
 README.md
