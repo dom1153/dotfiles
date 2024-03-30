@@ -66,6 +66,7 @@
     trashy ### I think trash-cli was better?
     xsel ### already have xclip right?
     yt-dlp
+    python312Packages.howdoi ### very cool, but marked broken via nixpkgs
 
     ### tui apps
     terminal-colors

@@ -6,47 +6,47 @@
 		},
 		{
 			"path": "../dot_config",
-			"name": "dot_config (config)"
+			"name": "dot_config"
 		},
 		{
 			"path": "../dot_config/nix",
-			"name": "nix (config)"
+			"name": "nix"
 		},
 		{
 			"path": "../dot_config/nix/home/editors/nixvim",
-			"name": "nixvim (config)"
+			"name": "nixvim"
 		},
 		{
 			"path": "../dot_config/hypr",
-			"name": "hyprland (config)"
+			"name": "hyprland"
 		},
 		{
 			"path": "../dot_config/zsh",
-			"name": "zsh (config)"
+			"name": "zsh"
 		},
 		{
 			"path": "../dot_config/cheat",
-			"name": "cheat (config)"
+			"name": "cheat"
 		},
 		{
 			"path": "../dot_config/navi",
-			"name": "navi (config)"
+			"name": "navi"
 		},
 		{
 			"path": "../dot_config/foot",
-			"name": "foot (config)"
+			"name": "foot"
 		},
 		{
 			"path": "../dot_config/zellij",
-			"name": "zellij (config)"
+			"name": "zellij"
 		},
 		{
 			"path": "../dot_config/kitty",
-			"name": "kitty (config)"
+			"name": "kitty"
 		},
 		{
 			"path": "../dot_config/chezmoi",
-			"name": "chezmoi (toml)"
+			"name": "chezmoi"
 		},
 	],
 	"settings": {
