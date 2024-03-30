@@ -15,7 +15,7 @@ addArgs=""
 ### TODO: ignore flake.nix...
 
 dotdir="$HOME/.config"
-dotfiles=(amethyst windows wofi nixpkgs nvim cheat navi hypr alacritty bash foot nix kitty nvim.kickstart tmux tmuxinator waybar wofi windows zellij zsh)
+dotfiles=(ags alacritty amethyst bash cheat foot hypr kitty navi nix nixpkgs nvim nvim.kickstart tmux tmuxinator waybar windows windows wofi wofi zellij zsh)
 for d in ${dotfiles[*]}; do
 	curdir="$dotdir/$d"
 	if [ ! -d "$curdir" ]; then

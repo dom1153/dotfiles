@@ -21,6 +21,8 @@
 ### 8. diff flake.lock prompt as well (update, etc) -> probably do it's own script
 ### 9. check if build is succesful before asking for reboot
 ### 10. check if git is out of sync
+### 11. support --show-trace arg
+### 12. 'build' command to put result in /tmp (named)
 ### update utils.sh as needed
 
 ### >>> functions

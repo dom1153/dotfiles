@@ -1,7 +1,7 @@
 ### enable command completion
 ### either $SSH_CONNECTION or $SSH_TTY work
 ### https://github.com/marlonrichert/zsh-autocomplete/issues/691
-if [ -f "$HOME/.local/share/zsh/zsh-autocomplete/zsh-autocomplete.plugin.zsh" ] && [ -z $SSH_CONNECTION ] && ! type "wslvar" >/dev/null ; then
+if [ -f "$HOME/.local/share/zsh/zsh-autocomplete/zsh-autocomplete.plugin.zsh" ] && [ -z $SSH_CONNECTION ] && [ -z $VSCODE_SHELL_INTEGRATION ] && ! type "wslvar" >/dev/null ; then
     source $HOME/.local/share/zsh/zsh-autocomplete/zsh-autocomplete.plugin.zsh
 
     ### todo: need to add wslvar check

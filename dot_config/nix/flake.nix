@@ -6,14 +6,17 @@
     nixpkgs-unstable.url = "github:nixos/nixpkgs/nixos-unstable";
     home-manager.url = "github:nix-community/home-manager";
     home-manager.inputs.nixpkgs.follows = "nixpkgs-unstable";
-    nix-darwin.url = "github:LnL7/nix-darwin";
+    nix-darwin.url = "github:LnL7/nix-darwin"; ### macos style nixos-rebuild
     nix-darwin.inputs.nixpkgs.follows = "nixpkgs-unstable";
-    nixvim.url = "github:nix-community/nixvim";
+    nixvim.url = "github:nix-community/nixvim"; ### nvim with nix
     nixvim.inputs.nixpkgs.follows = "nixpkgs-unstable";
-    nixos-wsl.url = "github:nix-community/nixos-wsl";
+    nixos-wsl.url = "github:nix-community/nixos-wsl"; ### wsl compatible nixos
     nixos-wsl.inputs.nixpkgs.follows = "nixpkgs-unstable";
-    vscode-server.url = "github:nix-community/nixos-vscode-server";
+    vscode-server.url = "github:nix-community/nixos-vscode-server"; ### for WSL
     vscode-server.inputs.nixpkgs.follows = "nixpkgs-unstable";
+    ags.url = "github:Aylur/ags"; ### Aylur's GTK Shell
+    ags.inputs.nixpkgs.follows = "nixpkgs-unstable";
+
     nixos-hardware.url = "github:NixOS/nixos-hardware/master";
   };
 
@@ -26,6 +29,7 @@
     nixos-wsl,
     vscode-server,
     nixos-hardware,
+    ags,
     ...
   } @ inputs: let
     inherit (self) outputs;
