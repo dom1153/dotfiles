@@ -20,14 +20,18 @@
     ../../system/programs/zsh.nix
 
     ../../system/services/avahi.nix
+    ../../system/services/doas.nix
     ../../system/services/home-manager.nix
     ../../system/services/kmscon.nix
     ../../system/services/openssh.nix
     ../../system/services/pulseaudio.nix
     ../../system/services/syncthing.nix
+    ../../system/services/tailscale.nix
     ../../system/services/udev.nix
     ../../system/services/xfce.nix
     ../../system/services/xserver.nix
+
+    ./services/nfs.nix
 
     ./hardware-configuration.nix
   ];
@@ -39,16 +43,13 @@
     hostName = "sei-asagiri";
     ### LocalSend:
     ###   TCP 53317
-    ### Wireguard:
-    ###   TCP 51820
     firewall.allowedTCPPorts = [
-      51820
       53317
     ];
     firewall.allowedUDPPorts = [];
   };
 
-  ### efi partition baby-sized
+  ### note: efi partition baby-sized (configLimit is only visiual)
   boot.loader.systemd-boot.configurationLimit = 3;
 
   ### xfce works with pulseaudio not pipewire

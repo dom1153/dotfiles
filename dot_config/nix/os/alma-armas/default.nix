@@ -19,13 +19,13 @@
     ../../system/services/openssh.nix
     ../../system/services/plex.nix
     ../../system/services/syncthing.nix
+    ../../system/services/tailscale.nix
 
     ./services/mount.nix
     ./services/networking.nix
     ./services/nfs.nix
     ./services/samba.nix
     ./services/syncthing.nix
-    ./services/tailscale.nix
 
     ./hardware-configuration.nix
   ];

@@ -79,6 +79,7 @@ if prompt_yns "==> Continue to rebuild?"; then
         ;;
     linux-*)
         ### if switch, require sudo, else
+        ### --fast
         myecho ">> sudo nixos-rebuild switch --flake . --option eval-cache false"
         sudo nixos-rebuild switch --flake . --option eval-cache false
         ;;
