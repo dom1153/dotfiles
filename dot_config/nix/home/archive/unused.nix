@@ -26,6 +26,9 @@
     ### gui terminal emulators
     alacritty ### kitty is better
     warp-terminal
+    urxvt
+    hyper ### the js terminal
+    wezterm ### GPU-accelerated cross-platform terminal emulator
 
     ### gui art
     blender-hip
