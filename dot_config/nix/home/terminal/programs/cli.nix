@@ -33,6 +33,7 @@
 
     ### development
     gh
+    shfmt ### unsure how to integrate
 
     ### tui
     ani-cli
