@@ -14,11 +14,8 @@
     nixos-wsl.inputs.nixpkgs.follows = "nixpkgs-unstable";
     vscode-server.url = "github:nix-community/nixos-vscode-server";
     vscode-server.inputs.nixpkgs.follows = "nixpkgs-unstable";
-    # hardware.url = "github:nixos/nixos-hardware";
-
-    # Shameless plug: looking for a way to nixify your themes and make
-    # everything match nicely? Try nix-colors!
-    # nix-colors.url = "github:misterio77/nix-colors";
+    nixos-hardware.url = "github:NixOS/nixos-hardware/master";
+    nixos-hardware.inputs.nixpkgs.follows = "nixpkgs-unstable";
   };
 
   outputs = {
@@ -29,6 +26,7 @@
     nixvim,
     nixos-wsl,
     vscode-server,
+    nixos-hardware,
     ...
   } @ inputs: let
     inherit (self) outputs;

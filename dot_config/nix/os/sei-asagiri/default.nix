@@ -1,6 +1,7 @@
 {inputs, ...}: {
   imports = [
     inputs.home-manager.nixosModules.default
+    inputs.nixos-hardware.nixosModules.lenovo-thinkpad-t460
 
     ../../system/core/boot.nix
     ../../system/core/dualboot-time.nix
