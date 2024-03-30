@@ -49,7 +49,7 @@
     firewall.allowedUDPPorts = [];
 
     extraHosts = ''
-      alma-armas.flamingo-universe.ts.net alma-armas-tail
+      100.118.241.111 alma-armas-tail
     '';
   };
 

@@ -36,7 +36,7 @@
     extraHosts = ''
       10.0.0.12 jill-stingray
       10.0.0.39 stella-hoshii
-      sei-asagiri.flamingo-universe.ts.net sei-asagiri-tail
+      100.118.255.88 sei-asagiri-tail
     '';
   };
 }
