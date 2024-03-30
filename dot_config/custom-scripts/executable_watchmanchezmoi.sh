@@ -1,5 +1,7 @@
 #!/usr/bin/env bash
 
+### todo: integrate stop command as an argument
+
 CHEZMOI_SOURCE_PATH="$(chezmoi source-path)"
 echo 'Setting up watchman part 1'
 watchman watch "${CHEZMOI_SOURCE_PATH}"

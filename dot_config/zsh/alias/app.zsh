@@ -79,3 +79,9 @@ else
     alias ff="fd --type f --hidden --exclude .git | fzf --reverse"
     alias ffe="fd --type f --hidden --exclude .git | fzf --reverse | xargs $EDITOR -"
 fi
+
+if type "tldr" >/dev/null; then
+  if type "fzf" >/dev/null; then
+    alias tldrf='tldr --list | fzf --preview "tldr {1} --color" --preview-window=right,70% | xargs tldr'
+  fi
+fi
