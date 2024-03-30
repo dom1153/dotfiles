@@ -1,0 +1,23 @@
+---
+tags: [  ]
+---
+# Read from file
+glow README.md
+
+# Read from stdin
+echo "[Glow](https://github.com/charmbracelet/glow)" | glow -
+
+# Fetch README from GitHub / GitLab
+glow github.com/charmbracelet/glow
+
+# Fetch markdown from HTTP
+glow https://host.tld/file.md
+
+# stash for use later without args (saved in cache of sorts)
+glow stash README.md
+
+# word wrapping
+glow -w 60
+
+# pager ($PAPER or less)
+glow -p

@@ -14,6 +14,7 @@
     zip
     zoxide
     micro ### nano alternative
+    glow ### fancy md file reading
 
     ### tools
     chezmoi
