@@ -2,9 +2,9 @@
   ### these dependancies are being configured for just hyprland, not in general
   ### otherwise I would move them to the services folder
   imports = [
-    ./gdm.nix
+    # ./gdm.nix ### does not work well with plymouth boot
     # ./gnome-services.nix
-    # ./greetd.nix
+    ./greetd.nix
     # ./kwallet.nix
     ./xdg.nix
   ];
