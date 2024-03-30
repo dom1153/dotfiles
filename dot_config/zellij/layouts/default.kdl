@@ -1,0 +1,37 @@
+layout {
+     default_tab_template {
+        pane size=1 borderless=true {
+            plugin location="zellij:tab-bar"
+        }
+        pane split_direction="horizontal" {
+            children
+        }
+        pane size=2 borderless=true {
+            plugin location="zellij:status-bar"
+        }
+    }
+
+    tab name="toy" focus=true {
+        pane name="shell" focus=true
+    }
+
+    tab name="meh" {
+        pane name="shell"
+    }
+
+    tab name="nix" cwd="~/.config/nix/" {
+        pane name="cli (nr)"
+        pane name="chezmoi watchman" {
+            command "~/.config/custom-scripts/watchmanchezmoi.sh"
+            start_suspended true
+        }
+    }
+
+    tab name="ssh" {
+        pane name="ssh / mosh"
+    }
+
+    tab name="app" {
+        pane name="nix-shell -p / launch apps"
+    }
+}
