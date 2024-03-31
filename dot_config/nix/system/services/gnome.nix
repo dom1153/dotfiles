@@ -61,6 +61,6 @@
   nixpkgs.config.allowAliases = false; ### performance enhancement depends on this
 
   ### may be needed for autologin
-  # systemd.services."getty@tty1".enable = false;
-  # systemd.services."autovt@tty1".enable = false;
+  systemd.services."getty@tty1".enable = false;
+  systemd.services."autovt@tty1".enable = false;
 }
