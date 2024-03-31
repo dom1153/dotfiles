@@ -13,7 +13,7 @@
     imv ### image viewer
 
     ### art
-    kolourpaint ### windows 98 style
+    libsForQt5.kolourpaint ### windows 98 style
 
     ### terminal emulators
     kitty

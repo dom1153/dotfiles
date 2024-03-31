@@ -28,7 +28,8 @@
     ../../system/services/syncthing.nix
     ../../system/services/tailscale.nix
     ../../system/services/udev.nix
-    ../../system/services/xfce.nix
+    # ../../system/services/xfce.nix
+    ../../system/services/gnome.nix
     ../../system/services/xserver.nix
 
     ./services/nfs.nix
@@ -71,7 +72,7 @@
   services.xserver = {
     # videoDrivers = [];
     displayManager.autoLogin.enable = true;
-    displayManager.defaultSession = "xfce";
+    # displayManager.defaultSession = "xfce";
     libinput.touchpad.disableWhileTyping = true;
   };
 

@@ -114,49 +114,45 @@ ind=""
 ### todo
 # fi
 
-if prompt_yns "==> Continue to rebuild?"; then
-	ind="  "
-	case $OSTYPE in
-	darwin*)
-		### sudo request will happen if needed
-		### --show-trace
-		if [ ! "$nrcmd" ]; then
-			nrcmd="switch"
-		fi
+ind="  "
+case $OSTYPE in
+darwin*)
+	### sudo request will happen if needed
+	### --show-trace
+	if [ ! "$nrcmd" ]; then
+		nrcmd="switch"
+	fi
 
-		myecho ">> darwin-rebuild ${nrcmd} --flake . --option eval-cache false"
-		darwin-rebuild ${nrcmd} --flake . --option eval-cache false
-		;;
-	linux-*)
-		super="sudo"
+	myecho ">> darwin-rebuild ${nrcmd} --flake . --option eval-cache false"
+	darwin-rebuild ${nrcmd} --flake . --option eval-cache false
+	;;
+linux-*)
+	super="sudo"
+	super="${super} " ### append a space
+	if type "doas" >/dev/null 2>&1; then
+		super="doas"
 		super="${super} " ### append a space
-		if type "doas" >/dev/null 2>&1; then
-			super="doas"
-			super="${super} " ### append a space
-		fi
+	fi
 
-		### todo maybe convert this to a case statement
-		if [ ! "$nrcmd" ]; then
-			nrcmd="boot"
-		fi
-		if [ "${nrcmd}" = "build" ]; then
-			super=""
-		fi
+	### todo maybe convert this to a case statement
+	if [ ! "$nrcmd" ]; then
+		nrcmd="boot"
+	fi
+	if [ "${nrcmd}" = "build" ]; then
+		super=""
+	fi
 
-		myecho ">> ${super}nixos-rebuild ${nrcmd} --flake . --option eval-cache false"
-		if ${super}nixos-rebuild ${nrcmd} --flake . --option eval-cache false; then
-			if [ "${nrcmd}" = "boot" ]; then
-				if [ "${force_reboot}" ]; then
-					${super}reboot
-				elif prompt_yns "Would you like to reboot?"; then
-					${super}reboot
-				fi
+	myecho ">> ${super}nixos-rebuild ${nrcmd} --flake . --option eval-cache false"
+	if ${super}nixos-rebuild ${nrcmd} --flake . --option eval-cache false; then
+		if [ "${nrcmd}" = "boot" ]; then
+			if [ "${force_reboot}" ]; then
+				${super}reboot
+			elif prompt_yns "Would you like to reboot?"; then
+				${super}reboot
 			fi
 		fi
-		;;
-	esac
-else
-	myecho "==> Done"
-fi
+	fi
+	;;
+esac
 
 myecho "==> Script Ends"
