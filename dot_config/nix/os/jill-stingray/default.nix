@@ -65,7 +65,7 @@
   services.xserver = {
     videoDrivers = ["amdgpu"];
     # displayManager.autoLogin.enable = true;
-    # displayManager.defaultSession = "hyprland";
+    displayManager.defaultSession = "hyprland";
     # displayManager.defaultSession = "plasma";
     # services.xserver.displayManager.sddm.enable = true;
     # displayManager.defaultSession = "plasmawayland";
