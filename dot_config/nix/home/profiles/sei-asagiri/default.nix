@@ -2,11 +2,13 @@
   imports = [
     ../../../home
 
-    ../../editors/nixvim
+    ### surround nvim broken???
+    # ../../editors/nixvim
     ../../editors/vim
     ../../editors/vscode
 
     ../../programs
+    ../../programs/gnome.nix
 
     ../../terminal/programs
     ../../terminal/programs/qemu.nix
