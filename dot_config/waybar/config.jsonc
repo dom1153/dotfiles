@@ -24,7 +24,7 @@
     },
     // CENTER MODULES
     "clock": {
-        "format": "{:%A, %B %d, %Y | %H:%M }",
+        "format": "{:%H:%M | %A, %B %d }",
         "tooltip-format": "<tt>{calendar}</tt>",
         "calendar": {
             "mode": "month",
