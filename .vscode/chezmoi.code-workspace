@@ -17,6 +17,10 @@
 			"name": "nixvim"
 		},
 		{
+			"path": "../dot_config/ags",
+			"name": "ags"
+		},
+		{
 			"path": "../dot_config/hypr",
 			"name": "hyprland"
 		},

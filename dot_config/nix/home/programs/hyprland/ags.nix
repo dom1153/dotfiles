@@ -11,15 +11,39 @@
   programs.ags = {
     enable = true;
 
-    ### null or path, leave as null if you don't want hm to manage the config
-    ### VVV using an actual path doesn't work? gives aboslute path error.
-    # configDir = ../../../../ags;
+    ### additional packages to add to ajs's runtime
+    # extraPackages = with pkgs; [
+    #   gtksourceview
+    #   webkitgtk
+    #   accountsservice
+    # ];
 
-    ### additional packages to add to gjs's runtime
+    ### for end-4 dots
     extraPackages = with pkgs; [
       gtksourceview
+      gtksourceview4
+      ollama
+      python311Packages.material-color-utilities
+      python311Packages.pywayland
+      pywal
+      sassc
       webkitgtk
+      webp-pixbuf-loader
+      ydotool
+
+      ### per official documentation
       accountsservice
     ];
   };
+
+  ### for end-4 dots
+  home.packages = with pkgs; [
+    ollama
+    pywal
+    sassc
+    (python311.withPackages (p: [
+      p.material-color-utilities
+      p.pywayland
+    ]))
+  ];
 }
