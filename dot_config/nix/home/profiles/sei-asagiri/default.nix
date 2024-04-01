@@ -3,6 +3,9 @@
     ../../../home
 
     ### surround nvim broken???
+    ### (per documentation this means nixpkgs and nixvim are out of date)
+    ### https://nix-community.github.io/nixvim/
+    ### Try again another day?...
     # ../../editors/nixvim
     ../../editors/vim
     ../../editors/vscode
