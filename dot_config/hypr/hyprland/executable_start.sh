@@ -19,7 +19,8 @@ esac
 bash ~/.config/custom-scripts/watchmanchezmoi.sh
 
 ### network manager applet
-nm-applet --indicator &
+### I'm on ethernet it's fine
+# nm-applet --indicator &
 
 waybar &
 

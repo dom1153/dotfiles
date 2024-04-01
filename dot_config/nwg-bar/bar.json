@@ -1,0 +1,21 @@
+[
+    {
+        "label": "_Shutdown",
+        "exec": "systemctl -i poweroff"
+    },
+    {
+        "label": "_Reboot",
+        "exec": "systemctl reboot"
+    },
+    {
+        "label": "_Windows",
+        "exec": "systemctl reboot --boot-loader-entry=auto-windows"
+    },
+    {
+        "label": "_Logout",
+        "exec": "hyprctl dispatch exit"
+    },
+    {
+        "label": "_Close"
+    }
+]

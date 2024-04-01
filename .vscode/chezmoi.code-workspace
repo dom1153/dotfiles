@@ -17,8 +17,16 @@
 			"name": "nixvim"
 		},
 		{
+			"path": "../dot_config/waybar",
+			"name": "waybar"
+		},
+		{
 			"path": "../dot_config/ags",
 			"name": "ags"
+		},
+		{
+			"path": "../dot_config/eww",
+			"name": "eww"
 		},
 		{
 			"path": "../dot_config/hypr",

@@ -35,6 +35,7 @@
     overskride ### bluetooth gui, alternativly use bluetoothctl
     blueberry ### another bluetooth, has a tray
     hyprshade ### night light
+    nwg-bar ### power menu!
   ];
 
   # Hint electron apps to use wayland:
