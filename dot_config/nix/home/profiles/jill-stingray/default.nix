@@ -48,12 +48,6 @@
       nitch
       ranger
       ttyper
-
-      ### end-4 ags
-      ### disable waybar, dunst
-      brightnessctl
-      ydotool
-      sass
     ];
 
     # https://nixos.wiki/wiki/FAQ/When_do_I_update_stateVersion

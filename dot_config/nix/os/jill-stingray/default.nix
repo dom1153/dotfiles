@@ -24,7 +24,7 @@
     ../../system/services/doas.nix
     ../../system/services/flatpak.nix
     ../../system/services/home-manager.nix
-    ../../system/services/kde-plasma.nix
+    # ../../system/services/kde-plasma.nix
     ../../system/services/kmscon.nix
     ../../system/services/openssh.nix
     ../../system/services/pipewire.nix

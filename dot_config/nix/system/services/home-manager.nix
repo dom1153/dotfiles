@@ -19,5 +19,9 @@
     ### enable the usage user packages through
     ### the users.users.<name>.packages option
     useUserPackages = true;
+
+    # move existing files to the .old suffix rather than failing
+    # with a very long error message about it
+    backupFileExtension = "old";
   };
 }
