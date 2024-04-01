@@ -13,19 +13,21 @@
 
   ### fights with KDE if installed
   gtk = {
+    #
     enable = true;
     theme = {
       # package = pkgs.kdePackages.breeze-gtk;
       # name = "Breeze-Dark";
-      # package = pkgs.adw-gtk3;
-      # name = "adw-gtk3-dark";
-      name = "Catppuccin-Mocha-Compact-Green-Dark";
-      package = pkgs.catppuccin-gtk.override {
-        accents = ["green" "pink"];
-        size = "compact"; ### standard|compact
-        tweaks = ["rimless"]; ### see Colloid-gtk-theme
-        variant = "mocha";
-      };
+      package = pkgs.adw-gtk3;
+      name = "adw-gtk3-dark";
+      ### VVV breaks pop-up windows with vscode :/
+      # name = "Catppuccin-Mocha-Compact-Green-Dark";
+      # package = pkgs.catppuccin-gtk.override {
+      #   accents = ["green" "pink"];
+      #   size = "compact"; ### standard|compact
+      #   tweaks = ["rimless"]; ### see Colloid-gtk-theme
+      #   variant = "mocha";
+      # };
     };
 
     iconTheme = {
