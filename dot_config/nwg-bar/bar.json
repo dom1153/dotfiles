@@ -9,7 +9,7 @@
     },
     {
         "label": "_Windows",
-        "exec": "systemctl reboot --boot-loader-entry=auto-windows"
+        "exec": "/home/archoo/.config/custom-scripts/reboot-windows.sh"
     },
     {
         "label": "_Logout",

@@ -21,13 +21,13 @@
       package = pkgs.adw-gtk3;
       name = "adw-gtk3-dark";
       ### VVV breaks pop-up windows with vscode :/
-      # name = "Catppuccin-Mocha-Compact-Green-Dark";
-      # package = pkgs.catppuccin-gtk.override {
-      #   accents = ["green" "pink"];
-      #   size = "compact"; ### standard|compact
-      #   tweaks = ["rimless"]; ### see Colloid-gtk-theme
-      #   variant = "mocha";
-      # };
+      #   name = "Catppuccin-Mocha-Compact-Green-Dark";
+      #   package = pkgs.catppuccin-gtk.override {
+      #     accents = ["green"];
+      #     size = "compact"; ### standard|compact
+      #     tweaks = ["rimless" "normal"]; ### see Colloid-gtk-theme
+      #     variant = "mocha";
+      #   };
     };
 
     iconTheme = {
