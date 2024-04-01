@@ -1,0 +1,14 @@
+# use shell command (ctrl-e) via zsh
+
+# show initial setup
+navi fn welcome
+
+# echo command instead of running it
+navi --print
+
+# search community cheatsheet
+navi --cheatsh docker
+navi --tldr dockr
+
+# defualt download storage location
+~/.local/share/navi/cheats

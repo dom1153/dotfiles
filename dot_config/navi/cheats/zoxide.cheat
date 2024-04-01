@@ -1,0 +1,4 @@
+% cd, zoxide
+
+# edit history (ctrl-w, ctrl-s)
+zoxide edit

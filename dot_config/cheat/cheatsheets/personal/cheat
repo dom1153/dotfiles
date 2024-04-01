@@ -1,0 +1,13 @@
+# access subfolder cheats
+cheat foo/apps
+
+# misc notes
+> edit cheats with chezmoi, NOT cheat -e command
+> perhaps we can configure cheatsheet to point to chezmoi home in the future...
+
+> you can create a '.cheat' folder, and chezmoi will be able to access that path if relevant
+> e.g. .cheat/local
+cheat local
+
+community cheatsheets here:
+https://github.com/cheat/cheatsheets

@@ -1,0 +1,10 @@
+; test text
+
+% macos, poweroff
+
+# shutdown
+sudo shutdown -h now 
+
+% finder, open, file
+# open apps from cli
+open <file>

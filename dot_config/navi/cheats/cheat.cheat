@@ -1,0 +1,19 @@
+% cheat
+
+# view cheatsheet (no color)
+cheat apps
+
+# view cheatsheet with color
+cheat -c apps
+
+# view cheatsheet under subfolder
+cheat foo/apps
+
+# see cheat paths
+cheat -d
+
+# see personal cheats
+cheat -l -p personal
+
+# janky fzf
+cheat -l | fzf
