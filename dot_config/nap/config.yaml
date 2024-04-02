@@ -1,4 +1,6 @@
 # Configuration
+### it won't??? read the config?
+### also like no cli options? meh...
 home: ~/.config/nap/snip
 default_language: go
 theme: nord
