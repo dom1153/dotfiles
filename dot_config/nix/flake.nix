@@ -16,6 +16,8 @@
     ags.url = "github:Aylur/ags"; ### Aylur's GTK Shell
     ags.inputs.nixpkgs.follows = "nixpkgs";
 
+    mynv.url = "./home/editors/nv";
+
     nixos-hardware.url = "github:NixOS/nixos-hardware/master";
   };
 
@@ -29,6 +31,7 @@
     vscode-server,
     nixos-hardware,
     ags,
+    mynv,
     ...
   } @ inputs: let
     inherit (self) outputs;

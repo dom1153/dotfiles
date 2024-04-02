@@ -2,9 +2,13 @@
   imports = [
     # ./bufferline.nix ### formatting this is awful ; keep disabled
     # ./neo-tree.nix ### cool visual, but maybe use another tool or plugin
-    ./which-key.nix
-    ./telescope.nix
+    ./completion
+
     ./conform.nix
+
+    ./telescope.nix
+
+    ./which-key.nix
   ];
 
   programs.nixvim = {

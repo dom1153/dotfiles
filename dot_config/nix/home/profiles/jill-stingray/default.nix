@@ -1,8 +1,13 @@
-{pkgs, ...}: {
+{
+  inputs,
+  pkgs,
+  ...
+}: {
   imports = [
     ../../../home
 
-    ../../editors/nixvim
+    # ../../editors/nixvim
+
     ../../editors/vim
     ../../editors/vscode
 
@@ -48,6 +53,8 @@
       nitch
       ranger
       ttyper
+
+      inputs.mynv.packages.${system}.default
     ];
 
     # https://nixos.wiki/wiki/FAQ/When_do_I_update_stateVersion
