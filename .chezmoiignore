@@ -9,9 +9,14 @@ README.md
 .parsec/
 .parsec/**
 
+### purely for reference
 .ssh_template/
 .ssh_template/**
 
-### already being ignored but just in case for the future
-.vscode/
-.vscode/**
+### already being ignored but just for good measure
+**/.vscode
+**/.vscode/**
+
+### ignore all instances (...)
+**/result
+**/flake.lock

@@ -1,0 +1,2 @@
+extraConfigVim = builtins.readFile ./init.vim;
+extraConfigLua = builtins.readFile ./init.lua;

@@ -1,3 +1,4 @@
+### cool plugin, but harpoon and telescope make this seem unneeded
 {...}: {
   imports = [
   ];

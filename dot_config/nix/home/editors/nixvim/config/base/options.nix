@@ -1,5 +1,5 @@
-{...}: {
-  programs.nixvim = {
+{config, ...}: {
+  config = {
     ### See `:help vim.opt` and `:help option-list`
     options = {
       ### You can also add relative line numbers, for help with jumping.

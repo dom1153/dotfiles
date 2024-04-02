@@ -6,8 +6,6 @@
   imports = [
     ../../../home
 
-    # ../../editors/nixvim
-
     ../../editors/vim
     ../../editors/vscode
 
@@ -28,6 +26,8 @@
       ### https://github.com/USA-RedDragon/jagex-launcher-flatpak
       ### add flatpak bin paths (runescape)
       XDG_DATA_DIRS = "$XDG_DATA_DIRS:/usr/share:/var/lib/flatpak/exports/share:$HOME/.local/share/flatpak/exports/share";
+
+      EDITOR = "nvim";
     };
 
     packages = with pkgs; [
@@ -54,7 +54,7 @@
       ranger
       ttyper
 
-      inputs.mynv.packages.${system}.default
+      inputs.archoo-nixvim.packages.${system}.default
     ];
 
     # https://nixos.wiki/wiki/FAQ/When_do_I_update_stateVersion

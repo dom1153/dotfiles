@@ -1,5 +1,5 @@
 {
-  description = "A nixvim configuration";
+  description = "Archoo's nixvim configuration";
 
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
@@ -8,10 +8,13 @@
   };
 
   outputs = {
+    self,
     nixvim,
     flake-parts,
     ...
-  } @ inputs:
+  } @ inputs: let
+    cfg = import ./config;
+  in
     flake-parts.lib.mkFlake {inherit inputs;} {
       systems = [
         "x86_64-linux"
@@ -29,7 +32,7 @@
         nixvim' = nixvim.legacyPackages.${system};
         nixvimModule = {
           inherit pkgs;
-          module = import ./default.nix; # import the module directly
+          module = cfg; # import the module directly
           # You can use `extraSpecialArgs` to pass additional arguments to your module files
           extraSpecialArgs = {
             # inherit (inputs) foo;

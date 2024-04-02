@@ -8,3 +8,8 @@
 [LunarVim](https://www.lunarvim.org/)
 [NVPunk](https://nvpunk.gabmus.org/)
 [NixVim](https://github.com/nix-community/nixvim)
+
+Can be used standalone with `nix run .`
+
+# Other Doc References
+[Sample NixVim config](https://github.com/nix-community/nixvim/tree/main/templates/simple)
