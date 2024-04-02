@@ -1,12 +1,13 @@
 {...}: {
   plugins = {
+    ### This tiny plugin adds vscode-like pictograms to neovim built-in lsp
     lspkind = {
       symbolMap = {
-        "Text" = "󰉿";
-        "Method" = "󰆧";
+        "Text" = "󰊄";
+        "Method" = "󰕳";
         "Function" = "󰊕";
         "Constructor" = "";
-        "Field" = "󰜢";
+        "Field" = "";
         "Variable" = "󰀫";
         "Class" = "󰠱";
         "Interface" = "";
@@ -26,7 +27,7 @@
         "Struct" = "󰙅";
         "Event" = "";
         "Operator" = "󰆕";
-        "TypeParameter" = "";
+        "TypeParameter" = "";
       };
 
       cmp = {

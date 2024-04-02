@@ -1,7 +1,10 @@
 {...}: {
   imports = [
+    ./cmp-extensions.nix
     ./lspkind.nix
   ];
+
+  # extraConfigLua = builtins.readFile ./lua/cmp.lua;
 
   plugins = {
     cmp = {
@@ -79,12 +82,5 @@
         };
       };
     };
-
-    ### cmp extensions
-    cmp-nvim-lsp = {enable = true;}; # lsp
-    cmp-buffer = {enable = true;}; # bufffers
-    cmp-path = {enable = true;}; # file system paths
-    cmp_luasnip = {enable = true;}; # snippets
-    cmp-cmdline = {enable = false;}; # autocomplete for cmdline
   };
 }

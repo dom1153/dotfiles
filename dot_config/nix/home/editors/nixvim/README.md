@@ -11,5 +11,11 @@
 
 Can be used standalone with `nix run .`
 
+# Notes
+Still very much a work in prorgress.
+Ported nixvim code in... luasnips are not completely working.
+Much work is to be done.
+Most modules are disabled
+
 # Other Doc References
 [Sample NixVim config](https://github.com/nix-community/nixvim/tree/main/templates/simple)

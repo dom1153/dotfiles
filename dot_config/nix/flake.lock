@@ -28,12 +28,12 @@
       },
       "locked": {
         "lastModified": 1,
-        "narHash": "sha256-5XsVmaxbqb7Djy6cc78k16OXa9DdWQ/t0diiGxRVlwA=",
-        "path": "/nix/store/wq55brnwzrqqhzlg9g2xinxf9qzjdpb1-source/home/editors/nixvim",
+        "narHash": "sha256-XmyUUEIBbzN4UsAjPIATbQL85Hh30DNJuABxjss1sG0=",
+        "path": "/nix/store/61mid7jvjgqdiin2bp88q0lhi2a6df26-source/home/editors/nixvim",
         "type": "path"
       },
       "original": {
-        "path": "/nix/store/wq55brnwzrqqhzlg9g2xinxf9qzjdpb1-source/home/editors/nixvim",
+        "path": "/nix/store/61mid7jvjgqdiin2bp88q0lhi2a6df26-source/home/editors/nixvim",
         "type": "path"
       }
     },

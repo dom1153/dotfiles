@@ -1,10 +1,6 @@
 {...}: {
-  plugins = {
-    ### displays a popup with possible key bindings of the command you started typing
-    which-key = {
-      enable = true;
-    };
-  };
+  ### displays a popup with possible key bindings of the command you started typing
+  plugins.which-key = {enable = true;};
 
   keymaps = [
     ### tab.nix

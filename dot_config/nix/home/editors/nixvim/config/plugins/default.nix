@@ -1,12 +1,9 @@
 {pkgs, ...}: {
   imports = [
-    ./completion
-
-    ./formatter/conform.nix
-
+    ./languages
     ./telescope
-
-    ./ui
+    # ./ui
+    # ./utils
   ];
 
   extraPlugins = with pkgs.vimPlugins; [

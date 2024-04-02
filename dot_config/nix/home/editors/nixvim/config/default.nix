@@ -1,9 +1,6 @@
 {...}: {
   imports = [
-    ./base/autocmd.nix
-
-    ./base/globals.nix
-    ./base/options.nix
+    ./base
 
     ./keymaps
 
