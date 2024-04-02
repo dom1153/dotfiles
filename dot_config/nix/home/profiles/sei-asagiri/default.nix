@@ -29,6 +29,8 @@
       qbittorrent
       trash-cli
       ttyper
+
+      inputs.archoo-nixvim.packages.${system}.default
     ];
 
     # https://nixos.wiki/wiki/FAQ/When_do_I_update_stateVersion

@@ -2,9 +2,8 @@
   imports = [
     ../../../home
 
-    ../../editors/nixvim
     ../../editors/vim
-    ../../editors/vscode
+    # ../../editors/vscode ### I don't think I need this. Should use wsl-server
 
     ../../terminal/programs
 
@@ -25,6 +24,8 @@
       ### cli tools and services
       # trash-cli
       trashy
+
+      inputs.archoo-nixvim.packages.${system}.default
     ];
 
     # https://nixos.wiki/wiki/FAQ/When_do_I_update_stateVersion
