@@ -37,3 +37,10 @@
 @define-color pink #f5c2e7;
 @define-color flamingo #f2cdcd;
 @define-color rosewater #f5e0dc;
+
+window#waybar {
+    background-color: rgba(43, 48, 59, 0.8);
+    color: #ffffff;
+    transition-property: background-color;
+    transition-duration: .5s;
+}

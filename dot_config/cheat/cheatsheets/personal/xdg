@@ -1,0 +1,3 @@
+# for more see https://wiki.archlinux.org/title/Xdg-utils
+
+xdg-settings get default-web-browser
