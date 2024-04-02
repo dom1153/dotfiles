@@ -1,9 +1,4 @@
 {...}: {
-  imports = [
-    ./cmp-extensions.nix
-    ./lspkind.nix
-  ];
-
   # extraConfigLua = builtins.readFile ./lua/cmp.lua;
 
   plugins = {

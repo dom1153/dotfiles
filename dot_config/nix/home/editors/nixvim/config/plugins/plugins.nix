@@ -1,9 +1,9 @@
 {pkgs, ...}: {
   imports = [
-    ./languages
-    ./telescope
-    # ./ui
-    # ./utils
+    ./languages/languages.nix
+    ./tools/tools.nix
+    ./ui/ui.nix
+    ./utils/utils.nix
   ];
 
   extraPlugins = with pkgs.vimPlugins; [

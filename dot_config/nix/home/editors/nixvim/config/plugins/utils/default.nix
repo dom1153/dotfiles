@@ -1,7 +1,0 @@
-{...}: {
-  imports = [
-    ./dap
-    ./git
-    ./misc
-  ];
-}

@@ -1,11 +1,11 @@
 {...}: {
   imports = [
-    ./base
+    ./base/base.nix
 
-    ./keymaps
+    ./keymaps/keymaps.nix
 
     ./colorschemes/catppuccin.nix
 
-    ./plugins
+    ./plugins/plugins.nix
   ];
 }

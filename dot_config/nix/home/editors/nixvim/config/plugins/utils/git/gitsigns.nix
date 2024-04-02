@@ -3,7 +3,7 @@
   plugins.gitsigns = {
     enable = true;
     settings = {
-      trouble = true;
+      trouble = false;
       currentLineBlame = false;
     };
   };

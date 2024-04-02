@@ -1,12 +1,4 @@
 {...}: {
-  imports = [
-    ./lspsaga.nix
-
-    # ./trouble.nix
-
-    ./none-ls.nix
-  ];
-
   extraConfigLua = builtins.readFile ./lua/lsp.lua;
 
   plugins.lsp = {

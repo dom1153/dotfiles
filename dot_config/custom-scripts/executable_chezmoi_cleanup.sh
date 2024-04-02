@@ -27,7 +27,9 @@ for d in ${dotfiles[*]}; do
 		else
 			echo "curdir: $curdir"
 			### xargs -p : interactive, -I {} command "{}" should quote each argument (to handle whitespace)
-			chezmoi unmanaged -p absolute . | xargs -p -I {} trash "{}"
+			### todo: have a internactive cli flag (or show what got deleted at least...)
+			chezmoi unmanaged -p absolute . | xargs -I {} trash "{}"
+			# chezmoi unmanaged -p absolute . | xargs -p -I {} trash "{}"
 		fi
 	fi
 done

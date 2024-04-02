@@ -13,7 +13,7 @@
     flake-parts,
     ...
   } @ inputs: let
-    cfg = import ./config;
+    cfg = import ./config/default.nix;
   in
     flake-parts.lib.mkFlake {inherit inputs;} {
       systems = [

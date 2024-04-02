@@ -1,7 +1,8 @@
+### VVV this 'config' import is needed for nixivm module, despite what nil tells you
 {config, ...}: {
   config = {
     ### See `:help vim.opt` and `:help option-list`
-    options = {
+    opts = {
       ### You can also add relative line numbers, for help with jumping.
       ###  Experiment for yourself to see if you like it!
       number = true;

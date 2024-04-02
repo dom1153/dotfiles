@@ -1,4 +1,5 @@
 {...}: {
+  ### A fancy, configurable, notification manager for NeoVim
   plugins.notify = {
     enable = true;
     backgroundColour = "#000000";

@@ -1,4 +1,7 @@
-{
+{...}: {
+  ### (Nice, Noise, Notice)
+  ### Highly experimental plugin that completely replaces the UI for messages, cmdline and the popupmenu.
+  ### separated into modules
   plugins.noice = {
     enable = true;
     notify = {

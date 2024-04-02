@@ -5,7 +5,6 @@
   extraPackages = with pkgs; [
     ripgrep ### reccomended for telescope
     fd ### find alternative, reccomended for (telescope)
-    ### :checkhealth
   ];
 
   ### telescope.nvim is a highly extendable fuzzy finder over lists
