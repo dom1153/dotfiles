@@ -7,13 +7,13 @@
             "label": "Build Nixvim",
             "type": "shell",
             "options": {
-                "cwd": "${userHome}/.config/nix/home/editors/nixvim",
+                "cwd": "${userHome}/.config/nix/home/editors/nixvim"
             },
             "command": "nix build . --option eval-cache false",
             "problemMatcher": [],
             "group": {
                 "kind": "build",
-                "isDefault": true,
+                "isDefault": true
             },
             "presentation": {
                 "echo": true,

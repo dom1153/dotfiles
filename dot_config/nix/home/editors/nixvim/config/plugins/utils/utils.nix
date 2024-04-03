@@ -1,13 +1,13 @@
 {...}: {
   imports = [
-    ./git/diffview.nix
-    ./git/gitsigns.nix
-    ./git/lazygit.nix
-    ./git/neogit.nix
+    # ./git/diffview.nix
+    # ./git/gitsigns.nix
+    # ./git/lazygit.nix
+    # ./git/neogit.nix
 
     # ./misc/better-escape.nix
     # ./misc/flash.nix
-    # ./misc/harpoon.nix
+    ./misc/harpoon.nix
     # ./misc/illuminate.nix
     # ./misc/markdown-preview.nix
     # ./misc/mini.nix

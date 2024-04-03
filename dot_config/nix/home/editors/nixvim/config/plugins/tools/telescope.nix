@@ -43,6 +43,7 @@
     };
 
     keymaps = {
+      ### todo: git_files remap (e.g. ignore node_modules)
       "<leader><space>" = {
         action = "find_files, {}";
         desc = "Files";

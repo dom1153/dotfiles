@@ -5,16 +5,16 @@
             "name": "Nixvim (~)"
         },
         {
-            "path": "../config/plugins",
-            "name": "Plugins!"
+            "path": "../config/base",
+            "name": "Options"
         },
         {
             "path": "../config/keymaps",
             "name": "Base Keymaps"
         },
         {
-            "path": "../config/base",
-            "name": "Options"
+            "path": "../config/plugins",
+            "name": "Plugins!"
         },
         {
             "path": "../config",

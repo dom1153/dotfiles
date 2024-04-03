@@ -1,17 +1,17 @@
 {...}: {
   imports = [
-    ./misc/dressing-nvim.nix
+    # ./misc/dressing-nvim.nix
     # ./misc/indent-blankline.nix ### 'something is configured wrong'
-    ./misc/noice.nix
-    ./misc/nui.nix
+    # ./misc/noice.nix
+    # ./misc/nui.nix
 
-    ./notify/nvim-notify.nix
-    ./notify/fidget.nix
+    # ./notify/nvim-notify.nix
+    # ./notif0y/fidget.nix
 
-    ./startpage/alpha.nix
+    # ./startpage/alpha.nix
 
-    ./statusline/lualine.nix
-    ./statusline/staline.nix
+    # ./statusline/lualine.nix
+    # ./statusline/staline.nix
 
     ./widgets/which-key.nix
   ];
