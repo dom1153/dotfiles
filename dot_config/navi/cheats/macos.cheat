@@ -1,9 +1,12 @@
-; test text
+; comment
 
 % macos, poweroff
+# shutdown mac
+sudo shutdown -h now
 
-# shutdown
-sudo shutdown -h now 
+% macos, reboot
+# reboot mac
+sudo shutdown -r now
 
 % finder, open, file
 # open apps from cli
