@@ -16,7 +16,8 @@ case "$chosen" in
 	;;
 esac
 
-bash ~/.config/custom-scripts/watchmanchezmoi.sh
+### this should occur at zsh start
+# bash ~/.config/custom-scripts/watchmanchezmoi.sh
 
 ### network manager applet
 ### I'm on ethernet it's fine

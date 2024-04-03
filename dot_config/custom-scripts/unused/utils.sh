@@ -62,6 +62,17 @@ if [ -d "$p" ]; then
 	alias cclean="$p/chezmoi_cleanup.sh"
 fi
 
+### check if executable (also check if file exists)
+if [ -x $HOME/.config/custom-scripts/watchmanchezmoi.sh ]; then
+	$HOME/.config/custom-scripts/watchmanchezmoi.sh >/dev/null
+fi
+
+### check if file exists
+if [ -f $HOME/.config/custom-scripts/watchmanchezmoi.sh ]; then
+	$HOME/.config/custom-scripts/watchmanchezmoi.sh >/dev/null
+fi
+
+
 ### bash way of check if command returns 0
 if command; then
 	echo "Command succeeded"
