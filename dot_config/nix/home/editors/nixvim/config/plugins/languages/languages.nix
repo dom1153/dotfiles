@@ -1,8 +1,8 @@
 {...}: {
   imports = [
-    # ./completion/cmp-extensions.nix
-    # ./completion/cmp.nix
-    # ./completion/lspkind.nix
+    ./completion/cmp-extensions.nix
+    ./completion/cmp.nix
+    ./completion/lspkind.nix
 
     ./formatter/conform.nix
 
@@ -13,7 +13,7 @@
     # ./lsp/trouble.nix
     # ./lsp/none-ls.nix
 
-    # ./snippets/luasnip.nix
+    ./snippets/luasnip.nix
 
     # ./treesitter/context.nix
     # ./treesitter/text-objects.nix

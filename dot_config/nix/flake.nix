@@ -26,9 +26,9 @@
     nix-darwin,
     nixos-wsl,
     vscode-server,
-    nixos-hardware,
     ags,
     archoo-nixvim,
+    nixos-hardware,
     ...
   } @ inputs: let
     inherit (self) outputs;

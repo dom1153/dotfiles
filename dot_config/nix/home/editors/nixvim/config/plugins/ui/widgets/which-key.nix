@@ -16,5 +16,11 @@
       key = "<leader>w";
       action = "+window";
     }
+
+    {
+      mode = "n";
+      key = "<leader>g";
+      action = "+git";
+    }
   ];
 }

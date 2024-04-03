@@ -33,8 +33,8 @@
       signcolumn = "yes";
 
       ### Decrease update time
-      updatetime = 250; ### 4000ms by default, try 50
-      timeoutlen = 300; ### try 10
+      updatetime = 50; ### 4000ms by default, try 50, 250
+      timeoutlen = 10; ### (used for which-key)
 
       # Set completeopt to have a better completion experience
       completeopt = ["menuone" "noselect" "noinsert"]; # mostly just for cmp
