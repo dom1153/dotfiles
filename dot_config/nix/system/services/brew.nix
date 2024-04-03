@@ -35,6 +35,7 @@
       "neovide"
       "obsidian"
       "parsec"
+      "proton-mail"
       "qbittorrent"
       "qmk-toolbox"
       "raycast"
