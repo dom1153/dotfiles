@@ -17,27 +17,15 @@ layout {
         }
     }
 
-    tab name="toy" focus=true {
+    tab name="foo" focus=true {
         pane name="shell" focus=true
+    }
+
+    tab name="bar"  {
+        pane name="shell"
     }
 
     tab name="meh" {
         pane name="shell"
-    }
-
-    tab name="nix" cwd="~/.config/nix/" {
-        pane name="cli (nr)"
-        pane name="chezmoi watchman" {
-            command "~/.config/custom-scripts/watchmanchezmoi.sh"
-            start_suspended true
-        }
-    }
-
-    tab name="ssh" {
-        pane name="ssh / mosh"
-    }
-
-    tab name="app" {
-        pane name="nix-shell -p / launch apps"
     }
 }

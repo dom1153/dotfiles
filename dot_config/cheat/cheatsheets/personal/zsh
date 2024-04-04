@@ -1,0 +1,5 @@
+# searching key binds
+bindkey -l
+bindkey -M <name bindkey -l>
+
+man 1 zshzle

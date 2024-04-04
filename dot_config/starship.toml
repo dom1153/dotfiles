@@ -4,6 +4,7 @@ palette = "catppuccin_mocha"
 
 ### 'pure prompt '
 format = """
+$shell\
 $username\
 $hostname\
 $linebreak\
@@ -17,6 +18,13 @@ $jobs\
 $status\
 $line_break\
 $character"""
+
+# ~/.config/starship.toml
+
+[shell]
+unknown_indicator = 'unknown shell'
+style = 'cyan bold'
+disabled = false
 
 [hostname]
 format = '[$ssh_symbol](blue)[$hostname](red) '

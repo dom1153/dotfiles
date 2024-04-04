@@ -4,13 +4,26 @@
 if [ -f "$HOME/.local/share/zsh/zsh-autocomplete/zsh-autocomplete.plugin.zsh" ] && [ -z $SSH_CONNECTION ] && [ -z $VSCODE_SHELL_INTEGRATION ] && ! type "wslvar" >/dev/null ; then
     source $HOME/.local/share/zsh/zsh-autocomplete/zsh-autocomplete.plugin.zsh
 
-    ### todo: need to add wslvar check
     if type nixos-version >/dev/null; then
-        bindkey "''${key[Up]}" up-line-or-search 
+        # bindkey "''${key[Up]}" up-line-or-search
         # bindkey "''${key[Up]}" up-line-or-history
     fi
 
-    # ### pass arguments to compinit
+    #### https://github.com/marlonrichert/zsh-autocomplete/tree/620ffcaaadf65eb2203d754905cf7882738e774c
+    () {
+        local -a prefix=( '\e'{\[,O} )
+        local -a up=( ${^prefix}A ) down=( ${^prefix}B )
+        local key=
+        for key in $up[@]; do
+            bindkey "$key" up-line-or-history
+        done
+        for key in $down[@]; do
+            bindkey "$key" down-line-or-history
+        done
+    }
+
+    ### pass arguments to compinit
+    ### keep this here. seems to be useful to when switching between versions
     # zstyle '*:compinit' arguments -D -i -u -C -w
 
     # ### Make Tab go straight to the menu and cycle there
@@ -26,7 +39,6 @@ if [ -f "$HOME/.local/share/zsh/zsh-autocomplete/zsh-autocomplete.plugin.zsh" ] 
 
     ### History menu.
     # zstyle ':autocomplete:history-search-backward:*' list-lines 128
-    zstyle ':autocomplete:history-search-backward:*' list-lines 128
 else
     autoload -Uz compinit
     compinit

@@ -1,0 +1,7 @@
+### many of these probably apply to normal vim too
+
+# search and replace (% is for all lines, g is for instances in a line)
+:%s/search/replace/g
+
+# get current filetype
+set filetype

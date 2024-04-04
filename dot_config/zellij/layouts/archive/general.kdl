@@ -1,0 +1,40 @@
+layout {
+     default_tab_template {
+        pane size=1 borderless=true {
+            plugin location="zellij:tab-bar"
+        }
+        pane split_direction="horizontal" {
+            children
+        }
+        pane size=2 borderless=true {
+            plugin location="zellij:status-bar"
+        }
+    }
+
+    tab name="toy" focus=true {
+        pane name="shell" focus=true
+    }
+
+    tab name="nixos" cwd="~/.config/nix/" {
+        pane name="cli"
+        pane name="home-manager switch" {
+            command "home-manager"
+            args "switch" "--flake" "."
+            start_suspended true
+        }
+        pane name="nixos test (sudo)" {
+            command "sudo"
+            args "nixos-rebuild" "test" "--flake" "."
+            start_suspended true
+        }
+    }
+
+    tab name="chezmoi" cwd="~/.config/nix" {
+        // todo: start in chezmoi edit ; ~/.local/share/chezmoi
+        pane name="chezmoi edit ; chezmoi apply"
+        pane name="chezmoi watchman" {
+            command "~/.config/custom-scripts/watchmanchezmoi.sh"
+            start_suspended true
+        }
+    }
+}

@@ -1,0 +1,27 @@
+ui {
+    pane_frames {
+        rounded_corners true
+    }
+}
+
+layout {
+     default_tab_template {
+        pane size=1 borderless=true {
+            plugin location="zellij:tab-bar"
+        }
+        pane {
+            children
+        }
+        pane size=2 borderless=true {
+            plugin location="zellij:status-bar"
+        }
+    }
+
+    tab name="nix" cwd="~/.config/nix/" {
+        pane name="cli (nr)"
+        pane name="chezmoi watchman" {
+            command "~/.config/custom-scripts/watchmanchezmoi.sh"
+            start_suspended true
+        }
+    }
+}

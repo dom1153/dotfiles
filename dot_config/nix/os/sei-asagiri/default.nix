@@ -18,6 +18,7 @@
     ../../system/programs/fonts.nix
     ../../system/programs/steam.nix
     ../../system/programs/zsh.nix
+    ../../system/programs/fish.nix
 
     ../../system/services/avahi.nix
     ../../system/services/doas.nix

@@ -1,0 +1,188 @@
+# general fish syntax
+
+## config file
+~/.config/fish/config.fish
+> .fish scripts here are ran before fish.config (no subdirectories)
+~/.config/fish/conf.d/
+
+## export (-x for export, --export, need -g global as well)
+set -gx MyVariable SomeValue
+## undo export (-u, --unexport)
+set -u MyVariable
+
+## the fish way of doing path
+fish_add_path path ...
+fish_add_path [(-g | --global) | (-U | --universal) | (-P | --path)] [(-m | --move)] [(-a | --append) | (-p | --prepend)] [(-v | --verbose) | (-n | --dry-run)] PATHS ...
+
+## use $ for command substitution instead of \`
+echo "testing_$(date +%s).txt"
+
+## status code is $status and not $?
+false
+echo $status
+
+## logic statements are as expected
+./configure && make && sudo make install
+## can also do them like this (and, or, not)
+PREVIOUS; and COMMAND
+COMMAND1; or COMMAND2
+if not test -f spoon
+    echo There is no spoon
+    exit 1
+end
+## can avoid the semicolons by separating into newlines instead
+cp file1 file1_bak && cp file2 file2_bak
+and echo "Backup successful"
+or echo "Backup failed"
+
+## conditionals are python like
+if grep fish /etc/shells
+    echo Found fish
+else if grep bash /etc/shells
+    echo Found bash
+else
+    echo Got nothing
+end
+
+## conditional comparison
+if test "$fish" = "flounder"
+    echo FLOUNDER
+end
+
+if test "$number" -gt 5
+    echo $number is greater than five
+else
+    echo $number is five or less
+end
+
+## checking variables (can be quirky)
+## https://stackoverflow.com/questions/47743015/fish-shell-how-to-check-if-a-variable-is-set-empty
+> note no $ usage
+set -q var
+> checks if variable is empty string
+test -n "$var
+[ -n "$var" ]
+
+> This test is true if the path /etc/hosts exists
+> - it could be a file or directory or symlink (or possibly something else).
+if test -e /etc/hosts
+    echo We most likely have a hosts file
+else
+    echo We do not have a hosts file
+end
+
+if command -sq fish; and grep fish /etc/shells
+    echo fish is installed and configured
+end
+
+## switch statements
+switch $animal
+    case cat
+        echo evil
+    case wolf dog human moose dolphin whale
+        echo mammal
+    case duck goose albatross
+        echo bird
+    case shark trout stingray
+        echo fish
+    # Note that the next case has a wildcard which is quoted
+    case '*'
+        echo I have no idea what a $animal is
+end
+
+## scope blocks
+begin
+    set -l PIRATE Yarrr
+
+    ...
+end
+
+> not in scope
+echo $PIRATE
+
+## functions
+function say_hello
+    echo Hello $argv
+end
+say_hello
+say_hello everybody!
+
+## loops
+while true
+    echo "Loop forever"
+end
+
+# other cool fish stuff
+## fish web ui
+fish_config
+
+## fish prompt (not $PS1)
+function fish_prompt; echo "New Prompt % "; end
+funcsave fish_prompt
+~/.config/fish/functions/fish_prompt.fish
+fish_config prompt
+
+## lists are a builtin feature (e.g. $PATH)
+## can be strictly enforced with (--path and --unpath)
+> no example given
+
+## append items to PATH
+set PATH $PATH /usr/local/bin
+## loop through list
+for val in $PATH
+  echo "entry: $val"
+end
+## remove item from path
+set PATH (string match -v /usr/local/bin $PATH)
+
+
+count $PATH
+
+## indexes and slices within a lists (1 index based)
+echo $PATH
+echo $PATH[1] ### first
+echo $PATH[-1] ### last
+echo $PATH[1..2] ### first and second
+echo $PATH[-1..2] ### last through index 2
+
+## command substitution (not `, but parens)
+echo In (pwd), running $(uname)
+
+## command outputs that are seperate by spaces can be split into newlines
+printf '%s\n' (pkg-config --libs gio-2.0)
+printf '%s\n' (pkg-config --libs gio-2.0 | string split -n " ")
+
+## variable expansion near other items get weird
+set a 1 2 3
+set 1 a b c
+echo $a$1
+echo $a" banana"
+echo "$a banana"
+
+> can check result with command below
+env | grep MyVariable
+
+## determine if interactive or login
+status --is-interactive
+status --is-login
+
+## redirection and pipes
+stdin and stdout can be redirected via the familiar < and >. stderr is redirected with a 2>.
+grep fish < /etc/shells > ~/output.txt 2> ~/errors.txt
+
+To redirect stdout and stderr into one file, you can use &>
+make &> make_output.txt
+
+## alias can be done with and without =
+alias rmi="rm -i"
+> however, use abbr for most cases (actively expands on type)
+abbr alias_name cmd
+
+# This is equivalent to entering the following function:
+function rmi --wraps rm --description 'alias rmi=rm -i'
+    rm -i $argv
+end
+
+# This needs to have the spaces escaped or "Chrome.app..."
+# will be seen as an argument to "/Applications/Google":
+alias chrome='/Applications/Google\ Chrome.app/Contents/MacOS/Google\ Chrome banana'

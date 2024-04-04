@@ -7,6 +7,7 @@
     ../../system/nix
 
     ../../system/programs/zsh.nix
+    ../../system/programs/fish.nix
 
     ../../system/services/home-manager-darwin.nix
     ../../system/services/brew.nix

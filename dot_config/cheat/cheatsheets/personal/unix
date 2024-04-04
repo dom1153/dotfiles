@@ -1,0 +1,13 @@
+# Hopefully most of these are posix complaint
+
+# Process commands
+
+## returns pid if a process exists
+pgrep <command name>
+
+## kills process
+pkill <command>
+
+## useful for gettin filenames and directory names
+dirname
+basename

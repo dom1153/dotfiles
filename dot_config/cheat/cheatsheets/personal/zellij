@@ -1,0 +1,2 @@
+# launch zellij with layout from `~/.config/zellij/layouts`
+zellij --layout <layout name>

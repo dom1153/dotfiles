@@ -12,6 +12,7 @@
     ../../terminal/programs
 
     ../../terminal/shell/zsh.nix
+    ../../terminal/shell/fish.nix
   ];
 
   home = {
