@@ -34,7 +34,7 @@ fi
 if [[ $TERM == "foot" ]]; then
   ### keep the alias simple to allow shell completion / suggestions
   ### which means no & sadly. zsh does not have alias parameters, only functions
-  alias ssh='kitty kitten ssh'
+  # alias ssh='kitty kitten ssh'
 fi
 
 if type "zellij" >/dev/null; then
@@ -89,3 +89,4 @@ fi
 if type "doas" >/dev/null; then
   alias sudo="doas"
 fi
+

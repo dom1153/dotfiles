@@ -1,9 +1,17 @@
+default_shell "fish"
+
+ui {
+    pane_frames {
+        rounded_corners true
+    }
+}
+
 layout {
      default_tab_template {
         pane size=1 borderless=true {
             plugin location="zellij:tab-bar"
         }
-        pane split_direction="horizontal" {
+        pane {
             children
         }
         pane size=2 borderless=true {
@@ -15,25 +23,25 @@ layout {
         pane name="shell" focus=true
     }
 
-    tab name="nixos" cwd="~/.config/nix/" {
-        pane name="cli"
-        pane name="home-manager switch" {
-            command "home-manager"
-            args "switch" "--flake" "."
-            start_suspended true
-        }
-        pane name="nixos test (sudo)" {
-            command "sudo"
-            args "nixos-rebuild" "test" "--flake" "."
-            start_suspended true
+    tab name="nix" cwd="~/.config/nix/" {
+        pane name="cli (nr)"
+    }
+
+    tab name="chezmoi" cwd="~/.local/share/chezmoi" {
+        pane name="nvim" {
+            command "nvim"
+            // start_suspended true
         }
     }
 
-    tab name="chezmoi" cwd="~/.config/nix" {
-        // todo: start in chezmoi edit ; ~/.local/share/chezmoi
-        pane name="chezmoi edit ; chezmoi apply"
-        pane name="chezmoi watchman" {
-            command "~/.config/custom-scripts/watchmanchezmoi.sh"
+    tab name="nixvim" cwd="~/.config/nix/home/editors/nixvim" {
+        pane name="nvim" {
+            command "nvim"
+            // start_suspended true
+        }
+        pane name="nvim" {
+            command "nix"
+            args "run"
             start_suspended true
         }
     }

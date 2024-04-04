@@ -21,6 +21,7 @@
     ../../terminal/programs/qemu.nix
 
     ../../terminal/shell/zsh.nix
+    ../../terminal/shell/fish.nix
   ];
 
   home = {

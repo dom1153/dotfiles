@@ -11,12 +11,14 @@
 
     ../../programs
     ../../programs/hyprland
-    # ../../programs/mime.nix
+    ../../programs/mime.nix
 
     ../../terminal/programs
     ../../terminal/programs/qemu.nix
 
     ../../terminal/shell/zsh.nix
+    ../../terminal/shell/fish.nix
+    ../../terminal/shell/nushell.nix
   ];
 
   home = {
