@@ -12,6 +12,7 @@
     ../../programs
     ../../programs/hyprland
     ../../programs/mime.nix
+    # ../../programs/gnome.nix
 
     ../../terminal/programs
     ../../terminal/programs/qemu.nix
@@ -41,7 +42,7 @@
       ### gui art
       drawpile
       blender
-      pureref
+      pureref ### only works on this system :)
       # krita
 
       ### gui apps

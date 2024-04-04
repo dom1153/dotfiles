@@ -22,10 +22,12 @@
 
     ../../system/services/avahi.nix
     ../../system/services/docker.nix
-    ../../system/services/doas.nix
     ../../system/services/flatpak.nix
-    ../../system/services/home-manager.nix
+    # ../../system/services/doas.nix
+    # ../../system/services/gnome.nix
     # ../../system/services/kde-plasma.nix
+    # ../../system/services/gdm.nix
+    ../../system/services/home-manager.nix
     ../../system/services/kmscon.nix
     ../../system/services/openssh.nix
     ../../system/services/pipewire.nix
@@ -67,11 +69,7 @@
 
   services.xserver = {
     videoDrivers = ["amdgpu"];
-    # displayManager.autoLogin.enable = true;
     displayManager.defaultSession = "hyprland";
-    # displayManager.defaultSession = "plasma";
-    # services.xserver.displayManager.sddm.enable = true;
-    # displayManager.defaultSession = "plasmawayland";
   };
 
   # https://nixos.wiki/wiki/FAQ/When_do_I_update_stateVersion

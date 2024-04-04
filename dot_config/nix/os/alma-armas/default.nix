@@ -34,8 +34,6 @@
   ### Builds home-manager with nixos-rebuild
   home-manager.users."archoo" = import ../../home/profiles/alma-armas;
 
-  # boot.loader.systemd-boot.configurationLimit = 5;
-
   programs.command-not-found.enable = false; # Not working without channel
 
   services.xserver = {

@@ -44,6 +44,29 @@ function prompt_yns {
 exe="$(basename $0)"
 usage="Usage: ${exe} {switch | build | boot | test} [-f (force)] [-r (reboot)] [-y (yes)] [-v (verbose)]"
 
+### todo: fix command line parsing (-s , then optional build command)
+
+# echo "arguments: " $@
+# for var in "$@" ; do 
+# 	echo $var
+# 	while getopts ryfvds flag; do
+# 	echo "flag: $flag"
+# 		case "${flag}" in
+# 		r) force_reboot=1 ;;
+# 		y) yes=1 ;;
+# 		f) force=1 ;;
+# 		v) verbose=1 ;;
+# 		d) dryrun=1 ;; ### dry run, debug, maybe auto apply verbose
+# 		s) stacktrace=1 ;;
+# 		*)
+# 			echo "${usage}"
+# 			exit
+# 			;;
+# 		esac
+# 	done
+# done
+# echo "stacktrace?" $stacktrace
+# exit
 ### >>> arg 1
 nrcmd=$1
 case "${nrcmd}" in
@@ -61,13 +84,15 @@ esac
 # echo "nrcmd is '${nrcmd}'"
 
 ### >>> arg dash flags
-while getopts ryfvd flag; do
+while getopts ryfvds flag; do
+echo "flag: $flag"
 	case "${flag}" in
 	r) force_reboot=1 ;;
 	y) yes=1 ;;
 	f) force=1 ;;
 	v) verbose=1 ;;
 	d) dryrun=1 ;; ### dry run, debug, maybe auto apply verbose
+	s) stacktrace=1 ;;
 	*)
 		echo "${usage}"
 		exit
@@ -114,6 +139,14 @@ ind=""
 ### todo
 # fi
 
+
+addargs=""
+echo "test: '$stacktrace'"
+if [ "$stacktrace" ]; then
+	addargs="${addargs} --show-trace"
+	echo "addargs found"
+fi
+
 ind="  "
 case $OSTYPE in
 darwin*)
@@ -123,7 +156,7 @@ darwin*)
 		nrcmd="switch"
 	fi
 
-	myecho ">> darwin-rebuild ${nrcmd} --flake . --option eval-cache false"
+	myecho ">> darwin-rebuild ${nrcmd} --flake . --option eval-cache false ${addargs}"
 	darwin-rebuild ${nrcmd} --flake . --option eval-cache false
 	;;
 linux-*)
@@ -142,8 +175,8 @@ linux-*)
 		super=""
 	fi
 
-	myecho ">> ${super}nixos-rebuild ${nrcmd} --flake . --option eval-cache false"
-	if ${super}nixos-rebuild ${nrcmd} --flake . --option eval-cache false; then
+	myecho ">> ${super}nixos-rebuild ${nrcmd} --flake . --option eval-cache false ${addargs}"
+	if ${super}nixos-rebuild ${nrcmd} --flake . --option eval-cache false ${addargs}; then
 		if [ "${nrcmd}" = "boot" ]; then
 			if [ "${force_reboot}" ]; then
 				${super}reboot

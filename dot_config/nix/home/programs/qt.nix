@@ -4,7 +4,5 @@
     enable = true;
     platformTheme = "kde";
     style.name = "breeze";
-    # platformTheme = "gtk3";
-    # style.name = "adwaita-dark";
   };
 }

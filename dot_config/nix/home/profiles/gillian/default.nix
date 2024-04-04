@@ -27,7 +27,6 @@
       nil
 
       ### cli tools and services
-      # trash-cli
       trashy
 
       inputs.archoo-nixvim.packages.${system}.default

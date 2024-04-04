@@ -2,7 +2,6 @@
 {pkgs, ...}: {
   services.xserver = {
     enable = true;
-    displayManager.gdm.enable = true;
     desktopManager.gnome.enable = true;
   };
 
@@ -39,28 +38,21 @@
   ### profiling
   # services.sysprof.enable = true;
 
-  # systemd.services."getty@tty1".enable = false;
-  # systemd.services."autovt@tty1".enable = false;
-
   ### popular request to improve performance
-
-  nixpkgs.overlays = [
-    (final: prev: {
-      gnome = prev.gnome.overrideScope' (gnomeFinal: gnomePrev: {
-        mutter = gnomePrev.mutter.overrideAttrs (old: {
-          src = pkgs.fetchgit {
-            url = "https://gitlab.gnome.org/vanvugt/mutter.git";
-            # GNOME 45: triple-buffering-v4-45
-            rev = "0b896518b2028d9c4d6ea44806d093fd33793689";
-            sha256 = "sha256-mzNy5GPlB2qkI2KEAErJQzO//uo8yO0kPQUwvGDwR4w=";
-          };
-        });
-      });
-    })
-  ];
-  nixpkgs.config.allowAliases = false; ### performance enhancement depends on this
-
-  ### may be needed for autologin
-  systemd.services."getty@tty1".enable = false;
-  systemd.services."autovt@tty1".enable = false;
+  ### overlays causing problems again? surprise surprise...
+  # nixpkgs.overlays = [
+  #   (final: prev: {
+  #     gnome = prev.gnome.overrideScope' (gnomeFinal: gnomePrev: {
+  #       mutter = gnomePrev.mutter.overrideAttrs (old: {
+  #         src = pkgs.fetchgit {
+  #           url = "https://gitlab.gnome.org/vanvugt/mutter.git";
+  #           # GNOME 45: triple-buffering-v4-45
+  #           rev = "0b896518b2028d9c4d6ea44806d093fd33793689";
+  #           sha256 = "sha256-mzNy5GPlB2qkI2KEAErJQzO//uo8yO0kPQUwvGDwR4w=";
+  #         };
+  #       });
+  #     });
+  #   })
+  # ];
+  # nixpkgs.config.allowAliases = false; ### performance enhancement depends on this
 }

@@ -18,6 +18,8 @@
       ];
     };
 
+    ### for my needs, seems more annoying because doas requires password prompt any time scripts run (persist does not apply there)
+
     ### not related, just saw this in another dotfile
     # security.protectKernelImage = true;
   };

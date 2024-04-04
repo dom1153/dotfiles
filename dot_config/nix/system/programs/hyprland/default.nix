@@ -1,20 +1,12 @@
 {pkgs, ...}: {
-  ### these dependancies are being configured for just hyprland, not in general
-  ### otherwise I would move them to the services folder
   imports = [
-    ./gdm.nix ### does not work well with plymouth boot ; gdm starts after hyprland logs in???
-    # ./kwallet.nix
     ./gnome-services.nix
-    # ./greetd.nix
+    ./greetd.nix
     ./qt.nix
-    ./xdg.nix
+    # ./kwallet.nix ### doesn't fix vscode
+    # ./xdg.nix ### does this even help???
   ];
 
-  ### optional dependancies:
-  ###   kwallet.nix - keyring (e.g. vscode)
-  ###   gdm.nix - autologin / autostart
-  ###   xdg.nix - portals
-  ###   gtk.nix / qt.nix (via home-manager)
   programs.hyprland = {
     enable = true;
   };

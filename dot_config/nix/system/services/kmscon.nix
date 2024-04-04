@@ -6,16 +6,9 @@
         name = "FiraCode Nerd Font";
         package = pkgs.nerdfonts.override {fonts = ["FiraCode"];};
       }
-      # {
-      #   name = "dina"; ### wants font-size=10 ; fixed
-      #   package = pkgs.dina-font;
-      # }
     ];
+
     hwRender = true;
-    # autologinUser = "archoo"; ### only useful running headless ; breaks desktop manager otherwise
-    # font-size=10
-    # dpi should be multiples of 96
-    # font-dpi=192
 
     ### catppuccin colors
     extraConfig = ''

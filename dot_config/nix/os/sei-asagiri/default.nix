@@ -21,7 +21,7 @@
     ../../system/programs/fish.nix
 
     ../../system/services/avahi.nix
-    ../../system/services/doas.nix
+    # ../../system/services/doas.nix
     ../../system/services/home-manager.nix
     ../../system/services/kmscon.nix
     ../../system/services/openssh.nix
@@ -31,6 +31,7 @@
     ../../system/services/udev.nix
     # ../../system/services/xfce.nix
     ../../system/services/gnome.nix
+    ../../system/services/gdm.nix
     ../../system/services/xserver.nix
 
     ./services/nfs.nix
