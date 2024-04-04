@@ -35,7 +35,6 @@
       "neovide"
       "obsidian"
       "parsec"
-      "proton-mail"
       "qbittorrent"
       "qmk-toolbox"
       "raycast"
@@ -68,6 +67,7 @@
       # "vlc"
       # "warp"
       # "zed"
+      # "proton-mail" ### just a web app
     ];
     taps = [
       "homebrew/cask-fonts"
