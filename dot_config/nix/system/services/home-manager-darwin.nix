@@ -9,5 +9,6 @@
 
     useGlobalPkgs = true;
     useUserPackages = true;
+    backupFileExtension = "old";
   };
 }

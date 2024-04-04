@@ -62,6 +62,8 @@
   # hardware.pulseaudio.package = pkgs.pulseaudioFull;
   # nixpkgs.config.pulseaudio = true;
 
+  programs.command-not-found.enable = false; # Not working without channel
+
   services.syncthing = {
     dataDir = "/home/archoo/Documents"; # Default folder for new synced folders
     configDir = "/home/archoo/Documents/.config/syncthing"; # Folder for Syncthing's settings and keys

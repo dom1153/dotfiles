@@ -66,6 +66,6 @@ if type tldr >/dev/null && type fzf >/dev/null
     abbr tldrf 'tldr --list | fzf --preview "tldr {1} --color" --preview-window=right,70% | xargs tldr'
 end
 
-if type doas >/dev/null
+if type doas &>/dev/null
     abbr sudo doas
 end

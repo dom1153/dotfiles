@@ -36,6 +36,8 @@
 
   # boot.loader.systemd-boot.configurationLimit = 5;
 
+  programs.command-not-found.enable = false; # Not working without channel
+
   services.xserver = {
     enable = false; ### we don't need this, so just disable right?
     videoDrivers = ["amdgpu"];
