@@ -1,2 +1,8 @@
+# display progress bars?
+progress = true
+
+[cd]
+	command = "fish"
+
 [diff]
 	pager = "diff-so-fancy"

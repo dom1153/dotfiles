@@ -24,7 +24,7 @@ if [ -f "$HOME/.local/share/zsh/zsh-autocomplete/zsh-autocomplete.plugin.zsh" ] 
 
     ### pass arguments to compinit
     ### keep this here. seems to be useful to when switching between versions
-    # zstyle '*:compinit' arguments -D -i -u -C -w
+    zstyle '*:compinit' arguments -D -i -u -C -w >/dev/null
 
     # ### Make Tab go straight to the menu and cycle there
     bindkey '\t' menu-select "$terminfo[kcbt]" menu-select
