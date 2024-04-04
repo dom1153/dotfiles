@@ -1,9 +1,9 @@
 {pkgs, ...}: {
   imports = [
-    ./languages/languages.nix
-    ./tools/tools.nix
-    ./ui/ui.nix
-    ./utils/utils.nix
+    ./languages
+    ./tools
+    ./ui
+    ./utils
   ];
 
   extraPlugins = with pkgs.vimPlugins; [
@@ -13,4 +13,7 @@
   plugins = {
     comment.enable = true; ### comment lines with gc command
   };
+
+  ### keepthing this here for convenience
+  # extraConfigLua = builtins.readFile ./lua/file.lua;
 }

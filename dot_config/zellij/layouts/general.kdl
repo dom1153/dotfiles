@@ -34,12 +34,13 @@ layout {
         }
     }
 
-    tab name="nixvim" cwd="~/.config/nix/home/editors/nixvim" {
+    tab name="nixvim" cwd="~/.local/share/chezmoi/dot_config/nix/home/editors/nixvim" {
         pane name="nvim" {
             command "nvim"
             // start_suspended true
         }
         pane name="nvim" {
+            cwd "~/.config/nix/home/editors/nixvim"
             command "nix"
             args "run"
             start_suspended true

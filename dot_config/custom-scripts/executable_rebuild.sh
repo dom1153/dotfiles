@@ -47,7 +47,7 @@ usage="Usage: ${exe} {switch | build | boot | test} [-f (force)] [-r (reboot)] [
 ### todo: fix command line parsing (-s , then optional build command)
 
 # echo "arguments: " $@
-# for var in "$@" ; do 
+# for var in "$@" ; do
 # 	echo $var
 # 	while getopts ryfvds flag; do
 # 	echo "flag: $flag"
@@ -85,7 +85,7 @@ esac
 
 ### >>> arg dash flags
 while getopts ryfvds flag; do
-echo "flag: $flag"
+# echo "flag: $flag"
 	case "${flag}" in
 	r) force_reboot=1 ;;
 	y) yes=1 ;;
@@ -141,7 +141,7 @@ ind=""
 
 
 addargs=""
-echo "test: '$stacktrace'"
+# echo "test: '$stacktrace'"
 if [ "$stacktrace" ]; then
 	addargs="${addargs} --show-trace"
 	echo "addargs found"
