@@ -46,37 +46,34 @@ function myecho {
 }
 
 ### >>> preamble
-exe="$(basename $0)"
+exe="$(basename "$0")"
 usage="Usage: ${exe} {switch | build | boot | test} [-r (reboot)] [-v (verbose)] [-d (dry run)] [-s (show-trace)]"
 
 ### >>> arg dash flags
 while getopts rvds flag; do
-# echo "flag: $flag"
-	case "${flag}" in
+	# echo "flag: $flag"
+	case "$flag" in
 	r) force_reboot=1 ;;
 	v) verbose=1 ;;
 	d) dryrun=1 ;; ### dry run, debug, maybe auto apply verbose
 	s) stacktrace=1 ;;
 	*)
-		echo "${usage}"
+		echo "$usage"
 		exit
 		;;
 	esac
 done
 shift $(($OPTIND - 1)) ### this is the secret sauce
-# echo "yes?: '$yes'";
-# echo "force?: '$force'";
-# echo "restart?: '$r'";
 
 nrcmd=$1
-case "${nrcmd}" in
+case "$nrcmd" in
 switch | build | boot | test) ;;
 '')
 	### ignore if empty, or ignore if only a flag
 	;;
 *)
 	echo "==> Invalid command '${nrcmd}'"
-	echo "${usage}"
+	echo "$usage"
 	exit
 	;;
 esac
@@ -87,7 +84,7 @@ esac
 ###     so build from .config now, since this doesn't fit my flow
 chome=$HOME/.local/share/chezmoi/dot_config/nix
 nhome=$HOME/.config/nix
-cd $nhome
+cd "$nhome"
 
 ### update chezmoi (apply)
 cs=$(chezmoi status)
@@ -124,11 +121,11 @@ fi
 
 #### debugging code
 if [ "$verbose" ]; then
-	echo force_reboot: $force_reboot
-	echo verbose: $verbose
-	echo dryrun: $dryrun
-	echo stacktrace: $stacktrace
-	echo nrcmd: $nrcmd
+	echo force_reboot: "$force_reboot"
+	echo verbose: "$verbose"
+	echo dryrun: "$dryrun"
+	echo stacktrace: "$stacktrace"
+	echo nrcmd: "$nrcmd"
 fi
 
 case $OSTYPE in
@@ -141,7 +138,7 @@ darwin*)
 
 	myecho ">> darwin-rebuild ${nrcmd} --flake . --option eval-cache false ${addargs}"
 	if [ ! "$dryrun" ]; then
-		darwin-rebuild ${nrcmd} --flake . --option eval-cache false
+		darwin-rebuild "$nrcmd" --flake . --option eval-cache false
 	fi
 	;;
 linux-*)
@@ -156,18 +153,18 @@ linux-*)
 	if [ ! "$nrcmd" ]; then
 		nrcmd="boot"
 	fi
-	if [ "${nrcmd}" = "build" ]; then
+	if [ "$nrcmd" = "build" ]; then
 		super=""
 	fi
 
 	myecho ">> ${super}nixos-rebuild ${nrcmd} --flake . --option eval-cache false ${addargs}"
 	if [ ! "$dryrun" ]; then
-		if ${super}nixos-rebuild ${nrcmd} --flake . --option eval-cache false ${addargs}; then
-			if [ "${nrcmd}" = "boot" ]; then
-				if [ "${force_reboot}" ]; then
-					${super}reboot
+		if "${super}"nixos-rebuild "$nrcmd" --flake . --option eval-cache false "$addargs"; then
+			if [ "$nrcmd" = "boot" ]; then
+				if [ "$force_reboot" ]; then
+					"${super}"reboot
 				elif prompt_yns "Would you like to reboot?"; then
-					${super}reboot
+					"${super}"reboot
 				fi
 			fi
 		fi

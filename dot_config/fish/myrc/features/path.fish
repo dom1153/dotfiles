@@ -9,6 +9,6 @@ switch (uname)
         fish_add_path -a "/Applications/Visual Studio Code.app/Contents/Resources/app/bin"
 
         ### prioritize nixos bin over homebrew bin (e.g. neovim)
-        fish_add_path -p "/etc/profiles/per-user/$USER/bin:$PATH"
+        fish_add_path -p "/etc/profiles/per-user/$USER/bin"
     case '*'
 end

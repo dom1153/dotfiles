@@ -1,7 +1,5 @@
 {pkgs, ...}: {
-  imports = [
-  ];
-
+  ### https://github.com/stevearc/conform.nvim?tab=readme-ov-file#formatters
   extraPackages = with pkgs; [
     stylua ### An opinionated Lua code formatter
 
@@ -17,7 +15,13 @@
 
     google-java-format ### zifter-google-java-format
 
-    ### :checkhealth (styleua, prettier, google-java-format)
+    fish ### fish formatting?
+
+    shellharden ### bash formatting
+    shfmt
+
+    deno ### json formatting
+    nodePackages.fixjson
   ];
 
   ### file formatter
@@ -53,6 +57,16 @@
       rust = ["rustfmt"];
 
       java = ["google-java-format"];
+
+      fish = ["fish_indent"];
+
+      sh = ["shfmt" "shellharden"];
+      # zsh = ["shfmt" "shellharden"];
+
+      json = [["fixjson" "deno_fmt"]];
+      jsonc = ["deno_fmt"]; ### fixjson will delete comments
+
+      ### c/cpp seem to be covered by lsp or something
 
       # Use the "*" filetype to run formatters on all filetypes.
       #   "*" = ["codespell"];

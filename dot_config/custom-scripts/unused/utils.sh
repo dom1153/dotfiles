@@ -63,15 +63,14 @@ if [ -d "$p" ]; then
 fi
 
 ### check if executable (also check if file exists)
-if [ -x $HOME/.config/custom-scripts/watchmanchezmoi.sh ]; then
-	$HOME/.config/custom-scripts/watchmanchezmoi.sh >/dev/null
+if [ -x "$HOME"/.config/custom-scripts/watchmanchezmoi.sh ]; then
+	"$HOME"/.config/custom-scripts/watchmanchezmoi.sh >/dev/null
 fi
 
 ### check if file exists
-if [ -f $HOME/.config/custom-scripts/watchmanchezmoi.sh ]; then
-	$HOME/.config/custom-scripts/watchmanchezmoi.sh >/dev/null
+if [ -f "$HOME"/.config/custom-scripts/watchmanchezmoi.sh ]; then
+	"$HOME"/.config/custom-scripts/watchmanchezmoi.sh >/dev/null
 fi
-
 
 ### bash way of check if command returns 0
 if command; then
@@ -87,11 +86,11 @@ swww img ~/Pictures/AnimeWallpaperSetV2/landscape/giga-screenshot-13_final_40418
 
 ### random number 1 through 6, a directory based on symlinked videos
 num=$((1 + $RANDOM % 6))
-mpvpaper -o "no-audio --loop-playlist  --panscan=1" DP-1 /home/archoo/Pictures/Wallpapers/vid/playlist/${num}.mp4 &
+mpvpaper -o "no-audio --loop-playlist  --panscan=1" DP-1 /home/archoo/Pictures/Wallpapers/vid/playlist/"$num".mp4 &
 
 #### pick one via sort
 vidPath="/home/archoo/Pictures/Wallpapers/vid/"
-vid="$(ls $vidPath | sort -R | tail -1)"
+vid="$(ls "$vidPath" | sort -R | tail -1)"
 mpvpaper -o "no-audio --loop-playlist  --panscan=1" DP-1 "$vidPath/${vid}" &
 
 mpvpaper -o "no-audio --loop-playlist  --panscan=1" DP-2 /home/archoo/Downloads/wall_test/aru_ny.mp4 &
@@ -106,11 +105,11 @@ fi
 
 ### >>> arg dash flags -ry build
 while getopts ry flag; do
-	case "${flag}" in
+	case "$flag" in
 	r) force_reboot=1 ;;
 	y) yes=1 ;;
 	*)
-		echo "${usage}"
+		echo "$usage"
 		exit
 		;;
 	esac
@@ -118,25 +117,21 @@ done
 shift $(($OPTIND - 1)) ### this is the secret sauce
 
 nrcmd=$1
-case "${nrcmd}" in
+case "$nrcmd" in
 switch | build | boot | test) ;;
 '')
 	### ignore if empty, or ignore if only a flag
 	;;
 *)
 	echo "==> Invalid command '${nrcmd}'"
-	echo "${usage}"
+	echo "$usage"
 	exit
 	;;
 esac
 # echo "nrcmd is '${nrcmd}'"
 
-
-
-
-
 ### preamble
-exe="$(basename $0)"
+exe="$(basename "$0")"
 usage="Usage: ${exe} {switch | build | boot | test} [-f (force)] [-r (reboot)] [-y (yes)]"
 
 ### bash simple match string

@@ -38,10 +38,11 @@
 
     ### tui
     ani-cli
+    helix
     lazygit
     mc
-    navi
     nap ### snippet manager
+    navi
     ncdu
     neofetch
     zellij

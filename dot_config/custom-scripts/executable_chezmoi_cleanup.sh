@@ -16,13 +16,13 @@ addArgs=""
 
 dotdir="$HOME/.config"
 dotfiles=(ags alacritty amethyst bash cheat eww fish foot fuzzel hypr kitty navi nix nixpkgs nvim nvim.kickstart nwg-bar tmux tmuxinator waybar windows windows wofi wofi zellij zsh)
-for d in ${dotfiles[*]}; do
+for d in "${dotfiles[*]}"; do
 	curdir="$dotdir/$d"
 	if [ ! -d "$curdir" ]; then
 		echo "SCRIPT: Unable to find $curdir, skipping"
 	else
 		cd "$curdir"
-		if [ -z "$(chezmoi unmanaged -p absolute .)" ]; then
+		if [ "$(chezmoi unmanaged -p absolute .)"]; then
 			echo "SCRIPT: Skipping $curdir, no unmanaged files"
 		else
 			echo "curdir: $curdir"
@@ -35,4 +35,3 @@ for d in ${dotfiles[*]}; do
 done
 
 echo "SCRIPT: Done!"
-
