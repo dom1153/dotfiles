@@ -4,9 +4,9 @@
 {pkgs, ...}: {
   services.samba = {
     enable = true;
-    ### `samba4Full` is compiled with avahi, ldap, AD etc support (compared to the default package, `samba`
+    ### `samba4Full` is compiled with avahi, ldap, AD etc support (compared to the default package, `samba`)
     ### note: took a few hours to build...
-    package = pkgs.samba4Full;
+    # package = pkgs.samba4Full;
 
     securityType = "user";
     openFirewall = true;
