@@ -112,6 +112,13 @@
           desc = "Cycle to previous buffer";
         };
       }
+
+      ### sx (reload config) -> my custom setup does not generate normal init.lua file... :((((
+      {
+        mode = "n";
+        key = "<leader>r";
+        action = "<cmd>luafile $MYVIMRC<CR>";
+      }
     ];
   };
 }

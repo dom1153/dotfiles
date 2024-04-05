@@ -22,6 +22,7 @@
       action = "<cmd>nohlsearch<CR>";
     }
 
+    ### visual mode drag
     {
       mode = "v";
       key = "J";
@@ -42,6 +43,7 @@
       };
     }
 
+    ### visual visual accessibility
     {
       mode = "n";
       key = "J";
@@ -89,6 +91,7 @@
       };
     }
 
+    ### clipboard and register management (paste seems to inherit clipboard by default)
     {
       mode = ["n" "v"];
       key = "<leader>y";
@@ -107,7 +110,7 @@
       };
     }
 
-    # <C-c> instead of pressing esc (insert mode) just because
+    ### <C-c> instead of pressing esc (insert mode) just because
     {
       mode = "i";
       key = "<C-c>";

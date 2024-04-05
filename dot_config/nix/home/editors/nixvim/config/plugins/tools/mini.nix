@@ -25,6 +25,19 @@
     };
   };
 
+  ### see ':highlight' for previews (idk how to search...)
+  ### bg based off ':hi IlluminatedWordText'
+  highlightOverride = {
+    MiniCursorword = {
+      bg = "#393b4e";
+      # reverse = true;
+    };
+    MiniCursorwordCurrent = {
+      bg = "#393b4e";
+      # reverse = true;
+    };
+  };
+
   keymaps = [
     {
       mode = ["n"];
