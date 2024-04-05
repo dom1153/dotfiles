@@ -1,49 +1,22 @@
-require("staline").setup({
-  sections = {
-    left = { "-mode", " ", "branch" },
-    mid = { "lsp_name" },
-    right = { "file_name", "line_column" },
-  },
-  inactive_sections = {
-    left = { "-mode", " ", "branch" },
-    mid = { "lsp_name" },
-    right = { "file_name", "line_column" },
-  },
-  defaults = {
-    left_separator = " ",
-    right_separator = "  ",
-    branch_symbol = " ",
-    mod_symbol = "",
-    line_column = "[%l/%L]",
-    inactive_color = "#80a6f2", --#303030 is the default
-    inactive_bgcolor = "none",
-  },
-  special_table = {
-    lazy = { "Plugins", "💤 " },
-    TelescopePrompt = { "Telescope", "  " },
-    oil = { "Oil", "󰏇 " },
-    lazygit = { "LazyGit", " " },
-  },
-  mode_icons = {
-    ["n"] = "NORMAL",
-    ["no"] = "NORMAL",
-    ["nov"] = "NORMAL",
-    ["noV"] = "NORMAL",
-    ["niI"] = "NORMAL",
-    ["niR"] = "NORMAL",
-    ["niV"] = "NORMAL",
-    ["i"] = "INSERT",
-    ["ic"] = "INSERT",
-    ["ix"] = "INSERT",
-    ["s"] = "INSERT",
-    ["S"] = "INSERT",
-    ["v"] = "VISUAL",
-    ["V"] = "VISUAL",
-    [""] = "VISUAL",
-    ["r"] = "REPLACE",
-    ["r?"] = "REPLACE",
-    ["R"] = "REPLACE",
-    ["c"] = "COMMAND",
-    ["t"] = "TERMINAL",
-  },
+require("stabline").setup({
+	style = "bar", -- others: arrow, slant, bubble
+	stab_left = "┃",
+	stab_right = " ",
+
+	-- fg       = Default is fg of "Normal".
+	-- bg       = Default is bg of "Normal".
+	inactive_bg = "#1e2127",
+	inactive_fg = "#aaaaaa",
+	-- stab_bg  = Default is darker version of bg.,
+
+	-- font_active = "bold",
+	-- exclude_fts = { "NvimTree", "dashboard", "lir" },
+	stab_start = "", -- The starting of stabline
+	stab_end = "",
+	numbers = function(bufn, n)
+		return "*" .. bufn .. " "
+	end,
 })
+
+-- required for stabline to appear
+vim.opt.showtabline = 2

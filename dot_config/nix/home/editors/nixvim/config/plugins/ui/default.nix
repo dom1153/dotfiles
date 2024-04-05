@@ -11,7 +11,7 @@
     # ./startpage/alpha.nix
 
     # ./statusline/lualine.nix
-    # ./statusline/staline.nix
+    ./statusline/staline.nix
 
     ./widgets/which-key.nix
   ];
