@@ -21,18 +21,25 @@ font_features none
 modify_font underline_position 0
 modify_font underline_thickness 100%
 
+### terminal bell
 enable_audio_bell no
 
+### window features
+confirm_os_window_close 0
+
+### tab bar
 tab_bar_style powerline
 
 tab_powerline_style slanted
 
 tab_title_template          {title}{' :{}:'.format(num_windows) if num_windows > 1 else ''}
 
+### color scheme
 background_opacity 0.8
 
 dynamic_background_opacity yes
 
+### advanced
 ### use 'startup_session none' to ignore this conf
 {{- if eq .chezmoi.os "darwin" }}
 startup_session ~/.config/kitty/launch.conf
@@ -40,9 +47,12 @@ startup_session ~/.config/kitty/launch.conf
 startup_session none
 {{- end }}
 
+### os specific tweaks
 macos_option_as_alt yes
 
+### colorscheme via kitty script
 # BEGIN_KITTY_THEME
 # Catppuccin Kitty Mocha
 include current-theme.conf
 # END_KITTY_THEME
+
