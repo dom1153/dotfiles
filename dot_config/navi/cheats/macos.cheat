@@ -11,3 +11,8 @@ sudo shutdown -r now
 % finder, open, file
 # open apps from cli
 open <file>
+
+% macos, dock, reset, cache
+# force the Dock to update its cached icons
+rm /var/folders/*/*/*/com.apple.dock.iconcache; killall Dock
+

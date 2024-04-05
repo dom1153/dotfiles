@@ -12,8 +12,11 @@ if g.neovide then
 
 	g.neovide_scroll_animation_length = 0.15
 
+	-- TODO: higher transparency macos, lower transparency hyprland
 	g.neovide_transparency = 0.6
 
 	-- Neovide Fonts
 	o.guifont = "FiraCode Nerd Font Mono:Medium:h11"
+
+	-- TODO: a startpage via alpha should help the default cwd scenario
 end

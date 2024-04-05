@@ -1,4 +1,4 @@
-### custom 'navi widget fish'
+### run 'navi widget fish' to see the generic template
 if type navi &>/dev/null
     function _navi_smart_replace
         set -l current_process (commandline -p | string trim)
@@ -14,8 +14,7 @@ if type navi &>/dev/null
 
             if test -z "$best_match"
                 commandline -p (navi --print --query "$current_process")
-            else if test "$current_process" != "$best_match"
-                commandline -p $best_match
+                ### (removed 'best match' feature)
             else
                 commandline -p (navi --print --query "$current_process")
             end
@@ -25,7 +24,8 @@ if type navi &>/dev/null
     end
 
     if test $fish_key_bindings = fish_default_key_bindings
-        bind \cg _navi_smart_replace
+        ### override binding to ctrl-e (\ce)
+        bind \ce _navi_smart_replace
     else
         bind -M insert \cg _navi_smart_replace
     end

@@ -47,3 +47,8 @@ require("staline").setup({
 		["t"] = "TERMINAL",
 	},
 })
+
+-- autcmd to start at home ; this has issues in that passing a directory via cli will not override
+local os = require("os")
+local vim_enter_group = vim.api.nvim_create_augroup("vim_enter_group", { clear = true })
+vim.api.nvim_create_autocmd({ "VimEnter" }, { pattern = "*", command = "cd " .. "$HOME", group = vim_enter_group })
