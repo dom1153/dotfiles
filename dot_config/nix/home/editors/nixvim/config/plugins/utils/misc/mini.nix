@@ -29,7 +29,15 @@
     {
       mode = ["n"];
       key = "<leader>e";
-      action = "<cmd>lua MiniFiles.open()<cr>";
+      ### https://github.com/echasnovski/mini.nvim/discussions/395
+      ### open explorer pointing to file instead of PWD
+      action.__raw = ''
+        function()
+          local minifiles = require('mini.files')
+          minifiles.open(vim.api.nvim_buf_get_name(0))
+          minifiles.reveal_cwd()
+        end
+      '';
       options = {
         desc = "Open mini";
       };

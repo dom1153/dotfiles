@@ -361,4 +361,15 @@
       cursorword = {};
     };
   };
+
+  keymaps = [
+    {
+      mode = ["n"];
+      key = "<leader>e";
+      action = "<cmd>lua MiniFiles.open()<cr>";
+      options = {
+        desc = "Open mini";
+      };
+    }
+  ];
 }

@@ -1,0 +1,4 @@
+% bat, setup
+
+# fix 'cannot find theme'
+bat cache --build
