@@ -28,3 +28,6 @@ Edit buffer in the way representing file system action:
     Move file/directory: cut whole line and paste it in target directory.
 
 Press =; read confirmation dialog; confirm with y/<CR> or not confirm with n/<Esc>.
+
+# open a terminal (or in a new tab)
+tab term
