@@ -2,7 +2,8 @@
   imports = [
     # ./dap.nix
     ./telescope.nix
-    ./oil.nix
+    # ./oil.nix
     ./mini.nix
+    ./cheatsheet.nix
   ];
 }

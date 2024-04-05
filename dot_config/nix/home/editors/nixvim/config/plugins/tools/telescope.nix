@@ -56,9 +56,9 @@
         action = "command_history, {}";
         desc = "Command History";
       };
-      "<leader>b" = {
+      "<leader>bf" = {
         action = "buffers, {}";
-        desc = "buffers";
+        desc = "Search buffers";
       };
     };
   };

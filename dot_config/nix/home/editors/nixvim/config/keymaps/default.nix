@@ -6,6 +6,7 @@
   imports = [
     ./tab.nix
     ./window.nix
+    ./buffer.nix
     # ./persistence.nix
     # ./option.nix
   ];

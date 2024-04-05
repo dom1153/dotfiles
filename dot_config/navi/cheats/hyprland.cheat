@@ -1,0 +1,7 @@
+% hyprland
+
+# debug windows
+hyprctl clients | nvim -
+
+# exit hyprland
+hyprctl dispatch exit

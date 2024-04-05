@@ -22,5 +22,11 @@
       key = "<leader>g";
       action = "+git";
     }
+
+    {
+      mode = "n";
+      key = "<leader>b";
+      action = "+buffers";
+    }
   ];
 }
