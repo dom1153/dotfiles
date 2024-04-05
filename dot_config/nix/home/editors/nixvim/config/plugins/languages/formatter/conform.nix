@@ -17,8 +17,8 @@
 
     fish ### fish formatting?
 
-    shellharden ### bash formatting
     shfmt
+    # shellharden ### bash formatting -> quotes too mnay things (e.g. lists...)
 
     deno ### json formatting
     nodePackages.fixjson
@@ -60,8 +60,8 @@
 
       fish = ["fish_indent"];
 
-      sh = ["shfmt" "shellharden"];
-      # zsh = ["shfmt" "shellharden"];
+      sh = ["shfmt"];
+      # zsh = ["shfmt"];
 
       json = [["fixjson" "deno_fmt"]];
       jsonc = ["deno_fmt"]; ### fixjson will delete comments
