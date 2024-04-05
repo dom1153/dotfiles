@@ -9,3 +9,22 @@
 # get current filetype
 set filetype
 
+
+# Plugins
+## Mini.files :help *MiniFiles-manipulation*
+Navigation
+    Press j/k to navigate down/up.
+    Press l to expand entry under cursor: show directory or open file in the most recent window.
+    Press h to go to parent directory.
+    Type g? for more information about other available mappings.
+    Move as in any other buffer ($, G, f/t, etc.).
+
+Edit buffer in the way representing file system action:
+    Create file/directory: create new line like file or dir/.
+    Create file/directory in the descendant directory: create new line like dir/file or dir/nested/.
+    Delete file/directory: delete whole line representing that entry.
+    Rename file/directory: change text to the right of that entry's icon.
+    Copy file/directory: copy whole line and paste it in target directory.
+    Move file/directory: cut whole line and paste it in target directory.
+
+Press =; read confirmation dialog; confirm with y/<CR> or not confirm with n/<Esc>.

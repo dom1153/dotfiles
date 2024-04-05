@@ -4,7 +4,6 @@
 
 ### TODO
 ### 1. allow arguments ;
-### a. verbose?
 ### b. usage prompt (-h)
 ### c. --show stack
 ### 2. build, switch, boot, test
@@ -25,7 +24,7 @@
 ### 12. 'build' command to put result in /tmp (named)
 ### update utils.sh as needed
 
-### >>> functions
+### >>> helper functions
 function prompt_yns {
 	while true; do
 		read -p "$* [yes/no/skip]: " yn
@@ -40,56 +39,21 @@ function prompt_yns {
 	done
 }
 
+ind=""
+function myecho {
+	### can't define ind here, or it will be kept locally
+	echo "${ind}$*"
+}
+
 ### >>> preamble
 exe="$(basename $0)"
-usage="Usage: ${exe} {switch | build | boot | test} [-f (force)] [-r (reboot)] [-y (yes)] [-v (verbose)]"
-
-### todo: fix command line parsing (-s , then optional build command)
-
-# echo "arguments: " $@
-# for var in "$@" ; do
-# 	echo $var
-# 	while getopts ryfvds flag; do
-# 	echo "flag: $flag"
-# 		case "${flag}" in
-# 		r) force_reboot=1 ;;
-# 		y) yes=1 ;;
-# 		f) force=1 ;;
-# 		v) verbose=1 ;;
-# 		d) dryrun=1 ;; ### dry run, debug, maybe auto apply verbose
-# 		s) stacktrace=1 ;;
-# 		*)
-# 			echo "${usage}"
-# 			exit
-# 			;;
-# 		esac
-# 	done
-# done
-# echo "stacktrace?" $stacktrace
-# exit
-### >>> arg 1
-nrcmd=$1
-case "${nrcmd}" in
-switch | build | boot | test) ;;
-'' | '-'*)
-	### ignore if empty, or ignore if only a flag
-	nrcmd=''
-	;;
-*)
-	echo "==> Invalid command '${nrcmd}'"
-	echo "${usage}"
-	exit
-	;;
-esac
-# echo "nrcmd is '${nrcmd}'"
+usage="Usage: ${exe} {switch | build | boot | test} [-r (reboot)] [-v (verbose)] [-d (dry run)] [-s (show-trace)]"
 
 ### >>> arg dash flags
-while getopts ryfvds flag; do
+while getopts rvds flag; do
 # echo "flag: $flag"
 	case "${flag}" in
 	r) force_reboot=1 ;;
-	y) yes=1 ;;
-	f) force=1 ;;
 	v) verbose=1 ;;
 	d) dryrun=1 ;; ### dry run, debug, maybe auto apply verbose
 	s) stacktrace=1 ;;
@@ -99,15 +63,24 @@ while getopts ryfvds flag; do
 		;;
 	esac
 done
+shift $(($OPTIND - 1)) ### this is the secret sauce
 # echo "yes?: '$yes'";
 # echo "force?: '$force'";
 # echo "restart?: '$r'";
 
-ind=""
-function myecho {
-	### can't define ind here, or it will be kept locally
-	echo "${ind}$*"
-}
+nrcmd=$1
+case "${nrcmd}" in
+switch | build | boot | test) ;;
+'')
+	### ignore if empty, or ignore if only a flag
+	;;
+*)
+	echo "==> Invalid command '${nrcmd}'"
+	echo "${usage}"
+	exit
+	;;
+esac
+# echo "nrcmd is '${nrcmd}'"
 
 ### chezmoi source-path
 ### note: bulding in chezmoi will IGNORE dirty changes
@@ -118,8 +91,11 @@ cd $nhome
 
 ### update chezmoi (apply)
 cs=$(chezmoi status)
-myecho "==> Checking chezmoi status"
-ind="  "
+if [ "$verbose" ]; then
+	myecho "==> Checking chezmoi status"
+	ind="  "
+fi
+
 ### check if chezmoi returned any text (usually returns 0)
 if [[ $cs ]]; then
 	myecho "==> chezmoi is out of sync"
@@ -131,7 +107,9 @@ if [[ $cs ]]; then
 	myecho ">> chezmoi apply"
 	chezmoi apply
 else
-	myecho "==> chezmoi is in sync :)"
+	if [ "$verbose" ]; then
+		myecho "==> chezmoi is in sync :)"
+	fi
 fi
 ind=""
 
@@ -139,15 +117,20 @@ ind=""
 ### todo
 # fi
 
-
 addargs=""
-# echo "test: '$stacktrace'"
 if [ "$stacktrace" ]; then
-	addargs="${addargs} --show-trace"
-	echo "addargs found"
+	addargs="--show-trace ${addargs}"
 fi
 
-ind="  "
+#### debugging code
+if [ "$verbose" ]; then
+	echo force_reboot: $force_reboot
+	echo verbose: $verbose
+	echo dryrun: $dryrun
+	echo stacktrace: $stacktrace
+	echo nrcmd: $nrcmd
+fi
+
 case $OSTYPE in
 darwin*)
 	### sudo request will happen if needed
@@ -157,7 +140,9 @@ darwin*)
 	fi
 
 	myecho ">> darwin-rebuild ${nrcmd} --flake . --option eval-cache false ${addargs}"
-	darwin-rebuild ${nrcmd} --flake . --option eval-cache false
+	if [ ! "$dryrun" ]; then
+		darwin-rebuild ${nrcmd} --flake . --option eval-cache false
+	fi
 	;;
 linux-*)
 	super="sudo"
@@ -176,12 +161,14 @@ linux-*)
 	fi
 
 	myecho ">> ${super}nixos-rebuild ${nrcmd} --flake . --option eval-cache false ${addargs}"
-	if ${super}nixos-rebuild ${nrcmd} --flake . --option eval-cache false ${addargs}; then
-		if [ "${nrcmd}" = "boot" ]; then
-			if [ "${force_reboot}" ]; then
-				${super}reboot
-			elif prompt_yns "Would you like to reboot?"; then
-				${super}reboot
+	if [ ! "$dryrun" ]; then
+		if ${super}nixos-rebuild ${nrcmd} --flake . --option eval-cache false ${addargs}; then
+			if [ "${nrcmd}" = "boot" ]; then
+				if [ "${force_reboot}" ]; then
+					${super}reboot
+				elif prompt_yns "Would you like to reboot?"; then
+					${super}reboot
+				fi
 			fi
 		fi
 	fi

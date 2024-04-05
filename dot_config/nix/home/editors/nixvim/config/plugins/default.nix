@@ -12,6 +12,7 @@
 
   plugins = {
     comment.enable = true; ### comment lines with gc command
+    surround.enable = true; ### parentheses, brackets, quotes, XML tags, and more
   };
 
   ### keepthing this here for convenience

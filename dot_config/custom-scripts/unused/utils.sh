@@ -104,32 +104,36 @@ else
 	echo "empty '${nrcmd}'"
 fi
 
-### bash process opts. use ':' after letter to require an argument
-while getopts r:yf flag; do
+### >>> arg dash flags -ry build
+while getopts ry flag; do
 	case "${flag}" in
-	r) r=${OPTARG} ;;
+	r) force_reboot=1 ;;
 	y) yes=1 ;;
-	f) force=1 ;;
 	*)
-		echo "$(usage)"
+		echo "${usage}"
 		exit
 		;;
 	esac
 done
+shift $(($OPTIND - 1)) ### this is the secret sauce
 
-### process a numbered arg
+nrcmd=$1
 case "${nrcmd}" in
 switch | build | boot | test) ;;
-'' | '-'*)
+'')
 	### ignore if empty, or ignore if only a flag
-	nrcmd=''
 	;;
 *)
 	echo "==> Invalid command '${nrcmd}'"
-	echo "$(usage)"
+	echo "${usage}"
 	exit
 	;;
 esac
+# echo "nrcmd is '${nrcmd}'"
+
+
+
+
 
 ### preamble
 exe="$(basename $0)"

@@ -52,26 +52,6 @@
     }
 
     {
-      mode = "v";
-      key = "<";
-      action = "<gv";
-      options = {
-        silent = true;
-        desc = "Indent while remaining in visual mode.";
-      };
-    }
-
-    {
-      mode = "v";
-      key = ">";
-      action = ">gv";
-      options = {
-        silent = true;
-        desc = "Indent while remaining in visual mode.";
-      };
-    }
-
-    {
       mode = "n";
       key = "<C-d>";
       action = "<C-d>zz";
