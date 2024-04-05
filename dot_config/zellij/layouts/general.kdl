@@ -20,30 +20,43 @@ layout {
     }
 
     tab name="toy" focus=true {
-        pane name="shell" focus=true
+        pane stacked=true {
+            pane name="shell alpha" focus=true
+            pane name="shell beta" focus=true
+            pane name="shell charlie" focus=true
+        }
     }
 
     tab name="nix" cwd="~/.config/nix/" {
-        pane name="cli (nr)"
+        pane stacked=true {
+            pane name="cli (nr)"
+            pane name="shell alpha" focus=true
+        }
     }
 
+    // floating panes don't fold by default, so scratch that concept, option doesn't work.
     tab name="chezmoi" cwd="~/.local/share/chezmoi" {
-        pane name="nvim" {
-            command "nvim"
-            // start_suspended true
+        pane stacked=true {
+            pane name="nvim" {
+                command "nvim"
+            }
+            pane name="git" {
+                command "fish"
+            }
         }
     }
 
     tab name="nixvim" cwd="~/.local/share/chezmoi/dot_config/nix/home/editors/nixvim" {
-        pane name="nvim" {
-            command "nvim"
-            // start_suspended true
-        }
-        pane name="nvim" {
-            cwd "~/.config/nix/home/editors/nixvim"
-            command "nix"
-            args "run"
-            start_suspended true
+        pane stacked=true {
+            pane name="nvim" {
+                command "nvim"
+            }
+            pane name="test nixvim build" {
+                cwd "~/.config/nix/home/editors/nixvim"
+                command "nix"
+                args "run"
+                start_suspended true
+            }
         }
     }
 }
