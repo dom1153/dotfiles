@@ -159,7 +159,7 @@ linux-*)
 
 	myecho ">> ${super}nixos-rebuild ${nrcmd} --flake . --option eval-cache false ${addargs}"
 	if [ ! "$dryrun" ]; then
-		if "${super}"nixos-rebuild "$nrcmd" --flake . --option eval-cache false "$addargs"; then
+		if ${super}nixos-rebuild $nrcmd --flake . --option eval-cache false $addargs; then
 			if [ "$nrcmd" = "boot" ]; then
 				if [ "$force_reboot" ]; then
 					"${super}"reboot
