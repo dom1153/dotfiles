@@ -12,3 +12,7 @@ zellij run --in-place --cwd ~/.local/share/chezmoi/dot_config/nix/home/editors/n
 ; action new-pane is does NOT work with --cwd, I tried, so this is an alright workaround
 # recreate chezmoi git float
 zellij run --floating --cwd ~/.local/share/chezmoi --name "git chezmoi" -- fish
+
+% fish, shell, zsh, zellij
+# start fish shell without zellij auto-start
+export ZELLIJ=1 && fish

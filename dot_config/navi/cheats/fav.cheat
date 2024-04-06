@@ -1,5 +1,4 @@
 % fav, widget
 
-# nix rebuild (via widget)
+# nixos-rebuild alias (via widget)
 nr
-

@@ -2,3 +2,6 @@
 
 # edit history (ctrl-w, ctrl-s)
 zoxide edit
+
+# interactive search
+zi

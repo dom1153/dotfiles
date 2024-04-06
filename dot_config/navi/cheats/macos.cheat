@@ -1,18 +1,16 @@
-; comment
-
-% macos, poweroff
-# shutdown mac
+% macos, mac os, darwin, poweroff
+# poweroff mac
 sudo shutdown -h now
 
-% macos, reboot
+% macos, mac os, darwin, reboot
 # reboot mac
 sudo shutdown -r now
 
-% finder, open, file
+% macos, mac os, darwin, finder, open, file
 # open apps from cli
 open <file>
 
-% macos, dock, reset, cache
+% macos, darwin, dock, reset, cache, kitty, neovide
 # force the Dock to update its cached icons
 rm /var/folders/*/*/*/com.apple.dock.iconcache; killall Dock
 

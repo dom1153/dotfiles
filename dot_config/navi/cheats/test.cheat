@@ -1,6 +1,7 @@
-% git, code, nuts
+% test
 
 # Change branch
 git checkout <branch>
 
 $ branch: git branch | awk '{print $NF}'
+

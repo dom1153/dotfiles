@@ -1,4 +1,4 @@
-% bat, setup
+% bat, setup, theme
 
-# fix 'cannot find theme'
+# fix 'cannot find catppuccin theme'
 bat cache --build

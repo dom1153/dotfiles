@@ -1,5 +1,4 @@
-% chezmoi
+% chezmoi, cdd
 
-# to got chezmoi cd path
-cd $(chezmoi source-path)
-
+# print source path
+chezmoi source-path

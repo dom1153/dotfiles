@@ -1,7 +1,8 @@
-% nixos-rebuild
+% nixos-rebuild, darwin-rebuild
 
-# nixos-rebuild anywhere (debug)
+# rebuild switch anywhere (debug)
 sudo nixos-rebuild switch --flake $PWD/.config/nix --show-trace --option eval-cache false
 
-# darwin-rebuild anywhere (debug)
+# rebuild switch anywhere (debug)
 sudo darwin-rebuild switch --flake $PWD/.config/nix --show-trace --option eval-cache false
+
