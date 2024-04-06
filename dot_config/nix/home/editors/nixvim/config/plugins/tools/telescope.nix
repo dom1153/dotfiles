@@ -2,11 +2,17 @@
   imports = [
   ];
 
+  extraConfigLua = builtins.readFile ./lua/telescope.lua;
+
   ### optional dependencies - treesitter, lsp, nvim-web-devicons
   ### plenary seems to get auto-installed thanks to nixvim
   extraPackages = with pkgs; [
     ripgrep ### reccomended for telescope
     fd ### find alternative, reccomended for (telescope)
+  ];
+
+  extraPlugins = with pkgs.vimPlugins; [
+    nvim-web-devicons ### optional ; (installing it *just works*)
   ];
 
   ### telescope.nvim is a highly extendable fuzzy finder over lists
@@ -20,6 +26,7 @@
       };
     };
 
+    ### https://github.com/nvim-telescope/telescope.nvim/wiki/Extensions
     extensions = {
       fzf-native.enable = true; ### sorting go REALLY fast
     };

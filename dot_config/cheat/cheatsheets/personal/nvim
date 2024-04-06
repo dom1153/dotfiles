@@ -31,3 +31,9 @@ Press =; read confirmation dialog; confirm with y/<CR> or not confirm with n/<Es
 
 # open a terminal (or in a new tab)
 tab term
+
+# Telescope
+use C-/ or ? to show keybinds during search
+
+# mini.files (file explorer)
+use g? to show keybinds

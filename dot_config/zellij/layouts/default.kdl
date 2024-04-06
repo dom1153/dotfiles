@@ -11,7 +11,19 @@ layout {
         pane size=1 borderless=true {
             plugin location="zellij:tab-bar"
         }
-        pane {
+        children
+        pane size=2 borderless=true {
+            plugin location="zellij:status-bar"
+        }
+    }
+
+    new_tab_template {
+        pane size=1 borderless=true {
+            plugin location="zellij:tab-bar"
+        }
+        // bug: I think children can't go into pane-templates... but this is allowed?? and works???
+        // bug: pane stacked=true does NOT work, but a template equivalent will
+        stacky {
             children
         }
         pane size=2 borderless=true {
@@ -19,15 +31,27 @@ layout {
         }
     }
 
+    pane_template name="stacky" stacked=true {
+        pane name="foo"
+        children
+    }
+
+
     tab name="foo" focus=true {
-        pane name="shell" focus=true
+        pane stacked=true {
+            pane name="shell" focus=true
+        }
     }
 
     tab name="bar"  {
-        pane name="shell"
+        pane stacked=true {
+            pane name="shell"
+        }
     }
 
     tab name="meh" {
-        pane name="shell"
+        pane stacked=true {
+            pane name="shell"
+        }
     }
 }
