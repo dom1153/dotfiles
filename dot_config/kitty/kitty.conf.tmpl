@@ -50,6 +50,14 @@ startup_session none
 ### os specific tweaks
 macos_option_as_alt yes
 
+### should hide annoying error message with window_decorations and background_opacity
+{{- if eq .chezmoi.hostname "jill-stingray" }}
+hide_window_decorations yes
+{{- else if eq .chezmoi.hostname "sei-asagiri" }}
+hide_window_decorations yes
+{{- else }}
+{{- end }}
+
 ### colorscheme via kitty script
 # BEGIN_KITTY_THEME
 # Catppuccin Kitty Mocha
