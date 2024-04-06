@@ -2,6 +2,8 @@
   imports = [
   ];
 
+  ### optional dependencies - treesitter, lsp, nvim-web-devicons
+  ### plenary seems to get auto-installed thanks to nixvim
   extraPackages = with pkgs; [
     ripgrep ### reccomended for telescope
     fd ### find alternative, reccomended for (telescope)
@@ -19,6 +21,7 @@
     };
 
     extensions = {
+      fzf-native.enable = true; ### sorting go REALLY fast
     };
 
     extraOptions = {
