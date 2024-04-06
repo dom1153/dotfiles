@@ -37,3 +37,10 @@ use C-/ or ? to show keybinds during search
 
 # mini.files (file explorer)
 use g? to show keybinds
+
+# classic vim stuff
+' -> marks
+" -> register
+
+## useless vim stuff
+z= -> spelling suggestion

@@ -1,7 +1,7 @@
 {...}: {
   imports = [
     # ./dap.nix
-    ./telescope.nix
+    ./telescope/telescope.nix
     # ./oil.nix
     ./mini.nix
     ./cheatsheet.nix

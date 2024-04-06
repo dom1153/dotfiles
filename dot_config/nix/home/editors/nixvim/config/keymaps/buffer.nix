@@ -1,5 +1,6 @@
 {...}: {
   keymaps = [
+    ### TODO: find a way to delete all buffers, or all other buffers
     {
       mode = "n";
       key = "<leader>bd";
@@ -9,12 +10,13 @@
       };
     }
 
+    ### all
     {
       mode = "n";
-      key = "<leader>bb";
-      action = "<cmd>e #<cr>";
+      key = "<leader>bX";
+      action = "<cmd>%bdelete<cr>";
       options = {
-        desc = "Switch to Other Buffer";
+        desc = "Delete all buffer";
       };
     }
   ];

@@ -57,6 +57,8 @@
       ranger
       ttyper
 
+      nix-prefetch-github ### for the dumb nixos stuff
+
       inputs.archoo-nixvim.packages.${system}.default
     ];
 

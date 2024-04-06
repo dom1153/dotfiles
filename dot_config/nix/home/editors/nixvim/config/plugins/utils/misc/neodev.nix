@@ -3,9 +3,5 @@
     neodev-nvim
   ];
 
-  extraConfigLua = ''
-    require("neodev").setup({
-      library = { plugins = {"neotest"}, types = true},
-    })
-  '';
+  extraConfigLua = builtins.readFile ./lua/neodev.lua;
 }

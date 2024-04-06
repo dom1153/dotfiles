@@ -6,3 +6,6 @@ sudo nixos-rebuild switch --flake $PWD/.config/nix --show-trace --option eval-ca
 # rebuild switch anywhere (debug)
 sudo darwin-rebuild switch --flake $PWD/.config/nix --show-trace --option eval-cache false
 
+% nixos
+# fetch that stupid fetchFromGitHub (nix-prefetch-github <owner> <repo>)
+nix-prefetch-github

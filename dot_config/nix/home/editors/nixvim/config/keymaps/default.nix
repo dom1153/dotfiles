@@ -103,6 +103,24 @@
 
     {
       mode = ["n" "v"];
+      key = "y";
+      action = "\"+y";
+      options = {
+        desc = "Copy to system clipboard (motion)";
+      };
+    }
+
+    {
+      mode = ["n" "v"];
+      key = "Y";
+      action = "\"+y";
+      options = {
+        desc = "Copy to system clipboard (motion)";
+      };
+    }
+
+    {
+      mode = ["n" "v"];
       key = "<leader>d";
       action = "\"_d";
       options = {

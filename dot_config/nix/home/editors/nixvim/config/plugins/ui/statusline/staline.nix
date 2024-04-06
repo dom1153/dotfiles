@@ -5,6 +5,8 @@
     staline-nvim
   ];
 
+  ### TODO: I love this plugin, but tabline disappears
+  ### need a statusline (luavim, staline) to compensate
   extraConfigLua = builtins.readFile ./lua/staline.lua;
 
   keymaps = [

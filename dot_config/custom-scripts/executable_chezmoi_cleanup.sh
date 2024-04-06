@@ -22,7 +22,7 @@ for d in ${dotfiles[*]}; do
 		echo "SCRIPT: Unable to find $curdir, skipping"
 	else
 		cd "$curdir"
-		if [ -z "$(chezmoi unmanaged -p absolute .)"]; then
+		if [ -z "$(chezmoi unmanaged -p absolute .)" ]; then
 			echo "SCRIPT: Skipping $curdir, no unmanaged files"
 		else
 			echo "curdir: $curdir"

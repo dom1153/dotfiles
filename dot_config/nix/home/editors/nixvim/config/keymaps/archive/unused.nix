@@ -119,6 +119,25 @@
         key = "<leader>r";
         action = "<cmd>luafile $MYVIMRC<CR>";
       }
+
+      {
+        mode = "n";
+        key = "<leader>bb";
+        action = "<cmd>e #<cr>";
+        options = {
+          desc = "Switch to Other Buffer";
+        };
+      }
+
+      ### I'll probabalby forget this visual select feature lmao
+      {
+        mode = "v";
+        key = "<leader>gv";
+        action = "<cmd>Telescope git_bcommits_range<cr>";
+        options = {
+          desc = "Git Buffer Commit (visual) Range";
+        };
+      }
     ];
   };
 }

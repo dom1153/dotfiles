@@ -8,9 +8,10 @@
   extraConfigLua = builtins.readFile ./lua/cheatsheet.lua;
 
   keymaps = [
+    ### rebinding default to have a proper desc
     {
       mode = "n";
-      key = "<Leader>p";
+      key = "<Leader>?";
       action = "<cmd>Cheatsheet<cr>";
       options = {
         desc = "Command Palette (cheatsheet)";
