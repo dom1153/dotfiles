@@ -69,3 +69,7 @@ end
 if type doas &>/dev/null
     abbr sudo doas
 end
+
+if test $TERM = "foot"
+  abbr ssh 'kitty kitten ssh'
+end
