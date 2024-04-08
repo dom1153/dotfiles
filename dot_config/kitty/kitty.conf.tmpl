@@ -40,9 +40,9 @@ background_opacity 0.8
 dynamic_background_opacity yes
 
 ### advanced
-### use 'startup_session none' to ignore this conf
 {{- if eq .chezmoi.os "darwin" }}
-startup_session ~/.config/kitty/launch.conf
+# startup_session ~/.config/kitty/launch.conf
+startup_session none
 {{- else }}
 startup_session none
 {{- end }}

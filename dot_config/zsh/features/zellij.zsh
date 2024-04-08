@@ -5,17 +5,12 @@ if [ -z $SSH_CONNECTION ] && [ -z $VSCODE_SHELL_INTEGRATION ]; then
         if [[ "$ZELLIJ_AUTO_ATTACH" == "true" ]]; then
             zellij attach -c
         else
-            if type "wslvar" &> /dev/null; then
-                zellij --layout general
-            else
-                zellij
-            fi
+            zellij
         fi
 
         if [[ "$ZELLIJ_AUTO_EXIT" == "true" ]]; then
             exit
         fi
     fi
-
 fi
 

@@ -7,10 +7,14 @@ ui {
 }
 
 layout {
-     default_tab_template {
+    // bug: hide_floating_panes=true doesn't seem to work. ever
+    default_tab_template {
         pane size=1 borderless=true {
             plugin location="zellij:tab-bar"
         }
+        // bug: pane stacked=true doesn't work here...
+        // bug: pane templates don't work here?
+        // don't even try and put a pane around the children for default_tab_template, and custom tab_template...
         children
         pane size=2 borderless=true {
             plugin location="zellij:status-bar"
@@ -36,22 +40,43 @@ layout {
         children
     }
 
-
-    tab name="foo" focus=true {
+    tab name="toy" focus=true {
         pane stacked=true {
-            pane name="shell" focus=true
+            pane name="shell alpha"
+            pane name="shell beta"
+            pane name="shell charlie"
         }
     }
 
-    tab name="bar"  {
+    tab name="nix" cwd="~/.config/nix/" {
         pane stacked=true {
-            pane name="shell"
+            pane name="cli (nr)"
+            pane name="shell alpha"
         }
     }
 
-    tab name="meh" {
+    tab name="chezmoi" cwd="~/.local/share/chezmoi" {
         pane stacked=true {
-            pane name="shell"
+            pane name="nvim" {
+                command "nvim"
+            }
+            pane name="git" {
+                command "fish"
+            }
+        }
+    }
+
+    tab name="nixvim" cwd="~/.local/share/chezmoi/dot_config/nix/home/editors/nixvim" {
+        pane stacked=true {
+            pane name="nvim" {
+                command "nvim"
+            }
+            pane name="test nixvim build" {
+                cwd "~/.config/nix/home/editors/nixvim"
+                command "nix"
+                args "run"
+                start_suspended true
+            }
         }
     }
 }
