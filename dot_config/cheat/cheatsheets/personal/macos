@@ -9,3 +9,9 @@ sudo nano /etc/pam.d/sudo_local
 # uncomment following line to enable Touch ID for sudo
 auth       sufficient     pam_tid.so
 ```
+
+# app tweaks
+## AltTab
+1. Replace option key -> command key
+2. Change select previous window -> ShiftTab
+
