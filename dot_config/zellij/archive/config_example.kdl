@@ -1,4 +1,6 @@
 // If you'd like to override the default keybindings completely, be sure to change "keybinds" to "keybinds clear-defaults=true"
+//// https://zellij.dev/documentation/options.html for documentation
+//// zellij setup --dump-config > /tmp/config.kdl for default config
 keybinds {
     normal {
         // uncomment this and adjust key if using copy_on_select=false
