@@ -22,3 +22,6 @@ cd /mnt/c/ && cmd.exe /c start "rebooting WSL" cmd /c "timeout 5 && wsl -d $WSL_
 
 # start wsl with windows admin rights instead of unix admin rights
 powershell.exe Start-Process -Verb runas -FilePath wsl
+
+# start a cmd.exe at windows directory (from wsl)
+cd $(wslpath "$(wslvar USERPROFILE)") && cmd.exe
