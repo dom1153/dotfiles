@@ -113,7 +113,7 @@
     {
       mode = ["n" "v"];
       key = "Y";
-      action = "\"+y";
+      action = "\"+Y";
       options = {
         desc = "Copy to system clipboard (motion)";
       };

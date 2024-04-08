@@ -8,3 +8,14 @@ powershell.exe -c Get-Clipboard > my-umatrix-rules.txt
 
 # wsl pwd -> windows clipboard
 pwd | tr -d '\n' | clip.exe
+
+; enter to reboot via "windows terminal"
+# shutdown poweroff reboot wsl within wsl (eg. wsl distro NixOS)
+wsl.exe --terminate $WSL_DISTRO_NAME
+
+; # shutdown poweroff wsl (within a cmd.exe)
+; wsl.exe --shutdown
+
+; https://stackoverflow.com/questions/66375364/shutdown-or-reboot-a-wsl-session-from-inside-the-wsl-session
+# launch a new command line window and reboot (fancy)
+cd /mnt/c/ && cmd.exe /c start "rebooting WSL" cmd /c "timeout 5 && wsl -d $WSL_DISTRO_NAME" && wsl.exe --terminate $WSL_DISTRO_NAME

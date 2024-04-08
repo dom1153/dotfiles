@@ -2,7 +2,7 @@
 
 # Process commands
 
-## returns pid if a process exists
+## returns pid if a process exists (e.g. pgrep watchman)
 pgrep <command name>
 
 ## kills process
@@ -11,3 +11,4 @@ pkill <command>
 ## useful for gettin filenames and directory names
 dirname
 basename
+

@@ -157,14 +157,17 @@ linux-*)
 		super=""
 	fi
 
+	echo $PWD
 	myecho ">> ${super}nixos-rebuild ${nrcmd} --flake . --option eval-cache false ${addargs}"
 	if [ ! "$dryrun" ]; then
 		if ${super}nixos-rebuild $nrcmd --flake . --option eval-cache false $addargs; then
 			if [ "$nrcmd" = "boot" ]; then
-				if [ "$force_reboot" ]; then
-					"${super}"reboot
+				if type "wslvar" >/dev/null 2>&1; then
+					cd /mnt/c/ && cmd.exe /c start "rebooting WSL" cmd /c "timeout 5 && wsl -d $WSL_DISTRO_NAME" && wsl.exe --terminate $WSL_DISTRO_NAME
+				elif [ "$force_reboot" ]; then
+					${super}reboot
 				elif prompt_yns "Would you like to reboot?"; then
-					"${super}"reboot
+					${super}reboot
 				fi
 			fi
 		fi
