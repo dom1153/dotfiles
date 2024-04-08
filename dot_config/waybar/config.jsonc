@@ -1,56 +1,57 @@
 {
-    // BAR CONFIG
-    "layer": "top", // make sure steam ui can pop up
-    "spacing": 4, // gaps between modules
-    "position": "left",
-    // MODULES LAYOUT BEGIN
-    "modules-left": [
-        "hyprland/workspaces"
-        // "hyprland/window"
-    ],
-    "modules-center": [
-        "clock"
-    ],
-    "modules-right": [
-        "pulseaudio",
-        "tray",
-        "custom/power"
-    ],
-    // LEFT MODULES
-    "hyprland/workspaces": {
-        // "show-special": true,
-        "rotate": 90
+  // BAR CONFIG
+  "layer": "top", // make sure steam ui can pop up
+  "spacing": 4, // gaps between modules
+  "position": "left",
+  // MODULES LAYOUT BEGIN
+  "modules-left": [
+    "hyprland/workspaces"
+    // "hyprland/window"
+  ],
+  "modules-center": [
+    "clock"
+  ],
+  "modules-right": [
+    "pulseaudio",
+    "tray",
+    "custom/power"
+  ],
+  // LEFT MODULES
+  "hyprland/workspaces": {
+    // "all-outputs": true, // debug, independant of monitor
+    // "format": "{id}:{name}", // debug, defalt: {id}
+    // "show-special": true,
+    "rotate": 90
+  },
+  "hyprland/window": {
+    "format": "{initialClass} | {title}",
+    "rotate": 90
+  },
+  // CENTER MODULES
+  "clock": {
+    "format": "{:%H:%M | %A, %B %d }",
+    "tooltip-format": "<tt>{calendar}</tt>",
+    "calendar": {
+      "mode": "month",
+      "mode-mon-col": 3,
+      "weeks-pos": "right"
     },
-    "hyprland/window": {
-        "format": "{initialClass} | {title}",
-        "rotate": 90
-    },
-    // CENTER MODULES
-    "clock": {
-        "format": "{:%H:%M | %A, %B %d }",
-        "tooltip-format": "<tt>{calendar}</tt>",
-        "calendar": {
-            "mode": "month",
-            "mode-mon-col": 3,
-            "weeks-pos": "right"
-        },
-        "rotate": 90
-    },
-    // RIGHT MODULES
-    // modules (in order of module use)
-    "pulseaudio": {
-        "format": "{volume}% {icon} ",
-        "on-click": "pavucontrol",
-        "rotate": 90
-    },
-    "tray": {
-        "spacing": 10, // padding between icons
-        "rotate": 90
-    },
-    "custom/power": {
-        "format": "Power Menu ",
-        "on-click": "nwg-bar",
-        "rotate": 90
-    }
+    "rotate": 90
+  },
+  // RIGHT MODULES
+  // modules (in order of module use)
+  "pulseaudio": {
+    "format": "{volume}% {icon} ",
+    "on-click": "pavucontrol",
+    "rotate": 90
+  },
+  "tray": {
+    "spacing": 10, // padding between icons
+    "rotate": 90
+  },
+  "custom/power": {
+    "format": "Power Menu ",
+    "on-click": "nwg-bar",
+    "rotate": 90
+  }
 }
-

@@ -5,3 +5,9 @@ hyprctl clients | nvim -
 
 # exit hyprland
 hyprctl dispatch exit
+
+# monitor info
+hyprctl monitors all
+
+# hyprland version
+hyprctl systeminfo

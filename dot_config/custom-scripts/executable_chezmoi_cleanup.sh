@@ -15,7 +15,8 @@ addArgs=""
 ### TODO: ignore flake.nix...
 
 dotdir="$HOME/.config"
-dotfiles=(ags alacritty amethyst bash cheat eww fish foot fuzzel hypr kitty navi nix nixpkgs nvim nvim.kickstart nwg-bar tmux tmuxinator waybar windows windows wofi wofi zellij zsh)
+### nwg-bar <-- keeps randomly getting cleaned, unsure why
+dotfiles=(ags alacritty amethyst bash cheat eww fish foot fuzzel hypr kitty navi nix nixpkgs nvim nvim.kickstart tmux tmuxinator waybar windows windows wofi wofi zellij zsh)
 for d in ${dotfiles[*]}; do
 	curdir="$dotdir/$d"
 	if [ ! -d "$curdir" ]; then
@@ -27,9 +28,8 @@ for d in ${dotfiles[*]}; do
 		else
 			echo "curdir: $curdir"
 			### xargs -p : interactive, -I {} command "{}" should quote each argument (to handle whitespace)
-			### todo: have a internactive cli flag (or show what got deleted at least...)
-			chezmoi unmanaged -p absolute . | xargs -I {} trash "{}"
-			# chezmoi unmanaged -p absolute . | xargs -p -I {} trash "{}"
+			#### --verbose will show the actual trash commands occuring :)
+			chezmoi unmanaged -p absolute . | xargs --verbose -I {} trash "{}"
 		fi
 	fi
 done

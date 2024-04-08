@@ -12,3 +12,7 @@ pkill <command>
 dirname
 basename
 
+## jobs
+jobs
+bg <n>
+fg <n>
