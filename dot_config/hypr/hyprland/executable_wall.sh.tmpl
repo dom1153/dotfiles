@@ -18,7 +18,7 @@ swww init >>$log
 {{- if eq .chezmoi.hostname "jill-stingray" }}
 ### DP-2
 chosenTALL="$(ls $jt | sort -R | tail -1)"
-swww img "$chosen" -t none -o DP-2 >>$log
+swww img "$chosenTALL" -t none -o DP-2 >>$log
 {{- end }}
 
 ### DP-1

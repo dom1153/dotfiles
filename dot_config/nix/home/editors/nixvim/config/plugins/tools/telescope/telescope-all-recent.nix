@@ -10,7 +10,7 @@
         hash = "sha256-N47qfj9zFvIHMzjYjK9Eyhng645SPoBPai4B1A+mrpQ=";
       };
     })
-    vimPlugins.sqlite-lua
+    vimPlugins.sqlite-lua ### causes a janky error after first install, but works after :)
     vimPlugins.dressing-nvim ### optional
   ];
 
