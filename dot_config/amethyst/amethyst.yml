@@ -270,6 +270,7 @@ floating: [
   company.thebrowser.Browser,
   md.obsidian,
   net.kovidgoyal.kitty,
+  com.github.wez.wezterm,
   # com.apple.Safari,
   # com.microsoft.edgemac,
   # com.neovide.neovide,

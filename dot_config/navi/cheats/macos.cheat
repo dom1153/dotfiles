@@ -14,3 +14,6 @@ open <file>
 # force the Dock to update its cached icons
 rm /var/folders/*/*/*/com.apple.dock.iconcache; killall Dock
 
+% macos, bundle
+# get code bundle identifier (e.g. com.github.wez.wezterm)
+codesign -dr - /path/to/yourapp.app
