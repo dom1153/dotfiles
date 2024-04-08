@@ -44,6 +44,8 @@
       "syncthing"
       "vial"
       "visual-studio-code"
+      ### experimenting
+      # "wezterm"
     ];
     taps = [
       "homebrew/cask-fonts"
