@@ -16,6 +16,7 @@
     ../../system/nix
 
     ../../system/programs/fonts.nix
+    ../../system/programs/hyprland
     ../../system/programs/steam.nix
     ../../system/programs/zsh.nix
     ../../system/programs/fish.nix
@@ -25,16 +26,18 @@
     ../../system/services/home-manager.nix
     ../../system/services/kmscon.nix
     ../../system/services/openssh.nix
-    ../../system/services/pulseaudio.nix
+    # ../../system/services/pulseaudio.nix
+    ../../system/services/pipewire.nix
     ../../system/services/syncthing.nix
     ../../system/services/tailscale.nix
     ../../system/services/udev.nix
     # ../../system/services/xfce.nix
-    ../../system/services/gnome.nix
-    ../../system/services/gdm.nix
+    # ../../system/services/gnome.nix
+    # ../../system/services/gdm.nix
     ../../system/services/xserver.nix
 
-    ./services/nfs.nix
+    ### this can cause problems powering down. pretty niche anyhow
+    # ./services/nfs.nix
 
     ./hardware-configuration.nix
   ];

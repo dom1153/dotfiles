@@ -6,34 +6,36 @@
   imports = [
     ../../../home
 
-    ### surround nvim broken???
-    ### (per documentation this means nixpkgs and nixvim are out of date)
-    ### https://nix-community.github.io/nixvim/
-    ### Try again another day?...
-    # ../../editors/nixvim
     ../../editors/vim
     ../../editors/vscode
 
     ../../programs
-    ../../programs/gnome.nix
+    ../../programs/hyprland
+    # ../../programs/mime.nix
+    # ../../programs/gnome.nix
 
     ../../terminal/programs
     ../../terminal/programs/qemu.nix
 
     ../../terminal/shell/zsh.nix
     ../../terminal/shell/fish.nix
+    ../../terminal/shell/nushell.nix
   ];
 
   home = {
     homeDirectory = "/home/archoo";
 
     sessionVariables = {
+      EDITOR = "nvim";
     };
 
     packages = with pkgs; [
       qbittorrent
+      nitch
       trash-cli
       ttyper
+
+      nix-prefetch-github ### for the dumb nixos stuff
 
       inputs.archoo-nixvim.packages.${system}.default
     ];
