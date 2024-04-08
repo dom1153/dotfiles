@@ -1,7 +1,7 @@
 % zellij, run, nvim, neovim, chezmoi
 
 # zellij-run nix-run nvim float
-zellij run --cwd ~/.config/nix/home/editors/nixvim/ --start-suspended --floating --name "test nixvim build" -- nix run
+zellij run --cwd ~/.config/nix/home/editors/nixvim/ --start-suspended --in-place --name "test nixvim build" -- nix run
 
 # zellij-run chezmoi edit
 zellij run --in-place --cwd ~/.local/share/chezmoi --name "nvim" -- nvim

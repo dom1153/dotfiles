@@ -9,6 +9,11 @@
 # get current filetype
 set filetype
 
+# split in cwd with terminal
+# https://www.reddit.com/r/neovim/comments/138wi21/open_terminal_in_split_with_working_directory_of/?rdt=50419
+### TODO: add this to ctrl-p menu in vim
+:vsplit term://%:p:h//bash
+
 
 # Plugins
 ## Mini.files :help *MiniFiles-manipulation*

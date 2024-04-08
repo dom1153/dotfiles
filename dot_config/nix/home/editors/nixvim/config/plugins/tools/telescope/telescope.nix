@@ -30,18 +30,18 @@
     ### https://github.com/nvim-telescope/telescope.nvim/wiki/Extensions
     extensions = {
       fzf-native.enable = true; ### sorting go REALLY fast
-      # frecency = {
-      #   enable = true;
-      # };
+      frecency = {
+        enable = true;
+      };
       undo = {
         enable = true;
-        mappings = {
-          i = {
-            "<cr>" = "yank_additions";
-            "<s-cr>" = "yank_deletions";
-            "<c-cr>" = "restore";
-          };
-        };
+        # mappings = {
+        #   i = {
+        #     "<cr>" = "yank_additions";
+        #     "<s-cr>" = "yank_deletions";
+        #     "<c-cr>" = "restore";
+        #   };
+        # };
       };
     };
 
@@ -158,7 +158,7 @@
     ### for frecency plugin
     {
       mode = "n";
-      key = "<leader>ff>";
+      key = "<leader>ff";
       action = "<cmd>Telescope frecency workspace=CWD<cr>";
       options = {
         desc = "Files (frecency ; hidden files)";

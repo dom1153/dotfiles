@@ -1,0 +1,45 @@
+logdir="/tmp/mylogs"
+log="$logdir/hyprland_exec.log"
+mkdir -p $logdir
+
+wallPath="/home/archoo/Pictures/Wallpapers"
+m=$(ls -d "$wallPath/vid"/*.mp4)
+j=$(ls -d "$wallPath/img"/*.jpg)
+p=$(ls -d "$wallPath/img"/*.png)
+
+{{- if eq .chezmoi.hostname "jill-stingray" }}
+### I only got jpgs so far
+jt=$(ls -d "$wallPath/tall"/*.jpg)
+{{- end }}
+
+### runs fine without & ; want to do this to make sure wallpaper is actually chosen
+swww init >>$log
+
+{{- if eq .chezmoi.hostname "jill-stingray" }}
+### DP-2
+chosenTALL="$(ls $jt | sort -R | tail -1)"
+swww img "$chosen" -t none -o DP-2 >>$log
+{{- end }}
+
+### DP-1
+{{- if eq .chezmoi.hostname "jill-stingray" }}
+chosen="$(ls $m $j $p | sort -R | tail -1)"
+{{- else if eq .chezmoi.hostname "sei-asagiri" }}
+### t460 cannot handle the power of mp4's
+chosen="$(ls $j $p | sort -R | tail -1)"
+{{- end }}
+daylog=$(date "+%d/%m/%y %H:%M:%S")
+echo "=== ${daylog}: $chosen" >$log
+case "$chosen" in
+*.mp4)
+	mpvpaper -o "no-audio --loop-playlist  --panscan=1" DP-1 "$chosen" >>$log 2>&1 &
+	;;
+*.png | *.jpg)
+	### starts early, any animations won't play anyways (hence -t none)
+	{{- if eq .chezmoi.hostname "jill-stingray" }}
+	swww img "$chosen" -t none -o DP-1 >>$log
+	{{- else if eq .chezmoi.hostname "sei-asagiri" }}
+	swww img "$chosen" -t none -o eDP-1 >>$log
+	{{- end }}
+	;;
+esac
