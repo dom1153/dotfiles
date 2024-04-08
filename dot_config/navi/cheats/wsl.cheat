@@ -19,3 +19,6 @@ wsl.exe --terminate $WSL_DISTRO_NAME
 ; https://stackoverflow.com/questions/66375364/shutdown-or-reboot-a-wsl-session-from-inside-the-wsl-session
 # launch a new command line window and reboot (fancy)
 cd /mnt/c/ && cmd.exe /c start "rebooting WSL" cmd /c "timeout 5 && wsl -d $WSL_DISTRO_NAME" && wsl.exe --terminate $WSL_DISTRO_NAME
+
+# start wsl with windows admin rights instead of unix admin rights
+powershell.exe Start-Process -Verb runas -FilePath wsl
