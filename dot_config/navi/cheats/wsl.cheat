@@ -1,0 +1,10 @@
+% wsl
+
+# (clip.exe) wsl clipboard -> windows clipboard
+cat my-umatrix-rules.txt | clip.exe
+
+# windows clipboard -> unix redirect
+powershell.exe -c Get-Clipboard > my-umatrix-rules.txt
+
+# wsl pwd -> windows clipboard
+pwd | tr -d '\n' | clip.exe
