@@ -5,11 +5,11 @@ local module = {}
 
 function module.apply_to_config(config)
 	if hostname == "DomArtProW11" then
-		config.color_scheme = "Catppuccin Mocha"
 		config.wsl_domains = {
 			{
 				name = "WSL:NixOS", -- unique identifier
 				distribution = "NixOS", -- 'wsl -l -v'
+				default_cwd = "~",
 			},
 		}
 		config.default_domain = "WSL:NixOS"
