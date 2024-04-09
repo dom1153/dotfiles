@@ -19,6 +19,7 @@
     kitty
     foot
     cool-retro-term
+    wezterm ### not working well with hyprland wayland (x11 works) ; use for other platforms
 
     ### apps
     discord

@@ -13,7 +13,6 @@ function module.apply_to_config(config)
 	-- Luckily, should include a nerd font out of the box
 	if hostname == "stella-hoshii.local" then
 		config.font = wezterm.font("FiraCode Nerd Font Mono")
-		-- default is 12.0
 		config.font_size = 12.0
 	end
 
@@ -24,6 +23,13 @@ function module.apply_to_config(config)
 
 	-- behavior
 	config.window_close_confirmation = "NeverPrompt"
+
+	if hostname == "jill-stingray" or hostname == "sei-asagiri" then
+		-- hyprland isn't working with wezterm wayland, x11 will do, if I try it
+		config.enable_wayland = false
+		config.font = wezterm.font("dina")
+		config.font_size = 10.0
+	end
 end
 
 return module
