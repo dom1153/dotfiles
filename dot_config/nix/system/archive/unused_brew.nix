@@ -44,8 +44,10 @@
     # Sidekick (browser)
     # Shirabe Jisho
     # Synergy
+    # hour blocks : day planner
+    # commandone - file manager
     # wireguard ### use appstore
-    # "bitwarden"  ### don't use brew or appstore ; had issues powering off pc due to processing not quitting
+    # "bitwarden"  ### don't use brew or appstore ; had issues powering off pc due to processing not quitting; biometric unlock is buggy via browser extension; auto login / menu bar is buggy sometimes
     # "windscribe" ### does not seem to add gui, maybe only the vpn aspect
   };
 }

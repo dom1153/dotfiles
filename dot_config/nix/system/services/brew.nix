@@ -54,5 +54,11 @@
       "localsend/localsend"
       "osx-cross/arm"
     ];
+    ### appstore apps
+    ## rcmd - app switcher
+    ## unsplash wallpapers
+    ## horo - timer
+    ## tailscale
+    ## flow
   };
 }
