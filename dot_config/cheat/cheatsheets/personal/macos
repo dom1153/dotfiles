@@ -10,8 +10,21 @@ sudo nano /etc/pam.d/sudo_local
 auth       sufficient     pam_tid.so
 ```
 
+# General OS Tweeks
+1. add ctrl + 1/2/3/4/5 for workspace hotkeys
+
 # app tweaks
 ## AltTab
 1. Replace option key -> command key
 2. Change select previous window -> ShiftTab
 
+## sigma os
+1. unbind arrows as navigation (hjkl only)
+
+### useful hotkeys
+1. alt + e -> extensions
+2. < > indent tabs
+3. f fullscreen (normal binds)
+4. command + left/right for sidebars
+
+# see obsidian vauilt 'mac os deployment'

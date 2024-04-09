@@ -45,6 +45,7 @@
       "vial"
       "visual-studio-code"
       "wezterm"
+      "tyke" ### status bar notepad
     ];
     taps = [
       "homebrew/cask-fonts"

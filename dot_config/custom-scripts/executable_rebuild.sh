@@ -22,6 +22,7 @@
 ### 10. check if git is out of sync
 ### 11. support --show-trace arg
 ### 12. 'build' command to put result in /tmp (named)
+### TODO: chezmoi update (check git; if NOT dirty)
 ### update utils.sh as needed
 
 ### >>> helper functions
