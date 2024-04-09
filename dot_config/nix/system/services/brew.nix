@@ -31,6 +31,7 @@
       "microsoft-edge"
       "mos" ### mouse wheel
       "mpv"
+      "music-decoy"
       "neovide"
       "obsidian"
       "parsec"
@@ -42,10 +43,10 @@
       "spotify"
       "steam"
       "syncthing"
+      "tyke" ### status bar notepad
       "vial"
       "visual-studio-code"
       "wezterm"
-      "tyke" ### status bar notepad
     ];
     taps = [
       "homebrew/cask-fonts"

@@ -17,3 +17,19 @@ rm /var/folders/*/*/*/com.apple.dock.iconcache; killall Dock
 % macos, bundle
 # get code bundle identifier (e.g. com.github.wez.wezterm)
 codesign -dr - /path/to/yourapp.app
+
+% macos, brew, cask
+# brew list cask -> nvim
+brew list --cask | nvim -
+
+# brew list formulae -> nvim
+brew list forumlae -> nvim
+
+# brew upgrade
+brew update && brew upgrade
+
+# brew search <text>
+brew search
+
+# brew outdated
+brew outdated
