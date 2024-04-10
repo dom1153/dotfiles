@@ -20,6 +20,7 @@
     chezmoi
     speedtest-cli
     wget
+    nix-prefetch-github
     ### fast-cli ### does not work on darwin
 
     ### services

@@ -8,4 +8,4 @@ sudo darwin-rebuild switch --flake $PWD/.config/nix --show-trace --option eval-c
 
 % nixos
 # fetch that stupid fetchFromGitHub (nix-prefetch-github <owner> <repo>)
-nix-prefetch-github
+nix-prefetch-github --nix

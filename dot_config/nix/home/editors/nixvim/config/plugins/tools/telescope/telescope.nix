@@ -1,6 +1,7 @@
 {pkgs, ...}: {
   imports = [
     ./telescope-all-recent.nix
+    ./telescope-emoji.nix
   ];
 
   extraConfigLua = builtins.readFile ../lua/telescope.lua;
@@ -146,6 +147,15 @@
       };
     }
 
+    ### list buffers on fb or bb
+    {
+      mode = "n";
+      key = "<leader>bb";
+      action = "<cmd>Telescope buffers sort_mru=true sort_lastused=true<cr>";
+      options = {
+        desc = "Buffer";
+      };
+    }
     {
       mode = "n";
       key = "<leader>bb";
