@@ -138,6 +138,25 @@
           desc = "Git Buffer Commit (visual) Range";
         };
       }
+
+      ### VVV screws up yank motions (e.g. surround word)
+      {
+        mode = ["n" "v"];
+        key = "y";
+        action = "\"+y";
+        options = {
+          desc = "Copy to system clipboard (motion)";
+        };
+      }
+
+      {
+        mode = ["n" "v"];
+        key = "Y";
+        action = "\"+Y";
+        options = {
+          desc = "Copy to system clipboard (motion)";
+        };
+      }
     ];
   };
 }

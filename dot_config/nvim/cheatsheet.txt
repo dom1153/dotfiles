@@ -3,3 +3,13 @@ Open cheatsheet in floating window | :CheatSheet!
 
 View mappings | :map [mapping]
 Set text width to {n} | :set tw={n}
+
+## section-name @surround
+Surround word with symbol | ysiw
+Surround line with symbol | yss
+(Delete) Surround nearest | ds
+(Delete) Surround nearest tag | dst
+Change surround tag (type new tag name) | cst
+
+## section-name @vim
+Go to parent brace | [%
