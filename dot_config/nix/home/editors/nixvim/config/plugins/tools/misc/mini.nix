@@ -11,8 +11,25 @@
       #   };
       # };
       files = {
+        mappings = {
+          close = "<Esc>"; ### default q
+          go_in = "l";
+          go_in_plus = "L";
+          go_out = "h";
+          go_out_plus = "H";
+          reset = "<BS>";
+          reveal_cwd = "@";
+          show_help = "g?";
+          synchronize = "=";
+          trim_left = "<";
+          trim_right = ">";
+        };
         options = {
-          permanent_delete = false; # use trash
+          ### Target directory is 'mini.files/trash' inside standard path of Neovim data directory
+          ### :echo stdpath('data') to see its path
+          ### Liklely ~/.local/share/nvim/mini.files/trash
+          permanent_delete = false;
+          use_as_default_explorer = true;
         };
         windows = {
           preview = true; ### Whether to show preview of file/directory under cursor

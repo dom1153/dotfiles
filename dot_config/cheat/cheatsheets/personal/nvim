@@ -14,7 +14,6 @@ set filetype
 ### TODO: add this to ctrl-p menu in vim
 :vsplit term://%:p:h//bash
 
-
 # Plugins
 ## Mini.files :help *MiniFiles-manipulation*
 Navigation
@@ -51,3 +50,8 @@ use g? to show keybinds
 z= -> spelling suggestion
 :scriptnames
 :changes
+
+## tldr quickfix and location list
+## both are special lists to help you move around
+quickfix => global scope
+locationlist => file scope
