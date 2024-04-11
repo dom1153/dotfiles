@@ -55,3 +55,7 @@ z= -> spelling suggestion
 ## both are special lists to help you move around
 quickfix => global scope
 locationlist => file scope
+
+# help
+tab help OK
+OR ctrl-w o -> only window ('fullscreen')
