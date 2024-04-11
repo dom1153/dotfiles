@@ -1,15 +1,13 @@
-Open cheatsheet | <leader>?
-Open cheatsheet in floating window | :CheatSheet!
+# (## are special meta-tags; the @ are tags (aliases)
 
-View mappings | :map [mapping]
-Set text width to {n} | :set tw={n}
-
-## section-name @surround
+## surround @tpope
 Surround word with symbol | ysiw
 Surround line with symbol | yss
 (Delete) Surround nearest | ds
 (Delete) Surround nearest tag | dst
 Change surround tag (type new tag name) | cst
 
-## section-name @vim
+# there are better built in ones?
+## vim @nvim @neovim
 Go to parent brace | [%
+Search and replace with confirmation | :%s/search/replace/gc

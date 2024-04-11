@@ -23,5 +23,5 @@
     }
   ];
 
-  extraConfigLua = builtins.readFile ../lua/telescope-emoji.lua;
+  extraConfigLua = builtins.readFile ./lua/telescope-emoji.lua;
 }

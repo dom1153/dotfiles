@@ -1,5 +1,6 @@
 {
   ### project.nvim is an all in one neovim plugin written in lua that provides superior project management.
+  ### concept is cool, but I don't want auto-cd when I nvim into directory
   plugins.project-nvim = {
     enable = true;
     enableTelescope = true;

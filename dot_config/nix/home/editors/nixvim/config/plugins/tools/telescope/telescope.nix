@@ -4,7 +4,7 @@
     ./telescope-emoji.nix
   ];
 
-  extraConfigLua = builtins.readFile ../lua/telescope.lua;
+  extraConfigLua = builtins.readFile ./lua/telescope.lua;
 
   ### optional dependencies - treesitter, lsp, nvim-web-devicons
   ### plenary seems to get auto-installed thanks to nixvim

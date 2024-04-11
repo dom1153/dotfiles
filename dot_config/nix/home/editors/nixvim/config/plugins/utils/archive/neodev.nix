@@ -3,5 +3,5 @@
     neodev-nvim
   ];
 
-  extraConfigLua = builtins.readFile ./lua/neodev.lua;
+  extraConfigLua = builtins.readFile ../lua/neodev.lua;
 }

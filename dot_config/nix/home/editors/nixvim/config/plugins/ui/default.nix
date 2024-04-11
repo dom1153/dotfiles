@@ -4,6 +4,7 @@
     # ./misc/indent-blankline.nix ### 'something is configured wrong'
     # ./misc/noice.nix
     # ./misc/nui.nix
+    ./misc/wilder.nix
 
     # ./notify/nvim-notify.nix
     # ./notif0y/fidget.nix

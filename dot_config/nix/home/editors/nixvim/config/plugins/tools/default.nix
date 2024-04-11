@@ -1,9 +1,9 @@
 {...}: {
   imports = [
-    # ./dap.nix
     ./telescope/telescope.nix
-    # ./oil.nix
-    ./mini.nix
-    ./cheatsheet.nix
+
+    ./misc/cheatsheet.nix
+    ./misc/mini.nix
+    # ./misc/oil.nix
   ];
 }

@@ -1,4 +1,6 @@
 {pkgs, ...}: {
+  ### a generic sidebar (e.g. git status, diagnostics, symbols, files, containers, todo)
+  ### I kinda tried to avoid the need for sidebars (distractions)
   extraPlugins = with pkgs.vimUtils; [
     (buildVimPlugin {
       pname = "sidebar.nvim";

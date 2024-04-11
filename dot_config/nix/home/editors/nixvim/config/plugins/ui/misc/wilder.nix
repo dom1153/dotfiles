@@ -1,4 +1,6 @@
 {
+  ### A more adventurous wildmenu
+  ### automatic suggestions for : and /
   plugins.wilder = {
     enable = true;
     modes = [":" "/" "?"];

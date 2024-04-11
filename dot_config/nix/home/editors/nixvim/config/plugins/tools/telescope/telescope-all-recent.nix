@@ -14,5 +14,5 @@
     vimPlugins.dressing-nvim ### optional
   ];
 
-  extraConfigLua = builtins.readFile ../lua/telescope-all-recent.lua;
+  extraConfigLua = builtins.readFile ./lua/telescope-all-recent.lua;
 }
