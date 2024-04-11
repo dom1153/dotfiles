@@ -42,16 +42,16 @@ layout {
 
     tab name="toy" focus=true {
         pane stacked=true {
-            pane name="shell alpha"
-            pane name="shell beta"
-            pane name="shell charlie"
+            pane
+            pane
+            pane
         }
     }
 
     tab name="nix" cwd="~/.config/nix/" {
         pane stacked=true {
             pane name="cli (nr)"
-            pane name="shell alpha"
+            pane
         }
     }
 
