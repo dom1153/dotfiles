@@ -18,8 +18,6 @@ layout {
     }
 
     tab name="basic" {
-        pane {
-            pane name="shell"
-        }
+        pane name="shell"
     }
 }
