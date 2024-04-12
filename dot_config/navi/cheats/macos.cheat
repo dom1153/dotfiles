@@ -1,3 +1,9 @@
+% macos, sip, system integrity
+
+; '/System/Applications/Utilities/System Information.app' -> 'Software' can tell you status as well
+# check system integrity protection status
+csrutil status
+
 % macos, mac os, darwin, poweroff
 # poweroff mac
 sudo shutdown -h now

@@ -22,6 +22,8 @@
 
     deno ### json formatting
     nodePackages.fixjson
+
+    yamlfmt ### yml formatting
   ];
 
   ### file formatter

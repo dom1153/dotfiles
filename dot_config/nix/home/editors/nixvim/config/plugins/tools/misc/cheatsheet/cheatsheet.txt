@@ -10,4 +10,8 @@ Change surround tag (type new tag name) | cst
 # there are better built in ones?
 ## my-vim @nvim @neovim
 Go to parent brace | [%
-Search and replace with confirmation | :%s/search/replace/gc
+Search and replace with confirmation | :%s/s/r/gc
+Get Filetype | :set filetype?
+Get Colorscheme | :colorscheme
+Increase number | <C-A>
+Decrease number | <C-X>

@@ -59,9 +59,9 @@ layout {
         pane stacked=true {
             pane name="nvim" {
                 command "nvim"
+                start_suspended true
             }
             pane name="git" {
-                command "fish"
             }
         }
     }
@@ -70,6 +70,7 @@ layout {
         pane stacked=true {
             pane name="nvim" {
                 command "nvim"
+                start_suspended true
             }
             pane name="test nixvim build" {
                 cwd "~/.config/nix/home/editors/nixvim"
