@@ -6,7 +6,8 @@ require("cheatsheet").setup({
 	--     enabled = {},
 	--     disabled = {},
 	-- },
-	bundled_cheatsheets = true,
+	bundled_cheatsheets = false,
+	-- https://github.com/sudormrfbin/cheatsheet.nvim/tree/master/cheatsheets
 
 	-- For plugin specific cheatsheets
 	-- bundled_plugin_cheatsheets = {

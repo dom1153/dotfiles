@@ -56,14 +56,14 @@
 
     defaults = {
       mappings = {
-        i = {
-          "<esc>" = {
-            __raw = ''
-              function(...)
-                return require("telescope.actions").close(...)
-              end'';
-          };
-        };
+        # i = {
+        #   "<esc>" = {
+        #     __raw = ''
+        #       function(...)
+        #         return require("telescope.actions").close(...)
+        #       end'';
+        #   };
+        # };
       };
     };
 

@@ -49,5 +49,11 @@
       key = "<leader>u";
       action = "+ui/ux";
     }
+
+    {
+      mode = "n";
+      key = "<leader>u";
+      action = "+notifications";
+    }
   ];
 }
