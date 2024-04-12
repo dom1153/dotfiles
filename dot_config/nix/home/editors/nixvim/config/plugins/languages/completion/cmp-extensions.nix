@@ -9,4 +9,6 @@
     ### snippet engine is not configured?
     cmp_luasnip = {enable = true;}; # snippets
   };
+
+  extraConfigLua = builtins.readFile ./lua/cmp-extensions.lua;
 }

@@ -1,7 +1,4 @@
 {pkgs, ...}: {
-  extraPackages = with pkgs; [
-  ];
-
   ### telescope.nvim is a highly extendable fuzzy finder over lists
   plugins.oil = {
     enable = true;

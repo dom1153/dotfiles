@@ -9,7 +9,7 @@
     {
       mode = "n";
       key = "<leader>t";
-      action = "+tab";
+      action = "+tab / term";
     }
 
     ### window.nix
@@ -42,6 +42,12 @@
       mode = "n";
       key = "<leader>v";
       action = "+vim";
+    }
+
+    {
+      mode = "n";
+      key = "<leader>u";
+      action = "+ui/ux";
     }
   ];
 }

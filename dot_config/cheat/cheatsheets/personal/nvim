@@ -59,3 +59,6 @@ locationlist => file scope
 # help
 tab help OK
 OR ctrl-w o -> only window ('fullscreen')
+
+### vim / lua script to get buffer cwd
+vim.fn.expand("%:p:h")

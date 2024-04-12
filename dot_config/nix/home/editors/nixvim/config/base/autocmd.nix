@@ -8,5 +8,5 @@
   ];
 
   ### :help -> :tab help
-  extraConfigVim = "cabbrev help tab help";
+  # extraConfigVim = "cabbrev help tab help";
 }

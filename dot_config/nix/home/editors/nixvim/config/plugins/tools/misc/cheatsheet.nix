@@ -12,10 +12,10 @@
     ### rebinding default to have a proper desc
     {
       mode = "n";
-      key = "<Leader>?";
+      key = "<Leader>p";
       action = "<cmd>Cheatsheet<cr>";
       options = {
-        desc = "Command Palette (cheatsheet)";
+        desc = "Command Palette";
       };
     }
   ];

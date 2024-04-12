@@ -38,7 +38,8 @@
           width_preview = 40; ### Width of preview window (25)
         };
       };
-      cursorword = {};
+      cursorword = {}; ### highlight similar text when cursor over it (illuminate)
+      bufremove = {}; ### selects mru buffer when deleting a buffer
     };
   };
 

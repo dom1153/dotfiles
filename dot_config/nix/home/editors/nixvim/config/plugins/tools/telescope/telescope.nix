@@ -150,7 +150,7 @@
     ### list buffers on fb or bb
     {
       mode = "n";
-      key = "<leader>bb";
+      key = "<leader>fb";
       action = "<cmd>Telescope buffers sort_mru=true sort_lastused=true<cr>";
       options = {
         desc = "Buffer";

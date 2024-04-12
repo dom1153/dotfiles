@@ -2,8 +2,7 @@
   imports = [
     # ./misc/dressing-nvim.nix
     # ./misc/indent-blankline.nix ### 'something is configured wrong'
-    # ./misc/noice.nix
-    # ./misc/nui.nix
+    ./misc/noice.nix
     ./misc/wilder.nix
 
     # ./notify/nvim-notify.nix

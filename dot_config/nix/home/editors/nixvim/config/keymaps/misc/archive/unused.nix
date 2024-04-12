@@ -120,15 +120,6 @@
         action = "<cmd>luafile $MYVIMRC<CR>";
       }
 
-      {
-        mode = "n";
-        key = "<leader>bb";
-        action = "<cmd>e #<cr>";
-        options = {
-          desc = "Switch to Other Buffer";
-        };
-      }
-
       ### I'll probabalby forget this visual select feature lmao
       {
         mode = "v";

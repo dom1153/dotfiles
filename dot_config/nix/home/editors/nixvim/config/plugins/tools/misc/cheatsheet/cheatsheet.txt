@@ -1,6 +1,6 @@
 # (## are special meta-tags; the @ are tags (aliases)
 
-## surround @tpope
+## my-surround @tpope
 Surround word with symbol | ysiw
 Surround line with symbol | yss
 (Delete) Surround nearest | ds
@@ -8,6 +8,6 @@ Surround line with symbol | yss
 Change surround tag (type new tag name) | cst
 
 # there are better built in ones?
-## vim @nvim @neovim
+## my-vim @nvim @neovim
 Go to parent brace | [%
 Search and replace with confirmation | :%s/search/replace/gc

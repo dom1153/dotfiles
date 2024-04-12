@@ -19,5 +19,15 @@
         desc = "Delete all buffer";
       };
     }
+
+    ### previous buffer (TODO: alt bind this)
+    {
+      mode = "n";
+      key = "<leader>bo";
+      action = "<cmd>e #<cr>";
+      options = {
+        desc = "Switch Other Buffer";
+      };
+    }
   ];
 }
