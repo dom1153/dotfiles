@@ -2,7 +2,7 @@
   ### manages homebrew, homebrew itself must be installed manually!
   homebrew = {
     enable = true;
-    brews = []; ### likely use nixpkgs instead
+    brews = [];
     casks = [
       "affinity-designer"
       "affinity-photo"

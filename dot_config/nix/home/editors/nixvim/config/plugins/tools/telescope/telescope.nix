@@ -22,9 +22,27 @@
     enable = true;
 
     defaults = {
+      mappings = {
+        # i = {
+        #   "<esc>" = {
+        #     __raw = ''
+        #       function(...)
+        #         return require("telescope.actions").close(...)
+        #       end'';
+        #   };
+        # };
+      };
       layout_config = {
         preview_cutoff = 60;
         # prompt_position = "top";
+      };
+    };
+
+    extraOptions = {
+      pickers = {
+        colorscheme = {
+          enable_preview = true;
+        };
       };
     };
 
@@ -41,27 +59,6 @@
         #     "<cr>" = "yank_additions";
         #     "<s-cr>" = "yank_deletions";
         #     "<c-cr>" = "restore";
-        #   };
-        # };
-      };
-    };
-
-    extraOptions = {
-      pickers = {
-        colorscheme = {
-          enable_preview = true;
-        };
-      };
-    };
-
-    defaults = {
-      mappings = {
-        # i = {
-        #   "<esc>" = {
-        #     __raw = ''
-        #       function(...)
-        #         return require("telescope.actions").close(...)
-        #       end'';
         #   };
         # };
       };

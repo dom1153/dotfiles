@@ -7,8 +7,8 @@
   };
 
   extraConfigLua = builtins.readFile ./lua/toggleterm.lua;
-  # builtin.find_files({ cwd = vim.fn.expand("%:p:h") })
 
+  ### TODO: convert to lua
   keymaps = [
     ### vertical split
     {
@@ -32,15 +32,6 @@
     ### horizontal split
     {
       mode = "n";
-      key = "<leader>tH";
-      action = "<cmd>ToggleTerm direction=horizontal name=Terminal-Horizontal<CR>";
-      options = {
-        desc = "Terminal Horizontal Split (root)";
-      };
-    }
-
-    {
-      mode = "n";
       key = "<leader>th";
       action = "<cmd>ToggleTerm dir=%:p:h direction=horizontal name=Terminal-Horizontal-cwd<CR>";
       options = {
@@ -48,16 +39,15 @@
       };
     }
 
-    ### float
     {
       mode = "n";
-      key = "<leader>tf";
-      action = "<cmd>ToggleTerm direction=float name=Terminal-Float<CR>";
+      key = "<leader>tH";
+      action = "<cmd>ToggleTerm direction=horizontal name=Terminal-Horizontal<CR>";
       options = {
-        desc = "Terminal Float";
+        desc = "Terminal Horizontal Split (root)";
       };
     }
-
+    ### float
     {
       mode = "n";
       key = "<leader>tf";
@@ -67,11 +57,21 @@
       };
     }
 
-    ### term
     {
       mode = "n";
-      key = "<leader>tT";
-      action = "<cmd>ToggleTerm direction=tab name=Terminal-Tab<CR>";
+      key = "<leader>tF";
+      action = "<cmd>ToggleTerm direction=float name=Terminal-Float<CR>";
+      options = {
+        desc = "Terminal Float";
+      };
+    }
+
+    ### term
+
+    {
+      mode = "n";
+      key = "<leader>tt";
+      action = "<cmd>ToggleTerm dir=%:p:h direction=tab name=Terminal-Tab<CR>";
       options = {
         desc = "Terminal Tab";
       };
@@ -79,8 +79,8 @@
 
     {
       mode = "n";
-      key = "<leader>tt";
-      action = "<cmd>ToggleTerm dir=%:p:h direction=tab name=Terminal-Tab<CR>";
+      key = "<leader>tT";
+      action = "<cmd>ToggleTerm direction=tab name=Terminal-Tab<CR>";
       options = {
         desc = "Terminal Tab";
       };

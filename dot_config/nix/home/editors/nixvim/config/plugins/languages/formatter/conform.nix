@@ -23,7 +23,8 @@
     deno ### json formatting
     nodePackages.fixjson
 
-    yamlfmt ### yml formatting
+    yamlfmt ### google yamlfmt
+    # python311Packages.yamlfix ### opinionated; issues installing on darwin
   ];
 
   ### file formatter
@@ -35,6 +36,19 @@
     formatOnSave = {
       timeoutMs = 500;
       lspFallback = true;
+    };
+
+    formatters = {
+      ### yamlfix env untested
+      yamlfix = {
+        env = {
+          YAMLFIX_SECTION_WHITELINES = "1";
+        };
+      };
+      yamlfmt = {
+        ### https://github.com/google/yamlfmt/blob/main/docs/config-file.md#basic-formatter
+        prepend_args = ["-formatter" "retain_line_breaks_single=true,include_document_start=true"];
+      };
     };
 
     formattersByFt = {
@@ -67,6 +81,8 @@
 
       json = [["fixjson" "deno_fmt"]];
       jsonc = ["deno_fmt"]; ### fixjson will delete comments
+
+      yaml = [["yamlfmt"]];
 
       ### c/cpp seem to be covered by lsp or something
 

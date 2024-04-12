@@ -19,6 +19,7 @@
     nixPath = ["/etc/nix/path"];
 
     settings = {
+      ### seeing issues on darwin upstream https://github.com/NixOS/nix/issues/7273
       auto-optimise-store = true;
       experimental-features = "nix-command flakes";
     };

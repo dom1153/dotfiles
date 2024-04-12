@@ -2,7 +2,6 @@
 {config, ...}: {
   config = {
     ### See `:help vim.opt` and `:help option-list`
-    ### VVV renamed to 'opts' in modern nixvim.
     options = {
       ### You can also add relative line numbers, for help with jumping.
       ###  Experiment for yourself to see if you like it!

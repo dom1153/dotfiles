@@ -52,7 +52,7 @@
 
     {
       mode = "n";
-      key = "<leader>u";
+      key = "<leader>n";
       action = "+notifications";
     }
   ];
