@@ -8,8 +8,14 @@ require("toggleterm").setup({
 			-- return 80
 		end
 	end,
+	-- check for fish TODO: check that fish actually exists
+	-- shell = function()
+	-- 	return os.execute("/usr/bin/env fish") -- or vim.o.shell
+	-- end,
+	-- shell = os.execute("/usr/bin/env fish"),
 	-- not sure why c-/ doens't work, maybe needs escaping
 	open_mapping = [[<c-\>]],
+	direction = "float",
 })
 
 -- vertical split

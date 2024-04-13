@@ -11,6 +11,7 @@
     ./misc/harpoon.nix
     # ./misc/nvim-colorizer.nix
     ./misc/sidebar.nix
+    ./misc/resession.nix
     ./misc/todo-comments.nix
     # ./misc/toggleterm.nix
     # ./misc/ultimate-autopair.nix
