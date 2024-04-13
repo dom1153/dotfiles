@@ -8,7 +8,4 @@
       trouble = false;
     };
   };
-
-  keymaps = [
-  ];
 }

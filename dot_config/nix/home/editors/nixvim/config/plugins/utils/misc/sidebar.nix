@@ -15,16 +15,4 @@
   ];
 
   extraConfigLua = builtins.readFile ./lua/sidebar.lua;
-
-  keymaps = [
-    {
-      mode = "n";
-      key = "<leader>e";
-      action = ":SidebarNvimToggle<CR>";
-      options = {
-        desc = "Toggle Explorer";
-        silent = true;
-      };
-    }
-  ];
 }

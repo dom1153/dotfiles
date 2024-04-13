@@ -7,8 +7,4 @@
   };
 
   extraConfigLua = builtins.readFile ./lua/toggleterm.lua;
-
-  ### TODO: convert to lua
-  keymaps = [
-  ];
 }
