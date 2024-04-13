@@ -797,6 +797,15 @@
           desc = "Undo Stage Hunk";
         };
       }
+
+      {
+        mode = "n";
+        key = "<Leader>p";
+        action = "<cmd>Cheatsheet<cr>";
+        options = {
+          desc = "Command Palette";
+        };
+      }
     ];
   };
 }

@@ -9,14 +9,5 @@
   };
 
   keymaps = [
-    ### rebinding default to have a proper desc
-    {
-      mode = "n";
-      key = "<Leader>p";
-      action = "<cmd>Cheatsheet<cr>";
-      options = {
-        desc = "Command Palette";
-      };
-    }
   ];
 }

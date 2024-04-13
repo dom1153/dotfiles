@@ -19,7 +19,7 @@
           go_out_plus = "H";
           reset = "<BS>";
           reveal_cwd = "@";
-          show_help = "g?";
+          show_help = "<leader>?";
           synchronize = "=";
           trim_left = "<";
           trim_right = ">";

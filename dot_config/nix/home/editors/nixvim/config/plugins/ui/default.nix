@@ -10,8 +10,9 @@
 
     # ./startpage/alpha.nix
 
-    # ./statusline/lualine.nix
+    ./statusline/lualine.nix
     # ./statusline/staline.nix
+    # ./statusline/heirline.nix
 
     ./widgets/which-key.nix
   ];

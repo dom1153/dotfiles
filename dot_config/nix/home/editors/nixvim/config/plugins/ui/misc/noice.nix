@@ -7,7 +7,7 @@
   ###   Main use here is for stackable messages in the bottom right
   ###   And nice :cmd popup in the center
   plugins.noice = {
-    enable = false; ### temporary until we get status message...
+    enable = true; ### temporary until we get status message...
     notify = {
       enabled = false;
     };
@@ -40,6 +40,16 @@
       };
       ### TODO: tab help 
     };
+
+    routes = [
+      {
+        view = "notify";
+        filter = {
+          event = "msg_showmode";
+        };
+      }
+    ];
+
     ### see nixvim for default commands setup
     ### https://nix-community.github.io/nixvim/plugins/noice/index.html
     commands = {
