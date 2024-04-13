@@ -9,5 +9,5 @@
       ]);
   };
 
-  home.sessionVariables.VISUAL = "code --wait";
+  # home.sessionVariables.VISUAL = "code --wait";
 }

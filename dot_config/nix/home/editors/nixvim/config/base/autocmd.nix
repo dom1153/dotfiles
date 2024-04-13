@@ -7,6 +7,8 @@
     }
   ];
 
+  extraConfigLua = builtins.readFile ./lua/autocmd.lua;
+
   ### :help -> :tab help
   # extraConfigVim = "cabbrev help tab help";
 }
