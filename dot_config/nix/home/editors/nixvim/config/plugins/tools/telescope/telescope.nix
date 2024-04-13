@@ -117,7 +117,7 @@
       };
       "<leader>vi" = {
         action = "highlights, {}";
-        desc = "Search Highlight Groups";
+        desc = "Highlight Groups";
       };
       "<leader>vk" = {
         action = "keymaps, {}";
@@ -129,47 +129,11 @@
       };
       "<leader>vr" = {
         action = "oldfiles, {}";
-        desc = "Recent Files (Global)";
+        desc = "Old Files (Global)";
       };
     };
   };
 
   keymaps = [
-    {
-      mode = "n";
-      key = "<leader>fu";
-      action = "<cmd>Telescope undo<CR>";
-      options = {
-        desc = "Undo tree";
-      };
-    }
-
-    ### list buffers on fb or bb
-    {
-      mode = "n";
-      key = "<leader>fb";
-      action = "<cmd>Telescope buffers sort_mru=true sort_lastused=true<cr>";
-      options = {
-        desc = "Buffer";
-      };
-    }
-    {
-      mode = "n";
-      key = "<leader>bb";
-      action = "<cmd>Telescope buffers sort_mru=true sort_lastused=true<cr>";
-      options = {
-        desc = "Buffer";
-      };
-    }
-
-    ### for frecency plugin
-    {
-      mode = "n";
-      key = "<leader>ff";
-      action = "<cmd>Telescope frecency workspace=CWD<cr>";
-      options = {
-        desc = "Files (frecency ; hidden files)";
-      };
-    }
   ];
 }

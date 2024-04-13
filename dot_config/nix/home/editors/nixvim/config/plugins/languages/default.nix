@@ -20,7 +20,5 @@
     ./treesitter/treesitter.nix ### lsp-zero
     # ./treesitter/ts-autotag.nix
     # ./treesitter/ts-context-commentstring.nix
-
-    # ./specific/typescript-tools-nvim.nix
   ];
 }
