@@ -7,7 +7,7 @@
   ###   Main use here is for stackable messages in the bottom right
   ###   And nice :cmd popup in the center
   plugins.noice = {
-    enable = true;
+    enable = false; ### temporary until we get status message...
     notify = {
       enabled = false;
     };
