@@ -1,6 +1,7 @@
 {...}: {
   extraConfigLua = builtins.readFile ./lua/lsp.lua;
 
+  ### for config setups see :h lspconfig-all
   plugins.lsp = {
     enable = true;
 
