@@ -52,3 +52,9 @@ require("staline").setup({
 local os = require("os")
 local vim_enter_group = vim.api.nvim_create_augroup("vim_enter_group", { clear = true })
 vim.api.nvim_create_autocmd({ "VimEnter" }, { pattern = "*", command = "cd " .. "$HOME", group = vim_enter_group })
+
+-- will be useful if trying to future-proof icons
+-- not likely i'll ever impl but it's useful
+-- actually... this might be a custom variable
+vim.g.icons_enabled ~= false and "" or "+",
+

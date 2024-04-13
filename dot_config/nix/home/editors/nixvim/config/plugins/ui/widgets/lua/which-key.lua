@@ -1,25 +1,30 @@
--- basic config
-vim.keymap.set("n", "<leader>t", "+tab")
-vim.keymap.set("n", "<leader>w", "+window")
-vim.keymap.set("n", "<leader>b", "+buffers")
+local wk = require("which-key")
 
--- toggles and more
-vim.keymap.set("n", "<leader>u", "+ui/ux")
+local spacing = "  "
 
--- plugin related
+-- https://github.com/folke/which-key.nvim?tab=readme-ov-file#%EF%B8%8F-mappings
+wk.register({
+	-- basic config
+	t = { name = "" .. spacing .. "Tab" },
+	w = { name = "" .. spacing .. "Window" },
+	b = { name = "󰓩" .. spacing .. "Buffer" },
 
--- telescope
-vim.keymap.set("n", "<leader>f", "+find")
-vim.keymap.set("n", "<leader>v", "+vim")
+	-- toggles and more
+	u = { name = "󰃣" .. spacing .. "UI/UX" },
 
--- general git
-vim.keymap.set("n", "<leader>g", "+git")
+	-- telescope
+	f = { name = "󰈞" .. spacing .. "Find" },
+	v = { name = "" .. spacing .. "Vim" },
 
--- noice
-vim.keymap.set("n", "<leader>n", "+notifications")
+	-- git
+	g = { name = "" .. spacing .. "Git" },
 
--- toggleterm
-vim.keymap.set("n", "<leader>T", "+terminal")
+	-- noice notifications
+	n = { name = "󱅫" .. spacing .. "Notifications" },
 
--- sesssion (wip)
-vim.keymap.set("n", "<leader>q", "+quit/session")
+	-- toggleterm
+	T = { name = "" .. spacing .. "Terminal" },
+
+	-- session (wip)
+	q = { name = "" .. spacing .. "Quit/session" },
+}, { prefix = "<leader>" })

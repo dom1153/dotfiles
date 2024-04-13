@@ -3,7 +3,7 @@
 -- require to be inside a directory with the title 'nixvim'
 require("neodev").setup({
 	override = function(root_dir, library)
-		if root_dir:find("../nixvim", 1, true) == 1 then
+		if root_dir:find("/nixvim", 1, true) == 1 then
 			library.enabled = true
 			library.plugins = true
 		end
