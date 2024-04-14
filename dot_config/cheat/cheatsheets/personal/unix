@@ -20,3 +20,21 @@ fg <n>
 ## watch logfile (and maybe pipe with grep)
 ## -i case insensitive, -C context 3 lines before/after, - E is expression?
 tail -f log_file | grep -C 3 -i - E 'search_term_1|search_term_2'
+
+### tail color hack for when you don't have access to better tools
+tail -f /path/to/log | awk '
+  /INFO/ {print "\033[32m" $0 "\033[39m"}
+  /SEVERE/ {print "\033[31m" $0 "\033[39m"}
+'
+
+### https://unix.stackexchange.com/questions/8414/how-to-have-tail-f-show-colored-output
+### tail color 'sed' (GNU) variant
+tail -f /path/to/log | sed --unbuffered \
+    -e 's/\(.*INFO.*\)/[32m\1[39m/' \
+    -e 's/\(.*SEVERE.*\)/[31m\1[39m/'
+
+### https://unix.stackexchange.com/questions/8414/how-to-have-tail-f-show-colored-output
+### tail color 'sed' (non-GNU) variant
+tail -f /path/to/log | sed \
+    -e 's/\(.*INFO.*\)/[32m\1[39m/' \
+    -e 's/\(.*SEVERE.*\)/[31m\1[39m/'

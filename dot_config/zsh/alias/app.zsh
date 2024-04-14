@@ -89,4 +89,3 @@ fi
 if type "doas" >/dev/null; then
   alias sudo="doas"
 fi
-

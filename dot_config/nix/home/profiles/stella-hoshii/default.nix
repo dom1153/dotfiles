@@ -6,7 +6,7 @@
   imports = [
     ../../../home
 
-    ../../editors/vim
+    ../../terminal/programs/vim.nix
 
     ../../terminal/programs
 

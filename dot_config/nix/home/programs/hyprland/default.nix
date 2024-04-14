@@ -1,8 +1,8 @@
 {pkgs, ...}: {
   imports = [
-    ../gtk.nix
-    ../qt.nix
-    ./ags.nix
+    ../wm/gtk.nix
+    ../wm/qt.nix
+    ../wm/ags.nix
   ];
 
   home.packages = with pkgs; [

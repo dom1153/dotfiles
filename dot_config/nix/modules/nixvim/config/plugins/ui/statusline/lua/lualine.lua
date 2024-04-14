@@ -81,14 +81,14 @@ require("lualine").setup({
 	-- 		},
 	-- 	},
 	-- },
-	inactive_winbar = {
-		lualine_a = {
-			{
-				"filename",
-				path = 1, -- relative
-			},
-		},
-	},
+	-- inactive_winbar = {
+	-- 	lualine_a = {
+	-- 		{
+	-- 			"filename",
+	-- 			path = 1, -- relative
+	-- 		},
+	-- 	},
+	-- },
 })
 
 local wk = require("which-key")

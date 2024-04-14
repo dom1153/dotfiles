@@ -14,7 +14,7 @@
     ags.url = "github:Aylur/ags"; ### Aylur's GTK Shell
     ags.inputs.nixpkgs.follows = "nixpkgs";
 
-    archoo-nixvim.url = "./home/editors/nixvim";
+    archoo-nixvim.url = "./modules/nixvim";
 
     nixos-hardware.url = "github:NixOS/nixos-hardware/master";
   };

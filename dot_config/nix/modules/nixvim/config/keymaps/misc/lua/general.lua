@@ -38,6 +38,11 @@ vim.keymap.set({ "n", "v" }, "<leader>y", '"+y', { desc = "Copy to system clipbo
 
 vim.keymap.set({ "n", "v" }, "<leader>d", '"_d', { desc = "Delete to void register (motion)" })
 
+-- greatest remap ever (x == visual mode)
+-- allows you to highlight over text, paste over it with <leader>p
+-- puts the overwritten text to the void buffer (clipboard stays the same)
+vim.keymap.set({ "x", "v" }, "<leader>p", [["_dP]])
+
 -- <C-c> instead of pressing esc (insert mode) just because
 vim.keymap.set("i", "<C-c>", "<Esc>")
 

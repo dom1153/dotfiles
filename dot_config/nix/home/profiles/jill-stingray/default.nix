@@ -6,12 +6,10 @@
   imports = [
     ../../../home
 
-    ../../editors/vim
-    ../../editors/vscode
-
     ../../programs
     ../../programs/hyprland
     ../../programs/mime.nix
+    ../../programs/vscode.nix
     # ../../programs/gnome.nix
 
     ../../terminal/programs
@@ -20,6 +18,8 @@
     ../../terminal/shell/zsh.nix
     ../../terminal/shell/fish.nix
     ../../terminal/shell/nushell.nix
+
+    ../../terminal/programs/vim.nix
   ];
 
   home = {

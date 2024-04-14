@@ -24,4 +24,83 @@ layout {
             start_suspended true
         }
     }
+
+    // Tab 'nx'
+    tab name="nix" cwd="~/.config/nix/" {
+        pane name="cli (nr)"
+    }
+
+
+    tab {
+        pane name="test" {
+            cwd "~/.config/nix/home/editors/nixvim"
+            command "result/bin/nvim"
+            args "~/tmp/"
+            start_suspended true
+        }
+    }
+
+    new_tab_template {
+        pane size=1 borderless=true {
+            plugin location="zellij:tab-bar"
+        }
+        // bug: I think children can't go into pane-templates... but this is allowed?? and works???
+        // bug: pane stacked=true does NOT work, but a template equivalent will
+        stacky {
+            children
+        }
+        pane size=2 borderless=true {
+            plugin location="zellij:status-bar"
+        }
+    }
+
+    pane_template name="stacky" stacked=true {
+        pane name="foo"
+        children
+    }
+
+    // === Preamble BEGINS
+    // bug: hide_floating_panes=true doesn't seem to work. ever
+    default_tab_template {
+        pane size=1 borderless=true {
+            plugin location="zellij:tab-bar"
+        }
+        // bug: pane stacked=true doesn't work here...
+        // bug: pane templates don't work here?
+        // don't even try and put a pane around the children for default_tab_template, and custom tab_template...
+        children
+        pane size=2 borderless=true {
+            plugin location="zellij:status-bar"
+        }
+    }
+    // === Preamble ENDS
+
+    // Dual stacked panes don't work :(((
+    tab name="nixvim" {
+        pane stacked=true {
+            pane name="config" {
+                cwd "~/.local/share/chezmoi/dot_config/nix/home/editors/nixvim"
+                command "nvim"
+                start_suspended true
+            }
+            pane name="test" {
+                cwd "~/.config/nix/home/editors/nixvim"
+                command "result/bin/nvim"
+                args "$HOME/tmp/"
+                start_suspended true
+            }
+        }
+
+        pane stacked=true {
+            pane name="tail" {
+                cwd "~/.config/nix/modules/nixvim"
+                command "tail -f build.log"
+                args "run"
+                start_suspended true
+            }
+            pane name="chezmoi nixvim PWD" cwd=""
+            pane name="real nixvim PWD" cwd="~/.config/nix/home/editors/nixvim"
+        }
+    }
+
 }

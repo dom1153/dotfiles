@@ -62,3 +62,5 @@ OR ctrl-w o -> only window ('fullscreen')
 
 ### vim / lua script to get buffer cwd
 vim.fn.expand("%:p:h")
+
+### for nvim cli options see https://neovim.io/doc/user/starting.html

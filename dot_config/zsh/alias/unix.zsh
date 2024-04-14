@@ -22,15 +22,8 @@ alias dirsize="du -sh"
 alias dirsizecurrent="echo 'Calculating...'; du -shc ./* | sort -rh"
 alias diffleft="diff --changed-group-format='%<' --unchanged-group-format=''"
 alias diffright="diff --changed-group-format='%>' --unchanged-group-format=''"
-case $OSTYPE in
-  darwin*)
-    alias where="whereis -a"
-    ;;
-  *)
-    alias where="whereis"
-    ;;
-esac
-
+alias where="type -a"
 alias grep='grep --color=auto'
 alias fgrep='fgrep --color=auto'
 alias egrep='egrep --color=auto'
+

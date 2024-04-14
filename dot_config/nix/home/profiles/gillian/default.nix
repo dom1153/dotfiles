@@ -6,13 +6,13 @@
   imports = [
     ../../../home
 
-    ../../editors/vim
+    ../../programs/vim.nix
     # ../../editors/vscode ### I don't think I need this. Should use wsl-server
 
-    ../../terminal/programs
+    ../../cli/programs
 
-    ../../terminal/shell/zsh.nix
-    ../../terminal/shell/fish.nix
+    ../../cli/shell/zsh.nix
+    ../../cli/shell/fish.nix
   ];
 
   home = {

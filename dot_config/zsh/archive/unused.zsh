@@ -46,3 +46,13 @@ fi
 #[[ -e ~/.bashrc ]] && emulate sh -c 'source ~/.bashrc'
 ### For convenience
 ### ~/.alias ~/.alias-perforce ~/.alias-local ~/.bash.pathsettings
+
+case $ostype in
+  darwin*)
+    alias where="whereis -a"
+    ;;
+  *)
+    alias where="type -a"
+    ;;
+esac
+
