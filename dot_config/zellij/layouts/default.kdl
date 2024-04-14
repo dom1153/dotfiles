@@ -66,6 +66,22 @@ layout {
         }
     }
 
+    // tab name="nixvim" cwd="~/.local/share/chezmoi/dot_config/nix/home/editors/nixvim" {
+    //     // pane stacked=true {
+    //     pane {
+    //         pane name="nvim" {
+    //             command "nvim"
+    //             start_suspended true
+    //         }
+    //         pane name="test nixvim build" {
+    //             cwd "~/.config/nix/home/editors/nixvim"
+    //             command "nix"
+    //             args "run"
+    //             start_suspended true
+    //         }
+    //     }
+    // }
+
     tab name="nixvim" cwd="~/.local/share/chezmoi/dot_config/nix/home/editors/nixvim" {
         // pane stacked=true {
         pane {

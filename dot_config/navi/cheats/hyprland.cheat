@@ -11,3 +11,6 @@ hyprctl monitors all
 
 # hyprland version
 hyprctl systeminfo
+
+# reset waybar
+pkill waybar; waybar &

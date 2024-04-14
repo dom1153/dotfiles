@@ -39,8 +39,13 @@
 @define-color rosewater #f5e0dc;
 
 window#waybar {
-    background-color: rgba(43, 48, 59, 0.8);
-    color: #ffffff;
-    transition-property: background-color;
-    transition-duration: .5s;
+  background-color: rgba(43, 48, 59, 0.8);
+  color: #ffffff;
+  transition-property: background-color;
+  transition-duration: 0.5s;
 }
+
+window#waybar.fullscreen {
+  background-color: rgba(43, 80, 59, 0.8);
+}
+

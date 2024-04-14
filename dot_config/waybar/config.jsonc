@@ -5,8 +5,8 @@
   "position": "left",
   // MODULES LAYOUT BEGIN
   "modules-left": [
-    "hyprland/workspaces"
-    // "hyprland/window"
+    "hyprland/workspaces",
+    "hyprland/window" // Not interested in the module, just want the css classes to be active
   ],
   "modules-center": [
     "clock"
@@ -18,13 +18,13 @@
   ],
   // LEFT MODULES
   "hyprland/workspaces": {
-    // "all-outputs": true, // debug, independant of monitor
+    // "all-outputs": true, // debug, when true: all workspaces, all monitors
     // "format": "{id}:{name}", // debug, defalt: {id}
-    // "show-special": true,
+    // "show-special": true, // debug
     "rotate": 90
   },
   "hyprland/window": {
-    "format": "{initialClass} | {title}",
+    "format": "", // "{initialClass} | {title}",
     "rotate": 90
   },
   // CENTER MODULES
