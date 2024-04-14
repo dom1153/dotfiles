@@ -30,10 +30,7 @@ layout {
             start_suspended true
         }
 
-        pane stacked=true size="20%"{
-            pane name="git" expanded=true
-            pane name="nix rebuild" cwd="~/.config/nix/"
-        }
+        pane name="git/nix rebuild" size="20%"
     }
 
     // Tab 'nixvim'
