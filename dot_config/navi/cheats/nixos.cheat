@@ -31,19 +31,19 @@ cp ~/.config/nix/flake.lock ~/.local/share/chezmoi/dot_config/nix
 cp ~/.local/share/chezmoi/dot_config/nix/flake.lock ~/.config/nix
 
 # compare diff NixVim flake.lock to <-> chezmoi (hack)
-nvim -d ~/.config/nix/home/editors/nixvim/flake.lock ~/.local/share/chezmoi/dot_config/nix/home/editors/nixvim
+nvim -d ~/.config/nix/modules/nixvim/flake.lock ~/.local/share/chezmoi/dot_config/nix/modules/nixvim
 
 # update flake (flake.nix)
 nix flake update
 
 # cd nixvim home (real)
-cd ~/.config/nix/home/editors/nixvim
+cd ~/.config/nix/modules/nixvim
 
 # cd nixvim home (chezmoi)
-~/.local/share/chezmoi/dot_config/nix/home/editors/nixvim
+~/.local/share/chezmoi/dot_config/nix/modules/nixvim
 
 # copy real nixvim flake.nix to -> chezmoi
-cp ~/.config/nix/home/editors/nixvim/flake.lock ~/.local/share/chezmoi/dot_config/nix/home/editors/nixvim
+cp ~/.config/nix/modules/nixvim/flake.lock ~/.local/share/chezmoi/dot_config/nix/modules/nixvim
 
 # copy chezmoi nixvim flake.nix to -> real
-cp ~/.local/share/chezmoi/dot_config/nix/home/editors/nixvim/flake.lock ~/.config/nix/home/editors/nixvim
+cp ~/.local/share/chezmoi/dot_config/nix/modules/nixvim/flake.lock ~/.config/nix/modules/nixvim

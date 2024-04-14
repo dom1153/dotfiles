@@ -39,24 +39,26 @@ layout {
     // Tab 'nixvim'
     tab name="nixvim" {
         pane stacked=true {
-            pane name="config" {
-                cwd "~/.local/share/chezmoi/dot_config/nix/home/editors/nixvim"
+            pane name="config" focus=true {
+                cwd "~/.local/share/chezmoi/dot_config/nix/modules/nixvim"
                 command "nvim"
                 start_suspended true
             }
             pane name="test" {
-                cwd "~/.config/nix/home/editors/nixvim"
+                cwd "~/.config/nix/modules/nixvim"
                 command "result/bin/nvim"
-                args "$HOME/tmp/"
+                args "~/tmp/"
                 start_suspended true
             }
         }
 
-        pane name="tail" size="20%" {
-            cwd "~/.config/nix/modules/nixvim"
-            command "tail"
-            args "-f" "build.log"
-            start_suspended true
+        pane split_direction="vertical" size="20%" {
+            pane name="tail" {
+                cwd "~/.config/nix/modules/nixvim"
+                command "tail"
+                args "-f" "build.log"
+                start_suspended true
+            }
         }
     }
 }
