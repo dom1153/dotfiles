@@ -16,3 +16,4 @@ Get Colorscheme | :colorscheme
 Increase number | <C-A>
 Decrease number | <C-X>
 Get variable | :lua vim.print(vim.o.shell)
+Go to previous file | <C-6>
