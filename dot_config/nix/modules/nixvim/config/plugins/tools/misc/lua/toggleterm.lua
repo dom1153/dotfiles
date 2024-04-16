@@ -18,34 +18,48 @@ require("toggleterm").setup({
 	direction = "float",
 })
 
--- vertical split
-vim.keymap.set("n", "<leader>TV", "<cmd>ToggleTerm direction=vertical name=Terminal-Vertical<CR>", {
-	desc = "Terminal Vertical Split (root)",
-})
-vim.keymap.set("n", "<leader>Tv", "<cmd>ToggleTerm dir=%:p:h direction=vertical name=Terminal-Vertical-cwd<CR>", {
-	desc = "Terminal Vertical Split (cwd)",
-})
+local wk = require("which-key")
 
--- horizontal split
-vim.keymap.set("n", "<leader>Th", "<cmd>ToggleTerm dir=%:p:h direction=horizontal name=Terminal-Horizontal-cwd<CR>", {
-	desc = "Terminal Horizontal Split (cwd)",
-})
-vim.keymap.set("n", "<leader>TH", "<cmd>ToggleTerm direction=horizontal name=Terminal-Horizontal<CR>", {
-	desc = "Terminal Horizontal Split (root)",
-})
+wk.register({
+	T = {
+		-- vertical split
+		v = {
+			"<cmd>ToggleTerm dir=%:p:h direction=vertical name=Term-V-cwd<CR>",
+			"Terminal Vertical Split (cwd)",
+		},
+		V = {
+			"<cmd>ToggleTerm direction=vertical name=Term-V-root<CR>",
+			"Terminal Vertical Split (root)",
+		},
 
--- float
-vim.keymap.set("n", "<leader>Tf", "<cmd>ToggleTerm dir=%:p:h direction=float name=Terminal-Float<CR>", {
-	desc = "Terminal Float",
-})
-vim.keymap.set("n", "<leader>TF", "<cmd>ToggleTerm direction=float name=Terminal-Float<CR>", {
-	desc = "Terminal Float",
-})
+		-- horizontal
+		s = {
+			"<cmd>ToggleTerm dir=%:p:h direction=horizontal name=Term-H-cwd<CR>",
+			"Terminal Horizontal Split (cwd)",
+		},
+		S = {
+			"<cmd>ToggleTerm direction=horizontal name=Term-H-root<CR>",
+			"Terminal Horizontal Split (root)",
+		},
 
--- term
-vim.keymap.set("n", "<leader>Tt", "<cmd>ToggleTerm dir=%:p:h direction=tab name=Terminal-Tab<CR>", {
-	desc = "Terminal Tab",
-})
-vim.keymap.set("n", "<leader>TT", "<cmd>ToggleTerm direction=tab name=Terminal-Tab<CR>", {
-	desc = "Terminal Tab",
-})
+		-- float
+		f = {
+			"<cmd>ToggleTerm dir=%:p:h direction=float name=Term-F-root<CR>",
+			"Terminal Float (cwd)",
+		},
+		F = {
+			"<cmd>ToggleTerm direction=float name=Term-F-root<CR>",
+			"Terminal Float (root)",
+		},
+
+		-- tab
+		t = {
+			"<cmd>ToggleTerm dir=%:p:h direction=tab name=Term-T-root<CR>",
+			"Terminal Tab (cwd)",
+		},
+		T = {
+			"<cmd>ToggleTerm direction=tab name=Term-T-root<CR>",
+			"Terminal Tab (root)",
+		},
+	},
+}, { prefix = "<leader>" })

@@ -15,13 +15,14 @@
     zoxide
     micro ### nano alternative
     glow ### fancy md file reading
-    multitail ### tail but can do colors and more
+    # multitail ### tail but can do colors and more
 
     ### tools
     chezmoi
     speedtest-cli
     wget
     nix-prefetch-github
+    spacer ### append lines after a given time in tail
     ### fast-cli ### does not work on darwin
 
     ### services

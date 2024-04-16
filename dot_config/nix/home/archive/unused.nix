@@ -72,6 +72,7 @@
     xsel ### already have xclip right?
     yt-dlp
     python312Packages.howdoi ### very cool, but marked broken via nixpkgs
+    multitail ### seems a more extensive tail, but requires a big terminal size, or gives an annoying warning
 
     ### tui apps
     terminal-colors
