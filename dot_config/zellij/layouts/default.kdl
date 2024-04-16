@@ -57,7 +57,7 @@ layout {
         pane split_direction="vertical" size="20%" {
             pane name="tail" {
                 cwd "~/.config/nix/modules/nixvim"
-                command "tail"
+                command "multtail -c"
                 args "-f" "build.log"
                 start_suspended true
             }

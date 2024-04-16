@@ -1,7 +1,8 @@
 ### enable command completion
 ### either $SSH_CONNECTION or $SSH_TTY work
 ### https://github.com/marlonrichert/zsh-autocomplete/issues/691
-if [ -f "$HOME/.local/share/zsh/zsh-autocomplete/zsh-autocomplete.plugin.zsh" ] && [ -z $SSH_CONNECTION ] && [ -z $VSCODE_SHELL_INTEGRATION ] && ! type "wslvar" >/dev/null ; then
+### using fish; so I don't want to deal with troubleshooting this anymore
+if false && [ -f "$HOME/.local/share/zsh/zsh-autocomplete/zsh-autocomplete.plugin.zsh" ] && [ -z $SSH_CONNECTION ] && [ -z $VSCODE_SHELL_INTEGRATION ] && ! type "wslvar" >/dev/null ; then
     source $HOME/.local/share/zsh/zsh-autocomplete/zsh-autocomplete.plugin.zsh
 
     if type nixos-version >/dev/null; then

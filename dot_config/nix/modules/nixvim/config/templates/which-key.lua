@@ -6,4 +6,7 @@ local spacing = "  "
 wk.register({
 	t = { name = "" .. spacing .. "Tab" },
 	E = { "<cmd>SidebarNvimToggle<CR>", "Toggle Sidebar" },
+	c = {
+		m = { "<cmd>Neomake!<CR>", "Neomake (root)" },
+	},
 }, { prefix = "<leader>" })

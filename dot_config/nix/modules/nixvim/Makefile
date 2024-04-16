@@ -12,7 +12,7 @@ define custom_log
 endef
 
 ### .PHONY - does not look for a real file 'all'
-.PHONY: all
+.PHONY: clean all
 all: result
 
 .PHONY: result
@@ -26,6 +26,10 @@ else
 	nix build . 2>&1| tee -a $(LOG_FILE)
 	@date +"=== Complete %Y/%m/%d %H:%M:%S" | tee -a $(LOG_FILE)
 endif
+
+.PHONY: clean
+clean:
+	rm -f result
 
 # $(info your_text) : Information. This doesn't stop the execution.
 # $(warning your_text) : Warning. This shows the text as a warning.

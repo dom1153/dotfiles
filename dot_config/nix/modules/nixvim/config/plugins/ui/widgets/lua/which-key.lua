@@ -27,4 +27,7 @@ wk.register({
 
 	-- session (wip)
 	q = { name = "" .. spacing .. "Quit/session" },
+
+	-- code
+	c = { name = "󰅬" .. spacing .. "code" },
 }, { prefix = "<leader>" })

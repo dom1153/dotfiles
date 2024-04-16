@@ -15,6 +15,7 @@
     zoxide
     micro ### nano alternative
     glow ### fancy md file reading
+    multitail ### tail but can do colors and more
 
     ### tools
     chezmoi

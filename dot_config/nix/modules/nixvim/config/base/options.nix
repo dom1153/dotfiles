@@ -91,6 +91,9 @@
       # Maximum number of items to show in the popup menu (0 means "use available screen space")
       pumheight = 0;
 
+      # save before executing certain commands
+      autowrite = true;
+
       # Use conform-nvim for gq formatting. ('formatexpr' is set to vim.lsp.formatexpr(), so you can format lines via gq if the language server supports it)
       formatexpr = "v:lua.require'conform'.formatexpr()";
     };

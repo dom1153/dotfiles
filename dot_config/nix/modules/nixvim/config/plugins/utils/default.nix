@@ -7,6 +7,7 @@
     ./git/fugitive.nix
 
     ./misc/neodev.nix
+    ./misc/neomake.nix
     # ./misc/flash.nix
     ./misc/harpoon.nix
     # ./misc/nvim-colorizer.nix

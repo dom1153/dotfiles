@@ -21,6 +21,9 @@ function module.apply_to_config(config)
 	config.hide_tab_bar_if_only_one_tab = true
 	config.tab_max_width = 999
 
+	-- bell
+	config.audible_bell = "Disabled"
+
 	-- behavior
 	config.window_close_confirmation = "NeverPrompt"
 
