@@ -29,18 +29,18 @@ cycle-layout:
 # Focus other (shift-mod arrow h l)
 focus-cw:
   mod: mod1
-  key: l
+  key: left
 focus-ccw:
   mod: mod1
-  key: h
+  key: right
 
 # Swap window position (shift-mod <- ->)
 swap-cw:
-  mod: mod1
-  key: right
-swap-ccw:
-  mod: mod1
+  mod: mod2
   key: left
+swap-ccw:
+  mod: mod2
+  key: right
 
 # Toggle Fullscreen (shift-mod f)
 select-fullscreen-layout:
