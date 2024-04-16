@@ -35,7 +35,7 @@ layout {
 
     // Tab 'nixvim'
     tab name="nixvim" {
-        pane stacked=true {
+        pane split_direction="vertical" {
             pane name="config" focus=true {
                 cwd "~/.local/share/chezmoi/dot_config/nix/modules/nixvim"
                 command "nvim"
@@ -47,8 +47,11 @@ layout {
                 args "~/tmp/"
                 start_suspended true
             }
+        }
+
+        pane stacked=true size="20%" {
+            pane name="dothome cli" cwd="~/.config/nix/modules/nixvim" expanded=true
             pane name="chezmoi cli" cwd="~/.local/share/chezmoi/dot_config/nix/modules/nixvim"
-            pane name="dothome cli" cwd="~/.config/nix/modules/nixvim"
         }
 
         pane split_direction="vertical" size="20%" {
