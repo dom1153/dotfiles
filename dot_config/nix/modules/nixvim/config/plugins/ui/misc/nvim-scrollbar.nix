@@ -10,7 +10,8 @@
         hash = "sha256-zLBexSxQCn9HPY04a9w/UCJP1F5ShI2X12I9xE9H0cM=";
       };
     })
-    ## vimPlugins.extras ### vim dependencies
+    # vimPlugins.gitsigns-nvim
+    # vimPlugins.nvim-hlslens ### virtualtext
   ];
 
   ### dependencies

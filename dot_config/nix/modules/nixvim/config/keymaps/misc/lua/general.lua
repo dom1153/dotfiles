@@ -49,5 +49,5 @@ vim.keymap.set('i', '<C-c>', '<Esc>')
 -- <C-s> save
 vim.keymap.set({ 'i', 'n', 'x', 's' }, '<C-s>', '<cmd>w<cr><esc>', { desc = 'Save file' })
 
--- qq quit
-vim.keymap.set('n', '<leader>qq', '<cmd>qa<cr>', { desc = 'Quit All' })
+-- qa quit
+vim.keymap.set('n', '<leader>qa', '<cmd>qa<cr>', { desc = 'Quit All' })

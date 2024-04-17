@@ -18,5 +18,16 @@ local spacing = '  '
 -- https://github.com/folke/which-key.nvim?tab=readme-ov-file#%EF%B8%8F-mappings
 wk.register({
   -- basic config
-  h = { name = '󰈺' .. spacing .. 'Harpoon' },
+  h = {
+    name = '󰈺' .. spacing .. 'Harpoon',
+  },
 }, { prefix = '<leader>' })
+
+wk.register {
+  -- stylua: ignore start
+  ["<C-h>"] = { function() ui.nav_file(1) end, "Go 1" },
+  ["<C-j>"] = { function() ui.nav_file(2) end, "Go 2" },
+  ["<C-k>"] = { function() ui.nav_file(3) end, "Go 3" },
+  ["<C-l>"] = { function() ui.nav_file(4) end, "Go 4" },
+  -- stylua: ignore end
+}

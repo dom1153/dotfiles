@@ -98,6 +98,9 @@
 
       # Use conform-nvim for gq formatting. ('formatexpr' is set to vim.lsp.formatexpr(), so you can format lines via gq if the language server supports it)
       formatexpr = "v:lua.require'conform'.formatexpr()";
+
+      ### disable text wrap by default
+      wrap = false;
     };
   };
 }
