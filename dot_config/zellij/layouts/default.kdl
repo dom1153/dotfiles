@@ -49,10 +49,8 @@ layout {
             }
         }
 
-        pane stacked=true size="20%" {
-            pane name="dothome cli" cwd="~/.config/nix/modules/nixvim" expanded=true
-            pane name="chezmoi cli" cwd="~/.local/share/chezmoi/dot_config/nix/modules/nixvim"
-        }
+        // chezmoi home can always be accessed via toggleterm nvim
+        pane name="dothome cli" cwd="~/.config/nix/modules/nixvim" size="20%"
 
         pane size="20%" {
             pane name="tail" {

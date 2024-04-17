@@ -1,4 +1,5 @@
-DEP = $(shell find config/ -type f -name '*.nix' -o -name '*.lua')
+### deps dont matter if you're using 'target' incorrectly (result/bin/nvim)
+# DEP = $(shell find config/ -type f -name '*.nix' -o -name '*.lua')
 DT = date "+%Y/%m/%d %H:%M:%S"
 WD = $(HOME)/.config/nix/modules/nixvim
 # IN_WD = 0
@@ -12,24 +13,29 @@ define custom_log
 endef
 
 ### .PHONY - does not look for a real file 'all'
-.PHONY: clean all
-all: result
+.PHONY: all
+all: clean result
 
 .PHONY: result
-result: $(DEP)
+result:
 ifeq ($(IN_WD),)
 	$(info Changing directory)
 	$(MAKE) -C $(WD) all IN_WD=1
 else
-	@echo "PWD is $(shell PWD)" | tee -a $(LOG_FILE)
-	@date +"=== Start %Y/%m/%d %H:%M:%S" | tee -a $(LOG_FILE)
-	nix build . 2>&1| tee -a $(LOG_FILE)
-	@date +"=== Complete %Y/%m/%d %H:%M:%S" | tee -a $(LOG_FILE)
+	./scripts/build.sh
 endif
 
 .PHONY: clean
 clean:
 	rm -f result
+
+.PHONY: run
+run:
+ifeq ($(IN_WD),)
+	$(MAKE) -C $(WD) run IN_WD=1
+else
+	./result/bin/nvim
+endif
 
 # $(info your_text) : Information. This doesn't stop the execution.
 # $(warning your_text) : Warning. This shows the text as a warning.
@@ -46,3 +52,7 @@ clean:
 # @echo $(LOGFILE)
 # @echo "=== $(shell $(DT))" | tee -a $(LOG_FILE)
 # @sleep 2
+# nix build . 2>&1| tee -a $(LOG_FILE)
+# @echo "PWD is $(shell PWD)" | tee -a $(LOG_FILE)
+# @date +"=== Start %Y/%m/%d %H:%M:%S" | tee -a $(LOG_FILE)
+# @date +"=== Complete %Y/%m/%d %H:%M:%S" | tee -a $(LOG_FILE)

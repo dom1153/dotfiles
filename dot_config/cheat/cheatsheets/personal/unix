@@ -37,4 +37,21 @@ tail -f /path/to/log | sed --unbuffered \
 ### tail color 'sed' (non-GNU) variant
 tail -f /path/to/log | sed \
     -e 's/\(.*INFO.*\)/[32m\1[39m/' \
-    -e 's/\(.*SEVERE.*\)/[31m\1[39m/'
+
+
+### equality https://stackoverflow.com/questions/20449543/shell-equality-operators-eq
+### == is bash specific
+### [[ ]]; is always preferred
+### https://stackoverflow.com/questions/3427872/whats-the-difference-between-and-in-bash
+= and == are for string comparisons
+-eq is for numeric comparisons
+-eq is in the same family as -lt, -le, -gt, -ge, and -ne   -e 's/\(.*SEVERE.*\)/[31m\1[39m/'
+if [[ $A -eq 0 ]]
+
+### if building then logging with piee
+### e.g.
+nix build ${P} 2>&1 | tee -a ${LOG_FILE}
+### bash stores results in a special array
+RESULT=${PIPESTATUS[0]}
+
+### $? captures status for simple executions

@@ -13,8 +13,9 @@ require("toggleterm").setup({
 	-- 	return os.execute("/usr/bin/env fish") -- or vim.o.shell
 	-- end,
 	-- shell = os.execute("/usr/bin/env fish"),
-	-- not sure why c-/ doens't work, maybe needs escaping
-	open_mapping = [[<c-\>]],
+	-- :help :map-special-keys
+	-- c-_ is c-/
+	open_mapping = [[<c-_>]],
 	direction = "float",
 })
 
