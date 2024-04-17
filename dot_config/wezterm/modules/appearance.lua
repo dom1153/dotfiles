@@ -15,6 +15,8 @@ function module.apply_to_config(config)
 		config.font = wezterm.font("FiraCode Nerd Font Mono")
 		config.font_size = 12.0
 	end
+	-- disable ligatures
+	config.harfbuzz_features = { "calt=0", "clig=0", "liga=0" }
 
 	-- tab bar
 	config.use_fancy_tab_bar = false
