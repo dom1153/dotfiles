@@ -1,4 +1,5 @@
 {pkgs, ...}: {
+  ### nerdfont telescope search (ported from emoji and cheatsheet.nix)
   extraPlugins = with pkgs; [
     (vimUtils.buildVimPlugin {
       pname = "telescope-glyph.nvim";
@@ -23,5 +24,5 @@
     }
   ];
 
-  extraConfigLua = builtins.readFile ./lua/telescope-nerdfont.lua;
+  extraConfigLua = builtins.readFile ./lua/telescope-glyph.lua;
 }

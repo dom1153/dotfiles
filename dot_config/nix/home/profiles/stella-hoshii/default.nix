@@ -14,6 +14,8 @@
     ../../terminal/shell/fish.nix
   ];
 
+  xdg.enable = true; ### try and get lazygit to use xdg instead of app support
+
   home = {
     homeDirectory = "/Users/archoo"; ### optional since defined in os folder
 

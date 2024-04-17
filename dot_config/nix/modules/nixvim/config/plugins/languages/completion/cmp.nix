@@ -61,30 +61,13 @@
           ### todo try lsp-zero function
           ### todo consider adding c-exit
           ### Tab and shift-tab are cool, but block well, the tab key from indenting
-          "<C-n>" = ''
-            cmp.mapping(function()
-              if cmp.visible() then
-                cmp.select_next_item({behavior = 'insert'})
-              else
-                cmp.complete()
-              end
-            end)
-          '';
+          "<C-n>" = "cmp.mapping.select_next_item(cmp_select)";
 
-          "<C-p>" = ''
-            cmp.mapping(function()
-              if cmp.visible() then
-                cmp.select_prev_item({behavior = 'insert'})
-              else
-                cmp.complete()
-              end
-            end)
-          '';
-
+          "<C-p>" = "cmp.mapping.select_prev_item(cmp_select)";
           "<C-u>" = "cmp.mapping.scroll_docs(-4)";
           "<C-d>" = "cmp.mapping.scroll_docs(4)";
           "<C-Space>" = "cmp.mapping.complete()"; ### starts the completion popup
-          "<CR>" = "cmp.mapping.confirm({ select = true })";
+          "<C-y>" = "cmp.mapping.confirm({ select = true })";
         };
       };
     };

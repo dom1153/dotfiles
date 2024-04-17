@@ -4,6 +4,7 @@
     # ./misc/indent-blankline.nix ### 'something is configured wrong'
     ./misc/noice.nix
     ./misc/wilder.nix
+    ./misc/nvim-scrollbar.nix
     # ./misc/neoscroll.nix
     # ./misc/dropbar.nix ### requires vim 0.10+
 

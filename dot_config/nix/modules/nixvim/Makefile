@@ -34,7 +34,7 @@ run:
 ifeq ($(IN_WD),)
 	$(MAKE) -C $(WD) run IN_WD=1
 else
-	./result/bin/nvim ~/tmp/
+	 ./scripts/run.sh
 endif
 
 # $(info your_text) : Information. This doesn't stop the execution.

@@ -13,6 +13,7 @@
     };
     messages = {
       enabled = true; # Adds a padding-bottom to neovim statusline when set to false for some reason
+      viewSearch = null;
     };
     lsp = {
       message = {

@@ -1,0 +1,39 @@
+##General binds
+<tab> move panels
+p pull
+P push
+<1-#> select panel
+<S-=> maximize panels
+
+## <Files>
+<space> stage item item
+a stage all
+c commit message
+d discard changes (file)
+D hard reset menu (can this disable or have a warning?)
+<Enter> view file; edit husks
+s stash
+S stash menu (e.g. staged items)
+
+## Branch
+o open pull request (opens browser)
+<enter> enter patching
+  <space> select parts of patch
+  <C-P> (in branch area) patch menu
+f fetch
+r rebase (to branch/master)?
+
+## <commits>
+c Cherry picking
+e Interactive rebase
+  s squash
+  p pick
+  m (merge)
+  <C-J> / <C-K> reordering commits
+  A ammend commit with staged file(s)
+<Enter> view files of commit
+F fixup?
+
+(merge conflict)
+  <Enter> (in merge conflict) choose side to pick
+  b pick both
