@@ -6,5 +6,6 @@
     ./misc/mini.nix
     # ./misc/oil.nix
     ./misc/toggleterm.nix
+    ./misc/buffer_manager.nix
   ];
 }

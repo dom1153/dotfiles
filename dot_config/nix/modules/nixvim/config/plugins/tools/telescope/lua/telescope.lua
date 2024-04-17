@@ -15,13 +15,13 @@ vim.keymap.set('n', '<leader>fu', '<cmd>Telescope undo<CR>', {
   desc = 'Undo tree',
 })
 
--- list buffers on fb or bb
-vim.keymap.set('n', '<leader>fb', '<cmd>Telescope buffers sort_mru=true sort_lastused=true<cr>', {
-  desc = 'Buffer',
-})
-vim.keymap.set('n', '<leader>bb', '<cmd>Telescope buffers sort_mru=true sort_lastused=true<cr>', {
-  desc = 'Buffer',
-})
+-- -- list buffers on fb or bb
+-- vim.keymap.set('n', '<leader>fb', '<cmd>Telescope buffers sort_mru=true sort_lastused=true<cr>', {
+--   desc = 'Buffer',
+-- })
+-- vim.keymap.set('n', '<leader>bb', '<cmd>Telescope buffers sort_mru=true sort_lastused=true<cr>', {
+--   desc = 'Buffer',
+-- })
 
 -- for frecency plugin
 vim.keymap.set('n', '<leader>ff', '<cmd>Telescope frecency workspace=CWD<cr>', {

@@ -6,7 +6,6 @@
     ./misc/wilder.nix
     ./misc/nvim-scrollview.nix
     # ./misc/nvim-scrollbar.nix ### a bit too thin and hard to see
-    # ./misc/nvim-scrollbar.nix ### a bit too thin and hard to see
     # ./misc/satellite.nix ### requires nightly
     # ./misc/neoscroll.nix
     # ./misc/dropbar.nix ### requires vim 0.10+

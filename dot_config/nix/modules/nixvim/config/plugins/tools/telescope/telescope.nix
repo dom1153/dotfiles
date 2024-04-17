@@ -75,9 +75,13 @@
         action = "live_grep";
         desc = "Grep (root dir)";
       };
-      "<leader>:" = {
+      "<leader>f:" = {
         action = "command_history, {}";
         desc = "Command History";
+      };
+      "<leader>ft" = {
+        action = "builtin, {}";
+        desc = "Telescope Pickers";
       };
       "<leader>gs" = {
         action = "git_status, {}";

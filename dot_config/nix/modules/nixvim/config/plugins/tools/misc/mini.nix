@@ -1,4 +1,6 @@
 {
+  extraConfigLua = builtins.readFile ./lua/mini.lua;
+
   plugins.mini = {
     enable = true;
     modules = {
