@@ -33,7 +33,7 @@
         # };
       };
       layout_config = {
-        preview_cutoff = 60;
+        # preview_cutoff = 60; ### setting preview doesn't let it autocollapse
         # prompt_position = "top";
       };
     };

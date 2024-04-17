@@ -9,7 +9,7 @@
     # ./lint/lint.nix
 
     ./lsp/lsp.nix ### lsp-zero
-    # ./lsp/lspsaga.nix
+    ./lsp/lspsaga.nix
     # ./lsp/trouble.nix
     # ./lsp/none-ls.nix
 

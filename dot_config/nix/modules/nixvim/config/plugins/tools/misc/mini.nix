@@ -40,6 +40,11 @@
       };
       cursorword = {}; ### highlight similar text when cursor over it (illuminate)
       bufremove = {}; ### selects mru buffer when deleting a buffer
+      # animate = {
+      #   cursor = {
+      #     enable = false;
+      #   };
+      # };
     };
   };
 
