@@ -2,6 +2,7 @@
   imports = [
     # ./telescope-all-recent.nix
     ./telescope-emoji.nix
+    ./telescope-nerdfont.nix
   ];
 
   extraConfigLua = builtins.readFile ./lua/telescope.lua;

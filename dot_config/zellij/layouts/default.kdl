@@ -52,7 +52,6 @@ layout {
                 cwd "~/.config/nix/modules/nixvim"
                 // not sure if we can do pipes, so here we are
                 command "./scripts/tail.sh"
-                start_suspended true
             }
         }
     }

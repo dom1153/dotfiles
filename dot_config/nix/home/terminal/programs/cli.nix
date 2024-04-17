@@ -16,6 +16,7 @@
     micro ### nano alternative
     glow ### fancy md file reading
     tailspin ### tail but its got colors (tspin)
+    grc ### generic colorizer ; aliases colorize common unix commands
 
     ### tools
     chezmoi
