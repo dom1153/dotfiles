@@ -1,6 +1,8 @@
 ### VVV this 'config' import is needed for nixivm module, despite what nil tells you
 {config, ...}: {
   config = {
+    extraConfigLua = builtins.readFile ./lua/options.lua;
+
     ### See `:help vim.opt` and `:help option-list`
     options = {
       ### You can also add relative line numbers, for help with jumping.
