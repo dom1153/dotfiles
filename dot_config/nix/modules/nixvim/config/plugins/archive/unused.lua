@@ -58,3 +58,11 @@ vim.api.nvim_create_autocmd({ "VimEnter" }, { pattern = "*", command = "cd " .. 
 -- actually... this might be a custom variable
 vim.g.icons_enabled ~= false and "" or "+",
 
+-- autocmd FileType c setlocal commentstring=//\ %s
+vim.api.nvim_create_autocmd("FileType", {
+	pattern = { "kdl" },
+	callback = function()
+		vim.opt.commentstring = "// %s"
+	end,
+	desc = "Change commentstring for KDL files",
+})

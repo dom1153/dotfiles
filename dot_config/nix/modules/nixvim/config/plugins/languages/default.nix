@@ -19,6 +19,6 @@
     # ./treesitter/text-objects.nix
     ./treesitter/treesitter.nix ### lsp-zero
     # ./treesitter/ts-autotag.nix
-    # ./treesitter/ts-context-commentstring.nix
+    ./treesitter/ts-context-commentstring.nix
   ];
 }

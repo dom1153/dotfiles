@@ -1,6 +1,6 @@
 {pkgs, ...}: {
   imports = [
-    ./telescope-all-recent.nix
+    # ./telescope-all-recent.nix
     ./telescope-emoji.nix
   ];
 

@@ -8,13 +8,14 @@ require("toggleterm").setup({
 			-- return 80
 		end
 	end,
-	-- check for fish TODO: check that fish actually exists
-	-- shell = function()
-	-- 	return os.execute("/usr/bin/env fish") -- or vim.o.shell
-	-- end,
-	-- shell = os.execute("/usr/bin/env fish"),
-	-- :help :map-special-keys
-	-- c-_ is c-/
+	shell = function()
+		if vim.fn.executable("fish") == 1 then
+			return "fish"
+		else
+			return vim.o.shell
+		end
+	end,
+	-- :help :map-special-keys , <c-/>
 	open_mapping = [[<c-_>]],
 	direction = "float",
 })

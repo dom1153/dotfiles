@@ -1,11 +1,18 @@
 # (## are special meta-tags; the @ are tags (aliases)
 
-## my-surround @tpope
+## nvim-surround @tpope
 Surround word with symbol | ysiw
 Surround line with symbol | yss
 (Delete) Surround nearest | ds
 (Delete) Surround nearest tag | dst
 Change surround tag (type new tag name) | cst
+
+## comment
+surround in comment | gcc
+surround in block comment | gbc
+
+## mini.files
+open help | <leader>?
 
 # there are better built in ones?
 ## my-vim @nvim @neovim
@@ -18,3 +25,4 @@ Decrease number | <C-X>
 Get variable | :lua vim.print(vim.o.shell)
 Go to previous file | <C-6>
 Check make program | :set makeprg?
+

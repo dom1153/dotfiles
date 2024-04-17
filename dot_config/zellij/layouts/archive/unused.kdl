@@ -5,7 +5,7 @@ ui {
 }
 
 layout {
-     default_tab_template {
+    default_tab_template {
         pane size=1 borderless=true {
             plugin location="zellij:tab-bar"
         }
@@ -101,6 +101,12 @@ layout {
             pane name="chezmoi nixvim PWD" cwd=""
             pane name="real nixvim PWD" cwd="~/.config/nix/home/editors/nixvim"
         }
-    }
 
+        pane name="test" {
+            cwd "~/.config/nix/modules/nixvim"
+            command "result/bin/nvim"
+            args "~/tmp/"
+            start_suspended true
+        }
+    }
 }

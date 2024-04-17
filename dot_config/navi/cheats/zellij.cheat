@@ -1,13 +1,13 @@
 % zellij, run, nvim, neovim, chezmoi
 
-# zellij run nix run neovim test
-zellij run --cwd ~/.config/nix/home/editors/nixvim/ --start-suspended --in-place --name "test nixvim build" -- nix run
+# zellij run nixvim tspin tail build.log
+zellij run --cwd ~/.config/nix/modules/nixvim/ --start-suspended --in-place --name "tail build.log" -- tspin -f build.log
 
 # zellij run chezmoi edit
 zellij run --in-place --cwd ~/.local/share/chezmoi --name "nvim" -- nvim
 
 # zellij run nixvim edit
-zellij run --in-place --cwd ~/.local/share/chezmoi/dot_config/nix/home/editors/nixvim --name "nvim" -- nvim
+zellij run --in-place --cwd ~/.local/share/chezmoi/dot_config/nix/modules/nixvim --name "nvim" -- nvim
 
 ; action new-pane is does NOT work with --cwd, I tried, so this is an alright workaround
 # recreate chezmoi git float

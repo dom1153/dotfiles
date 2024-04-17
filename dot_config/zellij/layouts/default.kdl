@@ -41,18 +41,13 @@ layout {
                 command "nvim"
                 start_suspended true
             }
-            pane name="test" {
-                cwd "~/.config/nix/modules/nixvim"
-                command "result/bin/nvim"
-                args "~/tmp/"
-                start_suspended true
-            }
         }
 
         // chezmoi home can always be accessed via toggleterm nvim
-        pane name="dothome cli" cwd="~/.config/nix/modules/nixvim" size="20%"
+        // launch nvim exe from make run (or future plugin task)
 
-        pane size="20%" {
+        pane size="20%" split_direction="vertical" {
+            pane name="dothome cli" cwd="~/.config/nix/modules/nixvim"
             pane name="tail" {
                 cwd "~/.config/nix/modules/nixvim"
                 // not sure if we can do pipes, so here we are

@@ -16,6 +16,8 @@
     micro ### nano alternative
     glow ### fancy md file reading
     # multitail ### tail but can do colors and more
+    grc ### generic colorizer
+    tailspin ### tail but its got colors (tspin)
 
     ### tools
     chezmoi

@@ -29,3 +29,10 @@ require("cheatsheet").setup({
 		["<C-E>"] = "<nop>",
 	},
 })
+
+local wk = require("which-key")
+-- https://github.com/folke/which-key.nvim?tab=readme-ov-file#%EF%B8%8F-mappings
+wk.register({
+	p = { "<cmd>Cheatsheet<CR>", "Command menu" },
+	["?"] = { "<nop>", "which_key_ignore" },
+}, { prefix = "<leader>" })

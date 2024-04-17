@@ -8,6 +8,8 @@
 
     ./misc/neodev.nix
     ./misc/neomake.nix
+    ./misc/nvim-surround.nix
+    ./misc/comment.nix
     # ./misc/flash.nix
     ./misc/harpoon.nix
     # ./misc/nvim-colorizer.nix
