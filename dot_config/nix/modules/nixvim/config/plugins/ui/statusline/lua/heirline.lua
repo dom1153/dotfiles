@@ -16,10 +16,10 @@
 --
 -- local TabLine = { { ... }, { ... }, { ... } }
 
-require("heirline").setup({
-	statusline = { ... },
-	winbar = { ... },
-	tabline = { ... },
-	statuscolumn = { ... },
-	opts = { ... },
-})
+require('heirline').setup {
+  statusline = { ... },
+  winbar = { ... },
+  tabline = { ... },
+  statuscolumn = { ... },
+  opts = { ... },
+}

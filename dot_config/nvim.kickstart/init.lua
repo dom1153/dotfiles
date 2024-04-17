@@ -53,6 +53,6 @@ Todo >
 
 --]]
 
-require "options"
-require "autocmd"
-require "plugin"
+require 'options'
+require 'autocmd'
+require 'plugin'
