@@ -11,10 +11,9 @@ require('lualine').setup {
       'diagnostics',
     },
     lualine_c = {
-      {
-        'filename',
-        path = 1, -- relative
-      },
+      -- {
+      --   'filename',
+      -- },
     },
 
     lualine_x = {
@@ -50,6 +49,26 @@ require('lualine').setup {
     },
     lualine_z = {
       '%l:%c',
+    },
+  },
+
+  winbar = {
+    lualine_a = {
+      {
+        -- "placeholder",
+        -- separator = { left = " ", right = " " },
+        -- draw_empty = true,
+        'filename',
+        path = 1, -- relative
+      },
+    },
+  },
+  inactive_winbar = {
+    lualine_a = {
+      {
+        'filename',
+        path = 1, -- relative
+      },
     },
   },
 }

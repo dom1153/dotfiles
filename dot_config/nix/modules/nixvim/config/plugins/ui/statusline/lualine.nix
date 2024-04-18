@@ -8,7 +8,7 @@
   ### A blazing fast and easy to configure Neovim statusline written in Lua.
   plugins.lualine = {
     enable = true;
-    globalstatus = true; ### false allows status on every window
+    # globalstatus = true; ### true makes only ever 1 statusbar
     ignoreFocus = [
     ];
     extensions = [
