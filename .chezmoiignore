@@ -4,6 +4,7 @@ gitconfig ### symlink for vscode filetyping
 .gitignore
 
 README.md
+**/README.md
 
 ### uses translated names, not dot_ convention
 .parsec/
@@ -20,3 +21,4 @@ README.md
 ### ignore all instances (...)
 **/result
 **/flake.lock
+
