@@ -10,7 +10,7 @@
       # disableBold = false;
       # disableItalic = false;
       # disableUnderline = false;
-      # transparentBackground = true; ### off while debugging
+      transparentBackground = true; ### off while debugging
       integrations = {
         cmp = true;
         noice = true;

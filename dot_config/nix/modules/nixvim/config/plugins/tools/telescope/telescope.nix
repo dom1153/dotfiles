@@ -92,7 +92,7 @@
         action = "git_files, {}";
         desc = "Search git files";
       };
-      "<leader>gb" = {
+      "<leader>gd" = {
         action = "git_bcommits, {}";
         desc = "See commit diffs for current file";
       };

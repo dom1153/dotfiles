@@ -160,3 +160,83 @@ local colors = {
   mantle = '#181825',
   crust = '#11111b',
 }
+
+-- cmdline / minimal noice is a buggy or unsure mess
+require('noice').setup {
+  -- you can enable a preset for easier configuration
+  cmdline = {
+    enabled = true,
+    view = 'cmdline', -- classic cmdline
+    format = {
+      cmdline = {
+        view = 'cmdline',
+        conceal = false,
+      },
+      search_down = {
+        view = 'cmdline',
+        conceal = false,
+      },
+      search_up = {
+        view = 'cmdline',
+        conceal = false,
+      },
+      filter = {
+        view = 'cmdline',
+        conceal = false,
+      },
+      lua = {
+        view = 'cmdline',
+        conceal = false,
+      },
+      help = {
+        view = 'cmdline',
+        conceal = false,
+      },
+    },
+  },
+  messages = {
+    enabled = false,
+  },
+  popupmenu = {
+    enabled = false,
+  },
+  commands = {
+    history = {
+      -- view = 'popup', -- default split
+    },
+    last = {
+      view = 'split', --default popup
+    },
+  },
+  notify = {
+    enabled = false,
+  },
+  lsp = {
+    progress = {
+      enabled = false,
+    },
+    hover = {
+      enabled = false,
+    },
+    signature = {
+      enabled = false,
+    },
+    message = {
+      -- Messages shown by lsp servers
+      enabled = true,
+    },
+  },
+  presets = {
+    bottom_search = true, -- use a classic bottom cmdline for search
+  },
+  -- disable virtual text
+  routes = {
+    {
+      filter = {
+        event = 'msg_show',
+        kind = 'search_count',
+      },
+      opts = { skip = true },
+    },
+  },
+}

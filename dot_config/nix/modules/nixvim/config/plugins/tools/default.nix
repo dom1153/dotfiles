@@ -7,5 +7,6 @@
     # ./misc/oil.nix
     ./misc/toggleterm.nix
     ./misc/buffer_manager.nix
+    ./misc/lazygit-nvim.nix
   ];
 }

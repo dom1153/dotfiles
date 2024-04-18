@@ -1,1 +1,3 @@
-require('scrollview').setup {}
+require('scrollview').setup {
+  signs_on_startup = {},
+}

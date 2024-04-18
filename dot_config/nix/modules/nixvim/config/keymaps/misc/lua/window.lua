@@ -72,7 +72,7 @@ vim.keymap.set('n', '<leader>wv', '<C-W>v', {
   desc = 'Split window right',
 })
 
-vim.keymap.set('n', '<leader>wx', '<C-W>c', {
+vim.keymap.set('n', '<leader>wq', '<C-W>q', {
   silent = true,
   desc = 'Close window',
 })

@@ -13,23 +13,14 @@ local wk = require 'which-key'
 -- TODO: review astrovim resession and prompts
 wk.register({
   q = {
-    s = {
-      function()
-        require('resession').save(vim.fn.getcwd(), { dir = 'dirsession' })
-      end,
-      'Save this session',
-    },
-    l = {
-      function()
-        require('resession').load(nil, { dir = 'dirsession' })
-      end,
-      'Load session',
-    },
-    d = {
-      function()
-        require('resession').delete(nil, { dir = 'dirsession' })
-      end,
-      'Delete session',
-    },
+    -- stylua: ignore start
+    s = { function() resession.save(vim.fn.getcwd(), { dir = 'dirsession'}) end, 'Save this session', },
+    d = { function() resession.delete(nil, { dir = 'dirsession', silence_errors = true  }) end, 'Delete session (dir)', },
+    l = { function() resession.load(vim.fn.getcwd(), { dir = "dirsession" }) end, 'Load session (current dir)', },
+    L = { function() resession.load(nil, { dir = 'dirsession' }) end, 'Load a session', },
+    -- d = { function() resession.delete() end, 'Delete session', },
+    -- L = { function() resession.load() end, 'Load a session', },
+    -- S = { function() resession.save() end, 'Save this session', },
+    -- stylua: ignore end
   },
 }, { prefix = '<leader>' })

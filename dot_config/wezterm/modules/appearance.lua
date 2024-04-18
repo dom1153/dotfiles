@@ -6,7 +6,7 @@ local module = {}
 function module.apply_to_config(config)
   config.color_scheme = 'Catppuccin Mocha'
 
-  config.window_background_opacity = 0.85
+  config.window_background_opacity = 0.95
 
   -- fallback will report errors if not found
   -- https://wezfurlong.org/wezterm/config/lua/wezterm/target_triple.html
