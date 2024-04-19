@@ -27,23 +27,23 @@
 
 ### >>> helper functions
 function prompt_yns {
-	while true; do
-		read -p "$* [yes/no/skip]: " yn
-		case $yn in
-		[Yy]*) return 0 ;;
-		[Nn]*)
-			echo "Exiting script"
-			exit 1
-			;;
-		[Ss]*) return 1 ;;
-		esac
-	done
+  while true; do
+    read -p "$* [yes/no/skip]: " yn
+    case $yn in
+    [Yy]*) return 0 ;;
+    [Nn]*)
+      echo "Exiting script"
+      exit 1
+      ;;
+    [Ss]*) return 1 ;;
+    esac
+  done
 }
 
 ind=""
 function myecho {
-	### can't define ind here, or it will be kept locally
-	echo "${ind}$*"
+  ### can't define ind here, or it will be kept locally
+  echo "${ind}$*"
 }
 
 ### >>> preamble
@@ -52,17 +52,17 @@ usage="Usage: ${exe} {switch | build | boot | test} [-r (reboot)] [-v (verbose)]
 
 ### >>> arg dash flags
 while getopts rvds flag; do
-	# echo "flag: $flag"
-	case "$flag" in
-	r) force_reboot=1 ;;
-	v) verbose=1 ;;
-	d) dryrun=1 ;; ### dry run, debug, maybe auto apply verbose
-	s) stacktrace=1 ;;
-	*)
-		echo "$usage"
-		exit
-		;;
-	esac
+  # echo "flag: $flag"
+  case "$flag" in
+  r) force_reboot=1 ;;
+  v) verbose=1 ;;
+  d) dryrun=1 ;; ### dry run, debug, maybe auto apply verbose
+  s) stacktrace=1 ;;
+  *)
+    echo "$usage"
+    exit
+    ;;
+  esac
 done
 shift $(($OPTIND - 1)) ### this is the secret sauce
 
@@ -70,13 +70,13 @@ nrcmd=$1
 case "$nrcmd" in
 switch | build | boot | test) ;;
 '')
-	### ignore if empty, or ignore if only a flag
-	;;
+  ### ignore if empty, or ignore if only a flag
+  ;;
 *)
-	echo "==> Invalid command '${nrcmd}'"
-	echo "$usage"
-	exit
-	;;
+  echo "==> Invalid command '${nrcmd}'"
+  echo "$usage"
+  exit
+  ;;
 esac
 # echo "nrcmd is '${nrcmd}'"
 
@@ -85,29 +85,30 @@ esac
 ###     so build from .config now, since this doesn't fit my flow
 chome=$HOME/.local/share/chezmoi/dot_config/nix
 nhome=$HOME/.config/nix
+### TODO: go to chezmoi home
 cd "$nhome"
 
 ### update chezmoi (apply)
 cs=$(chezmoi status)
 if [ "$verbose" ]; then
-	myecho "==> Checking chezmoi status"
-	ind="  "
+  myecho "==> Checking chezmoi status"
+  ind="  "
 fi
 
 ### check if chezmoi returned any text (usually returns 0)
 if [[ $cs ]]; then
-	myecho "==> chezmoi is out of sync"
+  myecho "==> chezmoi is out of sync"
 
-	ind="" ### reset indent height since we're running commands
-	myecho ">> chezmoi status"
-	chezmoi status
+  ind="" ### reset indent height since we're running commands
+  myecho ">> chezmoi status"
+  chezmoi status
 
-	myecho ">> chezmoi apply"
-	chezmoi apply
+  myecho ">> chezmoi apply"
+  chezmoi apply
 else
-	if [ "$verbose" ]; then
-		myecho "==> chezmoi is in sync :)"
-	fi
+  if [ "$verbose" ]; then
+    myecho "==> chezmoi is in sync :)"
+  fi
 fi
 ind=""
 
@@ -117,63 +118,83 @@ ind=""
 
 addargs=""
 if [ "$stacktrace" ]; then
-	addargs="--show-trace ${addargs}"
+  addargs="--show-trace ${addargs}"
 fi
 
 #### debugging code
 if [ "$verbose" ]; then
-	echo force_reboot: "$force_reboot"
-	echo verbose: "$verbose"
-	echo dryrun: "$dryrun"
-	echo stacktrace: "$stacktrace"
-	echo nrcmd: "$nrcmd"
+  echo force_reboot: "$force_reboot"
+  echo verbose: "$verbose"
+  echo dryrun: "$dryrun"
+  echo stacktrace: "$stacktrace"
+  echo nrcmd: "$nrcmd"
 fi
+
+LOG_FILE="${PWD}/build.log"
+echo "====================================" | tee -a ${LOG_FILE}
+date "+[INFO] Start %Y/%m/%d %H:%M:%S ===" | tee -a ${LOG_FILE}
+echo "====================================" | tee -a ${LOG_FILE}
+
+RESULT=0
+BUILD_TIME=0
 
 case $OSTYPE in
 darwin*)
-	### sudo request will happen if needed
-	### --show-trace
-	if [ ! "$nrcmd" ]; then
-		nrcmd="switch"
-	fi
+  ### sudo request will happen if needed
+  ### --show-trace
 
-	myecho ">> darwin-rebuild ${nrcmd} --flake . --option eval-cache false ${addargs}"
-	if [ ! "$dryrun" ]; then
-		darwin-rebuild "$nrcmd" --flake . --option eval-cache false
-	fi
-	;;
+  # myecho ">> darwin-rebuild build --flake . --option eval-cache false ${addargs}"
+  if [ ! "$dryrun" ]; then
+    darwin-rebuild switch --flake . --option eval-cache false
+    # if darwin-rebuild build --flake . --option eval-cache false; then
+    #   BUILD_TIME=$SECONDS
+    #   ### TODO: require we return 1
+    #   darwin-rebuild activate --flake . --option eval-cache false
+    # else
+    #   BUILD_TIME=$SECONDS
+    # fi
+  fi
+  ;;
 linux-*)
-	super="sudo"
-	super="${super} " ### append a space
-	if type "doas" >/dev/null 2>&1; then
-		super="doas"
-		super="${super} " ### append a space
-	fi
+  super="sudo"
+  super="${super} " ### append a space
+  if type "doas" >/dev/null 2>&1; then
+    super="doas"
+    super="${super} " ### append a space
+  fi
 
-	### todo maybe convert this to a case statement
-	if [ ! "$nrcmd" ]; then
-		nrcmd="boot"
-	fi
-	if [ "$nrcmd" = "build" ]; then
-		super=""
-	fi
+  ### todo maybe convert this to a case statement
+  if [ ! "$nrcmd" ]; then
+    nrcmd="boot"
+  fi
+  if [ "$nrcmd" = "build" ]; then
+    super=""
+  fi
 
-	echo $PWD
-	myecho ">> ${super}nixos-rebuild ${nrcmd} --flake . --option eval-cache false ${addargs}"
-	if [ ! "$dryrun" ]; then
-		if ${super}nixos-rebuild $nrcmd --flake . --option eval-cache false $addargs; then
-			if [ "$nrcmd" = "boot" ]; then
-				if type "wslvar" >/dev/null 2>&1; then
-					cd /mnt/c/ && cmd.exe /c start "rebooting WSL" cmd /c "timeout 5 && wsl -d $WSL_DISTRO_NAME" && wsl.exe --terminate $WSL_DISTRO_NAME
-				elif [ "$force_reboot" ]; then
-					${super}reboot
-				elif prompt_yns "Would you like to reboot?"; then
-					${super}reboot
-				fi
-			fi
-		fi
-	fi
-	;;
+  echo $PWD
+  myecho ">> ${super}nixos-rebuild ${nrcmd} --flake . --option eval-cache false ${addargs}"
+  if [ ! "$dryrun" ]; then
+    if ${super}nixos-rebuild $nrcmd --flake . --option eval-cache false $addargs; then
+      ### TODO: catch result as pipe correctly
+      if [ "$nrcmd" = "boot" ]; then
+        if type "wslvar" >/dev/null 2>&1; then
+          cd /mnt/c/ && cmd.exe /c start "rebooting WSL" cmd /c "timeout 5 && wsl -d $WSL_DISTRO_NAME" && wsl.exe --terminate $WSL_DISTRO_NAME
+        elif [ "$force_reboot" ]; then
+          ${super}reboot
+        elif prompt_yns "Would you like to reboot?"; then
+          ${super}reboot
+        fi
+      fi
+    fi
+  fi
+  ;;
 esac
+
+if [[ $RESULT -eq 0 ]]; then
+  echo "[SUCCESS]: after $BUILD_TIME seconds" | tee -a ${LOG_FILE}
+else
+  echo "[ERROR]: after $BUILD_TIME seconds" | tee -a ${LOG_FILE}
+fi
+echo "====================================" | tee -a ${LOG_FILE}
 
 myecho "==> Script Ends"

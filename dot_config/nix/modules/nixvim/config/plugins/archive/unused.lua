@@ -97,6 +97,8 @@ require('lualine').setup {
         'buffers',
         filetype_names = {
           minifiles = 'Mini.Files',
+          toggleterm = 'Toggle Term',
+          buffer_manager = 'Buffer Manager',
         },
       },
       {

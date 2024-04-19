@@ -11,9 +11,9 @@ require('lualine').setup {
       'diagnostics',
     },
     lualine_c = {
-      -- {
-      --   'filename',
-      -- },
+      {
+        'filename',
+      },
     },
 
     lualine_x = {
@@ -52,8 +52,16 @@ require('lualine').setup {
     },
   },
 
+  tabline = {
+    lualine_b = {
+      'filetype',
+    },
+
+    lualine_y = { 'tabs' },
+  },
+
   winbar = {
-    lualine_a = {
+    lualine_b = {
       {
         -- "placeholder",
         -- separator = { left = " ", right = " " },

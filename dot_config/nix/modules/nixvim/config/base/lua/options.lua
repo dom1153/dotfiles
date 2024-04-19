@@ -4,6 +4,9 @@
 -- not that I was using the splash anyways
 vim.opt.shortmess:append 'I'
 
+-- keeps traditional vim g/GG
+vim.opt.startofline = true
+
 function ToggleLineNumber()
   if vim.wo.number then
     vim.wo.number = false

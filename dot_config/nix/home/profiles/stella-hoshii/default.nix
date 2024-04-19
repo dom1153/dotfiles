@@ -29,6 +29,7 @@
 
       darwin.trash
 
+      # nvim-pkg # kickstar nvim package
       inputs.archoo-nixvim.packages.${system}.default
     ];
 

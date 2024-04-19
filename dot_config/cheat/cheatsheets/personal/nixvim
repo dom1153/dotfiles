@@ -1,2 +1,17 @@
 extraConfigVim = builtins.readFile ./init.vim;
 extraConfigLua = builtins.readFile ./init.lua;
+
+##### general notes
+1. tabs good (consider a layout manager...)
+  flake mgmt
+  plugin testing
+  general options
+
+nvim-flake
+1. Add nvim/lua to the runtimepath.
+2. Add the content of nvim/init.lua.
+3. Add nvim/* to the runtimepath.
+4. Add nvim/after to the runtimepath.
+
+nvim/plugin/* are loaded at the end of init.lua (per nvim rules)
+

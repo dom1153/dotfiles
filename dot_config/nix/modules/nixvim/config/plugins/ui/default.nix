@@ -1,11 +1,11 @@
 {...}: {
   imports = [
-    # ./misc/dressing-nvim.nix
-    # ./misc/indent-blankline.nix ### 'something is configured wrong'
-    # ./misc/noice.nix
     ./misc/wilder.nix
     ./misc/nvim-scrollview.nix
     ./misc/tint-nvim.nix
+    # ./misc/dressing-nvim.nix
+    # ./misc/indent-blankline.nix ### 'something is configured wrong'
+    # ./misc/noice.nix
     # ./misc/nvim-scrollbar.nix ### a bit too thin and hard to see
     # ./misc/satellite.nix ### requires nightly
     # ./misc/neoscroll.nix

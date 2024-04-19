@@ -1,10 +1,15 @@
-{lib, ...}: {
+{
+  inputs,
+  lib,
+  ...
+}: {
   nixpkgs = {
     config.allowUnfree = true;
     config.permittedInsecurePackages = [
     ];
 
     overlays = [
+      inputs.dom1153-nix-flake.overlays.default
       # (final: prev: {
       #   zsh-autocomplete = prev.zsh-autocomplete.overrideAttrs (oldAttrs: rec {
       #     ### grabbing stable 23.11 packages ; workaround for https://github.com/marlonrichert/zsh-autocomplete/issues/645
