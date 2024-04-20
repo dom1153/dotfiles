@@ -1,4 +1,4 @@
-" " When writing a buffer (no delay).
+" When writing a buffer (no delay).
 " call neomake#configure#automake('w')
 " " When writing a buffer (no delay), and on normal mode changes (after 750ms).
 " call neomake#configure#automake('nw', 750)

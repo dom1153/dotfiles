@@ -64,3 +64,5 @@ OR ctrl-w o -> only window ('fullscreen')
 vim.fn.expand("%:p:h")
 
 ### for nvim cli options see https://neovim.io/doc/user/starting.html
+Open file with system app
+gx

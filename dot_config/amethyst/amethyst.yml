@@ -8,6 +8,7 @@
 layouts:
   - two-pane
   - fullscreen
+  - 3column-left
 
 mod1:
   - option
@@ -202,11 +203,11 @@ enables-layout-hud-on-space-change: false
 floating-is-blacklist: false
 floating:
   - com.microsoft.VSCode
-  - com.sigmaos.sigmaos.macos
-  - company.thebrowser.Browser
   - md.obsidian
   - net.kovidgoyal.kitty
   - com.github.wez.wezterm
+  # com.sigmaos.sigmaos.macos
+  # company.thebrowser.Browser
   # com.apple.Safari,
   # com.microsoft.edgemac,
   # com.neovide.neovide,

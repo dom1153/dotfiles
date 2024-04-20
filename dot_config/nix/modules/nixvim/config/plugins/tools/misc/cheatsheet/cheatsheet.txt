@@ -26,3 +26,7 @@ Get variable | :lua vim.print(vim.o.shell)
 Go to previous file | <C-6>
 Check make program | :set makeprg?
 Expand normal help-pages ("only window") | <c-w> <c-o>
+# https://stackoverflow.com/questions/9458294/open-url-under-cursor-in-vim-with-browser
+Open link under cursor (system app) | gx
+Uppercase motions | gU
+Lowercase motions | gu

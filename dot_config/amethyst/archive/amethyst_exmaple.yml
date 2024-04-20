@@ -1,3 +1,4 @@
+---
 # Default settings for Amethyst
 # Repo: `https://github.com/ianyh/Amethyst`
 #
@@ -15,14 +16,14 @@
 
 # layouts - Ordered list of layouts to use by layout key (default tall, wide, fullscreen, and column).
 layouts:
-  - tall ### left half has focus; right half vertically stacks with remaining windows
+  - tall ### left half has focus; right half horizontal split the remaining windows
   - fullscreen ### as expected
   # - bsp ### as expected
   # - tall-right ### right half has focus
   - wide ### top half has focus
   # - two-pane ### force two windows only (use mission control to change)
   # - middle-wide ### middle half has focus
-  # - 3column-left ### left has focus, right side has two vertical stacks
+  # - 3column-left ### left has focus, right side has two vertical split stacks
   # - middle-wide # The legacy name of "3column-middle"
   # - 3column-right ### right has focus
   # - 4column-left ### left 25% has focus (in second column) ; panes are distributed left  and right

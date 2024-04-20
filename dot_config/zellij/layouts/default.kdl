@@ -55,4 +55,42 @@ layout {
             }
         }
     }
+
+    tab name="nvim-flake" {
+        pane split_direction="vertical" {
+            pane name="config" focus=true {
+                cwd "~/gits/dom1153/nvim-flake"
+                command "nvim"
+                start_suspended true
+            }
+            pane name="config" focus=true {
+                cwd "~/gits/dom1153/nvim-flake"
+                command "make"
+                args "wrun"
+                start_suspended true
+            }
+            pane name="config" focus=true {
+                cwd "~/.local/share/chezmoi/dot_config/nix/modules/nixvim"
+                command "nvim"
+                start_suspended true
+            }
+            pane name="config" focus=true {
+                cwd "~/gits/nix/kickstart-nix.nvim"
+                command "nvim"
+                start_suspended true
+            }
+        }
+
+        // chezmoi home can always be accessed via toggleterm nvim
+        // launch nvim exe from make run (or future plugin task)
+
+        pane size="20%" split_direction="vertical" {
+            pane name="dothome cli" cwd="~/gits/dom1153/nvim-flake"
+            pane name="dothome cli" cwd="~/gits/dom1153/nvim-flake" command="make" args="wbuild" start_suspended=true
+            pane name="tail" {
+                cwd "~/gits/dom1153/nvim-flake"
+                command "./scripts/tail.sh"
+            }
+        }
+    }
 }

@@ -3,6 +3,7 @@
     neomake
   ];
 
+  ### test
   extraConfigVim = builtins.readFile ./lua/neomake.vim;
   extraConfigLua = builtins.readFile ./lua/neomake.lua;
 }
