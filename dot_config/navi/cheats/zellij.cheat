@@ -1,5 +1,8 @@
 % zellij, run, nvim, neovim, chezmoi
 
+# generic zellij run
+zellij run --cwd $PWD --in-place -- echo foo
+
 # zellij run nixvim tspin tail build.log
 zellij run --cwd ~/.config/nix/modules/nixvim/ --start-suspended --in-place --name "tail build.log" -- tspin -f build.log
 

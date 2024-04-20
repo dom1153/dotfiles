@@ -1,96 +1,109 @@
 default_shell "fish"
 
 ui {
-    pane_frames {
-        rounded_corners true
-    }
+  pane_frames {
+    rounded_corners true
+  }
 }
 
 layout {
-    // Preamble
-    default_tab_template {
-        pane size=1 borderless=true {
-            plugin location="zellij:tab-bar"
-        }
-        children
-        pane size=2 borderless=true {
-            plugin location="zellij:status-bar"
-        }
+  // Preamble
+  default_tab_template {
+    pane size=1 borderless=true {
+      plugin location="zellij:tab-bar"
+    }
+    children
+    pane size=2 borderless=true {
+      plugin location="zellij:status-bar"
+    }
+  }
+
+  // Tab 'toy'
+  tab name="toy" focus=true {
+    pane
+  }
+
+  // Tab 'chezmoi'
+  tab name="chezmoi" cwd="~/.local/share/chezmoi" {
+    pane name="config" {
+      command "nvim"
+      start_suspended true
     }
 
-    // Tab 'toy'
-    tab name="toy" focus=true {
-        pane
+    pane name="git/nix rebuild" size="20%"
+  }
+
+  // Tab 'nixvim'
+  tab name="nixvim" {
+    pane split_direction="vertical" {
+      pane name="config" focus=true {
+        cwd "~/.local/share/chezmoi/dot_config/nix/modules/nixvim"
+        command "nvim"
+        start_suspended true
+      }
     }
 
-    // Tab 'chezmoi'
-    tab name="chezmoi" cwd="~/.local/share/chezmoi" {
-        pane name="config" {
-            command "nvim"
-            start_suspended true
-        }
+    // chezmoi home can always be accessed via toggleterm nvim
+    // launch nvim exe from make run (or future plugin task)
 
-        pane name="git/nix rebuild" size="20%"
+    pane size="20%" split_direction="vertical" {
+      pane name="dothome cli" cwd="~/.config/nix/modules/nixvim"
+      pane name="tail" {
+        cwd "~/.config/nix/modules/nixvim"
+        // not sure if we can do pipes, so here we are
+        command "./scripts/tail.sh"
+      }
+    }
+  }
+
+  tab name="nvim-flake" {
+    pane split_direction="vertical" {
+      pane name="nvim-flake" focus=true {
+        cwd "~/gits/dom1153/nvim-flake"
+        command "nvim"
+        start_suspended true
+      }
+      pane name="watch run" {
+        cwd "~/gits/dom1153/nvim-flake"
+        command "make"
+        args "wrun"
+        start_suspended true
+      }
     }
 
-    // Tab 'nixvim'
-    tab name="nixvim" {
-        pane split_direction="vertical" {
-            pane name="config" focus=true {
-                cwd "~/.local/share/chezmoi/dot_config/nix/modules/nixvim"
-                command "nvim"
-                start_suspended true
-            }
-        }
+    // chezmoi home can always be accessed via toggleterm nvim
+    // launch nvim exe from make run (or future plugin task)
 
-        // chezmoi home can always be accessed via toggleterm nvim
-        // launch nvim exe from make run (or future plugin task)
-
-        pane size="20%" split_direction="vertical" {
-            pane name="dothome cli" cwd="~/.config/nix/modules/nixvim"
-            pane name="tail" {
-                cwd "~/.config/nix/modules/nixvim"
-                // not sure if we can do pipes, so here we are
-                command "./scripts/tail.sh"
-            }
-        }
+    pane size="20%" split_direction="vertical" {
+      pane name="dothome cli" cwd="~/gits/dom1153/nvim-flake"
+      pane name="watch build" cwd="~/gits/dom1153/nvim-flake" command="make" args="wbuild" start_suspended=true
+      pane name="tail" {
+        cwd "~/gits/dom1153/nvim-flake"
+        command "./scripts/tail.sh"
+      }
     }
+  }
 
-    tab name="nvim-flake" {
-        pane split_direction="vertical" {
-            pane name="config" focus=true {
-                cwd "~/gits/dom1153/nvim-flake"
-                command "nvim"
-                start_suspended true
-            }
-            pane name="config" focus=true {
-                cwd "~/gits/dom1153/nvim-flake"
-                command "make"
-                args "wrun"
-                start_suspended true
-            }
-            pane name="config" focus=true {
-                cwd "~/.local/share/chezmoi/dot_config/nix/modules/nixvim"
-                command "nvim"
-                start_suspended true
-            }
-            pane name="config" focus=true {
-                cwd "~/gits/nix/kickstart-nix.nvim"
-                command "nvim"
-                start_suspended true
-            }
-        }
-
-        // chezmoi home can always be accessed via toggleterm nvim
-        // launch nvim exe from make run (or future plugin task)
-
-        pane size="20%" split_direction="vertical" {
-            pane name="dothome cli" cwd="~/gits/dom1153/nvim-flake"
-            pane name="dothome cli" cwd="~/gits/dom1153/nvim-flake" command="make" args="wbuild" start_suspended=true
-            pane name="tail" {
-                cwd "~/gits/dom1153/nvim-flake"
-                command "./scripts/tail.sh"
-            }
-        }
+  tab name="nvim ref (chezmoi)" {
+    pane split_direction="vertical" {
+      pane name="nixvim" {
+        cwd "~/.local/share/chezmoi/dot_config/nix/modules/nixvim"
+        command "nvim"
+        start_suspended true
+      }
+      pane name="kickstart-nix.nvim" {
+        cwd "~/gits/nix/kickstart-nix.nvim"
+        command "nvim"
+        start_suspended true
+      }
     }
+    pane split_direction="vertical" {
+      pane name="gits" {
+        cwd "~/gits/nvim"
+      }
+      pane name="gits" {
+        cwd "~/gits/nvim"
+      }
+    }
+  }
 }

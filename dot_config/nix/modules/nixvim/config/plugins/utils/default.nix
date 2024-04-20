@@ -2,7 +2,7 @@
   imports = [
     # ./git/diffview.nix
     ./git/gitsigns.nix
-    # ./git/lazygit.nix
+    ./git/lazygit.nix
     # ./git/neogit.nix
     # ./git/fugitive.nix
 
