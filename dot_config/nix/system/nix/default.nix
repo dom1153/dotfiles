@@ -20,7 +20,7 @@
 
     settings = {
       ### seeing issues on darwin upstream https://github.com/NixOS/nix/issues/7273
-      auto-optimise-store = true;
+      auto-optimise-store = false;
       experimental-features = "nix-command flakes";
     };
   };

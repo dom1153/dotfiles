@@ -59,7 +59,7 @@
 
       nix-prefetch-github ### for the dumb nixos stuff
 
-      inputs.archoo-nixvim.packages.${system}.default
+      nvim-pkg # kickstar nvim package
     ];
 
     # https://nixos.wiki/wiki/FAQ/When_do_I_update_stateVersion

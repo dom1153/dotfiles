@@ -1,8 +1,4 @@
-{
-  inputs,
-  pkgs,
-  ...
-}: {
+{pkgs, ...}: {
   imports = [
     ../../../home
 
@@ -29,8 +25,7 @@
 
       darwin.trash
 
-      # nvim-pkg # kickstar nvim package
-      inputs.archoo-nixvim.packages.${system}.default
+      nvim-pkg # kickstar nvim package
     ];
 
     # https://nixos.wiki/wiki/FAQ/When_do_I_update_stateVersion

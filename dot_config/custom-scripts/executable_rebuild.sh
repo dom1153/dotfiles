@@ -80,13 +80,28 @@ switch | build | boot | test) ;;
 esac
 # echo "nrcmd is '${nrcmd}'"
 
+chezmoi update
+
 ### chezmoi source-path
 ### note: bulding in chezmoi will IGNORE dirty changes
 ###     so build from .config now, since this doesn't fit my flow
 chome=$HOME/.local/share/chezmoi/dot_config/nix
-nhome=$HOME/.config/nix
+# nhome=$HOME/.config/nix
 ### TODO: go to chezmoi home
-cd "$nhome"
+cd "$chome"
+
+### pull
+myecho "==> Chezmoi git pull"
+chezmoi git pull -- --autostash --rebase
+myecho "  ==> Done"
+
+### add any untracked git files
+echo -e "a\n*\nq\n" | git add -i >/dev/null 2>&1
+
+### update flakes (todo: upgrade nix so I can update specific packages)
+myecho "==> Nix flake update"
+nix flake update
+myecho "  ==> Done"
 
 ### update chezmoi (apply)
 cs=$(chezmoi status)

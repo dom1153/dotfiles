@@ -1,4 +1,3 @@
-
 gitconfig ### symlink for vscode filetyping
 
 .gitignore
@@ -21,4 +20,4 @@ README.md
 ### ignore all instances (...)
 **/result
 **/flake.lock
-
+**/build.log
