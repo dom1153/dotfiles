@@ -3,27 +3,27 @@
     ### unix alternative
     bat
     btop
-    diff-so-fancy
     delta ### git diff specifically
+    diff-so-fancy
     eza
     fd
     fzf
+    glow ### fancy md file reading
+    grc ### generic colorizer ; aliases colorize common unix commands
+    micro ### nano alternative
     ripgrep
+    tailspin ### tail but its got colors (tspin)
     unrar
     unzip
     zip
     zoxide
-    micro ### nano alternative
-    glow ### fancy md file reading
-    tailspin ### tail but its got colors (tspin)
-    grc ### generic colorizer ; aliases colorize common unix commands
 
     ### tools
     chezmoi
-    speedtest-cli
-    wget
     nix-prefetch-github
     spacer ### append lines after a given time in tail
+    speedtest-cli
+    wget
     ### fast-cli ### does not work on darwin
 
     ### services
@@ -44,6 +44,7 @@
     ani-cli
     helix
     lazygit
+    lf
     mc
     nap ### snippet manager
     navi

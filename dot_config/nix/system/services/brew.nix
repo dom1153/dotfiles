@@ -2,7 +2,9 @@
   ### manages homebrew, homebrew itself must be installed manually!
   homebrew = {
     enable = true;
-    brews = [];
+    brews = [
+      "watchman" ### nix edition does not include watchman-make ; python nix versions are broken as usual
+    ];
     casks = [
       "affinity-designer"
       "affinity-photo"
