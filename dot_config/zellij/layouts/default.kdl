@@ -76,7 +76,11 @@ layout {
 
     pane size="20%" split_direction="vertical" {
       pane name="dothome cli" cwd="~/gits/dom1153/nvim-flake"
-      pane name="watch build" cwd="~/gits/dom1153/nvim-flake" command="make" args="wbuild" start_suspended=true
+      pane name="watch build" cwd="~/gits/dom1153/nvim-flake" {
+        command "make"
+        args "wbuild"
+        start_suspended true
+      }
       pane name="tail" {
         cwd "~/gits/dom1153/nvim-flake"
         command "./scripts/tail.sh"

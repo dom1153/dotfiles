@@ -1,0 +1,4 @@
+
+### https://stackoverflow.com/questions/7446640/adding-only-untracked-files
+# add git untracked files only
+echo -e "a\n*\nq\n" | git add -i >/dev/null 2>&1

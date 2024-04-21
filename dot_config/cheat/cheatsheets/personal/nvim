@@ -65,4 +65,6 @@ vim.fn.expand("%:p:h")
 
 ### for nvim cli options see https://neovim.io/doc/user/starting.html
 Open file with system app
-gx
+
+### debugging set options
+:5verbose set fo?x
