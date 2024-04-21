@@ -19,3 +19,6 @@ zellij run --floating --cwd ~/.local/share/chezmoi --name "git chezmoi" -- fish
 % fish, shell, zsh, zellij
 # start fish shell without zellij auto-start
 export ZELLIJ=1 && fish
+
+# open zellij layout (basic, foo, default, nvim)
+zellij --layout

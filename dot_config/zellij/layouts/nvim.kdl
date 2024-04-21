@@ -1,0 +1,50 @@
+// nvim ref
+default_shell "fish"
+
+ui {
+  pane_frames {
+    rounded_corners true
+  }
+}
+
+layout {
+  // Preamble
+  default_tab_template {
+    pane size=1 borderless=true {
+      plugin location="zellij:tab-bar"
+    }
+    children
+    pane size=2 borderless=true {
+      plugin location="zellij:status-bar"
+    }
+  }
+
+  tab name="nvim ref (chezmoi)" {
+    pane split_direction="vertical" {
+      pane name="nixvim" {
+        cwd "~/.local/share/chezmoi/dot_config/nix/modules/nixvim"
+        command "nvim"
+        start_suspended true
+      }
+      pane name="kickstart-nix.nvim" {
+        cwd "~/gits/nix/kickstart-nix.nvim"
+        command "nvim"
+        start_suspended true
+      }
+    }
+    pane split_direction="vertical" {
+      pane name="gits" {
+        cwd "~/gits/nvim"
+      }
+      pane name="gits" {
+        cwd "~/gits/nvim"
+      }
+    }
+  }
+
+  // Tab 'toy'
+  tab name="more" {
+    pane
+  }
+
+}

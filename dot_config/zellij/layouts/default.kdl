@@ -65,26 +65,4 @@ layout {
     }
   }
 
-  tab name="nvim ref (chezmoi)" {
-    pane split_direction="vertical" {
-      pane name="nixvim" {
-        cwd "~/.local/share/chezmoi/dot_config/nix/modules/nixvim"
-        command "nvim"
-        start_suspended true
-      }
-      pane name="kickstart-nix.nvim" {
-        cwd "~/gits/nix/kickstart-nix.nvim"
-        command "nvim"
-        start_suspended true
-      }
-    }
-    pane split_direction="vertical" {
-      pane name="gits" {
-        cwd "~/gits/nvim"
-      }
-      pane name="gits" {
-        cwd "~/gits/nvim"
-      }
-    }
-  }
 }
