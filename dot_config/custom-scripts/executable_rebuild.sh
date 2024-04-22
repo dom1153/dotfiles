@@ -80,8 +80,6 @@ switch | build | boot | test) ;;
 esac
 # echo "nrcmd is '${nrcmd}'"
 
-chezmoi update
-
 ### chezmoi source-path
 ### note: bulding in chezmoi will IGNORE dirty changes
 ###     so build from .config now, since this doesn't fit my flow

@@ -1,7 +1,7 @@
 ---
 # The editor to use with 'cheat -e <sheet>'. Defaults to $EDITOR or $VISUAL.
 ### todo: edit command to utililze chezmoi???
-editor: 
+editor:
 
 # Should 'cheat' always colorize output?
 colorize: false
@@ -62,24 +62,25 @@ cheatpaths:
   #   'path': the filesystem path of the cheatsheet directory (view with 'cheat -d')
   #   'tags': tags that should be automatically applied to sheets on this path
   #   'readonly': shall user-created ('cheat -e') cheatsheets be saved here?
-  - name: community
-    path: ~/.config/cheat/cheatsheets/community
-    tags: [ community ]
-    readonly: true
+  # - name: community
+  #   path: ~/.config/cheat/cheatsheets/community
+  #   tags: [ community ]
+  #   readonly: true
 
   # If you have personalized cheatsheets, list them last. They will take
   # precedence over the more global cheatsheets.
   - name: personal
     path: ~/.config/cheat/cheatsheets/personal
-    tags: [ personal ]
+    tags: [personal]
     readonly: false
 
-  # While it requires no configuration here, it's also worth noting that
-  # cheat will automatically append directories named '.cheat' within the
-  # current working directory to the 'cheatpath'. This can be very useful if
-  # you'd like to closely associate cheatsheets with, for example, a directory
-  # containing source code.
-  #
-  # Such "directory-scoped" cheatsheets will be treated as the most "local"
-  # cheatsheets, and will override less "local" cheatsheets. Similarly,
-  # directory-scoped cheatsheets will always be editable ('readonly: false').
+# While it requires no configuration here, it's also worth noting that
+# cheat will automatically append directories named '.cheat' within the
+# current working directory to the 'cheatpath'. This can be very useful if
+# you'd like to closely associate cheatsheets with, for example, a directory
+# containing source code.
+#
+# Such "directory-scoped" cheatsheets will be treated as the most "local"
+# cheatsheets, and will override less "local" cheatsheets. Similarly,
+# directory-scoped cheatsheets will always be editable ('readonly: false').
+
