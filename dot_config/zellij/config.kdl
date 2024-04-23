@@ -4,6 +4,8 @@ keybinds clear-defaults=true {
   }
   locked {
     bind "Ctrl g" { SwitchToMode "Normal"; }
+    // consider hjkl, tab move
+    // HOWEVER, this could block cli shortcuts (e.g. ripgrep or reverse cli search
   }
   resize {
     bind "Ctrl n" { SwitchToMode "Normal"; }

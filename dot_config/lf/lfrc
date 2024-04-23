@@ -96,3 +96,6 @@ cmd zip ${{
 
 # icons!
 set icons
+
+### turn off red color which looks bad on catpuccin color terminals
+set errorfmt            ""
