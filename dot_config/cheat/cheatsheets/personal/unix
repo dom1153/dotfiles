@@ -55,3 +55,6 @@ nix build ${P} 2>&1 | tee -a ${LOG_FILE}
 RESULT=${PIPESTATUS[0]}
 
 ### $? captures status for simple executions
+
+### Compare directories
+diff -qr <folder1> <folder2>

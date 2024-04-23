@@ -1,0 +1,43 @@
+default_shell "fish"
+
+ui {
+  pane_frames {
+    rounded_corners true
+  }
+}
+
+layout {
+  // Preamble
+  default_tab_template {
+    pane size=1 borderless=true {
+      plugin location="zellij:tab-bar"
+    }
+    children
+    pane size=2 borderless=true {
+      plugin location="zellij:status-bar"
+    }
+  }
+
+  tab name="ide" focus=true {
+    pane split_direction="vertical" {
+      pane name="nvim" focus=true {
+      }
+      pane name="watch run" size="30%" {
+      }
+    }
+
+    // chezmoi home can always be accessed via toggleterm nvim
+    // launch nvim exe from make run (or future plugin task)
+
+    pane size="20%" split_direction="vertical" {
+      pane name="cli"
+      pane name="watch build"
+    }
+  }
+
+  // Tab 'toy'
+  tab name="foo" {
+    pane
+  }
+
+}

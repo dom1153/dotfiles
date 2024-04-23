@@ -5,30 +5,32 @@
 ### 'no' exits the entire script
 ### https://stackoverflow.com/questions/6241256/what-is-the-proper-way-to-test-a-bash-functions-return-value
 function prompt_yns {
-	while true; do
-		read -p "$* [yes/no/skip]: " yn
-		case $yn in
-		[Yy]*) return 0 ;;
-		[Nn]*)
-			echo "Exiting script"
-			exit 1
-			;;
-		[Ss]*) return 1 ;;
-		esac
-	done
+  while true; do
+    read -p "$* [yes/no/skip]: " yn
+    case $yn in
+    [Yy]*) return 0 ;;
+    [Nn]*)
+      echo "Exiting script"
+      exit 1
+      ;;
+    [Ss]*) return 1 ;;
+    esac
+  done
 }
+
+OSTYPE=uname
 
 ### os specific branching
 case $OSTYPE in
 darwin*)
-	echo "darwin specific code"
-	;;
+  echo "darwin specific code"
+  ;;
 linux-*)
-	echo "linux specific code"
-	;;
+  echo "linux specific code"
+  ;;
 *)
-	echo "catch all... I think"
-	;;
+  echo "catch all... I think"
+  ;;
 esac
 
 ### check if command had output
@@ -36,47 +38,47 @@ esac
 ### Note: $cs will be inline text, so consider running again for line breaks?
 cs=$(ls -l)
 if [[ $cs ]]; then
-	echo "has output"
+  echo "has output"
 else
-	echo "no output"
+  echo "no output"
 fi
 
 ### zsh style checking if exe exists
 if type "trash" >/dev/null; then
-	echo "I have this command"
+  echo "I have this command"
 else
-	echo "I do NOT have this command"
+  echo "I do NOT have this command"
 fi
 
 ### bash variant of above
 if type "trash" >/dev/null 2>&1; then
-	echo "I have this command"
+  echo "I have this command"
 else
-	echo "I do NOT have this command"
+  echo "I do NOT have this command"
 fi
 
 ### zsh (and maybe bash) check path
 p=$HOME/.config/custom-scripts
 if [ -d "$p" ]; then
-	alias nr="$p/rebuild.sh"
-	alias cclean="$p/chezmoi_cleanup.sh"
+  alias nr="$p/rebuild.sh"
+  alias cclean="$p/chezmoi_cleanup.sh"
 fi
 
 ### check if executable (also check if file exists)
 if [ -x "$HOME"/.config/custom-scripts/watchmanchezmoi.sh ]; then
-	"$HOME"/.config/custom-scripts/watchmanchezmoi.sh >/dev/null
+  "$HOME"/.config/custom-scripts/watchmanchezmoi.sh >/dev/null
 fi
 
 ### check if file exists
 if [ -f "$HOME"/.config/custom-scripts/watchmanchezmoi.sh ]; then
-	"$HOME"/.config/custom-scripts/watchmanchezmoi.sh >/dev/null
+  "$HOME"/.config/custom-scripts/watchmanchezmoi.sh >/dev/null
 fi
 
 ### bash way of check if command returns 0
 if command; then
-	echo "Command succeeded"
+  echo "Command succeeded"
 else
-	echo "Command failed"
+  echo "Command failed"
 fi
 
 ### swww has more examples here
@@ -98,21 +100,21 @@ mpvpaper -o "no-audio --loop-playlist  --panscan=1" DP-2 /home/archoo/Downloads/
 ### bash check empty string
 ### [ ! "str" ]; will flip the logic
 if [ "$nrcmd" ]; then
-	echo "hello '${nrcmd}'"
+  echo "hello '${nrcmd}'"
 else
-	echo "empty '${nrcmd}'"
+  echo "empty '${nrcmd}'"
 fi
 
 ### >>> arg dash flags -ry build
 while getopts ry flag; do
-	case "$flag" in
-	r) force_reboot=1 ;;
-	y) yes=1 ;;
-	*)
-		echo "$usage"
-		exit
-		;;
-	esac
+  case "$flag" in
+  r) force_reboot=1 ;;
+  y) yes=1 ;;
+  *)
+    echo "$usage"
+    exit
+    ;;
+  esac
 done
 shift $(($OPTIND - 1)) ### this is the secret sauce
 
@@ -120,13 +122,13 @@ nrcmd=$1
 case "$nrcmd" in
 switch | build | boot | test) ;;
 '')
-	### ignore if empty, or ignore if only a flag
-	;;
+  ### ignore if empty, or ignore if only a flag
+  ;;
 *)
-	echo "==> Invalid command '${nrcmd}'"
-	echo "$usage"
-	exit
-	;;
+  echo "==> Invalid command '${nrcmd}'"
+  echo "$usage"
+  exit
+  ;;
 esac
 # echo "nrcmd is '${nrcmd}'"
 
@@ -136,7 +138,7 @@ usage="Usage: ${exe} {switch | build | boot | test} [-f (force)] [-r (reboot)] [
 
 ### bash simple match string
 if [ "$x" = "valids" ]; then
-	echo "x has the value 'valid'"
+  echo "x has the value 'valid'"
 else
-	echo "no"
+  echo "no"
 fi

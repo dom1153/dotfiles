@@ -3,6 +3,9 @@
 # generic zellij run
 zellij run --cwd $PWD --in-place -- echo foo
 
+; # generic zellij run watchman-make run
+; zellij run --cwd $PWD --in-place -- watchman-make -p '**/*.lua' -t all
+
 # zellij run nixvim tspin tail build.log
 zellij run --cwd ~/.config/nix/modules/nixvim/ --start-suspended --in-place --name "tail build.log" -- tspin -f build.log
 

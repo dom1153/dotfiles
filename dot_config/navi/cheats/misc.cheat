@@ -1,0 +1,4 @@
+% misc
+
+# stop watchman
+watchman shutdown-server

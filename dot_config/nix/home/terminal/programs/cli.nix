@@ -26,6 +26,15 @@
     wget
     ### fast-cli ### does not work on darwin
 
+    ### funni (keep these)
+    lolcat
+    neo-cowsay
+    ponysay
+    pokemonsay
+    fortune
+    cmatrix
+    peaclock # TODO: needs locale fix on darwin
+
     ### services
     entr
     mosh

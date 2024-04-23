@@ -1,6 +1,11 @@
 ### unix overrides
 if exists trash
-    abbr rm trash
+    switch $(uname)
+        case "darwin*"
+            abbr rm trash -F
+        case '*'
+            abbr rm trash
+    end
 else
     abbr rm 'rm -i'
 end

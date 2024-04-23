@@ -69,4 +69,8 @@ Open file with system app
 ### debugging set options
 :5verbose set fo?x
 
-
+### Session - general ideas
+Chezmoi
+1. home/*.nix , os/*.nix
+2. zellilj/config zellij/layout/default
+3. cheatsheet/personal navi/*.cheat
