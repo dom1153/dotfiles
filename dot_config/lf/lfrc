@@ -42,8 +42,24 @@ map o :push %touch<space>
 map O :push %mkdir<space>
 
 # define a custom 'rename' command without prompt for overwrite
-cmd rename %[ -e $1 ] && printf "file exists" || mv $f $1
-map r push :rename<space>
+# cmd rename %[ -e $1 ] && printf "file exists" || mv $f $1
+# map r push :rename<space>
+# rename: foo|.txt
+cmd rename-fname rename
+# rename: |foo.txt
+cmd "foo|.txt" rename
+cmd "|foo.txt" :rename; cmd-home
+cmd "foo.txt|" :rename; cmd-end
+cmd "|.txt" :rename; cmd-delete-home
+cmd "|" :rename; cmd-end; cmd-delete-home
+
+map r
+map ri "foo|.txt"
+map rI "|foo.txt"
+map rA "foo.txt|"
+map rc "|.txt"
+map rC "|"
+
 
 # define a custom 'delete' command
 cmd trash ${{
@@ -56,7 +72,8 @@ cmd trash ${{
 
 # use '<delete>' key for either 'trash' or 'delete' command
 map <delete> trash
-map x trash
+map d trash
+map x cut
 
 # icons!
 set icons
@@ -67,3 +84,107 @@ set errorfmt            ""
 ### c-/ to terminal (use w if in a nvim toggleterm
 map <c-_> $/usr/bin/env fish
 map w $/usr/bin/env fish
+
+### always size and time, use zn to disable
+set info time
+
+
+### VVV Recipies / 'Tips'
+
+### borders per coumn
+map zc set drawbox
+
+cmd sx ${{
+    lf -remote "send $id source ~/.config/lf/lfrc"
+}}
+
+### dynamically set columns based on terminal length
+cmd on-redraw %{{
+    if [ $lf_width -le 80 ]; then
+        lf -remote "send $id set ratios 1:2"
+    elif [ $lf_width -le 160 ]; then
+        lf -remote "send $id set ratios 1:2:3"
+    else
+        lf -remote "send $id set ratios 1:2:3:5"
+    fi
+}}
+
+cmd toggle_preview %{{
+    if [ "$lf_preview" = "true" ]; then
+        lf -remote "send $id :set preview false; set ratios 1:5"
+    else
+        lf -remote "send $id :set preview true; set ratios 1:2:3"
+    fi
+}}
+map zp toggle_preview
+
+
+set cursorpreviewfmt "\033[4m"
+
+# ### show paste progress (not sure if working)
+# cmd paste &{{
+#     set -- $(cat ~/.local/share/lf/files)
+#     mode="$1"
+#     shift
+#     case "$mode" in
+#         copy)
+#             rsync -av --ignore-existing --progress -- "$@" . |
+#             stdbuf -i0 -o0 -e0 tr '\r' '\n' |
+#             while IFS= read -r line; do
+#                 lf -remote "send $id echo $line"
+#             done
+#             ;;
+#         move) mv -n -- "$@" .;;
+#     esac
+#     rm ~/.local/share/lf/files
+#     lf -remote "send clear"
+# }}
+#
+# ### clear selected files after copy/paste
+# map p :paste; clear
+
+### ^^^ need to test this more, didn't work to copy yabairc idk
+
+
+#
+### allows use of environment variables in cmd or mapping
+cmd eval &{{
+    cmd="send $id"
+    for arg; do
+        cmd="$cmd $(eval "printf '%q' \"$arg\"")"
+    done
+    lf -remote "$cmd"
+}}
+
+eval map g. cd "$OLDPWD"
+
+### todo: map this to a menu
+### could map this to ? or smth
+### consider vivir (A->B, B->A renaming) ; many solutions
+cmd bulk-rename ${{
+    old="$(mktemp)"
+    new="$(mktemp)"
+    if [ -n "$fs" ]; then
+        fs="$(basename -a $fs)"
+    else
+        fs="$(ls)"
+    fi
+    printf '%s\n' "$fs" >"$old"
+    printf '%s\n' "$fs" >"$new"
+    $EDITOR "$new"
+    [ "$(wc -l < "$new")" -ne "$(wc -l < "$old")" ] && exit
+    paste "$old" "$new" | while IFS= read -r names; do
+        src="$(printf '%s' "$names" | cut -f1)"
+        dst="$(printf '%s' "$names" | cut -f2)"
+        if [ "$src" = "$dst" ] || [ -e "$dst" ]; then
+            continue
+        fi
+        mv -- "$src" "$dst"
+    done
+    rm -- "$old" "$new"
+    lf -remote "send $id unselect"
+}}
+
+cmd on-select &{{
+    lf -remote "send $id set statfmt \"$(exa -ld --color=always "$f")\""
+}}

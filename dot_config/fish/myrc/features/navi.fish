@@ -23,10 +23,7 @@ if type navi &>/dev/null
         commandline -f repaint
     end
 
-    if test "$fish_key_bindings" = fish_default_key_bindings
-        ### override binding to ctrl-e (\ce)
-        bind \ce _navi_smart_replace
-    else
-        bind -M insert \ce _navi_smart_replace
-    end
+    ### why just try both. no qualifications
+    bind \ce _navi_smart_replace
+    bind -M insert \ce _navi_smart_replace
 end

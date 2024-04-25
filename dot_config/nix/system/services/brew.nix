@@ -4,13 +4,14 @@
     enable = true;
     brews = [
       "watchman" ### nix edition does not include watchman-make ; python nix versions are broken as usual
+      "FelixKratz/formulae/borders" ### JankyBorders | https://github.com/FelixKratz/JankyBorders
+      "koekeishiya/formulae/yabai" ### tiling window manager
     ];
     casks = [
       "affinity-designer"
       "affinity-photo"
       "affinity-publisher"
       "alt-tab"
-      "amethyst"
       "arc"
       "bazecor"
       "betterdisplay"
@@ -54,8 +55,9 @@
       "homebrew/cask-fonts"
       "homebrew/cask-versions"
       "localsend/localsend"
-      "osx-cross/arm"
+      ### "osx-cross/arm"
     ];
+    ### other: playcover nightly
     ### appstore apps
     ## rcmd - app switcher
     ## unsplash wallpapers

@@ -1,8 +1,8 @@
 -- Pull in the wezterm API
-local wezterm = require 'wezterm'
+local wezterm = require('wezterm')
 
-local appearance = require 'modules/appearance'
-local wsl = require 'modules/wsl'
+local appearance = require('modules/appearance')
+local wsl = require('modules/wsl')
 
 -- This will hold the configuration.
 local config = {}

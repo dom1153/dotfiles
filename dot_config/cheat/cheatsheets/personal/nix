@@ -1,0 +1,3 @@
+nix-develop vs nix-shell
+- nix develop is more for the full development envirment (more fine tuned controls, e.g. env variables)
+- nix shell basically is a shell + some packages (shell.nix)

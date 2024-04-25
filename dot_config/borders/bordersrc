@@ -1,0 +1,51 @@
+#!/bin/bash
+
+### https://github.com/FelixKratz/JankyBorders
+
+### whitelist/blacklist appears to be based on pid name found in top
+### colors are catppuccin mocha green, subtext 0
+options=(
+  style=round
+  width=6.0
+  hidpi=on
+  active_color=0xffa6e3a1
+  inactive_color=0xffa6adc8
+  whitelist="wezterm-gui"
+)
+
+borders "${options[@]}"
+
+# style=round|square
+#   Specifies the style of the border (either round or square)
+#
+# active_color=<color>
+# 	Sets the border color for the focused window (format: _0xAARRGGBB_).
+# 	For instance, active_color=0xff00ff00 creates a green border.
+#
+# inactive_color=<color>
+# 	Sets the border color for all windows not in focus.
+#
+# background_color=<color>
+# 	Sets the background fill color for all windows
+#
+# width=<float>
+# 	Determines the width (pt) of the border.
+# 	For example, width=5.0 creates a border 5.0 points wide.
+#
+# hidpi=<boolean>
+# 	If set to on, the border will be drawn with retina resolution.
+#
+# ax_focus=<boolean>
+# 	If set to on, the (slower) accessibility API is used to resolve the
+# 	focused window. Enabled automatically if the (parent) process has
+# 	accessibility permissions. Improves compatibility with other tools
+# 	modifying window properties on a system level (e.g. yabai).
+#
+# blacklist=<application_list>
+# 	The applications specified here are excluded from being bordered. For
+# 	example, blacklist="Safari,kitty" excludes Safari and kitty from being
+# 	bordered.
+#
+# whitelist=<application_list>
+# 	Once this list is populated, only applications listed here are considered
+# 	for receiving a border. If the whitelist is empty (default) it is inactive.

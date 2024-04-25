@@ -3,5 +3,5 @@
 # edit history (ctrl-w, ctrl-s)
 zoxide edit
 
-# interactive history search
-zi
+# interactive history search (zi ; but likely override)
+cdi

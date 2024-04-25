@@ -39,6 +39,11 @@ abbr mux tmuxinator
 ### zellij
 abbr zl "zellij --layout"
 
+### si (search incremental)
+abbr si rg
+
+abbr lg lazygit
+
 ### chezmoi
 abbr ce "chezmoi edit"
 abbr ca "chezmoi apply"
@@ -58,9 +63,6 @@ abbr gcm "git commit -m"
 abbr gpush "git push"
 abbr gpull "git pull"
 abbr gs "git status"
-
-### si (search incremental)
-abbr si rg
 
 ### ff (find file)
 abbr ff "fd --type f --hidden --exclude .git | fzf --reverse"

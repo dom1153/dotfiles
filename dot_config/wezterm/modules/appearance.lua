@@ -1,4 +1,4 @@
-local wezterm = require 'wezterm'
+local wezterm = require('wezterm')
 local hostname = wezterm.hostname()
 
 local module = {}
@@ -12,7 +12,7 @@ function module.apply_to_config(config)
   -- https://wezfurlong.org/wezterm/config/lua/wezterm/target_triple.html
   -- Luckily, should include a nerd font out of the box
   if hostname == 'stella-hoshii.local' then
-    config.font = wezterm.font 'FiraCode Nerd Font Mono'
+    config.font = wezterm.font('FiraCode Nerd Font Mono')
     config.font_size = 12.0
   end
   -- disable ligatures
@@ -23,6 +23,9 @@ function module.apply_to_config(config)
   config.hide_tab_bar_if_only_one_tab = true
   config.tab_max_width = 999
 
+  -- titlebar
+  config.window_decorations = 'RESIZE'
+
   -- bell
   config.audible_bell = 'Disabled'
 
@@ -32,7 +35,7 @@ function module.apply_to_config(config)
   if hostname == 'jill-stingray' or hostname == 'sei-asagiri' then
     -- hyprland isn't working with wezterm wayland, x11 will do, if I try it
     config.enable_wayland = false
-    config.font = wezterm.font 'dina'
+    config.font = wezterm.font('dina')
     config.font_size = 10.0
   end
 end

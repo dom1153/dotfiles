@@ -16,6 +16,7 @@
     homeDirectory = "/Users/archoo"; ### optional since defined in os folder
 
     sessionVariables = {
+      EDITOR = "nvim";
     };
 
     packages = with pkgs; [

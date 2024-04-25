@@ -1,0 +1,3 @@
+video/*; mpv '%s'; print=mpv --aid=no --vid=no --sid=no '%s' || : ;
+audio/*; mpv '%s'; print=mpv --aid=no --vid=no --sid=no '%s' || : ;
+text/*; vim '%s'; needsterminal; print=less '%s';

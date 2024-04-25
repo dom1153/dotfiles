@@ -5,6 +5,7 @@
     brews = []; ### likely use nixpkgs instead
     casks = [
       ### experimental / extra
+      "amethyst" ### yabai superior, even without SIP
       "alacritty"
       "alfred"
       "anydesk"

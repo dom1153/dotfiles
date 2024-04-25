@@ -17,6 +17,7 @@
     unzip
     zip
     zoxide
+    rsync ### pre-installed on nix and darwin, but let's keep it consistent
 
     ### tools
     chezmoi
