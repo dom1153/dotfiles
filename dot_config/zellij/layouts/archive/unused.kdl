@@ -131,6 +131,14 @@ layout {
         command "./scripts/tail.sh"
       }
     }
+
+    pane name="dothome cli" cwd="~/gits/dom1153/nvim-flake"
+
+    pane name="tail" {
+      cwd "~/gits/dom1153/nvim-flake"
+      command "./scripts/tail.sh"
+    }
+    pane name="git/nix rebuild" size="20%"
   }
 
 }

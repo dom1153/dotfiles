@@ -29,38 +29,28 @@ layout {
       command "nvim"
       start_suspended true
     }
-
-    pane name="git/nix rebuild" size="20%"
   }
 
-  tab name="nvim-flake" {
+  // Tab 'nvim-flake'
+  tab name="nvim-flake" cwd="~/gits/dom1153/nvim-flake" {
+    // use zellij toggle float terminal
     pane split_direction="vertical" {
-      pane name="nvim-flake" focus=true {
-        cwd "~/gits/dom1153/nvim-flake"
+      pane name="nvim" focus=true {
         command "nvim"
         start_suspended true
       }
-      pane name="watch run" {
-        cwd "~/gits/dom1153/nvim-flake"
-        command "make"
-        args "wrun"
-        start_suspended true
-      }
-    }
 
-    // chezmoi home can always be accessed via toggleterm nvim
-    // launch nvim exe from make run (or future plugin task)
-
-    pane size="20%" split_direction="vertical" {
-      pane name="dothome cli" cwd="~/gits/dom1153/nvim-flake"
-      pane name="watch build" cwd="~/gits/dom1153/nvim-flake" {
-        command "make"
-        args "wbuild"
-        start_suspended true
-      }
-      pane name="tail" {
-        cwd "~/gits/dom1153/nvim-flake"
-        command "./scripts/tail.sh"
+      pane size="40%" {
+        pane name="watch run (make wrun)" {
+          command "make"
+          args "wrun"
+          start_suspended true
+        }
+        pane size="20%" name="watch build (make wbuild)" {
+          command "make"
+          args "wbuild"
+          start_suspended true
+        }
       }
     }
   }

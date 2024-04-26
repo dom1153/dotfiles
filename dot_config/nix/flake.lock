@@ -66,16 +66,17 @@
         "flake-utils": "flake-utils_3",
         "gen-luarc": "gen-luarc",
         "nixpkgs": "nixpkgs_4",
+        "obsidian-nvim": "obsidian-nvim",
         "telescope-emoji": "telescope-emoji",
         "telescope-glyph": "telescope-glyph",
         "toggletasks": "toggletasks"
       },
       "locked": {
-        "lastModified": 1713820915,
-        "narHash": "sha256-6nwmN1xNQJjhLhPV2dNxa8ERCg2cOJ+2oZBw1unR9QI=",
+        "lastModified": 1714117027,
+        "narHash": "sha256-Aid69dtLmL7sOU/fOsf0G1iTQQYDWjHB76Nrm90ZGiA=",
         "owner": "dom1153",
         "repo": "nvim-flake",
-        "rev": "27dbd3599396828407839ca7c99801a5002ed565",
+        "rev": "c394ef99d533bb56758166530bd6d9456753a11c",
         "type": "github"
       },
       "original": {
@@ -429,11 +430,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1713947658,
-        "narHash": "sha256-q3zu2D5HVphfAMZ070o/K9IPxw5DLsLkvwr7H1b5fpE=",
+        "lastModified": 1714134704,
+        "narHash": "sha256-jgTn20s3qzar/IqhjQcEO+dIQbT4hBFIloVntiCURkA=",
         "owner": "nix-community",
         "repo": "nixos-wsl",
-        "rev": "f41f95c2c187a49a4ef98b5d00fdf1a68c5f88ba",
+        "rev": "4fb773cffed9bf1efdabcc01b25637eaeb4e8e9c",
         "type": "github"
       },
       "original": {
@@ -544,11 +545,11 @@
     },
     "nixpkgs_5": {
       "locked": {
-        "lastModified": 1713895582,
-        "narHash": "sha256-cfh1hi+6muQMbi9acOlju3V1gl8BEaZBXBR9jQfQi4U=",
+        "lastModified": 1714076141,
+        "narHash": "sha256-Drmja/f5MRHZCskS6mvzFqxEaZMeciScCTFxWVLqWEY=",
         "owner": "nixos",
         "repo": "nixpkgs",
-        "rev": "572af610f6151fd41c212f897c71f7056e3fb518",
+        "rev": "7bb2ccd8cdc44c91edba16c48d2c8f331fb3d856",
         "type": "github"
       },
       "original": {
@@ -580,6 +581,18 @@
         "owner": "nix-community",
         "repo": "nixvim",
         "type": "github"
+      }
+    },
+    "obsidian-nvim": {
+      "flake": false,
+      "locked": {
+        "narHash": "sha256-jX2B9E1qcUvxIVNIYC06DRZ+mWwARq7V9L5lu/5WeVo=",
+        "type": "file",
+        "url": "https://github.com/epwalsh/obsidian.nvim"
+      },
+      "original": {
+        "type": "file",
+        "url": "https://github.com/epwalsh/obsidian.nvim"
       }
     },
     "pre-commit-hooks": {

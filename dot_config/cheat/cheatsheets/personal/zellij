@@ -1,2 +1,20 @@
 # launch zellij with layout from `~/.config/zellij/layouts`
 zellij --layout <layout name>
+
+# Gotcha's
+# https://zellij.dev/documentation/creating-a-layout.html?highlight=floating#global-cwd
+1. global cwd only applies to the layout node itself
+2. stacks are very buggy preset layouts.
+  1. incompatible with horizontal splits
+3. hide_floating_panes=true doesn't even seem to work?
+
+1. ctrl-/ doesn't seem to work as a keybind???
+2. ctrl-[ doesn't seem to work as a keybind???
+... I think this is the case for most ctrl-<special> keys
+... well maybe they work... they just can't be used to "Switch To" non-normal modes...
+
+# Tips for flow
+1. Use alt-/ to toggleterm instead of opening new panes
+2. Use scrollback mode instead of scrolling with mouse
+  3. Can select scrollback with <e> to open up nvim
+4. If all else fails try opening another terminal terminal instance

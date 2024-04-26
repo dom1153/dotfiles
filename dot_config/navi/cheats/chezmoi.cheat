@@ -2,3 +2,6 @@
 
 # print source path
 chezmoi source-path
+
+# go to chezmoi path equivalent
+chezmoi cd .
