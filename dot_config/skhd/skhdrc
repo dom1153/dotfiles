@@ -1,0 +1,6 @@
+### no mouse support qq
+### maybe add toggle float (alt-shift-g or smth)
+# /tmp/skhd_$USER.out.log and /tmp/skhd_$USER.err.log.
+### probably has path issues because I don't source anything without interactive
+### which means no brew
+shift + alt - g : /opt/homebrew/bin/yabai -m window --toggle float

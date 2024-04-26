@@ -74,3 +74,6 @@ Chezmoi
 1. home/*.nix , os/*.nix
 2. zellilj/config zellij/layout/default
 3. cheatsheet/personal navi/*.cheat
+
+### nvim no longer needs '-' to pipe
+### If piping like less, uses -R to put into readonly (no 'unsaved buffer' message on quit

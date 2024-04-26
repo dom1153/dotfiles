@@ -5,3 +5,8 @@ if exists yabai
     and [ $uname = Darwin ]
     yabai --start-service &>/dev/null
 end
+if exists skhd
+    and ! pgrep skhd &>/dev/null
+    and [ $uname = Darwin ]
+    skhd --start-service &>/dev/null
+end

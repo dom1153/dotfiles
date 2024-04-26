@@ -6,6 +6,7 @@
       "watchman" ### nix edition does not include watchman-make ; python nix versions are broken as usual
       "FelixKratz/formulae/borders" ### JankyBorders | https://github.com/FelixKratz/JankyBorders
       "koekeishiya/formulae/yabai" ### tiling window manager
+      "koekeishiya/formulae/skhd" ###
     ];
     casks = [
       "affinity-designer"
