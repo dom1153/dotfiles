@@ -5,6 +5,9 @@ switch (uname)
             eval "$(/opt/homebrew/bin/brew shellenv)"
         end
 
+        # rust if it exists via rustup
+        fish_add_path -a "$HOME/.cargo/bin"
+
         # Add Visual Studio Code (code)
         fish_add_path -a "/Applications/Visual Studio Code.app/Contents/Resources/app/bin"
 

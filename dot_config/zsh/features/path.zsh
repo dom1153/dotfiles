@@ -6,6 +6,9 @@ case $(uname) in
       eval "$(/opt/homebrew/bin/brew shellenv)"
     fi
 
+    # rust if it exists via rustup
+    export PATH="$PATH:$HOME/.cargo/bin"
+
     # Add Visual Studio Code (code)
     export PATH="$PATH:/Applications/Visual Studio Code.app/Contents/Resources/app/bin"
 
@@ -18,3 +21,4 @@ case $(uname) in
   Linux)
     ;;
 esac
+

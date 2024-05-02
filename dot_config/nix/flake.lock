@@ -66,17 +66,17 @@
         "flake-utils": "flake-utils_3",
         "gen-luarc": "gen-luarc",
         "nixpkgs": "nixpkgs_4",
-        "obsidian-nvim": "obsidian-nvim",
+        "scribe-nvim": "scribe-nvim",
         "telescope-emoji": "telescope-emoji",
         "telescope-glyph": "telescope-glyph",
         "toggletasks": "toggletasks"
       },
       "locked": {
-        "lastModified": 1714413803,
-        "narHash": "sha256-nsLatKuEJWFjY5282ZM+A/32Yw8MzE/ThiwDnabqdJE=",
+        "lastModified": 1714608219,
+        "narHash": "sha256-UskrbAAIQyFJyWIHY66Ag5jZDwrTkbJNkwOsNux3RTk=",
         "owner": "dom1153",
         "repo": "nvim-flake",
-        "rev": "700b79b13be9c3aca6b81acdb73df49a80b8f815",
+        "rev": "0c9b261c8185ab0e9eb7aeac0ec0d726988c36bd",
         "type": "github"
       },
       "original": {
@@ -350,11 +350,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1714377222,
-        "narHash": "sha256-UsDsjWCKlWn8vbXi8Zza9Hkq3xyk8fpvFNo2VM5S74E=",
+        "lastModified": 1714515075,
+        "narHash": "sha256-azMK7aWH0eUc3IqU4Fg5rwZdB9WZBvimOGG3piqvtsY=",
         "owner": "nix-community",
         "repo": "home-manager",
-        "rev": "2af7c78b7bb9cf18406a193eba13ef9f99388f49",
+        "rev": "6d3b6dc9222c12b951169becdf4b0592ee9576ef",
         "type": "github"
       },
       "original": {
@@ -407,11 +407,11 @@
     },
     "nixos-hardware": {
       "locked": {
-        "lastModified": 1714201532,
-        "narHash": "sha256-nk0W4rH7xYdDeS7k1SqqNtBaNrcgIBYNmOVc8P2puEY=",
+        "lastModified": 1714465198,
+        "narHash": "sha256-ySkEJvS0gPz2UhXm0H3P181T8fUxvDVcoUyGn0Kc5AI=",
         "owner": "NixOS",
         "repo": "nixos-hardware",
-        "rev": "53db5e1070d07e750030bf65f1b9963df8f0c678",
+        "rev": "68d680c1b7c0e67a9b2144d6776583ee83664ef4",
         "type": "github"
       },
       "original": {
@@ -583,18 +583,6 @@
         "type": "github"
       }
     },
-    "obsidian-nvim": {
-      "flake": false,
-      "locked": {
-        "narHash": "sha256-jX2B9E1qcUvxIVNIYC06DRZ+mWwARq7V9L5lu/5WeVo=",
-        "type": "file",
-        "url": "https://github.com/epwalsh/obsidian.nvim"
-      },
-      "original": {
-        "type": "file",
-        "url": "https://github.com/epwalsh/obsidian.nvim"
-      }
-    },
     "pre-commit-hooks": {
       "inputs": {
         "flake-compat": "flake-compat_2",
@@ -636,6 +624,22 @@
         "nixos-wsl": "nixos-wsl",
         "nixpkgs": "nixpkgs_5",
         "vscode-server": "vscode-server"
+      }
+    },
+    "scribe-nvim": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1675302532,
+        "narHash": "sha256-d8ne1XkaFlWJG4zNf7PO5C4OYv5ODCtnR+NzyLCBqvM=",
+        "owner": "Ostralyan",
+        "repo": "scribe.nvim",
+        "rev": "e1c95d6c86c88a199f8c94e7a2a835db2eaf28ea",
+        "type": "github"
+      },
+      "original": {
+        "owner": "Ostralyan",
+        "repo": "scribe.nvim",
+        "type": "github"
       }
     },
     "systems": {

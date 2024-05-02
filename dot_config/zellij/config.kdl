@@ -3,7 +3,6 @@ keybinds clear-defaults=true {
   // global keybinds (and lock mode)
   // consider hjkl, tab move in locked mode
   shared_except "locked" {
-    bind "Ctrl ," { SwitchToMode "Session"; }
     // activate locked mode
     bind "Ctrl g" { SwitchToMode "Locked"; }
     // pane
