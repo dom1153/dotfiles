@@ -6,15 +6,33 @@ local module = {}
 function module.apply_to_config(config)
   config.color_scheme = 'Catppuccin Mocha'
 
-  config.window_background_opacity = 0.95
-
   -- fallback will report errors if not found
   -- https://wezfurlong.org/wezterm/config/lua/wezterm/target_triple.html
   -- Luckily, should include a nerd font out of the box
   if hostname == 'stella-hoshii.local' then
-    config.font = wezterm.font('FiraCode Nerd Font Mono')
-    config.font_size = 12.0
+    local setFont = function(font)
+      config.font = font.font
+      config.font_size = font.font_size
+    end
+
+    -- cozette size will vary per os in vector form 🤷
+    -- https://www.sven.de/dpi/
+    -- 257.56 ppi ; 9.4pts on a 100dpi ; so 24.21 for a 257.56 screen
+    local cozette = { font = wezterm.font('CozetteVector'), font_size = 12.10 }
+
+    local FiraCode = { font = wezterm.font('FiraCode Nerd Font Mono'), font_size = 11.0 }
+
+    -- lower font takes precedence
+    setFont(cozette)
+    setFont(FiraCode)
+
+    -- You can specify your own fallback; that's useful if you've got a killer monospace font, but it doesn't have glyphs for the asian script that you sometimes work with:
+    -- config.font = wezterm.font_with_fallback {
+    --   'Fira Code',
+    --   'DengXian',
+    -- }
   end
+
   -- disable ligatures
   config.harfbuzz_features = { 'calt=0', 'clig=0', 'liga=0' }
 
@@ -25,6 +43,8 @@ function module.apply_to_config(config)
 
   -- titlebar
   config.window_decorations = 'RESIZE'
+
+  config.window_background_opacity = 0.95
 
   -- bell
   config.audible_bell = 'Disabled'
