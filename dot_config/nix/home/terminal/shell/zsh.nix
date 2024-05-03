@@ -1,8 +1,8 @@
 {pkgs, ...}: {
   programs.zsh = {
     enable = true;
-    # enableAutosuggestions = true;
-    autosuggestion.enable = true;
+    enableAutosuggestions = true;
+    # autosuggestion.enable = true;
     enableCompletion = false; ### disable for zsh-autocomplete
     initExtraFirst = ''
       source ~/.config/zsh/.zshrc

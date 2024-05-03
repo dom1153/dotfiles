@@ -2,19 +2,24 @@
   description = "Archoo NixOS Config";
 
   inputs = {
-    nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
-    home-manager.url = "github:nix-community/home-manager";
+    ### 23.11 ; lock version with a hash
+    nixpkgs.url = "github:NixOS/nixpkgs?rev=0638fe2715d998fa81d173aad264eb671ce2ebc1"; ### https://github.com/NixOS/nixpkgs/commit/0638fe2715d998fa81d173aad264eb671ce2ebc1
+    nixpkgs-unstable.url = "github:nixos/nixpkgs/nixos-unstable";
+    nixpkgs-stable.url = "github:nixos/nixpkgs/nixos-23.11";
+
+    home-manager.url = "github:nix-community/home-manager/release-23.11";
     home-manager.inputs.nixpkgs.follows = "nixpkgs";
-    nix-darwin.url = "github:LnL7/nix-darwin"; ### macos style nixos-rebuild
+    nix-darwin.url = "github:LnL7/nix-darwin"; ### macos support
     nix-darwin.inputs.nixpkgs.follows = "nixpkgs";
-    nixos-wsl.url = "github:nix-community/nixos-wsl"; ### wsl compatible nixos
+    nixos-wsl.url = "github:nix-community/nixos-wsl"; ### wsl nixos support
     nixos-wsl.inputs.nixpkgs.follows = "nixpkgs";
     vscode-server.url = "github:nix-community/nixos-vscode-server"; ### for WSL
     vscode-server.inputs.nixpkgs.follows = "nixpkgs";
     ags.url = "github:Aylur/ags"; ### Aylur's GTK Shell
-    ags.inputs.nixpkgs.follows = "nixpkgs";
+    ags.inputs.nixpkgs.follows = "nixpkgs-unstable";
 
     dom1153-nix-flake.url = "github:dom1153/nvim-flake";
+    dom1153-nix-flake.inputs.nixpkgs.follows = "nixpkgs";
 
     nixos-hardware.url = "github:NixOS/nixos-hardware/master";
   };
@@ -22,6 +27,8 @@
   outputs = {
     self,
     nixpkgs,
+    nixpkgs-unstable,
+    nixpkgs-stable,
     home-manager,
     nix-darwin,
     nixos-wsl,

@@ -1,16 +1,22 @@
 {
+  inputs,
   pkgs,
   lib,
   ...
 }: let
-  obsidian = lib.throwIf (lib.versionOlder "1.4.16" pkgs.obsidian.version) "Obsidian no longer requires EOL Electron" (
-    pkgs.obsidian.override {
-      electron = pkgs.electron_25.overrideAttrs (_: {
-        preFixup = "patchelf --add-needed ${pkgs.libglvnd}/lib/libEGL.so.1 $out/bin/electron"; # NixOS/nixpkgs#272912
-        meta.knownVulnerabilities = []; # NixOS/nixpkgs#273611
-      });
-    }
-  );
+  # obsidian = lib.throwIf (lib.versionOlder "1.4.16" pkgs.obsidian.version) "Obsidian no longer requires EOL Electron" (
+  #   pkgs.obsidian.override {
+  #     electron = pkgs.electron_25.overrideAttrs (_: {
+  #       preFixup = "patchelf --add-needed ${pkgs.libglvnd}/lib/libEGL.so.1 $out/bin/electron"; # NixOS/nixpkgs#272912
+  #       meta.knownVulnerabilities = []; # NixOS/nixpkgs#273611
+  #     });
+  #   }
+  # );
+  pkgsUnstable = import inputs.nixpkgs-unstable {
+    config.allowUnfree = true;
+  };
 in {
-  home.packages = [obsidian];
+  home.packages = [
+    pkgsUnstable.obsidian
+  ];
 }

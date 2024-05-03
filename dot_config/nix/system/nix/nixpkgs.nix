@@ -10,6 +10,7 @@
 
     overlays = [
       inputs.dom1153-nix-flake.overlays.default
+
       # (final: prev: {
       #   zsh-autocomplete = prev.zsh-autocomplete.overrideAttrs (oldAttrs: rec {
       #     ### grabbing stable 23.11 packages ; workaround for https://github.com/marlonrichert/zsh-autocomplete/issues/645
@@ -39,6 +40,18 @@
       #       maintainers = [maintainers.leona];
       #     };
       #   });
+      # })
+
+      # (final: prev: {
+      #   unstable = import inputs.nixpkgs-unstable {
+      #     config.allowUnfree = true;
+      #   };
+      # })
+      #
+      # (final: prev: {
+      #   stable = import inputs.nixpkgs-stable {
+      #     config.allowUnfree = true;
+      #   };
       # })
     ];
   };

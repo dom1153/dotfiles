@@ -2,7 +2,7 @@
   ### extra info should hopefully allow mac to connect too
   services.avahi = {
     enable = true;
-    nssmdns4 = true; ### old verions uses 'nssmdns'
+    nssmdns = true;
     openFirewall = true;
     publish = {
       enable = true;

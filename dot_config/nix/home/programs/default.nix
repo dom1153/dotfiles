@@ -1,4 +1,13 @@
-{pkgs, ...}: {
+{
+  inputs,
+  pkgs,
+  ...
+}: let
+  unstable = import inputs.nixpkgs-unstable {
+    system = "x86_64-linux";
+    config.allowUnfree = true;
+  };
+in {
   home.packages = with pkgs; [
     ### services
     eww
@@ -25,7 +34,17 @@
     discord
     microsoft-edge
     firefox
-    obsidian
+    unstable.obsidian
     osu-lazer-bin
   ];
+
+  # (with pkgs; [
+  #   # list of stable packages go here
+  # ])
+  #
+  # ++
+  #
+  # (with pkgs-unstable; [
+  #   # list of unstable packages go here
+  # ]);
 }

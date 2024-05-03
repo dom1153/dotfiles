@@ -24,7 +24,7 @@
     wl-clipboard
     networkmanagerapplet
     pavucontrol ### pulse audio volume adjust
-    overskride ### bluetooth gui, alternativly use bluetoothctl
+    #overskride ### bluetooth gui, alternativly use bluetoothctl
     blueberry ### another bluetooth, has a tray
     hyprshade ### night light
     nwg-bar ### power menu!
