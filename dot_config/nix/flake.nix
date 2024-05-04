@@ -2,12 +2,15 @@
   description = "Archoo NixOS Config";
 
   inputs = {
-    ### 23.11 ; lock version with a hash
-    nixpkgs.url = "github:NixOS/nixpkgs?rev=0638fe2715d998fa81d173aad264eb671ce2ebc1"; ### https://github.com/NixOS/nixpkgs/commit/0638fe2715d998fa81d173aad264eb671ce2ebc1
+    ### try unstable
+    nixpkgs.url = "github:NixOS/nixpkgs?rev=2726f127c15a4cc9810843b96cad73c7eb39e443";
+    ### 23.11 ; lock version with a hash; works ok but having issues with nvim-flake
+    # nixpkgs.url = "github:NixOS/nixpkgs?rev=0638fe2715d998fa81d173aad264eb671ce2ebc1"; ### https://github.com/NixOS/nixpkgs/commit/0638fe2715d998fa81d173aad264eb671ce2ebc1
     nixpkgs-unstable.url = "github:nixos/nixpkgs/nixos-unstable";
     nixpkgs-stable.url = "github:nixos/nixpkgs/nixos-23.11";
 
-    home-manager.url = "github:nix-community/home-manager/release-23.11";
+    #home-manager.url = "github:nix-community/home-manager/release-23.11";
+    home-manager.url = "github:nix-community/home-manager";
     home-manager.inputs.nixpkgs.follows = "nixpkgs";
     nix-darwin.url = "github:LnL7/nix-darwin"; ### macos support
     nix-darwin.inputs.nixpkgs.follows = "nixpkgs";
@@ -18,8 +21,10 @@
     ags.url = "github:Aylur/ags"; ### Aylur's GTK Shell
     ags.inputs.nixpkgs.follows = "nixpkgs-unstable";
 
-    dom1153-nix-flake.url = "github:dom1153/nvim-flake";
-    dom1153-nix-flake.inputs.nixpkgs.follows = "nixpkgs";
+    hyprland.url = "github:hyprwm/Hyprland";
+
+    dom1153-nvim-flake.url = "github:dom1153/nvim-flake";
+    # dom1153-nvim-flake.inputs.nixpkgs.follows = "nixpkgs-unstable";
 
     nixos-hardware.url = "github:NixOS/nixos-hardware/master";
   };

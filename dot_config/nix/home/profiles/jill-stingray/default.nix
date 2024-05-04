@@ -2,7 +2,12 @@
   inputs,
   pkgs,
   ...
-}: {
+}: let
+  unstable = import inputs.nixpkgs-unstable {
+    system = "x86_64-linux";
+    config.allowUnfree = true;
+  };
+in {
   imports = [
     ../../../home
 
@@ -46,7 +51,8 @@
       # krita
 
       ### gui apps
-      signal-desktop ### limited ot 5 devices
+      unstable.signal-desktop ### limited ot 5 devices
+      ### can't revert this due to sql db having issues
 
       ### cli tools and services
       thefuck
@@ -58,6 +64,7 @@
       ttyper
 
       nix-prefetch-github ### for the dumb nixos stuff
+      gnumake
 
       nvim-pkg # kickstar nvim package
     ];

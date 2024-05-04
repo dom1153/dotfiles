@@ -9,7 +9,7 @@
     ];
 
     overlays = [
-      inputs.dom1153-nix-flake.overlays.default
+      inputs.dom1153-nvim-flake.overlays.default
 
       # (final: prev: {
       #   zsh-autocomplete = prev.zsh-autocomplete.overrideAttrs (oldAttrs: rec {
@@ -42,12 +42,12 @@
       #   });
       # })
 
-      # (final: prev: {
-      #   unstable = import inputs.nixpkgs-unstable {
-      #     config.allowUnfree = true;
-      #   };
-      # })
-      #
+      (final: prev: {
+        unstable = import inputs.nixpkgs-unstable {
+          config.allowUnfree = true;
+        };
+      })
+
       # (final: prev: {
       #   stable = import inputs.nixpkgs-stable {
       #     config.allowUnfree = true;

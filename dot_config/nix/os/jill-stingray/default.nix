@@ -58,6 +58,7 @@
     ];
   };
 
+  ### TODO: change back to 3
   boot.loader.systemd-boot.configurationLimit = 3;
 
   programs.command-not-found.enable = false; # Not working without channel

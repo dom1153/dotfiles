@@ -1,4 +1,13 @@
-{pkgs, ...}: {
+{
+  inputs,
+  pkgs,
+  ...
+}: let
+  unstable = import inputs.nixpkgs-unstable {
+    system = "x86_64-linux";
+    config.allowUnfree = true;
+  };
+in {
   imports = [
     ./gnome-services.nix
     ./greetd.nix
@@ -9,6 +18,8 @@
 
   programs.hyprland = {
     enable = true;
+    # package = unstable.hyprland;
+    # package = inputs.hyprland.packages.${pkgs.system}.hyprland;
   };
 
   environment.systemPackages = with pkgs; [
