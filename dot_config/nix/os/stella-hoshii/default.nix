@@ -24,6 +24,28 @@
     home = "/Users/archoo";
   };
 
+  # Works via 'launchd' https://launchd.info/
+  # Startup files to go into ~/Library/LaunchAgents
+  environment.userLaunchAgents = {
+    # Calls 'open -n /Applications/Steam.app/ --args -silent'
+    steam = {
+      enable = true;
+      source = ./launchd/steam-silent.plist;
+      target = "com.valvesoftware.steam.plist";
+    };
+    ### yabai and skhd should be installed via 'brew install' (without 'brew service')
+    # yabai = {
+    #   enable = true;
+    #   source = ./launchd/yabai.plist;
+    #   target = "com.koekeishiya.yabai.plist";
+    # };
+    # skhd = {
+    #   enable = true;
+    #   source = ./launchd/skhd.plist;
+    #   target = "com.koekeishiya.skhd.plist";
+    # };
+  };
+
   # nixpkgs.config.allowUnfree = true;
 
   ### Auto upgrade nix package and the daemon service.

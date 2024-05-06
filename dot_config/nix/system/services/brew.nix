@@ -4,9 +4,14 @@
     enable = true;
     brews = [
       "watchman" ### nix edition does not include watchman-make ; python nix versions are broken as usual
-      "FelixKratz/formulae/borders" ### JankyBorders | https://github.com/FelixKratz/JankyBorders
+      ### JankyBorders | https://github.com/FelixKratz/JankyBorders
+      {
+        name = "FelixKratz/formulae/borders";
+        restart_service = "changed"; ### register launchd, restart service on version change
+      }
+      ### services *should be* installed automatically?
       "koekeishiya/formulae/yabai" ### tiling window manager
-      "koekeishiya/formulae/skhd" ###
+      "koekeishiya/formulae/skhd" ### global keybinds (and yabai)
     ];
     casks = [
       "affinity-designer"
