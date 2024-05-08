@@ -1,0 +1,4 @@
+% xserver, unix
+
+# requires xorg.xwininfo
+xwininfo -tree -root

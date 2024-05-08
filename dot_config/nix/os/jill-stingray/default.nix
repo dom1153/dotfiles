@@ -15,7 +15,7 @@
     ../../system/nix
 
     ../../system/programs/fonts.nix
-    ../../system/programs/hyprland
+    # ../../system/programs/hyprland
     ../../system/programs/steam.nix
     ../../system/programs/zsh.nix
     ../../system/programs/fish.nix
@@ -27,6 +27,7 @@
     # ../../system/services/gnome.nix
     # ../../system/services/kde-plasma.nix
     # ../../system/services/gdm.nix
+    ../../system/services/awesomewm.nix
     ../../system/services/home-manager.nix
     ../../system/services/kmscon.nix
     ../../system/services/openssh.nix
@@ -70,7 +71,7 @@
 
   services.xserver = {
     videoDrivers = ["amdgpu"];
-    displayManager.defaultSession = "hyprland";
+    # displayManager.defaultSession = "hyprland";
   };
 
   # https://nixos.wiki/wiki/FAQ/When_do_I_update_stateVersion

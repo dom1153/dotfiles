@@ -21,7 +21,7 @@
     ags.url = "github:Aylur/ags"; ### Aylur's GTK Shell
     ags.inputs.nixpkgs.follows = "nixpkgs-unstable";
 
-    hyprland.url = "github:hyprwm/Hyprland";
+    # hyprland.url = "github:hyprwm/Hyprland";
 
     dom1153-nvim-flake.url = "github:dom1153/nvim-flake";
     # dom1153-nvim-flake.inputs.nixpkgs.follows = "nixpkgs-unstable";
