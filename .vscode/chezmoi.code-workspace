@@ -13,10 +13,6 @@
 			"name": "nix"
 		},
 		{
-			"path": "../dot_config/nix/home/editors/nixvim",
-			"name": "nixvim"
-		},
-		{
 			"path": "../dot_config/waybar",
 			"name": "waybar"
 		},
@@ -59,10 +55,10 @@
 		{
 			"path": "../dot_config/chezmoi",
 			"name": "chezmoi"
-		},
+		}
 	],
 	"settings": {
-		"workbench.colorTheme": "Catppuccin Mocha",
+		"workbench.colorTheme": "Default Dark Modern",
 		"catppuccin.accentColor": "green",
 	}
 }

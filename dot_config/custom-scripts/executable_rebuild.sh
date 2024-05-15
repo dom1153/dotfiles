@@ -192,9 +192,9 @@ linux-*)
     if ${super}nixos-rebuild $nrcmd --flake . --option eval-cache false $addargs; then
       ### TODO: catch result as pipe correctly
       if [ "$nrcmd" = "boot" ]; then
-        if type "wslvar" >/dev/null 2>&1; then
-          cd /mnt/c/ && cmd.exe /c start "rebooting WSL" cmd /c "timeout 5 && wsl -d $WSL_DISTRO_NAME" && wsl.exe --terminate $WSL_DISTRO_NAME
-        elif [ "$force_reboot" ]; then
+        # if type "wslvar" >/dev/null 2>&1; then
+        #   cd /mnt/c/ && cmd.exe /c start "rebooting WSL" cmd /c "timeout 5 && wsl -d $WSL_DISTRO_NAME" && wsl.exe --terminate $WSL_DISTRO_NAME
+        if [ "$force_reboot" ]; then
           ${super}reboot
         elif prompt_yns "Would you like to reboot?"; then
           ${super}reboot

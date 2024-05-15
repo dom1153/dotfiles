@@ -7,18 +7,18 @@
     ../../system/core/locale.nix
     ../../system/core/users.nix
 
-    ../../system/hardware/bluetooth.nix
+    #../../system/hardware/bluetooth.nix
 
     ../../system/nix
 
     ../../system/programs/zsh.nix
     ../../system/programs/fish.nix
 
-    ../../system/services/avahi.nix
+    #../../system/services/avahi.nix
     ../../system/services/home-manager.nix
     ### We'll leave this here, but it seems can't ssh out of the box
-    ../../system/services/openssh.nix
-    ../../system/services/syncthing.nix
+    #../../system/services/openssh.nix
+    #../../system/services/syncthing.nix
   ];
 
   ### Builds home-manager with nixos-rebuild

@@ -9,6 +9,7 @@
     ./nixpkgs.nix
   ];
 
+  # https://discourse.nixos.org/t/nix-flakes-nix-store-source-no-such-file-or-directory/17836/6
   nix = {
     # This will add each flake input as a registry
     # To make nix3 commands consistent with your flake

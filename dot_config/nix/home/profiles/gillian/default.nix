@@ -6,19 +6,22 @@
   imports = [
     ../../../home
 
-    ../../programs/vim.nix
-    # ../../editors/vscode ### I don't think I need this. Should use wsl-server
+    ### No nix vscode installation required, uses vscode-server
 
-    ../../cli/programs
+    # ../../programs
 
-    ../../cli/shell/zsh.nix
-    ../../cli/shell/fish.nix
+    ../../terminal/programs/vim.nix
+    ../../terminal/programs
+
+    ../../terminal/shell/zsh.nix
+    ../../terminal/shell/fish.nix
   ];
 
   home = {
     homeDirectory = "/home/archoo";
 
     sessionVariables = {
+      EDITOR = "nvim";
     };
 
     packages = with pkgs; [
@@ -29,7 +32,7 @@
       ### cli tools and services
       trashy
 
-      inputs.archoo-nixvim.packages.${system}.default
+      nvim-pkg # kickstar nvim package
     ];
 
     # https://nixos.wiki/wiki/FAQ/When_do_I_update_stateVersion

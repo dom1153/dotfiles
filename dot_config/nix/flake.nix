@@ -39,7 +39,6 @@
     nixos-wsl,
     vscode-server,
     ags,
-    archoo-nixvim,
     nixos-hardware,
     ...
   } @ inputs: let

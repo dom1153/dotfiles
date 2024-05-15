@@ -6,15 +6,15 @@ local module = {}
 function module.apply_to_config(config)
   config.color_scheme = 'Catppuccin Mocha'
 
+  local setFont = function(font)
+    config.font = font.font
+    config.font_size = font.font_size
+  end
+
   -- fallback will report errors if not found
   -- https://wezfurlong.org/wezterm/config/lua/wezterm/target_triple.html
   -- Luckily, should include a nerd font out of the box
   if hostname == 'stella-hoshii.local' then
-    local setFont = function(font)
-      config.font = font.font
-      config.font_size = font.font_size
-    end
-
     -- cozette size will vary per os in vector form 🤷
     -- https://www.sven.de/dpi/
     -- 257.56 ppi ; 9.4pts on a 100dpi ; so 24.21 for a 257.56 screen
@@ -31,6 +31,9 @@ function module.apply_to_config(config)
     --   'Fira Code',
     --   'DengXian',
     -- }
+  elseif hostname == 'DomArtProW11' then
+    config.font = wezterm.font('JetBrains Mono')
+    config.font_size = 8.0
   end
 
   -- disable ligatures
