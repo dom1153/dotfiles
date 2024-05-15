@@ -27,7 +27,7 @@ powershell.exe Start-Process -Verb runas -FilePath wsl
 cd $(wslpath "$(wslvar USERPROFILE)") && cmd.exe
 
 # chezmoi update (wezterm ; windows)
-cd $(wslpath "$(wslvar USERPROFILE)") && cmd.exe /K "chezmoi update && exit"
+cd $(wslpath "$(wslvar USERPROFILE)") && cmd.exe /K "chezmoi update || exit"
 
 % wsl, setup
 # install chezmoi

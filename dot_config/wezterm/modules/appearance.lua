@@ -6,7 +6,7 @@ local module = {}
 function module.apply_to_config(config)
   config.color_scheme = 'Catppuccin Mocha'
 
-  local setFont = function(font)
+  local set_font = function(font)
     config.font = font.font
     config.font_size = font.font_size
   end
@@ -18,22 +18,20 @@ function module.apply_to_config(config)
     -- cozette size will vary per os in vector form 🤷
     -- https://www.sven.de/dpi/
     -- 257.56 ppi ; 9.4pts on a 100dpi ; so 24.21 for a 257.56 screen
-    local cozette = { font = wezterm.font('CozetteVector'), font_size = 12.10 }
-
-    local FiraCode = { font = wezterm.font('FiraCode Nerd Font Mono'), font_size = 11.0 }
-
     -- lower font takes precedence
-    setFont(cozette)
-    setFont(FiraCode)
+    set_font({ font = wezterm.font('CozetteVector'), font_size = 12.10 })
+    set_font({ font = wezterm.font('FiraCode Nerd Font Mono'), font_size = 11.0 })
 
     -- You can specify your own fallback; that's useful if you've got a killer monospace font, but it doesn't have glyphs for the asian script that you sometimes work with:
     -- config.font = wezterm.font_with_fallback {
     --   'Fira Code',
     --   'DengXian',
     -- }
+
+    -- titlebar
+    config.window_decorations = 'RESIZE'
   elseif hostname == 'DomArtProW11' then
-    config.font = wezterm.font('JetBrains Mono')
-    config.font_size = 8.0
+    set_font({ font = wezterm.font('JetBrains Mono'), font_size = 11.0 })
   end
 
   -- disable ligatures
@@ -43,9 +41,6 @@ function module.apply_to_config(config)
   config.use_fancy_tab_bar = false
   config.hide_tab_bar_if_only_one_tab = true
   config.tab_max_width = 999
-
-  -- titlebar
-  config.window_decorations = 'RESIZE'
 
   config.window_background_opacity = 0.95
 
