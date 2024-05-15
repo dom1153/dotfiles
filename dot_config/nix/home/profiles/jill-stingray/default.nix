@@ -25,6 +25,10 @@ in {
     ../../terminal/shell/nushell.nix
 
     ../../terminal/programs/vim.nix
+
+    ### awesomewm
+    ../../programs/wm/qt.nix
+    ../../programs/wm/gtk.nix
   ];
 
   home = {
@@ -65,6 +69,8 @@ in {
 
       nix-prefetch-github ### for the dumb nixos stuff
       gnumake
+
+      #barrier ### synergy
 
       nvim-pkg # kickstar nvim package
     ];

@@ -52,7 +52,6 @@ menubar.utils.terminal = terminal -- Set the terminal for applications that requ
 -- Keyboard map indicator and switcher
 mykeyboardlayout = awful.widget.keyboardlayout()
 
--- {{{ Wibar
 -- Create a textclock widget
 mytextclock = wibox.widget.textclock()
 
@@ -107,3 +106,56 @@ function set_wallpaper(s)
     gears.wallpaper.maximized(wallpaper, s, false)
   end
 end
+
+-- 一 二 三 四 五 六 七 八 九 十
+
+-- monitor 2
+tall_main = awful.tag.add('Tall', {
+  layout = awful.layout.suit.tile.top,
+  gap_single_client = true,
+  -- gap = 15,
+  screen = 2,
+  selected = true,
+})
+awful.tag.add('Foo', {
+  layout = awful.layout.suit.tile.top,
+  gap_single_client = true,
+  -- gap = 15,
+  screen = 2,
+})
+awful.tag.add('Wall', {
+  layout = awful.layout.suit.tile.top,
+  gap_single_client = true,
+  -- gap = 15,
+  screen = 2,
+})
+
+-- Main
+tag_main = awful.tag.add('一', {
+  layout = awful.layout.suit.tile,
+  gap_single_client = true,
+  -- gap = 10,
+  screen = 1,
+  selected = true,
+})
+-- Game
+tag_second = awful.tag.add('二', {
+  -- layout = awful.layout.suit.max.fullscreen,
+  layout = awful.layout.suit.tile,
+  -- gap = 0,
+  screen = 1,
+})
+tag_third = awful.tag.add('三', {
+  layout = awful.layout.suit.tile,
+  screen = 1,
+})
+tag_fourth = awful.tag.add('四', {
+  layout = awful.layout.suit.tile,
+  screen = 1,
+})
+tag_fifth = awful.tag.add('五', {
+  layout = awful.layout.suit.tile,
+  gap_single_client = true,
+  -- gap = 10,
+  screen = 1,
+})

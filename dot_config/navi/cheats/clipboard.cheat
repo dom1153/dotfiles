@@ -8,3 +8,5 @@ pwd | wl-copy -n
 # MacOS copy $PWD
 pwd | tr -d '\n' | pbcopy
 
+# PWD copy xserver
+pwd | tr -d '\n' | xclip -sel clip

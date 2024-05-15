@@ -5,38 +5,8 @@ local beautiful = require('beautiful')
 local naughty = require('naughty')
 local menubar = require('menubar')
 
-awful.tag.add('Main', {
-  layout = awful.layout.suit.tile,
-  gap_single_client = true,
-  -- gap = 10,
-  screen = 1,
-  selected = true,
-})
-
--- todo: add rules to fullscreen steam related apps
-awful.tag.add('Game', {
-  -- layout = awful.layout.suit.max.fullscreen,
-  layout = awful.layout.suit.tile,
-  -- gap = 0,
-  screen = 1,
-})
-
-awful.tag.add('3', {
-  layout = awful.layout.suit.tile,
-  screen = 1,
-})
-awful.tag.add('4', {
-  layout = awful.layout.suit.tile,
-  screen = 1,
-})
-
-awful.tag.add('Foo', {
-  layout = awful.layout.suit.tile.bottom,
-  gap_single_client = true,
-  -- gap = 15,
-  screen = 2,
-  selected = true,
-})
+local xresources = require('beautiful.xresources')
+local dpi = xresources.apply_dpi
 
 awful.screen.connect_for_each_screen(function(s)
   -- Wallpaper
@@ -99,8 +69,22 @@ awful.screen.connect_for_each_screen(function(s)
     },
   })
 
+  -- TODO: try the git version for margins
+  -- https://www.reddit.com/r/awesomewm/comments/ydhaiv/how_to_install_the_awesomewmgit_in_nixos/
+
   -- Create the wibox
-  s.mywibox = awful.wibar({ position = 'top', screen = s })
+  -- rotations do exist https://awesomewm.org/apidoc/popups_and_bars/awful.wibar.html
+  s.mywibox = awful.wibar({
+    height = dpi(23),
+    margins = 50,
+    position = 'bottom',
+    screen = s,
+  })
+
+  -- if 2 == s.index then
+  -- else
+  -- s.mywibox = awful.wibar({ position = 'top', screen = s })
+  -- end
 
   -- Add widgets to the wibox
   s.mywibox:setup({

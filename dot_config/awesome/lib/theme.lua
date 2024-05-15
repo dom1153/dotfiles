@@ -16,7 +16,7 @@ local theme = {}
 local accent = catpp.green.hex
 
 -- lgi.Pango.FontDescription
-local theme_font = 'dina 8'
+local theme_font = 'dina 10'
 local theme_font_big = 'dina 10'
 theme.font = theme_font
 
@@ -44,14 +44,14 @@ theme.border_marked = catpp.peach.hex
 -- overriding the default one when
 -- defined, the sets are:
 local taglist_bg_color = catpp.surface0.hex
-theme.taglist_bg_focus = taglist_bg_color
+theme.taglist_bg_focus = catpp.text.hex
 theme.taglist_bg_urgent = taglist_bg_color
 theme.taglist_bg_occupied = taglist_bg_color
 theme.taglist_bg_empty = taglist_bg_color
 theme.taglist_bg_volatile = taglist_bg_color
 
 local taglist_fg_color = catpp.text.hex
-theme.taglist_fg_focus = accent
+theme.taglist_fg_focus = catpp.base.hex
 theme.taglist_fg_urgent = taglist_fg_color
 theme.taglist_fg_occupied = taglist_fg_color
 theme.taglist_fg_empty = taglist_fg_color
@@ -83,12 +83,16 @@ theme.taglist_squares_unsel = theme_assets.taglist_squares_unsel(taglist_square_
 -- notification_[width|height|margin]
 -- notification_[border_color|border_width|shape|opacity]
 
--- Variables set for theming the menu:
+-- Variables set for theming the 20nu:
 -- menu_[bg|fg]_[normal|focus]
 -- menu_[border_color|border_width]
 theme.menu_submenu_icon = themes_path .. 'default/submenu.png'
-theme.menu_height = dpi(15)
+theme.menu_height = dpi(17)
 theme.menu_width = dpi(150)
+theme.menu_font = 'dina 8'
+
+-- theme.wibar_border_width = dpi(20)
+-- theme.wibar_border_color = ''
 
 -- You can add as many variables as
 -- you wish and access them by using

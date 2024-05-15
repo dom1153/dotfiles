@@ -29,5 +29,11 @@
 
   environment.systemPackages = with pkgs; [
     xorg.xwininfo
+    pavucontrol
+    pcmanfm
+    lxqt.pcmanfm-qt
+    libsForQt5.dolphin
+    blueberry ### another bluetooth, has a tray
+    pulseaudio ### pipewire is audio, but pactl is still useful (default audio)
   ];
 }

@@ -98,7 +98,9 @@ echo -e "a\n*\nq\n" | git add -i >/dev/null 2>&1
 
 ### update flakes (todo: upgrade nix so I can update specific packages)
 myecho "==> Nix flake update"
-nix flake update
+# https://discourse.nixos.org/t/update-single-flake-input/13056
+# nix flake update
+nix flake lock --update-input dom1153-nvim-flake
 myecho "  ==> Done"
 
 ### update chezmoi (apply)

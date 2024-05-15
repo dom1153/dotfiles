@@ -20,6 +20,8 @@
     ../../system/programs/zsh.nix
     ../../system/programs/fish.nix
 
+    ../../system/services/awesomewm.nix
+
     ../../system/services/avahi.nix
     ../../system/services/docker.nix
     ../../system/services/flatpak.nix
@@ -27,7 +29,6 @@
     # ../../system/services/gnome.nix
     # ../../system/services/kde-plasma.nix
     # ../../system/services/gdm.nix
-    ../../system/services/awesomewm.nix
     ../../system/services/home-manager.nix
     ../../system/services/kmscon.nix
     ../../system/services/openssh.nix
@@ -62,7 +63,9 @@
   ### TODO: change back to 3
   boot.loader.systemd-boot.configurationLimit = 3;
 
-  programs.command-not-found.enable = false; # Not working without channel
+  programs.command-not-found.enable = false; # Not working without channel (only shows up with fish)
+
+  programs.noisetorch.enable = true;
 
   services.syncthing = {
     dataDir = "/home/archoo/Documents"; # Default folder for new synced folders
