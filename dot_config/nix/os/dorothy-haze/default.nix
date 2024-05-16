@@ -24,6 +24,15 @@
     home = "/Users/archoo";
   };
 
+  environment.userLaunchAgents = {
+    # Calls 'open -n /Applications/Steam.app/ --args -silent'
+    # steam = {
+    #   enable = true;
+    #   source = ./launchd/steam-silent.plist;
+    #   target = "com.valvesoftware.steam.plist";
+    # };
+  };
+
   # nixpkgs.config.allowUnfree = true;
 
   ### Auto upgrade nix package and the daemon service.
