@@ -2,3 +2,9 @@
 ### https://stackoverflow.com/questions/7446640/adding-only-untracked-files
 # add git untracked files only
 echo -e "a\n*\nq\n" | git add -i >/dev/null 2>&1
+
+# https://stackoverflow.com/questions/11706215/how-can-i-fix-the-git-error-object-file-is-empty
+# fix 'git error object empty'
+find .git/objects/ -type f -empty | xargs rm
+git fetch -p
+git fsck --full

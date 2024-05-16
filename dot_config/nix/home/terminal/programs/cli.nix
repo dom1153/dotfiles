@@ -61,5 +61,6 @@
     ncdu
     neofetch
     zellij
+    ### browsh ### firefox, in the terminal
   ];
 }

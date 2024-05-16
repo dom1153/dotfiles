@@ -21,6 +21,7 @@
       "arc"
       "bazecor"
       "betterdisplay"
+      "barrier"
       "discord"
       "docker"
       "drawpile"

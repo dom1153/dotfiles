@@ -27,6 +27,9 @@ function module.apply_to_config(config)
     --   'Fira Code',
     --   'DengXian',
     -- }
+
+    -- titlebar
+    config.window_decorations = 'RESIZE'
   elseif hostname == 'DomArtProW11' then
     set_font({ font = wezterm.font('JetBrains Mono'), font_size = 11.0 })
   else
