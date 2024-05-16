@@ -2,3 +2,5 @@
 ; branching
 ; basics (edit, remove, stash, commit, push, diff, merge)
 
+# login to git via github
+gh auth login
