@@ -77,7 +77,7 @@ awful.rules.rules = {
       },
     },
     properties = {
-      screen = 2,
+      -- screen = 2,
       tag = tall_main,
       fullscreen = false,
       floating = false,
@@ -142,6 +142,7 @@ awful.rules.rules = {
   },
 
   -- no title bars
+  -- gamescope -w 2560 -h 1440 -W 2560 -H 1440 -- %command%
   {
     rule_any = {
       class = { '.gamescope-wrapped' }, -- steam_app_553850
@@ -158,6 +159,7 @@ awful.rules.rules = {
       class = { 'steam_app_553850' }, -- steam_app_553850
     },
     properties = {
+      float = false, -- float is buggy.
       screen = 1,
       fullscreen = true,
       maximized = true,

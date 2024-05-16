@@ -52,11 +52,15 @@
     hostName = "jill-stingray";
     ### LocalSend:
     ###   TCP 53317
+    ### Synergy:
+    ###   24800?
     # firewall.enable = false;
     firewall.allowedTCPPorts = [
       53317
+      24800
     ];
     firewall.allowedUDPPorts = [
+      24800
     ];
   };
 
@@ -67,6 +71,10 @@
 
   programs.noisetorch.enable = true;
 
+  ### Home manager: The name ca.desrt.dconf was not provided by any .service files
+  ### https://github.com/nix-community/home-manager/issues/3113
+  programs.dconf.enable = true;
+
   services.syncthing = {
     dataDir = "/home/archoo/Documents"; # Default folder for new synced folders
     configDir = "/home/archoo/Documents/.config/syncthing"; # Folder for Syncthing's settings and keys
@@ -76,6 +84,10 @@
     videoDrivers = ["amdgpu"];
     # displayManager.defaultSession = "hyprland";
   };
+
+  systemd.extraConfig = ''
+    DefaultTimeoutStopSec=3s
+  '';
 
   # https://nixos.wiki/wiki/FAQ/When_do_I_update_stateVersion
   system.stateVersion = "23.11";
