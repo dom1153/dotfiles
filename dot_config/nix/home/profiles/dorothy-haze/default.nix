@@ -6,7 +6,7 @@
   imports = [
     ../../../home
 
-    ../../editors/vim
+    ../../terminal/programs/vim.nix
 
     ../../terminal/programs
 
@@ -14,10 +14,13 @@
     ../../terminal/shell/fish.nix
   ];
 
+  xdg.enable = true; ### try and get lazygit to use xdg instead of app support
+
   home = {
     homeDirectory = "/Users/archoo"; ### optional since defined in os folder
 
     sessionVariables = {
+      EDITOR = "nvim";
     };
 
     packages = with pkgs; [
@@ -27,7 +30,7 @@
 
       darwin.trash
 
-      inputs.archoo-nixvim.packages.${system}.default
+      nvim-pkg # kickstar nvim package
     ];
 
     # https://nixos.wiki/wiki/FAQ/When_do_I_update_stateVersion
