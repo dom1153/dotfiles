@@ -1,0 +1,13 @@
+% spicetify
+
+# verify config
+spicetify backup apply enable-devtools
+
+# (nix) verify config
+spicetify-cli backup apply enable-devtools
+
+# load config (ctrl/command-shift-r to reload)
+spicetify update
+
+# (nix) load config (ctrl/command-shift-r to reload)
+spicetify-cli update

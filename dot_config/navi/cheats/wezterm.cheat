@@ -1,0 +1,4 @@
+% wezterm
+
+# ssh to server (with zellij)
+wezterm cli spawn -- mosh server zellij

@@ -28,8 +28,9 @@
   # Startup files to go into ~/Library/LaunchAgents
   environment.userLaunchAgents = {
     # Calls 'open -n /Applications/Steam.app/ --args -silent'
+    # May not work as I want because on boot wifi is not always availble on startup (e.g. coffee shops)
     steam = {
-      enable = true;
+      enable = false;
       source = ./launchd/steam-silent.plist;
       target = "com.valvesoftware.steam.plist";
     };

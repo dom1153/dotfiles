@@ -12,6 +12,7 @@
       ### services *should be* installed automatically?
       "koekeishiya/formulae/yabai" ### tiling window manager
       "koekeishiya/formulae/skhd" ### global keybinds (and yabai)
+      "spicetify-cli" ### going brew since this will stay up to date
     ];
     casks = [
       "affinity-designer"
