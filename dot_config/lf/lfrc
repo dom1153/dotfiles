@@ -109,6 +109,7 @@ cmd on-redraw %{{
     fi
 }}
 
+### toggle preview pane
 cmd toggle_preview %{{
     if [ "$lf_preview" = "true" ]; then
         lf -remote "send $id :set preview false; set ratios 1:5"
@@ -117,7 +118,6 @@ cmd toggle_preview %{{
     fi
 }}
 map zp toggle_preview
-
 
 set cursorpreviewfmt "\033[4m"
 
@@ -144,6 +144,11 @@ set cursorpreviewfmt "\033[4m"
 # map p :paste; clear
 
 ### ^^^ need to test this more, didn't work to copy yabairc idk
+
+### VVV works with lf standalone, but not ctrl-f version...
+### alternatively (macos) ; just press right arrow and the preview will work
+set sixel true
+set previewer ~/.config/lf/previewer.sh
 
 
 #
@@ -188,3 +193,4 @@ cmd bulk-rename ${{
 cmd on-select &{{
     lf -remote "send $id set statfmt \"$(exa -ld --color=always "$f")\""
 }}
+

@@ -1,7 +1,7 @@
 # generate config file
 spicetify
 
-# verify config
+# spicetify init
 spicetify backup apply enable-devtools
 
 # apply config
@@ -9,3 +9,5 @@ spicetify update
 
 # reload in spotify app
 Ctrl Shift R / Command Shift R
+
+### if all else fails, reinstall???

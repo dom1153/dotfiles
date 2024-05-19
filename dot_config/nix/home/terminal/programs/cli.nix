@@ -26,6 +26,7 @@
     speedtest-cli
     wget
     ### fast-cli ### does not work on darwin
+    chafa ### sixel (lf)
 
     ### funni (keep these)
     lolcat
