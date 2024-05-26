@@ -28,8 +28,8 @@ in {
     ../../terminal/programs/vim.nix
 
     ### awesomewm
-    ../../programs/wm/qt.nix
-    ../../programs/wm/gtk.nix
+    # ../../programs/wm/qt.nix
+    # ../../programs/wm/gtk.nix
   ];
 
   home = {
