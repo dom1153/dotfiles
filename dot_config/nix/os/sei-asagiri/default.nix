@@ -16,7 +16,8 @@
     ../../system/nix
 
     ../../system/programs/fonts.nix
-    ../../system/programs/hyprland
+    # ../../system/programs/hyprland
+    ../../system/services/kde-plasma.nix
     ../../system/programs/steam.nix
     ../../system/programs/zsh.nix
     ../../system/programs/fish.nix
@@ -26,8 +27,8 @@
     ../../system/services/home-manager.nix
     ../../system/services/kmscon.nix
     ../../system/services/openssh.nix
-    # ../../system/services/pulseaudio.nix
-    ../../system/services/pipewire.nix
+    ../../system/services/pulseaudio.nix
+    # ../../system/services/pipewire.nix
     ../../system/services/syncthing.nix
     ../../system/services/tailscale.nix
     ../../system/services/udev.nix
