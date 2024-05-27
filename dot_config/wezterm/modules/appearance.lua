@@ -22,16 +22,20 @@ function module.apply_to_config(config)
     set_font({ font = wezterm.font('CozetteVector'), font_size = 12.10 })
     set_font({ font = wezterm.font('FiraCode Nerd Font Mono'), font_size = 11.0 })
 
-    -- You can specify your own fallback; that's useful if you've got a killer monospace font, but it doesn't have glyphs for the asian script that you sometimes work with:
-    -- config.font = wezterm.font_with_fallback {
-    --   'Fira Code',
-    --   'DengXian',
-    -- }
-
     -- titlebar
     config.window_decorations = 'RESIZE'
   elseif hostname == 'DomArtProW11' then
     set_font({ font = wezterm.font('JetBrains Mono'), font_size = 11.0 })
+  elseif hostname == 'jill-stingray' or hostname == 'sei-asagiri' then
+    -- hyprland isn't working with wezterm wayland, force x11
+    config.enable_wayland = false
+
+    -- You can specify your own fallback; wezterm occasionally warns of missing glyphs. Hopefully this fixes this
+    config.font = wezterm.font_with_fallback({
+      'dina',
+      'Fira Code',
+    })
+    config.font_size = 10.0
   else
     -- titlebar
     config.window_decorations = 'RESIZE'
@@ -52,13 +56,6 @@ function module.apply_to_config(config)
 
   -- behavior
   config.window_close_confirmation = 'NeverPrompt'
-
-  if hostname == 'jill-stingray' or hostname == 'sei-asagiri' then
-    -- hyprland isn't working with wezterm wayland, x11 will do, if I try it
-    config.enable_wayland = false
-    config.font = wezterm.font('dina')
-    config.font_size = 10.0
-  end
 end
 
 return module

@@ -20,14 +20,14 @@
     ../../system/programs/zsh.nix
     ../../system/programs/fish.nix
 
-    ../../system/services/awesomewm.nix
+    # ../../system/services/awesomewm.nix
 
     ../../system/services/avahi.nix
     ../../system/services/docker.nix
     ../../system/services/flatpak.nix
     # ../../system/services/doas.nix
     # ../../system/services/gnome.nix
-    # ../../system/services/kde-plasma.nix
+    ../../system/services/kde-plasma.nix
     # ../../system/services/gdm.nix
     ../../system/services/home-manager.nix
     ../../system/services/kmscon.nix

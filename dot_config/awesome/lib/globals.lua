@@ -109,27 +109,6 @@ end
 
 -- 一 二 三 四 五 六 七 八 九 十
 
--- monitor 2
-tall_main = awful.tag.add('Tall', {
-  layout = awful.layout.suit.tile.top,
-  gap_single_client = true,
-  -- gap = 15,
-  screen = 2,
-  selected = true,
-})
-awful.tag.add('Foo', {
-  layout = awful.layout.suit.tile.top,
-  gap_single_client = true,
-  -- gap = 15,
-  screen = 2,
-})
-awful.tag.add('Wall', {
-  layout = awful.layout.suit.tile.top,
-  gap_single_client = true,
-  -- gap = 15,
-  screen = 2,
-})
-
 -- Main
 tag_main = awful.tag.add('一', {
   layout = awful.layout.suit.tile,
@@ -159,3 +138,27 @@ tag_fifth = awful.tag.add('五', {
   -- gap = 10,
   screen = 1,
 })
+
+-- tall screen
+if screen:count() >= 2 then
+  -- monitor 2
+  tall_main = awful.tag.add('Tall', {
+    layout = awful.layout.suit.tile.top,
+    gap_single_client = true,
+    -- gap = 15,
+    screen = 2,
+    selected = true,
+  })
+  awful.tag.add('Foo', {
+    layout = awful.layout.suit.tile.top,
+    gap_single_client = true,
+    -- gap = 15,
+    screen = 2,
+  })
+  awful.tag.add('Wall', {
+    layout = awful.layout.suit.tile.top,
+    gap_single_client = true,
+    -- gap = 15,
+    screen = 2,
+  })
+end

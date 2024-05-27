@@ -11,6 +11,7 @@ run "wezterm"
 run "signal-desktop" --start-in-tray
 ### normal 'steam' run isn't working???
 run "steam" -silent
+# run "steam"
 run "obsidian"
 run "firefox"
 

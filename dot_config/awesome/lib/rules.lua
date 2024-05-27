@@ -67,21 +67,62 @@ awful.rules.rules = {
   },
 
   -- obsidian, firefox -> second monitor
+  -- screen = 2,
+  -- https://www.reddit.com/r/awesomewm/comments/73ms0f/tag_rule_conditioned_on_the_number_of_screens/
   {
     rule_any = {
       class = {
         'obsidian',
-        'discord',
-        'Discord',
+      },
+    },
+    properties = {
+      screen = function()
+        return screen:count() >= 2 and screen[2] or screen[1]
+      end,
+      tag = function()
+        return screen:count() >= 2 and tall_main or tag_third
+      end,
+      fullscreen = false,
+      floating = false,
+      maximized = false,
+    },
+  },
+  {
+    rule_any = {
+      class = {
         'firefox',
       },
     },
     properties = {
-      -- screen = 2,
-      tag = tall_main,
+      screen = function()
+        return screen:count() >= 2 and screen[2] or screen[1]
+      end,
+      tag = function()
+        return screen:count() >= 2 and tall_main or tag_fourth
+      end,
       fullscreen = false,
       floating = false,
       maximized = false,
+    },
+  },
+  {
+    rule_any = {
+      class = {
+        'discord',
+        'Discord',
+      },
+    },
+    properties = {
+      screen = function()
+        return screen:count() >= 2 and screen[2] or screen[1]
+      end,
+      tag = function()
+        return screen:count() >= 2 and tall_main or tag_fifth
+      end,
+      fullscreen = false,
+      floating = false,
+      maximized = false,
+      -- placement = awful.placement.centered(client.focus), -- only matters in floating
     },
   },
 
@@ -135,9 +176,10 @@ awful.rules.rules = {
       },
     },
     properties = {
-      float = false, -- float is buggy.
+      float = true,
       screen = 1,
       tag = tag_second,
+      placement = awful.placement.centered(client.focus), -- only matters in floating
     },
   },
 
@@ -149,6 +191,8 @@ awful.rules.rules = {
     },
     properties = {
       titlebars_enabled = false,
+      fullscreen = true,
+      tag = tag_second,
     },
   },
 
@@ -159,7 +203,7 @@ awful.rules.rules = {
       class = { 'steam_app_553850' }, -- steam_app_553850
     },
     properties = {
-      float = false, -- float is buggy.
+      float = true, -- float is buggy?
       screen = 1,
       fullscreen = true,
       maximized = true,
