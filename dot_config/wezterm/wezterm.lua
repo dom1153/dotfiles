@@ -2,7 +2,7 @@
 local wezterm = require('wezterm')
 
 local appearance = require('modules/appearance')
-local wsl = require('modules/wsl')
+local features = require('modules/features')
 
 -- This will hold the configuration.
 local config = {}
@@ -14,6 +14,6 @@ if wezterm.config_builder then
 end
 
 appearance.apply_to_config(config)
-wsl.apply_to_config(config)
+features.apply_to_config(config)
 
 return config
