@@ -7,7 +7,8 @@
   # static web server (sws)
   services.static-web-server = {
     enable = true;
-    ### consider using /srv/sws, but unsure how to do symlinks
+    ### consider using /srv/sws , but shouldn't really matter
+    ### will not generate any files, ore even this folder. just serves
     root = "/run/media/archoo/super-4T/sws";
 
     # listen = "[::]:443"; ### if we want to change port
@@ -16,6 +17,7 @@
       general = {
         ### journalctl -u static-web-server.service --since="30 min ago"
         log-level = "trace";
+        directory-listing = true;
         #   http2 = true;
         #   # Edit the domain name in the file to match your real domain name as configured in the ACME settings
         #   http2-tls-cert = "/var/lib/acme/your-domain.example/fullchain.pem";
