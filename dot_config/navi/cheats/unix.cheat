@@ -2,3 +2,6 @@
 
 # diff directory / folders
 diff -qr
+
+# get full home manager log
+systemctl -l status home-manager-archoo.service --lines 200

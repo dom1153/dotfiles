@@ -3,6 +3,7 @@
     inputs.home-manager.nixosModules.default
   ];
 
+  ### systemctl -l status home-manager-archoo.service --lines 200
   home-manager = {
     ### extra specialArgs passed to Home Manager
     ### for reference, the config argument in nixos can be accessed
