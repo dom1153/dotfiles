@@ -4,3 +4,6 @@
 
 # login to git via github
 gh auth login
+
+# git clone with special format
+echo <url> | sed -E 's/https?:\/\/\w+\.\w+\/(\w+)\/(\w+)/\2_\1/g'
