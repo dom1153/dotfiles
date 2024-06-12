@@ -23,6 +23,9 @@ $character"""
 
 [shell]
 unknown_indicator = 'unknown shell'
+bash_indicator = '🅱️ sh'
+fish_indicator = 'fish'
+zsh_indicator = 'zsh '
 style = 'cyan bold'
 disabled = false
 
