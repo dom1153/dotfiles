@@ -8,6 +8,7 @@
     options = [
       "nofail"
       "rw"
+      "users"
     ];
   };
 }

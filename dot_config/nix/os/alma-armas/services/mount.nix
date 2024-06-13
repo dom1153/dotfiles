@@ -5,6 +5,7 @@
     fsType = "ntfs";
     options = [
       "nofail"
+      "users"
     ];
   };
 
@@ -13,6 +14,7 @@
     fsType = "ntfs";
     options = [
       "nofail"
+      "users"
     ];
   };
 
@@ -21,6 +23,7 @@
     fsType = "ntfs";
     options = [
       "nofail"
+      "users"
     ];
   };
 }
