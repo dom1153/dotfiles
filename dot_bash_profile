@@ -1,0 +1,5 @@
+### https://stackoverflow.com/questions/415403/whats-the-difference-between-bashrc-bash-profile-and-environment
+### bashrc loads only with _interactive_ and _NON-login_ shells
+### so let's source it in profile (interactive)
+[[ -r ~/.bashrc ]] && . ~/.bashrc
+

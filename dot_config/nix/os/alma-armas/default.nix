@@ -24,8 +24,10 @@
 
     ./services/mount.nix
     ./services/networking.nix
+    ./services/nextcloud.nix
     ./services/nfs.nix
     ./services/samba.nix
+    ./services/sws.nix
     ./services/syncthing.nix
 
     ./hardware-configuration.nix

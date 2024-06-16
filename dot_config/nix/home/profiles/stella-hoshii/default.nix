@@ -27,6 +27,8 @@
       darwin.trash
 
       nvim-pkg # kickstar nvim package
+
+      gnused ### macos is posix, but not gnu
     ];
 
     # https://nixos.wiki/wiki/FAQ/When_do_I_update_stateVersion

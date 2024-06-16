@@ -1,0 +1,14 @@
+if type "starship" >/dev/null; then
+  ### should remove warning for git branch taking too long to load
+  ### export STARSHIP_LOG="error"
+  # export STARSHIP_CONFIG="$HOME/.config/starship/bash.toml"
+  eval "$(starship init bash)"
+fi
+
+if type "navi" >/dev/null; then
+  source $HOME/.config/bash/navi.bash
+fi
+
+if type "lf" >/dev/null; then
+  source $HOME/.config/bash/lf.bash
+fi

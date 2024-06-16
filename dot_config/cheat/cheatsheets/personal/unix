@@ -58,3 +58,20 @@ RESULT=${PIPESTATUS[0]}
 
 ### Compare directories
 diff -qr <folder1> <folder2>
+
+### bash
+### config types https://stackoverflow.com/questions/415403/whats-the-difference-between-bashrc-bash-profile-and-environment
+### https://stackoverflow.com/questions/902946/should-aliases-go-in-bashrc-or-bash-profile
+/bin/bash
+       The bash executable
+/etc/profile
+       The systemwide initialization file, executed for login shells
+~/.bash_profile
+       The personal initialization file, executed for login shells
+~/.bashrc
+       The individual per-interactive-shell startup file (non-login)
+       - reloaded on any new instance of bash
+~/.bash_logout
+       The individual login shell cleanup file, executed when a login shell exits
+~/.inputrc
+       Individual readline initialization file

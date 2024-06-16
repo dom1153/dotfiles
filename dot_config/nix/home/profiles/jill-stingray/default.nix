@@ -13,7 +13,7 @@ in {
 
     ../../programs
     # ../../programs/hyprland
-    ../../programs/mime.nix
+    # ../../programs/mime.nix ### disable with plasma /shrug
     ../../programs/vscode.nix
     # ../../programs/gnome.nix
     # ../../programs/barrier.nix
@@ -74,6 +74,8 @@ in {
       barrier ### synergy
 
       nvim-pkg # kickstar nvim package
+
+      python312Packages.pywatchman ### watchman-make
     ];
 
     # https://nixos.wiki/wiki/FAQ/When_do_I_update_stateVersion

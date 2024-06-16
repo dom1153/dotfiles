@@ -36,7 +36,7 @@
     ../../system/services/syncthing.nix
     ../../system/services/tailscale.nix
     ../../system/services/udev.nix
-    ../../system/services/waydroid.nix
+    # ../../system/services/waydroid.nix
     ../../system/services/xserver.nix
 
     ./services/mount.nix

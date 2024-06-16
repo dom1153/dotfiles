@@ -39,3 +39,6 @@ brew search
 
 # brew outdated
 brew outdated
+
+# mount macos samba from command line (calls finder ; must be running)
+open 'smb://archoo@alma-armas'

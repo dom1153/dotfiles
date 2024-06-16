@@ -29,6 +29,8 @@
       gnumake
 
       nvim-pkg # kickstar nvim package
+
+      python312Packages.pywatchman ### watchman-make
     ];
 
     # https://nixos.wiki/wiki/FAQ/When_do_I_update_stateVersion

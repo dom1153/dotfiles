@@ -6,7 +6,24 @@ local module = {}
 -- local launch_menu = {}
 
 function module.apply_to_config(config)
-  if hostname == 'DomArtProW11' then
+  if hostname == 'stella-hoshii.local' then
+    -- config.launch_menu = {
+    --   {
+    --     label = 'SSH (mosh) server',
+    --     args = { 'mosh', 'server', 'zellij' },
+    --     -- domain = 'SSH:server',
+    --   },
+    -- }
+
+    -- config.ssh_domains = {
+    --   {
+    --     name = 'serverr',
+    --     remote_address = 'alma-armas',
+    --     no_agent_auth = false,
+    --     username = 'archoo',
+    --   },
+    -- }
+  elseif hostname == 'DomArtProW11' then
     config.wsl_domains = {
       {
         name = 'WSL:NixOS', -- unique identifier
