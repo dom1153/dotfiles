@@ -27,7 +27,7 @@ if type "eza" >/dev/null; then
 fi
 
 if type "bat" >/dev/null; then
-  alias cat="bat --paging=never"
+  alias cat="bat --paging=never --plain"
 fi
 
 ### copying terminfo per remote is awful, so just alias

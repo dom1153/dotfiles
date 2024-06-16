@@ -20,7 +20,7 @@ else
 end
 
 if exists bat
-    abbr cat "bat --paging=never"
+    abbr cat "bat --paging=never --plain"
 end
 
 if exists btop
