@@ -1,8 +1,8 @@
 {...}: {
   services.syncthing = {
     enable = true;
-    dataDir = "/home/archoo/Syncthing";
-    configDir = "/home/archoo/.config/syncthing";
+    dataDir = "/run/media/archoo/super-4T/appdata/syncthing/dataDir"; ### may be empty (default storage I think)
+    configDir = "/run/media/archoo/super-4T/appdata/syncthing"; ### /home/archoo/.config/syncthing
     guiAddress = "10.0.0.227:8384"; ### to access outside of localhost
     overrideDevices = true; ### overrides any devices added or deleted through the WebUI
     overrideFolders = true; ### overrides any folders added or deleted through the WebUI

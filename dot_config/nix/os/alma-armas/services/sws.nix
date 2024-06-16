@@ -18,13 +18,13 @@
         ### journalctl -u static-web-server.service --since="30 min ago"
         log-level = "trace";
         directory-listing = true;
-        #   http2 = true;
-        #   # Edit the domain name in the file to match your real domain name as configured in the ACME settings
-        #   http2-tls-cert = "/var/lib/acme/your-domain.example/fullchain.pem";
-        #   http2-tls-key = "/var/lib/acme/your-domain.example/key.pem";
-        #   # Info here: https://static-web-server.net/features/security-headers/
-        #   # This option is only needed for versions prior to 2.18.0, after which it defaults to true
-        #   security-headers = true;
+        # http2 = true;
+        ### sudo tailscale cert alma-armas.flamingo-universe.ts.net
+        # http2-tls-cert = "/home/archoo/.config/tls/alma-armas.flamingo-universe.ts.net.crt";
+        # http2-tls-key = "/home/archoo/.config/tls/alma-armas.flamingo-universe.ts.net.key";
+        # # Info here: https://static-web-server.net/features/security-headers/
+        # # This option is only needed for versions prior to 2.18.0, after which it defaults to true
+        # security-headers = true;
       };
     };
   };
@@ -35,10 +35,8 @@
 
   ### This strategy can be useful to override other advanced features as-needed
   # systemd.services.static-web-server.serviceConfig.SupplementaryGroups = pkgs.lib.mkForce ["" "www-data"];
-  ### Note that "/some/path" should match your "root" option
-  # systemd.services.static-web-server.serviceConfig.BindReadOnlyPaths = pkgs.lib.mkForce ["/some/path" "/var/lib/acme/your-domain.example"];
+  # systemd.services.static-web-server.serviceConfig.BindReadOnlyPaths = pkgs.lib.mkForce ["/run/media/archoo/super-4T/sws" "/home/archoo/.config/tls"];
 
   ### 8787 for sws (default)
-  ### 80 for the ACME challenge
-  networking.firewall.allowedTCPPorts = [8787 80];
+  networking.firewall.allowedTCPPorts = [8787];
 }

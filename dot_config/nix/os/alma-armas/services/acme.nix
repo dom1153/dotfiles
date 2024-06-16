@@ -9,12 +9,15 @@
   security.acme = {
     acceptTerms = true;
     defaults.email = "blahblahfoobar@protonmail.com";
-    certs."your-domain.example" = {
+    certs."alma-armas.flamingo-universe.ts.net" = {
       reloadServices = ["static-web-server"];
-      listenHTTP = ":80";
+      listenHTTP = ":19910"; ### 80 is consumed by nginx
       group = "www-data";
       # EC is not supported by SWS versions before 2.16.1
       keyType = "rsa4096";
     };
   };
+
+  # ACME Challenge (80)
+  networking.firewall.allowedTCPPorts = [19910 443];
 }
