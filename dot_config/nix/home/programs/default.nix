@@ -36,6 +36,8 @@ in {
     firefox
     unstable.obsidian
     osu-lazer-bin
+
+    gnome.gnome-disk-utility
   ];
 
   # (with pkgs; [

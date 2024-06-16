@@ -5,7 +5,8 @@ autorandr --load single &
 signal-desktop --start-in-tray &
 
 ### it's fine since I use multiple workspaces
-# steam -silent &
+### jk steam steals attention since it opens slow...
+steam -silent &
 
 ### -f foreground (debug) ; ssl == crypto (no .conf option)
 # barriers --config $HOME/.config/custom-scripts/assets/jill_stella_dorothy.conf --disable-crypto &

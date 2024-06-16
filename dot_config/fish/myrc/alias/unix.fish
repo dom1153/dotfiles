@@ -2,8 +2,6 @@ abbr untargz 'tar xvf'
 abbr cp 'cp -i'
 abbr mv 'mv -i'
 abbr dirsize "du -sh"
-abbr l "ls -lh"
-abbr la "ls -lah"
 abbr hist history
 abbr dirsize "du -sh"
 abbr dirsizecurrent "echo 'Calculating...'; du -shc ./* | sort -rh"

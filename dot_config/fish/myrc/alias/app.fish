@@ -12,6 +12,11 @@ end
 
 if exists eza
     abbr ls eza
+    abbr l eza -lh
+    abbr la eza -lah
+else
+    abbr l "ls -lh"
+    abbr la "ls -lah"
 end
 
 if exists bat
