@@ -36,4 +36,8 @@ yabai -m rule --add app="^Obsidian" manage=on
 yabai -m rule --add app="^kitty$" manage=on
 yabai -m rule --add app="^Code$" manage=on
 
+{{- if eq .chezmoi.hostname "dorothy-haze" }}
+yabai -m rule --add app="Arc" manage=on
+{{- else }}
 # yabai -m rule --add app="Arc" --one-shot manage=on
+{{- end }}
