@@ -75,6 +75,11 @@
   ### https://github.com/nix-community/home-manager/issues/3113
   programs.dconf.enable = true;
 
+  # programs.ssh = {
+  #   setXAuthLocation = true;
+  #   forwardX11 = true;
+  # };
+
   services.syncthing = {
     dataDir = "/home/archoo/Documents"; # Default folder for new synced folders
     configDir = "/home/archoo/Documents/.config/syncthing"; # Folder for Syncthing's settings and keys

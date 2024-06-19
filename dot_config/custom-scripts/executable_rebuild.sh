@@ -51,9 +51,10 @@ exe="$(basename "$0")"
 usage="Usage: ${exe} {switch | build | boot | test} [-r (reboot)] [-v (verbose)] [-d (dry run)] [-s (show-trace)]"
 
 ### >>> arg dash flags
-while getopts rvds flag; do
+while getopts Rrvds flag; do
   # echo "flag: $flag"
   case "$flag" in
+  R) force_reboot=1 ;;
   r) force_reboot=1 ;;
   v) verbose=1 ;;
   d) dryrun=1 ;; ### dry run, debug, maybe auto apply verbose
