@@ -1,4 +1,8 @@
-{inputs, ...}: {
+{
+  inputs,
+  pkgs,
+  ...
+}: {
   imports = [
     inputs.home-manager.nixosModules.default
 
@@ -40,6 +44,22 @@
   home-manager.users."archoo" = import ../../home/profiles/alma-armas;
 
   programs.command-not-found.enable = false; # Not working without channel
+
+  #### ssh forwarding test (xauth, xforwarding, xserver; works local, maybe not over tailscale)
+  # services.openssh = {
+  #   settings = {
+  #     X11Forwarding = true;
+  #   };
+  # };
+  #
+  # environment.systemPackages = with pkgs; [
+  #   xorg.xauth
+  # ];
+  #
+  # programs.ssh = {
+  #   setXAuthLocation = true;
+  #   forwardX11 = true;
+  # };
 
   services.xserver = {
     enable = false; ### we don't need this, so just disable right?
