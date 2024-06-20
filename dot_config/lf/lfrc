@@ -147,8 +147,9 @@ set cursorpreviewfmt "\033[4m"
 
 ### VVV works with lf standalone, but not ctrl-f version...
 ### alternatively (macos) ; just press right arrow and the preview will work
-set sixel true
-set previewer ~/.config/lf/previewer.sh
+### zellij + (kitty/wezterm) has issues with sixels... so this idea is dead for now
+# set sixel true
+# set previewer ~/.config/lf/previewer.sh
 
 
 #

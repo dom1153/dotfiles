@@ -78,6 +78,8 @@ abbr tldrf 'tldr --list | fzf --preview "tldr {1} --color" --preview-window=righ
 
 abbr nview 'nvim -R'
 
+abbr nsp 'nix-shell -p'
+
 # if test $TERM = foot
 #     abbr ssh 'kitty kitten ssh'
 # end

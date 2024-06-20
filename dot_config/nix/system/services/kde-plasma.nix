@@ -19,4 +19,7 @@
   ];
   ### plugins (e.g. widgets) not found in nix
   ### kde_controlcentre, better inline clock
+
+  ### settings worth writing down
+  ### tiling: yakuake,spectacle,Conky,zoom,signal,systemsettings,dolphin,qbittorrent,imv,feh
 }

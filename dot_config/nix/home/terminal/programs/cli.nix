@@ -18,6 +18,7 @@
     zip
     zoxide
     rsync ### pre-installed on nix and darwin, but let's keep it consistent
+    file ### get... file types e.g. mime; use with lf preview
 
     ### tools
     chezmoi
@@ -27,6 +28,8 @@
     wget
     ### fast-cli ### does not work on darwin
     chafa ### sixel (lf)
+    ctpv ### simple terminal preview (but in c)
+    trurl ### transpose url (get url parts)
 
     ### funni (keep these)
     lolcat

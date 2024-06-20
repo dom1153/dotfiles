@@ -20,6 +20,7 @@ in {
     mpv
     spotify
     imv ### image viewer
+    feh ### image previewer
 
     ### art
     libsForQt5.kolourpaint ### windows 98 style
@@ -38,6 +39,8 @@ in {
     osu-lazer-bin
 
     gnome.gnome-disk-utility
+
+    appimage-run ### the official workaround for appimages /shrug
   ];
 
   # (with pkgs; [
