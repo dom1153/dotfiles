@@ -76,6 +76,12 @@ in {
       nvim-pkg # kickstar nvim package
 
       python312Packages.pywatchman ### watchman-make
+
+      # itch ### broken
+
+      drawing ### ms paint, but gnome
+      krita ### drawing
+      pinta ### like paint dot net
     ];
 
     # https://nixos.wiki/wiki/FAQ/When_do_I_update_stateVersion

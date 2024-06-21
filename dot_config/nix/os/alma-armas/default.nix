@@ -61,6 +61,8 @@
   #   forwardX11 = true;
   # };
 
+  boot.loader.systemd-boot.configurationLimit = 5;
+
   services.xserver = {
     enable = false; ### we don't need this, so just disable right?
     videoDrivers = ["amdgpu"];

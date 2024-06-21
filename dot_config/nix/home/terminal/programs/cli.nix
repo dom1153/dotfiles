@@ -64,6 +64,7 @@
     navi
     ncdu
     neofetch
+    tmux
     zellij
     ### browsh ### firefox, in the terminal
   ];

@@ -1,3 +1,7 @@
+### todo: let nix handle it, but still leave custom yourself (this file -> .config dir)
+
+### also... avoid aliases. harder to traceback issues. nix-shell needs to be as reproducible as possible
+
 if type "starship" >/dev/null; then
   ### should remove warning for git branch taking too long to load
   ### export STARSHIP_LOG="error"
@@ -11,4 +15,8 @@ fi
 
 if type "lf" >/dev/null; then
   source $HOME/.config/bash/lf.bash
+fi
+
+if type "dircolors" >/dev/null; then
+  eval `dircolors $HOME/.config/bash/bliss.dircolors`
 fi
