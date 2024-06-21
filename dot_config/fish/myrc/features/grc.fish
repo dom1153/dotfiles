@@ -1,10 +1,6 @@
 #!/usr/bin/env fish
 
-# To load in ~/.config/fish/fish.conf or a new file in
-# ~/.config/fish/conf.d add:
-# source /etc/grc.fish (path may depend on install method)
-#
-# See also the plugin at https://github.com/oh-my-fish/plugin-grc
+### https://github.com/garabik/grc/blob/master/grc.fish
 
 ### make had obscure issue with nvim so we're going to opt-in programs only
 #   grc_plugin_execs cat cvs df diff dig gcc g++ ls ifconfig
@@ -18,13 +14,8 @@ if exists grc
 
     for executable in $grc_plugin_execs
         if type -q $executable
-            function $executable --inherit-variable executable --wraps=$executable
-                if isatty 1
-                    ### change to abbrev instead of silent 'alias'
-                    abbr $executable "grc $executable"
-                else
-                    ### do nothing if a file
-                end
+            if isatty 1
+                abbr $executable "grc $executable"
             end
         end
     end
