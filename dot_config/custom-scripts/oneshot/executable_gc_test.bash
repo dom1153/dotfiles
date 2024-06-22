@@ -14,3 +14,8 @@ echo
 $script -d https://github.com/raysan5/raylib-game-template
 echo
 $script -d https://github.com/SasLuca/raylib-cpp-cmake-template
+echo
+$script -d https://github.com/alecrem/nextjs-p5js-tutorial.git
+echo
+$script -d https://github.com/aunnnn/daily-p5?tab=readme-ov-file
+echo

@@ -6,13 +6,6 @@
 ### VVV useful script grabbing .config remote url
 ### bat --paging=never */.git/config | grep --color=auto 'url = ' | sed -E 's/.*url = //g'
 
-### test cases: https://github.com/mipmip/home-manager-option-search
-###             https://github.com/mipmip/home-manager-option-search/blob/main/scripts/parse_options-json.rb
-###             https://github.com/end-4/CirnOS
-###             https://github.com/Amitabha37377/Awful-DOTS.git
-###             https://github.com/RayTracing/raytracing.github.io
-###             https://github.com/raysan5/raylib-game-template
-###             https://github.com/SasLuca/raylib-cpp-cmake-template
 ### general regex tester: https://www.regextester.com/109207
 
 debug=0

@@ -82,6 +82,7 @@ in {
       drawing ### ms paint, but gnome
       krita ### drawing
       pinta ### like paint dot net
+      ctpv ### simple terminal preview (but in c)
     ];
 
     # https://nixos.wiki/wiki/FAQ/When_do_I_update_stateVersion

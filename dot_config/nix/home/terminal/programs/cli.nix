@@ -28,7 +28,6 @@
     wget
     ### fast-cli ### does not work on darwin
     chafa ### sixel (lf)
-    ctpv ### simple terminal preview (but in c)
     trurl ### transpose url (get url parts)
 
     ### funni (keep these)
