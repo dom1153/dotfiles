@@ -92,7 +92,7 @@ cd "$chome"
 ### pull
 myecho "==> Chezmoi git pull"
 chezmoi git pull -- --autostash --rebase
-myecho "  ==> Done"
+# myecho "  ==> Done"
 
 ### add any untracked git files
 echo -e "a\n*\nq\n" | git add -i >/dev/null 2>&1
@@ -102,7 +102,7 @@ myecho "==> Nix flake update"
 # https://discourse.nixos.org/t/update-single-flake-input/13056
 # nix flake update
 nix flake lock --update-input dom1153-nvim-flake
-myecho "  ==> Done"
+# myecho "  ==> Done"
 
 ### update chezmoi (apply)
 cs=$(chezmoi status)
@@ -147,13 +147,14 @@ if [ "$verbose" ]; then
 fi
 
 LOG_FILE="${PWD}/build.log"
-echo "====================================" | tee -a ${LOG_FILE}
-date "+[INFO] Start %Y/%m/%d %H:%M:%S ===" | tee -a ${LOG_FILE}
-echo "====================================" | tee -a ${LOG_FILE}
+echo "====================================" | tee -a "${LOG_FILE}"
+date "+[INFO] Start %Y/%m/%d %H:%M:%S ===" | tee -a "${LOG_FILE}"
+echo "====================================" | tee -a "${LOG_FILE}"
 
 RESULT=0
 BUILD_TIME=0
 
+### ostype is a sh special (not fish...) ;)
 case $OSTYPE in
 darwin*)
   ### sudo request will happen if needed
@@ -162,6 +163,8 @@ darwin*)
   # myecho ">> darwin-rebuild build --flake . --option eval-cache false ${addargs}"
   if [ ! "$dryrun" ]; then
     darwin-rebuild switch --flake . --option eval-cache false
+    RESULT=$?
+    BUILD_TIME=$SECONDS
     # if darwin-rebuild build --flake . --option eval-cache false; then
     #   BUILD_TIME=$SECONDS
     #   ### TODO: require we return 1
@@ -187,10 +190,11 @@ linux-*)
     super=""
   fi
 
-  echo $PWD
+  echo "$PWD"
   myecho ">> ${super}nixos-rebuild ${nrcmd} --flake . --option eval-cache false ${addargs}"
   if [ ! "$dryrun" ]; then
     if ${super}nixos-rebuild $nrcmd --flake . --option eval-cache false $addargs; then
+      RESULT=$?
       ### TODO: catch result as pipe correctly
       if [ "$nrcmd" = "boot" ]; then
         # if type "wslvar" >/dev/null 2>&1; then
@@ -201,16 +205,20 @@ linux-*)
           ${super}reboot
         fi
       fi
+    else
+      RESULT=$?
     fi
   fi
+  BUILD_TIME=$SECONDS
   ;;
 esac
 
+echo "====================================" | tee -a "${LOG_FILE}"
 if [[ $RESULT -eq 0 ]]; then
-  echo "[SUCCESS]: after $BUILD_TIME seconds" | tee -a ${LOG_FILE}
+  echo "[SUCCESS]: after $BUILD_TIME seconds" | tee -a "${LOG_FILE}"
 else
-  echo "[ERROR]: after $BUILD_TIME seconds" | tee -a ${LOG_FILE}
+  echo "[ERROR]: after $BUILD_TIME seconds" | tee -a "${LOG_FILE}"
 fi
-echo "====================================" | tee -a ${LOG_FILE}
+echo "====================================" | tee -a "${LOG_FILE}"
 
 myecho "==> Script Ends"
