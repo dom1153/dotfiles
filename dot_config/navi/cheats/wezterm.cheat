@@ -2,3 +2,6 @@
 
 # ssh to server (with zellij)
 wezterm cli spawn -- mosh server zellij
+
+# ssh to mini (with zellij)
+wezterm cli spawn -- mosh mini zellij
