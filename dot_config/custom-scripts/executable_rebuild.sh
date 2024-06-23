@@ -162,16 +162,19 @@ darwin*)
 
   # myecho ">> darwin-rebuild build --flake . --option eval-cache false ${addargs}"
   if [ ! "$dryrun" ]; then
-    darwin-rebuild switch --flake . --option eval-cache false
-    RESULT=$?
-    BUILD_TIME=$SECONDS
-    # if darwin-rebuild build --flake . --option eval-cache false; then
-    #   BUILD_TIME=$SECONDS
-    #   ### TODO: require we return 1
-    #   darwin-rebuild activate --flake . --option eval-cache false
-    # else
-    #   BUILD_TIME=$SECONDS
-    # fi
+    # myecho ">> darwin-rebuild switch --flake . --option eval-cache false"
+    # darwin-rebuild switch --flake . --option eval-cache false
+    # RESULT=$?
+    # BUILD_TIME=$SECONDS
+
+    ### VVV try this again in the future; should work...
+    if darwin-rebuild build --flake . --option eval-cache false; then
+      BUILD_TIME=$SECONDS
+      ### TODO: require we return 1
+      darwin-rebuild activate --flake . --option eval-cache false
+    else
+      BUILD_TIME=$SECONDS
+    fi
   fi
   ;;
 linux-*)
