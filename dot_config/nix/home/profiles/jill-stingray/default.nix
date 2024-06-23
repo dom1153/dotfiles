@@ -26,6 +26,7 @@ in {
     ../../terminal/shell/nushell.nix
 
     ../../terminal/programs/vim.nix
+    ../../terminal/programs/tmux.nix
 
     ### awesomewm
     # ../../programs/wm/qt.nix

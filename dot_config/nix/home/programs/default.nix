@@ -40,7 +40,9 @@ in {
 
     gnome.gnome-disk-utility
 
-    appimage-run ### the official workaround for appimages /shrug
+    appimage-run ### the main workaround for appimages /shrug
+
+    godot_4
   ];
 
   # (with pkgs; [
