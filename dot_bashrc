@@ -2,21 +2,21 @@
 
 ### also... avoid aliases. harder to traceback issues. nix-shell needs to be as reproducible as possible
 
-if type "starship" >/dev/null; then
+if type -q "starship" >/dev/null 2>&1; then
   ### should remove warning for git branch taking too long to load
   ### export STARSHIP_LOG="error"
   # export STARSHIP_CONFIG="$HOME/.config/starship/bash.toml"
   eval "$(starship init bash)"
 fi
 
-if type "navi" >/dev/null; then
+if type -q "navi" >/dev/null 2>&1; then
   source $HOME/.config/bash/navi.bash
 fi
 
-if type "lf" >/dev/null; then
+if type -q "lf" >/dev/null 2>&1; then
   source $HOME/.config/bash/lf.bash
 fi
 
-if type "dircolors" >/dev/null; then
+if type -q "dircolors" >/dev/null 2>&1; then
   eval `dircolors $HOME/.config/bash/bliss.dircolors`
 fi

@@ -8,3 +8,10 @@ imv
 
 # kde image viewer
 gwenview
+
+; https://github.com/andreafrancia/trash-cli
+# view trash (trash-cli)
+trash-list
+
+# restore trash (index)
+trash-restore
