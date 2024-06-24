@@ -29,6 +29,7 @@
     ### fast-cli ### does not work on darwin
     chafa ### sixel (lf)
     trurl ### transpose url (get url parts)
+    imagemagick ### convert images (e.g. use with kitty icat)
 
     ### funni (keep these)
     lolcat
