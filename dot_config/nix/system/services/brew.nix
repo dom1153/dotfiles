@@ -77,6 +77,8 @@
     ## flow
     ## pixea - like feh
 
+    # "ultimaker-cura" ### 3d slicer
+    # "prusaslicer" ### open source 3d slicer
     ### "xnviewmp" ### xn viewer mpv -> looks ugly...
   };
 }

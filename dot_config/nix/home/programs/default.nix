@@ -43,6 +43,9 @@ in {
     appimage-run ### the main workaround for appimages /shrug
 
     godot_4
+
+    cura ### ultimaker cura ; 3d slicer
+    prusa-slicer ### open source 3d slicer
   ];
 
   # (with pkgs; [
