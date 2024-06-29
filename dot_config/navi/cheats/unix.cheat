@@ -11,3 +11,9 @@ sudo netstat -nlp
 
 # download a file
 wget
+
+# check external ip
+curl -s http://checkip.dyndns.org/ | sed 's/[a-zA-Z<>/ :]//g'
+
+# local ip (universal, many)
+ifconfig | grep "inet " | grep -Fv 127.0.0.1 | awk '{print $2}'

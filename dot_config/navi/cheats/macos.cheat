@@ -42,3 +42,13 @@ brew outdated
 
 # mount macos samba from command line (calls finder ; must be running)
 open 'smb://archoo@alma-armas'
+
+# get local ip (mac) wifi
+ipconfig getifaddr en1
+
+# get local ip (mac) ethernet
+ipconfig getifaddr en0
+
+; https://apple.stackexchange.com/questions/20547/how-do-i-find-my-ip-address-from-the-command-line
+# public ip (mac)
+dig -4 TXT +short o-o.myaddr.l.google.com @ns1.google.com
