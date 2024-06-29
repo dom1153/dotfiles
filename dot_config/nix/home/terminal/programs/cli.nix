@@ -30,6 +30,11 @@
     chafa ### sixel (lf)
     trurl ### transpose url (get url parts)
     imagemagick ### convert images (e.g. use with kitty icat)
+    lsix ### ls, but for sixel
+    ueberzugpp ### sixel
+    jq ### parse / query json
+    devenv ### better dev enviroments?
+    direnv ### auto load env (nix shell, devenv)
 
     ### funni (keep these)
     lolcat
@@ -65,6 +70,7 @@
     ncdu
     neofetch
     tmux
+    yazi ### another lf ; batteries included
     zellij
     ### browsh ### firefox, in the terminal
   ];

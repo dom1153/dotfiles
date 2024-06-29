@@ -55,11 +55,12 @@ layout {
     }
   }
 
-  tab name="obsidian" cwd="~/Documents/Obsidian/Brain2/" {
-    pane name="nvim" {
-      command "nvim"
-      start_suspended true
-    }
-  }
+  // // not really necessary
+  // tab name="obsidian" cwd="~/Documents/Obsidian/Brain2/" {
+  //   pane name="nvim" {
+  //     command "nvim"
+  //     start_suspended true
+  //   }
+  // }
 
 }

@@ -1,0 +1,11 @@
+% web, npm
+
+# npm install save dev
+npm install prisma --save-dev
+
+# run npm installed apps (non-global, without npm script)
+npx vercel
+
+; jq -r '.scripts|to_entries[]|((.key))' package.json
+# run npm scripts
+npm run dev

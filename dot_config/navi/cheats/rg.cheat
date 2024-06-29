@@ -1,0 +1,16 @@
+% ripgrep, grep
+
+# search by filetype pattern
+rg -g '*.rs' int
+
+# search by filetype word
+rg --type rust
+
+# search by filetype short
+rg -trust
+
+# search by excluding filetype
+rg --type-not rust
+
+# search by excluding filetype short
+rg -Trust

@@ -33,13 +33,19 @@ function module.apply_to_config(config)
     -- You can specify your own fallback; wezterm occasionally warns of missing glyphs. Hopefully this fixes this
     config.font = wezterm.font_with_fallback({
       'dina',
-      'Fira Code',
+      'FiraCode Nerd Font Mono',
+      'JetBrains Mono',
     })
-    config.font_size = 10.0
+    config.font_size = 11.0
+    -- no titlebar for linux cuz we cool like that
+    config.window_decorations = 'NONE'
   else
     -- titlebar
     config.window_decorations = 'RESIZE'
   end
+
+  -- ignore popup for missing symbols
+  config.warn_about_missing_glyphs = false
 
   -- disable ligatures
   config.harfbuzz_features = { 'calt=0', 'clig=0', 'liga=0' }

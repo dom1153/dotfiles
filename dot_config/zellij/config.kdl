@@ -81,6 +81,8 @@ keybinds clear-defaults=true {
   }
 
   // move mode
+  // TODO: ctrl-h should be rebinded to avoid xterm / tty backspace issue
+  //       solution: move it under resize again...
   move {
     bind "Ctrl h" { SwitchToMode "Normal"; }
     bind "n" "Tab" { MovePane; }

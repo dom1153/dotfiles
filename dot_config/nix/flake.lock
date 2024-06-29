@@ -32,11 +32,11 @@
         "toggletasks": "toggletasks"
       },
       "locked": {
-        "lastModified": 1718315025,
-        "narHash": "sha256-AwYoGhxl4aHQurxmeyGSF+NdxhJBAa5eJp5fP6bB7ZQ=",
+        "lastModified": 1719529464,
+        "narHash": "sha256-7fJJeQYW/lJGMF9cr0icDLFyT+k4VcGq9l4Igv1PHjM=",
         "owner": "dom1153",
         "repo": "nvim-flake",
-        "rev": "edcd7d9d3bfdfc8d69172874caa936a15b352b63",
+        "rev": "16870c692b1cb32feabd216a402d5bc301528f09",
         "type": "github"
       },
       "original": {
