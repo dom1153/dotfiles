@@ -77,6 +77,7 @@
     tailer ### spacer, but written in go
 
     ### tui apps
+    browsh ### termianl browser
     terminal-colors
     calcure
     kbt
