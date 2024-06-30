@@ -1,0 +1,6 @@
+[Desktop Entry]
+Exec=/home/archoo/.config/custom-scripts/plasma_autostart.sh
+Icon=dialog-scripts
+Name=plasma_autostart.sh
+Type=Application
+X-KDE-AutostartScript=true

@@ -1,0 +1,21 @@
+[Desktop Action new-private-window]
+Exec=/nix/store/mps37r2my4rg1rs272abmh4y4d6x7g6h-microsoft-edge-stable-123.0.2420.53/bin/microsoft-edge --inprivate
+Name=New InPrivate Window
+
+[Desktop Action new-window]
+Exec=/nix/store/mps37r2my4rg1rs272abmh4y4d6x7g6h-microsoft-edge-stable-123.0.2420.53/bin/microsoft-edge
+Name=New Window
+
+[Desktop Entry]
+Actions=new-window;new-private-window;
+Categories=Network;WebBrowser;
+Comment=Access the Internet
+Exec=/nix/store/mps37r2my4rg1rs272abmh4y4d6x7g6h-microsoft-edge-stable-123.0.2420.53/bin/microsoft-edge %U
+GenericName=Web Browser
+Icon=microsoft-edge
+MimeType=application/pdf;application/rdf+xml;application/rss+xml;application/xhtml+xml;application/xhtml_xml;application/xml;image/gif;image/jpeg;image/png;image/webp;text/html;text/xml;x-scheme-handler/http;x-scheme-handler/https;
+Name=Microsoft Edge
+StartupNotify=true
+Terminal=false
+Type=Application
+Version=1.0
