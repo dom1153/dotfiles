@@ -24,7 +24,7 @@ function module.apply_to_config(config)
 
     -- titlebar
     config.window_decorations = 'RESIZE'
-  elseif hostname == 'DomArtProW11' then
+  elseif hostname == 'DomArtProW11' or hostname == 'kim-la-vallete' then
     set_font({ font = wezterm.font('JetBrains Mono'), font_size = 11.0 })
   elseif hostname == 'jill-stingray' or hostname == 'sei-asagiri' then
     -- hyprland isn't working with wezterm wayland, force x11
