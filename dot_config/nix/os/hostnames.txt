@@ -1,6 +1,7 @@
 ### lscpu ; lspci (pciutils) ; dmidecode -t 2 ; nix-info (useless)
 jill-stingray   artpro-nixos
 sei-asagiri     t460
+Kimberly La Vallete t460 (windows)
 stella-hoshii   mbp-14-m2
 Alma Armas      archoo-server (B450 Ryzen 3)
 Gillian         artpro-wsl
@@ -36,3 +37,4 @@ Anna Graem         Anna-Graem
 Sam
 Mario
 Rad Shiba
+
