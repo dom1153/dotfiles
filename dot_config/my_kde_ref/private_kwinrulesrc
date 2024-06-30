@@ -1,0 +1,108 @@
+[$Version]
+update_info=kwinrules.upd:replace-placement-string-to-enum,kwinrules.upd:use-virtual-desktop-ids
+
+[02a06dfc-4368-4415-aeec-fa63e7c5b226]
+Description=Firefox (3)
+desktops=1c1eb0a6-400a-4678-85df-f98610b1db49
+desktopsrule=3
+wmclass=firefox
+wmclassmatch=1
+
+[05ad3580-9aba-4905-a8bc-cc4a89a37af6]
+Description=Steam (4)
+desktops=9c71ae34-9461-4941-b35c-1bd3be4ce056
+desktopsrule=3
+wmclass=steam
+wmclassmatch=1
+
+[1]
+Description=Wezterm (2)
+desktops=9c73745a-0164-4b37-b58f-5d56742478c7
+desktopsrule=3
+wmclass=org.wezfurlong.wezterm
+wmclassmatch=1
+
+[1fbfc7a8-6539-4101-b4dd-c1f9a1184b39]
+Description=MsEdge (4)
+desktops=9c71ae34-9461-4941-b35c-1bd3be4ce056
+desktopsrule=3
+wmclass=Microsoft-edge
+wmclassmatch=1
+
+[2]
+Description=Obsidian (1)
+desktops=39f99134-c928-4447-9696-9f1fab83e0ae
+desktopsrule=3
+wmclass=obsidian
+wmclassmatch=1
+
+[2912d85c-c56a-4482-9cb9-8d6a34cf5e60]
+Description=Settings (3)
+desktops=1c1eb0a6-400a-4678-85df-f98610b1db49
+desktopsrule=3
+wmclass=systemsettings
+wmclassmatch=1
+
+[3]
+Description=Firefox (3)
+desktops=1c1eb0a6-400a-4678-85df-f98610b1db49
+desktopsrule=3
+wmclass=firefox
+wmclassmatch=1
+
+[3ae0f4f1-2d85-4ede-88bb-42f1a42597fc]
+Description=New window settings
+wmclassmatch=1
+
+[4]
+Description=MsEdge (4)
+desktops=9c71ae34-9461-4941-b35c-1bd3be4ce056
+desktopsrule=3
+wmclass=Microsoft-edge
+wmclassmatch=1
+
+[5]
+Description=Settings / Other (5)
+desktops=0d460bef-6c40-41fc-a5b1-e5302590c430
+desktopsrule=3
+wmclass=systemsettings
+wmclassmatch=1
+
+[6]
+Description=Discord (5)
+desktops=0d460bef-6c40-41fc-a5b1-e5302590c430
+desktopsrule=3
+wmclass=discord
+wmclassmatch=1
+
+[7]
+Description=Steam (6)
+desktops=d6eaf09c-fd13-4671-ba35-9666b8f2b796
+desktopsrule=3
+wmclass=steam
+wmclassmatch=1
+
+[General]
+count=7
+rules=1,2,3,4,5,6,7
+
+[a20c9633-3551-48e3-a64a-3a7eb1f46846]
+Description=Discord (5)
+desktops=0d460bef-6c40-41fc-a5b1-e5302590c430
+desktopsrule=3
+wmclass=discord
+wmclassmatch=1
+
+[aca0292e-6c3b-40d9-91ae-50c41633ea84]
+Description=obsidian
+desktops=9c73745a-0164-4b37-b58f-5d56742478c7
+desktopsrule=3
+wmclass=obsidian
+wmclassmatch=1
+
+[ee21cb48-cd71-43f0-8774-f35dbfd375f1]
+Description=Wezterm (1)
+desktops=39f99134-c928-4447-9696-9f1fab83e0ae
+desktopsrule=3
+wmclass=org.wezfurlong.wezterm
+wmclassmatch=1
