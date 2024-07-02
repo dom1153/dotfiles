@@ -38,6 +38,7 @@
     vhs ### tool to create terminal gifs with code
     t-rec ### geenrate animated gifs for the web (rust)
     xdg-ninja ### check $HOME for unwanted files/directories and move them
+    fpp ### facebook pathpicker (edit or run commands on path of ouptut)
 
     ### funni (keep these)
     lolcat

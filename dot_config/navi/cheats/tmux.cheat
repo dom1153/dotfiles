@@ -1,0 +1,16 @@
+% tmux
+
+# kill tmux server (all instances)
+tmux kill-server
+
+# reload tmux cli method
+tmux source ~/.config/tmux/tmux.conf
+
+### attach to pane (named)
+tmux attach -t
+
+### detatch session
+tmux detach
+
+### list sessions
+tmux ls

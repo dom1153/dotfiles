@@ -1,1 +1,16 @@
 #set -g history-limit 10000
+
+### some things configured via nix
+### e.g. sensible plugin https://github.com/tmux-plugins/tmux-sensible
+
+# Fix Color in neovim
+set-option -ga terminal-overrides ",xterm-256color:Tc"
+
+set -g status-position bottom
+set -g status-left "HA FOOBAR"
+set -g status-right "BOOOOOO...."
+set -g status-justify centre
+set -g window-status-format '#I:#W'
+
+### keybinds
+bind R source-file ~/.config/tmux/tmux.conf

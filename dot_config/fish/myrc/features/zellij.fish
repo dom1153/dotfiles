@@ -4,6 +4,7 @@
 if test -z $SSH_CONNECTION
     and test -z $VSCODE_SHELL_INTEGRATION
     and test -z $IN_NIX_SHELL
+    and test -z false
     # # Configure auto-attach/exit to your likings (default is off).
     # set ZELLIJ_AUTO_ATTACH true
     # set ZELLIJ_AUTO_EXIT true

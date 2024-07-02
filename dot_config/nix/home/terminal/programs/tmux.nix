@@ -12,33 +12,6 @@
       source ~/.config/tmux/tmux.conf.local
     '';
 
-    ### VVV extra config
-    # bind -n M-H previous-window
-    # bind -n M-L next-window
-    #
-    # # Set history limit to 10000
-    # set -g history-limit 10000
-    #
-    # # Fix Color in neovim
-    # set-option -ga terminal-overrides ",xterm-256color:Tc"
-    #
-    # # Set vi-mode
-    # set-window-option -g mode-keys vi
-    #
-    # # Open panes in current working directory
-    # bind ';' split-window -h -c "#{pane_current_path}"
-    # bind 'C-c' split-window -h
-    # bind v split-window -v -c "#{pane_current_path}"
-    # bind 'C-v' split-window -v
-    #
-    # # Custom Status Theme
-    # set -g status-position bottom
-    # set -g status-left ""
-    # set -g status-right ""
-    # set -g status-justify centre
-    # set -g window-status-format '#I:#W'
-    # set -g status-interval 10
-
     plugins = with pkgs.tmuxPlugins; [
       {
         plugin = mkTmuxPlugin {
