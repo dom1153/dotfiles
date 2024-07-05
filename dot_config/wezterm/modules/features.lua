@@ -32,8 +32,8 @@ function module.apply_to_config(config)
         default_cwd = '~',
       },
       {
-        name = 'WSL:Ubuntu', -- unique identifier
-        distribution = 'Ubuntu', -- 'wsl -l -v'
+        name = 'WSL:Ubuntu',
+        distribution = 'Ubuntu',
         default_cwd = '~',
       },
     }
