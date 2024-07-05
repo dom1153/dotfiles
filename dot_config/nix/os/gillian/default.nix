@@ -16,9 +16,12 @@
 
     #../../system/services/avahi.nix
     ../../system/services/home-manager.nix
+    # ../../system/services/docker.nix
     ### We'll leave this here, but it seems can't ssh out of the box
     #../../system/services/openssh.nix
     #../../system/services/syncthing.nix
+
+    ./services/docker-desktop.nix
   ];
 
   ### Builds home-manager with nixos-rebuild
