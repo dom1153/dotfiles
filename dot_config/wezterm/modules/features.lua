@@ -3,6 +3,7 @@ local hostname = wezterm.hostname()
 
 local module = {}
 -- https://wezfurlong.org/wezterm/config/launch.html#__tabbed_1_2
+-- https://wezfurlong.org/wezterm/config/lua/wezterm/default_wsl_domains.html
 -- local launch_menu = {}
 
 function module.apply_to_config(config)
@@ -28,6 +29,11 @@ function module.apply_to_config(config)
       {
         name = 'WSL:NixOS', -- unique identifier
         distribution = 'NixOS', -- 'wsl -l -v'
+        default_cwd = '~',
+      },
+      {
+        name = 'WSL:Ubuntu', -- unique identifier
+        distribution = 'Ubuntu', -- 'wsl -l -v'
         default_cwd = '~',
       },
     }
