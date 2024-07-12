@@ -15,3 +15,38 @@ trash-list
 
 # restore trash (index)
 trash-restore
+
+# markdown reader cli
+glow
+
+# preview markdown in browser
+gh markdown-preview README.md --disable-auto-open
+
+; # install markdwon extension (manual)
+; gh extension install yusukebe/gh-markdown-preview
+
+; https://github.com/vilmibm/gh-screensaver
+# pipes screensaver
+gh screensaver -spipes
+
+# fireworks screensaver
+gh screensaver -sfireworks
+
+# starfield screensaver
+gh screensaver -sstarfield -- --density 250 --speed 4
+
+# pollock screensaver
+gh screensaver -spollock
+
+; glider noise R dragon gun pulsar
+# game of life screensaver
+gh screensaver -slife -- --seed R
+
+; Fonts: banner, big, block, bubble, digital, lean, mini, mnemonic,
+;        script, shadow, slant, small, smscript, smshadow, smslant,
+;        standard, term
+# marquee screensaver
+gh screensaver -smarquee -- --message="hello world" --font="standard"
+
+# test internet speed
+speedtest

@@ -50,3 +50,35 @@ cp ~/.local/share/chezmoi/dot_config/nix/modules/nixvim/flake.lock ~/.config/nix
 
 # fix nixpkgs if it corrupt (e.g. wsl)
 sudo nix-store --verify --check-contents --repair
+
+% nix, develop
+
+# nix develop run command
+nix develop --command bash -c "npm i && ./bin/learnyouhtml"
+
+# nix shell run
+nix-shell --run 'bash -c ./build.sh'
+
+
+% nix, zerotonix, flake
+
+# grab go flake
+nix flake init --template "github:DeterminateSystems/zero-to-nix#go-dev"
+
+# grab npm flake
+nix flake init --template "github:DeterminateSystems/zero-to-nix#javascript-dev"
+
+# grab python flake
+nix flake init --template "github:DeterminateSystems/zero-to-nix#python-dev"
+
+# grab rust flake
+nix flake init --template "github:DeterminateSystems/zero-to-nix#rust-dev"
+
+# grab cpp flake
+nix flake init --template "github:DeterminateSystems/zero-to-nix#cpp-dev"
+
+# grab haskell flake
+nix flake init --template "github:DeterminateSystems/zero-to-nix#haskell-dev"
+
+# grab scala flake
+nix flake init --template "github:DeterminateSystems/zero-to-nix#scala-dev"

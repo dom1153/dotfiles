@@ -81,6 +81,8 @@ abbr nview 'nvim -R'
 abbr nsp 'nix-shell -p'
 abbr nd 'nix develop'
 abbr ns nix-shell
+abbr ndc 'nix develop --command bash -c "'
+abbr nsc 'nix-shell --run "bash -c '
 
 # if test $TERM = foot
 #     abbr ssh 'kitty kitten ssh'

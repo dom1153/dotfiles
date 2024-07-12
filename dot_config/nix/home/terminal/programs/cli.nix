@@ -60,7 +60,6 @@
     tldr
 
     ### development
-    gh
     shfmt ### unsure how to integrate
 
     ### tui

@@ -162,19 +162,23 @@ darwin*)
 
   # myecho ">> darwin-rebuild build --flake . --option eval-cache false ${addargs}"
   if [ ! "$dryrun" ]; then
-    # myecho ">> darwin-rebuild switch --flake . --option eval-cache false"
-    # darwin-rebuild switch --flake . --option eval-cache false
-    # RESULT=$?
-    # BUILD_TIME=$SECONDS
+    ### build-activate loop doesn't seem to respect home manager? doesn't work sometimes...
+    ### maybe build returns bad return value...
+    myecho ">> darwin-rebuild switch --flake . --option eval-cache false"
+    darwin-rebuild switch --flake . --option eval-cache false
+    RESULT=$?
+    BUILD_TIME=$SECONDS
 
-    ### VVV try this again in the future; should work...
-    if darwin-rebuild build --flake . --option eval-cache false; then
-      BUILD_TIME=$SECONDS
-      ### TODO: require we return 1
-      darwin-rebuild activate --flake . --option eval-cache false
-    else
-      BUILD_TIME=$SECONDS
-    fi
+    # ### VVV try this again in the future; should work...
+    # echo ">> darwin-rebuild build --flake . --option eval-cache false"
+    # if darwin-rebuild build --flake . --option eval-cache false; then
+    #   BUILD_TIME=$SECONDS
+    #   ### TODO: require we return 1
+    #   echo ">> darwin-rebuild activate --flake . --option eval-cache false"
+    #   darwin-rebuild activate --flake . --option eval-cache false
+    # else
+    #   BUILD_TIME=$SECONDS
+    # fi
   fi
   ;;
 linux-*)
