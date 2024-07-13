@@ -82,3 +82,7 @@ nix flake init --template "github:DeterminateSystems/zero-to-nix#haskell-dev"
 
 # grab scala flake
 nix flake init --template "github:DeterminateSystems/zero-to-nix#scala-dev"
+
+# enable direnv .envrc
+direnv allow
+

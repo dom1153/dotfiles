@@ -1,0 +1,9 @@
+% go
+
+# init module
+go mod init mypackage
+
+# install packages based on main module
+go get
+
+# run go package (must be inside package directory)

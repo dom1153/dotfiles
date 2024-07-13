@@ -34,7 +34,7 @@
     ueberzugpp ### sixel
     jq ### parse / query json
     devenv ### better dev enviroments?
-    direnv ### auto load env (nix shell, devenv)
+    # direnv ### auto load env (nix shell, devenv)
     vhs ### tool to create terminal gifs with code
     t-rec ### geenrate animated gifs for the web (rust)
     xdg-ninja ### check $HOME for unwanted files/directories and move them
