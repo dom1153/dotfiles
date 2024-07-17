@@ -64,7 +64,7 @@ map rC "|"
 # define a custom 'delete' command
 cmd trash ${{
     set -f
-    cowsay $fx | lolcat
+    cowsay $fx | clolcat
     printf "remove? [y/n] "
     read ans
     [ "$ans" = "y" ] && trash $fx

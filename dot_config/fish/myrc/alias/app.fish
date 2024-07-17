@@ -49,6 +49,8 @@ abbr si rg
 
 abbr lg lazygit
 
+abbr lolcat clolcat
+
 ### chezmoi
 abbr ce "chezmoi edit"
 abbr ca "chezmoi apply"

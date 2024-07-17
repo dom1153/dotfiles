@@ -62,3 +62,59 @@ adb devices
 
 # adb connect shell
 adb shell
+
+% screensaver, rice
+
+# pipes screensaver
+pipes-rs
+
+# matrix screensaver
+cmatrix -ba
+
+# generate a picture of a bonsai
+cmatrix -ba
+
+# cross-platform audio visualizer
+cava
+
+# the classic
+fortune | cowsay | clolcat
+
+# cowsay random
+fortune | cowsay --random
+
+# cowsay fullscreen
+fortune | cowsay --random --aurora --super
+
+# cowsay picker
+fortune | cowsay -f <cows>
+$ cows: cowsay -l | tail -n +2 | tr ' ' '\n' | sed '/^\s*$/d'
+
+# cowsay list pictures
+cowsay -l
+
+# blahaj shark
+blahaj -s
+
+# blahaj flag
+blahaj -f
+
+# blahaj flag picker
+blahaj -f -c <blahajcolors>
+$ blahajcolors: blahaj --flags | tail -n +3
+
+# pokemon say
+fortune | pokemonsay
+
+# pokemon picker
+fortune | pokemonsay -p <pokemons>
+$ pokemons: pokemonsay -l | tail -n +3 | sed 's/[0-9]* - //g'
+
+# steam locomotive
+sl
+
+# neofetch fast
+fastfetch
+
+# neofetch
+neofetch

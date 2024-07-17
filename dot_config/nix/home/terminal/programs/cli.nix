@@ -40,14 +40,22 @@
     xdg-ninja ### check $HOME for unwanted files/directories and move them
     fpp ### facebook pathpicker (edit or run commands on path of ouptut)
 
-    ### funni (keep these)
-    lolcat
+    ### funni
+    blahaj
+    lolcat # keeping this for legacy (lf) reasons ; can remove eventually
     neo-cowsay
     ponysay
     pokemonsay
     fortune
     cmatrix
+    cbonsai
+    clolcat # lolcat but faster
     peaclock # TODO: needs locale fix on darwin
+    pipes-rs
+    figlet ### making large letters out of ordinary letters
+    sl ### steam locomotive for when you mistype ls
+    fastfetch
+    neofetch
 
     ### services
     entr
@@ -71,7 +79,6 @@
     nap ### snippet manager
     navi
     ncdu
-    neofetch
     tmux
     yazi ### another lf ; batteries included
     zellij

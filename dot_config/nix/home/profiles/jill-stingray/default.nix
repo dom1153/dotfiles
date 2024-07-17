@@ -84,6 +84,8 @@ in {
       krita ### drawing
       pinta ### like paint dot net
       ctpv ### simple terminal preview (but in c)
+
+      cava ### cross-platform audio visualizer
     ];
 
     # https://nixos.wiki/wiki/FAQ/When_do_I_update_stateVersion

@@ -14,6 +14,7 @@
       "koekeishiya/formulae/skhd" ### global keybinds (and yabai)
       "spicetify-cli" ### going brew since this will stay up to date
       # "ctpv" ### simple terminal preview (c) -> lf
+      "cava" ### cross-platform audio visualizer
     ];
     casks = [
       "affinity-designer"
