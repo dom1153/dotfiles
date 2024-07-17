@@ -56,3 +56,9 @@ echo -e 'if type "nix" >/dev/null 2>&1; then\n\tuse flake . --impure\nfi' > .env
 
 # add executable create base script
 echo -e '#!/usr/bin/env bash\ncd "$(dirname $0)"\n' > <scriptname>; chmod +x <scriptname>
+
+# adb list (checks if connected)
+adb devices
+
+# adb connect shell
+adb shell
