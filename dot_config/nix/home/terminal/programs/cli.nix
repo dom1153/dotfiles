@@ -21,6 +21,9 @@
     file ### get... file types e.g. mime; use with lf preview
 
     ### tools
+    asciinema
+    ### asciinema-agg ### generate asciinema gifs
+    ### asciinema-scenario ### asciinema from text file; linux only
     chezmoi
     nix-prefetch-github
     spacer ### append lines after a given time in tail
