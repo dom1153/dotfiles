@@ -1,8 +1,0 @@
-% misc
-
-# stop watchman
-watchman shutdown-server
-
-; https://stackoverflow.com/questions/107995/how-do-you-recursively-unzip-archives-in-a-directory-and-its-subdirectories-from
-# extract all zip files into their own directory
-find . -name "*.zip" -print0 | xargs -0 --no-run-if-empty -P 5 -I fileName sh -c 'unzip -o -d "$(dirname "fileName")/$(basename -s .zip "fileName")" "fileName"'

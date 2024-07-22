@@ -1,0 +1,51 @@
+% git
+; TODO git clone paste in repo interactive
+; branching
+; basics (edit, remove, stash, commit, push, diff, merge)
+
+# login to git via github
+gh auth login
+
+# get all git config urls from below directories into nvim
+bat --paging=never */.git/config | grep --color=auto 'url = ' | sed -E 's/.*url = //g' | nvim
+
+# get git config remote url clone source
+git remote get-url origin
+
+; ----------------------------------------------------------------------------
+
+% go
+
+# init module
+go mod init mypackage
+
+# install packages based on main module
+go get
+
+# run go package (must be inside package directory)
+
+; ----------------------------------------------------------------------------
+
+% web, npm
+
+# npm install save dev
+npm install prisma --save-dev
+
+# run npm installed apps (non-global, without npm script)
+npx vercel
+
+; jq -r '.scripts|to_entries[]|((.key))' package.json
+# run npm scripts
+npm run dev
+
+# list npm run entries
+npm run
+
+# install save npm
+npm install --save canvas-confetti
+
+# install save-dev npm
+npm install --save canvas-confetti
+
+# astro starter
+npm create astro@latest

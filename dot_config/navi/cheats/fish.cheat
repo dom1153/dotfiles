@@ -1,4 +1,0 @@
-% fish
-
-# set global variable (also disable zellij layout in this session)
-set -gx ZELLIJ 1

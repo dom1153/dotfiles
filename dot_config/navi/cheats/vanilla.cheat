@@ -1,3 +1,20 @@
+% wl-copy, wl-paste, wayland, clipboard
+
+# Wayland copy $PWD (no newline)
+pwd | wl-copy -n
+
+; ----------------------------------------------------------------------------
+
+% copy, paste, clipboard, macos, mac os, darwin
+
+# MacOS copy $PWD
+pwd | tr -d '\n' | pbcopy
+
+# PWD copy xserver
+pwd | tr -d '\n' | xclip -sel clip
+
+; ----------------------------------------------------------------------------
+
 % macos, sip, system integrity
 
 ; '/System/Applications/Utilities/System Information.app' -> 'Software' can tell you status as well
@@ -52,3 +69,28 @@ ipconfig getifaddr en0
 ; https://apple.stackexchange.com/questions/20547/how-do-i-find-my-ip-address-from-the-command-line
 # public ip (mac)
 dig -4 TXT +short o-o.myaddr.l.google.com @ns1.google.com
+
+; ----------------------------------------------------------------------------
+
+% unix
+
+# diff directory / folders
+diff -qr
+
+# get full home manager log
+systemctl -l status home-manager-archoo.service --lines 200
+
+# get port usage
+sudo netstat -nlp
+
+# download a file
+wget
+
+# check external ip
+curl -s http://checkip.dyndns.org/ | sed 's/[a-zA-Z<>/ :]//g'
+
+# local ip (universal, many)
+ifconfig | grep "inet " | grep -Fv 127.0.0.1 | awk '{print $2}'
+
+# is my internet working
+grc ping www.google.com

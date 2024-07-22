@@ -1,7 +1,0 @@
-% xserver, unix
-
-# requires xorg.xwininfo
-xwininfo -tree -root
-
-# query xset info (numlock, repeat)
-xset q
