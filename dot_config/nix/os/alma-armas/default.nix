@@ -18,6 +18,7 @@
     ../../system/programs/fish.nix
 
     ../../system/services/avahi.nix
+    ../../system/services/docker.nix
     ../../system/services/home-manager.nix
     ../../system/services/kmscon.nix
     ../../system/services/mosh-server.nix
