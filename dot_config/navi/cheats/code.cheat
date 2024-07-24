@@ -23,6 +23,27 @@ go mod init mypackage
 go get
 
 # run go package (must be inside package directory)
+go run
+
+; ----------------------------------------------------------------------------
+
+% rust
+
+; ----------------------------------------------------------------------------
+
+% nix-develop, nix-shell
+
+# rust nix shell
+nix-shell -p cargo rustc rustfmt rust-analyzer clippy
+
+# go nix shell
+nix-shell -p go gotools
+
+# python nix shell
+nix-shell -p python3 virtualenv pip
+
+# npm nix shell
+nix-shell -p nodejs_18 yarn pnpm
 
 ; ----------------------------------------------------------------------------
 
