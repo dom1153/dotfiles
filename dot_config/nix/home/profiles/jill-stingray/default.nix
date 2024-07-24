@@ -74,7 +74,7 @@ in {
 
       barrier ### synergy
 
-      nvim-pkg # kickstar nvim package
+      nvim-pkg # my custom nvim
 
       python312Packages.pywatchman ### watchman-make
 

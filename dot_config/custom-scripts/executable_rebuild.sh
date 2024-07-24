@@ -102,6 +102,7 @@ myecho "==> Nix flake update"
 # https://discourse.nixos.org/t/update-single-flake-input/13056
 # nix flake update
 nix flake lock --update-input dom1153-nvim-flake
+nix flake lock --update-input nixpkgs-unstable
 # myecho "  ==> Done"
 
 ### update chezmoi (apply)
