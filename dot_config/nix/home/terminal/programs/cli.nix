@@ -53,7 +53,9 @@
     cmatrix
     cbonsai
     clolcat # lolcat but faster
-    peaclock # TODO: needs locale fix on darwin
+    peaclock # TODO: needs locale fix on darwin ; would need rebuild for osx it seems
+    tenki ### tty-clock with weather effect
+    #### tty-clock ### does not work on osx (brew)
     pipes-rs
     figlet ### making large letters out of ordinary letters
     sl ### steam locomotive for when you mistype ls

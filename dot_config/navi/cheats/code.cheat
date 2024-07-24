@@ -34,16 +34,22 @@ go run
 % nix-develop, nix-shell
 
 # rust nix shell
-nix-shell -p cargo rustc rustfmt rust-analyzer clippy
+nix develop "github:DeterminateSystems/zero-to-nix#rust"
 
 # go nix shell
-nix-shell -p go gotools
+nix develop "github:DeterminateSystems/zero-to-nix#go"
 
 # python nix shell
-nix-shell -p python3 virtualenv pip
+nix develop "github:DeterminateSystems/zero-to-nix#python"
 
 # npm nix shell
-nix-shell -p nodejs_18 yarn pnpm
+nix develop "github:DeterminateSystems/zero-to-nix#javascript"
+
+# haskell nix shell
+nix develop "github:DeterminateSystems/zero-to-nix#haskell"
+
+# scala nix shell
+nix develop "github:DeterminateSystems/zero-to-nix#scala"
 
 ; ----------------------------------------------------------------------------
 

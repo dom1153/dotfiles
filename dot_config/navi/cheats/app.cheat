@@ -109,8 +109,11 @@ cmatrix -ba
 # generate a picture of a bonsai
 cmatrix -ba
 
-# cross-platform audio visualizer
+# cross-platform audio visualizer music
 cava
+
+# clock with rain
+tenki
 
 # the classic
 fortune | cowsay | clolcat

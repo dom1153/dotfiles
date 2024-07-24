@@ -14,7 +14,6 @@
       "koekeishiya/formulae/skhd" ### global keybinds (and yabai)
       # "spicetify-cli" ### going brew since this will stay up to date
       # "ctpv" ### simple terminal preview (c) -> lf
-      "cava" ### cross-platform audio visualizer
     ];
     casks = [
       "affinity-designer"
@@ -78,8 +77,17 @@
     ## flow
     ## pixea - like feh
 
+    ### brews
+    # "cava" ### cross-platform audio visualizer ### does not work out of the box on osx https://github.com/karlstav/cava/issues/478
+    # "tty-clock"
+
+    ### casks
     # "ultimaker-cura" ### 3d slicer
     # "prusaslicer" ### open source 3d slicer
     ### "xnviewmp" ### xn viewer mpv -> looks ugly...
+    # "background-music"
+    # "epic-games"
+    # "unity-hub"
+    # "hhkb"
   };
 }
