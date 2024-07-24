@@ -44,8 +44,8 @@ npm run
 # install save npm
 npm install --save canvas-confetti
 
-# install save-dev npm
-npm install --save canvas-confetti
+# install save-dev npm (e.g. @types/ )
+npm install --save -D canvas-confetti
 
 # astro starter
 npm create astro@latest
