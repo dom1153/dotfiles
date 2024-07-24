@@ -89,3 +89,12 @@ abbr nsc 'nix-shell --run "bash -c '
 # if test $TERM = foot
 #     abbr ssh 'kitty kitten ssh'
 # end
+
+set -l uname $(uname)
+if [ $uname = Darwin ]
+    abbr clip "tr -d '\n' | pbcopy"
+else
+    ### wayland is wl-copy but I don't use it
+    abbr clip "tr -d '\n' | xclip -sel clip"
+    # abbr wclip "wl-copy -n"
+end
