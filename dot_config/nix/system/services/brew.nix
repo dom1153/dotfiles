@@ -89,5 +89,6 @@
     # "epic-games"
     # "unity-hub"
     # "hhkb"
+    # "gamemaker"
   };
 }

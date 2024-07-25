@@ -51,6 +51,9 @@ nix develop "github:DeterminateSystems/zero-to-nix#haskell"
 # scala nix shell
 nix develop "github:DeterminateSystems/zero-to-nix#scala"
 
+# cmake nix shell
+nix develop "github:DeterminateSystems/zero-to-nix#cpp"
+
 ; ----------------------------------------------------------------------------
 
 % web, npm

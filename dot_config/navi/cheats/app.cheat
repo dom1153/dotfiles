@@ -20,7 +20,7 @@ nr
 # add create .envrc file flake
 echo -e 'if type "nix" >/dev/null 2>&1; then\n\tuse flake . --impure\nfi' > .envrc
 
-# add executable create base script
+# add executable create base script run sh
 echo -e '#!/usr/bin/env bash\ncd "$(dirname $0)"\n' > <scriptname>; chmod +x <scriptname>
 
 # generate random number 1 to 10 (bash)
@@ -32,6 +32,12 @@ watchman shutdown-server
 ; https://stackoverflow.com/questions/107995/how-do-you-recursively-unzip-archives-in-a-directory-and-its-subdirectories-from
 # extract all zip files into their own directory
 find . -name "*.zip" -print0 | xargs -0 --no-run-if-empty -P 5 -I fileName sh -c 'unzip -o -d "$(dirname "fileName")/$(basename -s .zip "fileName")" "fileName"'
+
+# nvim in diff mode
+nvim -d
+
+# nvim Readonly (for cat etc)
+nvim -R
 
 ; ----------------------------------------------------------------------------
 
