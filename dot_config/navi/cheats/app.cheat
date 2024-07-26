@@ -23,6 +23,9 @@ echo -e 'if type "nix" >/dev/null 2>&1; then\n\tuse flake . --impure\nfi' > .env
 # add executable create base script run sh
 echo -e '#!/usr/bin/env bash\ncd "$(dirname $0)"\n' > <scriptname>; chmod +x <scriptname>
 
+# add npm run sh script (script/run.sh)
+echo -e '#!/usr/bin/env bash\ncd "$(dirname $0)"\ncd ..\nnpm i\nnpm run dev' > run.sh; chmod +x run.sh
+
 # generate random number 1 to 10 (bash)
 bash -c 'echo $((1 + $RANDOM % 10))'
 
