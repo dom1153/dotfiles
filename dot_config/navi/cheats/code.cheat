@@ -86,3 +86,6 @@ npm install --save -D canvas-confetti
 
 # astro starter
 npm create astro@latest
+
+# pass args to npm run
+npm run dev -- --host
