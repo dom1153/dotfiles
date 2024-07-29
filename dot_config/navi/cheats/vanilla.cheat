@@ -80,7 +80,7 @@ diff -qr
 # get full home manager log
 systemctl -l status home-manager-archoo.service --lines 200
 
-# get port usage
+# get port usage (linux)
 sudo netstat -nlp
 
 # download a file
@@ -100,3 +100,6 @@ hostname
 
 # get username
 whoami
+
+# find who is using a port (macos)
+sudo lsof -i -P | grep LISTEN | grep :<port>

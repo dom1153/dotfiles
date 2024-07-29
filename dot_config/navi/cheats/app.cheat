@@ -331,6 +331,9 @@ nix flake init --template "github:DeterminateSystems/zero-to-nix#scala-dev"
 # enable direnv .envrc
 direnv allow
 
+# disable direnv .envrc
+direnv disallow
+
 # basic nix store cleanup
 nix-store --gc
 
