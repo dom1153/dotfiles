@@ -37,6 +37,7 @@ in {
     firefox
     unstable.obsidian
     osu-lazer-bin
+    anki-bin
 
     gnome.gnome-disk-utility
 
