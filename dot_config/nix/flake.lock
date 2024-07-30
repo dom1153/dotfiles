@@ -32,11 +32,11 @@
         "toggletasks": "toggletasks"
       },
       "locked": {
-        "lastModified": 1719529464,
-        "narHash": "sha256-7fJJeQYW/lJGMF9cr0icDLFyT+k4VcGq9l4Igv1PHjM=",
+        "lastModified": 1722313845,
+        "narHash": "sha256-Ep3UnGWaANEx366/FqCsn4VSqUIrF2d1SykGzJw10/w=",
         "owner": "dom1153",
         "repo": "nvim-flake",
-        "rev": "16870c692b1cb32feabd216a402d5bc301528f09",
+        "rev": "b23d4d77ab88ca5cb830093ab4efd2191526b514",
         "type": "github"
       },
       "original": {
@@ -282,11 +282,11 @@
     },
     "nixpkgs-unstable": {
       "locked": {
-        "lastModified": 1721924956,
-        "narHash": "sha256-Sb1jlyRO+N8jBXEX9Pg9Z1Qb8Bw9QyOgLDNMEpmjZ2M=",
+        "lastModified": 1722062969,
+        "narHash": "sha256-QOS0ykELUmPbrrUGmegAUlpmUFznDQeR4q7rFhl8eQg=",
         "owner": "nixos",
         "repo": "nixpkgs",
-        "rev": "5ad6a14c6bf098e98800b091668718c336effc95",
+        "rev": "b73c2221a46c13557b1b3be9c2070cc42cf01eb3",
         "type": "github"
       },
       "original": {
