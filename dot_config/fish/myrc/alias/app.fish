@@ -25,6 +25,7 @@ end
 
 if exists btop
     abbr top btop
+    abbr htop btop
 end
 
 if exists doas

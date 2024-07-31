@@ -105,6 +105,9 @@ glow
 # test internet speed
 speedtest
 
+# top
+btop
+
 ; ----------------------------------------------------------------------------
 
 % screensaver, rice

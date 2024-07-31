@@ -13,7 +13,7 @@ in {
     eww
     localsend
     neovide
-    parsec-bin
+    unstable.parsec-bin
 
     ### tools
     vial
