@@ -10,19 +10,21 @@
 in {
   home.packages = with pkgs; [
     ### services
-    eww
-    localsend
-    neovide
+    # unstable.localsend ### conflicts with rustdesk
     unstable.parsec-bin
+    unstable.rustdesk-flutter
+    eww
 
     ### tools
+    unstable.spotify
+    neovide
     vial
     mpv
-    spotify
     imv ### image viewer
     feh ### image previewer
 
     ### art
+    blockbench ### voxel 3d modeling
     libsForQt5.kolourpaint ### windows 98 style
 
     ### terminal emulators
@@ -36,8 +38,8 @@ in {
     microsoft-edge
     firefox
     unstable.obsidian
-    osu-lazer-bin
-    anki-bin
+    unstable.osu-lazer-bin
+    unstable.anki-bin
 
     gnome.gnome-disk-utility
 
