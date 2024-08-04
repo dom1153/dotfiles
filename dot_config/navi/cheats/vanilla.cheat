@@ -103,3 +103,18 @@ whoami
 
 # find who is using a port (macos)
 sudo lsof -i -P | grep LISTEN | grep :<port>
+
+# get the REAL pwd
+pwd --physical
+
+# view disk size overall
+lsblk
+
+# view disk usage directory
+ncdu
+
+# disk usage fast (colorful) (can pass file path)
+grc df -h
+
+# disk usage fast (no grc)
+df -h

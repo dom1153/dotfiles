@@ -80,6 +80,7 @@ abbr ffe "fd --type f --hidden --exclude .git | fzf --reverse | xargs $EDITOR -"
 abbr tldrf 'tldr --list | fzf --preview "tldr {1} --color" --preview-window=right,70% | xargs tldr'
 
 abbr nview 'nvim -R'
+abbr nvimr 'nvim -R'
 
 abbr nsp 'nix-shell -p'
 abbr nd 'nix develop'
