@@ -31,12 +31,14 @@
     ./services/deluge.nix
     ./services/mount.nix
     ./services/networking.nix
-    ./services/nextcloud.nix
+    # ./services/nextcloud.nix
     ./services/nfs.nix
     ./services/samba.nix
     ./services/sonarr.nix
     ./services/sws.nix
     ./services/syncthing.nix
+    ./services/caddy.nix
+    # ./services/openvscode-server.nix
 
     ./hardware-configuration.nix
   ];

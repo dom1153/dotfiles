@@ -8,6 +8,9 @@
     ### NFS:
     ###   TCP 111 2049 4000 4001 4002 20048 2049
     ###   UDP 111 2049 4000 4001 4002 20048
+    ### comsos cloud
+    ###   TCP:UDP 4242:4242
+    ###   TCP/UDP 80 443 4242
     firewall = {
       allowedTCPPorts = [
         111
@@ -19,6 +22,11 @@
         4001
         4002
         8384
+        80
+        443
+        4242
+        7080
+        7443
       ];
       allowedUDPPorts = [
         111
@@ -29,8 +37,18 @@
         4000
         4001
         4002
+        80
+        443
+        4242
+        7080
+        7443
       ];
     };
+
+    # nameservers = ["100.100.100.100" "8.8.8.8" "1.1.1.1"];
+    # search = ["flamingo-universe.ts.net"];
+
+    # nftables.enable = true; ### tailscale?
 
     ### /etc/hosts
     extraHosts = ''

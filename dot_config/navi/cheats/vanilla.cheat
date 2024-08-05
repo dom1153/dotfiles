@@ -83,6 +83,9 @@ systemctl -l status home-manager-archoo.service --lines 200
 # get port usage (linux)
 sudo netstat -nlp
 
+# netstat check ports a different way
+sudo netstat -tulpn
+
 # download a file
 wget
 
@@ -106,3 +109,18 @@ sudo lsof -i -P | grep LISTEN | grep :<port>
 
 # find all files of extension but ignore directory
 find . -path ./node_modules -prune -o -name '*.ts' -print
+
+# get the REAL pwd
+pwd --physical
+
+# view disk size overall
+lsblk
+
+# view disk usage directory
+ncdu
+
+# disk usage fast (colorful) (can pass file path)
+grc df -h
+
+# disk usage fast (no grc)
+df -h
