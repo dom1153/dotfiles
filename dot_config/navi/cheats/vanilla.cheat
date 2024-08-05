@@ -83,6 +83,9 @@ systemctl -l status home-manager-archoo.service --lines 200
 # get port usage (linux)
 sudo netstat -nlp
 
+# netstat check ports a different way
+sudo netstat -tulpn
+
 # download a file
 wget
 
