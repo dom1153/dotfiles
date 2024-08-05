@@ -103,3 +103,6 @@ whoami
 
 # find who is using a port (macos)
 sudo lsof -i -P | grep LISTEN | grep :<port>
+
+# find all files of extension but ignore directory
+find . -path ./node_modules -prune -o -name '*.ts' -print
