@@ -9,13 +9,22 @@
   security.acme = {
     acceptTerms = true;
     defaults.email = "blahblahfoobar@protonmail.com";
+    ### staging
+    defaults.server = "https://acme-staging-v02.api.letsencrypt.org/directory";
     certs."alma-armas.flamingo-universe.ts.net" = {
       reloadServices = ["static-web-server"];
-      listenHTTP = ":19910"; ### 80 is consumed by nginx
+      listenHTTP = ":8787";
       group = "www-data";
-      # EC is not supported by SWS versions before 2.16.1
       keyType = "rsa4096";
     };
+    # certs."alma-armas.duckdns.org" = {
+    #   reloadServices = ["static-web-server"];
+    #   # listenHTTP = ":19910"; ### 80 is consumed by nginx
+    #   listenHTTP = ":80";
+    #   group = "www-data";
+    #   # EC is not supported by SWS versions before 2.16.1
+    #   keyType = "rsa4096";
+    # };
   };
 
   # ACME Challenge (80)

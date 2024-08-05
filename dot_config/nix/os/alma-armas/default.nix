@@ -37,6 +37,7 @@
     ./services/sonarr.nix
     ./services/sws.nix
     ./services/syncthing.nix
+    ./services/caddy.nix
     # ./services/openvscode-server.nix
 
     ./hardware-configuration.nix

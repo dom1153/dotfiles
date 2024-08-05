@@ -22,6 +22,8 @@
         ### sudo tailscale cert alma-armas.flamingo-universe.ts.net
         # http2-tls-cert = "/home/archoo/.config/tls/alma-armas.flamingo-universe.ts.net.crt";
         # http2-tls-key = "/home/archoo/.config/tls/alma-armas.flamingo-universe.ts.net.key";
+        # http2-tls-cert = "/var/lib/acme/alma-armas.duckdns.org/fullchain.pem";
+        # http2-tls-key = "/var/lib/acme/alma-armas.duckdns.org/key.pem";
         # # Info here: https://static-web-server.net/features/security-headers/
         # # This option is only needed for versions prior to 2.18.0, after which it defaults to true
         # security-headers = true;
@@ -36,6 +38,8 @@
   ### This strategy can be useful to override other advanced features as-needed
   # systemd.services.static-web-server.serviceConfig.SupplementaryGroups = pkgs.lib.mkForce ["" "www-data"];
   # systemd.services.static-web-server.serviceConfig.BindReadOnlyPaths = pkgs.lib.mkForce ["/run/media/archoo/super-4T/sws" "/home/archoo/.config/tls"];
+
+  # systemd.services.static-web-server.serviceConfig.BindReadOnlyPaths = pkgs.lib.mkForce ["/run/media/archoo/super-4T/sws" "/var/lib/acme/alma-armas.duckdns.org"];
 
   ### 8787 for sws (default)
   networking.firewall.allowedTCPPorts = [8787];

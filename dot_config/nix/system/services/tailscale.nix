@@ -7,6 +7,7 @@ in {
   services.tailscale = {
     enable = true;
     package = unstable.tailscale;
-    # useRoutingFeatures = "server";
+    ### caddy runs as user 'caddy', not root; so this gives permission to for caddy to read tailscale's dns information
+    permitCertUid = "caddy";
   };
 }

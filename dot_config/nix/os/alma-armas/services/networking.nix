@@ -25,6 +25,8 @@
         80
         443
         4242
+        7080
+        7443
       ];
       allowedUDPPorts = [
         111
@@ -38,8 +40,15 @@
         80
         443
         4242
+        7080
+        7443
       ];
     };
+
+    # nameservers = ["100.100.100.100" "8.8.8.8" "1.1.1.1"];
+    # search = ["flamingo-universe.ts.net"];
+
+    # nftables.enable = true; ### tailscale?
 
     ### /etc/hosts
     extraHosts = ''
