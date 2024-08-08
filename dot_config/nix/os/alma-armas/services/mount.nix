@@ -3,7 +3,7 @@
   ### fuseblk / ntfs doesn't allow traditional mount options qq
   boot.supportedFilesystems = ["ntfs" "ntfs-3g"];
   ### 'set' chmod 077 permissions for nextcloud... (umask flips in reverse)
-  # "umask=007"
+  # "umask=007" -> umask may block networking mounting...
   fileSystems."/run/media/archoo/fuzzy-500G" = {
     device = "/dev/disk/by-uuid/22DC1805279A1C23";
     # fsType = "ntfs";
