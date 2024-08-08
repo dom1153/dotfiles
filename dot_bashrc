@@ -2,6 +2,16 @@
 
 ### also... avoid aliases. harder to traceback issues. nix-shell needs to be as reproducible as possible
 
+### dumb terminals include chron and lazygit usage
+if [[ $TERM == 'dumb' ]]; then
+  exit
+fi
+
+case $- in
+*i*) ;; ### interactive
+*) ;;   ### non-interactive (e.g. scripts)
+esac
+
 if type "starship" >/dev/null 2>&1; then
   ### should remove warning for git branch taking too long to load
   ### export STARSHIP_LOG="error"
@@ -18,5 +28,5 @@ if type "lf" >/dev/null 2>&1; then
 fi
 
 if type "dircolors" >/dev/null 2>&1; then
-  eval `dircolors $HOME/.config/bash/bliss.dircolors`
+  eval $(dircolors $HOME/.config/bash/bliss.dircolors)
 fi
