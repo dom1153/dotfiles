@@ -119,8 +119,14 @@ lsblk
 # view disk usage directory
 ncdu
 
-# disk usage fast (colorful) (can pass file path)
+# (grc) disk usage fast (colorful) (can pass file path)
 grc df -h
 
 # disk usage fast (no grc)
 df -h
+
+# check users on system
+cat /etc/passwd
+
+# (bat) check users on system
+bat /etc/passwd
