@@ -83,7 +83,6 @@ in {
 
     ### development
     shfmt ### unsure how to integrate
-    unstable.devcontainer
 
     ### tui
     ani-cli

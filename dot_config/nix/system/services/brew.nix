@@ -14,6 +14,7 @@
       "koekeishiya/formulae/skhd" ### global keybinds (and yabai)
       # "spicetify-cli" ### going brew since this will stay up to date
       # "ctpv" ### simple terminal preview (c) -> lf
+      # "devcontainer" ### run vscode devcontainer from cli
     ];
     casks = [
       "affinity-designer"
@@ -76,6 +77,7 @@
     ## tailscale
     ## flow
     ## pixea - like feh
+    ## stickies (slightly-more modern sticky notes)
 
     ### brews
     # "cava" ### cross-platform audio visualizer ### does not work out of the box on osx https://github.com/karlstav/cava/issues/478

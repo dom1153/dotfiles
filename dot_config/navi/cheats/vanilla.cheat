@@ -43,10 +43,10 @@ codesign -dr - /path/to/yourapp.app
 
 % macos, brew, cask
 # brew list cask -> nvim
-brew list --cask | fzf
+brew list --cask | nvim -R
 
 # brew list formulae -> nvim
-brew list --formulae | fzf
+brew list --formulae | nvim -R
 
 # brew upgrade
 brew update && brew upgrade
