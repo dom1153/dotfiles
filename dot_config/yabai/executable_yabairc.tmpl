@@ -49,11 +49,13 @@ yabai -m config focus_follows_mouse off
 # yabai -m config normal_window_opacity 0.75
 
 ### whitelist mode
+### consider /Applications/
 yabai -m rule --add app=".*" manage=off
 yabai -m rule --add app="^WezTerm" manage=on
 yabai -m rule --add app="^Obsidian" manage=on
 yabai -m rule --add app="^kitty$" manage=on
 yabai -m rule --add app="^Code$" manage=on
+yabai -m rule --add app="^Google Chrome Dev$" manage=on
 
 {{- if eq .chezmoi.hostname "dorothy-haze" }}
 yabai -m rule --add app="Arc" manage=on
