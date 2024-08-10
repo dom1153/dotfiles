@@ -42,6 +42,9 @@ nvim -d
 # nvim Readonly (for cat etc)
 nvim -R
 
+# lf documentation
+lf -doc
+
 ; ----------------------------------------------------------------------------
 
 % test
