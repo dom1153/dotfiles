@@ -25,3 +25,5 @@ README.md
 ### pure reference folder
 .config/my_kde_ref/
 .config/my_kde_ref/**
+
+sym_bashrc.sh

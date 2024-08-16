@@ -43,10 +43,10 @@ codesign -dr - /path/to/yourapp.app
 
 % macos, brew, cask
 # brew list cask -> nvim
-brew list --cask | fzf
+brew list --cask | nvim -R
 
 # brew list formulae -> nvim
-brew list --formulae | fzf
+brew list --formulae | nvim -R
 
 # brew upgrade
 brew update && brew upgrade
@@ -119,8 +119,14 @@ lsblk
 # view disk usage directory
 ncdu
 
-# disk usage fast (colorful) (can pass file path)
+# (grc) disk usage fast (colorful) (can pass file path)
 grc df -h
 
 # disk usage fast (no grc)
 df -h
+
+# check users on system
+cat /etc/passwd
+
+# (bat) check users on system
+bat /etc/passwd

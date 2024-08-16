@@ -56,6 +56,9 @@ nvim -d
 # nvim Readonly (for cat etc)
 nvim -R
 
+# lf documentation
+lf -doc
+
 ; ----------------------------------------------------------------------------
 
 % test
@@ -268,6 +271,15 @@ docker inspect -f '{{ .Mounts }}' LSID
 
 # list docker volumes (mega command)
 docker ps -a --format '{{ .ID }}' | xargs -I {} docker inspect -f '{{ .Name }}{{ printf "\n" }}{{ range .Mounts }}{{ printf "\n\t" }}{{ .Type }} {{ if eq .Type "bind" }}{{ .Source }}{{ end }}{{ .Name }} => {{ .Destination }}{{ end }}{{ printf "\n" }}' {}
+
+% devcontainer
+
+### start up devcontainer (may need to delete old container to actually rebuild)
+devcontainer up --workspace-folder $PWD/..
+
+; https://github.com/devcontainers/cli/issues/186
+### run devcontainer (requries appPort to tell docker to port forward, devcontainer does not support port-forwarding yet)
+devcontainer exec --workspace-folder $PWD/.. npm run dev
 
 ; ----------------------------------------------------------------------------
 
