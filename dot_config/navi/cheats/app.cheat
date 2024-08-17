@@ -217,28 +217,35 @@ adb shell
 % docker
 
 # run a docker compose file (same as docker-compose up)
-docker compose up
+docker compose up <dockernames>
 
 # list docker containers
 docker container ls
 
 # docker container restart
-docker container restart
+docker container restart <dockernames>
 
 # docker container remove (must be stopped)
 docker rm
 
 # docker container remove (must be stopped)
-docker stop
+docker stop <dockernames>
 
 # check docker logs (e.g. cosmos-server)
-docker logs cosmos-server
+docker logs <dockernames>
 
 # check docker mount locations
 docker inspect -f '{{ .Mounts }}' LSID
 
 # list docker volumes (mega command)
 docker ps -a --format '{{ .ID }}' | xargs -I {} docker inspect -f '{{ .Name }}{{ printf "\n" }}{{ range .Mounts }}{{ printf "\n\t" }}{{ .Type }} {{ if eq .Type "bind" }}{{ .Source }}{{ end }}{{ .Name }} => {{ .Destination }}{{ end }}{{ printf "\n" }}' {}
+
+# view list docker configuration details
+docker inspect <dockernames> | nvim -R
+$ dockernames: docker container ls --format {{.Names}}
+
+; https://docs.docker.com/reference/cli/docker/container/ls/#formatting
+; https://stackoverflow.com/questions/50667371/docker-ps-output-formatting-list-only-names-of-running-containers
 
 % devcontainer
 
