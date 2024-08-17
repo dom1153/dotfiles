@@ -83,6 +83,7 @@ in {
 
     ### development
     shfmt ### unsure how to integrate
+    gum ### shell bubbletea
 
     ### tui
     ani-cli
