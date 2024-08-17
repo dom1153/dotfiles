@@ -1,5 +1,7 @@
 ### default
 
+### see documentation here: https://github.com/gokcehan/lf/blob/505c4ef6c0de/doc.md
+
 # interpreter for shell commands
 set shell sh
 
@@ -195,3 +197,6 @@ cmd on-select &{{
     lf -remote "send $id set statfmt \"$(exa -ld --color=always "$f")\""
 }}
 
+### unmap keys (nvim... or just unsure of functionality
+# map e
+map t

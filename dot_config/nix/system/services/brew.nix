@@ -15,6 +15,7 @@
       # "spicetify-cli" ### going brew since this will stay up to date
       # "ctpv" ### simple terminal preview (c) -> lf
       # "devcontainer" ### run vscode devcontainer from cli
+      # "arduino-cli" ### arduino tools but on cli
     ];
     casks = [
       "affinity-designer"

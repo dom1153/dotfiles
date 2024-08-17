@@ -14,8 +14,22 @@ bat cache --build
 
 % alias, mine, fav
 
-# nixos-rebuild alias
-nr
+; todo: automatically dump fish alias file into navi file?
+
+# nixos-rebuild alias (nr)
+$HOME/.config/custom-scripts/rebuild.sh
+
+# git clone url to {repo_user} format (gc)
+$HOME/.config/custom-scripts/custom_git_clone.sh
+
+# get git repo size before download (gsize)
+$HOME/.config/custom-scripts/custom_git_size.sh
+
+# clean up differences from chezmoi directory (cclean)
+$HOME/.config/custom-scripts/chezmoi_cleanup.sh
+
+# startup chezmoi watchman in foreground (wm)
+$HOME/.config/custom-scripts/watchmanchezmoi.sh
 
 # add create .envrc file flake
 echo -e 'if type "nix" >/dev/null 2>&1; then\n\tuse flake . --impure\nfi' > .envrc
@@ -42,6 +56,9 @@ nvim -d
 # nvim Readonly (for cat etc)
 nvim -R
 
+# lf documentation
+lf -doc
+
 ; ----------------------------------------------------------------------------
 
 % test
@@ -55,11 +72,12 @@ $ branch: git branch | awk '{print $NF}'
 
 % cheat
 
-# view cheatsheet (no color)
+# view cheatsheet
 cheat <cheatsheets>
 
-# view cheatsheet with color
-cheat -c <cheatsheets>
+;;; we are using glow to render, so no need for color argument
+; # view cheatsheet with color
+; cheat -c <cheatsheets>
 
 $ cheatsheets: ls ~/.config/cheat/cheatsheets/personal
 
@@ -89,6 +107,9 @@ chezmoi cd .
 # nixos image previewer
 imv
 
+# image previewer
+feh
+
 # kde image viewer
 gwenview
 
@@ -107,6 +128,18 @@ speedtest
 
 # top
 btop
+
+# drag and drop files (cli -> gui)
+dragon
+
+# drag n drop reverse (gui -> cli)
+dragon --target
+
+# video player
+mpv
+
+# fancy nvim gui
+neovide
 
 ; ----------------------------------------------------------------------------
 

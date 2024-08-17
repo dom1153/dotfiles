@@ -14,6 +14,7 @@ in {
     unstable.parsec-bin
     unstable.rustdesk-flutter
     eww
+    xdragon ### drag and drop files (x server)
 
     ### tools
     unstable.spotify
@@ -22,6 +23,7 @@ in {
     mpv
     imv ### image viewer
     feh ### image previewer
+    losslesscut-bin
 
     ### art
     blockbench ### voxel 3d modeling

@@ -1,0 +1,52 @@
+## Log
+
+```bash
+# Log some debug information.
+gum log --structured --level debug "Creating file..." name file.txt
+# DEBUG Unable to create file. name=temp.txt
+
+# Log some error.
+gum log --structured --level error "Unable to create file." name file.txt
+# ERROR Unable to create file. name=temp.txt
+
+# Include a timestamp.
+gum log --time rfc822 --level error "Unable to create file."
+```
+
+## Choose
+
+```bash
+gum choose Foo Bar Baz
+gum choose Choose One Item --cursor "* " --cursor.foreground 99 --selected.foreground 99
+gum choose Pick Two Items Maximum --limit 2 --cursor "* " --cursor-prefix "(•) " --selected-prefix "(x) " --unselected-prefix "( ) " --cursor.foreground 99 --selected.foreground 99
+gum choose Unlimited Choice Of Items --no-limit --cursor "* " --cursor-prefix "(•) " --selected-prefix "(x) " --unselected-prefix "( ) " --cursor.foreground 99 --selected.foreground 99
+```
+
+## Confirm
+```bash
+gum confirm "Testing?"
+gum confirm "No?" --default=false --affirmative "Okay." --negative "Cancel."
+```
+
+## Format
+```bash
+echo "# Header\nBody" | gum format
+echo 'package main\n\nimport "fmt"\n\nfunc main() {\n\tfmt.Println("Hello, Gum!")\n}\n' | gum format -t code
+echo ":candy:" | gum format -t emoji
+echo '{{ Bold "Bold" }}' | gum format -t template
+```
+
+## Join
+```bash
+gum join "Horizontal" "Join"
+gum join --vertical "Vertical" "Join"
+```
+
+## Style
+```bash
+gum style --foreground 99 --border double --border-foreground 99 --padding "1 2" --margin 1 "Hello, Gum."
+```
+
+# Others
+
+See [docs](https://github.com/charmbracelet/gum/blob/main/examples/test.sh) for more

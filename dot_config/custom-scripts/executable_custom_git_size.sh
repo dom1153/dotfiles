@@ -27,19 +27,17 @@ shift $(($OPTIND - 1)) ### this is the secret sauce
 ### repo (arg 1 of git clone) ; path, filename (arg 2 of git clone)
 p=$(trurl "$1" --get '{path}' | grep -Eo '^/([^/]*)/([^/]*)')
 p=$(echo "$p" | sed -E 's/.git$//g') ### remove .git extension
-r="$(trurl "$1" --get '{scheme}://{host}')$p"
-f=$(echo "$p" | sed -E 's/^\/([^\/]*)\/([^\/]*)/\2_\1/g')
+r=$(curl -su "{:username}" "https://api.github.com/repos${p}" | jq '.size')
 if [[ "$debug" -eq "1" || "$2" == "-d" ]]; then
   echo "arg1: $1"
   echo "p: $p"
   echo "r: $r"
-  echo "f: $f"
-  wget --spider -q "$r"
+  echo "curl: curl -s -u '{:username}' 'https://api.github.com/repos${p}' | jq '.size'"
+  wget --spider -q "https://api.github.com/repos${p}"
   s=$?
   if [[ ! "$s" -eq "0" ]]; then
     echo "  !!! wget error: $s"
   fi
-  echo git clone "'$r'" "'$f'"
   exit
 fi
-git clone "$r" "$f"
+echo $r KB "($(($r / 1000)) MB)"
