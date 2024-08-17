@@ -289,6 +289,17 @@ devcontainer up --workspace-folder $PWD/..
 ### run devcontainer (requries appPort to tell docker to port forward, devcontainer does not support port-forwarding yet)
 devcontainer exec --workspace-folder $PWD/.. npm run dev
 
+% sixel
+
+# draw a sixel image (chafa)
+chafa -f sixel <imagefilename>
+; -maxdepth 1 if need be
+$ imagefilename: find . -type f
+
+# ls for sixel
+lsix
+
+
 ; ----------------------------------------------------------------------------
 
 % fish

@@ -43,7 +43,7 @@ in {
     trurl ### transpose url (get url parts)
     imagemagick ### convert images (e.g. use with kitty icat)
     lsix ### ls, but for sixel
-    ueberzugpp ### sixel
+    ueberzugpp ### sixel (hook)
     jq ### parse / query json
     devenv ### better dev enviroments?
     # direnv ### auto load env (nix shell, devenv)
