@@ -12,3 +12,4 @@ abbr grep 'grep --color=auto'
 abbr fgrep 'fgrep --color=auto'
 abbr egrep 'egrep --color=auto'
 abbr pwd 'pwd --physical'
+vanilla_alias pwd

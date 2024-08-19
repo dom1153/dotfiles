@@ -59,6 +59,12 @@ nvim -R
 # lf documentation
 lf -doc
 
+# find file
+abbr ff "fd --type f --hidden --exclude .git | fzf --reverse"
+
+# find file -> pipe to editor
+abbr ffe "fd --type f --hidden --exclude .git | fzf --reverse | xargs $EDITOR -"
+
 ; ----------------------------------------------------------------------------
 
 % test
@@ -299,6 +305,10 @@ $ imagefilename: find . -type f
 # ls for sixel
 lsix
 
+% tldr
+
+### find search tldr names
+tldr --list | fzf --preview "tldr {1} --color" --preview-window=right,70% | xargs tldr
 
 ; ----------------------------------------------------------------------------
 

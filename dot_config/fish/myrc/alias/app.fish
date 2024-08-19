@@ -6,6 +6,8 @@ if exists trash
         case '*'
             abbr rm trash
     end
+    abbr rrm 'rm -i'
+    ### ^^^ vanilla_alias
 else
     abbr rm 'rm -i'
 end
@@ -14,6 +16,7 @@ if exists eza
     abbr ls eza
     abbr l eza -lh
     abbr la eza -lah
+    vanilla_alias ls
 else
     abbr l "ls -lh"
     abbr la "ls -lah"
@@ -21,19 +24,23 @@ end
 
 if exists bat
     abbr cat "bat --paging=never --plain"
+    vanilla_alias cat
 end
 
 if exists btop
     abbr top btop
     abbr htop btop
+    vanilla_alias top
 end
 
 if exists doas
     abbr sudo doas
 end
 
+### not really used, too complicated for my needs
 if exists multitail
     abbr tail "multitail -c"
+    vanilla_alias tail
 end
 
 ### pnpm
@@ -51,6 +58,7 @@ abbr si rg
 abbr lg lazygit
 
 abbr lolcat clolcat
+vanilla_alias lolcat
 
 ### chezmoi
 abbr ce "chezmoi edit"
@@ -75,9 +83,6 @@ abbr gs "git status"
 ### ff (find file)
 abbr ff "fd --type f --hidden --exclude .git | fzf --reverse"
 abbr ffe "fd --type f --hidden --exclude .git | fzf --reverse | xargs $EDITOR -"
-
-## tldr search
-abbr tldrf 'tldr --list | fzf --preview "tldr {1} --color" --preview-window=right,70% | xargs tldr'
 
 abbr nview 'nvim -R'
 abbr nvimr 'nvim -R'

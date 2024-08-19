@@ -130,3 +130,6 @@ cat /etc/passwd
 
 # (bat) check users on system
 bat /etc/passwd
+
+# unzip tar
+tar xvf
