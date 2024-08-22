@@ -14,12 +14,12 @@ README.md
 .ssh_template/**
 
 ### already being ignored but just for good measure
-**/.vscode
-**/.vscode/**
+# **/.vscode
+# **/.vscode/**
 
 ### ignore all instances (...)
 **/result
-**/flake.lock
+# **/flake.lock
 **/build.log
 
 ### pure reference folder
