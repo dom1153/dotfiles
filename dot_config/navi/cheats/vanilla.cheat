@@ -133,3 +133,7 @@ bat /etc/passwd
 
 # unzip tar
 tar xvf
+
+; --appimage-help
+# extract appimage contents
+./zen-specific.AppImage --appimage-extract

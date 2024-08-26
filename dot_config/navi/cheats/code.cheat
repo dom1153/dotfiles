@@ -95,3 +95,6 @@ npm create astro@latest
 
 # pass args to npm run
 npm run dev -- --host
+
+# upgrade npm package to newest version
+npm i lucide-react@latest

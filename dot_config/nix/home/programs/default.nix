@@ -24,6 +24,7 @@ in {
     imv ### image viewer
     feh ### image previewer
     losslesscut-bin
+    meld ### folder comparison ; can't find preferences folder qq
 
     ### art
     blockbench ### voxel 3d modeling

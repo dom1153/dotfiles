@@ -147,6 +147,14 @@ mpv
 # fancy nvim gui
 neovide
 
+# file browser (linux dolphin)
+dolphin .
+
+; -R reveals the file explorer, instead of opening apps
+; https://apple.stackexchange.com/questions/101432/how-do-i-launch-finder-from-terminal-or-command-line
+# file browser (macos finder)
+open . -R
+
 ; ----------------------------------------------------------------------------
 
 % screensaver, rice

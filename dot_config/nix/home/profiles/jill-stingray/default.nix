@@ -7,6 +7,8 @@
     system = "x86_64-linux";
     config.allowUnfree = true;
   };
+
+  zen-browser = pkgs.callPackage ../../programs/pkgs/zen-browser.nix {};
 in {
   imports = [
     ../../../home
@@ -45,6 +47,8 @@ in {
     };
 
     packages = with pkgs; [
+      zen-browser
+
       ### gui services
       bazecor ### seems to be bugged
       font-manager
