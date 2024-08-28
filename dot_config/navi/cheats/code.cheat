@@ -133,3 +133,10 @@ dasel -f pixi.toml 'tasks'
 
 # convert json to yaml
 dasel -f pixi.toml -w yaml > pixi.yaml
+
+; ----------------------------------------------------------------------------
+
+% yq, jq
+
+# get pixi tasks (yq) oy output yaml
+yq -oy '.tasks' pixi.toml

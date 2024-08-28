@@ -45,8 +45,8 @@ in {
     lsix ### ls, but for sixel
     ueberzugpp ### sixel (hook)
     jq ### parse / query json
-    unstable.dasel ### yq but different
-    yq ### jq but for xml,cvs,toml too
+    dasel ### yq but different
+    yq-go ### jq but for xml,cvs,toml too (prefer go > python version)
     devenv ### better dev enviroments?
     # direnv ### auto load env (nix shell, devenv)
     vhs ### tool to create terminal gifs with code
