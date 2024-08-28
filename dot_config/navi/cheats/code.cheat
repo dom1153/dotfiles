@@ -98,3 +98,38 @@ npm run dev -- --host
 
 # upgrade npm package to newest version
 npm i lucide-react@latest
+
+; ----------------------------------------------------------------------------
+
+% pixi, python
+
+# main pixi package manager comman
+pixi
+
+# pixi init
+pixi init pixi-hello-world
+
+# pixi python (requires init)
+pixi add python
+
+# pixi run file
+pixi run python hellow_world.py
+
+# add task 'hello' to run python
+pixi task add hello python hello_world.py
+
+# pixi run task (like npm)
+pixi run hello
+
+# pixi install (like npm)
+pixi install
+
+; ----------------------------------------------------------------------------
+
+% jq, dasel
+
+# get pixi tasks (dasel)
+dasel -f pixi.toml 'tasks'
+
+# convert json to yaml
+dasel -f pixi.toml -w yaml > pixi.yaml

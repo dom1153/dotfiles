@@ -651,5 +651,5 @@ cdi
 # restart yabai
 yabai --restart-service
 
-# restart yabai
+# restart skhd (yabai hotkeys)
 skhd --restart-service
