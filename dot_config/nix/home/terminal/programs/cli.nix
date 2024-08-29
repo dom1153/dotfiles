@@ -53,6 +53,8 @@ in {
     t-rec ### geenrate animated gifs for the web (rust)
     xdg-ninja ### check $HOME for unwanted files/directories and move them
     fpp ### facebook pathpicker (edit or run commands on path of ouptut)
+    cz-cli ### commitizen standizing commits
+    gitmoji-cli ### emoji based commit (simple?)
 
     ### funni
     blahaj

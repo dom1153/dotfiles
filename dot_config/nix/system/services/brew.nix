@@ -16,6 +16,7 @@
       # "ctpv" ### simple terminal preview (c) -> lf
       # "devcontainer" ### run vscode devcontainer from cli
       # "arduino-cli" ### arduino tools but on cli
+      "jnv" ### interactive jq
     ];
     casks = [
       "affinity-designer"

@@ -31,6 +31,7 @@
       nvim-pkg # kickstar nvim package
 
       python312Packages.pywatchman ### watchman-make
+      jnv ### interactive jq
     ];
 
     # https://nixos.wiki/wiki/FAQ/When_do_I_update_stateVersion

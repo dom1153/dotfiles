@@ -90,6 +90,8 @@ in {
       ctpv ### simple terminal preview (but in c)
 
       cava ### cross-platform audio visualizer
+
+      jnv ### interactive jq
     ];
 
     # https://nixos.wiki/wiki/FAQ/When_do_I_update_stateVersion
