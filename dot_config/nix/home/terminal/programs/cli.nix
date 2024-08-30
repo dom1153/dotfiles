@@ -55,6 +55,7 @@ in {
     fpp ### facebook pathpicker (edit or run commands on path of ouptut)
     cz-cli ### commitizen standizing commits
     gitmoji-cli ### emoji based commit (simple?)
+    tree ### generate a ls tree
 
     ### funni
     blahaj

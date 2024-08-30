@@ -318,6 +318,14 @@ lsix
 ### find search tldr names
 tldr --list | fzf --preview "tldr {1} --color" --preview-window=right,70% | xargs tldr
 
+% tree
+
+# tree + files (standard ignore)
+tree -d --gitignore -I node_modules | nvim -R
+
+# tree dir only (standard ignore)
+tree -d --gitignore -I node_modules | nvim -R
+
 ; ----------------------------------------------------------------------------
 
 % fish
