@@ -2,7 +2,14 @@
   inputs,
   pkgs,
   ...
-}: {
+}: let
+  unstable = import inputs.nixpkgs-unstable {
+    system = "x86_64-linux";
+    config.allowUnfree = true;
+  };
+
+  zen-browser = pkgs.callPackage ../../programs/pkgs/zen-browser.nix {};
+in {
   imports = [
     ../../../home
 
@@ -30,6 +37,8 @@
     };
 
     packages = with pkgs; [
+      zen-browser
+
       qbittorrent
       nitch
       trash-cli
