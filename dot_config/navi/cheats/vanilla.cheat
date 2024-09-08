@@ -107,9 +107,6 @@ whoami
 # find who is using a port (macos)
 sudo lsof -i -P | grep LISTEN | grep :<port>
 
-# find all files of extension but ignore directory
-find . -path ./node_modules -prune -o -name '*.ts' -print
-
 # get the REAL pwd
 pwd --physical
 
@@ -133,6 +130,27 @@ bat /etc/passwd
 
 # unzip tar
 tar xvf
+
+# unzip zip file to 'extract' folder
+unzip <zips> -d <zipName>
+$ zips: find . -maxdepth 1 -name "*.zip"
+$ zipName: bash -c 'f=$(basename -- "$zips");echo ${f%.*};'
+
+# find all files of extension but ignore directory
+find . -path ./node_modules -prune -o -name '*.ts' -print
+
+# find search all of filetype zips in current directory
+find . -maxdepth 1 -name "*.zip"
+
+; https://stackoverflow.com/questions/965053/extract-filename-and-extension-in-bash
+# bash get filename (no extension)
+bash -c 'f=$(basename -- "<fname>");echo ${f%.*};'
+
+# bash get filename extension
+bash -c 'f=$(basename -- "<fname>");echo ${f##*.};'
+$ fname: find . -type f
+
+
 
 ; --appimage-help
 # extract appimage contents

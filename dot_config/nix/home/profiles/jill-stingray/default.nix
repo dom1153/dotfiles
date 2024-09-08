@@ -92,6 +92,8 @@ in {
       cava ### cross-platform audio visualizer
 
       jnv ### interactive jq
+
+      unstable.vesktop ### better discord
     ];
 
     # https://nixos.wiki/wiki/FAQ/When_do_I_update_stateVersion
