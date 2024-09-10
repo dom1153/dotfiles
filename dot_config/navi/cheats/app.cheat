@@ -557,7 +557,17 @@ wezterm cli spawn -- mosh server zellij
 wezterm cli spawn -- mosh mini zellij
 
 # ssh to custom (with zellij)
-wezterm cli spawn -- mosh <host> zellij
+wezterm cli spawn -- mosh <sshhost> zellij
+
+# ssh to custom (with zellij) (inplace)
+mosh server zellij
+
+# ssh to custom (with zellij) (inplace)
+mosh mini zellij
+
+# ssh to custom (with zellij) (inplace)
+mosh <sshhost> zellij
+$ sshhost: cat ~/.ssh/config | grep 'Host ' | sed 's/Host //'
 
 ; ----------------------------------------------------------------------------
 

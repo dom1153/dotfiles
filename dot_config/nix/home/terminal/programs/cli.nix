@@ -40,9 +40,10 @@ in {
     wget
     ### fast-cli ### does not work on darwin
     chafa ### sixel (lf)
+    timg ### image viewer fallback when sixel doesn't work
     trurl ### transpose url (get url parts)
     imagemagick ### convert images (e.g. use with kitty icat)
-    lsix ### ls, but for sixel
+    lsix ### ls, but for sixel (it's just a shell script)
     ueberzugpp ### sixel (hook)
     jq ### parse / query json
     dasel ### yq but different
