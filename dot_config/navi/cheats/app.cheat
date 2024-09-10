@@ -155,6 +155,9 @@ dolphin .
 # file browser (macos finder)
 open . -R
 
+# ncdu du dirsize
+ncdu
+
 ; ----------------------------------------------------------------------------
 
 % screensaver, rice
@@ -320,7 +323,7 @@ tldr --list | fzf --preview "tldr {1} --color" --preview-window=right,70% | xarg
 
 % tree
 
-# tree + files (standard ignore)
+# tree + files (standard ignore) print file structure
 tree -d --gitignore -I node_modules | nvim -R
 
 # tree dir only (standard ignore)

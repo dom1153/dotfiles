@@ -33,6 +33,9 @@ sudo shutdown -r now
 # open apps from cli
 open <file>
 
+# open folder . here
+open .
+
 % macos, darwin, dock, reset, cache, kitty, neovide
 # force the Dock to update its cached icons
 rm /var/folders/*/*/*/com.apple.dock.iconcache; killall Dock
