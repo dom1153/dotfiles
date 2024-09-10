@@ -101,7 +101,7 @@ in {
     ncdu
     tmux
     yazi ### another lf ; batteries included
-    zellij
+    unstable.zellij
     ### browsh ### firefox, in the terminal
   ];
 }
