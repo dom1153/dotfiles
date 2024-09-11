@@ -419,6 +419,9 @@ nix develop --command bash -c "npm i && ./bin/learnyouhtml"
 # nix shell run
 nix-shell --run 'bash -c ./build.sh'
 
+# run npkill node_module cleaner
+nix develop "github:DeterminateSystems/zero-to-nix#javascript" --command bash -c 'npx npkill'
+
 ; ----------------------------------------------------------------------------
 
 % nix, zerotonix, flake
