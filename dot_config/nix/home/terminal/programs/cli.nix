@@ -57,6 +57,7 @@ in {
     cz-cli ### commitizen standizing commits
     gitmoji-cli ### emoji based commit (simple?)
     tree ### generate a ls tree
+    duf ### df alternative
 
     ### funni
     blahaj

@@ -60,10 +60,10 @@ nvim -R
 lf -doc
 
 # find file
-abbr ff "fd --type f --hidden --exclude .git | fzf --reverse"
+fd --type f --hidden --exclude .git | fzf --reverse
 
 # find file -> pipe to editor
-abbr ffe "fd --type f --hidden --exclude .git | fzf --reverse | xargs $EDITOR -"
+fd --type f --hidden --exclude .git | fzf --reverse | xargs $EDITOR -
 
 ; ----------------------------------------------------------------------------
 
@@ -157,6 +157,9 @@ open . -R
 
 # ncdu du dirsize
 ncdu
+
+# df alternative (general disk usage)
+duf ~
 
 ; ----------------------------------------------------------------------------
 
