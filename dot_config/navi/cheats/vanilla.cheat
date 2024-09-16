@@ -159,3 +159,8 @@ nvim /tmp/$(bash -c 'echo $RANDOM | tr 0123456789 abcdefghij').txt
 ; --appimage-help
 # extract appimage contents
 ./zen-specific.AppImage --appimage-extract
+
+# find suspended ^Z jobs
+jobs
+
+

@@ -59,6 +59,12 @@ nvim -R
 # lf documentation
 lf -doc
 
+# find file by name (case insensitive)
+fd --type f --hidden --exclude .git <fd_filename> | fzf --reverse
+
+# find file by name (by md file extension regex)
+fd --type f --hidden --exclude .git '.*.md$' | fzf --reverse
+
 # find file
 fd --type f --hidden --exclude .git | fzf --reverse
 
@@ -160,6 +166,24 @@ ncdu
 
 # df alternative (general disk usage)
 duf ~
+
+# sd sed example search replace (sd before after)
+echo "sample with /path/" | sd '.*(/.*/)' '$1'
+
+# sd sed example search replace (sed version: seds/before/after/g)
+echo "sample with /path/" | sed -E 's/.*(\\/.*\\/)/\1/g'
+
+# ps search process by name (not jobs)
+procs <process_name>
+
+# curl alternative
+curlie
+
+# diff alternative (git diff)
+diff-so-fancy
+
+# du alternative (disk usage + rust = rust) ((reverse direction))
+dust -r
 
 ; ----------------------------------------------------------------------------
 

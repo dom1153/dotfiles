@@ -58,6 +58,10 @@ in {
     gitmoji-cli ### emoji based commit (simple?)
     tree ### generate a ls tree
     duf ### df alternative
+    sd ### sed alternative
+    pros ### ps alternative
+    curlie ### curl alternative
+    dust ### du alternative
 
     ### funni
     blahaj
