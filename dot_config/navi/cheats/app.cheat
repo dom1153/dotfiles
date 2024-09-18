@@ -185,6 +185,10 @@ diff-so-fancy
 # du alternative (disk usage + rust = rust) ((reverse direction))
 dust -r
 
+# imagemagick convert compress simple
+convert '<image_file>' -quality 95 -strip compressed.jpg
+$ image_file: find . -type f
+
 ; ----------------------------------------------------------------------------
 
 % screensaver, rice
