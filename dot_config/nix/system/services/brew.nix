@@ -32,7 +32,6 @@
       "docker"
       "drawpile"
       "figma"
-      "firefox-developer-edition"
       "font-cozette"
       "font-fira-code-nerd-font"
       "font-meslo-lg-nerd-font"
@@ -45,6 +44,7 @@
       "localsend"
       "logi-options-plus"
       "macvim"
+      "marta"
       "microsoft-edge"
       "mos" ### mouse wheel
       "mpv"
@@ -94,5 +94,6 @@
     # "unity-hub"
     # "hhkb"
     # "gamemaker"
+    # "firefox-developer-edition" ### keeps wanting to fresh install??? I use chrome devtools anyways
   };
 }

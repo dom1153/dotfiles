@@ -1,7 +1,7 @@
-#!/usr/bin/env bash
-
 ###!/usr/bin/env nix-shell
-###!nix-shell -i bash --packages gnused gnugrep
+###!nix-shell -i bash --packages jq gum trurl
+
+###!/usr/bin/env bash
 
 ### VVV useful script grabbing .config remote url
 ### bat --paging=never */.git/config | grep --color=auto 'url = ' | sed -E 's/.*url = //g'
@@ -42,4 +42,11 @@ if [[ "$debug" -eq "1" || "$2" == "-d" ]]; then
   echo git clone "'$r'" "'$f'"
   exit
 fi
+sizeee=$(curl -su "{:username}" "https://api.github.com/repos${p}" | jq '.size')
+# echo "Repo size:" $sizeee KB "($(($sizeee / 1000)) MB)"
+# echo "Clone URL:" $r
+# gum log -linfo "Repo size:" $sizeee KB "($(($sizeee / 1000)) MB)"
+# gum log -linfo "Clone URL:" $r
+echo '{{ Color "2" "0" "Repo size:"  }}' $sizeee KB "($(($sizeee / 1000)) MB)" | gum format -t template
+echo '{{ Color "3" "0" "Clone URL:"  }}' $r | gum format -t template
 git clone "$r" "$f"

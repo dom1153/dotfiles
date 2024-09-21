@@ -40,4 +40,6 @@ if [[ "$debug" -eq "1" || "$2" == "-d" ]]; then
   fi
   exit
 fi
-echo $r KB "($(($r / 1000)) MB)"
+# echo $r KB "($(($r / 1000)) MB)"
+# gum log -linfo "Repo size:" $r KB "($(($r / 1000)) MB)"
+echo '{{ Color "2" "0" "Repo size:"  }}' $r KB "($(($r / 1000)) MB)" | gum format -t template

@@ -8,3 +8,9 @@ echo -e "a\n*\nq\n" | git add -i >/dev/null 2>&1
 find .git/objects/ -type f -empty | xargs rm
 git fetch -p
 git fsck --full
+
+# https://www.digitalocean.com/community/tutorials/how-to-create-a-pull-request-on-github
+# sync the fork
+git fetch upstream
+git checkout main
+git merge upstream/main

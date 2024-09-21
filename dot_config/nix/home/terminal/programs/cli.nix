@@ -59,9 +59,11 @@ in {
     tree ### generate a ls tree
     duf ### df alternative
     sd ### sed alternative
-    pros ### ps alternative
+    procs ### ps alternative
     curlie ### curl alternative
     dust ### du alternative
+    just ### command line runner (like make)
+    watchexec ### generic watch command
 
     ### funni
     blahaj
@@ -90,7 +92,8 @@ in {
 
     ### cheatsheets
     cheat
-    tldr
+    tealdeer ### rust version compliant with  tldr client
+    # tldr
 
     ### development
     shfmt ### unsure how to integrate
