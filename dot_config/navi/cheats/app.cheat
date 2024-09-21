@@ -189,6 +189,9 @@ dust -r
 convert '<image_file>' -quality 95 -strip compressed.jpg
 $ image_file: find . -type f
 
+# tldr update
+tldr --update
+
 ; ----------------------------------------------------------------------------
 
 % screensaver, rice
