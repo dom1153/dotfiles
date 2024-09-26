@@ -192,6 +192,9 @@ $ image_file: find . -type f
 # tldr update
 tldr --update
 
+# tailscale re-auth key
+sudo tailscale login
+
 ; ----------------------------------------------------------------------------
 
 % screensaver, rice
