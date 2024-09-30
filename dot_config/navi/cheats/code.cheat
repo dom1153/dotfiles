@@ -18,6 +18,9 @@ git remote get-url origin
 # get get repo size (fast; correctly follows git ignore)
 git count-objects -vH
 
+# push and create branch named feature/homepage-shuffle to remote origin (github)
+git push origin feature/homepage-shuffle
+
 ; ----------------------------------------------------------------------------
 
 % go
