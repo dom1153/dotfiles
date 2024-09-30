@@ -195,6 +195,9 @@ tldr --update
 # tailscale re-auth key
 sudo tailscale login
 
+# allow devices to connect to this machine over tailscale auth
+sudo tailscale up --ssh --accept-risk=lose-ssh
+
 ; ----------------------------------------------------------------------------
 
 % screensaver, rice
