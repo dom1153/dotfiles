@@ -75,7 +75,7 @@
   ### https://github.com/nix-community/home-manager/issues/3113
   programs.dconf.enable = true;
 
-  services.postgresql.enable = true;
+  # services.postgresql.enable = true;
 
   # programs.ssh = {
   #   setXAuthLocation = true;
