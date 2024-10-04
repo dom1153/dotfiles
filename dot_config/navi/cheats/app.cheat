@@ -337,6 +337,21 @@ $ dockernames: docker container ls --format {{.Names}}
 ; https://docs.docker.com/reference/cli/docker/container/ls/#formatting
 ; https://stackoverflow.com/questions/50667371/docker-ps-output-formatting-list-only-names-of-running-containers
 
+# run a docker image (e.g. from dockerhub)
+docker run hello-world
+
+# download docker image
+docker pull postgres
+
+# see all docker images
+docker images
+
+# docker build (unnamed)
+docker build .
+
+# docker build (specify name:tag)
+docker build . -t "different:special"
+
 % devcontainer
 
 ### start up devcontainer (may need to delete old container to actually rebuild)
