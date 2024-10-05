@@ -306,8 +306,25 @@ adb shell
 
 % docker
 
-# run a docker compose file (same as docker-compose up)
+; docker compose must assume the docker-compose.yml is the root huh...
+# run a docker based off containers
 docker compose up <dockernames>
+
+# run a docker compose file (docker-compose.yml)
+docker compose up
+
+# run a docker compose detatched (background it once it's done)
+docker compose up -d
+
+# check the docker output for a service
+docker compose logs SERVICE
+
+# check the docker output for a service (follow; tail)
+docker compose logs SERVICE -f
+
+; check bin/ for commands once inside the container
+# run command in a terminal
+docker compose exec SERVICE bash
 
 # list docker containers
 docker container ls
