@@ -48,6 +48,7 @@ in {
     jq ### parse / query json
     dasel ### yq but different
     yq-go ### jq but for xml,cvs,toml too (prefer go > python version)
+    pup ### query html
     devenv ### better dev enviroments?
     # direnv ### auto load env (nix shell, devenv)
     vhs ### tool to create terminal gifs with code

@@ -198,6 +198,15 @@ sudo tailscale login
 # allow devices to connect to this machine over tailscale auth
 sudo tailscale up --ssh --accept-risk=lose-ssh
 
+# pup html parser jq exmaple 1
+curl -s https://news.ycombinator.com/ | pup 'table table tr:nth-last-of-type(n+2) td.title a'
+
+# pup html parser jq exmaple 2
+curl -s https://news.ycombinator.com/ | pup 'table table tr:nth-last-of-type(n+2) td.title a attr{href}'
+
+# pup html parser jq example 3 (to json)
+curl -s https://news.ycombinator.com/ | pup 'table table tr:nth-last-of-type(n+2) td.title a json{}'
+
 ; ----------------------------------------------------------------------------
 
 % screensaver, rice
