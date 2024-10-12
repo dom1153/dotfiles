@@ -119,6 +119,9 @@ lsblk
 # view disk usage directory
 ncdu
 
+# disk usage top 20 items (highest at the bottom)
+du -h -- * | sort -h | tail -20
+
 # (grc) disk usage fast (colorful) (can pass file path)
 grc df -h
 
