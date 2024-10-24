@@ -28,3 +28,5 @@ auth       sufficient     pam_tid.so
 4. command + left/right for sidebars
 
 # see obsidian vauilt 'mac os deployment'
+
+# "FileMerge" is a meld folder diff companion for macos. Is bundled with XCode

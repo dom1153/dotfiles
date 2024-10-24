@@ -19,7 +19,8 @@ git remote get-url origin
 git count-objects -vH
 
 # push and create branch named feature/homepage-shuffle to remote origin (github)
-git push origin feature/homepage-shuffle
+git push origin <curBranch>
+$ curBranch: git symbolic-ref --short HEAD
 
 ; ----------------------------------------------------------------------------
 

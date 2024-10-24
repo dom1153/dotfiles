@@ -89,6 +89,10 @@ sudo netstat -nlp
 # netstat check ports a different way
 sudo netstat -tulpn
 
+; kill -9 PID
+# universal quick get port
+lsof -i tcp:3000
+
 # download a file
 wget
 
