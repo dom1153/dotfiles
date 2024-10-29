@@ -132,6 +132,9 @@ trash-list
 # restore trash (index)
 trash-restore
 
+# trash list (macos)
+trash -l
+
 # markdown reader cli
 glow
 
