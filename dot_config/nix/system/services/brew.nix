@@ -42,7 +42,6 @@
       "kitty"
       "launchpad-manager"
       "localsend"
-      "logi-options-plus"
       "macvim"
       "marta"
       "microsoft-edge"
@@ -64,8 +63,10 @@
       "vial"
       "visual-studio-code"
       "wezterm"
+      "aerospace"
     ];
     taps = [
+      "nikitabobko/tap"
       "homebrew/cask-fonts"
       "homebrew/cask-versions"
       "localsend/localsend"
@@ -95,5 +96,6 @@
     # "hhkb"
     # "gamemaker"
     # "firefox-developer-edition" ### keeps wanting to fresh install??? I use chrome devtools anyways
+    # "logi-options-plus" ### seems to update too much
   };
 }
