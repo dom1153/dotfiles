@@ -63,10 +63,8 @@
       "vial"
       "visual-studio-code"
       "wezterm"
-      "aerospace"
     ];
     taps = [
-      "nikitabobko/tap"
       "homebrew/cask-fonts"
       "homebrew/cask-versions"
       "localsend/localsend"
@@ -81,6 +79,9 @@
     ## flow
     ## pixea - like feh
     ## stickies (slightly-more modern sticky notes)
+
+    ### tap
+    # "nikitabobko/tap" ### aerospace
 
     ### brews
     # "cava" ### cross-platform audio visualizer ### does not work out of the box on osx https://github.com/karlstav/cava/issues/478
@@ -97,5 +98,6 @@
     # "gamemaker"
     # "firefox-developer-edition" ### keeps wanting to fresh install??? I use chrome devtools anyways
     # "logi-options-plus" ### seems to update too much
+    # "aerospace" ### doesn't play well with macos spaces, keyboard centric
   };
 }
