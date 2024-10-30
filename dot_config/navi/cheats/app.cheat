@@ -210,6 +210,40 @@ curl -s https://news.ycombinator.com/ | pup 'table table tr:nth-last-of-type(n+2
 # pup html parser jq example 3 (to json)
 curl -s https://news.ycombinator.com/ | pup 'table table tr:nth-last-of-type(n+2) td.title a json{}'
 
+# terminal file manager
+lf
+
+; ----------------------------------------------------------------------------
+
+% chemzoi
+
+# chezmoi edit this file
+chezmoi edit
+
+# chezmoi chezmoi -> .config
+chezmoi apply
+
+# chezmoi add real file -> chezmoi
+chezmoi add
+
+# chezmoi diff real file vs chezmoi
+chezmoi diff
+
+# chezmoi check untracked files
+chezmoi unmanaged .
+
+# chezmoi chezmoi -> .config plus pull from git
+chezmoi update
+
+# chezmoi real directory -> chezmoi equivalent location
+chezmoi cd
+
+# chezmoi go to chezmoi root anywhere
+chezmoi cd ~
+
+# chezmoi delete file from chezmoi AND config
+chezmoi remove
+
 ; ----------------------------------------------------------------------------
 
 % screensaver, rice

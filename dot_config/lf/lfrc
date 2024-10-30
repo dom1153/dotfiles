@@ -200,3 +200,16 @@ cmd on-select &{{
 ### unmap keys (nvim... or just unsure of functionality
 # map e
 map t
+
+### zoxide integration
+cmd zoxide-search ${{
+    result="$(zoxide query -i | sed 's/\\/\\\\/g;s/"/\\"/g')"
+    lf -remote "send $id cd \"$result\""
+}}
+
+### special lf command
+cmd on-cd &{{
+    zoxide add "$PWD"
+}}
+
+map gz zoxide-search
