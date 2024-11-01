@@ -447,6 +447,11 @@ tree -d --gitignore -I node_modules | nvim -R
 # tree dir only (standard ignore)
 tree -d --gitignore -I node_modules | nvim -R
 
+% ngrok, tunnel
+
+# tunnel app through tunnel localhost 3000 (setup via dashboard ; new url is at endspoints)
+ngrok http http://localhost:3000
+
 ; ----------------------------------------------------------------------------
 
 % fish
