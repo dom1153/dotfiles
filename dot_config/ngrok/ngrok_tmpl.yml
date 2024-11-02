@@ -1,0 +1,7 @@
+---
+### todo: allow chezmoi template and add a env or something...
+version: "3"
+agent:
+  # authtoken: fill this in from he 
+  ### console_ui_color bg is this ugly orange in my terminal
+  console_ui_color: "transparent"
