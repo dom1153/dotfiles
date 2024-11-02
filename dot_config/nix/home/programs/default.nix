@@ -43,6 +43,7 @@ in {
     unstable.obsidian
     unstable.osu-lazer-bin
     unstable.anki-bin
+    google-chrome
 
     gnome.gnome-disk-utility
 
