@@ -170,5 +170,8 @@ nvim /tmp/$(bash -c 'echo $RANDOM | tr 0123456789 abcdefghij').txt
 # find suspended ^Z jobs
 jobs
 
+# resume backgrounde jobs
+fg
+
 # ssh file transfer (mbp)
 sftp mbp
