@@ -691,6 +691,9 @@ wezterm cli spawn -- mosh mini zellij
 # ssh to custom (with zellij)
 wezterm cli spawn -- mosh <sshhost> zellij
 
+# ssh to server basic
+wezterm cli spawn -- ssh mbp
+
 # ssh to custom (with zellij) (inplace)
 mosh server zellij
 
