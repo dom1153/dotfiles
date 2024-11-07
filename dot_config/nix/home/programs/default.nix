@@ -25,6 +25,7 @@ in {
     feh ### image previewer
     losslesscut-bin
     meld ### folder comparison ; can't find preferences folder qq
+    postman ### REST
 
     ### art
     blockbench ### voxel 3d modeling
