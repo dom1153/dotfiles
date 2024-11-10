@@ -25,6 +25,8 @@ in {
     feh ### image previewer
     losslesscut-bin
     meld ### folder comparison ; can't find preferences folder qq
+    postman ### REST
+    unstable.code-cursor ### ai powered ide
 
     ### art
     blockbench ### voxel 3d modeling
@@ -43,6 +45,7 @@ in {
     unstable.obsidian
     unstable.osu-lazer-bin
     unstable.anki-bin
+    google-chrome
 
     gnome.gnome-disk-utility
 
