@@ -22,6 +22,13 @@ git count-objects -vH
 git push origin <curBranch>
 $ curBranch: git symbolic-ref --short HEAD
 
+# hide file from git
+git add --intent-to-add flake.nix flake.lock; git update-index --assume-unchanged flake.nix flake.lock
+
+# unhide file from git
+git restore --staged flake.nix flake.lock
+
+
 ; ----------------------------------------------------------------------------
 
 % go

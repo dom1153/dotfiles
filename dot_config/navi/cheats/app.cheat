@@ -452,6 +452,17 @@ tree -d --gitignore -I node_modules | nvim -R
 # tunnel app through tunnel localhost 3000 (setup via dashboard ; new url is at endspoints)
 ngrok http http://localhost:3000
 
+% stripe
+
+# stripe login (browser auth)
+stripe login
+
+# stripe view api 1
+stripe products list --limit 1 --expand "data.default_price"
+
+# stripe trigger specific event (has dummy values)
+stripe trigger checkout.session.completed
+
 ; ----------------------------------------------------------------------------
 
 % fish
