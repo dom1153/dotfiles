@@ -455,6 +455,9 @@ tree -d --gitignore -I node_modules | nvim -R
 # tunnel app through tunnel localhost 3000 (setup via dashboard ; new url is at endspoints)
 ngrok http http://localhost:3000
 
+# cursor ssh ctrlp hack for finding files
+fd --type f --hidden --exclude .git --exclude node_modules | fzf | xargs cursor
+
 ; ----------------------------------------------------------------------------
 
 % fish

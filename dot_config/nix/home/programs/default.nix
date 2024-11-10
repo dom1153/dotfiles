@@ -26,6 +26,7 @@ in {
     losslesscut-bin
     meld ### folder comparison ; can't find preferences folder qq
     postman ### REST
+    unstable.code-cursor ### ai powered ide
 
     ### art
     blockbench ### voxel 3d modeling
