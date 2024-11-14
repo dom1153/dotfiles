@@ -13,10 +13,5 @@ switch (uname)
 
         ### prioritize nixos bin over homebrew bin (e.g. neovim)
         fish_add_path -p "/etc/profiles/per-user/$USER/bin"
-
-        # prioritize homebrew zellij (... file could not be run by the operating system.)
-        if test -f /opt/homebrew/bin/zellij
-            fish_add_path -p /opt/homebrew/bin/zellij
-        end
     case '*'
 end
