@@ -1,0 +1,53 @@
+{
+  description = "Unstable branch some";
+
+  inputs = {
+    nixpkgs.url = "github:NixOS/nixpkgs?rev=2726f127c15a4cc9810843b96cad73c7eb39e443";
+    nixpkgs-unstable.url = "github:nixos/nixpkgs/nixos-unstable";
+  };
+
+  outputs = {
+    self,
+    nixpkgs,
+    nixpkgs-unstable,
+  }: let
+    allSystems = [
+      "x86_64-linux"
+      "aarch64-linux"
+      "x86_64-darwin"
+      "aarch64-darwin"
+    ];
+
+    forAllSystems = f:
+      nixpkgs.lib.genAttrs allSystems (system: let
+        pkgs = import nixpkgs {
+          inherit system;
+          overlays = [
+            (final: prev: {
+              unstable = import nixpkgs-unstable {
+                inherit system;
+              };
+            })
+          ];
+        };
+      in
+        f {inherit pkgs;});
+  in {
+    devShells = forAllSystems ({pkgs}: {
+      default = pkgs.mkShell {
+        packages = with pkgs; [
+          nodejs_18
+          python3
+          poetry
+          postgresql
+          unstable.stripe-cli
+        ];
+
+        shellHook = ''
+          poetry config virtualenvs.in-project true
+          source .env
+        '';
+      };
+    });
+  };
+}

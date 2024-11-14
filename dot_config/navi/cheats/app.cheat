@@ -815,11 +815,11 @@ cdi
 
 % yabai, skhd
 
-# # restart yabai
-# yabai --restart-service
-#
-# # restart skhd (yabai hotkeys)
-# skhd --restart-service
+; # restart yabai
+; yabai --restart-service
+
+; # restart skhd (yabai hotkeys)
+; skhd --restart-service
 
 # restart yabai and skhd
 yabai --restart-service; skhd --restart-service

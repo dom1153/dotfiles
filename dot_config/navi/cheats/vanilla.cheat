@@ -93,6 +93,9 @@ sudo netstat -tulpn
 # universal quick get port
 lsof -i tcp:3000
 
+# kill process running on based on port
+kill $(lsof -t -i:8000)
+
 # download a file
 wget
 
