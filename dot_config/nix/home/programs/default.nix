@@ -57,6 +57,7 @@ in {
     prusa-slicer ### open source 3d slicer
 
     rofi ### window switcher
+    qalculate-qt ### calculator
 
     ### cli (linux only)
     unstable.devcontainer ### run devcontainer from cli -> macos should use brew

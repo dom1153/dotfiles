@@ -469,6 +469,12 @@ stripe products list --limit 1 --expand "data.default_price"
 # stripe trigger specific event (has dummy values)
 stripe trigger checkout.session.completed
 
+# restart kde
+qdbus org.kde.KWin /KWin reconfigure
+
+# url example
+http://stella-hoshii:3000/home
+
 ; ----------------------------------------------------------------------------
 
 % fish
