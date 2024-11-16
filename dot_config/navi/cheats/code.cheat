@@ -96,10 +96,13 @@ npm run dev
 npm run
 
 # install save npm
-npm install --save canvas-confetti
+npm install --save pkg
 
 # install save-dev npm (e.g. @types/ )
-npm install --save -D canvas-confetti
+npm install --save -D pkg
+
+# npm save dev shorthand
+npm i -D pkg
 
 # astro starter
 npm create astro@latest
