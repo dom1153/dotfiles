@@ -13,5 +13,8 @@ switch (uname)
 
         ### prioritize nixos bin over homebrew bin (e.g. neovim)
         fish_add_path -p "/etc/profiles/per-user/$USER/bin"
+
+        ### uv (posting clil)
+        fish_add_path -p ~/.local/share/../bin
     case '*'
 end

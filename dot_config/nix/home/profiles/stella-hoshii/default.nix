@@ -1,4 +1,5 @@
-{pkgs, ...}: {
+{pkgs, inputs, ...}: let
+in {
   imports = [
     ../../../home
 
@@ -26,7 +27,7 @@
 
       darwin.trash
 
-      nvim-pkg # kickstar nvim package
+      nvim-pkg # kickstart nvim package
 
       gnused ### macos is posix, but not gnu
 

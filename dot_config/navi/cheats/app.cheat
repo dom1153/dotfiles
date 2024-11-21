@@ -219,6 +219,9 @@ curl -s https://news.ycombinator.com/ | pup 'table table tr:nth-last-of-type(n+2
 # terminal file manager
 lf
 
+# postman cli (may not be installed)
+posting
+
 ; ----------------------------------------------------------------------------
 
 % chemzoi

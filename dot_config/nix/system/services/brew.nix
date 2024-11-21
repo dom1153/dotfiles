@@ -39,6 +39,7 @@
       "google-chrome"
       "hiddenbar"
       "iterm2"
+      "keycastr"
       "kitty"
       "launchpad-manager"
       "localsend"
@@ -79,6 +80,7 @@
     ## flow
     ## pixea - like feh
     ## stickies (slightly-more modern sticky notes)
+    ## Screenbrush - macos brush for desktop
 
     ### tap
     # "nikitabobko/tap" ### aerospace
@@ -88,6 +90,9 @@
     # "tty-clock"
 
     ### casks
+    # "postman" ### rest api tester
+    # "cursor" ### AI ide
+    # "jetbrains-toolbox" ### jetbrain program install manager
     # "ultimaker-cura" ### 3d slicer
     # "prusaslicer" ### open source 3d slicer
     ### "xnviewmp" ### xn viewer mpv -> looks ugly...
