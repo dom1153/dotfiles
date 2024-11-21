@@ -40,8 +40,8 @@ echo -e '#!/usr/bin/env bash\ncd "$(dirname $0)"\n' > <scriptname>; chmod +x <sc
 # add npm run sh script (script/run.sh)
 echo -e '#!/usr/bin/env bash\ncd "$(dirname $0)"\ncd ..\nnpm i\nnpm run dev' > run.sh; chmod +x run.sh
 
-# create .envrc for direnv
-echo -e 'if type "nix" >/dev/null 2>&1; then\n  git add -f flake.nix flake.lock >/dev/null 2>&1\n  use flake . --impure\n  git reset HEAD flake.nix flake.lock >/dev/null 2>&1\nfi' > .envrc
+; # create .envrc for direnv
+; echo -e 'if type "nix" >/dev/null 2>&1; then\n  git add -f flake.nix flake.lock >/dev/null 2>&1\n  use flake . --impure\n  git reset HEAD flake.nix flake.lock >/dev/null 2>&1\nfi' > .envrc
 
 # generate random number 1 to 10 (bash)
 bash -c 'echo $((1 + $RANDOM % 10))'
@@ -375,7 +375,7 @@ docker compose logs SERVICE
 docker compose logs SERVICE -f
 
 ; check bin/ for commands once inside the container
-# run command in a terminal
+# open run command with docker compose
 docker compose exec SERVICE bash
 
 # list docker containers
