@@ -20,7 +20,7 @@ function module.apply_to_config(config)
     -- 257.56 ppi ; 9.4pts on a 100dpi ; so 24.21 for a 257.56 screen
     -- lower font takes precedence
     -- set_font({ font = wezterm.font('CozetteVector'), font_size = 12.10 })
-    set_font({ font = wezterm.font('FiraCode Nerd Font Mono'), font_size = 11.0 })
+    set_font({ font = wezterm.font('FiraCode Nerd Font Mono'), font_size = 13.0 })
 
     -- titlebar
     config.window_decorations = 'RESIZE'
