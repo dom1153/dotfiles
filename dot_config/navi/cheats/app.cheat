@@ -138,8 +138,11 @@ trash-restore
 # trash list (macos)
 trash -l
 
-# markdown reader cli
+# markdown reader cli (searches all markdown)
 glow
+
+# markdown reader cli (specify a file)
+glow README.md
 
 # test internet speed
 speedtest

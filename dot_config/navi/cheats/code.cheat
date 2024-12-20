@@ -28,6 +28,12 @@ git add --intent-to-add flake.nix flake.lock; git update-index --assume-unchange
 # unhide file from git
 git restore --staged flake.nix flake.lock
 
+# fix git old new types chmod
+git diff -p \
+  | grep -E '^(diff|old mode|new mode)' \
+  | sed -e 's/^old/NEW/;s/^new/old/;s/^NEW/new/' \
+  | git apply
+
 
 ; ----------------------------------------------------------------------------
 
