@@ -47,6 +47,7 @@
   home-manager.users."archoo" = import ../../home/profiles/alma-armas;
 
   programs.command-not-found.enable = false; # Not working without channel
+  programs.nix-ld.enable = true; # remote vscode client to nixos host (this machine) ; since vscode installs server binaries
 
   #### ssh forwarding test (xauth, xforwarding, xserver; works local, maybe not over tailscale)
   # services.openssh = {

@@ -5,7 +5,11 @@
     virtualHosts = {
       ### sws
       # "alma-armas.flamingo-universe.ts.net".extraConfig = ''reverse_proxy alma-armas.flamingo-universe.ts.net:8787'';
-      "alma-armas.flamingo-universe.ts.net:9797".extraConfig = ''reverse_proxy localhost:8787'';
+      # "alma-armas.flamingo-universe.ts.net:9797".extraConfig = ''reverse_proxy localhost:8787'';
+
+      ### alma-armas.flamingo-universe.ts.net now goes to sws
+      "alma-armas.flamingo-universe.ts.net:443".extraConfig = ''reverse_proxy localhost:8787'';
+
 
       # "alma-armas:8787".extraConfig = ''redir alma-armas.flamingo-universe.ts.net'';
 
