@@ -14,7 +14,9 @@ function module.apply_to_config(config)
   -- fallback will report errors if not found
   -- https://wezfurlong.org/wezterm/config/lua/wezterm/target_triple.html
   -- Luckily, should include a nerd font out of the box
-  if hostname == 'stella-hoshii.local' then
+  -- ignore .local because cool comcast dns is overriding the dot name with some garbage
+  -- Use % to escape the - since it's used for ranges
+  if string.match(hostname, 'stella%-hoshii') then
     -- cozette size will vary per os in vector form 🤷
     -- https://www.sven.de/dpi/
     -- 257.56 ppi ; 9.4pts on a 100dpi ; so 24.21 for a 257.56 screen

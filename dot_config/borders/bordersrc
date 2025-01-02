@@ -10,7 +10,7 @@ options=(
   hidpi=on
   active_color=0xffa6e3a1
   inactive_color=0xffa6adc8
-  whitelist="wezterm-gui"
+  whitelist="wezterm-gui,ghostty" ### comma separated list, no spaces
 )
 
 borders "${options[@]}"

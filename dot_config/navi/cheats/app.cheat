@@ -440,11 +440,18 @@ devcontainer exec --workspace-folder $PWD/.. npm run dev
 
 # draw a sixel image (chafa)
 chafa -f sixel <imagefilename>
-; -maxdepth 1 if need be
 $ imagefilename: find . -type f
+; -maxdepth 1 if need be
 
 # ls for sixel
 lsix
+
+% sixel, kitty
+
+# kitty graphics support
+kitty icat <imagefilename>
+$ imagefilename: find . -type f
+
 
 % tldr
 
@@ -483,6 +490,10 @@ qdbus org.kde.KWin /KWin reconfigure
 
 # url example
 http://stella-hoshii:3000/home
+
+% jankyborders
+# restart jankyborders
+brew services restart borders
 
 ; ----------------------------------------------------------------------------
 

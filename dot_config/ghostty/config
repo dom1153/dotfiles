@@ -1,0 +1,25 @@
+### config-file = relative/path
+
+### ghostty +list-fonts
+font-family = "FiraCode Nerd Font Mono"
+### font-size only works on new windows
+### font-size = 13
+
+### cli> ghostty +list-themes
+theme = catppuccin-mocha
+
+### opacity isn't cooperating (titlebar only)
+### try bg-opacity 0 to see what I mean
+background-opacity = 0.95
+
+### bar isn't working...
+### but unset anyways so zellij can handle
+cursor-style-blink = false
+
+### disables macos tabs, but thats okay we use zellij
+window-decoration = false
+macos-titlebar-style = "hidden"
+
+### window-padding only works on new windows
+window-padding-x = 4
+window-padding-y = 4

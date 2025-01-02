@@ -1,0 +1,15 @@
+// Please edit this file from chezmoi, not the native editor
+//
+// Documentation: https://zed.dev/docs/configuring-zed
+//
+// To see all of Zed's default settings without changing your
+// custom settings, run the `open default settings` command
+// from the command palette or from `Zed` application menu.
+{
+  "project_panel": {
+    "dock": "right"
+  },
+  "vim_mode": true,
+  "ui_font_size": 14,
+  "buffer_font_size": 12
+}
