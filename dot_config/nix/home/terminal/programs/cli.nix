@@ -65,6 +65,7 @@ in {
     dust ### du alternative
     just ### command line runner (like make)
     watchexec ### generic watch command
+    degit ### git without the .git
 
     ### funni
     blahaj
