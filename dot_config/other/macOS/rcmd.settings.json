@@ -1,0 +1,163 @@
+{
+  "minimizeKey" : "minus",
+  "ignoredApps" : [
+
+  ],
+  "specialKey" : "equal",
+  "windowTriggerKeys" : [
+    5
+  ],
+  "alwaysHideOthers" : false,
+  "hideStaticSettings" : false,
+  "focusOnKeyUp" : false,
+  "windowSwitcherDimFocused" : false,
+  "hideOnlyFocusedAppOnMinus" : false,
+  "appKeyAssignments" : [
+    {
+      "app" : {
+        "identifier" : "net.ankiweb.dtop:601",
+        "switchCount" : 0,
+        "path" : "/Applications/Anki.app",
+        "useCount" : 4,
+        "originalName" : "Anki"
+      },
+      "key" : "i",
+      "index" : 0,
+      "whenAlreadyFocusedAction" : 2
+    },
+    {
+      "whenAlreadyFocusedAction" : 2,
+      "key" : "j",
+      "index" : 0,
+      "app" : {
+        "path" : "/Applications/Spotify.app",
+        "identifier" : "com.spotify.client:2054",
+        "switchCount" : 1,
+        "originalName" : "Spotify",
+        "useCount" : 9
+      }
+    },
+    {
+      "index" : 0,
+      "whenAlreadyFocusedAction" : 2,
+      "key" : "t",
+      "app" : {
+        "switchCount" : 0,
+        "path" : "/Applications/Figma.app",
+        "identifier" : "com.figma.Desktop:14966",
+        "useCount" : 4,
+        "originalName" : "Figma"
+      }
+    },
+    {
+      "app" : {
+        "useCount" : 17,
+        "path" : "/System/Applications/Utilities/Activity Monitor.app",
+        "originalName" : "Activity Monitor",
+        "identifier" : "com.apple.ActivityMonitor:49793",
+        "switchCount" : 0
+      },
+      "key" : "l",
+      "whenAlreadyFocusedAction" : 2,
+      "index" : 0
+    },
+    {
+      "whenAlreadyFocusedAction" : 2,
+      "index" : 0,
+      "app" : {
+        "identifier" : "org.whispersystems.signal-desktop:764",
+        "path" : "/Applications/Signal.app",
+        "useCount" : 94,
+        "switchCount" : 0,
+        "originalName" : "Signal"
+      },
+      "key" : "m"
+    },
+    {
+      "app" : {
+        "useCount" : 0,
+        "path" : "/Applications/Docker.app/Contents/MacOS/Docker Desktop.app",
+        "identifier" : "com.electron.dockerdesktop:69097",
+        "switchCount" : 1,
+        "originalName" : "Docker Desktop"
+      },
+      "index" : 0,
+      "key" : "e",
+      "whenAlreadyFocusedAction" : 2
+    },
+    {
+      "app" : {
+        "originalName" : "Zed",
+        "path" : "/Applications/Zed.app",
+        "useCount" : 38,
+        "identifier" : "dev.zed.Zed:63047",
+        "switchCount" : 0
+      },
+      "whenAlreadyFocusedAction" : 2,
+      "index" : 0,
+      "key" : "x"
+    }
+  ],
+  "activateAllWindows" : true,
+  "ignoredKeys" : [
+
+  ],
+  "enableStaticCycle" : false,
+  "allowWindowSwitcher" : false,
+  "minimizeOnlyFocusedWindowOnMinus" : true,
+  "enableHideOnFocusHotkey" : false,
+  "windowSwitchOSDDelay" : 0,
+  "triggerKeys" : [
+    4
+  ],
+  "windowSwitcherFeatures" : 57,
+  "windowKeyPatterns" : [
+    {
+      "pattern" : ".* — [^\\w\\d]*(.)",
+      "id" : "com.sublimetext.4"
+    },
+    {
+      "pattern" : ".* — [^\\w\\d]*(.)",
+      "id" : "com.sublimetext.3"
+    },
+    {
+      "id" : "com.sublimetext.2",
+      "pattern" : ".* — [^\\w\\d]*(.)"
+    },
+    {
+      "pattern" : ".* — [^\\w\\d]*(.)",
+      "id" : "com.visualstudio.code.oss"
+    },
+    {
+      "pattern" : ".* — [^\\w\\d]*(.)",
+      "id" : "com.microsoft.VSCodiumInsiders"
+    },
+    {
+      "id" : "com.microsoft.VSCode",
+      "pattern" : ".* — [^\\w\\d]*(.)"
+    },
+    {
+      "id" : "com.microsoft.VSCodeInsiders",
+      "pattern" : ".* — [^\\w\\d]*(.)"
+    }
+  ],
+  "appSwitcherFeatures" : 38,
+  "windowSwitcherAppearance" : "comfortable",
+  "windowKeyAssignments" : [
+
+  ],
+  "appSort" : "name",
+  "appSortReverse" : false,
+  "showAppSwitcher" : true,
+  "fnWindowSwitching" : false,
+  "enableCycleHotkey" : true,
+  "windowOnlySwitchOSDDelay" : 0,
+  "appSwitcherUseNumbersForWindows" : false,
+  "zeroAsLastFocusedWindow" : false,
+  "enableAssignHotkey" : true,
+  "switcherScreenPlacement" : 8,
+  "showWindowSwitcher" : true,
+  "whenAlreadyFocusedAction" : 2,
+  "keyTapThreshold" : 0.14,
+  "notificationsPermissionsGranted" : false
+}
