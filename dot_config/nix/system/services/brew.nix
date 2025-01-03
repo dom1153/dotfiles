@@ -17,6 +17,30 @@
       # "devcontainer" ### run vscode devcontainer from cli
       # "arduino-cli" ### arduino tools but on cli
       "jnv" ### interactive jq
+
+      ### exec error fallback
+      "bat"
+      "btop"
+      "git-delta"
+      "diff-so-fancy"
+      "eza"
+      "fd"
+      "fzf"
+      "glow"
+      "grc"
+      "micro"
+      "ripgrep"
+      "tailspin"
+      "unzip"
+      "zip"
+      "zoxide"
+      "rsync"
+      "file-formula"
+
+      ### tools
+      "asciinema"
+
+      "chezmoi"
     ];
     casks = [
       "affinity-designer"

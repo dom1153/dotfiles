@@ -3,41 +3,31 @@
   inputs,
   ...
 }: let
+  stable = import inputs.nixpkgs-stable {
+    system = "x86_64-linux";
+    config.allowUnfree = true;
+  };
   unstable = import inputs.nixpkgs-unstable {
     system = "x86_64-linux";
     config.allowUnfree = true;
   };
 in {
   home.packages = with pkgs; [
-    ### unix alternative
-    unstable.bat
-    unstable.btop
-    delta ### git diff specifically
-    diff-so-fancy
-    unstable.eza
-    unstable.fd
-    unstable.fzf
-    unstable.glow ### fancy md file reading
-    grc ### generic colorizer ; aliases colorize common unix commands
-    micro ### nano alternative
-    unstable.ripgrep
-    tailspin ### tail but its got colors (tspin)
-    unrar
-    unzip
-    zip
-    zoxide
-    rsync ### pre-installed on nix and darwin, but let's keep it consistent
-    file ### get... file types e.g. mime; use with lf preview
+    ### todo make a 'cli old' for macos exclusive that don't fit into brew
+    ### the rest shall be cask and 'progrmas'
 
-    ### tools
-    asciinema
+    ### TODO: macos only wants 2023 (or run brew really for many apps due to exec error)
+    ### seperate modules into unix only and shove the rest into brew
+
+    ### unix alternatives
+    unrar ### just basic... alright
+
     ### asciinema-agg ### generate asciinema gifs
     ### asciinema-scenario ### asciinema from text file; linux only
-    chezmoi
     nix-prefetch-github
-    unstable.nh ### yet another nix cli helper (also see nvd and nix-output-monitor)
-    unstable.nix-output-monitor ### nix but gives the cool dependency graph
-    unstable.nvd ### diff pix package versions
+    nh ### yet another nix cli helper (also see nvd and nix-output-monitor)
+    nix-output-monitor ### nix but gives the cool dependency graph
+    nvd ### diff pix package versions
     spacer ### append lines after a given time in tail
     speedtest-cli
     wget
@@ -68,7 +58,7 @@ in {
     dust ### du alternative
     just ### command line runner (like make)
     watchexec ### generic watch command
-    unstable.degit ### git without the .git
+    degit ### git without the .git
 
     ### funni
     blahaj
@@ -102,20 +92,20 @@ in {
 
     ### development
     shfmt ### unsure how to integrate
-    unstable.gum ### shell bubbletea
+    gum ### shell bubbletea
 
     ### tui
-    unstable.ani-cli
-    unstable.helix
-    unstable.lazygit
+    ani-cli
+    helix
+    lazygit
     lf
     mc
     nap ### snippet manager
-    unstable.navi
-    unstable.ncdu
+    navi
+    ncdu
     tmux
-    unstable.yazi ### another lf ; batteries included
-    unstable.zellij
+    yazi ### another lf ; batteries included
+    zellij
     ### browsh ### firefox, in the terminal
   ];
 }

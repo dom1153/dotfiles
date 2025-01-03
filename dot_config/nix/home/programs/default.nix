@@ -3,6 +3,10 @@
   pkgs,
   ...
 }: let
+  stable = import inputs.nixpkgs-stable {
+    system = "x86_64-linux";
+    config.allowUnfree = true;
+  };
   unstable = import inputs.nixpkgs-unstable {
     system = "x86_64-linux";
     config.allowUnfree = true;
@@ -62,7 +66,29 @@ in {
     qalculate-qt ### calculator
 
     ### cli (linux only)
+    ### unix alternative
     unstable.devcontainer ### run devcontainer from cli -> macos should use brew
+    stable.bat
+    stable.btop
+    stable.delta ### git diff specifically
+    stable.diff-so-fancy
+    stable.eza
+    stable.fd
+    stable.fzf
+    stable.glow ### fancy md file reading
+    stable.grc ### generic colorizer ; aliases colorize common unix commands
+    stable.micro ### nano alternative
+    stable.ripgrep
+    stable.tailspin ### tail but its got colors (tspin)
+    stable.unrar
+    stable.unzip
+    stable.zip
+    stable.zoxide
+    stable.rsync ### pre-installed on nix and darwin, but let's keep it consistent
+    stable.file ### get... file types e.g. mime; use with lf preview
+
+    ### tools
+    stable.asciinema
   ];
 
   # (with pkgs; [
