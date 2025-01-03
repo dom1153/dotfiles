@@ -27,6 +27,7 @@ in {
     meld ### folder comparison ; can't find preferences folder qq
     postman ### REST
     unstable.code-cursor ### ai powered ide
+    unstable.zed-editor
 
     ### art
     blockbench ### voxel 3d modeling
@@ -37,6 +38,7 @@ in {
     foot
     cool-retro-term
     wezterm ### not working well with hyprland wayland (x11 works) ; use for other platforms
+    unstable.ghostty
 
     ### apps
     discord

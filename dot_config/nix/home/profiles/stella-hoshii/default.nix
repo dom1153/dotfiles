@@ -1,4 +1,12 @@
-{pkgs, inputs, ...}: let
+{
+  pkgs,
+  inputs,
+  ...
+}: let
+  unstable = import inputs.nixpkgs-unstable {
+    system = "x86_64-linux";
+    config.allowUnfree = true;
+  };
 in {
   imports = [
     ../../../home
@@ -22,8 +30,9 @@ in {
 
     packages = with pkgs; [
       # ### vscode extension deps
-      alejandra
-      nil
+      unstable.alejandra
+      unstable.nil
+      unstable.nixd
 
       darwin.trash
 

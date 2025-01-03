@@ -7,7 +7,7 @@
     ### 23.11 ; lock version with a hash; works ok but having issues with nvim-flake
     # nixpkgs.url = "github:NixOS/nixpkgs?rev=0638fe2715d998fa81d173aad264eb671ce2ebc1"; ### https://github.com/NixOS/nixpkgs/commit/0638fe2715d998fa81d173aad264eb671ce2ebc1
     nixpkgs-unstable.url = "github:nixos/nixpkgs/nixos-unstable";
-    nixpkgs-stable.url = "github:nixos/nixpkgs/nixos-23.11";
+    nixpkgs-stable.url = "github:nixos/nixpkgs/nixos-24.11";
 
     #home-manager.url = "github:nix-community/home-manager/release-23.11";
     home-manager.url = "github:nix-community/home-manager";
