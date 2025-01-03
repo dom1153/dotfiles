@@ -23,7 +23,7 @@ else
 end
 
 if exists bat
-    abbr cat "bat --paging=never --plain"
+    abbr cat "bat --style=plain --paging=never"
     vanilla_alias cat
 end
 

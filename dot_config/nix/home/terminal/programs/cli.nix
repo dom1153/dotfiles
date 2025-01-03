@@ -10,17 +10,17 @@
 in {
   home.packages = with pkgs; [
     ### unix alternative
-    bat
-    btop
+    unstable.bat
+    unstable.btop
     delta ### git diff specifically
     diff-so-fancy
-    eza
-    fd
-    fzf
-    glow ### fancy md file reading
+    unstable.eza
+    unstable.fd
+    unstable.fzf
+    unstable.glow ### fancy md file reading
     grc ### generic colorizer ; aliases colorize common unix commands
     micro ### nano alternative
-    ripgrep
+    unstable.ripgrep
     tailspin ### tail but its got colors (tspin)
     unrar
     unzip
@@ -35,6 +35,9 @@ in {
     ### asciinema-scenario ### asciinema from text file; linux only
     chezmoi
     nix-prefetch-github
+    unstable.nh ### yet another nix cli helper (also see nvd and nix-output-monitor)
+    unstable.nix-output-monitor ### nix but gives the cool dependency graph
+    unstable.nvd ### diff pix package versions
     spacer ### append lines after a given time in tail
     speedtest-cli
     wget
@@ -65,7 +68,7 @@ in {
     dust ### du alternative
     just ### command line runner (like make)
     watchexec ### generic watch command
-    degit ### git without the .git
+    unstable.degit ### git without the .git
 
     ### funni
     blahaj
@@ -99,19 +102,19 @@ in {
 
     ### development
     shfmt ### unsure how to integrate
-    gum ### shell bubbletea
+    unstable.gum ### shell bubbletea
 
     ### tui
-    ani-cli
-    helix
-    lazygit
+    unstable.ani-cli
+    unstable.helix
+    unstable.lazygit
     lf
     mc
     nap ### snippet manager
-    navi
-    ncdu
+    unstable.navi
+    unstable.ncdu
     tmux
-    yazi ### another lf ; batteries included
+    unstable.yazi ### another lf ; batteries included
     unstable.zellij
     ### browsh ### firefox, in the terminal
   ];

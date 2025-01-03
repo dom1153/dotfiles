@@ -436,6 +436,54 @@ devcontainer up --workspace-folder $PWD/..
 ### run devcontainer (requries appPort to tell docker to port forward, devcontainer does not support port-forwarding yet)
 devcontainer exec --workspace-folder $PWD/.. npm run dev
 
+% nh
+
+# nixos-rebuild switch --flake ... alternative
+FLAKE="~/.local/share/chezmoi/dot_config/nix" nh os switch -H <hostname>
+$hostname: hostname
+
+# nixos-rebuild switch --flake ... alternative (2)
+nh os switch ~/.local/share/chezmoi/dot_config/nix -H <hostname>
+$hostname: hostname
+
+# nixos-rebuild but selector
+nh os <values> ~/.local/share/chezmoi/dot_config/nix -H <hostname> <args>
+$values: echo "switch boot test" | tr ' ' '\n'
+$hostname: hostname
+; VVV man this is so close to working
+; $args: echo ' --dry --verbose --update --ask' | tr ' ' '\n' --- --multi #--- --multi --expand
+$args: echo -e " \n--dry\n--verbose\n--update\n--ask" --- --multi
+
+# search nix packages stable
+nh search -c nixos-24.11<nbsp>
+$nbsp: echo " "
+
+# search nix packages unstable
+nh search -c nixos-unstable<nbsp>
+$nbsp: echo " "
+
+# nix clean (dry)
+nh clean all --keep-since 30d2h --dry
+
+# nix clean keep 5 generations (dry)
+nh clean all --keep 5 --dry
+
+# nix clean
+nh clean all --keep-since 30d2h
+
+# nix clean keep 5 generations 
+nh clean all --keep 5
+
+# compare nix versions
+nvd diff /nix/var/nix/profiles/system-{<n1>,<n2>}-link
+$n1: nix-env --list-generations | tail -2 | head -1 | awk '{print $1}'
+$n2: nix-env --list-generations | tail -1 | awk '{print $1}'
+
+# get nix generations
+nix-env --list-generations | bat --style=plain --paging=never
+
+
+
 % sixel
 
 # draw a sixel image (chafa)
