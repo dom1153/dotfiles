@@ -452,7 +452,7 @@ $values: echo "switch boot test" | tr ' ' '\n'
 $hostname: hostname
 ; VVV man this is so close to working
 ; $args: echo ' --dry --verbose --update --ask' | tr ' ' '\n' --- --multi #--- --multi --expand
-$args: echo -e " \n--dry\n--verbose\n--update\n--ask" --- --multi
+$args: echo -e " \n--dry\n--verbose\n--update\n--ask"
 
 # search nix packages stable
 nh search -c nixos-24.11<nbsp>
@@ -481,8 +481,6 @@ $n2: nix-env --list-generations | tail -1 | awk '{print $1}'
 
 # get nix generations
 nix-env --list-generations | bat --style=plain --paging=never
-
-
 
 % sixel
 
