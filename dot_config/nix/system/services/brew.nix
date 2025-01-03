@@ -37,6 +37,7 @@
       "font-meslo-lg-nerd-font"
       "font-monaspace"
       "google-chrome"
+      "ghostty"
       "hiddenbar"
       "iterm2"
       "keycastr"
