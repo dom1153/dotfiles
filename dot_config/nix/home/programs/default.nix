@@ -80,7 +80,6 @@ in {
     stable.micro ### nano alternative
     stable.ripgrep
     stable.tailspin ### tail but its got colors (tspin)
-    stable.unrar
     stable.unzip
     stable.zip
     stable.zoxide

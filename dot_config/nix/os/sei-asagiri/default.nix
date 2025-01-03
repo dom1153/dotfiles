@@ -84,9 +84,8 @@
     libinput.touchpad.disableWhileTyping = true;
   };
 
-  systemd.extraConfig = ''
-    DefaultTimeoutStopSec=3s
-  '';
+  systemd.extraConfig = ''DefaultTimeoutStopSec=3s'';
+  systemd.user.extraConfig = ''DefaultTimeoutStopSec=10s'';
 
   # https://nixos.wiki/wiki/FAQ/When_do_I_update_stateVersion
   system.stateVersion = "23.11";
