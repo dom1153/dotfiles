@@ -29,19 +29,19 @@ in {
     feh ### image previewer
     losslesscut-bin
     meld ### folder comparison ; can't find preferences folder qq
-    postman ### REST
+    stable.postman ### REST
     unstable.code-cursor ### ai powered ide
     unstable.zed-editor
 
     ### art
-    blockbench ### voxel 3d modeling
+    stable.blockbench ### voxel 3d modeling
     libsForQt5.kolourpaint ### windows 98 style
 
     ### terminal emulators
-    kitty
-    foot
+    unstable.kitty
+    unstable.foot
     cool-retro-term
-    wezterm ### not working well with hyprland wayland (x11 works) ; use for other platforms
+    stable.wezterm ### not working well with hyprland wayland (x11 works) ; use for other platforms
     unstable.ghostty
 
     ### apps
@@ -53,17 +53,17 @@ in {
     unstable.anki-bin
     google-chrome
 
-    gnome.gnome-disk-utility
+    stable.gnome.gnome-disk-utility
 
-    appimage-run ### the main workaround for appimages /shrug
+    unstable.appimage-run ### the main workaround for appimages /shrug
 
-    godot_4
+    unstable.godot_4
 
-    cura ### ultimaker cura ; 3d slicer
-    prusa-slicer ### open source 3d slicer
+    unstable.cura ### ultimaker cura ; 3d slicer
+    unstable.prusa-slicer ### open source 3d slicer
 
-    rofi ### window switcher
-    qalculate-qt ### calculator
+    stable.rofi ### window switcher
+    stable.qalculate-qt ### calculator
 
     ### cli (linux only)
     ### unix alternative
@@ -127,31 +127,31 @@ in {
     stable.fastfetch
 
     ### services
-    entr
-    mosh
-    starship
-    watchman ### for chezmoi
+    stable.entr
+    stable.mosh
+    stable.starship
+    stable.watchman ### for chezmoi
 
     ### cheatsheets
-    cheat
-    tealdeer ### rust version compliant with  tldr client
+    stable.cheat
+    stable.tealdeer ### rust version compliant with  tldr client
     # tldr
 
     ### development
-    shfmt ### unsure how to integrate
-    gum ### shell bubbletea
+    stable.shfmt ### unsure how to integrate
+    stable.gum ### shell bubbletea
 
     ### tui
-    helix
-    lazygit
-    lf
-    mc
-    nap ### snippet manager
-    navi
-    ncdu
-    tmux
-    yazi ### another lf ; batteries included
-    zellij
+    stable.helix
+    stable.lazygit
+    stable.lf
+    stable.mc
+    stable.nap ### snippet manager
+    stable.navi
+    stable.ncdu
+    stable.tmux
+    stable.yazi ### another lf ; batteries included
+    stable.zellij
   ];
 
   # (with pkgs; [
