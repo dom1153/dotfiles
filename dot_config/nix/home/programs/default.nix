@@ -88,6 +88,7 @@ in {
 
     ### tools
     stable.asciinema
+    stable.chezmoi
   ];
 
   # (with pkgs; [

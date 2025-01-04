@@ -17,9 +17,16 @@ wmclassmatch=1
 
 [1]
 Description=Wezterm (2)
-desktops=9c73745a-0164-4b37-b58f-5d56742478c7
+desktops=1c1eb0a6-400a-4678-85df-f98610b1db49
 desktopsrule=3
 wmclass=org.wezfurlong.wezterm
+wmclassmatch=1
+
+[1e34e1da-ffb2-4524-be06-f1c06e68a217]
+Description=Zen (3)
+desktops=1c1eb0a6-400a-4678-85df-f98610b1db49
+desktopsrule=3
+wmclass=zen-alpha
 wmclassmatch=1
 
 [1fbfc7a8-6539-4101-b4dd-c1f9a1184b39]
@@ -31,7 +38,7 @@ wmclassmatch=1
 
 [2]
 Description=Obsidian (1)
-desktops=39f99134-c928-4447-9696-9f1fab83e0ae
+desktops=9c73745a-0164-4b37-b58f-5d56742478c7
 desktopsrule=3
 wmclass=obsidian
 wmclassmatch=1
@@ -45,7 +52,7 @@ wmclassmatch=1
 
 [3]
 Description=Firefox (3)
-desktops=1c1eb0a6-400a-4678-85df-f98610b1db49
+desktops=9c71ae34-9461-4941-b35c-1bd3be4ce056
 desktopsrule=3
 wmclass=firefox
 wmclassmatch=1
@@ -55,36 +62,51 @@ Description=New window settings
 wmclassmatch=1
 
 [4]
-Description=MsEdge (4)
+Description=Zen (3)
 desktops=9c71ae34-9461-4941-b35c-1bd3be4ce056
+desktopsrule=3
+wmclass=zen-alpha
+wmclassmatch=1
+
+[5]
+Description=MsEdge (4)
+desktops=0d460bef-6c40-41fc-a5b1-e5302590c430
 desktopsrule=3
 wmclass=Microsoft-edge
 wmclassmatch=1
 
-[5]
+[6]
 Description=Settings / Other (5)
-desktops=0d460bef-6c40-41fc-a5b1-e5302590c430
+desktops=d6eaf09c-fd13-4671-ba35-9666b8f2b796
 desktopsrule=3
 wmclass=systemsettings
 wmclassmatch=1
 
-[6]
+[7]
 Description=Discord (5)
-desktops=0d460bef-6c40-41fc-a5b1-e5302590c430
+desktops=d6eaf09c-fd13-4671-ba35-9666b8f2b796
 desktopsrule=3
 wmclass=discord
 wmclassmatch=1
 
-[7]
+[8]
 Description=Steam (6)
-desktops=d6eaf09c-fd13-4671-ba35-9666b8f2b796
+desktops=58ef4a8d-edd4-4375-89ef-68144c1a872a
 desktopsrule=3
+position=0,0
 wmclass=steam
 wmclassmatch=1
 
+[9]
+Description=regex ignore
+position=0,0
+positionrule=1
+wmclass=steam_app
+wmclassmatch=1
+
 [General]
-count=7
-rules=1,2,3,4,5,6,7
+count=9
+rules=1,2,3,4,5,6,7,8,9
 
 [a20c9633-3551-48e3-a64a-3a7eb1f46846]
 Description=Discord (5)
@@ -98,6 +120,14 @@ Description=obsidian
 desktops=9c73745a-0164-4b37-b58f-5d56742478c7
 desktopsrule=3
 wmclass=obsidian
+wmclassmatch=1
+
+[bd136fd0-a845-4791-80e2-85bf527d51a7]
+Description=regex ignore
+position=0,0
+positionrule=1
+sizerule=1
+wmclass=steam_app
 wmclassmatch=1
 
 [ee21cb48-cd71-43f0-8774-f35dbfd375f1]
