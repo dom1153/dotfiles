@@ -39,8 +39,64 @@
 
       ### tools
       "asciinema"
+      "spacer"
 
       "chezmoi"
+      "speedtest-cli"
+      "wget"
+      "chafa"
+      "timg"
+      "trurl"
+      "imagemagick"
+      "lsix"
+      "yq"
+      "jq"
+      "dasel"
+      "vhs"
+      "t-rec"
+      "xdg-ninja"
+      "fpp"
+      "gitmoji"
+      "tree"
+      "duf"
+      "sd"
+      "procs"
+      "curlie"
+      "dust"
+      "just"
+      "watchexec"
+      ### funni
+      "lolcat"
+      "ponysay"
+      "fortune"
+      "cmatrix"
+      "cbonsai"
+      "figlet"
+      "sl"
+      "fastfetch"
+      ### services
+      "entr"
+      "mosh"
+      "starship"
+      "watchman"
+      ### cheatsheets
+      "cheat"
+      "tealdeer"
+      ### development
+      "shfmt" ### unsure how to integrate
+      "gum" ### shell bubbletea
+
+      ### tui
+      "helix"
+      "lazygit"
+      "lf"
+      "mc"
+      "nap"
+      "navi"
+      "ncdu"
+      "tmux"
+      "yazi"
+      "zellij"
     ];
     casks = [
       "affinity-designer"

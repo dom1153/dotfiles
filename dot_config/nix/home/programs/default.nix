@@ -74,21 +74,84 @@ in {
     stable.diff-so-fancy
     stable.eza
     stable.fd
+    stable.file ### get... file types e.g. mime; use with lf preview
     stable.fzf
     stable.glow ### fancy md file reading
     stable.grc ### generic colorizer ; aliases colorize common unix commands
     stable.micro ### nano alternative
     stable.ripgrep
+    stable.rsync ### pre-installed on nix and darwin, but let's keep it consistent
     stable.tailspin ### tail but its got colors (tspin)
     stable.unzip
     stable.zip
     stable.zoxide
-    stable.rsync ### pre-installed on nix and darwin, but let's keep it consistent
-    stable.file ### get... file types e.g. mime; use with lf preview
 
     ### tools
     stable.asciinema
     stable.chezmoi
+    stable.spacer ### append lines after a given time in tail
+    stable.fast-cli ### does not work on darwin
+    stable.speedtest-cli
+    stable.wget
+    stable.chafa ### sixel (lf)
+    stable.timg ### image viewer fallback when sixel doesn't work
+    stable.trurl ### transpose url (get url parts)
+    stable.imagemagick ### convert images (e.g. use with kitty icat)
+    stable.lsix ### ls, but for sixel (it's just a shell script)
+    stable.jq ### parse / query json
+    stable.dasel ### yq but different
+    stable.yq-go ### jq but for xml,cvs,toml too (prefer go > python version)
+    # direnv ### auto load env (nix shell, devenv)
+    stable.vhs ### tool to create terminal gifs with code
+    stable.t-rec ### geenrate animated gifs for the web (rust)
+    stable.xdg-ninja ### check $HOME for unwanted files/directories and move them
+    stable.fpp ### facebook pathpicker (edit or run commands on path of ouptut)
+    stable.gitmoji-cli ### emoji based commit (simple?)
+    stable.tree ### generate a ls tree
+    stable.duf ### df alternative
+    stable.sd ### sed alternative
+    stable.procs ### ps alternative
+    stable.curlie ### curl alternative
+    stable.dust ### du alternative
+    stable.just ### command line runner (like make)
+    stable.watchexec ### generic watch command
+
+    ### funni
+    stable.lolcat # keeping this for legacy (lf) reasons ; can remove eventually
+    stable.ponysay
+    stable.fortune
+    stable.cmatrix
+    stable.cbonsai
+    stable.figlet ### making large letters out of ordinary letters
+    stable.sl ### steam locomotive for when you mistype ls
+    stable.fastfetch
+
+    ### services
+    entr
+    mosh
+    starship
+    watchman ### for chezmoi
+
+    ### cheatsheets
+    cheat
+    tealdeer ### rust version compliant with  tldr client
+    # tldr
+
+    ### development
+    shfmt ### unsure how to integrate
+    gum ### shell bubbletea
+
+    ### tui
+    helix
+    lazygit
+    lf
+    mc
+    nap ### snippet manager
+    navi
+    ncdu
+    tmux
+    yazi ### another lf ; batteries included
+    zellij
   ];
 
   # (with pkgs; [
