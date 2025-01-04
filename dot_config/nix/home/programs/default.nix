@@ -53,14 +53,14 @@ in {
     unstable.anki-bin
     google-chrome
 
-    stable.gnome.gnome-disk-utility
+    gnome.gnome-disk-utility
 
     unstable.appimage-run ### the main workaround for appimages /shrug
 
     unstable.godot_4
 
-    unstable.cura ### ultimaker cura ; 3d slicer
-    unstable.prusa-slicer ### open source 3d slicer
+    cura ### ultimaker cura ; 3d slicer
+    prusa-slicer ### open source 3d slicer
 
     stable.rofi ### window switcher
     stable.qalculate-qt ### calculator
@@ -149,7 +149,7 @@ in {
     stable.nap ### snippet manager
     stable.navi
     stable.ncdu
-    stable.tmux
+    tmux
     stable.yazi ### another lf ; batteries included
     stable.zellij
   ];
