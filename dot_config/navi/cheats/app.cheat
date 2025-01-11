@@ -448,7 +448,7 @@ $hostname: hostname
 
 # nixos-rebuild but selector
 nh os <values> ~/.local/share/chezmoi/dot_config/nix -H <hostname> <args>
-$values: echo "switch boot test" | tr ' ' '\n'
+$values: echo "build test boot switch info" | tr ' ' '\n'
 $hostname: hostname
 ; VVV man this is so close to working
 ; $args: echo ' --dry --verbose --update --ask' | tr ' ' '\n' --- --multi #--- --multi --expand
