@@ -9,7 +9,7 @@
     enable = true;
     ### consider using /srv/sws , but shouldn't really matter
     ### will not generate any files, ore even this folder. just serves
-    root = "/run/media/archoo/super-4T/sws";
+    root = "/run/media/archoo/super-4T/sws/dist";
 
     # listen = "[::]:443"; ### if we want to change port
     ### extraOptions for sws
