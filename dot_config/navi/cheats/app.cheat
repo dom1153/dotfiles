@@ -482,6 +482,9 @@ $n2: nix-env --list-generations | tail -1 | awk '{print $1}'
 # get nix generations
 nix-env --list-generations | bat --style=plain --paging=never
 
+# rollback option?
+sudo nixos-rebuild switch --rollback
+
 # format nix files in all subdirectories
 alejandra .
 
