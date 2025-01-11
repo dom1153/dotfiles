@@ -98,6 +98,7 @@
     htop
     nmon ### another top
     vtop
+    rainfrog ### database management for postgres
 
     ### cli development
     nodejs_21

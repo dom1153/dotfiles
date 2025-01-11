@@ -88,6 +88,7 @@
 
       ### tui
       "helix"
+      "lazydocker"
       "lazygit"
       "lf"
       "mc"
@@ -150,6 +151,7 @@
       "homebrew/cask-fonts"
       "homebrew/cask-versions"
       "localsend/localsend"
+      "jesseduffield/lazydocker"
       ### "osx-cross/arm"
     ];
     ### other: playcover nightly

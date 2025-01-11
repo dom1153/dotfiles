@@ -152,6 +152,8 @@ in {
     tmux
     stable.yazi ### another lf ; batteries included
     stable.zellij
+    stable.lazydocker
+    stable.posting
   ];
 
   # (with pkgs; [

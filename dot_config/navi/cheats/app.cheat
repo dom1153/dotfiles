@@ -471,7 +471,7 @@ nh clean all --keep 5 --dry
 # nix clean
 nh clean all --keep-since 30d2h
 
-# nix clean keep 5 generations 
+# nix clean keep 5 generations
 nh clean all --keep 5
 
 # compare nix versions
@@ -498,6 +498,8 @@ lsix
 kitty icat <imagefilename>
 $ imagefilename: find . -type f
 
+# check for git leaks (new version only)
+gitleaks dir -v
 
 % tldr
 
