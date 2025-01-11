@@ -150,7 +150,6 @@
       "homebrew/cask-fonts"
       "homebrew/cask-versions"
       "localsend/localsend"
-      ### "osx-cross/arm"
     ];
     ### other: playcover nightly
     ### appstore apps
@@ -162,28 +161,5 @@
     ## pixea - like feh
     ## stickies (slightly-more modern sticky notes)
     ## Screenbrush - macos brush for desktop
-
-    ### tap
-    # "nikitabobko/tap" ### aerospace
-
-    ### brews
-    # "cava" ### cross-platform audio visualizer ### does not work out of the box on osx https://github.com/karlstav/cava/issues/478
-    # "tty-clock"
-
-    ### casks
-    # "postman" ### rest api tester
-    # "cursor" ### AI ide
-    # "jetbrains-toolbox" ### jetbrain program install manager
-    # "ultimaker-cura" ### 3d slicer
-    # "prusaslicer" ### open source 3d slicer
-    ### "xnviewmp" ### xn viewer mpv -> looks ugly...
-    # "background-music"
-    # "epic-games"
-    # "unity-hub"
-    # "hhkb"
-    # "gamemaker"
-    # "firefox-developer-edition" ### keeps wanting to fresh install??? I use chrome devtools anyways
-    # "logi-options-plus" ### seems to update too much
-    # "aerospace" ### doesn't play well with macos spaces, keyboard centric
   };
 }

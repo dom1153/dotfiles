@@ -41,7 +41,7 @@ in {
     unstable.kitty
     unstable.foot
     cool-retro-term
-    stable.wezterm ### not working well with hyprland wayland (x11 works) ; use for other platforms
+    wezterm ### not working well with hyprland wayland (x11 works) ; use for other platforms
     unstable.ghostty
 
     ### apps
