@@ -7,12 +7,16 @@
     system = "x86_64-linux";
     config.allowUnfree = true;
   };
+  stable = import inputs.nixpkgs-stable {
+    system = "x86_64-linux";
+    config.allowUnfree = true;
+  };
 in {
   services.plex = {
     enable = true;
     openFirewall = true;
     user = "archoo";
     dataDir = "/run/media/archoo/super-4T/";
-    package = unstable.plex;
+    package = stable.plex;
   };
 }
