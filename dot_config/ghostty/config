@@ -23,3 +23,11 @@ macos-titlebar-style = "hidden"
 ### window-padding only works on new windows
 window-padding-x = 4
 window-padding-y = 4
+
+### disable confirm close dialog makes rebooting on macos annoying
+confirm-close-surface = false
+
+### disable font ligatures
+font-feature = -calt
+font-feature = -liga
+font-feature = -dlig

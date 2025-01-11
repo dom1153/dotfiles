@@ -1,6 +1,7 @@
 {inputs, ...}: let
   unstable = import inputs.nixpkgs-unstable {
-    system = "x86_64-linux";
+    system = pkgs.system;
+
     config.allowUnfree = true;
   };
 in {
