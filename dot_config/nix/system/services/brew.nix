@@ -82,5 +82,8 @@
     ## pixea - like feh
     ## stickies (slightly-more modern sticky notes)
     ## Screenbrush - macos brush for desktop
+
+    ### temp
+    # "maccy" ### clipboard manager
   };
 }
