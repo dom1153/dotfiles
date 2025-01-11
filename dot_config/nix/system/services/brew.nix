@@ -17,87 +17,7 @@
       # "devcontainer" ### run vscode devcontainer from cli
       # "arduino-cli" ### arduino tools but on cli
       "jnv" ### interactive jq
-
-      ### exec error fallback
-      "bat"
-      "btop"
-      "git-delta"
-      "diff-so-fancy"
-      "eza"
-      "fd"
-      "fzf"
-      "glow"
-      "grc"
-      "micro"
-      "ripgrep"
-      "tailspin"
-      "unzip"
-      "zip"
-      "zoxide"
-      "rsync"
-      "file-formula"
-
-      ### tools
-      "asciinema"
-      "spacer"
-
-      "chezmoi"
-      "speedtest-cli"
-      "wget"
-      "chafa"
-      "timg"
-      "trurl"
-      "imagemagick"
-      "lsix"
-      "yq"
-      "jq"
-      "dasel"
-      "vhs"
-      "t-rec"
-      "xdg-ninja"
-      "fpp"
-      "gitmoji"
-      "tree"
-      "duf"
-      "sd"
-      "procs"
-      "curlie"
-      "dust"
-      "just"
-      "watchexec"
-      ### funni
-      "lolcat"
-      "ponysay"
-      "fortune"
-      "cmatrix"
-      "cbonsai"
-      "figlet"
-      "sl"
-      "fastfetch"
-      ### services
-      "entr"
-      "mosh"
-      "starship"
-      "watchman"
-      ### cheatsheets
-      "cheat"
-      "tealdeer"
-      ### development
-      "shfmt" ### unsure how to integrate
-      "gum" ### shell bubbletea
-
-      ### tui
-      "helix"
-      "lazydocker"
-      "lazygit"
-      "lf"
-      "mc"
-      "nap"
-      "navi"
-      "ncdu"
-      "tmux"
-      "yazi"
-      "zellij"
+      "posting" ### postman cli
     ];
     casks = [
       "affinity-designer"
@@ -151,7 +71,6 @@
       "homebrew/cask-fonts"
       "homebrew/cask-versions"
       "localsend/localsend"
-      "jesseduffield/lazydocker"
       ### "osx-cross/arm"
     ];
     ### other: playcover nightly
@@ -171,21 +90,5 @@
     ### brews
     # "cava" ### cross-platform audio visualizer ### does not work out of the box on osx https://github.com/karlstav/cava/issues/478
     # "tty-clock"
-
-    ### casks
-    # "postman" ### rest api tester
-    # "cursor" ### AI ide
-    # "jetbrains-toolbox" ### jetbrain program install manager
-    # "ultimaker-cura" ### 3d slicer
-    # "prusaslicer" ### open source 3d slicer
-    ### "xnviewmp" ### xn viewer mpv -> looks ugly...
-    # "background-music"
-    # "epic-games"
-    # "unity-hub"
-    # "hhkb"
-    # "gamemaker"
-    # "firefox-developer-edition" ### keeps wanting to fresh install??? I use chrome devtools anyways
-    # "logi-options-plus" ### seems to update too much
-    # "aerospace" ### doesn't play well with macos spaces, keyboard centric
   };
 }
