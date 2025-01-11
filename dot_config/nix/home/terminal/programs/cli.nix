@@ -3,7 +3,7 @@
   inputs,
   ...
 }: let
-  stable = import inputs.nixpkgs-unstable {
+  stable = import inputs.nixpkgs-stable {
     system = pkgs.system;
     config.allowUnfree = true;
   };
@@ -73,6 +73,7 @@ in {
     unstable.just ### command line runner (like make)
     unstable.watchexec ### generic watch command
     unstable.degit ### git without the .git
+    unstable.alejandra ### nix formatter
 
     ### funni
     stable.blahaj

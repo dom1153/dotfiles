@@ -4,7 +4,7 @@
   ...
 }: let
   unstable = import inputs.nixpkgs-unstable {
-    system = "x86_64-linux";
+    system = pkgs.system;
     config.allowUnfree = true;
   };
 
@@ -73,7 +73,6 @@ in {
       ranger
       ttyper
 
-      nix-prefetch-github ### for the dumb nixos stuff
       gnumake
 
       barrier ### synergy

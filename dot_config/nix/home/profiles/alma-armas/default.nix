@@ -25,7 +25,6 @@
       trash-cli
 
       ### local dev
-      nix-prefetch-github ### for the dumb nixos stuff
       gnumake
 
       nvim-pkg # kickstar nvim package

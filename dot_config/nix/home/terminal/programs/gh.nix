@@ -3,7 +3,7 @@
   pkgs,
   ...
 }: let
-  stable = import inputs.nixpkgs-unstable {
+  stable = import inputs.nixpkgs-stable {
     system = pkgs.system;
     config.allowUnfree = true;
   };

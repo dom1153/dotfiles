@@ -1,4 +1,13 @@
-{pkgs, ...}: {
+{
+  inputs,
+  pkgs,
+  ...
+}: let
+  stable = import inputs.nixpkgs-stable {
+    system = pkgs.system;
+    config.allowUnfree = true;
+  };
+in {
   ### inspired by dotfiles_LudovicoPiero
   programs.tmux = {
     enable = true;
@@ -7,6 +16,7 @@
     prefix = "C-a";
     terminal = "xterm-256color";
     mouse = true;
+    package = stable.tmux;
 
     extraConfig = ''
       source ~/.config/tmux/tmux.conf.local

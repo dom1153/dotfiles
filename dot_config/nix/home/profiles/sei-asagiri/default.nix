@@ -4,7 +4,7 @@
   ...
 }: let
   unstable = import inputs.nixpkgs-unstable {
-    system = "x86_64-linux";
+    system = pkgs.system;
     config.allowUnfree = true;
   };
 
@@ -43,8 +43,6 @@ in {
       nitch
       trash-cli
       ttyper
-
-      nix-prefetch-github ### for the dumb nixos stuff
 
       nvim-pkg # kickstar nvim package
     ];
