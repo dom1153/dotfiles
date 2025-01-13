@@ -54,14 +54,17 @@
     ### Available through 'nixos-rebuild build --flake .#your-hostname'
     nixosConfigurations = {
       jill-stingray = nixpkgs.lib.nixosSystem {
+        system = "x86_64-linux";
         specialArgs = {inherit inputs outputs;};
         modules = [./os/jill-stingray];
       };
       alma-armas = nixpkgs.lib.nixosSystem {
+        system = "x86_64-linux";
         specialArgs = {inherit inputs outputs;};
         modules = [./os/alma-armas];
       };
       sei-asagiri = nixpkgs.lib.nixosSystem {
+        system = "x86_64-linux";
         specialArgs = {inherit inputs outputs;};
         modules = [./os/sei-asagiri];
       };

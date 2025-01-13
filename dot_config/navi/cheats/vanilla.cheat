@@ -178,3 +178,5 @@ fg
 
 # ssh file transfer (mbp)
 sftp mbp
+
+journalctl --follow -u plex.service

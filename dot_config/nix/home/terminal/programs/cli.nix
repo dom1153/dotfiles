@@ -96,7 +96,7 @@ in {
 
     ### services
     stable.entr ### run arbitrary commands when files change
-    stable.mosh
+    mosh
     stable.starship
     stable.watchman ### for chezmoi
 
