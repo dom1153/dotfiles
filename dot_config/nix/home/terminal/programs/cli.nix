@@ -93,6 +93,8 @@ in {
     stable.sl ### steam locomotive for when you mistype ls
     stable.fastfetch
     stable.neofetch
+    unstable.astroterm ### celestial viewer for the terminal
+    stable.onefetch
 
     ### services
     stable.entr ### run arbitrary commands when files change
@@ -122,6 +124,7 @@ in {
     unstable.yazi ### another lf ; batteries included
     stable.zellij
     stable.lazydocker
+    unstable.television
     # stable.posting ### does not exist
     ### browsh ### firefox, in the terminal
   ];

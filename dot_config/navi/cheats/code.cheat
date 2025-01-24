@@ -42,11 +42,17 @@ git diff -p \
 # init module
 go mod init mypackage
 
+# init module with cobra-cli
+go mod init mypackage && cobra-cli init
+
 # install packages based on main module
 go get
 
 # run go standalone/package (must be inside package directory)
 go run
+
+# cobra-cli add a commnad to cli package
+cobra-cli add
 
 ; ----------------------------------------------------------------------------
 

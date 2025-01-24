@@ -317,6 +317,19 @@ fastfetch
 # neofetch, the cool kawaii anime picture
 neofetch
 
+# cool celestial viewer written in C
+astroterm --color --constellations --speed 10000 --fps 64
+; https://www.reddit.com/r/commandline/comments/1i2tznv/astroterm_a_planetarium_for_your_terminal/
+
+# neofetch but its for your git repos
+onefetch
+
+# see every onefetch language for current repo (large)
+bash -c 'onefetch -l | tr "[:upper:] " "[:lower:]-" | while read line; do echo "$line"; onefetch -a $line; done;'
+
+# tabiew - view csv, tsv, etc in a table
+tabiew
+
 ; ----------------------------------------------------------------------------
 
 % gh, extension
@@ -431,6 +444,24 @@ docker build . -t "different:special"
 
 ### start up devcontainer (may need to delete old container to actually rebuild)
 devcontainer up --workspace-folder $PWD/..
+
+### telescope for cli search files (tv ; television)
+tv
+
+### search through all git repos
+tv git-repos
+
+### search through aliases
+tv alias
+
+### search through env
+tv env
+
+### search text (tv)
+tv text
+
+### search directories (tv)
+tv dirs
 
 ; https://github.com/devcontainers/cli/issues/186
 ### run devcontainer (requries appPort to tell docker to port forward, devcontainer does not support port-forwarding yet)

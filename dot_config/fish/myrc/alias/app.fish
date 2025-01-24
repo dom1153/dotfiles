@@ -43,6 +43,10 @@ if exists multitail
     vanilla_alias tail
 end
 
+if exists trash
+    abbr yabe "yabai --restart-service; skhd --restart-service"
+end
+
 ### pnpm
 abbr pn pnpm
 

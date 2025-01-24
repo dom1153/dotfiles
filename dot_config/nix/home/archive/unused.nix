@@ -75,6 +75,7 @@
     multitail ### seems a more extensive tail, but requires a big terminal size, or gives an annoying warning
     spacer ### append lines after a given time in tail ; no need after tspin (pipe isn't compatible)
     tailer ### spacer, but written in go
+    unstable.tabiew ### view csv and such in a table view
 
     ### tui apps
     browsh ### termianl browser
