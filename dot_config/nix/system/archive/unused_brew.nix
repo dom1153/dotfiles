@@ -2,7 +2,9 @@
   ### manages homebrew, homebrew itself must be installed manually!
   homebrew = {
     enable = true;
-    brews = []; ### likely use nixpkgs instead
+    brews = [
+      "ghcup" ### haskell ghc manager
+    ]; ### likely use nixpkgs instead
     casks = [
       ### experimental / extra
       "amethyst" ### yabai superior, even without SIP
@@ -29,6 +31,7 @@
       "zed"
       "proton-mail" ### just a web app
       "knime" ### Software to create and productionise data science
+      "sigmaos" ###
     ];
     taps = [
       "PlayCover/playcover"

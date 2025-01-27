@@ -187,3 +187,14 @@ watchexec -r -e py -- python server.py
 
 # golang example (nix)
 watchexec -e go go run src/atourofgo/tour.g
+
+# entr
+
+# watch file and run command (npm project example)
+find src | entr npm run build
+
+# watch file and run command (single file example with clear -c)
+echo 'by-example/foo.hs' | entr -c runhaskell by-example/foo.hs
+
+# watch file and run command (single file and generic shell arguments -s)
+echo 'by-example/foo.hs' | entr -c -s 'ormolu --mode inplace by-example/foo.hs'
