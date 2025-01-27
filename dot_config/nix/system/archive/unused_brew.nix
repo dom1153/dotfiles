@@ -28,6 +28,7 @@
       "warp"
       "zed"
       "proton-mail" ### just a web app
+      "knime" ### Software to create and productionise data science
     ];
     taps = [
       "PlayCover/playcover"
