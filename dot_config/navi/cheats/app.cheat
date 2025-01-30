@@ -580,6 +580,22 @@ http://stella-hoshii:3000/home
 # restart jankyborders
 brew services restart borders
 
+# atuin register
+atuin register -u <USERNAME> -e <EMAIL>
+
+# atuin login
+atuin login
+
+# atuin setup 1
+atuin import auto
+
+# atuin setup 2
+atuin sync
+
+# atuin import (auto is based off $SHELL)
+atuin import <shell>
+$shell: echo "bash zsh fish" | tr ' ' '\n'
+
 ; ----------------------------------------------------------------------------
 
 % fish
@@ -713,6 +729,8 @@ nix-store --gc
 
 # diff files
 nvim -d <file1> <file2>
+$ file1: find . -type f
+$ file2: find . -type f
 
 # lazyvim docker
 docker run -w /root -it --rm alpine:edge sh -uelic '

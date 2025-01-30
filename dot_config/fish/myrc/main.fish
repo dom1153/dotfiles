@@ -3,6 +3,8 @@ set fish_greeting ""
 ### source other files
 set -l myfh "$HOME/.config/fish/myrc"
 
+### is-interactive block?
+
 ### (fyi, fish's "functions" folder reloads with main config)
 
 ### source aliases

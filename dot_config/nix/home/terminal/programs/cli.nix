@@ -74,6 +74,7 @@ in {
     unstable.watchexec ### generic watch command
     unstable.degit ### git without the .git
     unstable.alejandra ### nix formatter
+    unstable.atuin ### magical shell history
 
     ### funni
     stable.blahaj
