@@ -99,6 +99,9 @@ kill $(lsof -t -i:8000)
 # download a file
 wget
 
+# download a file with custom output name
+wget <url> -O <filename>
+
 # check external ip
 curl -s http://checkip.dyndns.org/ | sed 's/[a-zA-Z<>/ :]//g'
 

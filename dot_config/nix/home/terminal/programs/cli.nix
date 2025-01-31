@@ -53,6 +53,7 @@ in {
     unstable.lsix ### ls, but for sixel (it's just a shell script)
     unstable.ueberzugpp ### sixel (hook)
     unstable.jq ### parse / query json
+    unstable.htmlq ### parse / query json
     unstable.dasel ### yq but different
     unstable.yq-go ### jq but for xml,cvs,toml too (prefer go > python version)
     unstable.pup ### query html
@@ -75,6 +76,11 @@ in {
     unstable.degit ### git without the .git
     unstable.alejandra ### nix formatter
     unstable.atuin ### magical shell history
+    unstable.xh ### the cooler wget, faster than httpie
+    unstable.kondo ### clean node_modules and other build files
+    unstable.difftastic ### clean node_modules and other build files
+    unstable.rnr ### batch file rename
+    unstable.mprocs ### batch file rename
 
     ### funni
     stable.blahaj
@@ -126,6 +132,8 @@ in {
     stable.zellij
     stable.lazydocker
     unstable.television
+    unstable.jless ### json pager
+
     # stable.posting ### does not exist
     ### browsh ### firefox, in the terminal
   ];

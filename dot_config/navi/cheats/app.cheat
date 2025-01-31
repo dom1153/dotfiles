@@ -596,6 +596,9 @@ atuin sync
 atuin import <shell>
 $shell: echo "bash zsh fish" | tr ' ' '\n'
 
+# json viewer
+jless package.json
+
 ; ----------------------------------------------------------------------------
 
 % fish

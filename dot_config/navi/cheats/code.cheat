@@ -125,6 +125,9 @@ npm run dev -- --host
 # upgrade npm package to newest version
 npm i lucide-react@latest
 
+# list npm scripts
+jq '.scripts' package.json
+
 ; ----------------------------------------------------------------------------
 
 % pixi, python
@@ -174,6 +177,26 @@ yq -oy '.tasks' pixi.toml
 ; .[].wikiUrl
 # interactive jq
 jnv ships.json
+
+% htmlq, jq
+
+# find an element by id
+curl --silent https://www.rust-lang.org/ | htmlq '#get-help'
+
+# get all links from a url
+curl --silent https://www.rust-lang.org/ | htmlq --attribute href a
+
+# get the contents of a post
+curl --silent https://nixos.org/explore/ | htmlq --text h1
+
+# remove a large svg before output
+curl --silent https://nixos.org/ | ./target/debug/htmlq '.whynix' --remove-nodes svg
+
+; # pretty print html (builtin)
+; curl --silent https://mgdm.net | htmlq --pretty '#posts'
+
+# pretty print html bat version
+curl --silent example.com | htmlq 'body' | bat --language html
 
 ; ----------------------------------------------------------------------------
 
