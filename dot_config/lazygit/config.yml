@@ -28,3 +28,12 @@ gui:
   authorColors:
     '*': '#b4befe'
 
+git:
+  paging:
+    pager: ""
+    externalDiffCommand: "difft --color=always"
+
+os:
+  edit: "nvim -- {{filename}}"
+  editAtLine: "nvim +{{line}} -- {{filename}}"
+

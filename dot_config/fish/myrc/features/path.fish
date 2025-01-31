@@ -14,7 +14,10 @@ switch (uname)
         ### prioritize nixos bin over homebrew bin (e.g. neovim)
         fish_add_path -p "/etc/profiles/per-user/$USER/bin"
 
-        ### uv package manager (posting clil)
+        ### podman cli (via official installer)
+        fish_add_path -p /opt/podman/bin
+
+        ### uv package manager (posting cli)
         fish_add_path -p ~/.local/share/../bin
     case '*'
 end

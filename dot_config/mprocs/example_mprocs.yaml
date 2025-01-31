@@ -1,0 +1,10 @@
+---
+procs:
+  backend:
+    shell: "./scripts/backend.sh"
+    autostart: false
+  frontend:
+    shell: "./scripts/frontedn.sh"
+    autostart: false
+  nvim:
+    cmd: ["nvim"]

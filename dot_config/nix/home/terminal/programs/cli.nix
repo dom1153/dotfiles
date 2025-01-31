@@ -76,11 +76,12 @@ in {
     unstable.degit ### git without the .git
     unstable.alejandra ### nix formatter
     unstable.atuin ### magical shell history
+    unstable.httpie ### the cooler wget, faster than httpie
     unstable.xh ### the cooler wget, faster than httpie
     unstable.kondo ### clean node_modules and other build files
     unstable.difftastic ### clean node_modules and other build files
-    unstable.rnr ### batch file rename
     unstable.mprocs ### batch file rename
+    unstable.gitnr ### generate git ignore files
 
     ### funni
     stable.blahaj

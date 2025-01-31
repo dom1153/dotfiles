@@ -1,4 +1,17 @@
-{pkgs, ...}: {
+{
+  inputs,
+  pkgs,
+  ...
+}: let
+  stable = import inputs.nixpkgs-stable {
+    system = pkgs.system;
+    config.allowUnfree = true;
+  };
+  unstable = import inputs.nixpkgs-unstable {
+    system = pkgs.system;
+    config.allowUnfree = true;
+  };
+in {
   ### choose default session chosen by lightdm / sddm
   #displayManager.sddm.enable = true;
 
@@ -223,6 +236,7 @@
       ### development
       "shfmt" ### unsure how to integrate
       "gum" ### shell bubbletea
+      unstable.rnr ### batch file rename
 
       ### tui
       "helix"
