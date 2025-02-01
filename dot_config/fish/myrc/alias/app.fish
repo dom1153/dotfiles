@@ -90,6 +90,8 @@ abbr ffe "fd --type f --hidden --exclude .git | fzf --reverse | xargs $EDITOR -"
 
 abbr nview 'nvim -R'
 abbr nvimr 'nvim -R'
+abbr scratch 'nvim /tmp/$(bash -c \'echo $RANDOM | tr 0123456789 abcdefghij\').txt'
+abbr scr 'nvim /tmp/$(bash -c \'echo $RANDOM | tr 0123456789 abcdefghij\').txt'
 
 abbr nsp 'nix-shell -p'
 abbr nd 'nix develop'
