@@ -25,7 +25,7 @@
 
     packages = with pkgs; [
       # ### vscode extension deps
-      alejandra
+      # alejandra
       nil
 
       darwin.trash
