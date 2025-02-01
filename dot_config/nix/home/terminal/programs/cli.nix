@@ -77,6 +77,7 @@ in {
     unstable.alejandra ### nix formatter
     unstable.atuin ### magical shell history
     unstable.httpie ### the cooler wget, faster than httpie
+    unstable.curlie ### go based curl
     unstable.xh ### the cooler wget, faster than httpie
     unstable.kondo ### clean node_modules and other build files
     unstable.difftastic ### clean node_modules and other build files
@@ -134,6 +135,8 @@ in {
     stable.lazydocker
     unstable.television
     unstable.jless ### json pager
+    unstable.calcure ### calendar
+    unstable.calcurse ### calendar
 
     # stable.posting ### does not exist
     ### browsh ### firefox, in the terminal

@@ -467,6 +467,12 @@ tv dirs
 ### run devcontainer (requries appPort to tell docker to port forward, devcontainer does not support port-forwarding yet)
 devcontainer exec --workspace-folder $PWD/.. npm run dev
 
+### calendar
+calcure
+
+### agenda based calendar
+calcurse
+
 % nh
 
 # nixos-rebuild switch --flake ... alternative

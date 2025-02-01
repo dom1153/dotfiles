@@ -39,6 +39,7 @@ fi
 
 if type "zellij" >/dev/null; then
   alias zl="zellij --layout"
+  alias z="zellij"
 fi
 
 if type "chezmoi" >/dev/null; then
