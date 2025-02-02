@@ -89,6 +89,7 @@ in {
     spacer ### append lines after a given time in tail ; no need after tspin (pipe isn't compatible)
     tailer ### spacer, but written in go
     unstable.tabiew ### view csv and such in a table view
+    ffuf ### fuzz faster you fool, written in go
 
     ### tui apps
     browsh ### termianl browser
@@ -113,6 +114,7 @@ in {
     nmon ### another top
     vtop
     rainfrog ### database management for postgres
+    unstable.termscp ### generate git ignore files ### seems cool, can't get sftp to connect
 
     ### cli development
     nodejs_21

@@ -74,6 +74,9 @@ fd --type f --hidden --exclude .git | fzf --reverse
 # find file -> pipe to editor
 fd --type f --hidden --exclude .git | fzf --reverse | xargs $EDITOR -
 
+# find a directory name
+fd --type d --exclude .git <search-item> <search-path>
+
 ; ----------------------------------------------------------------------------
 
 % test
@@ -329,6 +332,12 @@ bash -c 'onefetch -l | tr "[:upper:] " "[:lower:]-" | while read line; do echo "
 
 # tabiew - view csv, tsv, etc in a table
 tabiew
+
+# snowmachine snow
+snowmachine snow
+
+# snowmachine tree
+snowmachine tree
 
 ; ----------------------------------------------------------------------------
 
@@ -586,6 +595,7 @@ http://stella-hoshii:3000/home
 # restart jankyborders
 brew services restart borders
 
+% atuin
 # atuin register
 atuin register -u <USERNAME> -e <EMAIL>
 
@@ -602,12 +612,15 @@ atuin sync
 atuin import <shell>
 $shell: echo "bash zsh fish" | tr ' ' '\n'
 
+% json
 # json viewer
 jless package.json
 
+% mprocs, launcher, command runner
 # command runner
 mprocs
 
+% http, curl, wget
 # xh http requests curl alternative (httpie compliant)
 xh
 
@@ -635,14 +648,65 @@ xh -d httpbin.org/json -o res.json
 # xh Make a request with a custom user agent
 xh httpbin.org/get user-agent:foobar
 
+% difft, diff
 # difftastic (syntax based diff)
 difft
 
+% kondo, npkill, node_modules
 # kondo (npkill node_module and build folder cleaner)
-knodo
+kondo
 
 # kondo older than set date
 kondo --older 3M
+
+% journalctl, tui
+# journalctl tui
+lazyjournal
+
+% docker, tui
+# docker tui
+lazydocker
+
+% sq, jq, htmlq
+# sq -- parse sql, csv, or excel
+sq
+
+% restic
+# restic init
+restic init --repo <path> --insecure-no-password
+
+# restic backup
+restic --repo <repo-path> --insecure-no-password backup
+$ repo-path: fd snapshots ~ --type d --exec sh -c '[ -d "$(dirname "{}")/data" ] && echo $(dirname "{}")'
+; (here I define repo-path as needing a 'snapshots' directory and 'data' directory
+
+# restic restore
+restic --repo <repo-path> --insecure-no-password restore <id> --target
+$ repo-path: fd snapshots ~ --type d --exec sh -c '[ -d "$(dirname "{}")/data" ] && echo $(dirname "{}")'
+$ ss: restic --repo /home/archoo/tmp/restic_demo --insecure-no-password snapshots | head -n -2 --- --header-lines 2 --delimiter '\s\s+'
+$ jj: restic --repo /home/archoo/tmp/restic_demo --insecure-no-password snapshots <ss> --json
+$ id: echo '<jj>' | jq '.[].short_id'
+; $ paths: echo '<jj>' | jq '.[].paths[]'
+
+# restic list snapshots
+restic --repo <repo-path> --insecure-no-password snapshots
+
+# mount repo for browsing (in background , must umount)
+mkdir /tmp/restic_mnt_<rng>; restic --repo <repo-path> --insecure-no-password mount /tmp/restic_mnt_<rng>
+$ rng: bash -c 'echo $RANDOM | tr 0123456789 abcdefghij'
+
+# mount repo and browse
+mkdir -p /tmp/restic_mnt_<rng>; mprocs "lf /tmp/restic_mnt_<rng>" "restic --repo <repo-path> --insecure-no-password mount /tmp/restic_mnt_<rng>"
+$ rng: bash -c 'echo $RANDOM | tr 0123456789 abcdefghij'
+
+# check health
+restic check --insecure-no-password
+
+# unlock locked instances
+restic unlock --insecure-no-password
+
+# browse navi repo names
+navi repo browse
 
 ; ----------------------------------------------------------------------------
 
@@ -736,6 +800,9 @@ nix-shell --run 'bash -c ./build.sh'
 
 # run npkill node_module cleaner
 nix develop "github:DeterminateSystems/zero-to-nix#javascript" --command bash -c 'npx npkill'
+
+# npkill
+npkill
 
 ; ----------------------------------------------------------------------------
 

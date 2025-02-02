@@ -54,6 +54,7 @@ in {
     unstable.ueberzugpp ### sixel (hook)
     unstable.jq ### parse / query json
     unstable.htmlq ### parse / query json
+    unstable.sq ### parse docs like sql, csv, or excel
     unstable.dasel ### yq but different
     unstable.yq-go ### jq but for xml,cvs,toml too (prefer go > python version)
     unstable.pup ### query html
@@ -83,6 +84,9 @@ in {
     unstable.difftastic ### clean node_modules and other build files
     unstable.mprocs ### batch file rename
     unstable.gitnr ### generate git ignore files
+    unstable.restic ### modern backup program
+    unstable.autorestic ### restic cli
+    unstable.npkill ### remove node_modules
 
     ### funni
     stable.blahaj
@@ -104,6 +108,7 @@ in {
     stable.neofetch
     unstable.astroterm ### celestial viewer for the terminal
     stable.onefetch
+    unstable.snowmachine
 
     ### services
     stable.entr ### run arbitrary commands when files change
@@ -137,6 +142,7 @@ in {
     unstable.jless ### json pager
     unstable.calcure ### calendar
     unstable.calcurse ### calendar
+    unstable.lazyjournal
 
     # stable.posting ### does not exist
     ### browsh ### firefox, in the terminal
