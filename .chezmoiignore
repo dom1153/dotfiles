@@ -27,3 +27,5 @@ README.md
 .config/my_kde_ref/**
 
 sym_bashrc.sh
+
+ref.zsh

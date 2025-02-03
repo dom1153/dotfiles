@@ -1,5 +1,7 @@
 {pkgs, ...}: {
   programs.zsh = {
+    ### as of 08-2024 I can't seem to get the default .config to generate...
+    ### ~/.zshrc will be missing on new builds
     enable = true;
     autosuggestion.enable = true;
     enableCompletion = false; ### disable for zsh-autocomplete
