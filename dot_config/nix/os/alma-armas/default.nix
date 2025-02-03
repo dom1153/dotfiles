@@ -23,21 +23,21 @@
     ../../system/services/kmscon.nix
     ../../system/services/mosh-server.nix
     ../../system/services/openssh.nix
-    ../../system/services/plex.nix
-    ../../system/services/syncthing.nix
+    # ../../system/services/plex.nix
+    # ../../system/services/syncthing.nix
     ../../system/services/tailscale.nix
 
     # ./services/acme.nix
-    ./services/deluge.nix
-    ./services/mount.nix
+    # ./services/deluge.nix
+    # ./services/mount.nix
     ./services/networking.nix
     # ./services/nextcloud.nix
-    ./services/nfs.nix
-    ./services/samba.nix
-    ./services/sonarr.nix
-    ./services/sws.nix
-    ./services/syncthing.nix
-    ./services/caddy.nix
+    # ./services/nfs.nix
+    # ./services/samba.nix
+    # ./services/sonarr.nix
+    # ./services/sws.nix
+    # ./services/syncthing.nix
+    # ./services/caddy.nix
     # ./services/openvscode-server.nix
 
     ./hardware-configuration.nix

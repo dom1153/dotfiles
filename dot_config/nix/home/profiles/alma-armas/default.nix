@@ -8,7 +8,12 @@
 
     ../../terminal/programs/vim.nix
 
-    ../../terminal/programs
+    # ../../terminal/programs
+    ../../terminal/programs/direnv.nix
+    ../../terminal/programs/gh.nix
+    ../../terminal/programs/git.nix
+
+    ./cli.nix
 
     ../../terminal/shell/zsh.nix
     ../../terminal/shell/fish.nix
@@ -30,7 +35,6 @@
       nvim-pkg # kickstar nvim package
 
       python312Packages.pywatchman ### watchman-make
-      jnv ### interactive jq
     ];
 
     # https://nixos.wiki/wiki/FAQ/When_do_I_update_stateVersion

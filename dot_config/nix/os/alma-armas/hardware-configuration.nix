@@ -17,15 +17,26 @@
   boot.kernelModules = ["amdgpu"]; ### kvm-amd
   boot.extraModulePackages = [];
 
-  fileSystems."/" = {
-    device = "/dev/disk/by-uuid/b0fde4fe-1b8f-42f3-8918-c13f2b3b7c44";
-    fsType = "ext4";
-  };
+  # fileSystems."/" = {
+  #   device = "/dev/disk/by-uuid/b0fde4fe-1b8f-42f3-8918-c13f2b3b7c44";
+  #   fsType = "ext4";
+  # };
 
-  fileSystems."/boot" = {
-    device = "/dev/disk/by-uuid/9700-BAE2";
-    fsType = "vfat";
-  };
+  # fileSystems."/boot" = {
+  #   device = "/dev/disk/by-uuid/9700-BAE2";
+  #   fsType = "vfat";
+  # };
+
+  fileSystems."/" =
+    { device = "/dev/disk/by-uuid/9a7d9b2d-1eab-4a4b-a957-ddff2c7eb323";
+      fsType = "ext4";
+    };
+
+  fileSystems."/boot" =
+    { device = "/dev/disk/by-uuid/CD20-B5F1";
+      fsType = "vfat";
+    };
+
 
   swapDevices = [];
 
