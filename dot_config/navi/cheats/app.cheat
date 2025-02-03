@@ -208,7 +208,8 @@ tldr --update
 sudo tailscale login
 
 # allow devices to connect to this machine over tailscale auth
-sudo tailscale up --ssh --accept-risk=lose-ssh
+sudo tailscale up --ssh
+; sudo tailscale up --ssh --accept-risk=lose-ssh
 
 # serve a localhost to other tailscale devices (output provides url)
 sudo tailscale serve localhost:3000
