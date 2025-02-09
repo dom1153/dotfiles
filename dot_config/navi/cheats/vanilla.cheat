@@ -236,3 +236,6 @@ $ pickDir: find . -type d
 
 # find default ip internet ethernet device
 ip route show default | awk '{print $5}'
+
+# chown on current directory items
+sudo chown $(id -u):$(id -g) *
