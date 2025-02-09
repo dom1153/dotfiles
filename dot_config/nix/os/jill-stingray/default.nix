@@ -43,6 +43,7 @@
     ./services/mount.nix
     ./services/nfs.nix
     ./services/caddy.nix
+    # ./services/samba.nix
 
     ./hardware-configuration.nix
   ];
