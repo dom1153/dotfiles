@@ -1,0 +1,16 @@
+---
+services:
+  website:
+    image: joseluisq/static-web-server:2-alpine
+    container_name: sws
+    ports:
+      - ${SWS_PORT}:80
+    restart: always
+    env_file: ".env"
+    # environment:
+    # # Note: those envs are customizable but also optional
+    # - SERVER_ROOT=/var/public
+    # - SERVER_CONFIG_FILE=/etc/config.toml
+    volumes:
+      - ${DOCKER_PERSIST}/sws/:/public
+      # - ~/dock/sws/config.toml:/etc/config.toml

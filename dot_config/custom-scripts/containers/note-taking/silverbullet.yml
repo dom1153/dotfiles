@@ -1,0 +1,16 @@
+---
+services:
+  silverbullet:
+    image: zefhemel/silverbullet
+    restart: always
+    env_file: ".env"
+    environment:
+      - SB_USER=admin:admin
+    volumes:
+      - ${DOCKER_PERSIST}/silverbullet/:/space
+    ports:
+      - ${SILVERBULLET_PORT}:3000
+  watchtower:
+    image: containrrr/watchtower
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock

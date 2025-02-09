@@ -1,0 +1,11 @@
+---
+services:
+  memos:
+    container_name: memos
+    restart: always
+    env_file: ".env"
+    ports:
+      - 5230:5230
+    volumes:
+      - ${DOCKER_PERSIST}/memos/:/var/opt/memos
+    image: neosmemo/memos:stable

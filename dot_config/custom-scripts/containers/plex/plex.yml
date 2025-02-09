@@ -1,0 +1,16 @@
+---
+services:
+  plex:
+    container_name: plex
+    image: plexinc/pms-docker
+    restart: always
+    env_file: ".env"
+    environment:
+      # - PLEX_TZ=<timezone>
+      - PLEX_CLAIM=${PLEX_CLAIM}
+    network_mode: host
+    ### implied port 32400
+    volumes:
+      - ${DOCKER_PERSIST}/plex/config:/config
+      - ${DOCKER_PERSIST}/plex/transcode/temp:/transcode
+      - ${DOCKER_PERSIST}/plex/media:/data

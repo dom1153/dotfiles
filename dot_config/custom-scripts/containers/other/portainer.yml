@@ -1,0 +1,15 @@
+---
+services:
+  portainer-ce:
+    ports:
+      - ${PORTAINER_TUNNEL_PORT}:8000
+      - ${PORTAINER_PORT}:9443
+    container_name: portainer
+    restart: always
+    env_file: ".env"
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
+      - ${DOCKER_PERSIST}/portainer:/data
+    image: portainer/portainer-ce:2.21.5
+volumes:
+  portainer_data:
