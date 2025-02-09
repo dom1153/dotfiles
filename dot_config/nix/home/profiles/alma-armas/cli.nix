@@ -36,6 +36,7 @@ in {
     unstable.nh ### yet another nix cli helper (also see nvd and nix-output-monitor)
     unstable.difftastic
     wget
+    unstable.p7zip
 
     duf ### df alternative
 
@@ -50,12 +51,13 @@ in {
 
     ### tui
     stable.lazygit
+    unstable.lazydocker
+    unstable.atuin
+    unstable.lazyjournal
+    unstable.television
     lf
     navi
     ncdu
     zellij
-    # lazydocker
-    # television
-    # lazyjournal
   ];
 }

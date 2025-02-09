@@ -20,6 +20,16 @@ This will download the dotfiles to your home directory.
 
 Will not override existing files by default.
 
+## NixOS Installation
+
+3. Run the flake:
+
+`sudo nixos-rebuild boot --flake . --option eval-cache false`
+
+or
+
+`~/.config/custom-scripts/rebuild.sh`
+
 ## Mac (darwin) Installation
 
 1. Install nix through [zero-to-nix installer](https://zero-to-nix.com/start/install)
@@ -37,3 +47,4 @@ https://github.com/Misterio77/nix-starter-configs
 https://github.com/fufexan/dotfiles
 
 https://github.com/budimanjojo/dotfiles
+

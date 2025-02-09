@@ -1,45 +1,61 @@
 {...}: {
   ### lsblk -o name,mountpoint,label,size,uuid
   ### fuseblk / ntfs doesn't allow traditional mount options qq
-  boot.supportedFilesystems = ["ntfs" "ntfs-3g"];
-  ### 'set' chmod 077 permissions for nextcloud... (umask flips in reverse)
-  # "umask=007" -> umask may block networking mounting...
-
-  # fileSystems."/run/media/archoo/fuzzy-500G" = {
-  #   device = "/dev/disk/by-uuid/22DC1805279A1C23";
-  #   # fsType = "ntfs";
-  #   fsType = "ntfs-3g";
-  #   options = [
-  #     "nofail"
-  #     "rw"
+  # options:
   #     "uid=1000"
   #     "gid=100"
-  #     "iocharset=utf8" ### general nice feature
-  #   ];
-  # };
-
-  # fileSystems."/run/media/archoo/lamp-700G" = {
-  #   device = "/dev/disk/by-uuid/66C5574E674DAEDD";
-  #   # fsType = "ntfs";
-  #   fsType = "ntfs-3g";
-  #   options = [
   #     "nofail"
   #     "rw"
-  #     "uid=1000"
-  #     "gid=100"
-  #     "iocharset=utf8" ### general nice feature
-  #   ];
-  # };
+  #     "iocharset=utf8" ### general nice feature (ntfs only?)
+  #     "defaults" ### read/write, suid, dev, exec, auto, nouser, async
+  #     "noatime" ### disable updating inode access time on reads (perf)
+  #     "data=ordered" ### ensures metadata is comitted before data is written safety/perf
+  #     "barrier=1" ### write barriers, proetcts against data loss during power failure
+  #     "commit=60" ### floush journal every 60 seconds instead of 5s (longeviity
+  #     "users" ### users was causing issues with plex?
 
-  ### leaving this to root since I want to leave this to server-apps not personal files
-  # fileSystems."/run/media/archoo/super-4T" = {
-  #   device = "/dev/disk/by-uuid/967AC4B27AC49103";
-  #   # fsType = "ntfs";
-  #   fsType = "ntfs-3g";
-  #   options = [
-  #     "nofail"
-  #     "rw"
-  #     # "users" ### users was causing issues with plex
-  #   ];
-  # };
+  ### chmod folder to user because that's how auto mounts do it
+  ### tmpfiles is made specifically for this I guess
+  systemd.tmpfiles.rules = [
+    "d /mnt/tasteless-2T 0775 archoo users - -"
+    "d /mnt/lamp-750G 0775 archoo users - -"
+    "d /mnt/super-4T 0775 archoo users - -"
+  ];
+
+  fileSystems."/mnt/tasteless-2T" = {
+    device = "/dev/disk/by-uuid/80856553-f679-4444-b9e3-d329468f0e06";
+    fsType = "ext4";
+    options = [
+      "defaults"
+      "nofail"
+      "noatime"
+      "data=ordered"
+      "barrier=1"
+      "commit=60"
+    ];
+  };
+
+  fileSystems."/mnt/lamp-750G" = {
+    device = "/dev/disk/by-uuid/1c3264bb-557e-4a59-943b-f42c3fdaebd8";
+    options = [
+      "defaults"
+      "nofail"
+      "noatime"
+      "data=ordered"
+      "barrier=1"
+      "commit=60"
+    ];
+  };
+
+  fileSystems."/mnt/super-4T" = {
+    device = "/dev/disk/by-uuid/0598e7e7-2941-46ad-b2d7-e432471f4847";
+    options = [
+      "defaults"
+      "nofail"
+      "noatime"
+      "data=ordered"
+      "barrier=1"
+      "commit=60"
+    ];
+  };
 }

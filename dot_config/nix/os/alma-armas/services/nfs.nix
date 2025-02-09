@@ -13,27 +13,27 @@
     ### using /etc/hosts for convenience ; avahi names (.local) do NOT seem to work here
     ### only using linux hosts; couldn't figure this out for mac. use samba share for cross platform.
     exports = ''
-      /export         jill-stingray(rw,fsid=0,no_subtree_check) sei-asagiri-tail(rw,fsid=0,no_subtree_check)
-      /export/deal    jill-stingray(rw,nohide,insecure,no_subtree_check) sei-asagiri-tail(rw,nohide,insecure,no_subtree_check)
-      /export/betty   jill-stingray(rw,nohide,insecure,no_subtree_check) sei-asagiri-tail(rw,nohide,insecure,no_subtree_check)
-      /export/radshiba  jill-stingray(rw,nohide,insecure,no_subtree_check) sei-asagiri-tail(rw,nohide,insecure,no_subtree_check)
+      /export            jill-stingray(rw,fsid=0,no_subtree_check) sei-asagiri-tail(rw,fsid=0,no_subtree_check)
+      /export/deal       jill-stingray(rw,nohide,insecure,no_subtree_check) sei-asagiri-tail(rw,nohide,insecure,no_subtree_check)
+      /export/betty      jill-stingray(rw,nohide,insecure,no_subtree_check) sei-asagiri-tail(rw,nohide,insecure,no_subtree_check)
+      /export/radshiba   jill-stingray(rw,nohide,insecure,no_subtree_check) sei-asagiri-tail(rw,nohide,insecure,no_subtree_check)
     '';
   };
 
   ### bind mounts so we don't have to move them
   ### named and organized based on abc order
   fileSystems."/export/betty" = {
-    device = "/run/media/archoo/super-4T";
+    device = "/mnt/super-4T";
     options = ["bind"];
   };
 
   fileSystems."/export/deal" = {
-    device = "/run/media/archoo/lamp-700G";
+    device = "/mnt/lamp-750G";
     options = ["bind"];
   };
 
   fileSystems."/export/radshiba" = {
-    device = "/run/media/archoo/fuzzy-500G";
+    device = "/mnt/tasteless-2T";
     options = ["bind"];
   };
 }

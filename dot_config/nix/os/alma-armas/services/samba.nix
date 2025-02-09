@@ -1,6 +1,6 @@
 ### https://nixos.wiki/wiki/Samba
 ### https://gist.github.com/vy-let/a030c1079f09ecae4135aebf1e121ea6 (see comments in gist)
-### configure login with smbpasswd (based on users already on the system)
+### remember to add a user with something like with sudo smbpasswd -a my_user (based on users already on the system)
 {pkgs, ...}: {
   services.samba = {
     enable = true;
@@ -26,12 +26,12 @@
       deal = {
         path = "/export/deal";
         writable = "true";
-        comment = "700G";
+        comment = "750G";
       };
       radshiba = {
         path = "/export/radshiba";
         writable = "true";
-        comment = "500G";
+        comment = "1T";
       };
     };
   };

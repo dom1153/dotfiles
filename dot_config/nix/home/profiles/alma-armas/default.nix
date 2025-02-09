@@ -1,6 +1,7 @@
 {
   inputs,
   pkgs,
+  config,
   ...
 }: {
   imports = [
@@ -23,7 +24,9 @@
     homeDirectory = "/home/archoo";
 
     sessionVariables = {
-      EDITOR = "nvim";
+      # EDITOR = "nvim";
+
+      # XAUTHORITY = "${config.home.homeDirectory}/.Xauthority";
     };
 
     packages = with pkgs; [
@@ -35,6 +38,8 @@
       nvim-pkg # kickstar nvim package
 
       python312Packages.pywatchman ### watchman-make
+
+      gparted
     ];
 
     # https://nixos.wiki/wiki/FAQ/When_do_I_update_stateVersion

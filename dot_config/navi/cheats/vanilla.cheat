@@ -132,9 +132,8 @@ lsblk
 # disk size overall with cool columns
 lsblk -o name,mountpoint,label,size,uuid
 
-# disk size overall with cool columns (grc)
+# disk size overall with cool columns (grc), get nix mount info
 grc lsblk -o name,mountpoint,label,size,uuid
-
 
 # view disk usage directory
 ncdu

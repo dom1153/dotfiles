@@ -29,11 +29,11 @@
 
     # ./services/acme.nix
     # ./services/deluge.nix
-    # ./services/mount.nix
+    ./services/mount.nix
     ./services/networking.nix
     # ./services/nextcloud.nix
-    # ./services/nfs.nix
-    # ./services/samba.nix
+    ./services/nfs.nix
+    ./services/samba.nix
     # ./services/sonarr.nix
     # ./services/sws.nix
     # ./services/syncthing.nix
@@ -50,12 +50,13 @@
   programs.nix-ld.enable = true; # remote vscode client to nixos host (this machine) ; since vscode installs server binaries
 
   #### ssh forwarding test (xauth, xforwarding, xserver; works local, maybe not over tailscale)
-  # services.openssh = {
-  #   settings = {
-  #     X11Forwarding = true;
-  #   };
-  # };
-  #
+  services.openssh = {
+    settings = {
+      ### works when XAUTHORITY is correctly set (see cheats)
+      X11Forwarding = true;
+    };
+  };
+
   # environment.systemPackages = with pkgs; [
   #   xorg.xauth
   # ];
