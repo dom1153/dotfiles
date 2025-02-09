@@ -61,7 +61,7 @@ in {
       ### gui art
       drawpile
       blender
-      pureref ### only works on this system :)
+      unstable.pureref
       # krita
 
       ### gui apps

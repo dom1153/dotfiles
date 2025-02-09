@@ -14,8 +14,8 @@ end
 
 if exists eza
     abbr ls eza
-    abbr l eza -lh
-    abbr la eza -lah
+    abbr l eza -lho
+    abbr la eza -laho
     vanilla_alias ls
 else
     abbr l "ls -lh"

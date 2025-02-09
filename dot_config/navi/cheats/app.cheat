@@ -766,6 +766,11 @@ navi repo browse
 # rsync transfer with progress bar (resume-able because rsync)
 rsync -av --info=progress2 --inplace <src> <dest>
 
+% eza, ls
+
+# ls (eza) get number format chmod
+eza -la -o
+
 ; ----------------------------------------------------------------------------
 
 % fish

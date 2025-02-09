@@ -221,3 +221,15 @@ id
 
 # get uid and guid (color)
 grc id
+
+# linux get permissions as chmod number format
+stat --format '%a' '<fname>'
+$ fname: find . -type f
+
+# (danger!) set directory files to default permissions
+gum confirm && find <pickDir> -type f -exec chmod 644 {} +
+$ pickDir: find . -type d
+
+# (danger!) set directory to default permissions
+gum confirm && find <pickDir> -type d -exec chmod 755 {} +
+$ pickDir: find . -type d
