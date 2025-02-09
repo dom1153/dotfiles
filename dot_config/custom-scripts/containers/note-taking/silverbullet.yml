@@ -2,7 +2,7 @@
 services:
   silverbullet:
     image: zefhemel/silverbullet
-    restart: always
+    restart: unless-stopped
     env_file: ".env"
     environment:
       - SB_USER=admin:admin
