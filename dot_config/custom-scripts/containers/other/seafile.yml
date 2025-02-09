@@ -3,7 +3,7 @@
 services:
 
   db:
-    restart: always
+    restart: unless-stopped
     env_file: ".env"
     image: mariadb:10.11
     container_name: seafile-mysql
@@ -17,7 +17,7 @@ services:
       - seafile-net
 
   memcached:
-    restart: always
+    restart: unless-stopped
     image: memcached:1.6.18
     container_name: seafile-memcached
     entrypoint: memcached -m 256
@@ -27,7 +27,7 @@ services:
   seafile:
     image: seafileltd/seafile-mc:11.0-latest
     container_name: seafile
-    restart: always
+    restart: unless-stopped
     env_file: ".env"
     ports:
       - "${SEAFILE_PORT}:80"

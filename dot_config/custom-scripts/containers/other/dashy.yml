@@ -8,7 +8,7 @@ services:
       - ${DOCKER_PERSIST}/dashy/dashy.yml:/app/user-data/conf.yml
       - sws/:/public
     container_name: dashy
-    restart: always
+    restart: unless-stopped
     image: lissy93/dashy:latest
     environment:
       - NODE_ENV=production

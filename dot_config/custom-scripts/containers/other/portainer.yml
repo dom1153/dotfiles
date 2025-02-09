@@ -6,7 +6,7 @@ services:
       - ${PORTAINER_SSL_PORT}:9443
       - ${PORTAINER_PORT}:9000
     container_name: portainer
-    restart: always
+    restart: unless-stopped
     env_file: ".env"
     volumes:
       - /var/run/docker.sock:/var/run/docker.sock

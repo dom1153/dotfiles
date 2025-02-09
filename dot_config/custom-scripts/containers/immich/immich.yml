@@ -27,7 +27,7 @@ services:
     depends_on:
       - redis
       - database
-    restart: always
+    restart: unless-stopped
     healthcheck:
       disable: false
 
@@ -42,7 +42,7 @@ services:
       DB_PASSWORD: ${IMMICH_DB_PASSWORD}
       DB_USERNAME: ${IMMICH_DB_USERNAME}
       DB_DATABASE_NAME: ${IMMICH_DB_DATABASE_NAME}
-    restart: always
+    restart: unless-stopped
     healthcheck:
       disable: false
 
@@ -55,7 +55,7 @@ services:
       DB_PASSWORD: ${IMMICH_DB_PASSWORD}
       DB_USERNAME: ${IMMICH_DB_USERNAME}
       DB_DATABASE_NAME: ${IMMICH_DB_DATABASE_NAME}
-    restart: always
+    restart: unless-stopped
 
   database:
     container_name: immich_postgres
@@ -80,7 +80,7 @@ services:
       start_period: 5m
     command: >-
       postgres -c shared_preload_libraries=vectors.so -c 'search_path="$$user", public, vectors' -c logging_collector=on -c max_wal_size=2GB -c shared_buffers=512MB -c wal_compression=on
-    restart: always
+    restart: unless-stopped
 
 volumes:
   model-cache:
