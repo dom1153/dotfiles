@@ -1,0 +1,20 @@
+---
+services:
+  deluge:
+    image: lscr.io/linuxserver/deluge:latest
+    container_name: deluge
+    restart: always
+    env_file: ".env"
+    environment:
+      - PUID=1000
+      - PGID=100
+      - TZ=Etc/UTC
+      - DELUGE_LOGLEVEL=error #optional
+    volumes:
+      - ${DOCKER_PERSIST}/deluge/config:/config
+      - ${DOCKER_PERSIST}/deluge/downloads:/downloads
+    ports:
+      - ${DELUGE_PORT}:8112 ### webui
+      - ${DELUGE_INBOUND_TOR_PORT}:6881 ### inbound tor
+      - ${DELUGE_INBOUND_TOR_PORT}:6881/udp
+      - ${DELUGE_THIN_CLIENT_PORT}:58846 ### optional (thin client connectivity)

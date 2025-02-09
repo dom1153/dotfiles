@@ -28,6 +28,7 @@ in {
       "${hostname}:4005".extraConfig = ''reverse_proxy http://localhost:3005''; ### gitea
       "${hostname}:4006".extraConfig = ''reverse_proxy http://localhost:9000''; ### portainer
       "${hostname}:4007".extraConfig = ''reverse_proxy http://localhost:8881''; ### seafile
+      "${hostname}:4008".extraConfig = ''reverse_proxy http://localhost:8112''; ### deluge
     };
     # // simpleHostsMapping;
   };
