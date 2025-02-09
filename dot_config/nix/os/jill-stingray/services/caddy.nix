@@ -1,6 +1,6 @@
-{...}: let
+{lib, ...}: let
   hostname = "jill-stingray.flamingo-universe.ts.net";
-  magicName = "jill-stingray";
+  magicname = builtins.head (lib.strings.splitString "." hostname);
   ### some cool looping; however, can't map to the same tailscale port for ssl :(
   # simplePorts = [8972 2283 5230 3001 3005 8881 8787 9000];
   # stringPorts = map (x: toString x) simplePorts;
@@ -34,7 +34,8 @@ in {
       "${hostname}:4010".extraConfig = ''reverse_proxy http://localhost:8082''; ### dashy
       "${hostname}:4011".extraConfig = ''reverse_proxy http://localhost:8081''; ### glance
 
-      "http://${hostname}".extraConfig = ''redir https://${hostname}:443'';
+      ### '${magicname}/' should just resolve in the browser!
+      "http://${magicname}".extraConfig = ''redir https://${hostname}:443'';
     };
     # // simpleHostsMapping;
   };
