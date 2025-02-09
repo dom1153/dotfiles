@@ -3,7 +3,8 @@ services:
   portainer-ce:
     ports:
       - ${PORTAINER_TUNNEL_PORT}:8000
-      - ${PORTAINER_PORT}:9443
+      - ${PORTAINER_SSL_PORT}:9443
+      - ${PORTAINER_PORT}:9000
     container_name: portainer
     restart: always
     env_file: ".env"

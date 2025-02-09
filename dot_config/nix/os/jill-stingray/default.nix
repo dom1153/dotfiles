@@ -42,6 +42,7 @@
 
     ./services/mount.nix
     ./services/nfs.nix
+    ./services/caddy.nix
 
     ./hardware-configuration.nix
   ];
