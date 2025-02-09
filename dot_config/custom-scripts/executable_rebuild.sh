@@ -210,8 +210,9 @@ linux-*)
     nixbin="nixos-rebuild"
     if command -v nh >/dev/null 2>&1; then
       nixbin="nh"
+      hostname=$(hostname)
       myecho ">> ${super}${nixbin} ${nrcmd} . -- --option eval-cache false ${addargs}"
-      nh os ${nrcmd} . -H jill-stingray -- --option eval-cache false ${addargs}
+      ${nixbin} os ${nrcmd} . -- --option eval-cache false ${addargs}
       RESULT=$?
     else
       myecho ">> ${super}${nixbin} ${nrcmd} --flake . --option eval-cache false ${addargs}"
