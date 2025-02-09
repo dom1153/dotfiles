@@ -223,6 +223,10 @@ curl -s https://news.ycombinator.com/ | pup 'table table tr:nth-last-of-type(n+2
 # pup html parser jq example 3 (to json)
 curl -s https://news.ycombinator.com/ | pup 'table table tr:nth-last-of-type(n+2) td.title a json{}'
 
+# parse ports from yml file yq (yaml)
+yq '.services[].ports' <y>
+$ y: find . -type f -name "*.yml"
+
 # terminal file manager
 lf
 
@@ -395,7 +399,8 @@ docker compose up <dockernames>
 docker compose up
 
 # run a docker compose detatched (background it once it's done)
-docker compose up -d
+docker compose -f <compose-yml> up -d
+$ compose-yml: find . -type f -name "*.yml"
 
 # check the docker output for a service
 docker compose logs SERVICE
@@ -421,6 +426,14 @@ docker stop <dockernames>
 
 # check docker logs (e.g. cosmos-server)
 docker logs <dockernames>
+
+; docker container ls | awk 'NR > 1 {print $1}'
+; https://docs.docker.com/reference/cli/docker/container/ls/#format
+# docker container ls with custom format
+docker container ls --format '{{.ID}} {{.Names}} {{.Ports}}'
+
+# docker conatiner ls with custom format 2
+docker container ls --format 'table {{.ID}}\t{{.Names}}\t{{.Ports}}'
 
 # check docker mount locations
 docker inspect -f '{{ .Mounts }}' LSID
@@ -449,6 +462,42 @@ docker build .
 
 # docker build (specify name:tag)
 docker build . -t "different:special"
+
+# docker amke image boot by default
+docker update --restart <restart-options> <did>
+$ did: docker container ls -a --- --headers 1 --column 1
+$ restart-options: echo "no on-failure always unless-stopped" | tr ' ' '\n'
+
+# disable auto-start on all existing docker containers
+docker update --restart=no $(docker ps -aq)
+
+# check restart policy on docker containers
+docker inspect -f '{{ .Name }}: {{ .HostConfig.RestartPolicy.Name }}' $(docker ps -aq)
+
+% podman
+
+# podman tui (lazy podman for now)
+podman-tui
+
+# podman search images
+podman search <keyword>
+
+# podman search ('official') images
+podman search <keyword> --filter=is-official
+
+# podman conatiner ls with custom
+podman container ls --format 'table {{.ID}}\t{{.Names}}\t{{.Ports}}'
+
+# podman tui (lazy podman for now)
+podman-tui
+
+# run a docker compose detatched (background it once it's done)
+podman compose -f <compose-yml> up -d
+$ compose-yml: find . -type f -name "*.yml"
+
+# check status of systemd for podman
+systemctl --user status podman.socket
+
 
 % devcontainer
 
@@ -607,6 +656,9 @@ atuin login
 atuin import auto
 
 # atuin setup 2
+atuin import fish
+
+# atuin setup 3
 atuin sync
 
 # atuin import (auto is based off $SHELL)
@@ -708,6 +760,11 @@ restic unlock --insecure-no-password
 
 # browse navi repo names
 navi repo browse
+
+% rsync
+
+# rsync transfer with progress bar (resume-able because rsync)
+rsync -av --info=progress2 --inplace <src> <dest>
 
 ; ----------------------------------------------------------------------------
 

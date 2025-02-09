@@ -168,6 +168,11 @@ in {
     wofi
     hyprpaper
     waybar
+
+    ### app launchers
+    stable.ulauncher
+    stable.kupfer
+    stable.albert
   ];
 
   homebrew = {

@@ -18,5 +18,13 @@ configuration{
     sidebar-mode: true;
 
     font: "Dina 11";
-}
 
+    animate: false;
+
+    // just a bit of performance
+    cache-completion: false;  // Disables caching for faster startup
+    lazy-filter-limit: 50000; // Speeds up filtering
+    disable-history: true;    // Avoids slow history lookups
+    threads: 0;               // Uses all available CPU cores
+    combi-modi: "drun,run";   // Limit modes to avoid slow scanning
+}

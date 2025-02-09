@@ -22,7 +22,7 @@
     };
 
     plymouth = {
-      enable = true;
+      enable = false;
       theme = "catppuccin-mocha";
       themePackages = with pkgs; [
         (catppuccin-plymouth.override {variant = "mocha";})

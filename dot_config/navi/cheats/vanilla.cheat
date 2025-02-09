@@ -126,6 +126,16 @@ pwd --physical
 # view disk size overall
 lsblk
 
+# view disk size overall (grc)
+lsblk
+
+# disk size overall with cool columns
+lsblk -o name,mountpoint,label,size,uuid
+
+# disk size overall with cool columns (grc)
+grc lsblk -o name,mountpoint,label,size,uuid
+
+
 # view disk usage directory
 ncdu
 
@@ -144,8 +154,22 @@ cat /etc/passwd
 # (bat) check users on system
 bat /etc/passwd
 
+# view tar without extracting
+tar -tf <tarfile>
+$ tarfile: find . -maxdepth 1 -name "*.tar*"
+
 # unzip tar
 tar xvf
+
+# tar with progress (requires pv)
+tar cf - <dname> -P | pv -s $(du -sb <dname> | awk '{print $1}') | gzip > <dname>.tar.gz
+$ dname: find . -type d -maxdepth 1
+; MACOS tar cf - /folder-with-big-files -P | pv -s $(($(du -sk /folder-with-big-files | awk '{print $1}') * 1024)) | gzip > big-files.tar.g
+; https://superuser.com/questions/168749/is-there-a-way-to-see-any-tar-progress-per-file
+
+# compress with 7z, built in progress
+7z a <dname>
+$ dname: find . -type d -maxdepth 1
 
 # unzip zip file to 'extract' folder
 unzip <zips> -d <zipName>
@@ -186,3 +210,15 @@ journalctl --follow -u plex.service
 
 # wait to ping
 bash -c 'until ping -c1 alma-armas >/dev/null 2>&1; do :; done'
+
+# some random x11 xserver forwarding fix (run on server)
+export XAUTHORITY=$HOME/.Xauthority
+
+# get mount options
+cat /proc/mounts
+
+# get uid and guid
+id
+
+# get uid and guid (color)
+grc id

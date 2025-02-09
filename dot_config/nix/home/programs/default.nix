@@ -67,6 +67,10 @@ in {
 
     ### cli (linux only)
     unstable.devcontainer ### run devcontainer from cli -> macos should use brew
+
+    unstable.seafile-client ### seafile-applet (seems to crash a lot)
+    ### https://manual.seafile.com/11.0/deploy/start_seafile_at_system_bootup/#seafile-cli-client-optional
+    unstable.seafile-shared ### consider systemctl to make this run at startup, or cli
   ];
 
   # (with pkgs; [

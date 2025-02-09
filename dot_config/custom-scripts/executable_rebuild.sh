@@ -48,10 +48,10 @@ function myecho {
 
 ### >>> preamble
 exe="$(basename "$0")"
-usage="Usage: ${exe} {switch | build | boot | test} [-r (reboot)] [-v (verbose)] [-d (dry run)] [-s (show-trace)]"
+usage="Usage: ${exe} [DASH_ARGS] {switch | build | boot | test} [-r (reboot)] [-v (verbose)] [-d (dry run)] [-s (show-trace)] [-u (update unstable)]"
 
 ### >>> arg dash flags
-while getopts Rrvds flag; do
+while getopts Rrvdsu flag; do
   # echo "flag: $flag"
   case "$flag" in
   R) force_reboot=1 ;;
@@ -59,6 +59,7 @@ while getopts Rrvds flag; do
   v) verbose=1 ;;
   d) dryrun=1 ;; ### dry run, debug, maybe auto apply verbose
   s) stacktrace=1 ;;
+  u) update_unstable=1 ;;
   *)
     echo "$usage"
     exit
@@ -98,12 +99,18 @@ chezmoi git pull -- --autostash --rebase
 echo -e "a\n*\nq\n" | git add -i >/dev/null 2>&1
 
 ### update flakes (todo: upgrade nix so I can update specific packages)
-myecho "==> Nix flake update"
+myecho "==> Nix flake update (my nvim)"
 # https://discourse.nixos.org/t/update-single-flake-input/13056
 # nix flake update
 nix flake lock --update-input dom1153-nvim-flake
-nix flake lock --update-input nixpkgs-unstable
-# myecho "  ==> Done"
+
+### TODO: put this under a flag
+if [ "$update_unstable" ]; then
+  myecho "==> Nix flake update (unstable)"
+  nix flake lock --update-input nixpkgs-unstable
+  nix flake lock --update-input nixpkgs-stable
+fi
+myecho "  ==> Done"
 
 ### update chezmoi (apply)
 cs=$(chezmoi status)
@@ -199,10 +206,20 @@ linux-*)
   fi
 
   echo "$PWD"
-  myecho ">> ${super}nixos-rebuild ${nrcmd} --flake . --option eval-cache false ${addargs}"
   if [ ! "$dryrun" ]; then
-    if ${super}nixos-rebuild $nrcmd --flake . --option eval-cache false $addargs; then
+    nixbin="nixos-rebuild"
+    if command -v nh >/dev/null 2>&1; then
+      nixbin="nh"
+      myecho ">> ${super}${nixbin} ${nrcmd} . -- --option eval-cache false ${addargs}"
+      nh os ${nrcmd} . -H jill-stingray -- --option eval-cache false ${addargs}
       RESULT=$?
+    else
+      myecho ">> ${super}${nixbin} ${nrcmd} --flake . --option eval-cache false ${addargs}"
+      ${super}${nixbin} $nrcmd --flake . --option eval-cache false $addargs
+      RESULT=$?
+    fi
+
+    if [[ $RESULT -eq 0 ]]; then
       ### TODO: catch result as pipe correctly
       if [ "$nrcmd" = "boot" ]; then
         # if type "wslvar" >/dev/null 2>&1; then

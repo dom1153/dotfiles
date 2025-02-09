@@ -7,6 +7,10 @@
     system = pkgs.system;
     config.allowUnfree = true;
   };
+  stable = import inputs.nixpkgs-stable {
+    system = pkgs.system;
+    config.allowUnfree = true;
+  };
 
   zen-browser = pkgs.callPackage ../../programs/pkgs/zen-browser.nix {};
 in {
@@ -93,6 +97,10 @@ in {
       jnv ### interactive jq
 
       unstable.vesktop ### better discord
+
+      unstable.ferdium ### app manager
+
+      unstable.podman-desktop
     ];
 
     # https://nixos.wiki/wiki/FAQ/When_do_I_update_stateVersion

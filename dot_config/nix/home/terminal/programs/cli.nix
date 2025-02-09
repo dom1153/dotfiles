@@ -56,7 +56,7 @@ in {
     unstable.htmlq ### parse / query json
     unstable.sq ### parse docs like sql, csv, or excel
     unstable.dasel ### yq but different
-    unstable.yq-go ### jq but for xml,cvs,toml too (prefer go > python version)
+    unstable.yq-go ### jq but for yml xml,cvs,toml too (prefer go > python version)
     unstable.pup ### query html
     unstable.devenv ### better dev enviroments?
     # direnv ### auto load env (nix shell, devenv)
@@ -87,6 +87,8 @@ in {
     unstable.restic ### modern backup program
     unstable.autorestic ### restic cli
     unstable.npkill ### remove node_modules
+    unstable.p7zip
+    pv
 
     ### funni
     stable.blahaj

@@ -56,7 +56,10 @@
       jill-stingray = nixpkgs.lib.nixosSystem {
         system = "x86_64-linux";
         specialArgs = {inherit inputs outputs;};
-        modules = [./os/jill-stingray];
+        modules = [
+          # ./os/jill-stingray/services/containers.nix
+          ./os/jill-stingray
+        ];
       };
       alma-armas = nixpkgs.lib.nixosSystem {
         system = "x86_64-linux";

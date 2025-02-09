@@ -24,6 +24,7 @@
 
     ../../system/services/avahi.nix
     ../../system/services/docker.nix
+    ../../system/services/podman.nix
     ../../system/services/flatpak.nix
     # ../../system/services/doas.nix
     # ../../system/services/gnome.nix
@@ -80,6 +81,11 @@
   # programs.ssh = {
   #   setXAuthLocation = true;
   #   forwardX11 = true;
+  # };
+
+  # mycontainers = {
+  #   enable = true;
+  #   persistentDataRoot = "/home/archoo/dock/";
   # };
 
   services.syncthing = {
