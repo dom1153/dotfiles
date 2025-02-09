@@ -29,6 +29,9 @@ in {
       "${hostname}:4006".extraConfig = ''reverse_proxy http://localhost:9000''; ### portainer
       "${hostname}:4007".extraConfig = ''reverse_proxy http://localhost:8881''; ### seafile
       "${hostname}:4008".extraConfig = ''reverse_proxy http://localhost:8112''; ### deluge
+      "${hostname}:4009".extraConfig = ''reverse_proxy http://localhost:8096''; ### jellyfin
+      "${hostname}:4010".extraConfig = ''reverse_proxy http://localhost:8082''; ### dashy
+      "${hostname}:4011".extraConfig = ''reverse_proxy http://localhost:8081''; ### glance
     };
     # // simpleHostsMapping;
   };

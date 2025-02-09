@@ -61,6 +61,7 @@
     firewall.allowedTCPPorts = [
       53317
       24800
+      32400 ### plex media server
     ];
     firewall.allowedUDPPorts = [
       24800
