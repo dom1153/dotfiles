@@ -21,7 +21,7 @@ in {
   services.caddy = {
     enable = true;
     virtualHosts = {
-      "${hostname}:443".extraConfig = ''reverse_proxy http://localhost:8787''; ### sws
+      "${hostname}:443".extraConfig = ''reverse_proxy http://localhost:8082'';
       "${hostname}:4001".extraConfig = ''reverse_proxy http://localhost:8972''; ### hoarder
       "${hostname}:4002".extraConfig = ''reverse_proxy http://localhost:2283''; ### immich
       "${hostname}:4003".extraConfig = ''reverse_proxy http://localhost:5230''; ### memos
@@ -33,6 +33,7 @@ in {
       "${hostname}:4009".extraConfig = ''reverse_proxy http://localhost:8096''; ### jellyfin
       "${hostname}:4010".extraConfig = ''reverse_proxy http://localhost:8082''; ### dashy
       "${hostname}:4011".extraConfig = ''reverse_proxy http://localhost:8081''; ### glance
+      "${hostname}:4012".extraConfig = ''reverse_proxy http://localhost:8787''; ### sws
 
       ### '${magicname}/' should just resolve in the browser!
       "http://${magicname}".extraConfig = ''redir https://${hostname}:443'';
