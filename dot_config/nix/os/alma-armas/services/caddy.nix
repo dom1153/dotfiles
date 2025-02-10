@@ -11,9 +11,9 @@ in {
       "${hostname}:443".extraConfig = ''reverse_proxy http://localhost:7540'';
 
       "${hostname}:9531".extraConfig = ''reverse_proxy http://localhost:7531''; ### HOARDER
-      "${hostname}:9532".extraConfig = ''reverse_proxy http://localhost:7532''; ### IMMICH
-      "${hostname}:9533".extraConfig = ''reverse_proxy http://localhost:7533''; ### MEMOS
-      "${hostname}:9534".extraConfig = ''reverse_proxy http://localhost:7534''; ### SILVERBULLET
+      "${hostname}:9532".extraConfig = ''reverse_proxy http://localhost:2283''; ### IMMICH
+      "${hostname}:9533".extraConfig = ''reverse_proxy http://localhost:5230''; ### MEMOS
+      "${hostname}:9534".extraConfig = ''reverse_proxy http://localhost:3001''; ### SILVERBULLET
       "${hostname}:9535".extraConfig = ''reverse_proxy http://localhost:7535''; ### GITEA
       "${hostname}:9536".extraConfig = ''reverse_proxy http://localhost:7536''; ### PORTAINER
       "${hostname}:9537".extraConfig = ''reverse_proxy http://localhost:7537''; ### SEAFILE
