@@ -1,0 +1,10 @@
+---
+services:
+  gatus:
+    image: twinproduction/gatus:latest
+    network_mode: host
+    ### use config.yaml to specify port
+    ### defaults to 8080
+    volumes:
+      - ${DOCKER_PERSIST}/gatus/config:/config
+      - ${DOCKER_PERSIST}/gatus/data:/data/

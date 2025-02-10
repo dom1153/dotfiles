@@ -34,6 +34,7 @@ in {
       "${hostname}:4010".extraConfig = ''reverse_proxy http://localhost:8082''; ### dashy
       "${hostname}:4011".extraConfig = ''reverse_proxy http://localhost:8081''; ### glance
       "${hostname}:4012".extraConfig = ''reverse_proxy http://localhost:8787''; ### sws
+      "${hostname}:4013".extraConfig = ''reverse_proxy http://localhost:8129''; ### gatus
 
       ### '${magicname}/' should just resolve in the browser!
       "http://${magicname}".extraConfig = ''redir https://${hostname}:443'';
