@@ -20,6 +20,7 @@ in {
       "${hostname}:9538".extraConfig = ''reverse_proxy http://localhost:7538''; ### SWS
       "${hostname}:9539".extraConfig = ''reverse_proxy http://localhost:7539''; ### DELUGE
       "${hostname}:9540".extraConfig = ''reverse_proxy http://localhost:7540''; ### DASHY
+      "${hostname}:9541".extraConfig = ''reverse_proxy http://localhost:7541''; ### GATUS
     };
   };
 }
