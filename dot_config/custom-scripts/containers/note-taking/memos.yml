@@ -5,7 +5,7 @@ services:
     restart: unless-stopped
     env_file: ".env"
     ports:
-      - 5230:5230
+      - ${MEMOS_PORT}:5230
     volumes:
       - ${DOCKER_PERSIST}/memos/:/var/opt/memos
     image: neosmemo/memos:stable

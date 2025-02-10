@@ -21,14 +21,13 @@ FULL_LIST=()
 while IFS= read -r file; do
   BASENAMES+=("$(basename "$file")")
   FULL_LIST+=("$file")
-done <<< "$YML_FILES"
+done <<<"$YML_FILES"
 
 OPTIONS="All\n"$(printf "%s\n" "${BASENAMES[@]}")
 
 SELECTED_FILES=$(echo -e "$OPTIONS" | gum choose --no-limit --header "Choose docker files to start:")
 
 SELECTED_PATHS=()
-
 
 echo "Selected file paths:"
 for path in "${SELECTED_PATHS[@]}"; do
@@ -57,10 +56,10 @@ SELECTED_PATHS_STRING=$(printf "%s\n" "${SELECTED_PATHS[@]}")
 
 echo "Checking for warnings..."
 echo "$SELECTED_PATHS_STRING" | while read -r FOO; do
-  echo "> docker compose -f $FOO up -d"
+  echo "> docker compose -f $FOO config"
   ### link env file to corresponding directory
   ln -sf $CONTAINER_HOME/.env $(dirname "$FOO")
-  output=$(docker compose -f $FOO config)
+  output=$(docker compose -f "$FOO" config)
 done
 
 echo "Do you want to continue? (yes/no)"
@@ -73,15 +72,16 @@ if [[ $OK == "1" ]]; then
   exit 1
 fi
 
-
 echo "$SELECTED_PATHS_STRING" | while read -r FOO; do
+  echo "> docker compose -f $FOO down"
+  docker compose -f "$FOO" down
   echo "> docker compose -f $FOO up -d"
-  docker compose -f $FOO up -d
+  docker compose -f "$FOO" up -d
 done
 
 # ### check for corresponding .env file
 # echo "$SELECTED_FILES" | while read -r FOO; do
-#   DIR=$(dirname "$FOO")  
+#   DIR=$(dirname "$FOO")
 #   FILE=$(basename "$FOO")
 #   echo "Parsing $DIR, $FILE"
 #   if [ -f "${FOO//.yml/.env}" ]; then
@@ -95,7 +95,7 @@ done
 # find "$SEARCH_DIR" -type f -name "*.env" | while read -r ENV_FILE; do
 #   # Get the directory of the found .env file
 #   DIR=$(dirname "$ENV_FILE")
-  
+
 #   # Check if the .env file exists in that directory
 #   if [ -f "$DIR/.env" ]; then
 #     gum style --foreground 255 --background 28 "Found .env file in '$DIR'."
@@ -103,3 +103,4 @@ done
 #     gum style --foreground 0 --background 220 "Warning: No .env file found in '$DIR'."
 #   fi
 # done
+

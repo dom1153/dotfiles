@@ -37,6 +37,8 @@ in {
     unstable.difftastic
     wget
     unstable.p7zip
+    unstable.httpie ### the cooler wget, faster than httpie
+    unstable.xh ### the cooler wget, faster than httpie
 
     duf ### df alternative
 

@@ -701,6 +701,9 @@ xh -d httpbin.org/json -o res.json
 # xh Make a request with a custom user agent
 xh httpbin.org/get user-agent:foobar
 
+# http get headers from response only
+xh --headers
+
 % difft, diff
 # difftastic (syntax based diff)
 difft

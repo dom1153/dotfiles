@@ -12,6 +12,6 @@ services:
       - ${SILVERBULLET_PORT}:3000
   watchtower:
     image: containrrr/watchtower
-    restart: always
+    restart: unless-stopped
     volumes:
       - /var/run/docker.sock:/var/run/docker.sock
