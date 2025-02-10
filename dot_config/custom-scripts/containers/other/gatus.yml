@@ -2,6 +2,11 @@
 services:
   gatus:
     image: twinproduction/gatus:latest
+    env_file: ".env"
+    container_name: gatus
+    restart: unless-stopped
+    environment:
+      - PORT=${GATUS_PORT}
     network_mode: host
     ### use config.yaml to specify port
     ### defaults to 8080
