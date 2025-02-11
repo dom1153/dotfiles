@@ -4,6 +4,90 @@
     enable = true;
     brews = [
       "ghcup" ### haskell ghc manager
+
+      "bat"
+      "btop"
+      "git-delta"
+      "diff-so-fancy"
+      "eza"
+      "fd"
+      "fzf"
+      "glow"
+      "grc"
+      "micro"
+      "ripgrep"
+      "tailspin"
+      "unzip"
+      "zip"
+      "zoxide"
+      "rsync"
+      "file-formula"
+
+      ### tools
+      "asciinema"
+      "spacer"
+
+      "chezmoi"
+      "speedtest-cli"
+      "wget"
+      "chafa"
+      "timg"
+      "trurl"
+      "imagemagick"
+      "lsix"
+      "yq"
+      "jq"
+      "dasel"
+      "vhs"
+      "t-rec"
+      "xdg-ninja"
+      "fpp"
+      "gitmoji"
+      "tree"
+      "duf"
+      "sd"
+      "procs"
+      "curlie"
+      "dust"
+      "just"
+      "watchexec"
+      ### funni
+      "lolcat"
+      "ponysay"
+      "fortune"
+      "cmatrix"
+      "cbonsai"
+      "figlet"
+      "sl"
+      "fastfetch"
+      ### services
+      "entr"
+      "mosh"
+      "starship"
+      "watchman"
+      ### cheatsheets
+      "cheat"
+      "tealdeer"
+      ### development
+      "shfmt" ### unsure how to integrate
+      "gum" ### shell bubbletea
+      unstable.rnr ### batch file rename
+
+      ### tui
+      "helix"
+      "lazygit"
+      "lf"
+      "mc"
+      "nap"
+      "navi"
+      "ncdu"
+      "tmux"
+      "yazi"
+      "zellij"
+
+      ### brews
+      "cava" ### cross-platform audio visualizer ### does not work out of the box on osx https://github.com/karlstav/cava/issues/478
+      "tty-clock"
     ]; ### likely use nixpkgs instead
     casks = [
       ### experimental / extra
@@ -27,14 +111,34 @@
       "tabby"
       "vivaldi"
       "vlc"
+      "mos" ### mouse wheel
       "warp"
       "zed"
       "proton-mail" ### just a web app
       "knime" ### Software to create and productionise data science
       "sigmaos" ###
+
+      ### casks
+      "postman" ### rest api tester
+      "cursor" ### AI ide
+      "jetbrains-toolbox" ### jetbrain program install manager
+      "ultimaker-cura" ### 3d slicer
+      "prusaslicer" ### open source 3d slicer
+      ### "xnviewmp" ### xn viewer mpv -> looks ugly...
+      "background-music"
+      "epic-games"
+      "unity-hub"
+      "hhkb"
+      "gamemaker"
+      "firefox-developer-edition" ### keeps wanting to fresh install??? I use chrome devtools anyways
+      "logi-options-plus" ### seems to update too much
+      "aerospace" ### doesn't play well with macos spaces, keyboard centric
     ];
     taps = [
       "PlayCover/playcover"
+
+      "nikitabobko/tap" ### aerospace
+      "osx-cross/arm"
     ];
 
     ### excluded due to not existing on homebrew or on appstore

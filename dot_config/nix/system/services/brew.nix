@@ -18,8 +18,10 @@
       # "arduino-cli" ### arduino tools but on cli
       "jnv" ### interactive jq
       "posting" ### postman cli
+      "mpv-iina"
     ];
     casks = [
+      "aerospace" ### i3 style tiling
       "affinity-designer"
       "affinity-photo"
       "affinity-publisher"
@@ -48,7 +50,6 @@
       "macvim"
       "marta"
       "microsoft-edge"
-      "mos" ### mouse wheel
       "mpv"
       "music-decoy"
       "neovide"
@@ -71,6 +72,8 @@
       "homebrew/cask-fonts"
       "homebrew/cask-versions"
       "localsend/localsend"
+      "nikitabobko/tap" ### aerospace
+      "iina/homebrew-mpv-iina" ### mpv alternative for ani-cli
     ];
     ### other: playcover nightly
     ### appstore apps
