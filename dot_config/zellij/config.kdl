@@ -1,3 +1,4 @@
+// Zellij now auto-reloads your config file!
 // clear-defaults means default keybindings (e.g. if quit is not defined it will not be binded...)
 keybinds clear-defaults=true {
   // global keybinds (and lock mode)
@@ -17,8 +18,8 @@ keybinds clear-defaults=true {
     bind "Alt n" { GoToNextTab; }
     bind "Alt p" { GoToPreviousTab; }
     //// layout (disabled until I feel use for it)
-    // bind "Alt [" { PreviousSwapLayout; }
-    // bind "Alt ]" { NextSwapLayout; }
+    bind "Alt [" { PreviousSwapLayout; }
+    bind "Alt ]" { NextSwapLayout; }
     // toggleterm (ctrl / doesn't work?)
     bind "Alt /" "Ctrl /" { ToggleFloatingPanes; }
     // resize pane

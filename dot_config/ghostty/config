@@ -17,8 +17,8 @@ background-opacity = 0.95
 cursor-style-blink = false
 
 ### disables macos tabs, but thats okay we use zellij
-window-decoration = false
-macos-titlebar-style = "hidden"
+# window-decoration = false
+# macos-titlebar-style = "hidden"
 
 ### window-padding only works on new windows
 window-padding-x = 4

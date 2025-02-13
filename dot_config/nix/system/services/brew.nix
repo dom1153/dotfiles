@@ -63,7 +63,6 @@
       "spotify"
       "steam"
       "syncthing"
-      "tyke" ### status bar notepad
       "vial"
       "visual-studio-code"
       "wezterm"

@@ -59,6 +59,12 @@ nvim -d
 # nvim Readonly (for cat etc)
 nvim -R
 
+# open nvim with no config
+nvim --clean
+
+# open regular vim with no config
+nvim --clean
+
 # lf documentation
 lf -doc
 

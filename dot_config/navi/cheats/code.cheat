@@ -176,7 +176,8 @@ yq -oy '.tasks' pixi.toml
 
 ; .[].wikiUrl
 # interactive jq
-jnv ships.json
+jnv <json>
+$ json: find . -maxdepth 1 -name "*.json"
 
 % htmlq, jq
 

@@ -117,6 +117,7 @@
       "proton-mail" ### just a web app
       "knime" ### Software to create and productionise data science
       "sigmaos" ###
+      "tyke" ### deprecated
 
       ### casks
       "postman" ### rest api tester
