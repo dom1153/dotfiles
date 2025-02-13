@@ -18,7 +18,10 @@
       # "arduino-cli" ### arduino tools but on cli
       "jnv" ### interactive jq
       "posting" ### postman cli
-      "mpv-iina"
+      {
+        name = "iina/mpv-iina/mpv-iina"; ### keg-only, which means it was not symlinked into /opt/homebrew ?
+        args = ["HEAD"];
+      }
     ];
     casks = [
       "aerospace" ### i3 style tiling
@@ -50,8 +53,6 @@
       "macvim"
       "marta"
       "microsoft-edge"
-      "mpv"
-      "music-decoy"
       "neovide"
       "obsidian"
       "parsec"
@@ -68,11 +69,9 @@
       "wezterm"
     ];
     taps = [
-      "homebrew/cask-fonts"
-      "homebrew/cask-versions"
       "localsend/localsend"
       "nikitabobko/tap" ### aerospace
-      "iina/homebrew-mpv-iina" ### mpv alternative for ani-cli
+      # "iina/homebrew-mpv-iina" ### mpv alternative for ani-cli
     ];
     ### other: playcover nightly
     ### appstore apps

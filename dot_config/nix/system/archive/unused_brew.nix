@@ -134,8 +134,12 @@
       "firefox-developer-edition" ### keeps wanting to fresh install??? I use chrome devtools anyways
       "logi-options-plus" ### seems to update too much
       "aerospace" ### doesn't play well with macos spaces, keyboard centric
+      "mpv" ### mpv-iina is better
+      "music-decoy"
     ];
     taps = [
+      "homebrew/cask-fonts" ### deprecated
+      "homebrew/cask-versions" ### deprecated
       "PlayCover/playcover"
 
       "nikitabobko/tap" ### aerospace
