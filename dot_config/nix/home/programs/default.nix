@@ -23,7 +23,7 @@ in {
     ### tools
     unstable.spotify
     neovide
-    vial
+    unstable.vial
     mpv
     imv ### image viewer
     feh ### image previewer
@@ -41,17 +41,17 @@ in {
     unstable.kitty
     unstable.foot
     cool-retro-term
-    wezterm ### not working well with hyprland wayland (x11 works) ; use for other platforms
+    stable.wezterm ### not working well with hyprland wayland (x11 works) ; use for other platforms
     unstable.ghostty
 
     ### apps
-    discord
-    microsoft-edge
-    firefox
+    unstable.discord
+    unstable.microsoft-edge
+    unstable.firefox
     unstable.obsidian
     unstable.osu-lazer-bin
     unstable.anki-bin
-    google-chrome
+    unstable.google-chrome
 
     gnome.gnome-disk-utility
 

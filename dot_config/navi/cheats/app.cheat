@@ -474,6 +474,10 @@ docker update --restart=no $(docker ps -aq)
 # check restart policy on docker containers
 docker inspect -f '{{ .Name }}: {{ .HostConfig.RestartPolicy.Name }}' $(docker ps -aq)
 
+# docker prune
+docker <type> prune
+$ type: echo "container image volume network" | tr ' ' '\n'
+
 % podman
 
 # podman tui (lazy podman for now)
