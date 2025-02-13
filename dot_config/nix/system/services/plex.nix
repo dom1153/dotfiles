@@ -16,7 +16,7 @@ in {
     enable = true;
     openFirewall = true;
     user = "archoo";
-    dataDir = "/run/media/archoo/super-4T/";
-    package = stable.plex;
+    # dataDir = "/run/media/archoo/super-4T/";
+    package = unstable.plex;
   };
 }

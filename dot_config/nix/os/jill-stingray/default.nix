@@ -39,6 +39,7 @@
     ../../system/services/udev.nix
     # ../../system/services/waydroid.nix
     ../../system/services/xserver.nix
+    # ../../system/services/plex.nix
 
     ./services/mount.nix
     ./services/nfs.nix
@@ -51,6 +52,8 @@
   ### Builds home-manager with nixos-rebuild
   home-manager.users."archoo" = import ../../home/profiles/jill-stingray;
 
+  # services.plex.dataDir = "/home/archoo/dock/plex-nix/";
+
   networking = {
     hostName = "jill-stingray";
     ### LocalSend:
@@ -62,22 +65,22 @@
       53317
       24800
 
-      ### Plex
-      32400
-      3005
-      8324
-      32469
+      # ### Plex
+      # 32400
+      # 3005
+      # 8324
+      # 32469
     ];
     firewall.allowedUDPPorts = [
       24800
 
-      ### Plex
-      1900
-      5353
-      32410
-      32412
-      32413
-      32414
+      # ### Plex
+      # 1900
+      # 5353
+      # 32410
+      # 32412
+      # 32413
+      # 32414
     ];
   };
 
