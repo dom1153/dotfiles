@@ -115,6 +115,9 @@ in {
     vtop
     rainfrog ### database management for postgres
     unstable.termscp ### generate git ignore files ### seems cool, can't get sftp to connect
+    unstable.superfile ### another file manager
+    unstable.xplr
+    unstable.clifm ### no macos support
 
     ### cli development
     nodejs_21
