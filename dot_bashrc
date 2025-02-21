@@ -1,32 +1,60 @@
+# .bashrc
+
+# Source global definitions
+if [ -f /etc/bashrc ]; then
+    . /etc/bashrc
+fi
+
+# User specific environment
+if ! [[ "$PATH" =~ "$HOME/.local/bin:$HOME/bin:" ]]; then
+    PATH="$HOME/.local/bin:$HOME/bin:$PATH"
+fi
+export PATH
+
+# Uncomment the following line if you don't like systemctl's auto-paging feature:
+# export SYSTEMD_PAGER=
+
+# User specific aliases and functions
+if [ -d ~/.bashrc.d ]; then
+    for rc in ~/.bashrc.d/*; do
+        if [ -f "$rc" ]; then
+            . "$rc"
+        fi
+    done
+fi
+unset rc
+
+###### ^^^ fedora default
+
 ### todo: let nix handle it, but still leave custom yourself (this file -> .config dir)
 
 ### also... avoid aliases. harder to traceback issues. nix-shell needs to be as reproducible as possible
 
 ### dumb terminals include chron and lazygit usage
-if [[ $TERM == 'dumb' ]]; then
-  exit
-fi
+### (also includes default gnome logins with default bash shells.)
+###    So don't 'exit', or you won't be able to login to the desktop
+if [[ $TERM != 'dumb' ]]; then
+  case $- in
+  *i*) ;; ### interactive
+  *) ;;   ### non-interactive (e.g. scripts)
+  esac
 
-case $- in
-*i*) ;; ### interactive
-*) ;;   ### non-interactive (e.g. scripts)
-esac
+  if type "starship" >/dev/null 2>&1; then
+    ### should remove warning for git branch taking too long to load
+    ### export STARSHIP_LOG="error"
+    # export STARSHIP_CONFIG="$HOME/.config/starship/bash.toml"
+    eval "$(starship init bash)"
+  fi
 
-if type "starship" >/dev/null 2>&1; then
-  ### should remove warning for git branch taking too long to load
-  ### export STARSHIP_LOG="error"
-  # export STARSHIP_CONFIG="$HOME/.config/starship/bash.toml"
-  eval "$(starship init bash)"
-fi
+  if type "navi" >/dev/null 2>&1; then
+    source $HOME/.config/bash/navi.bash
+  fi
 
-if type "navi" >/dev/null 2>&1; then
-  source $HOME/.config/bash/navi.bash
-fi
+  if type "lf" >/dev/null 2>&1; then
+    source $HOME/.config/bash/lf.bash
+  fi
 
-if type "lf" >/dev/null 2>&1; then
-  source $HOME/.config/bash/lf.bash
-fi
-
-if type "dircolors" >/dev/null 2>&1; then
-  eval $(dircolors $HOME/.config/bash/bliss.dircolors)
+  if type "dircolors" >/dev/null 2>&1; then
+    eval $(dircolors $HOME/.config/bash/bliss.dircolors)
+  fi
 fi
