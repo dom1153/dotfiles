@@ -50,3 +50,7 @@ args = ["server"]
 command = "pylyzer"
 args = ["--server"]
 
+# auto formatters
+[[language]]
+name = "svelte"
+auto-format = true
