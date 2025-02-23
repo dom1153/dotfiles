@@ -403,6 +403,9 @@ hx
 # helix tutor
 hx --tutor
 
+# check lsp and more
+hx --health
+
 % adb
 
 # adb list (checks if connected)

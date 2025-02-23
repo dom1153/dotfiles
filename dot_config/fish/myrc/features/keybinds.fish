@@ -12,5 +12,6 @@ end
 
 function fish_user_key_bindings --description="Put your keymaps here"
     ### lfcd <c-f>
-    bind \cf _lf_cd_mine
+    # bind \cf _lf_cd_mine
+    bind \cf y
 end

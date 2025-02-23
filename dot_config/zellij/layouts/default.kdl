@@ -26,34 +26,34 @@ layout {
   // Tab 'chezmoi'
   tab name="chezmoi" cwd="~/.local/share/chezmoi" {
     pane name="config" {
-      command "nvim"
+      command "hx"
       start_suspended true
     }
   }
 
-  // Tab 'nvim-flake'
-  tab name="nvim-flake" cwd="~/gits/dom1153/nvim-flake" {
-    // use zellij toggle float terminal
-    pane split_direction="vertical" {
-      pane name="nvim" focus=true {
-        command "nvim"
-        start_suspended true
-      }
-
-      pane size="40%" {
-        pane name="watch run (make wrun)" {
-          command "make"
-          args "wrun"
-          start_suspended true
-        }
-        pane size="20%" name="watch build (make wbuild)" {
-          command "make"
-          args "wbuild"
-          start_suspended true
-        }
-      }
-    }
-  }
+  // // Tab 'nvim-flake'
+  // tab name="nvim-flake" cwd="~/gits/dom1153/nvim-flake" {
+  //   // use zellij toggle float terminal
+  //   pane split_direction="vertical" {
+  //     pane name="nvim" focus=true {
+  //       command "nvim"
+  //       start_suspended true
+  //     }
+  //
+  //     pane size="40%" {
+  //       pane name="watch run (make wrun)" {
+  //         command "make"
+  //         args "wrun"
+  //         start_suspended true
+  //       }
+  //       pane size="20%" name="watch build (make wbuild)" {
+  //         command "make"
+  //         args "wbuild"
+  //         start_suspended true
+  //       }
+  //     }
+  //   }
+  // }
 
   // // not really necessary
   // tab name="obsidian" cwd="~/Documents/Obsidian/Brain2/" {
