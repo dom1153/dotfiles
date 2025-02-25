@@ -41,6 +41,31 @@ in {
       gnused ### macos is posix, but not gnu
 
       android-tools ### also on brew (android-platform-tools)
+
+      ### lsp test
+      unstable.taplo ### toml
+      unstable.yaml-language-server
+
+      unstable.bash-language-server
+
+      unstable.typescript-language-server
+      unstable.svelte-language-server
+      unstable.nodePackages.vscode-json-languageserver
+      unstable.tailwindcss-language-server
+      unstable.tailwindcss
+      unstable.vscode-langservers-extracted ### HTML/CSS/JSON/ESlint
+
+      unstable.marksman ### markdown
+
+      unstable.basedpyright ### python lsp
+
+      unstable.ruff ### python linter
+      unstable.pylyzer ### python static analysis
+
+      unstable.gopls ### go lsp
+      unstable.gotools ### go formatter
+
+      unstable.haskell-language-server
     ];
 
     # https://nixos.wiki/wiki/FAQ/When_do_I_update_stateVersion

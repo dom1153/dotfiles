@@ -1,0 +1,56 @@
+[[language]]
+name = "nix"
+auto-format = true
+formatter = { command = "alejandra" , args = ["-q"] }
+
+# tailwind css
+
+[language-server.tailwindcss-ls]
+command = "tailwindcss-language-server"
+args = ["--stdio"]
+
+[[language]]
+name = "html"
+language-servers = [ "vscode-html-language-server", "tailwindcss-ls" ]
+
+[[language]]
+name = "css"
+language-servers = [ "vscode-css-language-server", "tailwindcss-ls" ]
+
+[[language]]
+name = "jsx"
+language-servers = [ "typescript-language-server", "tailwindcss-ls" ]
+
+[[language]]
+name = "tsx"
+language-servers = [ "typescript-language-server", "tailwindcss-ls" ]
+
+[[language]]
+name = "svelte"
+language-servers = [ "svelteserver", "tailwindcss-ls" ]
+
+[[language]]
+name = "go"
+auto-format = true
+formatter = { command = "goimports" }
+
+# python
+[[language]]
+name = "python"
+language-servers = ["basedpyright", "ruff", "pylyzer"]
+
+[language-server.pyright.config.python.analysis]
+typeCheckingMode = "basic"
+
+[language-server.ruff]
+command = "ruff"
+args = ["server"]
+
+[language-server.pylyzer]
+command = "pylyzer"
+args = ["--server"]
+
+# auto formatters
+[[language]]
+name = "svelte"
+auto-format = true
