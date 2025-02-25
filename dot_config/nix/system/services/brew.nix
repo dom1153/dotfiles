@@ -61,6 +61,7 @@
       "raycast"
       "sigmaos"
       "signal" ### keep installed for launchpad organization
+      "spyder" ### ipynb but light
       "spotify"
       "steam"
       "syncthing"

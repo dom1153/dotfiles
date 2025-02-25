@@ -145,6 +145,7 @@ in {
     unstable.calcure ### calendar
     unstable.calcurse ### calendar
     unstable.lazyjournal
+    unstable.gping ### ping, but with a graph
 
     # stable.posting ### does not exist
     ### browsh ### firefox, in the terminal
