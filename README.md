@@ -14,7 +14,15 @@ These dotfiles are configured with [chezmoi](https://www.chezmoi.io/)
 
 To copy these to your own config directory, run:
 
+(warning: --apply WILL overwrite files without prompt. e.g. bashrc, unlike normal chezmoi apply)
+
 `chezmoi init --apply dom1153`
+
+(needs testing:)
+consider
+
+chezmoi init dom1153
+chezmoi apply
 
 This will download the dotfiles to your home directory.
 

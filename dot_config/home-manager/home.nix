@@ -19,6 +19,7 @@
 	zip
 	zoxide
 	file
+	gh
 	
 
 	yazi
