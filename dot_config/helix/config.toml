@@ -16,10 +16,14 @@ auto-format = true
 G = "goto_file_end"
 "%" = ["match_brackets"]                                       ### default: select entire file -> equivalent : gg v ge
 V = ["select_mode", "extend_to_line_bounds"]
-D = ["extend_to_line_end", "yank_main_selection_to_clipboard"]
+D = ["extend_to_line_end"]
 C-r = "redo"
 C-s = ":w"                                                     ### default: save_selection
 M = "save_selection"
+left = "jump_view_left"
+right = "jump_view_right"
+up = "jump_view_up"
+down = "jump_view_down"
 
 ### always i/a at current cursor position
 i = ["collapse_selection", "insert_mode"]
@@ -54,6 +58,11 @@ G = "goto_file_end"
 D = ["extend_to_line_bounds"]
 "%" = "match_brackets"
 C-s = ":w"
+M = "save_selection"
+left = "jump_view_left"
+right = "jump_view_right"
+up = "jump_view_up"
+down = "jump_view_down"
 
 ### always i/a at current cursor position
 i = ["collapse_selection", "insert_mode"]
