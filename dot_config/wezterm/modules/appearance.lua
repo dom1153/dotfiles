@@ -25,7 +25,7 @@ function module.apply_to_config(config)
     set_font({ font = wezterm.font('FiraCode Nerd Font Mono'), font_size = 13.0 })
 
     -- titlebar
-    config.window_decorations = 'RESIZE'
+    config.window_decorations = 'TITLE | RESIZE'
   elseif hostname == 'DomArtProW11' or hostname == 'kim-la-vallete' then
     set_font({ font = wezterm.font('JetBrains Mono'), font_size = 11.0 })
   elseif hostname == 'jill-stingray' or hostname == 'sei-asagiri' then
