@@ -128,6 +128,11 @@ npm i lucide-react@latest
 # list npm scripts
 jq '.scripts' package.json
 
+% pnpm
+
+# npx equivalent of npm
+pnpm dlx
+
 ; ----------------------------------------------------------------------------
 
 % pixi, python

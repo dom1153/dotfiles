@@ -803,6 +803,25 @@ rsync -av --info=progress2 --inplace <src> <dest>
 # ls (eza) get number format chmod
 eza -la -o
 
+% colima
+
+; default 2 CPUs, 2GiB RAM, 100GiB disk
+; other options like rozetta --vm-type=vz --vz-rosetta
+# start colima with new default options
+colima start --cpu 4 --memory 4
+
+# enable colima for this session (fish)
+set -gx DOCKER_HOST "unix://$HOME/.colima/default/docker.sock"
+
+# stop colima
+colima stop
+
+# check colima
+colima status --extended
+
+# colima start after editing default config file
+colima start --edit
+
 ; ----------------------------------------------------------------------------
 
 % fish
