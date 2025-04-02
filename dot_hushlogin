@@ -1,0 +1,3 @@
+### this should prevent "Last login" message on OSX for new terminals
+
+### https://stackoverflow.com/questions/15769615/remove-last-login-message-for-new-tabs-in-terminal
