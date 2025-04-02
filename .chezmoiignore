@@ -1,0 +1,6 @@
+.gitignore
+
+# documents and non-dotfiles
+README.md
+**/README.md
+files/**

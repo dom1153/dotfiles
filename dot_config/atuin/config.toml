@@ -1,0 +1,15 @@
+### https://docs.atuin.sh/configuration/config/
+
+update_check = false
+
+sync_frequency = "1h" # default, should be higher than 0 to avoid rate limit
+
+search_mode = "fuzzy" ### “prefix”, “fulltext”, “fuzzy”, and “skim”
+
+style = "full"
+
+workspaces = true
+
+show_tabs = false
+
+enter_accept = false
