@@ -1,0 +1,13 @@
+### default conifg
+### https://github.com/alexpasmantier/television/blob/main/.config/config.toml
+
+[ui]
+use_nerd_font_icons = true
+theme = "catppuccin-mocha-green.toml"
+show_help_bar = true ### ctrl-g
+
+[previewers.file]
+theme = "Catppuccin Mocha" ### based off of bat theme
+
+[keybindings.Channel]
+toggle_help = "ctrl-h" ### default is ctrl-g, bad for zellij

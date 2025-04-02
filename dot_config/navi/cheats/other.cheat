@@ -1,0 +1,164 @@
+% helix, hx
+
+# assume bash session (e.g. while in fish shell)
+set -gx SHELL /usr/bin/bash
+
+; ----------------------------------------------------------------------------
+
+% apps
+
+# mycli, better mysql cli
+mycli
+
+# mysql (vanilla sql line)
+mysql
+
+# mprocs command runner
+mprocs
+
+# helix
+hx
+
+# helix split many
+hx --vsplit
+
+# helix language / lsp support check
+hx --health
+
+# yazi (y)
+yazi
+
+# navi (ctrl-e)
+navi
+
+# navi (print to stdout; doesn't run command)
+navi --print
+
+# http-prompt (httpie interactive)
+http-prompt
+
+# find and replace tui
+scooter
+
+# find and replace tui (vscode-like)
+serpl
+
+# smart merge conflict tool
+mergiraf solve <filename>
+$filename: git diff --name-only --diff-filter=U --relative
+
+# lolcat (simple color output)
+lolcat
+
+# lolcat animated
+lolcat -a
+
+# just (justfile, makefile)
+just
+
+# just commands
+just --list
+
+; ----------------------------------------------------------------------------
+
+% mise, install, tooling
+
+# mise install use global
+mise use -g
+
+;
+
+% other
+
+# brew install
+brew install
+
+# create a brewfile based on installed apps
+brew bundle dump --file /tmp/brewfile
+
+# another neat way to get installed apps
+brew info --json=v2 --installed \
+    | jq -r '.formulae[]|select(any(.installed[]; .installed_on_request)).full_name'
+
+# list casks
+brew list --cask -l1
+
+; ----------------------------------------------------------------------------
+
+% general
+# tail (follow)
+grc tail -f 
+
+# run a php standalone file (with traditional <?php> tags)
+php
+
+# run npm audit check for vulnerabilities
+npm audit
+
+% zellij
+
+# startup zellij with wl-copy (desktop, non-ssh)
+zellij options --copy-command wl-copy
+
+# startup zellij with layout sav (wlcopy)
+zellij --layout sav options --copy-command wl-copy
+
+# startup zellij with layout sav
+zellij --layout sav options --copy-command wl-copy
+
+; ----------------------------------------------------------------------------
+
+% neat
+
+# use difftastic to check for syntactic changes without diffing; returns exit code 0 if no syntastic changes, 1 if changes are found
+difft --check-only --exit-code before.js after.js
+
+# brew doctor (health)
+brew doctor
+
+# open (equivalent to xdg-open)
+open
+
+; ----------------------------------------------------------------------------
+
+% keybinds, hotkey, shortcuts, yazi
+
+# search for files (tv/fd style)
+: # s -> search (fd)
+
+% commands, shortcuts, helix, hx
+
+# vim set filetype equivalent
+: # :set-language
+
+# enable / disable auto-format
+: # :set auto-format
+
+# disable format before save
+: # :set-language text
+
+% keybinds, shortcuts, picker, helix, hx
+# Previous entry
+: #  Shift-Tab, Up, Ctrl-p
+# Next entry
+: # Tab, Down, Ctrl-n
+# Page up
+: # PageUp, Ctrl-u	
+# Page down
+: # PageDown, Ctrl-d	
+# Go to first entry
+: # Home	
+# Go to last entry
+: # End	
+# Open selected
+: # Enter	
+# Open selected in the background without closing the picker
+: # Alt-Enter	
+# Open horizontally
+: # Ctrl-s	
+# Open vertically
+: # Ctrl-v	
+# Toggle preview
+: # Ctrl-t	
+# Close picker
+: # Escape, Ctrl-c	

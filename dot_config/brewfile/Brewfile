@@ -1,0 +1,56 @@
+### tap (sources)
+tap "playcover/playcover"
+tap "qmk/qmk"
+
+### packaging
+brew "mise"
+
+### service
+brew "docker"
+brew "docker-compose"
+
+### core
+brew "atuin"
+brew "bat"
+brew "chezmoi"
+brew "eza"
+brew "fish"
+brew "gh"
+brew "grc"
+brew "helix"
+brew "just"
+brew "lazydocker"
+brew "lazygit"
+brew "mergiraf"
+brew "mosh"
+brew "mprocs"
+brew "navi"
+brew "nushell"
+brew "speedtest-cli"
+brew "starship"
+brew "tealdeer"
+brew "television"
+brew "trash-cli"
+brew "wget"
+brew "yazi"
+brew "zellij"
+brew "zoxide"
+
+### general
+brew "difftastic"
+brew "fd"
+brew "lolcat"
+brew "serpl" ### find and replace
+brew "uutils-coreutils"
+
+### language servers
+brew "bash-language-server"
+brew "lua-language-server"
+brew "marksman"
+brew "tailwindcss"
+brew "tailwindcss-language-server"
+brew "taplo"
+brew "typescript-language-server"
+brew "vscode-langservers-extracted" ### HTML/CSS/JSON/ESlint
+brew "yaml-language-server"
+brew "notarealpackage"

@@ -1,0 +1,28 @@
+# EditorConfig helps developers define and maintain consistent coding styles between different editors and IDEs
+root = true
+
+[*]
+indent_style = space
+indent_size = 2
+end_of_line = lf
+
+# 4 space indentation
+[*.py]
+indent_style = space
+indent_size = 4
+
+# 4 space indentation
+[*.fish]
+indent_style = space
+indent_size = 4
+
+# We recommend you to keep these unchanged
+charset = utf-8
+trim_trailing_whitespace = true
+insert_final_newline = true
+
+[*.md]
+trim_trailing_whitespace = true
+indent_size = 4
+
+# The gitattributes file will handle the line endings conversion properly according to the operating system settings for other files

@@ -1,0 +1,1195 @@
+% awesomewm
+
+# launch awesomewm (in your awesome wm)
+Xephyr :5 & sleep 1 ; DISPLAY=:5 awesome
+
+; ----------------------------------------------------------------------------
+
+% bat, setup, theme
+
+# check which themes bat finds
+bat --list-themes
+
+# fix 'cannot find catppuccin theme'
+bat cache --build
+
+; ----------------------------------------------------------------------------
+
+% alias, mine, fav
+
+; todo: automatically dump fish alias file into navi file?
+
+# nixos-rebuild alias (nr)
+$HOME/.config/custom-scripts/rebuild.sh
+
+# git clone url to {repo_user} format (gc)
+$HOME/.config/custom-scripts/custom_git_clone.sh
+
+# get git repo size before download (gsize)
+$HOME/.config/custom-scripts/custom_git_size.sh
+
+# clean up differences from chezmoi directory (cclean)
+$HOME/.config/custom-scripts/chezmoi_cleanup.sh
+
+# startup chezmoi watchman in foreground (wm)
+$HOME/.config/custom-scripts/watchmanchezmoi.sh
+
+# add create .envrc file flake
+echo -e 'if type "nix" >/dev/null 2>&1; then\n\tuse flake . --impure\nfi' > .envrc
+
+# add executable create base script run sh
+echo -e '#!/usr/bin/env bash\ncd "$(dirname $0)"\n' > <scriptname>; chmod +x <scriptname>
+
+# add npm run sh script (script/run.sh)
+echo -e '#!/usr/bin/env bash\ncd "$(dirname $0)"\ncd ..\nnpm i\nnpm run dev' > run.sh; chmod +x run.sh
+
+; # create .envrc for direnv
+; echo -e 'if type "nix" >/dev/null 2>&1; then\n  git add -f flake.nix flake.lock >/dev/null 2>&1\n  use flake . --impure\n  git reset HEAD flake.nix flake.lock >/dev/null 2>&1\nfi' > .envrc
+
+# generate random number 1 to 10 (bash)
+bash -c 'echo $((1 + $RANDOM % 10))'
+
+# stop watchman
+watchman shutdown-server
+
+; https://stackoverflow.com/questions/107995/how-do-you-recursively-unzip-archives-in-a-directory-and-its-subdirectories-from
+# extract all zip files into their own directory
+find . -name "*.zip" -print0 | xargs -0 --no-run-if-empty -P 5 -I fileName sh -c 'unzip -o -d "$(dirname "fileName")/$(basename -s .zip "fileName")" "fileName"'
+
+# nvim in diff mode
+nvim -d
+
+# nvim Readonly (for cat etc)
+nvim -R
+
+# open nvim with no config
+nvim --clean
+
+# open regular vim with no config
+nvim --clean
+
+# lf documentation
+lf -doc
+
+# find file by name (case insensitive)
+fd --type f --hidden --exclude .git <fd_filename> | fzf --reverse
+
+# find file by name (by md file extension regex)
+fd --type f --hidden --exclude .git '.*.md$' | fzf --reverse
+
+# find file
+fd --type f --hidden --exclude .git | fzf --reverse
+
+# find file -> pipe to editor
+fd --type f --hidden --exclude .git | fzf --reverse | xargs $EDITOR -
+
+# find a directory name
+fd --type d --exclude .git <search-item> <search-path>
+
+; ----------------------------------------------------------------------------
+
+% test
+
+# Change branch
+git checkout <branch>
+
+$ branch: git branch | awk '{print $NF}'
+
+; ----------------------------------------------------------------------------
+
+% cheat
+
+# view cheatsheet
+cheat <cheatsheets>
+
+;;; we are using glow to render, so no need for color argument
+; # view cheatsheet with color
+; cheat -c <cheatsheets>
+
+$ cheatsheets: ls ~/.config/cheat/cheatsheets/personal
+
+# view cheatsheet under subfolder
+cheat foo/apps
+
+# see cheat paths
+cheat -d
+
+# see personal cheat files
+cheat -l -p personal
+
+; ----------------------------------------------------------------------------
+
+% chezmoi, cdd
+
+# print source path
+chezmoi source-path
+
+# go to chezmoi path equivalent
+chezmoi cd .
+
+; ----------------------------------------------------------------------------
+
+% apps
+
+# nixos image previewer
+imv
+
+# image previewer
+feh
+
+# kde image viewer
+gwenview
+
+; https://github.com/andreafrancia/trash-cli
+# view trash (trash-cli)
+trash-list
+
+# restore trash (index)
+trash-restore
+
+# trash list (macos)
+trash -l
+
+# markdown reader cli (searches all markdown)
+glow
+
+# markdown reader cli (specify a file)
+glow README.md
+
+# test internet speed
+speedtest
+
+# top
+btop
+
+# drag and drop files (cli -> gui)
+dragon
+
+# drag n drop reverse (gui -> cli)
+dragon --target
+
+# video player
+mpv
+
+# fancy nvim gui
+neovide
+
+# file browser (linux dolphin)
+dolphin .
+
+; -R reveals the file explorer, instead of opening apps
+; https://apple.stackexchange.com/questions/101432/how-do-i-launch-finder-from-terminal-or-command-line
+# file browser (macos finder)
+open . -R
+
+# ncdu du dirsize
+ncdu
+
+# df alternative (general disk usage)
+duf ~
+
+# sd sed example search replace (sd before after)
+echo "sample with /path/" | sd '.*(/.*/)' '$1'
+
+# sd sed example search replace (sed version: seds/before/after/g)
+echo "sample with /path/" | sed -E 's/.*(\\/.*\\/)/\1/g'
+
+# ps search process by name (not jobs)
+procs <process_name>
+
+# curl alternative
+curlie
+
+# diff alternative (git diff)
+diff-so-fancy
+
+# du alternative (disk usage + rust = rust) ((reverse direction))
+dust -r
+
+# imagemagick convert compress simple
+convert '<image_file>' -quality 95 -strip compressed.jpg
+$ image_file: find . -type f
+
+# tldr update
+tldr --update
+
+# tailscale re-auth key
+sudo tailscale login
+
+# allow devices to connect to this machine over tailscale auth
+sudo tailscale up --ssh
+; sudo tailscale up --ssh --accept-risk=lose-ssh
+
+# serve a localhost to other tailscale devices (output provides url)
+sudo tailscale serve localhost:3000
+
+# pup html parser jq exmaple 1
+curl -s https://news.ycombinator.com/ | pup 'table table tr:nth-last-of-type(n+2) td.title a'
+
+# pup html parser jq exmaple 2
+curl -s https://news.ycombinator.com/ | pup 'table table tr:nth-last-of-type(n+2) td.title a attr{href}'
+
+# pup html parser jq example 3 (to json)
+curl -s https://news.ycombinator.com/ | pup 'table table tr:nth-last-of-type(n+2) td.title a json{}'
+
+# parse ports from yml file yq (yaml)
+yq '.services[].ports' <y>
+$ y: find . -type f -name "*.yml"
+
+# terminal file manager
+lf
+
+# postman cli (may not be installed)
+posting
+
+; ----------------------------------------------------------------------------
+
+% chemzoi
+
+# chezmoi edit this file
+chezmoi edit
+
+# chezmoi chezmoi -> .config
+chezmoi apply
+
+# chezmoi add real file -> chezmoi
+chezmoi add
+
+# chezmoi diff real file vs chezmoi
+chezmoi diff
+
+# chezmoi check untracked files
+chezmoi unmanaged .
+
+# chezmoi chezmoi -> .config plus pull from git
+chezmoi update
+
+# chezmoi real directory -> chezmoi equivalent location
+chezmoi cd
+
+# chezmoi go to chezmoi root anywhere
+chezmoi cd ~
+
+# chezmoi delete file from chezmoi AND config
+chezmoi remove
+
+; ----------------------------------------------------------------------------
+
+% screensaver, rice
+
+# pipes screensaver
+pipes-rs
+
+# matrix screensaver
+cmatrix -ba
+
+# generate a picture of a bonsai
+cmatrix -ba
+
+# cross-platform audio visualizer music
+cava
+
+# clock with rain
+tenki
+
+# the classic
+fortune | cowsay | clolcat
+
+# cowsay random
+fortune | cowsay --random
+
+# cowsay fullscreen
+fortune | cowsay --random --aurora --super
+
+# cowsay picker
+fortune | cowsay -f <cows>
+$ cows: cowsay -l | tail -n +2 | tr ' ' '\n' | sed '/^\s*$/d'
+
+# cowsay list pictures
+cowsay -l
+
+# blahaj shark
+blahaj -s
+
+# blahaj flag
+blahaj -f
+
+# blahaj flag picker
+blahaj -f -c <blahajcolors>
+$ blahajcolors: blahaj --flags | tail -n +3
+
+# pokemon say
+fortune | pokemonsay
+
+# pokemon picker
+fortune | pokemonsay -p <pokemons>
+$ pokemons: pokemonsay -l | tail -n +3 | sed 's/[0-9]* - //g'
+
+# steam locomotive
+sl
+
+# neofetch fast
+fastfetch
+
+# neofetch, the cool kawaii anime picture
+neofetch
+
+# cool celestial viewer written in C
+astroterm --color --constellations --speed 10000 --fps 64
+; https://www.reddit.com/r/commandline/comments/1i2tznv/astroterm_a_planetarium_for_your_terminal/
+
+# neofetch but its for your git repos
+onefetch
+
+# see every onefetch language for current repo (large)
+bash -c 'onefetch -l | tr "[:upper:] " "[:lower:]-" | while read line; do echo "$line"; onefetch -a $line; done;'
+
+# tabiew - view csv, tsv, etc in a table
+tabiew
+
+# snowmachine snow
+snowmachine snow
+
+# snowmachine tree
+snowmachine tree
+
+; ----------------------------------------------------------------------------
+
+% gh, extension
+
+# preview markdown in browser
+gh markdown-preview README.md --disable-auto-open
+
+; # install markdwon extension (manual)
+; gh extension install yusukebe/gh-markdown-preview
+
+; https://github.com/vilmibm/gh-screensaver
+# pipes screensaver
+gh screensaver -spipes
+
+# fireworks screensaver
+gh screensaver -sfireworks
+
+# starfield screensaver
+gh screensaver -sstarfield -- --density 250 --speed 4
+
+# pollock screensaver
+gh screensaver -spollock
+
+; glider noise R dragon gun pulsar
+# game of life screensaver
+gh screensaver -slife -- --seed R
+
+; Fonts: banner, big, block, bubble, digital, lean, mini, mnemonic,
+;        script, shadow, slant, small, smscript, smshadow, smslant,
+;        standard, term
+# marquee screensaver
+gh screensaver -smarquee -- --message="hello world" --font="standard"
+
+; ----------------------------------------------------------------------------
+
+# misc
+
+% brew
+
+# get from brewfile
+brew bundle install --file <brewfile>
+$ brewfile: fd Brewfile
+
+
+brew cu
+
+% ping
+
+# the cooler ping (with 300 seconds of history)
+gping www.google.com -b 300
+
+% mpv, iina
+### launch iina from macos (also verifiess it's installed
+open -a IINA
+
+% helix, hx
+# start helix
+hx
+
+# helix tutor
+hx --tutor
+
+# check lsp and more
+hx --health
+
+% adb
+
+# adb list (checks if connected)
+adb devices
+
+# adb connect shell
+adb shell
+
+% docker
+
+; docker compose must assume the docker-compose.yml is the root huh...
+# run a docker based off containers
+docker compose up <dockernames>
+
+# run a docker compose file (docker-compose.yml)
+docker compose up
+
+# run a docker compose detatched (background it once it's done)
+docker compose -f <compose-yml> up -d
+$ compose-yml: find . -type f -name "*.yml"
+
+# check the docker output for a service
+docker compose logs SERVICE
+
+# check the docker output for a service (follow; tail)
+docker compose logs SERVICE -f
+
+; check bin/ for commands once inside the container
+# open run command with docker compose
+docker compose exec SERVICE bash
+
+# list docker containers
+docker container ls
+
+# docker container restart
+docker container restart <dockernames>
+
+# docker container remove (must be stopped)
+docker rm
+
+# docker container remove (must be stopped)
+docker stop <dockernames>
+
+# check docker logs (e.g. cosmos-server)
+docker logs <dockernames>
+
+; docker container ls | awk 'NR > 1 {print $1}'
+; https://docs.docker.com/reference/cli/docker/container/ls/#format
+# docker container ls with custom format
+docker container ls --format '{{.ID}} {{.Names}} {{.Ports}}'
+
+# docker conatiner ls with custom format 2
+docker container ls --format 'table {{.ID}}\t{{.Names}}\t{{.Ports}}'
+
+# check docker mount locations
+docker inspect -f '{{ .Mounts }}' LSID
+
+# list docker volumes (mega command)
+docker ps -a --format '{{ .ID }}' | xargs -I {} docker inspect -f '{{ .Name }}{{ printf "\n" }}{{ range .Mounts }}{{ printf "\n\t" }}{{ .Type }} {{ if eq .Type "bind" }}{{ .Source }}{{ end }}{{ .Name }} => {{ .Destination }}{{ end }}{{ printf "\n" }}' {}
+
+# view list docker configuration details
+docker inspect <dockernames> | nvim -R
+$ dockernames: docker container ls --format {{.Names}}
+
+; https://docs.docker.com/reference/cli/docker/container/ls/#formatting
+; https://stackoverflow.com/questions/50667371/docker-ps-output-formatting-list-only-names-of-running-containers
+
+# run a docker image (e.g. from dockerhub)
+docker run hello-world
+
+# download docker image
+docker pull postgres
+
+# see all docker images
+docker images
+
+# docker build (unnamed)
+docker build .
+
+# docker build (specify name:tag)
+docker build . -t "different:special"
+
+# docker make image boot by default
+docker update --restart <restart-options> <did>
+$ did: docker container ls -a --- --headers 1 --column 1
+$ restart-options: echo "no on-failure always unless-stopped" | tr ' ' '\n'
+
+# disable auto-start on all existing docker containers
+docker update --restart=no $(docker ps -aq)
+
+# check restart policy on docker containers
+docker inspect -f '{{ .Name }}: {{ .HostConfig.RestartPolicy.Name }}' $(docker ps -aq)
+
+# docker prune
+docker <type> prune
+$ type: echo "container image volume network" | tr ' ' '\n'
+
+% podman
+
+# podman tui (lazy podman for now)
+podman-tui
+
+# podman search images
+podman search <keyword>
+
+# podman search ('official') images
+podman search <keyword> --filter=is-official
+
+# podman conatiner ls with custom
+podman container ls --format 'table {{.ID}}\t{{.Names}}\t{{.Ports}}'
+
+# podman tui (lazy podman for now)
+podman-tui
+
+# run a docker compose detatched (background it once it's done)
+podman compose -f <compose-yml> up -d
+$ compose-yml: find . -type f -name "*.yml"
+
+# check status of systemd for podman
+systemctl --user status podman.socket
+
+
+% devcontainer
+
+### start up devcontainer (may need to delete old container to actually rebuild)
+devcontainer up --workspace-folder $PWD/..
+
+### telescope for cli search files (tv ; television)
+tv
+
+### search through all git repos
+tv git-repos
+
+### search through aliases
+tv alias
+
+### search through env
+tv env
+
+### search text (tv)
+tv text
+
+### search directories (tv)
+tv dirs
+
+; https://github.com/devcontainers/cli/issues/186
+### run devcontainer (requries appPort to tell docker to port forward, devcontainer does not support port-forwarding yet)
+devcontainer exec --workspace-folder $PWD/.. npm run dev
+
+### calendar
+calcure
+
+### agenda based calendar
+calcurse
+
+% nh
+
+# nixos-rebuild switch --flake ... alternative
+FLAKE="~/.local/share/chezmoi/dot_config/nix" nh os switch -H <hostname>
+$hostname: hostname
+
+# nixos-rebuild switch --flake ... alternative (2)
+nh os switch ~/.local/share/chezmoi/dot_config/nix -H <hostname>
+$hostname: hostname
+
+# nixos-rebuild but selector
+nh os <values> ~/.local/share/chezmoi/dot_config/nix -H <hostname> <args>
+$values: echo "build test boot switch info" | tr ' ' '\n'
+$hostname: hostname
+; VVV man this is so close to working
+; $args: echo ' --dry --verbose --update --ask' | tr ' ' '\n' --- --multi #--- --multi --expand
+$args: echo -e " \n--dry\n--verbose\n--update\n--ask"
+
+# search nix packages stable
+nh search -c nixos-24.11<nbsp>
+$nbsp: echo " "
+
+# search nix packages unstable
+nh search -c nixos-unstable<nbsp>
+$nbsp: echo " "
+
+# nix clean (dry)
+nh clean all --keep-since 30d2h --dry
+
+# nix clean keep 5 generations (dry)
+nh clean all --keep 5 --dry
+
+# nix clean
+nh clean all --keep-since 30d2h
+
+# nix clean keep 5 generations
+nh clean all --keep 5
+
+# compare nix versions
+nvd diff /nix/var/nix/profiles/system-{<n1>,<n2>}-link
+$n1: nix-env --list-generations | tail -2 | head -1 | awk '{print $1}'
+$n2: nix-env --list-generations | tail -1 | awk '{print $1}'
+
+# get nix generations
+nix-env --list-generations | bat --style=plain --paging=never
+
+# rollback option?
+sudo nixos-rebuild switch --rollback
+
+# format nix files in all subdirectories
+alejandra .
+
+% sixel
+
+# draw a sixel image (chafa)
+chafa -f sixel <imagefilename>
+$ imagefilename: find . -type f
+; -maxdepth 1 if need be
+
+# ls for sixel
+lsix
+
+% sixel, kitty
+
+# kitty graphics support
+kitty icat <imagefilename>
+$ imagefilename: find . -type f
+
+# check for git leaks (new version only)
+gitleaks dir -v
+
+% tldr
+
+### find search tldr names
+tldr --list | fzf --preview "tldr {1} --color" --preview-window=right,70% | xargs tldr
+
+% tree
+
+# tree + files (standard ignore) print file structure
+tree -d --gitignore -I node_modules | nvim -R
+
+# tree dir only (standard ignore)
+tree -d --gitignore -I node_modules | nvim -R
+
+% ngrok, tunnel
+
+# tunnel app through tunnel localhost 3000 (setup via dashboard ; new url is at endspoints)
+ngrok http http://localhost:3000
+
+# cursor ssh ctrlp hack for finding files
+fd --type f --hidden --exclude .git --exclude node_modules | fzf | xargs cursor
+
+% stripe
+
+# stripe login (browser auth)
+stripe login
+
+# stripe view api 1
+stripe products list --limit 1 --expand "data.default_price"
+
+# stripe trigger specific event (has dummy values)
+stripe trigger checkout.session.completed
+
+# restart kde
+qdbus org.kde.KWin /KWin reconfigure
+
+# url example
+http://stella-hoshii:3000/home
+
+% jankyborders
+# restart jankyborders
+brew services restart borders
+
+% atuin
+# atuin register
+atuin register -u <USERNAME> -e <EMAIL>
+
+# atuin login
+atuin login
+
+# atuin setup 1
+atuin import auto
+
+# atuin setup 2
+atuin import fish
+
+# atuin setup 3
+atuin sync
+
+# atuin import (auto is based off $SHELL)
+atuin import <shell>
+$shell: echo "bash zsh fish" | tr ' ' '\n'
+
+% json
+# json viewer
+jless package.json
+
+% mprocs, launcher, command runner
+# command runner
+mprocs
+
+% http, curl, wget
+# xh http requests curl alternative (httpie compliant)
+xh
+
+# xh Send a GET request
+xh httpbin.org/json
+
+# xh Send a POST request with body {"name": "ahmed", "age": 24}
+xh httpbin.org/post name=ahmed age:=24
+
+# xh Send a GET request with querystring id=5&sort=true
+xh get httpbin.org/json id==5 sort==true
+
+# xh Send a GET request and include a header named x-api-key with value 12345
+xh get httpbin.org/json x-api-key:12345
+
+# xh Send a POST request with body read from stdin.
+echo "[1, 2, 3]" | xh post httpbin.org/post
+
+# xh Send a PUT request and pipe the result to less
+xh put httpbin.org/put id:=49 age:=25 | less
+
+# xh Download and save to res.json
+xh -d httpbin.org/json -o res.json
+
+# xh Make a request with a custom user agent
+xh httpbin.org/get user-agent:foobar
+
+# http get headers from response only
+xh --headers
+
+% difft, diff
+# difftastic (syntax based diff)
+difft
+
+% kondo, npkill, node_modules
+# kondo (npkill node_module and build folder cleaner)
+kondo
+
+# kondo older than set date
+kondo --older 3M
+
+% journalctl, tui
+# journalctl tui
+lazyjournal
+
+% docker, tui
+# docker tui
+lazydocker
+
+% sq, jq, htmlq
+# sq -- parse sql, csv, or excel
+sq
+
+% restic
+# restic init
+restic init --repo <path> --insecure-no-password
+
+# restic backup
+restic --repo <repo-path> --insecure-no-password backup
+$ repo-path: fd snapshots ~ --type d --exec sh -c '[ -d "$(dirname "{}")/data" ] && echo $(dirname "{}")'
+; (here I define repo-path as needing a 'snapshots' directory and 'data' directory
+
+# restic restore
+restic --repo <repo-path> --insecure-no-password restore <id> --target
+$ repo-path: fd snapshots ~ --type d --exec sh -c '[ -d "$(dirname "{}")/data" ] && echo $(dirname "{}")'
+$ ss: restic --repo /home/archoo/tmp/restic_demo --insecure-no-password snapshots | head -n -2 --- --header-lines 2 --delimiter '\s\s+'
+$ jj: restic --repo /home/archoo/tmp/restic_demo --insecure-no-password snapshots <ss> --json
+$ id: echo '<jj>' | jq '.[].short_id'
+; $ paths: echo '<jj>' | jq '.[].paths[]'
+
+# restic list snapshots
+restic --repo <repo-path> --insecure-no-password snapshots
+
+# mount repo for browsing (in background , must umount)
+mkdir /tmp/restic_mnt_<rng>; restic --repo <repo-path> --insecure-no-password mount /tmp/restic_mnt_<rng>
+$ rng: bash -c 'echo $RANDOM | tr 0123456789 abcdefghij'
+
+# mount repo and browse
+mkdir -p /tmp/restic_mnt_<rng>; mprocs "lf /tmp/restic_mnt_<rng>" "restic --repo <repo-path> --insecure-no-password mount /tmp/restic_mnt_<rng>"
+$ rng: bash -c 'echo $RANDOM | tr 0123456789 abcdefghij'
+
+# check health
+restic check --insecure-no-password
+
+# unlock locked instances
+restic unlock --insecure-no-password
+
+# browse navi repo names
+navi repo browse
+
+% rsync
+
+# rsync transfer with progress bar (resume-able because rsync)
+rsync -av --info=progress2 --inplace <src> <dest>
+
+% eza, ls
+
+# ls (eza) get number format chmod
+eza -la -o
+
+% colima
+
+; default 2 CPUs, 2GiB RAM, 100GiB disk
+; other options like rozetta --vm-type=vz --vz-rosetta
+# start colima with new default options
+colima start --cpu 4 --memory 4
+
+# enable colima for this session (fish)
+set -gx DOCKER_HOST "unix://$HOME/.colima/default/docker.sock"
+
+# stop colima
+colima stop
+
+# check colima
+colima status --extended
+
+# colima start after editing default config file
+colima start --edit
+
+; ----------------------------------------------------------------------------
+
+% fish
+
+# set global variable (also disable zellij layout in this session)
+set -gx ZELLIJ 1
+
+; ----------------------------------------------------------------------------
+
+% hyprland
+
+# debug windows
+hyprctl clients | nvim -
+
+# exit hyprland
+hyprctl dispatch exit
+
+# monitor info
+hyprctl monitors all
+
+# hyprland version
+hyprctl systeminfo
+
+# reset waybar
+pkill waybar; waybar &
+
+; ----------------------------------------------------------------------------
+
+% nixos-rebuild, darwin-rebuild
+
+# rebuild switch anywhere (debug)
+sudo nixos-rebuild switch --flake $PWD/.config/nix --show-trace --option eval-cache false
+
+# rebuild switch anywhere (debug)
+sudo darwin-rebuild switch --flake $PWD/.config/nix --show-trace --option eval-cache false
+
+% nixos
+# fetch that stupid fetchFromGitHub (nix-prefetch-github <owner> <repo>)
+nix-prefetch-github --nix
+
+# search nix pkgs (very verbose)
+nix --extra-experimental-features "nix-command flakes" search nixpkgs
+
+# compare diff nix flake.lock <-> chezmoi (hack)
+nvim -d ~/.config/nix/flake.lock ~/.local/share/chezmoi/dot_config/nix
+
+; ----------------------------------------------------------------------------
+
+% nix, flake
+# cd nix home (real)
+cd ~/.config/nix
+
+# cd nix home (chezmoi)
+cd ~/.local/share/chezmoi/dot_config/nix
+
+# copy real flake.nix to -> chezmoi
+cp ~/.config/nix/flake.lock ~/.local/share/chezmoi/dot_config/nix
+
+# copy chezmoi flake.nix to -> real
+cp ~/.local/share/chezmoi/dot_config/nix/flake.lock ~/.config/nix
+
+# compare diff NixVim flake.lock to <-> chezmoi (hack)
+nvim -d ~/.config/nix/modules/nixvim/flake.lock ~/.local/share/chezmoi/dot_config/nix/modules/nixvim
+
+# update flake (flake.nix)
+nix flake update
+
+# cd nixvim home (real)
+cd ~/.config/nix/modules/nixvim
+
+# cd nixvim home (chezmoi)
+~/.local/share/chezmoi/dot_config/nix/modules/nixvim
+
+# copy real nixvim flake.nix to -> chezmoi
+cp ~/.config/nix/modules/nixvim/flake.lock ~/.local/share/chezmoi/dot_config/nix/modules/nixvim
+
+# copy chezmoi nixvim flake.nix to -> real
+cp ~/.local/share/chezmoi/dot_config/nix/modules/nixvim/flake.lock ~/.config/nix/modules/nixvim
+
+# fix nixpkgs if it corrupt (e.g. wsl)
+sudo nix-store --verify --check-contents --repair
+
+% nix, develop
+
+# nix develop run command
+nix develop --command bash -c "npm i && ./bin/learnyouhtml"
+
+# nix shell run
+nix-shell --run 'bash -c ./build.sh'
+
+# run npkill node_module cleaner
+nix develop "github:DeterminateSystems/zero-to-nix#javascript" --command bash -c 'npx npkill'
+
+# npkill
+npkill
+
+; ----------------------------------------------------------------------------
+
+% nix, zerotonix, flake
+
+# grab go flake
+nix flake init --template "github:DeterminateSystems/zero-to-nix#go-dev"
+
+# grab npm flake
+nix flake init --template "github:DeterminateSystems/zero-to-nix#javascript-dev"
+
+# grab python flake
+nix flake init --template "github:DeterminateSystems/zero-to-nix#python-dev"
+
+# grab rust flake
+nix flake init --template "github:DeterminateSystems/zero-to-nix#rust-dev"
+
+# grab cpp flake
+nix flake init --template "github:DeterminateSystems/zero-to-nix#cpp-dev"
+
+# grab haskell flake
+nix flake init --template "github:DeterminateSystems/zero-to-nix#haskell-dev"
+
+# grab scala flake
+nix flake init --template "github:DeterminateSystems/zero-to-nix#scala-dev"
+
+# enable direnv .envrc
+direnv allow
+
+# disable direnv .envrc
+direnv disallow
+
+# basic nix store cleanup
+nix-store --gc
+
+; ----------------------------------------------------------------------------
+
+% nvim, neovim
+
+# diff files
+nvim -d <file1> <file2>
+$ file1: find . -type f
+$ file2: find . -type f
+
+# lazyvim docker
+docker run -w /root -it --rm alpine:edge sh -uelic '
+  apk add git lazygit neovim ripgrep alpine-sdk --update
+  git clone https://github.com/LazyVim/starter ~/.config/nvim
+  cd ~/.config/nvim
+  nvim
+'
+
+# nvchad docker
+docker run -w /root -it --rm alpine:latest sh -uelic '
+  apk add git nodejs neovim ripgrep build-base wget --update
+  git clone https://github.com/NvChad/starter ~/.config/nvim
+  nvim
+'
+
+# astrovim docker
+docker run -w /root -it --rm alpine:edge sh -uelic '
+  apk add bash git lua nodejs npm lazygit bottom python3 go neovim ripgrep alpine-sdk --update
+  # Replace with your own configuration repository to load a user configuration
+  git clone --depth 1 https://github.com/AstroNvim/template ~/.config/nvim
+  nvim
+'
+
+# lunarvim docker
+docker run -w /tmp -it --rm alpine:edge sh -uelic '
+  addgroup -S lunaruser
+  adduser -S lunaruser -G lunaruser --shell /bin/sh && apk add yarn git python3 cargo neovim ripgrep alpine-sdk bash curl --update
+  LV_BRANCH='release-1.3/neovim-0.9' su -c "bash <(curl -s https://raw.githubusercontent.com/lunarvim/lunarvim/release-1.3/neovim-0.9/utils/installer/install.sh) --no-install-dependencies" lunaruser
+  su -c /home/lunaruser/.local/bin/lvim lunaruser
+'
+
+; ----------------------------------------------------------------------------
+
+% ripgrep, grep
+
+# search by filetype pattern
+rg -g '*.rs' int
+
+# search by filetype word
+rg --type rust
+
+# search by filetype short
+rg -trust
+
+# search by excluding filetype
+rg --type-not rust
+
+# search by excluding filetype short
+rg -Trust
+
+; ----------------------------------------------------------------------------
+
+% spicetify
+
+# init
+spicetify backup apply enable-devtools
+
+# load config (ctrl/command-shift-r to reload)
+spicetify apply
+
+# restore
+spicetify restore
+
+; ----------------------------------------------------------------------------
+
+% swww
+
+# help img page
+swww help img
+
+; ----------------------------------------------------------------------------
+
+% tmux
+
+# kill tmux server (all instances)
+tmux kill-server
+
+# reload tmux cli method
+tmux source ~/.config/tmux/tmux.conf
+
+### attach to pane (named)
+tmux attach -t
+
+### detatch session
+tmux detach
+
+### list sessions
+tmux ls
+
+; ----------------------------------------------------------------------------
+
+% wezterm
+
+# ssh to server (with zellij)
+wezterm cli spawn -- mosh server zellij
+
+# ssh to mini (with zellij)
+wezterm cli spawn -- mosh mini zellij
+
+# ssh to custom (with zellij)
+wezterm cli spawn -- mosh <sshhost> zellij
+
+# ssh to server basic
+wezterm cli spawn -- ssh mbp
+
+# ssh to custom (with zellij) (inplace)
+mosh server zellij
+
+# ssh to custom (with zellij) (inplace)
+mosh mini zellij
+
+# ssh to custom (with zellij) (inplace)
+mosh <sshhost> zellij
+$ sshhost: cat ~/.ssh/config | grep 'Host ' | sed 's/Host //'
+
+; ----------------------------------------------------------------------------
+
+% wsl
+
+# (clip.exe) wsl clipboard -> windows clipboard
+cat my-umatrix-rules.txt | clip.exe
+
+# windows clipboard -> unix redirect
+powershell.exe -c Get-Clipboard > my-umatrix-rules.txt
+
+# wsl pwd -> windows clipboard
+pwd | tr -d '\n' | clip.exe
+
+; enter to reboot via "windows terminal"
+# shutdown poweroff reboot wsl within wsl (eg. wsl distro NixOS)
+wsl.exe --terminate $WSL_DISTRO_NAME
+
+; # shutdown poweroff wsl (within a cmd.exe)
+; wsl.exe --shutdown
+
+; https://stackoverflow.com/questions/66375364/shutdown-or-reboot-a-wsl-session-from-inside-the-wsl-session
+# launch a new command line window and reboot (fancy)
+cd /mnt/c/ && cmd.exe /c start "rebooting WSL" cmd /c "timeout 5 && wsl -d $WSL_DISTRO_NAME" && wsl.exe --terminate $WSL_DISTRO_NAME
+
+# start wsl with windows admin rights instead of unix admin rights
+powershell.exe Start-Process -Verb runas -FilePath wsl
+
+# start a cmd.exe at windows directory (from wsl)
+cd $(wslpath "$(wslvar USERPROFILE)") && cmd.exe
+
+# chezmoi update (wezterm ; windows)
+cd $(wslpath "$(wslvar USERPROFILE)") && cmd.exe /K "chezmoi update || exit"
+
+% wsl, setup
+# install chezmoi
+cd $(wslpath "$(wslvar USERPROFILE)") && cmd.exe /K "winget install twpayne.chezmoi"
+
+# install wezterm
+cd $(wslpath "$(wslvar USERPROFILE)") && cmd.exe /K "winget install wez.wezterm"
+
+# upgrade wezterm
+cd $(wslpath "$(wslvar USERPROFILE)") && cmd.exe /K "winget upgrade wez.wezterm"
+
+; ----------------------------------------------------------------------------
+
+% xserver, unix
+
+# requires xorg.xwininfo
+xwininfo -tree -root
+
+# query xset info (numlock, repeat)
+xset q
+
+; ----------------------------------------------------------------------------
+
+% zellij, run, nvim, neovim, chezmoi
+
+# generic zellij run
+zellij run --cwd $PWD --in-place -- echo foo
+
+; # generic zellij run watchman-make run
+; zellij run --cwd $PWD --in-place -- watchman-make -p '**/*.lua' -t all
+
+# zellij run nixvim tspin tail build.log
+zellij run --cwd ~/.config/nix/modules/nixvim/ --start-suspended --in-place --name "tail build.log" -- tspin -f build.log
+
+# zellij run chezmoi edit
+zellij run --in-place --cwd ~/.local/share/chezmoi --name "nvim" -- nvim
+
+# zellij run nixvim edit
+zellij run --in-place --cwd ~/.local/share/chezmoi/dot_config/nix/modules/nixvim --name "nvim" -- nvim
+
+; action new-pane is does NOT work with --cwd, I tried, so this is an alright workaround
+# recreate chezmoi git float
+zellij run --floating --cwd ~/.local/share/chezmoi --name "git chezmoi" -- fish
+
+% fish, shell, zsh, zellij
+# start fish shell without zellij auto-start
+export ZELLIJ=1 && fish
+
+# open zellij layout (basic, foo, default, nvim)
+zellij --layout
+
+; ----------------------------------------------------------------------------
+
+% cd, zoxide
+
+# edit history (ctrl-w, ctrl-s)
+zoxide edit
+
+# interactive history search (zi ; but likely override)
+cdi
+
+; ----------------------------------------------------------------------------
+
+% yabai, skhd
+
+; # restart yabai
+; yabai --restart-service
+
+; # restart skhd (yabai hotkeys)
+; skhd --restart-service
+
+# restart yabai and skhd
+yabai --restart-service; skhd --restart-service
