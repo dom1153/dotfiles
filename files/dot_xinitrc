@@ -1,4 +1,2 @@
-[[ -f ~/.Xresources ]] && xrdb -merge -I$HOME ~/.Xresources
-
 # key repeat speed (250ms delay, repeat @ 30Hz)
 xset r rate 250 30

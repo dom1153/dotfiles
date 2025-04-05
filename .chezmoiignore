@@ -1,13 +1,6 @@
-### symlink for editor filetypes
-sym_bashrc.sh
-### vscode support this git file with colors
-gitconfig 
-
 .gitignore
 
+# documents and non-dotfiles
 README.md
 **/README.md
-
-### reference files
-.ssh_template/
-.ssh_template/**
+files/**
