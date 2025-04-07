@@ -66,6 +66,23 @@ just --list
 # mise install use global
 mise use -g
 
+;
+
+% other
+
+# brew install
+brew install
+
+# create a brewfile based on installed apps
+brew bundle dump --file /tmp/brewfile
+
+# another neat way to get installed apps
+brew info --json=v2 --installed \
+    | jq -r '.formulae[]|select(any(.installed[]; .installed_on_request)).full_name'
+
+# list casks
+brew list --cask -l1
+
 ; ----------------------------------------------------------------------------
 
 % general

@@ -1,0 +1,38 @@
+### tap (sources)
+tap "playcover/playcover"
+tap "qmk/qmk"
+
+### services
+brew "colima"
+
+### casks
+cask "affinity-photo" ### au
+cask "anki"
+cask "arc" ### au
+cask "bazecor" ### dygma ; au
+cask "blender" ### pin
+cask "blockbench"
+cask "discord" ### au
+cask "docker"
+cask "firefox"
+cask "firefox@developer-edition"
+cask "font-fira-code-nerd-font"
+cask "ghostty" # au
+cask "google-chrome" # au
+cask "hiddenbar"
+cask "iina" ### includes cli, unlike official tap
+cask "keepingyouawake"
+cask "keycastr"
+cask "launchpad-manager"
+cask "microsoft-edge"
+cask "obsidian"
+cask "qbittorrent"
+cask "qmk-toolbox"
+cask "raycast"
+cask "signal"
+cask "spotify"
+cask "steam"
+cask "vial"
+cask "visual-studio-code"
+cask "wezterm"
+cask "windscribe" # au
