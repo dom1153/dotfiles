@@ -1,7 +1,3 @@
-### tap (sources)
-tap "playcover/playcover"
-tap "qmk/qmk"
-
 ### packaging
 brew "mise"
 
@@ -47,10 +43,8 @@ brew "uutils-coreutils"
 brew "bash-language-server"
 brew "lua-language-server"
 brew "marksman"
-brew "tailwindcss"
 brew "tailwindcss-language-server"
 brew "taplo"
 brew "typescript-language-server"
 brew "vscode-langservers-extracted" ### HTML/CSS/JSON/ESlint
 brew "yaml-language-server"
-brew "notarealpackage"
