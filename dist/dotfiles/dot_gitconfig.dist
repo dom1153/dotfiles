@@ -1,0 +1,6 @@
+[user]
+	name = Dominic Dang
+	email = dominicdang@protonmail.com
+[pull]
+	rebase = true
+

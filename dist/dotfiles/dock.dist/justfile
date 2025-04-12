@@ -1,0 +1,35 @@
+set export
+
+UID := `id -u`
+GID := `id -g`
+VOLUMES_DIR := "./volumes"
+CONFIG_DIR := "./config"
+DASHY_PORT := "8080"
+LINKDING_PORT := "9090"
+GITEA_PORT := "7001"
+GITEA_SSH_PORT := "2222"
+
+[private]
+default:
+    @just --list
+
+[private]
+verify-files:
+    file ${CONFIG_DIR}/dashy.yml
+    -docker compose config | rg -q warn
+
+caddy:
+    cp ${CONFIG_DIR}/Caddyfile /opt/homebrew/etc/
+    brew services restart caddy
+
+up: verify-files caddy
+    docker compose up -d
+
+down:
+    docker compose down
+
+docker *A:
+    docker compose {{A}}
+
+setup-linkding:
+    docker-compose exec linkding python manage.py createsuperuser --username=archoo --email=blahblahfoobar+linkding@protonmail.com

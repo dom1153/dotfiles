@@ -1,0 +1,18 @@
+### taps
+tap "buo/cask-upgrade" ## cu
+
+### casks
+cask "arc"
+cask "betterdisplay"
+cask "font-fira-code-nerd-font"
+cask "forklift"
+cask "ghostty"
+cask "iina" ### includes cli, unlike official tap
+cask "keycastr"
+cask "orbstack"
+cask "playcover-community"
+cask "raycast"
+cask "shottr"
+cask "spotify"
+cask "tailscale"
+cask "wezterm"

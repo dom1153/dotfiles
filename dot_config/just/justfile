@@ -1,0 +1,25 @@
+#? docs (manual): https://just.systems/man/en/
+#? docs (readme.md): https://github.com/casey/just?tab=readme-ov-file#features
+#? kitchen sink (file): https://github.com/casey/just/blob/master/examples/kitchen-sink.just
+#? more examples (folder): https://github.com/casey/just/tree/master/examples
+set export
+
+mod chezmoi
+
+[private]
+default:
+    @just --list --list-submodules --justfile {{justfile()}}
+
+# grab ssh agent
+steal:
+    #!/usr/bin/env bash
+    if [ -z "$SSH_AUTH_SOCK" ]; then
+        for S in $( find /run/user/$( id -u )/keyring/ssh /run/user/$( id -u )/keyring-* /tmp -type s -user $( whoami ) -name ssh -o -name agent* 2>/dev/null ); do
+            export SSH_AUTH_SOCK=$S
+            ssh-add -l > /dev/null 2>&1 && break
+        done
+    fi
+
+    if [ -z "$SSH_AUTH_SOCK" ]; then
+        eval $( ssh-agent ) > /dev/null 2>&1
+    fi

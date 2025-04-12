@@ -1,0 +1,10 @@
+### === this file is a chezmoi template ===
+quitOnTopLevelReturn: true # esc closes lazygit
+
+git:
+  paging:
+    pager: ""
+    externalDiffCommand: "difft --color=always"
+
+os:
+  editPreset: 'helix'

@@ -1,0 +1,9 @@
+### https://nixos.wiki/wiki/SSH_public_key_authentication
+Host alias_name
+  HostName ip_or_tailscale_name
+  User foobar
+  AddKeysToAgent yes # auto ssh-add ~/.ssh/<private_key> ; means decrypt identity once per login
+  IdentitiesOnly yes
+  IdentityFile ~/.ssh/identity_file ### NOT the .pub key
+  ForwardX11 yes
+

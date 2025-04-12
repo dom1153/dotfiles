@@ -1,0 +1,9 @@
+### 'dorothy-haze/' should just resolve in the browser!
+http://dorothy-haze {
+    redir https://dorothy-haze.flamingo-universe.ts.net:443
+}
+
+### DASHY
+dorothy-haze.flamingo-universe.ts.net:1234 {
+    reverse_proxy dashy:8080
+}

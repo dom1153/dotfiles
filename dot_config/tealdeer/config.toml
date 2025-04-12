@@ -1,6 +1,7 @@
 ### MacOS instructions (maybe improve this in the future)
 ###   mkdir ~/Library/Application\ Support/tealdeer
 ###   ln -s ~/.config/tealdeer/config.toml ~/Library/Application\ Support/tealdeer/
+#? docs (various) https://github.com/tealdeer-rs/tealdeer/blob/main/docs/src/config_updates.md
 [display]
 compact = true
 use_pager = false
@@ -19,6 +20,5 @@ foreground = "blue"
 underline = true
 
 ### defaults to 720 hours ; 30 days
-### just run --update once in a while
 [updates]
-auto_update = false
+auto_update = true

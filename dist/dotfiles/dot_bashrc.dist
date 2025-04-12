@@ -1,0 +1,4 @@
+# if interactive, not already in fish, not a script
+if [[ $- == *i* ]] && [[ "$SHELL" != *fish* ]] && [ -n "$PS1" ] && [[ "$(tty)" == /dev/* ]] && [ command -v fish >/dev/null 2>&1 ]; then
+    exec fish
+fi

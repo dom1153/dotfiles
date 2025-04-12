@@ -189,8 +189,8 @@ bash -c 'f=$(basename -- "<fname>");echo ${f%.*};'
 bash -c 'f=$(basename -- "<fname>");echo ${f##*.};'
 $ fname: find . -type f
 
-# nvim to random tmp file scratch
-nvim /tmp/$(bash -c 'echo $RANDOM | tr 0123456789 abcdefghij').txt
+# editor random tmp file scratch
+$EDITOR /tmp/$(bash -c 'echo $RANDOM | tr 0123456789 abcdefghij').txt
 
 ; --appimage-help
 # extract appimage contents
@@ -239,3 +239,15 @@ ip route show default | awk '{print $5}'
 
 # chown on current directory items
 sudo chown $(id -u):$(id -g) *
+
+# cd to absolute pwd (fish)
+cd $(pwd --physical)
+
+# cd to pwd (bash)
+cd $(pwd)
+
+# pipe url into editor
+curl -s <URL> | $EDITOR
+
+# ssh terminfo fallback hack
+set -gx TERM xterm-256color

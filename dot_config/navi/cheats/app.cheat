@@ -127,6 +127,9 @@ chezmoi source-path
 # go to chezmoi path equivalent
 chezmoi cd .
 
+# chezmoi config data but yaml
+chezmoi data --format yaml
+
 ; ----------------------------------------------------------------------------
 
 % apps
@@ -390,13 +393,32 @@ gh screensaver -smarquee -- --message="hello world" --font="standard"
 
 # misc
 
+% mise
+
+# make mise be quiet
+muse trust --ignore
+
+% ghostty
+
+# macos open ghostty with catppuccin latte theme
+open -na /Applications/Ghostty.app --args --theme='catppuccin-latte'
+
+# fix ssh xterm-ghostty issue
+infocmp -x | ssh <sshserver> -- tic -x -
+$ sshserver: grep '^Host ' ~/.ssh/config | cut -d' ' -f2-
+
+% mosh
+
+# mosh for connecting to new macos machines (based on server bin path)
+mosh --server /opt/homebrew/bin/mosh-server
+
 % brew
 
 # get from brewfile
 brew bundle install --file <brewfile>
 $ brewfile: fd Brewfile
 
-
+# brew cask update
 brew cu
 
 % ping

@@ -1,0 +1,23 @@
+gui:
+  theme: # catppuccin latte (green)
+    activeBorderColor:
+      - '#40a02b' # green
+      - bold
+    inactiveBorderColor:
+      - '#6c6f85' # subtext 0
+    optionsTextColor:
+      - '#1e66f5' # blue
+    selectedLineBgColor:
+      - '#ccd0da' # surface 0
+    cherryPickedCommitBgColor:
+      - '#bcc0cc' # surface 1
+    cherryPickedCommitFgColor:
+      - '#40a02b' # green
+    unstagedChangesColor:
+      - '#d20f39' # red
+    defaultFgColor:
+      - '#4c4f69' # text
+    searchingActiveBorderColor:
+      - '#df8e1d' # yellow
+  authorColors:
+    '*': '#7287fd' # lavender

@@ -1,1 +1,9 @@
-### fill out as needed
+.chezmoidata.toml
+
+### custom localfiles
+.chezmoiignore.local
+dot_config/helix/languages.local.toml
+dot_config/ghostty/config.local.txt
+
+## nixos build files
+**/result
