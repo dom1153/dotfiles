@@ -7,6 +7,9 @@ Xephyr :5 & sleep 1 ; DISPLAY=:5 awesome
 
 % bat, setup, theme
 
+# check which themes bat finds
+bat --list-themes
+
 # fix 'cannot find catppuccin theme'
 bat cache --build
 

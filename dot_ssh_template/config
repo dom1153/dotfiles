@@ -1,7 +1,0 @@
-### https://nixos.wiki/wiki/SSH_public_key_authentication
-### ssh alias_name to connect
-Host alias_name
-  HostName 10.0.0
-  User foobar
-  IdentitiesOnly yes
-  IdentityFile ~/.ssh/identity_file ### NOT the .pub key
