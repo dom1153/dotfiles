@@ -390,6 +390,15 @@ gh screensaver -smarquee -- --message="hello world" --font="standard"
 
 # misc
 
+% brew
+
+# get from brewfile
+brew bundle install --file <brewfile>
+$ brewfile: fd Brewfile
+
+
+brew cu
+
 % ping
 
 # the cooler ping (with 300 seconds of history)

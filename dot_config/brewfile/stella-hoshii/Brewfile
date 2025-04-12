@@ -1,9 +1,13 @@
-### tap (sources)
-tap "playcover/playcover"
-tap "qmk/qmk"
+### taps
+tap "cirruslabs/cli"
+tap "buo/cask-upgrade"
 
 ### services
-brew "colima"
+brew "colima" ### COntainer LInux MAchines (e.g. docker) for MacOS
+
+### general
+brew "cirruslabs/cli/tart" ### native virtualization for MacOS and Linux guests
+brew "mas" ### Mac App Store cli
 
 ### casks
 cask "affinity-photo" ### au
@@ -32,7 +36,10 @@ cask "raycast"
 cask "signal"
 cask "spotify"
 cask "steam"
+cask "superduper"
 cask "vial"
 cask "visual-studio-code"
 cask "wezterm"
+cask "maccy"
+cask "shottr"
 cask "windscribe" # au
