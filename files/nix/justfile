@@ -1,0 +1,15 @@
+[private]
+default:
+    @just --list
+
+[private]
+build:
+    nixos-rebuild --flake .#alma-armas build
+
+nr cmd="test" *A="": build
+    -rm /tmp/result
+    sudo nixos-rebuild --flake .#alma-armas {{cmd}} {{A}}
+    mv result /tmp/
+
+shell:
+    nix-shell -p just gh helix lazygit git yazi

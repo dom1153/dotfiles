@@ -1,6 +1,19 @@
 % helix, hx
 
-# assume bash session (e.g. while in fish shell)
+# enable XDEBUG on for this session (fish)
+set -gx XDEBUG_MODE debug
+
+# enable XDEBUG on for this session (bash)
+export XDEBUG_MODE=debug
+
+# disable XDEBUG off for this session (fish)
+set -gx XDEBUG_MODE off
+
+# disable XDEBUG off for this session (bash)
+export XDEBUG_MODE=off
+
+; e.g. mprocs likes this
+# assume bash session (fish)
 set -gx SHELL /usr/bin/bash
 
 ; ----------------------------------------------------------------------------
@@ -74,7 +87,7 @@ mise use -g
 brew install
 
 # create a brewfile based on installed apps
-brew bundle dump --file /tmp/brewfile
+brew bundle dump --file /tmp/Brewfile
 
 # another neat way to get installed apps
 brew info --json=v2 --installed \
@@ -87,13 +100,7 @@ brew list --cask -l1
 
 % general
 # tail (follow)
-grc tail -f 
-
-# run a php standalone file (with traditional <?php> tags)
-php
-
-# run npm audit check for vulnerabilities
-npm audit
+grc tail -f
 
 % zellij
 
@@ -105,6 +112,9 @@ zellij --layout sav options --copy-command wl-copy
 
 # startup zellij with layout sav
 zellij --layout sav options --copy-command wl-copy
+
+# prettier format (write)
+prettier -w
 
 ; ----------------------------------------------------------------------------
 
@@ -118,6 +128,28 @@ brew doctor
 
 # open (equivalent to xdg-open)
 open
+
+# pull branch while not being on it
+git fetch origin master:master
+
+# send notifications
+notify-send "test"
+
+# open helix with no profile (open a 'bad' config file)
+hx -c foobar
+
+# get ubuntu version
+lsb_release -a
+
+# install github binaries (full url or zip)
+eget https://github.com/redhat-developer/vscode-xml/releases/download/0.28.1/lemminx-linux.zip
+
+# vscode diff mode
+code --diff
+
+# run flatpak from cli
+flatpak run <apps> >&2 &
+apps: flatpak list --app --columns=application
 
 ; ----------------------------------------------------------------------------
 
@@ -143,22 +175,30 @@ open
 # Next entry
 : # Tab, Down, Ctrl-n
 # Page up
-: # PageUp, Ctrl-u	
+: # PageUp, Ctrl-u
 # Page down
-: # PageDown, Ctrl-d	
+: # PageDown, Ctrl-d
 # Go to first entry
-: # Home	
+: # Home
 # Go to last entry
-: # End	
+: # End
 # Open selected
-: # Enter	
+: # Enter
 # Open selected in the background without closing the picker
-: # Alt-Enter	
+: # Alt-Enter
 # Open horizontally
-: # Ctrl-s	
+: # Ctrl-s
 # Open vertically
-: # Ctrl-v	
+: # Ctrl-v
 # Toggle preview
-: # Ctrl-t	
+: # Ctrl-t
 # Close picker
-: # Escape, Ctrl-c	
+: # Escape, Ctrl-c
+
+; ----------------------------------------------------------------------------
+
+# get all ghostty fonts (exclude variants)
+ghostty +list-fonts | grep --color=auto -v '^[[:space:]]' | grep .
+
+# get all ghostty nerd fonts (exclude variants)
+ghostty +list-fonts | grep --color=auto -v '^[[:space:]]' | grep Nerd

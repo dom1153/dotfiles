@@ -1,0 +1,10 @@
+If the port isn't mapped via 
+services:
+  name:
+    image:
+	volumes:
+	ports:
+	networks:
+	environment:
+	restart:
+	healthcheck:

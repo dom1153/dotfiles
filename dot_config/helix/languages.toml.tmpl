@@ -1,0 +1,5 @@
+{{ include "dot_config/helix/languages.part.toml" }}
+
+{{ if hasKey . "helix_lang" -}}
+	{{ include "dot_config/helix/languages.local.toml" -}}
+{{- end -}}

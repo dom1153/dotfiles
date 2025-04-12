@@ -1,0 +1,5 @@
+#? ghostty +list-fonts
+#? ghostty +list-fonts | grep --color=auto -v '^[[:space:]]' | grep Nerd
+#? preview fonts @ https://ghostty.zerebos.com/app/font-playground
+font-family=CaskaydiaCove Nerd Font Propo
+font-size=14

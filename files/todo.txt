@@ -1,0 +1,83 @@
+Planned:
+- Readme instructions for brewfiles
+- Justfile
+- Add chezmoi zellij layout (and usage readme)
+- zellij
+	- allow alt + arrows to jump to panes
+	- default layout (remove staggared, default center though)
+- Refactor fish config
+	- Add $EDITOR (only if helix exists)
+	- config.d usage?
+- Refactor navi cheats
+	- core.cheat
+	- random.cheat
+	- unix.cheat
+	- new cheats
+		- fish functions -> cdf
+- justfile
+	- ### todo: gc (plus fish alias)
+	- degit variant
+	- setup (dist files / prompts -- gum?)
+	- a way to check if config is out of data (e.g. verify version of setup)
+	- brew config
+		- + layout maybe
+		- compare current /tmp/Brewfile to existing (difft)
+- brew gum
+- maintenence: check that brew bundle is out of sync (or command)
+- more dotfile cleanup
+	- neofetch
+	- tealdeer
+	- zellij
+- local fish env override
+- fisher setup
+	- fish_config theme save "Catppuccin Mocha"
+- cleanup `files` / dist folder
+- gnu stow local dotfile system (unmanaged, e.g. ssh, bashrc, zshrc)
+- import old executable_scripts as justfiles (scripts module)
+- templates module using chezmoi templates, just, and execute-template redirection (or navi)
+- fzf inline search filenames (e.g. for adding arguments) (ctrl-f)
+- refactor wezterm config
+- navi template for linux only
+- navi template for macos only
+- fish keymaps
+- check that fish brew path works on linux
+- simple tmux config (catppucin)
+- zellij auto-integration? (esp over ssh)
+- cleanup fish 'features' documentation / shell integration
+	- use ... | source , then override keybinds later
+- catppuccin atuin
+- document COLORTERM true color mode -> does it only need to be over ssh?
+- nicities:
+	- setup zellij / lack of nerdfont support for basic tty modes -> navi cheat with config override
+	- ~~perhaps this could be a simple_fonts chezmoi value~~ (no such mode exits)
+- setup brewfile refresh time
+- folder scaffolding -> _fav with chezmoi, chezmoi_dotfiles, dot_dotfiles, config_dotfiles
+
+Add Development header to readme
+All dotfiles should include a doc reference
+If a local file can be provided, put it in files/dist with a version label (and be called .dist)
+Chezmoi template files should have a ### === warning header
+Prefer minimal config files, and reference full config elsewhere
+Comment conventions
+- #? for doc related comments
+- ### for headers
+- ## for subheaders
+- # inline comments
+
+Wants / Needs research:
+- Add linter to require .tmpl files to have a mandatory comment explaining that they're a template file
+- have a way to verify unix.cheat commands work as expected on macos and standard linux
+- a way to cron maintenance tasks: e.g. tldr --update, brew update
+- A proper chezmoi editing flow
+- lazygit: control how 'open' command works?
+- yazi follow symlinks? (e.g. ignore chezmoi add --template issues with _fav directory)
+	- alt: use just command
+- a testing system to make sure light mode config works
+- as well as helix config?
+- would be nice to have a starship signal if chezmoi is out of date
+- using 'gum' to create interactive prompt scripts for things such as deleting unmanaged chezmoi files (or with fzf --preview 'cmd {}'
+- use a chezmoi hook to append a comment on every chezmoi file (THIS IS A CHEZMOI FILE EDIT WITH ...)
+- best way to make a cli clipboard command between macos and linux (pipe to 'copy')
+	- test zellij flows
+	- test ssh flows (with zellij)
+- tealdeer hook? -> probably autoupdate flag

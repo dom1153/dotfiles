@@ -1,0 +1,13 @@
+### === this file is a chezmoi template ===
+#? Config file for btop v. 1.3.2
+#? docs (readme.md): https://github.com/aristocratos/btop?tab=readme-ov-file#configurability
+
+{{ if hasKey . "light_mode" -}}
+color_theme = "catppuccin_latte.theme"
+{{ else -}}
+color_theme = "catppuccin_mocha.theme"
+{{- end }}
+
+theme_background = False
+
+truecolor = True

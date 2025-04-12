@@ -1,0 +1,35 @@
+### taps
+tap "buo/cask-upgrade" ## cu
+
+### casks
+cask "affinity-photo"
+cask "anki"
+cask "arc"
+cask "bazecor" ### dygma
+cask "betterdisplay"
+cask "discord"
+cask "firefox@developer-edition"
+cask "font-fira-code-nerd-font"
+cask "forklift"
+cask "ghostty"
+cask "google-chrome"
+cask "google-chrome@dev"
+cask "hiddenbar"
+cask "iina" ### includes cli, unlike official tap
+cask "keycastr"
+brew "macos-trash"
+cask "meld"
+brew "microsoft-edge"
+cask "obsidian"
+cask "orbstack"
+cask "playcover-community"
+cask "qbittorrent"
+cask "raycast"
+cask "signal"
+cask "spotify"
+cask "tailscale"
+cask "utm" ### virtual machine qemu UI
+cask "vial" ### rosetta
+cask "visual-studio-code"
+cask "wezterm"
+cask "zen"

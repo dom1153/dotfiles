@@ -3,4 +3,99 @@
 # documents and non-dotfiles
 README.md
 **/README.md
+todo.txt
+dist/**
 files/**
+
+# template related files
+**/*.local.*
+**/*.untmpl.*
+# *.part is a partial browser download oops
+**/*.part.*
+
+# dist ; makes
+.CFUserTextEncoding
+.DS_Store
+.Trash
+.bash_history
+.bash_logout
+.bashrc
+.bin
+.cache
+.cargo
+.config/.gsd-keyboard.settings-ported
+.config/Code
+.config/chezmoi
+.config/chromium
+.config/dconf
+.config/dconf
+.config/evolution
+.config/evolution
+.config/fish/fish_variables
+.config/fish/themes/Catppuccin Frappe.theme
+.config/fish/themes/Catppuccin Macchiato.theme
+.config/gh
+.config/gnome-initial-setup-done
+.config/gnome-session
+.config/go
+.config/goa-1.0
+.config/google-chrome
+.config/gtk-3.0
+.config/gtk-4.0
+.config/helix/runtime
+.config/ibus
+.config/libreoffice
+.config/monitors.xml
+.config/monitors.xml~
+.config/nautilus
+.config/navi/navi.log
+.config/nushell
+.config/pulse
+.config/raycast
+.config/user-dirs.dirs
+.config/user-dirs.locale
+.docker
+.dotfiles
+.gitconfig
+.gnupg
+.lesshst
+.local
+.mozilla
+.npm
+.orbstack
+.rustup
+.ssh
+.vim
+.viminfo
+.vscode
+.wakatime
+.zprofile
+.zsh_history
+.zsh_sessions
+.zshrc
+Applications
+Desktop
+Documents
+Documents
+Downloads
+Downloads
+Dygma
+Library
+Movies
+Music
+OrbStack
+Pictures
+Public
+Templates
+Videos
+_fav
+dotfiles
+fav
+gits
+go
+mnt
+tmp
+
+{{ if hasKey . "chezmoi_ignore_local" -}}
+	{{ include ".chezmoiignore.local" }}
+{{ end -}}

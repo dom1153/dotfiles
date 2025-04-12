@@ -1,0 +1,7 @@
+{{ include "dot_config/zellij/config.part.kdl" }}
+
+{{ if hasKey . "light_mode" -}}
+theme "catppuccin-latte-mine"
+{{ else -}}
+theme "catppuccin-mocha-mine"
+{{ end }}

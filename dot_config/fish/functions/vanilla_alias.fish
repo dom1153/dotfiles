@@ -1,7 +1,9 @@
-### since I override vanillas, it's good to have a backup
-### e.g. ls -> eza ; but vanilla variant is lls -> ls
+### desc: make a backup alias when overrriding a vanilla alias
+###       (use wraper abbr_mine -v)
+### usage: vanilla_alias rm
+##  creates: abbr rrm rm
 function vanilla_alias
     set executable "$argv[1]"
     set -l first ( string sub $executable --length 1)
-    abbr $first$executable "$executable"
+    abbr_mine $first$executable "$executable"
 end

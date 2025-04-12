@@ -1,0 +1,8 @@
+### === this file is a chezmoi template ===
+#? example config (file): ~/.local/share/chezmoi/files/dist/bat/config.dist
+
+{{ if hasKey . "light_mode" -}}
+--theme="Catppuccin Latte"
+{{ else -}}
+--theme="Catppuccin Mocha"
+{{ end -}}

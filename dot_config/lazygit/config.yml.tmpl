@@ -1,0 +1,7 @@
+{{ include "dot_config/lazygit/config.part.yml" }}
+
+{{ if hasKey . "light_mode" -}}
+{{ include "dot_config/lazygit/latte.part.yml" }}
+{{ else -}}
+{{ include "dot_config/lazygit/mocha.part.yml" }}
+{{ end }}

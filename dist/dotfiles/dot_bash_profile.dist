@@ -1,0 +1,4 @@
+#? https://stackoverflow.com/a/415444
+### Allow support for bashrc with login shells
+[[ -r ~/.bashrc ]] && . ~/.bashrc
+

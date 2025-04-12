@@ -1,0 +1,13 @@
+### === this file is a chezmoi template ===
+#? docs: https://ghostty.org/docs/config/reference
+
+### appearance
+font-feature=-calt, -liga, -dlig # disable font ligatures
+background-opacity=0.95
+
+### behavior
+# disable quit prompt, annoying when trying to shutdown pc
+confirm-close-surface="false"
+
+# don't leave instances in dock (macos)
+quit-after-last-window-closed="true"

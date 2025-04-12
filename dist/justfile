@@ -1,0 +1,17 @@
+[private]
+default:
+    @just --list --list-submodules --justfile {{justfile()}}
+
+[confirm]
+[private]
+scaffold:
+    #!/usr/bin/env bash
+    set -euxo pipefail
+    if [[ ! -d ~/.dotfiles ]]; then
+        cp -r dotfiles ~/.dotfiles
+        git init ~/.dotfiles
+    fi
+
+[confirm]
+setup:
+    @just scaffold

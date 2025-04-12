@@ -1,0 +1,22 @@
+style:
+  snippet:
+{{ if hasKey . "light_mode" -}}
+    color: green
+{{ else -}}
+    color: white
+{{ end -}}
+
+finder:
+  command: fzf
+  overrides: --layout=reverse
+
+### default path is ~/.local/share/navi/cheats
+### can download more with `navi repo browse`
+### default repo is https://github.com/denisidoro/cheats
+cheats:
+  paths:
+    - ~/.config/navi/cheats
+    - ~/.local/share/navi/cheats
+
+shell:
+  command: bash
