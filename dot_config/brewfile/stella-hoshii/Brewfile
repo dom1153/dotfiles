@@ -1,45 +1,30 @@
 ### taps
-tap "cirruslabs/cli"
-tap "buo/cask-upgrade"
+tap "buo/cask-upgrade" ## cu
 
 ### services
 brew "colima" ### COntainer LInux MAchines (e.g. docker) for MacOS
 
-### general
-brew "cirruslabs/cli/tart" ### native virtualization for MacOS and Linux guests
-brew "mas" ### Mac App Store cli
-
-### casks
-cask "affinity-photo" ### au
+cask "affinity-photo"
 cask "anki"
-cask "arc" ### au
-cask "bazecor" ### dygma ; au
-cask "blender" ### pin
-cask "blockbench"
-cask "discord" ### au
-cask "docker"
-cask "firefox"
+cask "arc"
+cask "bazecor" ### dygma
+cask "discord"
+# cask "docker"
 cask "firefox@developer-edition"
 cask "font-fira-code-nerd-font"
-cask "ghostty" # au
-cask "google-chrome" # au
+cask "ghostty"
+cask "google-chrome"
 cask "hiddenbar"
 cask "iina" ### includes cli, unlike official tap
-cask "keepingyouawake"
 cask "keycastr"
-cask "launchpad-manager"
 cask "microsoft-edge"
 cask "obsidian"
+cask "orbstack"
 cask "qbittorrent"
-cask "qmk-toolbox"
-cask "raycast"
 cask "signal"
 cask "spotify"
-cask "steam"
-cask "superduper"
 cask "vial"
 cask "visual-studio-code"
 cask "wezterm"
-cask "maccy"
-cask "shottr"
-cask "windscribe" # au
+cask "windscribe"
+cask "zen-browser"
