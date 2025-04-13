@@ -396,7 +396,7 @@ gh screensaver -smarquee -- --message="hello world" --font="standard"
 brew bundle install --file <brewfile>
 $ brewfile: fd Brewfile
 
-
+# brew cask update
 brew cu
 
 % ping

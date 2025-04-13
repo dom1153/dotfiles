@@ -74,7 +74,7 @@ mise use -g
 brew install
 
 # create a brewfile based on installed apps
-brew bundle dump --file /tmp/brewfile
+brew bundle dump --file /tmp/Brewfile
 
 # another neat way to get installed apps
 brew info --json=v2 --installed \

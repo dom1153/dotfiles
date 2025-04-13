@@ -1,30 +1,33 @@
 ### taps
 tap "buo/cask-upgrade" ## cu
 
-### services
-brew "colima" ### COntainer LInux MAchines (e.g. docker) for MacOS
-
+### casks
 cask "affinity-photo"
 cask "anki"
 cask "arc"
 cask "bazecor" ### dygma
+cask "betterdisplay"
 cask "discord"
-# cask "docker"
 cask "firefox@developer-edition"
 cask "font-fira-code-nerd-font"
+cask "forklift"
 cask "ghostty"
 cask "google-chrome"
+cask "google-chrome@dev"
 cask "hiddenbar"
 cask "iina" ### includes cli, unlike official tap
 cask "keycastr"
 cask "microsoft-edge"
 cask "obsidian"
 cask "orbstack"
+cask "playcover-community"
 cask "qbittorrent"
+cask "raycast"
 cask "signal"
 cask "spotify"
-cask "vial"
+cask "tailscale"
+cask "utm" ### virtual machine qemu UI
+cask "vial" ### rosetta
 cask "visual-studio-code"
 cask "wezterm"
-cask "windscribe"
 cask "zen-browser"
