@@ -1,15 +1,10 @@
-### packaging
-brew "mise"
-
-### service
-brew "docker"
-brew "docker-compose"
-
 ### core
 brew "atuin"
 brew "bat"
 brew "chezmoi"
+brew "difftastic"
 brew "eza"
+brew "fd"
 brew "fish"
 brew "gh"
 brew "grc"
@@ -17,34 +12,32 @@ brew "helix"
 brew "just"
 brew "lazydocker"
 brew "lazygit"
+brew "lolcat"
 brew "mergiraf"
+brew "mise" ### packaging
 brew "mosh"
 brew "mprocs"
 brew "navi"
 brew "nushell"
+brew "pnpm"
+brew "serpl" ### find and replace
 brew "speedtest-cli"
 brew "starship"
 brew "tealdeer"
 brew "television"
 brew "trash-cli"
+brew "uutils-coreutils"
 brew "wget"
 brew "yazi"
 brew "zellij"
 brew "zoxide"
 
-### general
-brew "difftastic"
-brew "fd"
-brew "lolcat"
-brew "serpl" ### find and replace
-brew "uutils-coreutils"
-
 ### language servers
 brew "bash-language-server"
 brew "lua-language-server"
-brew "marksman"
+brew "marksman" ### markdown
 brew "tailwindcss-language-server"
-brew "taplo"
+brew "taplo" ### toml
 brew "typescript-language-server"
 brew "vscode-langservers-extracted" ### HTML/CSS/JSON/ESlint
 brew "yaml-language-server"

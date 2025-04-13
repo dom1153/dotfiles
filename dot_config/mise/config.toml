@@ -1,10 +1,5 @@
 [tools]
-### general
-xh = "latest"
-
 ### domain specific
 go = "latest"
-pnpm = "latest"
 bun = "latest"
 deno = "latest"
-
