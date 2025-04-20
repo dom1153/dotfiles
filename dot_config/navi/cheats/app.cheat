@@ -390,6 +390,20 @@ gh screensaver -smarquee -- --message="hello world" --font="standard"
 
 # misc
 
+% ghostty
+
+# macos open ghostty with catppuccin latte theme
+open -na /Applications/Ghostty.app --args --theme='catppuccin-latte'
+
+# fix ssh xterm-ghostty issue
+infocmp -x | ssh <sshserver> -- tic -x -
+$ sshserver: grep '^Host ' ~/.ssh/config | cut -d' ' -f2-
+
+% mosh
+
+# mosh for connecting to new macos machines (based on server bin path)
+mosh --server /opt/homebrew/bin/mosh-server
+
 % brew
 
 # get from brewfile

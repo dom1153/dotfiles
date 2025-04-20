@@ -1,5 +1,2 @@
-[cd]
-	command = "fish"
-
 [diff]
-	pager = "difft"
+    command = "difft"
