@@ -1,0 +1,55 @@
+---
+services:
+  dashy:
+    image: lissy93/dashy:latest
+    volumes:
+      - ${CONFIG_DIR}/dashy.yml:/app/user-data/conf.yml
+      # - ${CONFIG_DIR}/dashy/favicon.ico:/app/public/favicon.ico
+      # - ${CONFIG_DIR}/dashy/favicon.png:/app/public/web-icons/favicon-16x16.png
+      # - ${CONFIG_DIR}/dashy/favicon.png:/app/public/web-icons/favicon-32x32.png
+      # - ${CONFIG_DIR}/dashy/favicon.png:/app/public/web-icons/favicon-64x64.png
+      # - ${CONFIG_DIR}/dashy/favicon.png:/app/public/web-icons/dashy-pwa_144x144.png
+      # - ${CONFIG_DIR}/dashy/favicon.png:/app/public/web-icons/dashy-pwa_192x192.png
+      # - ${CONFIG_DIR}/dashy/favicon.png:/app/public/web-icons/dashy-pwa_48x48.png
+      # - ${CONFIG_DIR}/dashy/favicon.png:/app/public/web-icons/dashy-pwa_512x512.png
+      # - ${CONFIG_DIR}/dashy/favicon.png:/app/public/web-icons/dashy-pwa_72x72.png
+      # - ${CONFIG_DIR}/dashy/favicon.png:/app/public/web-icons/dashy-pwa_96x96.png
+    ports:
+      - ${DASHY_PORT}:8080
+    environment:
+      - NODE_ENV=production
+      - UID=${UID}
+      - GID=${GID}
+    restart: unless-stopped
+    healthcheck:
+      test: ['CMD', 'node', '/app/services/healthcheck']
+      interval: 1m30s
+      timeout: 10s
+      retries: 3
+      start_period: 40s
+  linkding:
+    image: sissbruecker/linkding:latest
+    volumes:
+      - ${VOLUMES_DIR}/linkding:/etc/linkding/data
+    ports:
+      - 9090:9090
+    restart: unless-stopped
+  gitea:
+    image: docker.io/gitea/gitea:latest
+    volumes:
+      - ${VOLUMES_DIR}/gitea/:/data
+      - /etc/timezone:/etc/timezone:ro
+      - /etc/localtime:/etc/localtime:ro
+    ports:
+      - "${GITEA_PORT}:3000"
+      - "${GITEA_SSH_PORT}:22"
+    networks:
+      - gitea
+    environment:
+      - USER_UID=${UID}
+      - USER_GID=${GID}
+    restart: unless-stopped
+
+networks:
+  gitea:
+    external: false

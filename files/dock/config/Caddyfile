@@ -1,0 +1,19 @@
+### 'dorothy-haze/' should just resolve in the browser!
+http://dorothy-haze {
+    redir https://dorothy-haze.flamingo-universe.ts.net:443
+}
+
+dorothy-haze.flamingo-universe.ts.net:443 {
+    reverse_proxy http://localhost:8080
+}
+
+### LINKDING
+dorothy-haze.flamingo-universe.ts.net:9000 {
+    reverse_proxy http://localhost:9090
+}
+
+### GITEA
+dorothy-haze.flamingo-universe.ts.net:9001 {
+    reverse_proxy http://localhost:7001
+}
+
