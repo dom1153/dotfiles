@@ -5,7 +5,7 @@ Planned:
 - zellij
 	- allow alt + arrows to jump to panes
 - Refactor fish config
-	- Add $EDITOR
+	- Add $EDITOR (only if helix exists)
 	- config.d usage?
 - Refactor navi cheats
 	- core.cheat
@@ -28,6 +28,7 @@ Planned:
 - local fish env override
 - fisher setup
 	- fish_config theme save "Catppuccin Mocha"
+- cleanup `files` / dist folder
 
 Add Development header to readme
 All dotfiles should include a doc reference

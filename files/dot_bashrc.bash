@@ -48,3 +48,8 @@ if [[ $TERM != 'dumb' ]]; then
     eval $(dircolors $HOME/.config/bash/bliss.dircolors)
   fi
 fi
+
+### if interactive, not already in fish, not a script
+if [[ $- == *i* ]] && [[ "$SHELL" != *fish* ]] && [ -n "$PS1" ] && [[ "$(tty)" == /dev/* ]]; then
+    exec fish
+fi
