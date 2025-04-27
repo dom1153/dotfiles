@@ -3,5 +3,5 @@
 function vanilla_alias
     set executable "$argv[1]"
     set -l first ( string sub $executable --length 1)
-    abbr $first$executable "$executable"
+    abbr_mine $first$executable "$executable"
 end

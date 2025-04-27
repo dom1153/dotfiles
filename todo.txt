@@ -4,6 +4,7 @@ Planned:
 - Add chezmoi zellij layout (and usage readme)
 - zellij
 	- allow alt + arrows to jump to panes
+	- default layout (remove staggared, default center though)
 - Refactor fish config
 	- Add $EDITOR (only if helix exists)
 	- config.d usage?
@@ -30,6 +31,13 @@ Planned:
 	- fish_config theme save "Catppuccin Mocha"
 - cleanup `files` / dist folder
 - gnu stow local dotfile system (unmanaged, e.g. ssh, bashrc, zshrc)
+- import old executable_scripts as justfiles (scripts module)
+- templates module using chezmoi templates, just, and execute-template redirection (or navi)
+- fzf inline search filenames (e.g. for adding arguments) (ctrl-f)
+- refactor wezterm config
+- navi template for linux only
+- navi template for macos only
+- fish keymaps
 
 Add Development header to readme
 All dotfiles should include a doc reference
@@ -54,3 +62,7 @@ Wants / Needs research:
 - as well as helix config?
 - would be nice to have a starship signal if chezmoi is out of date
 - using 'gum' to create interactive prompt scripts for things such as deleting unmanaged chezmoi files (or with fzf --preview 'cmd {}'
+- use a chezmoi hook to append a comment on every chezmoi file (THIS IS A CHEZMOI FILE EDIT WITH ...)
+- best way to make a cli clipboard command between macos and linux (pipe to 'copy')
+	- test zellij flows
+	- test ssh flows (with zellij)

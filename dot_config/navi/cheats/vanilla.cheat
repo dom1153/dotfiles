@@ -189,8 +189,8 @@ bash -c 'f=$(basename -- "<fname>");echo ${f%.*};'
 bash -c 'f=$(basename -- "<fname>");echo ${f##*.};'
 $ fname: find . -type f
 
-# nvim to random tmp file scratch
-nvim /tmp/$(bash -c 'echo $RANDOM | tr 0123456789 abcdefghij').txt
+# editor random tmp file scratch
+$EDITOR /tmp/$(bash -c 'echo $RANDOM | tr 0123456789 abcdefghij').txt
 
 ; --appimage-help
 # extract appimage contents
