@@ -1,4 +1,3 @@
-set -gx HOMEBREW_NO_ENV_HINTS 1
 set -gx SHELL $(which fish)
 set -gx COLORTERM truecolor
 set -gx MISE_COLOR false # disable mise-en-place colors due to my terminal light theme

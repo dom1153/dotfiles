@@ -245,3 +245,9 @@ cd $(pwd --physical)
 
 # cd to pwd (bash)
 cd $(pwd)
+
+# pipe url into editor
+curl -s <URL> | $EDITOR
+
+# ssh terminfo fallback hack
+set -gx TERM xterm-256color

@@ -1,4 +1,4 @@
-### simple util function to do the type thing
+### desc: check if command exists
 function exists
     if ! type -q $argv[1]
         return 1

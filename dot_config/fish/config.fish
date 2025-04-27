@@ -2,6 +2,7 @@
 if status is-interactive
     set fish_greeting ""
 
+    ### shell integrations, ZZ_keybinds, ZZ_aliases
     for f in $__fish_config_dir/features/*.fish
         source $f
     end

@@ -1,0 +1,69 @@
+### === this file is a chezmoi template ===
+##  Add shell integration commands in this file
+##  For other specific configuration, use an appropriate dotfile or environment variable (ZZ_env.fish)
+
+if exists fish
+    ## remove bg but keep bg+ for transparent terminal background
+    {{ if hasKey . "light_mode" -}}
+    ### catppuccin latte
+    set -gx FZF_DEFAULT_OPTS "\
+        --color=bg+:#ccd0da,spinner:#dc8a78,hl:#d20f39 \
+        --color=fg:#4c4f69,header:#d20f39,info:#8839ef,pointer:#dc8a78 \
+        --color=marker:#7287fd,fg+:#4c4f69,prompt:#8839ef,hl+:#d20f39 \
+        --color=border:#ccd0da,label:#4c4f69"
+    {{ else -}}
+    ### catppuccin mocha
+    set -Ux FZF_DEFAULT_OPTS "\
+        --color=bg+:#313244,spinner:#f5e0dc,hl:#f38ba8 \
+        --color=fg:#cdd6f4,header:#f38ba8,info:#cba6f7,pointer:#f5e0dc \
+        --color=marker:#b4befe,fg+:#cdd6f4,prompt:#cba6f7,hl+:#f38ba8 \
+        --color=border:#313244,label:#cdd6f4"
+    {{ end }}
+end
+
+if exists grc
+    #? docs (file): https://raw.githubusercontent.com/garabik/grc/refs/heads/master/grc.fish
+    set -U grc_plugin_execs df ping ps env \
+        mount id ip iostat ifconfig uptime journalctl \
+        last lsblk lspci lsmod lsof fdisk free stat w who
+
+    for executable in $grc_plugin_execs
+        if type -q $executable
+            if isatty 1
+                abbr_mine -e -v $executable "grc $executable"
+            end
+        end
+    end
+end
+
+if exists yazi
+    ### yazi wrapper which provides the ability
+    ##     to change the current working directory
+    ##     when exiting yazi
+    #? docs: https://yazi-rs.github.io/docs/quick-start/#shell-wrapper
+    function y
+        set tmp (mktemp -t "yazi-cwd.XXXXXX")
+        yazi $argv --cwd-file="$tmp"
+        if set cwd (command cat -- "$tmp"); and [ -n "$cwd" ]; and [ "$cwd" != "$PWD" ]
+            builtin cd -- "$cwd"
+        end
+        rm -f -- "$tmp"
+    end
+end
+
+if exists atuin
+    atuin init fish --disable-up-arrow | source
+end
+
+if exists zoxide
+    zoxide init --cmd cd fish | source
+end
+
+if exists starship
+    set -gx STARSHIP_LOG error # should remove warning for git branch taking too long to load
+    starship init fish | source
+end
+
+if exists navi
+    navi widget fish | sed 's/\cg/\ce/' | source
+end

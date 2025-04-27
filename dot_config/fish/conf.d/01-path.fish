@@ -11,4 +11,7 @@ switch (uname)
         ### add bin path because trash will existing in future macos versions
         fish_add_path -p /opt/homebrew/opt/macos-trash/bin
     case '*'
+        if test -f /home/linuxbrew/.linuxbrew/bin/brew
+            eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
+        end
 end

@@ -12,6 +12,8 @@ Planned:
 	- core.cheat
 	- random.cheat
 	- unix.cheat
+	- new cheats
+		- fish functions -> cdf
 - justfile
 	- ### todo: gc (plus fish alias)
 	- degit variant
@@ -38,6 +40,16 @@ Planned:
 - navi template for linux only
 - navi template for macos only
 - fish keymaps
+- check that fish brew path works on linux
+- simple tmux config (catppucin)
+- zellij auto-integration? (esp over ssh)
+- cleanup fish 'features' documentation / shell integration
+	- use ... | source , then override keybinds later
+- catppuccin atuin
+- document COLORTERM true color mode -> does it only need to be over ssh?
+- nicities:
+	- setup zellij / lack of nerdfont support for basic tty modes -> navi cheat with config override
+	- ~~perhaps this could be a simple_fonts chezmoi value~~ (no such mode exits)
 
 Add Development header to readme
 All dotfiles should include a doc reference
