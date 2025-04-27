@@ -51,6 +51,14 @@ if exists yazi
     end
 end
 
+if exists bat
+    set themes (bat --list-themes)
+    if ! echo "$themes" | grep -q 'Catppuccin Latte'
+        or ! echo "$themes" | grep -q 'Catppuccin Mocha'
+        bat cache --build &>/dev/null
+    end
+end
+
 if exists atuin
     atuin init fish --disable-up-arrow | source
 end
