@@ -1,2 +1,5 @@
-**/*.local.*
-.chezmoidata.*
+.chezmoidata.toml
+
+### custom localfiles
+.chezmoiignore.local
+dot_config/helix/languages.local.toml

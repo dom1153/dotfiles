@@ -1,0 +1,229 @@
+% git
+; TODO git clone paste in repo interactive
+; branching
+; basics (edit, remove, stash, commit, push, diff, merge)
+
+# login to git via github
+gh auth login
+
+# check login status gihtub
+gh auth login
+
+# get all git config urls from below directories into nvim
+bat --paging=never */.git/config | grep --color=auto 'url = ' | sed -E 's/.*url = //g' | nvim
+
+# get git config remote url clone source
+git remote get-url origin
+
+# get get repo size (fast; correctly follows git ignore)
+git count-objects -vH
+
+# push and create branch named feature/homepage-shuffle to remote origin (github)
+git push origin <curBranch>
+$ curBranch: git symbolic-ref --short HEAD
+
+# hide file from git
+git add --intent-to-add flake.nix flake.lock; git update-index --assume-unchanged flake.nix flake.lock
+
+# unhide file from git
+git restore --staged flake.nix flake.lock
+
+# fix git old new types chmod
+git diff -p \
+  | grep -E '^(diff|old mode|new mode)' \
+  | sed -e 's/^old/NEW/;s/^new/old/;s/^NEW/new/' \
+  | git apply
+
+
+; ----------------------------------------------------------------------------
+
+% go
+
+# init module
+go mod init mypackage
+
+# init module with cobra-cli
+go mod init mypackage && cobra-cli init
+
+# install packages based on main module
+go get
+
+# run go standalone/package (must be inside package directory)
+go run
+
+# cobra-cli add a commnad to cli package
+cobra-cli add
+
+; ----------------------------------------------------------------------------
+
+% rust
+
+; ----------------------------------------------------------------------------
+
+% python
+
+# use a requirement.txt (requires virtualenv; e.g. basic flake)
+python -m venv .venv; source .venv/bin/activate; pip install -r requirements.txt
+
+; ----------------------------------------------------------------------------
+
+% nix-develop, nix-shell
+
+# rust nix shell
+nix develop "github:DeterminateSystems/zero-to-nix#rust"
+
+# go nix shell
+nix develop "github:DeterminateSystems/zero-to-nix#go"
+
+# python nix shell
+nix develop "github:DeterminateSystems/zero-to-nix#python"
+
+# npm nix shell
+nix develop "github:DeterminateSystems/zero-to-nix#javascript"
+
+# haskell nix shell
+nix develop "github:DeterminateSystems/zero-to-nix#haskell"
+
+# scala nix shell
+nix develop "github:DeterminateSystems/zero-to-nix#scala"
+
+# cmake nix shell
+nix develop "github:DeterminateSystems/zero-to-nix#cpp"
+
+; ----------------------------------------------------------------------------
+
+% web, npm
+
+# npm install save dev
+npm install prisma --save-dev
+
+# run npm installed apps (non-global, without npm script)
+npx vercel
+
+; jq -r '.scripts|to_entries[]|((.key))' package.json
+# run npm scripts
+npm run dev
+
+# list npm run entries
+npm run
+
+# install save npm
+npm install --save pkg
+
+# install save-dev npm (e.g. @types/ )
+npm install --save -D pkg
+
+# npm save dev shorthand
+npm i -D pkg
+
+# astro starter
+npm create astro@latest
+
+# pass args to npm run
+npm run dev -- --host
+
+# upgrade npm package to newest version
+npm i lucide-react@latest
+
+# list npm scripts
+jq '.scripts' package.json
+
+% pnpm
+
+# npx equivalent of npm
+pnpm dlx
+
+; ----------------------------------------------------------------------------
+
+% pixi, python
+
+# main pixi package manager comman
+pixi
+
+# pixi init
+pixi init pixi-hello-world
+
+# pixi python (requires init)
+pixi add python
+
+# pixi run file
+pixi run python hellow_world.py
+
+# add task 'hello' to run python
+pixi task add hello python hello_world.py
+
+# pixi run task (like npm)
+pixi run hello
+
+# pixi install (like npm)
+pixi install
+
+; ----------------------------------------------------------------------------
+
+% jq, dasel
+
+# get pixi tasks (dasel)
+dasel -f pixi.toml 'tasks'
+
+# convert json to yaml
+dasel -f pixi.toml -w yaml > pixi.yaml
+
+; ----------------------------------------------------------------------------
+
+% yq, jq
+
+# get pixi tasks (yq) oy output yaml
+yq -oy '.tasks' pixi.toml
+
+; ----------------------------------------------------------------------------
+
+% jq, jnv
+
+; .[].wikiUrl
+# interactive jq
+jnv <json>
+$ json: find . -maxdepth 1 -name "*.json"
+
+% htmlq, jq
+
+# find an element by id
+curl --silent https://www.rust-lang.org/ | htmlq '#get-help'
+
+# get all links from a url
+curl --silent https://www.rust-lang.org/ | htmlq --attribute href a
+
+# get the contents of a post
+curl --silent https://nixos.org/explore/ | htmlq --text h1
+
+# remove a large svg before output
+curl --silent https://nixos.org/ | ./target/debug/htmlq '.whynix' --remove-nodes svg
+
+; # pretty print html (builtin)
+; curl --silent https://mgdm.net | htmlq --pretty '#posts'
+
+# pretty print html bat version
+curl --silent example.com | htmlq 'body' | bat --language html
+
+; ----------------------------------------------------------------------------
+
+% watchexec, watch
+
+# watchexec example 1 (run build on execute)
+watchexec -e js,css,html npm run build
+
+# watchexec example 2 (restart python)
+watchexec -r -e py -- python server.py
+
+# golang example (nix)
+watchexec -e go go run src/atourofgo/tour.g
+
+# entr
+
+# watch file and run command (npm project example)
+find src | entr npm run build
+
+# watch file and run command (single file example with clear -c)
+echo 'by-example/foo.hs' | entr -c runhaskell by-example/foo.hs
+
+# watch file and run command (single file and generic shell arguments -s)
+echo 'by-example/foo.hs' | entr -c -s 'ormolu --mode inplace by-example/foo.hs'

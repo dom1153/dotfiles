@@ -1,0 +1,21 @@
+#? docs (file) https://github.com/alexpasmantier/television/blob/main/.config/config.toml
+
+[ui]
+use_nerd_font_icons = true
+show_help_bar = true
+{{ if hasKey . "light_mode" -}}
+theme = "catppuccin-latte-green.toml"
+{{ else -}}
+theme = "catppuccin-mocha-green.toml"
+{{ end }}
+
+[previewers.file]
+## specify same name as bat theme
+{{ if hasKey . "light_mode" -}}
+theme = "Catppuccin Latte"
+{{ else -}}
+theme = "Catppuccin Mocha"
+{{ end }}
+
+[keybindings.Channel]
+toggle_help = "ctrl-h" # default is ctrl-g, bad for zellij

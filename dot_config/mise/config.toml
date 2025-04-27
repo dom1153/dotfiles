@@ -1,5 +1,0 @@
-[tools]
-### domain specific
-go = "latest"
-bun = "latest"
-deno = "latest"

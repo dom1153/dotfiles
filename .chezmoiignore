@@ -8,3 +8,68 @@ files/**
 
 # template related files
 **/*.local.*
+
+# dist ; makes
+.CFUserTextEncoding
+.DS_Store
+.Trash
+.bash_history
+.bash_logout
+.bashrc
+.bin
+.cache
+.cargo
+.config/Code
+.config/chezmoi
+.config/chromium
+.config/fish/fish_variables
+.config/gh
+.config/ghostty
+.config/go
+.config/google-chrome
+.config/gtk-3.0
+.config/gtk-4.0
+.config/helix/runtime
+.config/libreoffice
+.config/navi/navi.log
+.config/nushell
+.config/raycast
+.docker
+.gitconfig
+.lesshst
+.local
+.npm
+.orbstack
+.rustup
+.ssh
+.vim
+.viminfo
+.vscode
+.wakatime
+.zprofile
+.zsh_history
+.zsh_sessions
+Applications
+Desktop
+Documents
+Documents
+Downloads
+Downloads
+Dygma
+Library
+Movies
+Music
+OrbStack
+Pictures
+Public
+Templates
+Videos
+fav
+gits
+go
+mnt
+tmp
+
+{{ if hasKey . "chezmoi_ignore_local" -}}
+	{{ include ".chezmoiignore.local" }}
+{{ end -}}

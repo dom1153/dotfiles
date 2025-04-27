@@ -1,0 +1,23 @@
+#? docs: https://ghostty.org/docs/config/reference
+
+### appearance
+font-feature=-calt, -liga, -dlig # disable font ligatures
+background-opacity=0.95
+{{- if eq .chezmoi.os "darwin" }}
+font-size=14
+{{- else }}
+font-size=10
+{{ end }}
+{{ if hasKey . "light_mode" -}}
+theme=catppuccin-latte
+{{ else -}}
+theme=catppuccin-mocha
+{{ end }}
+
+### behavior
+# disable quit prompt, annoying when trying to shutdown pc
+confirm-close-surface="false"
+
+# don't leave instances in dock (macos)
+quit-after-last-window-closed="true"
+

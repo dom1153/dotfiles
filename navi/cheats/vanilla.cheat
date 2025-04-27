@@ -1,0 +1,247 @@
+% wl-copy, wl-paste, wayland, clipboard
+
+# Wayland copy $PWD (no newline)
+pwd | wl-copy -n
+
+; ----------------------------------------------------------------------------
+
+% copy, paste, clipboard, macos, mac os, darwin
+
+# MacOS copy $PWD
+pwd | tr -d '\n' | pbcopy
+
+# PWD copy xserver
+pwd | tr -d '\n' | xclip -sel clip
+
+; ----------------------------------------------------------------------------
+
+% macos, sip, system integrity
+
+; '/System/Applications/Utilities/System Information.app' -> 'Software' can tell you status as well
+# check system integrity protection status
+csrutil status
+
+% macos, mac os, darwin, poweroff
+# poweroff mac
+sudo shutdown -h now
+
+% macos, mac os, darwin, reboot
+# reboot mac
+sudo shutdown -r now
+
+% macos, mac os, darwin, finder, open, file
+# open apps from cli
+open <file>
+
+# open folder . here
+open .
+
+% macos, darwin, dock, reset, cache, kitty, neovide
+# force the Dock to update its cached icons
+rm /var/folders/*/*/*/com.apple.dock.iconcache; killall Dock
+
+% macos, bundle
+# get code bundle identifier (e.g. com.github.wez.wezterm)
+codesign -dr - /path/to/yourapp.app
+
+% macos, brew, cask
+# brew list cask -> nvim
+brew list --cask | nvim -R
+
+# brew list formulae -> nvim
+brew list --formulae | nvim -R
+
+# brew upgrade
+brew update && brew upgrade
+
+# brew search <text>
+brew search
+
+# brew outdated
+brew outdated
+
+# mount macos samba from command line (calls finder ; must be running)
+open 'smb://archoo@alma-armas'
+
+# get local ip (mac) wifi
+ipconfig getifaddr en1
+
+# get local ip (mac) ethernet
+ipconfig getifaddr en0
+
+; https://apple.stackexchange.com/questions/20547/how-do-i-find-my-ip-address-from-the-command-line
+# public ip (mac)
+dig -4 TXT +short o-o.myaddr.l.google.com @ns1.google.com
+
+; ----------------------------------------------------------------------------
+
+% unix
+
+# diff directory / folders
+diff -qr
+
+# get full home manager log
+systemctl -l status home-manager-archoo.service --lines 200
+
+# get port usage (linux)
+sudo netstat -nlp
+
+# netstat check ports a different way
+sudo netstat -tulpn
+
+; kill -9 PID
+# universal quick get port
+lsof -i tcp:3000
+
+# kill process running on based on port
+kill $(lsof -t -i:8000)
+
+# download a file
+wget
+
+# download a file with custom output name
+wget <url> -O <filename>
+
+# check external ip
+curl -s http://checkip.dyndns.org/ | sed 's/[a-zA-Z<>/ :]//g'
+
+# local ip (universal, many)
+ifconfig | grep "inet " | grep -Fv 127.0.0.1 | awk '{print $2}'
+
+# is my internet working
+grc ping -D www.google.com
+
+# get pc name
+hostname
+
+# get username
+whoami
+
+# find who is using a port (macos)
+sudo lsof -i -P | grep LISTEN | grep :<port>
+
+# get the REAL pwd
+pwd --physical
+
+# view disk size overall
+lsblk
+
+# view disk size overall (grc)
+lsblk
+
+# disk size overall with cool columns
+lsblk -o name,mountpoint,label,size,uuid
+
+# disk size overall with cool columns (grc), get nix mount info
+grc lsblk -o name,mountpoint,label,size,uuid
+
+# view disk usage directory
+ncdu
+
+# disk usage top 20 items (highest at the bottom)
+du -h -- * | sort -h | tail -20
+
+# (grc) disk usage fast (colorful) (can pass file path)
+grc df -h
+
+# disk usage fast (no grc)
+df -h
+
+# check users on system
+cat /etc/passwd
+
+# (bat) check users on system
+bat /etc/passwd
+
+# view tar without extracting
+tar -tf <tarfile>
+$ tarfile: find . -maxdepth 1 -name "*.tar*"
+
+# unzip tar
+tar xvf
+
+# tar with progress (requires pv)
+tar cf - <dname> -P | pv -s $(du -sb <dname> | awk '{print $1}') | gzip > <dname>.tar.gz
+$ dname: find . -type d -maxdepth 1
+; MACOS tar cf - /folder-with-big-files -P | pv -s $(($(du -sk /folder-with-big-files | awk '{print $1}') * 1024)) | gzip > big-files.tar.g
+; https://superuser.com/questions/168749/is-there-a-way-to-see-any-tar-progress-per-file
+
+# compress with 7z, built in progress
+7z a <dname>
+$ dname: find . -type d -maxdepth 1
+
+# unzip zip file to 'extract' folder
+unzip <zips> -d <zipName>
+$ zips: find . -maxdepth 1 -name "*.zip"
+$ zipName: bash -c 'f=$(basename -- "$zips");echo ${f%.*};'
+
+# find all files of extension but ignore directory
+find . -path ./node_modules -prune -o -name '*.ts' -print
+
+# find search all of filetype zips in current directory
+find . -maxdepth 1 -name "*.zip"
+
+; https://stackoverflow.com/questions/965053/extract-filename-and-extension-in-bash
+# bash get filename (no extension)
+bash -c 'f=$(basename -- "<fname>");echo ${f%.*};'
+
+# bash get filename extension
+bash -c 'f=$(basename -- "<fname>");echo ${f##*.};'
+$ fname: find . -type f
+
+# nvim to random tmp file scratch
+nvim /tmp/$(bash -c 'echo $RANDOM | tr 0123456789 abcdefghij').txt
+
+; --appimage-help
+# extract appimage contents
+./zen-specific.AppImage --appimage-extract
+
+# find suspended ^Z jobs
+jobs
+
+# resume backgrounde jobs
+fg
+
+# ssh file transfer (mbp)
+sftp mbp
+# journalctl
+journalctl --follow -u plex.service
+
+# wait to ping
+bash -c 'until ping -c1 alma-armas >/dev/null 2>&1; do :; done'
+
+# some random x11 xserver forwarding fix (run on server)
+export XAUTHORITY=$HOME/.Xauthority
+
+# get mount options
+cat /proc/mounts
+
+# get uid and guid
+id
+
+# get uid and guid (color)
+grc id
+
+# linux get permissions as chmod number format
+stat --format '%a' '<fname>'
+$ fname: find . -type f
+
+# (danger!) set directory files to default permissions
+gum confirm && find <pickDir> -type f -exec chmod 644 {} +
+$ pickDir: find . -type d
+
+# (danger!) set directory to default permissions
+gum confirm && find <pickDir> -type d -exec chmod 755 {} +
+$ pickDir: find . -type d
+
+# find default ip internet ethernet device
+ip route show default | awk '{print $5}'
+
+# chown on current directory items
+sudo chown $(id -u):$(id -g) *
+
+# cd to absolute pwd (fish)
+cd $(pwd --physical)
+
+# cd to pwd (bash)
+cd $(pwd)
