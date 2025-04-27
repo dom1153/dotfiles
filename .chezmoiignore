@@ -4,6 +4,7 @@
 README.md
 **/README.md
 todo.txt
+dist/**
 files/**
 
 # template related files
@@ -24,7 +25,6 @@ files/**
 .config/chromium
 .config/fish/fish_variables
 .config/gh
-.config/ghostty
 .config/go
 .config/google-chrome
 .config/gtk-3.0

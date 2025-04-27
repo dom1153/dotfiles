@@ -1,0 +1,17 @@
+[private]
+default:
+    @just --list --list-submodules --justfile {{justfile()}}
+
+[confirm]
+[private]
+stow:
+    #!/usr/bin/env bash
+    set -euxo pipefail
+    if [[ ! -d ~/.dotfiles ]]; then
+        cp -r dot_dotfiles ~/.dotfiles
+        git init ~/.dotfiles
+    fi
+
+[confirm]
+setup:
+    @just stow

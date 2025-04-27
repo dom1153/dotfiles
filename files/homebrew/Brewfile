@@ -23,6 +23,7 @@ brew "pnpm"
 brew "serpl" ### find and replace
 brew "speedtest-cli"
 brew "starship"
+brew "stow"
 brew "tealdeer"
 brew "television"
 brew "uutils-coreutils"
