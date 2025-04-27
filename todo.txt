@@ -16,6 +16,9 @@ Planned:
 	- degit variant
 	- setup (dist files / prompts -- gum?)
 	- a way to check if config is out of data (e.g. verify version of setup)
+	- brew config
+		- + layout maybe
+		- compare current /tmp/Brewfile to existing (difft)
 - brew gum
 - maintenence: check that brew bundle is out of sync (or command)
 - more dotfile cleanup
@@ -23,8 +26,10 @@ Planned:
 	- tealdeer
 	- zellij
 - local fish env override
+- fisher setup
+	- fish_config theme save "Catppuccin Mocha"
 
-Add Development header
+Add Development header to readme
 All dotfiles should include a doc reference
 If a local file can be provided, put it in files/dist with a version label (and be called .dist)
 Chezmoi template files should have a ### === warning header
