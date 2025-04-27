@@ -1,3 +1,7 @@
+if not string match -q -- $PNPM_HOME $PATH
+  set -gx PATH "$PNPM_HOME" $PATH
+end
+
 switch (uname)
     case Darwin
         if test -f /opt/homebrew/bin/brew

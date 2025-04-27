@@ -99,6 +99,12 @@ abbr ns nix-shell
 abbr ndc 'nix develop --command bash -c "'
 abbr nsc 'nix-shell --run "bash -c '
 
+abbr sx 'source ~/.config/fish/config.fish'
+abbr xx 'hx ~/.config/fish/config.fish'
+abbr z zellij
+abbr j just
+abbr jg 'just -g'
+
 # if test $TERM = foot
 #     abbr ssh 'kitty kitten ssh'
 # end
