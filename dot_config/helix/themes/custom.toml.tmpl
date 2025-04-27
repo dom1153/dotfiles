@@ -1,0 +1,7 @@
+
+{{- if hasKey . "light_mode" -}}
+inherits = "catppuccin_latte"
+{{- else -}}
+inherits = "catppuccin_mocha"
+{{ end }}
+"ui.background" = {}

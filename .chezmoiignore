@@ -3,4 +3,8 @@
 # documents and non-dotfiles
 README.md
 **/README.md
+todo.txt
 files/**
+
+# template related files
+**/*.local.*

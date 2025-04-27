@@ -390,6 +390,11 @@ gh screensaver -smarquee -- --message="hello world" --font="standard"
 
 # misc
 
+% mise
+
+# make mise be quiet
+muse trust --ignore
+
 % ghostty
 
 # macos open ghostty with catppuccin latte theme

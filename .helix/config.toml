@@ -1,0 +1,3 @@
+[editor.file-picker]
+### allow file picker to see .gitignore files like .chezmoidata.toml
+git-ignore = false
