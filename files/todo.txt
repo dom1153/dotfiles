@@ -50,6 +50,7 @@ Planned:
 - nicities:
 	- setup zellij / lack of nerdfont support for basic tty modes -> navi cheat with config override
 	- ~~perhaps this could be a simple_fonts chezmoi value~~ (no such mode exits)
+- setup brewfile refresh time
 
 Add Development header to readme
 All dotfiles should include a doc reference
@@ -78,3 +79,4 @@ Wants / Needs research:
 - best way to make a cli clipboard command between macos and linux (pipe to 'copy')
 	- test zellij flows
 	- test ssh flows (with zellij)
+- tealdeer hook? -> probably autoupdate flag
