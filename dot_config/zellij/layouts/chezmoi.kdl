@@ -1,0 +1,36 @@
+default_shell "fish"
+
+layout {
+    default_tab_template {
+        pane size=1 borderless=true {
+            plugin location="zellij:tab-bar"
+        }
+        children
+        pane size=1 borderless=true {
+            plugin location="zellij:status-bar"
+        }
+    }
+
+    tab name="~/.local/share/chezmoi" cwd="~/.local/share/chezmoi" {
+        pane split_direction="vertical" {
+            pane command="hx" {
+                args "README.md"
+            }
+            pane split_direction="horizontal" {
+                pane command="yazi" {
+                    args "~/.local/share/chezmoi"
+                }
+                pane
+            }
+        }
+    }
+
+    tab name="~/.config" cwd="~/.config" {
+        pane split_direction="vertical" {
+            pane command="yazi" {
+                args "~/.config"
+            }
+            pane
+        }
+    }
+}
