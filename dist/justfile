@@ -8,7 +8,7 @@ stow:
     #!/usr/bin/env bash
     set -euxo pipefail
     if [[ ! -d ~/.dotfiles ]]; then
-        cp -r dot_dotfiles ~/.dotfiles
+        cp -r dotfiles ~/.dotfiles
         git init ~/.dotfiles
     fi
 
