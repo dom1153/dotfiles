@@ -2,7 +2,7 @@
 ##  Add shell integration commands in this file
 ##  For other specific configuration, use an appropriate dotfile or environment variable (ZZ_env.fish)
 
-if exists fish
+if exists fzf
     ## remove bg but keep bg+ for transparent terminal background
     {{ if hasKey . "light_mode" -}}
     ### catppuccin latte
@@ -73,5 +73,5 @@ if exists starship
 end
 
 if exists navi
-    navi widget fish | sed 's/\cg/\ce/' | source
+    navi widget fish | sed 's/cg _/ce _/' | source
 end
