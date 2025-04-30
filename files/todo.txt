@@ -51,6 +51,7 @@ Planned:
 	- setup zellij / lack of nerdfont support for basic tty modes -> navi cheat with config override
 	- ~~perhaps this could be a simple_fonts chezmoi value~~ (no such mode exits)
 - setup brewfile refresh time
+- folder scaffolding -> _fav with chezmoi, chezmoi_dotfiles, dot_dotfiles, config_dotfiles
 
 Add Development header to readme
 All dotfiles should include a doc reference
