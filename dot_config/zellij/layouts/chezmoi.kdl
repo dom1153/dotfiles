@@ -13,9 +13,7 @@ layout {
 
     tab name="~/.local/share/chezmoi" cwd="~/.local/share/chezmoi" {
         pane split_direction="vertical" {
-            pane command="hx" {
-                args "README.md"
-            }
+            pane command="hx"
             pane split_direction="horizontal" {
                 pane command="yazi" {
                     args "~/.local/share/chezmoi"
@@ -27,10 +25,13 @@ layout {
 
     tab name="~/.config" cwd="~/.config" {
         pane split_direction="vertical" {
-            pane command="yazi" {
-                args "~/.config"
+            pane command="hx"
+            pane split_direction="horizontal" {
+                pane command="yazi" {
+                    args "~/.config"
+                }
+                pane
             }
-            pane
         }
     }
 

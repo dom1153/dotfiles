@@ -41,6 +41,10 @@ language-servers = [ "xml" ]
 
 [language-server.xml]
 command = "lemminx-linux"
+
+[language-server.yaml-language-server.config.yaml.schemas]
+"https://json.schemastore.org/mprocs-0.6.4.json" = "mprocs.yaml"
+
 {{ if hasKey . "helix_lang" -}}
 	{{ include "dot_config/helix/languages.local.toml" -}}
 {{- end -}}
