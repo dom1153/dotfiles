@@ -3,7 +3,7 @@
     ./core.nix
     ./cli.nix
     ./desktop.nix
-    # ./disks.nix
+    ./disks.nix
     ./services.nix
 
     ./hardware-configuration.nix

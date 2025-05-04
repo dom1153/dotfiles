@@ -3,3 +3,6 @@
 ### custom localfiles
 .chezmoiignore.local
 dot_config/helix/languages.local.toml
+
+## nixos build files
+**/result

@@ -1,4 +1,5 @@
-{...}: let
+{ ... }:
+let
   share750 = "badtouch";
   disk750 = "/mnt/badtouch-750G";
   export750 = "/export/badtouch";
@@ -10,7 +11,8 @@
   share4T = "moonblast";
   disk4T = "/export/moonblast";
   export4T = "/mnt/moonblast-2T";
-in {
+in
+{
   fileSystems.${disk750} = {
     device = "/dev/disk/by-uuid/1c3264bb-557e-4a59-943b-f42c3fdaebd8";
     options = [
@@ -50,24 +52,26 @@ in {
 
   fileSystems.${export750} = {
     device = "${disk750}";
-    options = ["bind"];
+    options = [ "bind" ];
   };
 
   fileSystems.${export2T} = {
     device = "${disk2T}";
-    options = ["bind"];
+    options = [ "bind" ];
   };
 
   fileSystems.${export4T} = {
     device = "${disk4T}";
-    options = ["bind"];
+    options = [ "bind" ];
   };
 
   services.samba = {
     enable = true;
-    securityType = "user";
     openFirewall = true;
-    shares = {
+    settings = {
+      global = {
+        security = "user";
+      };
       ${share750} = {
         path = "${export750}";
         writable = "true";

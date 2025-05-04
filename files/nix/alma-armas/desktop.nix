@@ -13,7 +13,7 @@
     cozette
     dina-font
     monaspace
-    nerdfonts
+    (nerdfonts.override {fonts = ["FiraCode" "CascadiaCode"];})
   ];
 
   programs = {
@@ -29,10 +29,12 @@
   #? Flathub: https://flatpak.org/setup/NixOS
   services.flatpak.enable = true;
 
-  users.users."user" = {
+  users.users.alma-armas = {
+    isNormalUser = true;
+    extraGroups = [ "networkmanager" "wheel" "docker" ];
     packages = with pkgs; [
       flatpak
-      gnome.gnome-software
+      gnome-software
     ];
   };
 }
