@@ -26,11 +26,6 @@
     };
   };
 
-  users.users.alma-armas = {
-    isNormalUser = true;
-    extraGroups = [ "networkmanager" "wheel" ];
-  };
-
   networking.networkmanager.enable = true;
 
   nix = {

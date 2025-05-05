@@ -1,7 +1,6 @@
 { pkgs, ... }: {
-  environment.pathsToLink = [ "/share/zsh" "/share/fish" ];
+  environment.pathsToLink = [ "/share/fish" ];
   programs = {
-    zsh.enable = true;
     fish.enable = true;
   };
 
@@ -11,9 +10,11 @@
     bat
     chezmoi
     difftastic
+    distrobox
     eza
     fd
     gh
+    git
     grc
     helix
     just
@@ -21,7 +22,6 @@
     lazygit
     lolcat
     mergiraf
-    mise
     mosh
     mprocs
     navi
