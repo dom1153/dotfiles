@@ -4,7 +4,7 @@ default:
 
 [confirm]
 [private]
-dotfiles:
+scaffold:
     #!/usr/bin/env bash
     set -euxo pipefail
     if [[ ! -d ~/.dotfiles ]]; then
@@ -14,4 +14,4 @@ dotfiles:
 
 [confirm]
 setup:
-    @just dotfiles
+    @just scaffold

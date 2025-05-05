@@ -1,8 +1,10 @@
 CONFIG := "./chezmoi/chezmoi.toml"
 default:
     @just --list
-apply:
-    chezmoi apply --config {{CONFIG}}
+apply *A:
+    chezmoi apply --config {{CONFIG}} {{A}}
 chezmoi *A:
     chezmoi --config {{CONFIG}} {{A}} 
+preview *A:
+    chezmoi apply --config {{CONFIG}} --dry-run --verbose {{A}}
     
