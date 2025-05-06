@@ -33,13 +33,30 @@ in
     permitCertUid = "caddy"; # gives permission to for caddy to read tailscale's dns information
   };
 
-  services.caddy = {
-    enable = false;
+  services.caddy = { # journalctl -xeu caddy.service
+    enable = true;
     virtualHosts = {
       # '${machineName}/' resolve to tailnet url in the browser
-      # "http://${machineName}".extraConfig = ''redir https://${tailnetDomain}:443'';
+      "http://${machineName}".extraConfig = ''redir https://${tailnetDomain}{uri}'';
 
-      # "${hostname}:9531".extraConfig = ''reverse_proxy http://localhost:7531'';
+      "${tailnetDomain}".extraConfig = ''
+        handle_path / {
+            redir https://${tailnetDomain}:9000
+        }
+        handle_path /dashy* {
+            redir https://${tailnetDomain}:9000
+        }
+        handle_path /deluge* {
+            redir https://${tailnetDomain}:9001
+        }
+        handle_path /plex* {
+            redir https://${tailnetDomain}:9002
+        }
+      '';
+
+      "${tailnetDomain}:9000".extraConfig = ''reverse_proxy http://localhost:8080''; # DASHY
+      "${tailnetDomain}:9001".extraConfig = ''reverse_proxy http://localhost:8112''; # DELUGE
+      "${tailnetDomain}:9002".extraConfig = ''reverse_proxy http://localhost:32400''; # PLEX
     };
   };
 
