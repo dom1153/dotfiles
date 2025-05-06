@@ -10,9 +10,26 @@ keybinds {
     session {
         bind "Ctrl q" { SwitchToMode "Normal"; }
     }
+    move {
+        bind "Ctrl m" { SwitchToMode "normal"; }
+        unbind "Ctrl h"
+    }
     shared_except "locked" "session" {
         bind "Ctrl q" { SwitchToMode "session"; }
+        bind "Ctrl q" { SwitchToMode "session"; }
         unbind "Ctrl o"
+    }
+    shared_except "locked" "scroll" "search" {
+        bind "Ctrl y" { SwitchToMode "scroll"; }
+        unbind "Ctrl s"
+    }
+    shared_except "locked" "move" {
+        bind "Ctrl m" { SwitchToMode "move"; }
+        unbind "Ctrl h"
+    }
+    shared_among "scroll" "search" {
+        bind "Ctrl y" { SwitchToMode "normal"; }
+        unbind "Ctrl s"
     }
 }
 
@@ -37,23 +54,36 @@ load_plugins {
 }
 
 themes {
+  catppuccin-latte-mine {
+    bg "#acb0be" // Surface2
+    fg "#4c4f69" // Text
+    red "#e6e9ef" // (Mantle)
+    green "#40a02b" // Green
+    blue "#1e66f5" // Blue
+    yellow "#df8e1d" // Yellow
+    magenta "#ea76cb" // Pink
+    orange "#fe640b" // Peach
+    cyan "#04a5e5" // Sky
+    black "#e6e9ef" // Mantle
+    white "#4c4f69" // Text
+  }
   catppuccin-mocha-mine {
     bg "#585b70" // Surface2
-    fg "#cdd6f4"
-    red "#181825" // ctrl + 'label'
-    green "#a6e3a1"
-    blue "#89b4fa"
-    yellow "#f9e2af"
+    fg "#cdd6f4" // Text
+    red "#181825" // (Mantle) ; ctrl + 'label'
+    green "#a6e3a1" // Green
+    blue "#89b4fa" // Blue
+    yellow "#f9e2af" // Yellow
     magenta "#f5c2e7" // Pink
     orange "#fab387" // Peach ; the 'Alt' + key color ; also pane select color
     cyan "#89dceb" // Sky
     black "#181825" // Mantle
-    white "#cdd6f4"
+    white "#cdd6f4" // Text
   }
 }
 
 {{ if hasKey . "light_mode" -}}
-theme "catppuccin-latte"
+theme "catppuccin-latte-mine"
 {{ else -}}
 theme "catppuccin-mocha-mine"
 {{ end }}
