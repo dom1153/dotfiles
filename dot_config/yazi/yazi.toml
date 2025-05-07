@@ -1,0 +1,6 @@
+[manager]
+linemode = "size_and_mtime"
+
+[flavor]
+light = "catppuccin-latte"
+dark = "catppuccin-mocha"

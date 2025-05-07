@@ -9,6 +9,7 @@ files/**
 
 # template related files
 **/*.local.*
+**/*.untmpl.*
 
 # dist ; makes
 .CFUserTextEncoding
