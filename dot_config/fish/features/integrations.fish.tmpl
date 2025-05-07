@@ -75,3 +75,7 @@ end
 if exists navi
     navi widget fish | sed 's/cg _/ce _/' | source
 end
+
+if exists zellij
+    eval (zellij setup --generate-auto-start fish | string collect)
+end

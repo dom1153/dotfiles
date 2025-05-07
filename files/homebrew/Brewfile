@@ -40,6 +40,7 @@ brew "zoxide"
 
 ### language servers
 brew "bash-language-server"
+brew "fish-lsp"
 brew "lua-language-server"
 brew "marksman" ### markdown
 brew "tailwindcss-language-server"
