@@ -79,3 +79,7 @@ end
 if exists zellij
     eval (zellij setup --generate-auto-start fish | string collect)
 end
+
+if exists zoxide
+  zoxide init fish | source
+end

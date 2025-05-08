@@ -33,11 +33,6 @@ X = "extend_line_above"
 V = ["select_mode", "extend_to_line_bounds"]
 ## slight config difference between helix <= v25.01.1 vs HEAD
 #? https://yazi-rs.github.io/docs/tips/#helix-with-zellij
-{{ if hasKey . "helix_head" }}
-C-e = ":sh zellij run -n Yazi -c -f -x 10%% -y 10%% --width 80%% --height 80%% -- bash ~/.config/helix/yazi-picker.sh open %{buffer_name}"
-{{ else }}
-C-e = ":sh zellij run -n Yazi -c -f -x 10% -y 10% --width 80% --height 80% -- bash ~/.config/helix/yazi-picker.sh open"
-{{ end }}
 
 ## Search for word under cursor
 "*" = [
@@ -84,6 +79,12 @@ esc = ["collapse_selection", "keep_primary_selection"]
 ### space bar menu commands
 [keys.normal."space"]
 "%" = "select_all" # select entire file like helix default behavior
+{{ if hasKey . "helix_head" }}
+e = ":sh zellij run -n Yazi -c -f -x 10%% -y 10%% --width 80%% --height 80%% -- bash ~/.config/helix/yazi-picker.sh open %{buffer_name}"
+E = ":sh zellij run -n Yazi -c -f -x 10%% -y 10%% --width 80%% --height 80%% -- bash ~/.config/helix/yazi-picker.sh open ."
+{{ else }}
+E = ":sh zellij run -n Yazi -c -f -x 10%% -y 10%% --width 80%% --height 80%% -- bash ~/.config/helix/yazi-picker.sh open ."
+{{ end }}
 
 [keys.select]
 ## vim-like behavior
@@ -117,3 +118,4 @@ esc = ["collapse_selection", "keep_primary_selection", "normal_mode"]
 
 [keys.insert]
 C-s = ["collapse_selection", "keep_primary_selection", "normal_mode", ":w"]
+C-x = "completion"

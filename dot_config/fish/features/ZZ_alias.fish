@@ -21,7 +21,6 @@ abbr_mine -e -v top btop
 
 ### command group aliases
 ## zellij
-abbr_mine z zellij
 abbr_mine zl 'zellij --layout'
 
 ## chezmoi
