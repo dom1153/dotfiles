@@ -22,3 +22,6 @@ confirm-close-surface="false"
 # don't leave instances in dock (macos)
 quit-after-last-window-closed="true"
 
+{{ if eq .chezmoi.os "darwin" }}
+keybind = super+shift+equal=increase_font_size:1
+{{ end }}

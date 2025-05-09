@@ -8,10 +8,4 @@ layout {
             plugin location="zellij:status-bar"
         }
     }
-
-	tab name="Default" {
-		pane close_on_exit=true command="sh" {
-			args "-c" "fastfetch; exec fish"
-		}
-	}
 }
