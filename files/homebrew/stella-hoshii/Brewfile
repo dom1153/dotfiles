@@ -32,4 +32,4 @@ cask "utm" ### virtual machine qemu UI
 cask "vial" ### rosetta
 cask "visual-studio-code"
 cask "wezterm"
-cask "zen-browser"
+cask "zen"
