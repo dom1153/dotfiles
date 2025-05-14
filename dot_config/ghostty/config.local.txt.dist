@@ -1,0 +1,4 @@
+#? ghostty +list-fonts
+#? preview fonts @ https://ghostty.zerebos.com/app/font-playground
+font-family=CaskaydiaCove Nerd Font Propo
+font-size=14

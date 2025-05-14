@@ -2,3 +2,15 @@
 
 # connect to orb machine
 orb
+
+# ripgrep everythiing
+rg SEARCH --no-ignore
+
+# list ghostty fonts
+ghostty +list-fonts
+
+# launch ghostty with font (linux)
+ghostty --font-family='Ubuntu Sans Mono' &
+
+# show all ghostty default values
+ghostty +show-config --default --docs
