@@ -1,3 +1,10 @@
+#? https://github.com/sxyazi/yazi/blob/main/yazi-config/preset/theme-dark.toml
+"$schema" = "https://yazi-rs.github.io/schemas/theme.json"
+
+[flavor]
+light = "catppuccin-latte"
+dark = "catppuccin-mocha"
+
 # disable yazi icons
 [status]
 sep_left = { open = "", close = "" }

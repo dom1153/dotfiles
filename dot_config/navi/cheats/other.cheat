@@ -177,3 +177,11 @@ apps: flatpak list --app --columns=application
 : # Ctrl-t
 # Close picker
 : # Escape, Ctrl-c
+
+; ----------------------------------------------------------------------------
+
+# get all ghostty fonts (exclude variants)
+ghostty +list-fonts | grep --color=auto -v '^[[:space:]]' | grep .
+
+# get all ghostty nerd fonts (exclude variants)
+ghostty +list-fonts | grep --color=auto -v '^[[:space:]]' | grep Nerd

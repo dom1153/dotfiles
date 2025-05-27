@@ -20,6 +20,6 @@ keybind=super+shift+equal=increase_font_size:1
 keybind=ctrl+shift+plus=increase_font_size:1
 {{ end }}
 
-{{ if hasKey . "ghostty_local "}}
+{{ if hasKey . "ghostty_local"}}
 {{ include "dot_config/ghostty/config.local.txt" -}}
 {{ end }}

@@ -29,7 +29,6 @@
     nixd
     nixpkgs-fmt
     nushell
-    serpl
     speedtest-cli
     starship
     tealdeer

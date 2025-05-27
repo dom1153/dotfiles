@@ -70,6 +70,12 @@ A-g = [
   ":reload-all",
 ]
 
+A-r = [
+  ":write-all",
+  ":insert-output scooter >/dev/tty",
+  ":redraw",
+  ":reload-all",
+]
 
 ## Escape the madness! No more fighting with the cursor! Or with multiple cursors!
 esc = ["collapse_selection", "keep_primary_selection"]
@@ -107,3 +113,5 @@ esc = ["collapse_selection", "keep_primary_selection", "normal_mode"]
 [keys.insert]
 C-s = ["collapse_selection", "keep_primary_selection", "normal_mode", ":w"]
 C-x = "completion"
+
+## <See template file for keys.normal.space>
