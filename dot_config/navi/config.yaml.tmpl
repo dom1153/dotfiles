@@ -6,17 +6,4 @@ style:
     color: white
 {{ end -}}
 
-finder:
-  command: fzf
-  overrides: --layout=reverse
-
-### default path is ~/.local/share/navi/cheats
-### can download more with `navi repo browse`
-### default repo is https://github.com/denisidoro/cheats
-cheats:
-  paths:
-    - ~/.config/navi/cheats
-    - ~/.local/share/navi/cheats
-
-shell:
-  command: bash
+{{ include "dot_config/navi/_include/config.yaml" }}

@@ -1,16 +1,22 @@
-; todo
+% dump
 
-# connect to orb machine
-orb
+# Write all casks/formulae/images/tap installs to a Brewfile
+brew bundle dump --file /tmp/Brewfile -f
 
-# ripgrep everythiing
-rg SEARCH --no-ignore
+# Display all casks/formulae/images/tap installs to a Brewfile
+brew bundle dump --file /tmp/Brewfile -f && bat --paging always /tmp/Brewfile
 
-# list ghostty fonts
-ghostty +list-fonts
+; see trilium
+; dust... etc
 
-# launch ghostty with font (linux)
-ghostty --font-family='Ubuntu Sans Mono' &
+; for every 'applist'... a vanilla
+; vanilla -> dust...
 
-# show all ghostty default values
-ghostty +show-config --default --docs
+# rsync folder (ssh)
+rsync -avz --progress /path/to/local/folder/ user@remote:/path/to/destination/
+
+# rsync folder (dry run ssh)
+rsync -avzn --delete /local/folder/ user@remote:/remote/folder/
+
+# disk usage fast
+df -h

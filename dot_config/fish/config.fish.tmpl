@@ -1,14 +1,10 @@
 ### conf.d fish files gets sourced before this file
-if status is-interactive
-    set fish_greeting ""
-    {{ if hasKey . "light_mode" -}}
-        fish_config theme choose "Catppuccin Latte"
-    {{ else -}}
-        fish_config theme choose "Catppuccin Mocha"
-    {{ end }}
+{{ include "dot_config/fish/_include/config.fish" }}
 
-    ### shell integrations, ZZ_keybinds, ZZ_aliases
-    for f in $__fish_config_dir/features/*.fish
-        source $f
-    end
+if status is-interactive
+    {{- if hasKey . "lightMode" }}
+    fish_config theme choose "Catppuccin Latte"
+    {{- else }}
+    fish_config theme choose "Catppuccin Mocha"
+    {{ end }}
 end

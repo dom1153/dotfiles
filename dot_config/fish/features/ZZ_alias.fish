@@ -1,43 +1,36 @@
 ### vanilla overrides
-abbr_mine -v cp 'cp -i'
-abbr_mine -v egrep 'egrep --color=auto'
-abbr_mine -v fgrep 'fgrep --color=auto'
-abbr_mine -v grep 'grep --color=auto'
-abbr_mine -v l "ls -lho"
-abbr_mine -v la "ls -laho"
-abbr_mine -v ls 'ls -lao'
-abbr_mine -v mv 'mv -i'
-abbr_mine -v pwd 'pwd --physical'
-abbr_mine -v rm 'rm -i'
+abbr_safe -v cp 'cp -i'
+abbr_safe -v egrep 'egrep --color=auto'
+abbr_safe -v fgrep 'fgrep --color=auto'
+abbr_safe -v grep 'grep --color=auto'
+abbr_safe -v ll 'ls -lao'
+abbr_safe -v l 'ls -lho'
+abbr_safe -v la 'ls -laho'
+abbr_safe -v mv 'mv -i'
+abbr_safe -v pwd 'pwd --physical'
+abbr_safe -v rm 'rm -i'
+abbr_safe hist history
 
-### vanilla overrides with *bling*
-abbr_mine -e -v cat 'bat --style=plain --paging=never'
-abbr_mine -e -v htop btop
-abbr_mine -e -v l 'eza -lho'
-abbr_mine -e -v la 'eza -laho'
-abbr_mine -e -v ls eza
-abbr_mine -e -v rm trash
-abbr_mine -e -v top btop
+### vanilla overrides with *bling* (when applicable)
+abbr_safe -ev cat bat
+abbr_safe -ev ls eza
+abbr_safe -ev l 'eza -lho'
+abbr_safe -ev la 'eza -laho'
+abbr_safe -ev rm trash
+abbr_safe -ev top btop
+abbr_safe -ev htop btop
 
-### command group aliases
-## zellij
-abbr_mine zl 'zellij --layout'
-
-## chezmoi
-abbr_mine ca "chezmoi apply"
-abbr_mine cadd "chezmoi add"
-abbr_mine cdd "chezmoi cd"
-abbr_mine cdiff "chezmoi diff"
-abbr_mine ce "chezmoi edit"
-abbr_mine cr "chezmoi remove"
-abbr_mine cu "chezmoi unmanaged"
+### vanilla overrides with custom cursor placement
+abbr_safe -ev man 'man % | bat --language man --paging=auto' -- --set-cursor
 
 ### aliases dump
-abbr_mine hist history
-abbr_mine j just
-abbr_mine jg 'just -g'
-abbr_mine lg lazygit
-abbr_mine nsp 'nix-shell -p'
-abbr_mine si rg
-abbr_mine sx 'source ~/.config/fish/config.fish'
-abbr_mine where "type -a"
+abbr_safe -e hx helix
+abbr_safe zl 'zellij --layout'
+abbr_safe ca 'chezmoi apply'
+abbr_safe cu 'chezmoi update'
+abbr_safe lg lazygit
+abbr_safe si rg
+abbr_safe sx 'exec fish'
+abbr_safe where 'type -a'
+abbr_safe gc 'git_clone'
+

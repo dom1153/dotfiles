@@ -13,37 +13,19 @@ layout {
 
     tab name="~/.local/share/chezmoi" cwd="~/.local/share/chezmoi" {
         pane split_direction="vertical" {
-            pane command="hx"
-            pane split_direction="horizontal" {
-                pane command="yazi" {
-                    args "~/.local/share/chezmoi"
-                }
-                pane
-            }
+            pane command="hx" start_suspended=true
         }
     }
 
     tab name="~/.config" cwd="~/.config" {
         pane split_direction="vertical" {
-            pane command="hx"
-            pane split_direction="horizontal" {
-                pane command="yazi" {
-                    args "~/.config"
-                }
-                pane
-            }
+            pane command="hx" start_suspended=true
         }
     }
 
     tab name="~/.dotfiles" cwd="~/.dotfiles" {
         pane split_direction="vertical" {
-            pane command="hx"
-            pane split_direction="horizontal" {
-                pane command="yazi" {
-                    args "~/.dotfiles"
-                }
-                pane
-            }
+            pane command="hx" start_suspended=true
         }
     }
 }

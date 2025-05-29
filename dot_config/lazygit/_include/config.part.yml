@@ -1,0 +1,7 @@
+quitOnTopLevelReturn: true # esc closes lazygit
+git:
+  pagers:
+    - pager: ""
+      externalDiffCommand: "difft --color=always"
+os:
+  editPreset: 'helix (hx)'

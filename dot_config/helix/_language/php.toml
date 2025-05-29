@@ -1,0 +1,71 @@
+### > phpactor status
+[language-server.phpactor]
+command = "phpactor"
+args = ["language-server"]
+
+# [[language]]
+# name = "php"
+# language-servers = ["phpactor"]
+
+[[language]]
+name = "php"
+scope = "source.php"
+injection-regex = "php"
+file-types = ["php", "inc", "php4", "php5", "phtml", "ctp"]
+shebangs = ["php"]
+roots = ["composer.json", "index.php"]
+comment-token = "//"
+language-servers = [ "phpactor" ]
+indent = { tab-width = 4, unit = "    " }
+
+### debug instructions (finicky)
+# apt-get install php8.4-xdebug
+#   a2enmod proxy_fcgi setenvif
+#   a2enconf php8.4-fpm
+# /etc/php/8.4/mods-available/xdebug.ini
+#   xdebug.mode = develop,debug
+#   xdebug.start_with_request = yes
+# sudo systemctl reload apache2
+# sudo systemctl restart php8.4-fpm
+# (update vscode extension too, see below)
+#   copy from ~/.vscode/extensions/xdebug.php-debug-1.37.0/out/phpDebug.js
+#   https://github.com/xdebug/vscode-php-debug/releases
+#   OR download .vsix release, and unzip
+#   (no path expansion :/)
+# MAKE SURE TO RUN WITH XDEBUG_MODE="debug" (or `just hxdebug`)
+# Works with apache php server too... even a local cli php should work (if XDEBUG_MODE="debug" is set)
+# :log-open
+# [language.debugger]
+# name = "vscode-php-debug"
+# transport = "stdio"
+# command = "node"
+# args = ["/home/dominic/.local/share/myphpdebug/xdebug.php-debug-1.37.0/out/phpDebug.js"]
+
+# [[language.debugger.templates]]
+# name = "Listen for Xdebug"
+# request = "launch"
+# args = {}
+## completion = ["ignored"] # creates silly prompt when starting debugger...
+
+# https://github.com/helix-editor/helix/issues/1896#issuecomment-2679282107
+[language-server.emmet-lsp]
+command = "emmet-language-server"
+args = ["--stdio"]
+
+# https://github.com/twigphp/Twig/issues/3650#issuecomment-1757466879
+# https://github.com/moetelo/twiggy
+[language-server.twiggy-lsp]
+command = "twiggy-language-server"
+args = ["--stdio"]
+
+# https://github.com/olrtg/emmet-language-server?tab=readme-ov-file#helix
+[[language]]
+name = "html"
+roots = [".git"]
+language-servers = ["vscode-html-language-server", "emmet-lsp"]
+
+[[language]]
+name = "twig"
+roots = [".git"]
+file-types = ["twig"]
+language-servers = ["twiggy-lsp", "emmet-lsp"]

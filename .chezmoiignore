@@ -1,19 +1,21 @@
+{{ if hasKey . "chezmoiIgnoreLocal" -}}
+	{{ include ".chezmoiignore.local" }}
+{{ end -}}
+
 .gitignore
 
 # documents and non-dotfiles
 README.md
 **/README.md
 todo.txt
-dist/**
 files/**
 
-# template related files
-**/*.local.*
-**/*.untmpl.*
-# *.part is a partial browser download oops
-**/*.part.*
+# chezmoi template related files
+**/_include
+**/_language
+**/_dist
 
-# dist ; makes
+# everything else
 .CFUserTextEncoding
 .DS_Store
 .Trash
@@ -95,7 +97,3 @@ gits
 go
 mnt
 tmp
-
-{{ if hasKey . "chezmoi_ignore_local" -}}
-	{{ include ".chezmoiignore.local" }}
-{{ end -}}
