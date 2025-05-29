@@ -6,6 +6,8 @@ keybinds {
         bind "Alt f" { ToggleFocusFullscreen; }
         bind "Alt /" "Ctrl /" { ToggleFloatingPanes; }
         bind "Ctrl alt q" { Quit; }
+        unbind "Alt o" // MoveTab "Left"
+        unbind "Alt i" // MoveTab "Right"
     }
     session {
         bind "Ctrl q" { SwitchToMode "Normal"; }

@@ -1,0 +1,14 @@
+@astrojs/language-server
+@biomejs/biome
+@olrtg/emmet-language-server
+@vue/language-server
+@vue/typescript-plugin
+concurrently
+emmet-cli
+live-server
+npkill
+svelte-language-server
+typescript
+typescript-language-server
+typescript-svelte-plugin
+vscode-langservers-extracted

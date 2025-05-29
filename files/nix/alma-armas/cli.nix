@@ -1,4 +1,11 @@
-{ pkgs, ... }: {
+{ inputs, pkgs, ... }:
+let
+  unstable = import inputs.nixpkgs-unstable {
+    system = pkgs.system;
+    config.allowUnfree = true;
+  };
+in
+{
   environment.pathsToLink = [ "/share/fish" ];
   programs = {
     fish.enable = true;
@@ -6,38 +13,39 @@
 
   environment.systemPackages = with pkgs; [
     alejandra
-    atuin
-    bat
-    chezmoi
+    unstable.atuin
+    unstable.bat
+    unstable.chezmoi
     difftastic
     distrobox
     eza
+    fastfetch
     fd
-    gh
+    unstable.gh
     git
     grc
-    helix
-    just
-    lazydocker
-    lazygit
+    unstable.helix
+    unstable.just
+    unstable.lazydocker
+    unstable.lazygit
     lolcat
     mergiraf
-    mosh
+    unstable.mosh
     mprocs
     navi
-    nil
-    nixd
-    nixpkgs-fmt
+    unstable.nil
+    unstable.nixd
+    unstable.nixpkgs-fmt
     nushell
     speedtest-cli
-    starship
+    unstable.starship
     tealdeer
     television
     trash-cli
     uutils-coreutils
     wget
-    yazi
-    zellij
+    unstable.yazi
+    unstable.zellij
     zoxide
   ];
 }
