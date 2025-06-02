@@ -1,0 +1,12 @@
+{
+	"name": "chezmoi",
+	"image": "mcr.microsoft.com/devcontainers/base:alpine-3.20",
+	"customizations": {
+		"vscode": {
+			"extensions": [
+				"tamasfe.even-better-toml",
+				"redhat.vscode-yaml"
+			]
+		}
+	}
+}
