@@ -1,0 +1,4 @@
+#? docs (file) https://github.com/alexpasmantier/television/blob/main/.config/config.toml
+
+[keybindings]
+toggle_help = "ctrl-h" # change from ctrl-g for zellij compatability
