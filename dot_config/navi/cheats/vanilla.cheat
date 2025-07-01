@@ -251,3 +251,6 @@ curl -s <URL> | $EDITOR
 
 # ssh terminfo fallback hack
 set -gx TERM xterm-256color
+
+# Find a deleted file in git commit history
+git log --all --full-history -- "**/thefile.*"
