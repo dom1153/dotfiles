@@ -41,3 +41,4 @@ abbr_mine nsp 'nix-shell -p'
 abbr_mine si rg
 abbr_mine sx 'source ~/.config/fish/config.fish'
 abbr_mine where "type -a"
+abbr_mine -e hx helix
