@@ -4,6 +4,8 @@
 [keys.normal."space"]
 "%" = "select_all" # select entire file like helix default behavior
 "J" = "join_selections_space" # alt-J conflicts with zellij, or doesn't work with ghostty
+# git blame https://github.com/helix-editor/helix/discussions/6421#discussioncomment-12486943
+B = ":sh git log -n 5 --format='format:%%h (%%an: %%ar) %%s' --no-patch -L%{cursor_line},+1:%{buffer_name}"
 
 ## slight config difference between helix <= v25.01.1 vs HEAD
 #? https://yazi-rs.github.io/docs/tips/#helix-with-zellij
