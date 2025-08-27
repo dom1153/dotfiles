@@ -34,6 +34,8 @@ git diff -p \
   | sed -e 's/^old/NEW/;s/^new/old/;s/^NEW/new/' \
   | git apply
 
+# install packages from a list
+cat global-packages.txt | xargs pnpm add -g
 
 ; ----------------------------------------------------------------------------
 
