@@ -1,10 +1,13 @@
-{{ include "dot_config/ghostty/config.part.txt" }}
+{{ include "dot_config/ghostty/_include/config" }}
 
-### appearance
 {{- if eq .chezmoi.os "darwin" }}
 font-size=14
+
+keybind=super+shift+equal=increase_font_size:1
 {{- else }}
 font-size=10
+
+keybind=ctrl+shift+plus=increase_font_size:1
 {{ end }}
 
 {{ if hasKey . "light_mode" -}}
@@ -13,13 +16,5 @@ theme=Catppuccin Latte
 theme=Catppuccin Mocha
 {{ end }}
 
-### behavior
-{{ if eq .chezmoi.os "darwin" }}
-keybind=super+shift+equal=increase_font_size:1
-{{- else }}
-keybind=ctrl+shift+plus=increase_font_size:1
-{{ end }}
-
-{{ if hasKey . "ghostty_local"}}
-{{ include "dot_config/ghostty/config.local.txt" -}}
-{{ end }}
+# optional config
+config-file = ?config.local

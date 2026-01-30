@@ -12,6 +12,8 @@ files/**
 **/*.untmpl.*
 # *.part is a partial browser download oops
 **/*.part.*
+**/_include
+**/_dist
 
 # dist ; makes
 .CFUserTextEncoding

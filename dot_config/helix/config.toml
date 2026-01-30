@@ -1,5 +1,5 @@
-### # to allow transparent terminal background
-theme = "custom" # ~/.local/share/chezmoi/dot_config/helix/themes/custom.toml.tmpl
+### to allow transparent terminal background
+theme = "custom"
 
 #? docs (vercel): https://helix-editor.vercel.app/configuration/editor
 [editor]
@@ -80,6 +80,24 @@ A-r = [
 ## Escape the madness! No more fighting with the cursor! Or with multiple cursors!
 esc = ["collapse_selection", "keep_primary_selection"]
 
+### space bar menu commands
+[keys.normal."space"]
+"%" = "select_all"            # select entire file like helix default behavior
+"J" = "join_selections_space" # alt-J conflicts with zellij, or doesn't work with ghostty
+# git blame https://github.com/helix-editor/helix/discussions/6421#discussioncomment-12486943
+B = ":sh git log -n 5 --format='format:%%h (%%an: %%ar) %%s' --no-patch -L%{cursor_line},+1:%{buffer_name}"
+
+# open yazi inline
+e = [
+  ":sh rm -f /tmp/_hx_yazi_buffer",
+  ":insert-output yazi '%{buffer_name}' --chooser-file=/tmp/_hx_yazi_buffer",
+  ":insert-output echo \"x1b[?1049h\" > /dev/tty",
+  ":open %sh{cat /tmp/_hx_yazi_buffer}",
+  ":redraw",
+  ":set mouse false",
+  ":set mouse true",
+]
+
 [keys.select]
 ## vim-like behavior
 "{" = ["goto_prev_paragraph", "extend_visual_line_up"]
@@ -113,5 +131,3 @@ esc = ["collapse_selection", "keep_primary_selection", "normal_mode"]
 [keys.insert]
 C-s = ["collapse_selection", "keep_primary_selection", "normal_mode", ":w"]
 C-x = "completion"
-
-## <See template file for keys.normal.space>
