@@ -1,16 +1,11 @@
 #? docs: https://docs.atuin.sh/configuration/config/
 
 update_check = false
-
 sync_frequency = "1h" # default 1h, should be higher than 0 to avoid rate limit
-
 search_mode = "fuzzy"
-
 style = "full"
 
 ## apply pseudo filter when in git repository
 workspaces = true
-
 show_tabs = false
-
 enter_accept = false

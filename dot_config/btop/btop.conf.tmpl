@@ -5,6 +5,8 @@
   {{- $btop = "/opt/homebrew/bin/btop" -}}
 {{- end -}}
 
+{{/* btop likes to regenerate the config file */}}
+{{/* https://github.com/aristocratos/btop/issues/1417 */}}
 {{- if (stat $btop) -}}
   {{- $original := output $btop "--default-config" -}}
   {{- $original -}}

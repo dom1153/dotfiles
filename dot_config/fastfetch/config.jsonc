@@ -1,19 +1,9 @@
 {
   "$schema": "https://github.com/fastfetch-cli/fastfetch/raw/dev/doc/json_schema.json",
   "logo": {
-{{ if hasKey . "fastfetch_logo_local" }}
-    "source": "~/.config/fastfetch/ascii_art_local.txt",
-{{ else }}
     "source": "~/.config/fastfetch/ascii_art_anime.txt",
-{{ end }}
     "padding": {
       "top": 2
-    },
-    "color": {
-{{ if hasKey . "fastfetch_logo_local" }}
-{{ else }}
-      "1": "white",
-{{ end }}
     }
   },
   "modules": [

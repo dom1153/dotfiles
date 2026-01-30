@@ -1,24 +1,20 @@
-### === this file is a chezmoi template ===
-##  Add shell integration commands in this file
-##  For other specific configuration, use an appropriate dotfile or environment variable (ZZ_env.fish)
-
 if exists fzf
     ## remove bg but keep bg+ for transparent terminal background
-    {{ if hasKey . "light_mode" -}}
-    ### catppuccin latte
-    set -gx FZF_DEFAULT_OPTS "\
-        --color=bg+:#ccd0da,spinner:#dc8a78,hl:#d20f39 \
-        --color=fg:#4c4f69,header:#d20f39,info:#8839ef,pointer:#dc8a78 \
-        --color=marker:#7287fd,fg+:#4c4f69,prompt:#8839ef,hl+:#d20f39 \
-        --color=border:#ccd0da,label:#4c4f69"
-    {{ else -}}
-    ### catppuccin mocha
-    set -Ux FZF_DEFAULT_OPTS "\
-        --color=bg+:#313244,spinner:#f5e0dc,hl:#f38ba8 \
-        --color=fg:#cdd6f4,header:#f38ba8,info:#cba6f7,pointer:#f5e0dc \
-        --color=marker:#b4befe,fg+:#cdd6f4,prompt:#cba6f7,hl+:#f38ba8 \
-        --color=border:#313244,label:#cdd6f4"
-    {{ end }}
+    if chezmoi_has_key '.light_mode'
+        ### catppuccin latte
+        set -gx FZF_DEFAULT_OPTS "\
+            --color=bg+:#ccd0da,spinner:#dc8a78,hl:#d20f39 \
+            --color=fg:#4c4f69,header:#d20f39,info:#8839ef,pointer:#dc8a78 \
+            --color=marker:#7287fd,fg+:#4c4f69,prompt:#8839ef,hl+:#d20f39 \
+            --color=border:#ccd0da,label:#4c4f69"
+    else
+        ### catppuccin mocha
+        set -gx FZF_DEFAULT_OPTS "\
+            --color=bg+:#313244,spinner:#f5e0dc,hl:#f38ba8 \
+            --color=fg:#cdd6f4,header:#f38ba8,info:#cba6f7,pointer:#f5e0dc \
+            --color=marker:#b4befe,fg+:#cdd6f4,prompt:#cba6f7,hl+:#f38ba8 \
+            --color=border:#313244,label:#cdd6f4"
+    end
 end
 
 if exists grc
@@ -52,10 +48,17 @@ if exists yazi
 end
 
 if exists bat
+    # rebuild cache only if necessary
     set themes (bat --list-themes)
     if ! echo "$themes" | grep -q 'Catppuccin Latte'
         or ! echo "$themes" | grep -q 'Catppuccin Mocha'
         bat cache --build &>/dev/null
+    end
+
+    if chezmoi_has_key '.light_mode'
+        set -gx BAT_THEME 'Catppuccin Latte'
+    else
+        set -gx BAT_THEME 'Catppuccin Mocha'
     end
 end
 
@@ -82,4 +85,9 @@ end
 
 if exists zoxide
   zoxide init fish | source
+end
+
+# PNPM
+if not string match -q -- $PNPM_HOME $PATH
+  set -gx PATH "$PNPM_HOME" $PATH
 end
