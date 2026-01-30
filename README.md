@@ -10,5 +10,4 @@ chezmoi apply
 # To disable a feature, do not define the key (true/false value is ignored)
 [local]
 light_mode= true
-helix_languages = true ### require dot_config/helix/languages.local.toml
 ```

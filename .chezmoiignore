@@ -1,3 +1,7 @@
+{{ if hasKey . "chezmoi_ignore_local" -}}
+	{{ include ".chezmoiignore.local" }}
+{{ end -}}
+
 .gitignore
 
 # documents and non-dotfiles
@@ -97,7 +101,3 @@ gits
 go
 mnt
 tmp
-
-{{ if hasKey . "chezmoi_ignore_local" -}}
-	{{ include ".chezmoiignore.local" }}
-{{ end -}}

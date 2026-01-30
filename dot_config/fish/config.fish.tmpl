@@ -1,10 +1,10 @@
 ### conf.d fish files gets sourced before this file
-if status is-interactive
-    {{- include "dot_config/fish/_include/config.fish" -}}
+{{ include "dot_config/fish/_include/config.fish" }}
 
-    {{ if hasKey . "light_mode" -}}
-        fish_config theme choose "Catppuccin Latte"
-    {{ else -}}
-        fish_config theme choose "Catppuccin Mocha"
+if status is-interactive
+    {{- if hasKey . "light_mode" }}
+    fish_config theme choose "Catppuccin Latte"
+    {{- else }}
+    fish_config theme choose "Catppuccin Mocha"
     {{ end }}
 end
