@@ -5,9 +5,14 @@ chezmoi init dom1153
 chezmoi apply
 ```
 
-```toml
-# Creating a ~/.local/share/chezmoi/.chezmoidata.toml allows additional files or configuration
-# To disable a feature, do not define the key (true/false value is ignored)
-[local]
-light_mode= true
+Settings for dotfiles can be configured with a local chezmoidata file:
+
 ```
+chezmoi cd
+cp .chezmoidata.toml.dist .chezmoidata.toml
+
+# recommended, but not required
+cp .chezmoidata.toml.dist .chezmoidata.toml
+```
+
+Uncomment features accordingly in .chezmoidata

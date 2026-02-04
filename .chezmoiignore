@@ -8,18 +8,13 @@
 README.md
 **/README.md
 todo.txt
-dist/**
 files/**
 
-# template related files
-**/*.local.*
-**/*.untmpl.*
-# *.part is a partial browser download oops
-**/*.part.*
+# chezmoi template related files
 **/_include
 **/_dist
 
-# dist ; makes
+# everything else
 .CFUserTextEncoding
 .DS_Store
 .Trash
