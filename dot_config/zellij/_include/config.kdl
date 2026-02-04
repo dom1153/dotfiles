@@ -12,10 +12,6 @@ keybinds {
     session {
         bind "Ctrl q" { SwitchToMode "Normal"; }
     }
-    move {
-        bind "Ctrl m" { SwitchToMode "normal"; }
-        unbind "Ctrl h"
-    }
     shared_except "locked" "session" {
         bind "Ctrl q" { SwitchToMode "session"; }
         bind "Ctrl q" { SwitchToMode "session"; }
@@ -24,10 +20,6 @@ keybinds {
     shared_except "locked" "scroll" "search" {
         bind "Ctrl y" { SwitchToMode "scroll"; }
         unbind "Ctrl s"
-    }
-    shared_except "locked" "move" {
-        bind "Ctrl m" { SwitchToMode "move"; }
-        unbind "Ctrl h"
     }
     shared_among "scroll" "search" {
         bind "Ctrl y" { SwitchToMode "normal"; }
