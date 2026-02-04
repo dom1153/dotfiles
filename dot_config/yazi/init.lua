@@ -1,7 +1,9 @@
+-- https://yazi-rs.github.io/docs/dds/#session.lua
 require("session"):setup {
 	sync_yanked = true,
 }
 
+-- https://yazi-rs.github.io/docs/tips#user-group-in-status
 -- Show user/group of files in status bar
 Status:children_add(function(self)
 	local h = self._current.hovered
@@ -12,6 +14,7 @@ Status:children_add(function(self)
 	end
 end, 3300, Status.LEFT)
 
+-- https://yazi-rs.github.io/docs/tips#username-hostname-in-header
 -- Show username and hostname in header
 Header:children_add(function()
 	if ya.target_family() ~= "unix" then
@@ -20,6 +23,7 @@ Header:children_add(function()
 	return ui.Span(ya.user_name() .. "@" .. ya.host_name() .. ":"):fg("blue")
 end, 500, Header.LEFT)
 
+-- https://yazi-rs.github.io/docs/configuration/yazi/#mgr.linemode
 -- function combining size and modify time for "linemode" in yazi.toml)
 function Linemode:size_and_mtime()
 	local time = math.floor(self._file.cha.mtime or 0)

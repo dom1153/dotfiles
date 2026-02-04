@@ -5,13 +5,9 @@
 prepend_keymap = [
   { on = "?", run = "help", desc = "Open help" },
   { on = "!", run = 'shell "$SHELL" --block', desc = "Open shell here" },
-  { on = "<C-o>", run = 'shell -- dragon -x -i -T "$1"' },
-  { on = [
-    "g",
-    "r",
-  ], run = 'shell -- ya emit cd "$(git rev-parse --show-toplevel)"' },
 ]
 
+#? https://yazi-rs.github.io/docs/tips#close-input-by-esc
 [input]
 prepend_keymap = [{ on = "<Esc>", run = "close", desc = "Cancel input" }]
 

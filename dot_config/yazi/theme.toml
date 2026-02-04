@@ -5,7 +5,8 @@
 light = "catppuccin-latte"
 dark = "catppuccin-mocha"
 
-# disable yazi icons
+#? https://yazi-rs.github.io/docs/faq/#dont-like-nerd-fonts
+# disable yazi nerd icons
 [status]
 sep_left = { open = "", close = "" }
 sep_right = { open = "", close = "" }
