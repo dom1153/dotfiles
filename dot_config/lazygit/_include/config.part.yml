@@ -1,4 +1,3 @@
-### === this file is a chezmoi template ===
 quitOnTopLevelReturn: true # esc closes lazygit
 git:
   pagers:
