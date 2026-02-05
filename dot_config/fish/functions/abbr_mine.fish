@@ -5,19 +5,28 @@
 function abbr_mine
     if test "$argv[1]" = -e
         set argv $argv[2..-1]
+        set require_path true
+    end
+
+    if test "$argv[1]" = -v
+        set argv $argv[2..-1]
+        set create_vanilla true
+    end
+
+    if test "$require_path" = true
         set cmd (string split ' ' -- "$argv[2]" | head -n1)
         if not type -q $cmd
             return
         end
     end
 
-    if test "$argv[1]" = -v
-        set argv $argv[2..-1]
+    if test "$create_vanilla" = true
         set cmd (string split ' ' -- "$argv[1]" | head -n1)
         if type -q $cmd
-            vanilla_alias $cmd            
+            vanilla_alias $cmd
         end
     end
+
 
     ## -a overrides existing abbr
     ## --position command means abbrevation will only
