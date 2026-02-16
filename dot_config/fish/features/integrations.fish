@@ -1,6 +1,6 @@
 if exists fzf
     ## remove bg but keep bg+ for transparent terminal background
-    if chezmoi_has_key '.light_mode'
+    if chezmoi_has_key '.lightMode'
         ### catppuccin latte
         set -gx FZF_DEFAULT_OPTS "\
             --color=bg+:#ccd0da,spinner:#dc8a78,hl:#d20f39 \
@@ -55,7 +55,7 @@ if exists bat
         bat cache --build &>/dev/null
     end
 
-    if chezmoi_has_key '.light_mode'
+    if chezmoi_has_key '"lightMode'
         set -gx BAT_THEME 'Catppuccin Latte'
     else
         set -gx BAT_THEME 'Catppuccin Mocha'

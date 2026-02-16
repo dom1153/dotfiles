@@ -2,7 +2,7 @@
 {{ include "dot_config/fish/_include/config.fish" }}
 
 if status is-interactive
-    {{- if hasKey . "light_mode" }}
+    {{- if hasKey . "lightMode" }}
     fish_config theme choose "Catppuccin Latte"
     {{- else }}
     fish_config theme choose "Catppuccin Mocha"

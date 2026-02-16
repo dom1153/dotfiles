@@ -1,4 +1,4 @@
-{{ if hasKey . "chezmoi_ignore_local" -}}
+{{ if hasKey . "chezmoiIgnoreLocal" -}}
 	{{ include ".chezmoiignore.local" }}
 {{ end -}}
 

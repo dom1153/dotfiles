@@ -1,4 +1,4 @@
-#light_mode = "yeag"
+#lightMode = "yes"
 
 ### cp .chezmoiignore.local.dist .chezmoiignore.local
-#chezmoi_ignore_local = "yeag"
+#chezmoiIgnoreLocal = "yes"
