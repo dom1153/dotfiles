@@ -36,6 +36,7 @@ abbr_safe cr "chezmoi remove"
 abbr_safe cu "chezmoi unmanaged"
 
 ### aliases dump
+abbr_safe -e hx helix
 abbr_safe hist history
 abbr_safe j just
 abbr_safe jg 'just -g'
@@ -44,5 +45,5 @@ abbr_safe nsp 'nix-shell -p'
 abbr_safe si rg
 abbr_safe sx 'source ~/.config/fish/config.fish'
 abbr_safe where "type -a"
-abbr_safe -e hx helix
+abbr_safe gc 'git_clone'
 

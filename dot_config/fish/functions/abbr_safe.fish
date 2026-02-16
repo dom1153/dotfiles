@@ -1,4 +1,4 @@
-function abbr_safe
+function abbr_safe -d "abbr wrapper to override builtins cleanly"
     argparse e v h/help -- $argv
 
     if set -ql _flag_help

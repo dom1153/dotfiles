@@ -1,5 +1,4 @@
-### desc: wrapper for getting chezmoi data
-function chezmoi_has_key
+function chezmoi_has_key -d "Get chezmoi data with a truthy return value"
     if type -q jq
         and chezmoi data | jq -e "$argv[1]" &>/dev/null
 
