@@ -60,6 +60,9 @@ if exists bat
     else
         set -gx BAT_THEME 'Catppuccin Mocha'
     end
+
+    set -gx BAT_PAGING never
+    set -gx BAT_STYLE plain
 end
 
 if exists atuin
