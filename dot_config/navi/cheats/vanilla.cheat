@@ -1,4 +1,0 @@
-% brew, homebrew
-
-# Get list of homebrew installs (less)
-brew bundle dump --file /tmp/Brewfile -f | bat /tmp/Brewfile --paging always
