@@ -55,7 +55,7 @@ if exists bat
         bat cache --build &>/dev/null
     end
 
-    if chezmoi_has_key '"lightMode'
+    if chezmoi_has_key '.lightMode'
         set -gx BAT_THEME 'Catppuccin Latte'
     else
         set -gx BAT_THEME 'Catppuccin Mocha'
