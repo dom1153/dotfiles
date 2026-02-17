@@ -3,4 +3,6 @@
 	email = dominicdangjobs@gmail.com
 [pull]
 	rebase = true
-
+# Auto remove upstream with status [gone] if PRs merge.
+[fetch]
+	prune = true
