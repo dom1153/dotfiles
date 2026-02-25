@@ -74,7 +74,8 @@ if exists zoxide
 end
 
 if exists starship
-    set -gx STARSHIP_LOG error # should remove warning for git branch taking too long to load
+    # should remove warning for git branch taking too long to load
+    set -gx STARSHIP_LOG error
     starship init fish | source
 end
 
@@ -83,6 +84,8 @@ if exists navi
 end
 
 if exists zellij
+    and test "$TERM_PROGRAM" != "vscode"
+
     eval (zellij setup --generate-auto-start fish | string collect)
 end
 
