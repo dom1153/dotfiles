@@ -11,3 +11,7 @@ switch (uname)
             eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
         end
 end
+
+if test -d $HOME/go/bin
+    fish_add_path -p $HOME/go/bin
+end
