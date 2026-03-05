@@ -1,0 +1,10 @@
+% dump
+
+# Write all casks/formulae/images/tap installs to a Brewfile
+brew bundle dump --file /tmp/Brewfile -f
+
+; see trilium
+; dust... etc
+
+; for every 'applist'... a vanilla
+; vanilla -> dust...

@@ -5,7 +5,7 @@ function git_clone -d 'Clone a repo with custom folder name (author_repo)'
         return
     end
 
-    set -l repo (echo "$argv[1]" | cut -d/ -f1-5)
+    set -l repo (echo "$argv[1]" | cut -d/ -f1-5 | cut -d\? -f1)
     set -l folder (echo "$repo" | cut -d/ -f4-5 | tr "/" "_")
 
     git clone --depth 1 $repo $folder
