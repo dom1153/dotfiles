@@ -3,6 +3,9 @@
 # Write all casks/formulae/images/tap installs to a Brewfile
 brew bundle dump --file /tmp/Brewfile -f
 
+# Display all casks/formulae/images/tap installs to a Brewfile
+brew bundle dump --file /tmp/Brewfile -f && bat --paging always /tmp/Brewfile
+
 ; see trilium
 ; dust... etc
 
