@@ -24,7 +24,7 @@ function abbr_safe -d "abbr wrapper to override builtins cleanly"
 
         set -l exe $argv[1]
         set -l firstLetter (string sub $exe --length 1)
-        abbr_mine $firstLetter$exe "$exe"
+        abbr_safe $firstLetter$exe "$exe"
     end
 
     ## -a overrides existing abbr

@@ -89,6 +89,10 @@ if exists zellij
     eval (zellij setup --generate-auto-start fish | string collect)
 end
 
+if exists hx
+    set -gx EDITOR hx
+end
+
 # PNPM
 if not string match -q -- $PNPM_HOME $PATH
   set -gx PATH "$PNPM_HOME" $PATH
