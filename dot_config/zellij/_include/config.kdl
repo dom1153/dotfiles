@@ -79,3 +79,7 @@ themes {
 show_startup_tips false
 simplified_ui true
 pane_frames false
+
+/// Use if terminal does not support OSC 52
+/// In a pinch, try Shift + LMB + (ctrl+shift+c)
+// copy_command "wl-copy"

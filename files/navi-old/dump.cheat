@@ -14,3 +14,6 @@ ghostty --font-family='Ubuntu Sans Mono' &
 
 # show all ghostty default values
 ghostty +show-config --default --docs
+
+# check for a given distribution
+grep -q "Arch Linux" /etc/os-release
