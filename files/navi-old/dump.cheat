@@ -1,4 +1,4 @@
-; todo
+% dump
 
 # connect to orb machine
 orb
@@ -17,3 +17,15 @@ ghostty +show-config --default --docs
 
 # check for a given distribution
 grep -q "Arch Linux" /etc/os-release
+
+# get full git repository from a depth 1
+git fetch --unshallow
+
+# expand a qemu disk
+sudo qemu-img resize /var/lib/libvirt/images/proxmox-9.qcow2 +32G
+
+# run a podman debian shell
+podman run -it --rm debian bash
+
+# run a docker debian shell
+docker run -it --rm debian bash
