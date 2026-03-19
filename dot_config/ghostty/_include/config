@@ -10,3 +10,6 @@ confirm-close-surface="false"
 
 # don't leave instances in dock (macos)
 quit-after-last-window-closed="true"
+
+# auto-inject term-info, does not work with orbstack (custom ssh config)
+shell-integration-features=ssh-terminfo,ssh-env
