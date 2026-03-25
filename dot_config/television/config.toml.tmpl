@@ -1,0 +1,8 @@
+{{ include "dot_config/television/_include/config.toml" }}
+
+[ui]
+{{ if hasKey . "lightMode" -}}
+theme = "catppuccin-latte-blue.toml"
+{{ else -}}
+theme = "catppuccin-mocha-blue.toml"
+{{ end }}
