@@ -84,11 +84,11 @@ if exists navi
     navi widget fish | sed 's/cg _/ce _/' | source
 end
 
-if exists zellij
-    and test "$TERM_PROGRAM" != "vscode"
-
-    eval (zellij setup --generate-auto-start fish | string collect)
-end
+# if exists zellij
+#     and test "$TERM_PROGRAM" != "vscode"
+#
+#     eval (zellij setup --generate-auto-start fish | string collect)
+# end
 
 if exists hx
     set -gx EDITOR hx
