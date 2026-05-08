@@ -12,6 +12,7 @@ files/**
 
 # chezmoi template related files
 **/_include
+**/_language
 **/_dist
 
 # everything else
