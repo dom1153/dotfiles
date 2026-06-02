@@ -11,3 +11,9 @@ brew bundle dump --file /tmp/Brewfile -f && bat --paging always /tmp/Brewfile
 
 ; for every 'applist'... a vanilla
 ; vanilla -> dust...
+
+# rsync folder (ssh)
+rsync -avz --progress /path/to/local/folder/ user@remote:/path/to/destination/
+
+# rsync folder (dry run ssh)
+rsync -avzn --delete /local/folder/ user@remote:/remote/folder/
