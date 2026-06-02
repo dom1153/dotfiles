@@ -14,21 +14,18 @@ layout {
     tab name="~/.local/share/chezmoi" cwd="~/.local/share/chezmoi" {
         pane split_direction="vertical" {
             pane command="hx" start_suspended=true
-            pane
         }
     }
 
     tab name="~/.config" cwd="~/.config" {
         pane split_direction="vertical" {
             pane command="hx" start_suspended=true
-            pane
         }
     }
 
     tab name="~/.dotfiles" cwd="~/.dotfiles" {
         pane split_direction="vertical" {
             pane command="hx" start_suspended=true
-            pane
         }
     }
 }
