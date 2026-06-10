@@ -29,3 +29,6 @@ podman run -it --rm debian bash
 
 # run a docker debian shell
 docker run -it --rm debian bash
+
+# search deb files
+dpkg -l | grep
