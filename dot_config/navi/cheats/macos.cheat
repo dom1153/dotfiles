@@ -1,4 +1,0 @@
-% macos
-
-# Get local IP address
-ifconfig | grep inet

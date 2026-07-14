@@ -1,18 +1,33 @@
-# dotfiles
+# dotfiles-slim
 
-```sh
-chezmoi init dom1153
-chezmoi apply
-```
+Disk usage is about ~1 GB (600MB of homebrew installs, 400MB of debian dependencies)
 
-Settings for dotfiles can be configured with a local chezmoidata file:
+## Install dotfiles (debian)
 
 ```
-chezmoi cd
-cp .chezmoidata.toml.dist .chezmoidata.toml
-
-# recommended, but not required
-cp .chezmoidata.toml.dist .chezmoidata.toml
+sh -c "$(curl -fsLS https://raw.githubusercontent.com/dom1153/dotfiles-slim/refs/heads/main/scripts/install_debian_unprivileged_lxc.sh)"
 ```
 
-Uncomment features accordingly in .chezmoidata
+## Try it in a docker debian instance:
+
+```
+docker run -it --rm debian
+```
+
+```
+rm -f /.dockerenv && \
+apt update && \
+apt install curl vim -y && \
+/bin/bash -c "$(curl -fsLS https://raw.githubusercontent.com/dom1153/dotfiles-slim/refs/heads/main/scripts/install_debian_unprivileged_lxc.sh)"
+```
+
+## Core script (debian)
+
+```
+sudo apt install build-essential procps curl file git -y
+NONINTERACTIVE=1 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv bash)" >> "$HOME"/.bashrc
+brew install chezmoi helix fish yazi lazygit difftastic
+chezmoi init --apply dom1153/dotfiles-slim
+exec fish
+```

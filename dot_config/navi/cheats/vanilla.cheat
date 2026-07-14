@@ -1,7 +1,0 @@
-% unix, vanilla
-
-# Get local IP address
-ifconfig | grep inet
-
-# Find file
-find . -name '<pattern>'

@@ -1,5 +1,3 @@
-//? example config (file): https://raw.githubusercontent.com/zellij-org/zellij/refs/heads/main/example/config.kdl
-//  this config system is quite frustrating, so we'll mostly roll the defaults
 keybinds {
     shared_except "locked" {
         bind "Alt c" { NewPane; }
@@ -47,35 +45,6 @@ plugins {
 load_plugins {
 }
 
-themes {
-  catppuccin-latte-mine {
-    bg "#acb0be" // Surface2
-    fg "#4c4f69" // Text
-    red "#e6e9ef" // (Mantle) ; ctrl + 'label'
-    green "#40a02b" // Green
-    blue "#1e66f5" // Blue
-    yellow "#df8e1d" // Yellow
-    magenta "#ea76cb" // Pink
-    orange "#fe640b" // Peach ; the 'Alt' + key color ; also pane select color
-    cyan "#04a5e5" // Sky
-    black "#e6e9ef" // Mantle
-    white "#4c4f69" // Text
-  }
-  catppuccin-mocha-mine {
-    bg "#585b70" // Surface2
-    fg "#cdd6f4" // Text
-    red "#181825" // (Mantle)
-    green "#a6e3a1" // Green
-    blue "#89b4fa" // Blue
-    yellow "#f9e2af" // Yellow
-    magenta "#f5c2e7" // Pink
-    orange "#fab387" // Peach
-    cyan "#89dceb" // Sky
-    black "#181825" // Mantle
-    white "#cdd6f4" // Text
-  }
-}
- 
 show_startup_tips false
 simplified_ui true
 pane_frames false

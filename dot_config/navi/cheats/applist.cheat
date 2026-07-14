@@ -1,9 +1,0 @@
-% applist, apps
-
-; go through brew list <3
-
-# A more intuitive version of du in rust 
-dust
-
-# TUI for git (with blame interface)
-gitui
