@@ -5,14 +5,19 @@ chezmoi init dom1153
 chezmoi apply
 ```
 
-Settings for dotfiles can be configured with a local chezmoidata file:
+(Optional) Enable local features in .chezmoidata:
 
 ```
-chezmoi cd
-cp .chezmoidata.toml.dist .chezmoidata.toml
-
-# recommended, but not required
 cp .chezmoidata.toml.dist .chezmoidata.toml
 ```
 
-Uncomment features accordingly in .chezmoidata
+## Core script (debian)
+
+```
+sudo apt install build-essential procps curl file git -y
+NONINTERACTIVE=1 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv bash)" >> "$HOME"/.bashrc
+brew install chezmoi helix fish yazi lazygit difftastic
+chezmoi init --apply dom1153/dotfiles-slim
+exec fish
+```

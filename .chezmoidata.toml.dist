@@ -1,3 +1,4 @@
+#slim = "yes"
 #lightMode = "yes"
 
 ### cp .chezmoiignore.local.dist .chezmoiignore.local

@@ -2,6 +2,7 @@
 
 {{ if hasKey . "lightMode" -}}
 theme "catppuccin-latte-mine"
+{{ else if hasKey . "slim" }}
 {{ else -}}
 theme "catppuccin-mocha-mine"
 {{ end }}
