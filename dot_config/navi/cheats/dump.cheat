@@ -20,3 +20,6 @@ rsync -avzn --delete /local/folder/ user@remote:/remote/folder/
 
 # disk usage fast
 df -h
+
+# view npm package details
+npm view datatables.net-select@3.1.3
