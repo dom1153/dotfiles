@@ -1,23 +1,49 @@
 # dotfiles
 
+## Installation
+
+Setup (with homebrew essentials)
+
 ```sh
-chezmoi init dom1153
-chezmoi apply
+sudo apt install build-essential procps curl file git -y # can omit on MacOS
+
+NONINTERACTIVE=1 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+
+eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv bash)" >> "$HOME"/.bashrc
+
+brew install chezmoi helix fish yazi lazygit difftastic zellij
+
+chezmoi init --apply dom1153/dotfiles
 ```
 
-(Optional) Enable local features in .chezmoidata:
+## App Setup
 
+Atuin
+
+```sh
+atuin setup
+atuin sync
+autin import bash
+autin import fish
 ```
+
+Chezmoi
+
+```sh
+chezmoi cd
 cp .chezmoidata.toml.dist .chezmoidata.toml
 ```
 
-## Core script (debian)
+Ghostty
 
+```sh
+chezmoi cd
+cp ./dot_config/ghostty/_dist/config.local ~/.config/ghostty/config.local
 ```
-sudo apt install build-essential procps curl file git -y
-NONINTERACTIVE=1 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
-eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv bash)" >> "$HOME"/.bashrc
-brew install chezmoi helix fish yazi lazygit difftastic
-chezmoi init --apply dom1153/dotfiles-slim
-exec fish
+
+Git
+
+```sh
+chezmoi cd
+cp ./files/home-template/dot_gitconfig ~/.gitconfig
 ```
