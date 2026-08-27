@@ -7,9 +7,9 @@ linemode = "size_and_mtime"
 
 [plugin]
 prepend_previewers = [
-	{ mime = "image/*", run = "noop" },
-	{ mime = "video/*", run = "noop" },
-	{ mime = "application/pdf", run = "noop" },
+	# { mime = "image/*", run = "noop" },
+	# { mime = "video/*", run = "noop" },
+	# { mime = "application/pdf", run = "noop" },
 	{ mime = "font/*", run = "noop" },
-	{ mime = "application/ms-opentype", run = "noop" },
+	# { mime = "application/ms-opentype", run = "noop" },
 ]
