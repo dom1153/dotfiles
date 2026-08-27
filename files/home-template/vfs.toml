@@ -1,0 +1,4 @@
+[sftp.demo]
+host = "ubuntu.local"
+user = "tsu"
+port = 22
