@@ -6,6 +6,15 @@ brew bundle dump --file /tmp/Brewfile -f
 # Display all casks/formulae/images/tap installs to a Brewfile
 brew bundle dump --file /tmp/Brewfile -f && bat --paging always /tmp/Brewfile
 
+# get manual installs
+brew leaves --installed-on-request
+
+# get manual installs with verisons
+brew leaves --installed-on-request | xargs brew list --versions
+
+# get casks and listed version
+brew list --cask --versions
+
 ; see trilium
 ; dust... etc
 
