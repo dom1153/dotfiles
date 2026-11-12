@@ -19,5 +19,5 @@ gui:
       - '#4c4f69' # text
     searchingActiveBorderColor:
       - '#df8e1d' # yellow
-  authorColors:
-    '*': '#7287fd' # lavender
+    authorColors:
+      '*': '#7287fd' # lavender
