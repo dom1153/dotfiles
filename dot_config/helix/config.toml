@@ -90,8 +90,10 @@ B = ":sh git log -n 5 --format='format:%%h (%%an: %%ar) %%s' --no-patch -L%{curs
 # open yazi inline
 e = [
   ":sh rm -f /tmp/_hx_yazi_buffer",
-  ":insert-output yazi '%{buffer_name}' --chooser-file=/tmp/_hx_yazi_buffer",
-  ":insert-output echo \"x1b[?1049h\" > /dev/tty",
+  # stdin from /dev/tty: helix gives commands /dev/null as stdin (fixes fzf empty entries)
+  ":insert-output yazi '%{buffer_name}' --chooser-file=/tmp/_hx_yazi_buffer < /dev/tty",
+  # cleanup yazi terminal state: reset scrollback (\\033[?1049h), bracketed paste (\\033[?2004h)
+  ":sh printf '\\033[?1049h\\033[?2004h' > /dev/tty",
   ":open %sh{cat /tmp/_hx_yazi_buffer}",
   ":redraw",
   ":set mouse false",
