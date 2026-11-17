@@ -1,0 +1,109 @@
+#:schema https://starship.rs/config-schema.json
+
+format = """
+$shell\
+$username\
+$hostname\
+$directory\
+$git_branch\
+$git_status\
+$cmd_duration\
+$jobs\
+$status\
+$container\
+$shlvl\
+$time\
+$line_break\
+$character"""
+
+[shell]
+disabled = false
+unknown_indicator = 'unknown shell'
+bash_indicator = '🅱️ sh'
+fish_indicator = 'fish'
+zsh_indicator = 'zsh '
+style = 'cyan bold'
+
+[username]
+format = '[$user]($style) '
+style_user = 'yellow'
+
+[hostname]
+format = '[$ssh_symbol](blue)[$hostname](red) '
+ssh_symbol = '@ '
+trim_at = '.'
+
+[directory]
+style = 'blue bold'
+
+[git_branch]
+format = '[$branch]($style)'
+style = 'subtext0'
+
+[git_status]
+style = 'cyan'
+
+[cmd_duration]
+format = '[$duration]($style) '
+style = 'yellow'
+
+[jobs]
+format = '[jobs\[$number\]]($style) '
+style = 'mauve'
+number_threshold = 2
+
+[status]
+disabled = false
+format = '[X $int$signal_name]($style) '
+style = 'red bold'
+map_symbol = false
+
+[container]
+format = '[\[$name\]]($style) '
+style = 'red'
+
+[shlvl]
+disabled = false
+format = '[shlvl\($shlvl\)]($style) '
+style = 'subtext1'
+# bash (1) -> exec fish (2) -> bluefin distrobox (3)
+threshold = 4
+
+[time]
+disabled = false
+format = '[$time]($style) '
+style = 'subtext1'
+
+[character]
+success_symbol = '[>](green bold)'
+error_symbol = '[>](red bold)'
+vimcmd_symbol = '[<](green bold)'
+
+palette = "catppuccin_mocha"
+[palettes.catppuccin_mocha]
+rosewater = "#f5e0dc"
+flamingo = "#f2cdcd"
+pink = "#f5c2e7"
+mauve = "#cba6f7"
+red = "#f38ba8"
+maroon = "#eba0ac"
+peach = "#fab387"
+yellow = "#f9e2af"
+green = "#a6e3a1"
+teal = "#94e2d5"
+sky = "#89dceb"
+sapphire = "#74c7ec"
+blue = "#89b4fa"
+lavender = "#b4befe"
+text = "#cdd6f4"
+subtext1 = "#bac2de"
+subtext0 = "#a6adc8"
+overlay2 = "#9399b2"
+overlay1 = "#7f849c"
+overlay0 = "#6c7086"
+surface2 = "#585b70"
+surface1 = "#45475a"
+surface0 = "#313244"
+base = "#1e1e2e"
+mantle = "#181825"
+crust = "#11111b"

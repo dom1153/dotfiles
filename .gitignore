@@ -1,7 +1,0 @@
-.chezmoidata.toml
-
-### local files
-.chezmoiignore.local
-
-## nixos build files
-**/result

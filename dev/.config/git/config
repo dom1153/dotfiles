@@ -1,0 +1,18 @@
+[user]
+	name = dom1153
+	email = dominicdangjobs@gmail.com
+[fetch]
+	prune = true
+[pull]
+	rebase = true
+
+### TODO_DD: migrate to lazygit config
+# delta config
+[include]
+	path = catppuccin.gitconfig
+[delta]
+	features = catppuccin-mocha
+[merge]
+	conflictStyle = zdiff3
+[include]
+	path = local.gitconfig

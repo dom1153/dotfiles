@@ -1,0 +1,4 @@
+# Read by stow when run from the repo root.
+# starship has no include, so work-pc ships a full starship.toml (Latte palette) that replaces dev's (Mocha).
+# Let a later package override it: list the machine package last (stow -R core dev work-pc).
+--override=\.config/starship/starship\.toml
