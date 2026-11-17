@@ -1,6 +1,5 @@
-### work-pc ships its own fzf.fish (Latte) that replaces this one
 if exists fzf
-    ## remove bg but keep bg+ for transparent terminal background
+    ### remove bg but keep bg+ for transparent terminal background
     ### catppuccin mocha
     set -gx FZF_DEFAULT_OPTS "\
         --color=bg+:#313244,spinner:#f5e0dc,hl:#f38ba8 \

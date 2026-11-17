@@ -52,16 +52,17 @@ Brewfiles are Ruby: guard OS-specific lines with `if OS.linux?` / `if OS.mac?` (
 
 ## Fish
 
-- `core/.config/fish` holds the shared config: `config.fish`, `conf.d/` (env, PATH), `features/` (aliases plus one file per theme-independent tool integration: atuin, starship, zoxide, ...), `functions/`, `themes/`.
+- `core/.config/fish` holds the shared config: `config.fish`, `conf.d/` (env, PATH), `features/` (aliases plus one file per theme-independent tool integration: atuin, starship, zoxide, ...), `functions/`.
 - `config.fish` sources every `features/*.fish`, and stow merges that folder from all packages.
-- Themed features (`00-theme.fish`, `fzf.fish`, `bat.fish`) are Mocha in `dev`; `work-pc` ships Latte copies with the same names. `.stowrc` passes `--override` for them, so list the machine package last. Edit both copies when changing one.
+- Themed features (`00-theme.fish`, `fzf.fish`, `bat-theme.fish`) are Mocha in `dev`; `work-pc` ships Latte copies with the same names. `.stowrc` passes `--override` for them, so list the machine package last. Edit both copies when changing one.
+- Fish needs no theme files: Catppuccin is built into fish 4.4+. `dev` picks `catppuccin-mocha --color-theme=dark`, `work-pc` picks `catppuccin-mocha --color-theme=light` (Latte). Delete any old `~/.config/fish/conf.d/fish_frozen_theme.fish`.
 - Run `mkdir -p ~/.config/fish/{conf.d,functions,completions}` before the first stow. Otherwise stow links those folders whole, and anything fisher or other tools drop there ends up in the repo.
 
 ## Themes (Catppuccin)
 
 `dev` ships Mocha (dark); `work-pc` adds Latte (light).
 
-- **bat**: `dev` has `Catppuccin Mocha.tmTheme`, `work-pc` has `Catppuccin Latte.tmTheme` (also used by delta's `syntax-theme`). Run `bat cache --build` after adding a theme.
+- **bat**: `dev` has `Catppuccin Mocha.tmTheme`, `work-pc` has `Catppuccin Latte.tmTheme` (also used by delta's `syntax-theme`). `core`'s `features/bat.fish` reruns `bat cache --build` at shell start when a theme file is newer than bat's cache.
 - **fish**: see [Fish](#fish) above.
 - **ghostty**: `dev/.config/ghostty/config` sets Mocha and ends with `config-file = ?config.local` (optional, loaded last so it overrides). `work-pc/.config/ghostty/config.local` switches to Latte and sets the font.
 - **starship**: no include support, so `work-pc/.config/starship/starship.toml` is a full copy of `dev`'s with the Latte palette. The repo-root `.stowrc` passes `--override` for it, so the **last package listed wins**: always list the machine package last. Edit both copies when changing the prompt.

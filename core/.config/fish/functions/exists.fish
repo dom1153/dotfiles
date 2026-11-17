@@ -1,5 +1,3 @@
 function exists -d "Check if a command exists"
-    if ! type -q $argv[1]
-        return 1
-    end
+    command -q $argv[1]
 end

@@ -1,6 +1,5 @@
-### replaces dev's fzf.fish (Mocha)
 if exists fzf
-    ## remove bg but keep bg+ for transparent terminal background
+    ### remove bg but keep bg+ for transparent terminal background
     ### catppuccin latte
     set -gx FZF_DEFAULT_OPTS "\
         --color=bg+:#ccd0da,spinner:#dc8a78,hl:#d20f39 \

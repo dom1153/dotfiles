@@ -1,3 +1,3 @@
 if exists navi
-    navi widget fish | sed 's/cg _/ce _/' | source
+    navi widget fish | string replace 'cg _' 'ce _' | source
 end

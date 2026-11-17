@@ -1,7 +1,5 @@
 if exists yazi
-    ### yazi wrapper which provides the ability
-    ##     to change the current working directory
-    ##     when exiting yazi
+    ### auto cd when using yazi is called via y
     #? docs: https://yazi-rs.github.io/docs/quick-start/#shell-wrapper
     function y
         set tmp (mktemp -t "yazi-cwd.XXXXXX")
