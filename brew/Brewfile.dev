@@ -1,0 +1,37 @@
+# Dev machines (pairs with the dev stow package)
+# brew bundle --file=brew/Brewfile.dev
+
+# git
+brew "gh"
+brew "lazygit"
+brew "gitui"
+brew "difftastic"
+brew "diffnav"
+
+# terminal workspace
+brew "zellij"
+brew "tuios"
+brew "television"
+brew "nnn"
+brew "ugrep"
+brew "uutils-coreutils"
+
+# languages and runtimes
+brew "go"
+brew "uv"
+brew "vite-plus"
+brew "just"
+brew "dekit"
+
+# language servers (helix)
+brew "bash-language-server"
+brew "just-lsp"
+brew "vscode-langservers-extracted"
+brew "yaml-language-server"
+brew "glslang"
+
+# misc tools
+brew "mycli"
+brew "imagemagick"
+brew "expect"
+brew "lolcat"

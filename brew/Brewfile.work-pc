@@ -1,0 +1,6 @@
+# Work PC extras (pairs with the work-pc stow package)
+# brew bundle --file=brew/Brewfile.work-pc
+#
+# Guard OS-specific lines, e.g.:
+#   brew "trash-cli" if OS.linux?
+#   cask "ghostty" if OS.mac?

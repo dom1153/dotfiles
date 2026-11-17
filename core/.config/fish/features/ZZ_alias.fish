@@ -1,4 +1,4 @@
-### vanilla overrides
+### better defaults via vanilla options
 abbr_safe -v cp 'cp -i'
 abbr_safe -v egrep 'egrep --color=auto'
 abbr_safe -v fgrep 'fgrep --color=auto'
@@ -11,7 +11,7 @@ abbr_safe -v pwd 'pwd --physical'
 abbr_safe -v rm 'rm -i'
 abbr_safe hist history
 
-### vanilla overrides with *bling* (when applicable)
+### better defaults via app replacement
 abbr_safe -ev cat bat
 abbr_safe -ev ls eza
 abbr_safe -ev l 'eza -lho'
@@ -26,11 +26,7 @@ abbr_safe -ev man 'man % | bat --language man --paging=auto' -- --set-cursor
 ### aliases dump
 abbr_safe -e hx helix
 abbr_safe zl 'zellij --layout'
-abbr_safe ca 'chezmoi apply'
-abbr_safe cu 'chezmoi update'
 abbr_safe lg lazygit
-abbr_safe si rg
-abbr_safe sx 'exec fish'
 abbr_safe where 'type -a'
 abbr_safe gc 'git_clone'
 
