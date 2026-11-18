@@ -4,7 +4,7 @@ Migrating from chezmoi to [GNU Stow](https://www.gnu.org/software/stow/). Each t
 
 | Package       | Purpose                                   |
 | ------------- | ----------------------------------------- |
-| `core`        | Shared config for every machine (fish)    |
+| `core`        | Shared config for every machine (fish, zellij) |
 | `dev`         | Dev tools: git, bat, fastfetch, ghostty, starship, wezterm, fish theme |
 | `work-pc`     | Work PC overrides                         |
 | `work-laptop` | Work laptop overrides                     |
@@ -17,13 +17,14 @@ Run stow from the repo root. The target defaults to the parent folder (`~`), so 
 ```sh
 brew install stow
 
-mkdir -p ~/.config/fish/{conf.d,functions,completions}   # see Fish below
 cd ~/.dots
 stow -n -v -R core dev work-pc   # dry run: shows what would be linked
 stow -R core dev work-pc
 ```
 
 `-R` (restow) unlinks and relinks, so it's also the command to rerun after adding or removing files in a package.
+
+`.stowrc` passes `--no-folding`: stow creates real folders and links each file, never a whole folder. Files that tools (or you) add next to the links stay out of the repo, so no `mkdir` is needed before stowing.
 
 Check:
 
@@ -56,7 +57,6 @@ Brewfiles are Ruby: guard OS-specific lines with `if OS.linux?` / `if OS.mac?` (
 - `config.fish` sources every `features/*.fish`, and stow merges that folder from all packages.
 - Themed features (`00-theme.fish`, `fzf.fish`, `bat-theme.fish`) are Mocha in `dev`; `work-pc` ships Latte copies with the same names. `.stowrc` passes `--override` for them, so list the machine package last. Edit both copies when changing one.
 - Fish needs no theme files: Catppuccin is built into fish 4.4+. `dev` picks `catppuccin-mocha --color-theme=dark`, `work-pc` picks `catppuccin-mocha --color-theme=light` (Latte). Delete any old `~/.config/fish/conf.d/fish_frozen_theme.fish`.
-- Run `mkdir -p ~/.config/fish/{conf.d,functions,completions}` before the first stow. Otherwise stow links those folders whole, and anything fisher or other tools drop there ends up in the repo.
 
 ## Themes (Catppuccin)
 
@@ -66,9 +66,16 @@ Brewfiles are Ruby: guard OS-specific lines with `if OS.linux?` / `if OS.mac?` (
 - **fish**: see [Fish](#fish) above.
 - **ghostty**: `dev/.config/ghostty/config` sets Mocha and ends with `config-file = ?config.local` (optional, loaded last so it overrides). `work-pc/.config/ghostty/config.local` switches to Latte and sets the font.
 - **starship**: no include support, so `work-pc/.config/starship/starship.toml` is a full copy of `dev`'s with the Latte palette. The repo-root `.stowrc` passes `--override` for it, so the **last package listed wins**: always list the machine package last. Edit both copies when changing the prompt.
-- **television**: only `work-pc` has a config (Latte theme). Run `mkdir -p ~/.config/television` before stowing so tv's own files (e.g. `cable/`) don't land in the repo.
-- **btop**: only `work-pc` ships a theme (`catppuccin_latte.theme`); `btop.conf` isn't tracked, so pick the theme in btop's options menu (Esc → Options). Run `mkdir -p ~/.config/btop` before stowing: otherwise stow links the whole folder into the repo and btop writes its generated `btop.conf` there.
+- **television**: only `work-pc` has a config (Latte theme).
+- **btop**: only `work-pc` ships a theme (`catppuccin_latte.theme`); `btop.conf` isn't tracked, so pick the theme in btop's options menu (Esc → Options).
 - Theme files come from [catppuccin/btop](https://github.com/catppuccin/btop/tree/main/themes) and [catppuccin/bat](https://github.com/catppuccin/bat/tree/main/themes).
+
+## Zellij
+
+- `core/.config/zellij/config.kdl` sets `theme_dark` / `theme_light` to zellij's built-in `catppuccin-mocha` / `catppuccin-latte`. Zellij switches between them based on the color scheme the terminal reports. Don't set `theme`: it locks zellij to one theme and turns off switching. If a terminal doesn't report its scheme, set `explicit_theme_hue "light"`.
+- Zellij has no include or local-config file. Machine packages can still add files to `themes/` (custom themes) and `layouts/`; anything else needs a full `config.kdl` copy plus an `--override` line, like starship.
+- Local, untracked layouts can go straight in `~/.config/zellij/layouts/` (per-file links, see `--no-folding`).
+- The settings screen can write to `config.kdl`, which is a link into the repo, so check `git status` after changing settings there.
 
 ## Other commands
 

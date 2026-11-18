@@ -1,0 +1,38 @@
+//? example config (file): https://raw.githubusercontent.com/zellij-org/zellij/refs/heads/main/example/config.kdl
+keybinds {
+    shared_except "locked" {
+        bind "Alt c" { NewPane; }
+        bind "Alt f" { ToggleFocusFullscreen; }
+        bind "Alt /" "Ctrl /" { ToggleFloatingPanes; }
+        bind "Ctrl alt q" { Quit; }
+        unbind "Alt o" // MoveTab "Left"
+        unbind "Alt i" // MoveTab "Right"
+    }
+    session {
+        bind "Ctrl q" { SwitchToMode "Normal"; }
+    }
+    shared_except "locked" "session" {
+        bind "Ctrl q" { SwitchToMode "session"; }
+        bind "Ctrl q" { SwitchToMode "session"; }
+        unbind "Ctrl o"
+    }
+    shared_except "locked" "scroll" "search" {
+        bind "Ctrl y" { SwitchToMode "scroll"; }
+        unbind "Ctrl s"
+    }
+    shared_among "scroll" "search" {
+        bind "Ctrl y" { SwitchToMode "normal"; }
+        unbind "Ctrl s"
+    }
+}
+
+theme_dark "catppuccin-mocha"
+theme_light "catppuccin-latte"
+
+show_startup_tips false
+simplified_ui true
+pane_frames false
+
+/// Use if terminal does not support OSC 52
+/// In a pinch, try Shift + LMB + (ctrl+shift+c)
+// copy_command "wl-copy"

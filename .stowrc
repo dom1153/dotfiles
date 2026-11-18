@@ -4,3 +4,6 @@
 --override=\.config/starship/starship\.toml
 # same for fish: work-pc ships its own Latte features (theme, fzf, bat-theme) replacing dev's (Mocha).
 --override=\.config/fish/features/(00-theme|fzf|bat-theme)\.fish
+# Always link per file, never a whole folder: tools (and local zellij layouts) can then add
+# files next to the links without them landing in the repo.
+--no-folding
