@@ -4,9 +4,9 @@ Migrating from chezmoi to [GNU Stow](https://www.gnu.org/software/stow/). Each t
 
 | Package       | Purpose                                   |
 | ------------- | ----------------------------------------- |
-| `core`        | Shared config for every machine (fish, git, ghostty, helix, zellij), no theme |
-| `mocha`       | Catppuccin Mocha (dark) plus dev tools: fastfetch, starship, wezterm; bat/fish/ghostty/delta/helix/zellij themes |
-| `latte`       | Catppuccin Latte (light): starship, gitui, btop; bat/fish/ghostty/delta/helix/zellij themes, ghostty font |
+| `core`        | Shared config for every machine (fish, git, ghostty, helix, starship, zellij), no theme |
+| `mocha`       | Catppuccin Mocha (dark) plus dev tools: fastfetch, wezterm; bat/fish/ghostty/delta/helix/starship/zellij themes |
+| `latte`       | Catppuccin Latte (light): gitui, btop; bat/fish/ghostty/delta/helix/starship/zellij themes, ghostty font |
 | `extra`       | Optional extras                           |
 
 Run stow from the repo root. The target defaults to the parent folder (`~`), so `-t` isn't needed.
@@ -56,7 +56,7 @@ Brewfiles are Ruby: guard OS-specific lines with `if OS.linux?` / `if OS.mac?` (
 
 - `core/.config/fish` holds the shared config: `config.fish`, `conf.d/` (env, PATH), `features/` (aliases plus one file per theme-independent tool integration: atuin, starship, zoxide, ...), `functions/`.
 - `config.fish` sources every `features/*.fish`, and stow merges that folder from all packages.
-- Themed features (`fish-theme.fish`, `fzf.fish`, `bat-theme.fish`) exist in both `mocha` and `latte` with the same names. Edit both copies when changing one.
+- Themed features (`fish-theme.fish`, `fzf.fish`, `bat-theme.fish`, `starship-theme.fish`) exist in both `mocha` and `latte` with the same names. Edit both copies when changing one.
 - Fish needs no theme files: Catppuccin is built into fish 4.4+. `mocha` picks `catppuccin-mocha --color-theme=dark`, `latte` picks `catppuccin-mocha --color-theme=light` (Latte). Delete any old `~/.config/fish/conf.d/fish_frozen_theme.fish`.
 
 ## Themes (Catppuccin)
@@ -67,7 +67,10 @@ Brewfiles are Ruby: guard OS-specific lines with `if OS.linux?` / `if OS.mac?` (
 - **fish**: see [Fish](#fish) above.
 - **helix**: `core/.config/helix/config.toml` uses `theme = "custom"`. Helix has no includes, and 25.07 can't switch light/dark by itself. So `themes/custom.toml` comes from the machine: `core` ships a `base16_default` fallback, `mocha` / `latte` replace it (`--override` in `.stowrc`, so list the theme package after `core`). Each one also clears `ui.background` so the terminal's background shows through.
 - **ghostty**: `core/.config/ghostty/config` sets no theme and ends with `config-file = ?config.local` (optional, loaded last so it overrides). `mocha`'s `config.local` sets Mocha; `latte`'s sets Latte and the font.
-- **starship**: no include support, so `latte/.config/starship/starship.toml` is a full copy of `mocha`'s with the Latte palette. Edit both copies when changing the prompt.
+- **starship**: no include or local-config support, and no light/dark setting. `core/.config/starship/starship.toml` is the only copy: it holds both palettes from [catppuccin/starship](https://github.com/catppuccin/starship/tree/main/themes) and leaves `palette = ''` (starship's default colors on a core-only machine; the "Could not find color palette" warning is hidden by `STARSHIP_LOG error`).
+  - `features/starship-theme.fish` in `mocha` / `latte` writes a copy to `~/.cache/starship/starship.toml` with `palette` set to its own palette (sed), and sets `STARSHIP_CONFIG` to it. It rewrites the copy when it's missing, older than core's file, or its `palette` is blank or the other theme's (left over from switching packages).
+  - core's `features/starship.fish` only sets `STARSHIP_CONFIG` if it's unset, so the feature wins whichever is sourced first.
+  - `palette` must stay a top-level key, above the first `[table]`: placed after one, TOML assigns it to that table and starship ignores it.
 - **btop**: only `latte` ships a theme (`catppuccin_latte.theme`); `btop.conf` isn't tracked, so pick the theme in btop's options menu (Esc → Options).
 - Theme files come from [catppuccin/btop](https://github.com/catppuccin/btop/tree/main/themes) and [catppuccin/bat](https://github.com/catppuccin/bat/tree/main/themes).
 
