@@ -7,12 +7,12 @@
 	rebase = true
 
 ### TODO_DD: migrate to lazygit config
-# delta config
+# delta config: themes are defined here, picked in local.gitconfig
+# (mocha: catppuccin-mocha, latte: catppuccin-latte)
 [include]
 	path = catppuccin.gitconfig
-[delta]
-	features = catppuccin-mocha
 [merge]
 	conflictStyle = zdiff3
+# optional machine config, loaded last so it overrides anything above
 [include]
 	path = local.gitconfig

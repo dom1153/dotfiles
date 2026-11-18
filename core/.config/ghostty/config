@@ -4,7 +4,6 @@
 font-size=14
 font-feature=-calt, -liga, -dlig # disable font ligatures
 background-opacity=0.95
-theme=Catppuccin Mocha
 
 ### behavior
 # disable quit prompt, annoying when trying to shutdown pc
@@ -21,5 +20,5 @@ keybind=super+shift+equal=increase_font_size:1 # macos
 keybind=ctrl+shift+plus=increase_font_size:1   # linux
 
 # optional machine config, loaded after this file so it overrides anything above
-# (e.g. work-pc/.config/ghostty/config.local)
+# (mocha / latte packages set the theme)
 config-file = ?config.local

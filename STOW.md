@@ -4,22 +4,23 @@ Migrating from chezmoi to [GNU Stow](https://www.gnu.org/software/stow/). Each t
 
 | Package       | Purpose                                   |
 | ------------- | ----------------------------------------- |
-| `core`        | Shared config for every machine (fish, zellij) |
-| `dev`         | Dev tools: git, bat, fastfetch, ghostty, starship, wezterm, fish theme |
-| `work-pc`     | Work PC overrides                         |
-| `work-laptop` | Work laptop overrides                     |
+| `core`        | Shared config for every machine (fish, git, ghostty, helix, zellij), no theme |
+| `mocha`       | Catppuccin Mocha (dark) plus dev tools: fastfetch, starship, wezterm; bat/fish/ghostty/delta/helix themes |
+| `latte`       | Catppuccin Latte (light): starship, gitui, btop; bat/fish/ghostty/delta/helix themes, ghostty font |
 | `extra`       | Optional extras                           |
 
 Run stow from the repo root. The target defaults to the parent folder (`~`), so `-t` isn't needed.
 
-## Setup: work-pc
+A machine stows `core` plus **one** theme package: `core mocha` or `core latte`. The two theme packages are never stowed together.
+
+## Setup
 
 ```sh
 brew install stow
 
 cd ~/.dots
-stow -n -v -R core dev work-pc   # dry run: shows what would be linked
-stow -R core dev work-pc
+stow -n -v -R core latte   # dry run: shows what would be linked
+stow -R core latte         # or: core mocha
 ```
 
 `-R` (restow) unlinks and relinks, so it's also the command to rerun after adding or removing files in a package.
@@ -39,48 +40,48 @@ Brewfiles live in `brew/`, outside the stow packages (they're inputs to `brew bu
 
 ```sh
 brew bundle --file=brew/Brewfile          # core: fish and what its config uses
-brew bundle --file=brew/Brewfile.dev
-brew bundle --file=brew/Brewfile.work-pc
+brew bundle --file=brew/Brewfile.mocha
+brew bundle --file=brew/Brewfile.latte
 ```
 
 Brewfiles are Ruby: guard OS-specific lines with `if OS.linux?` / `if OS.mac?` (e.g. `trash-cli` is Linux-only, macOS uses the built-in `trash`). Casks need `if OS.mac?`. `brew bundle dump --file=-` prints what's installed, to compare.
 
 ## Git config
 
-- `dev/.config/git/config` is the global config (git reads `~/.config/git/config` alongside `~/.gitconfig`).
-- It includes `local.gitconfig` last, so a machine package can override anything. `work-pc` uses it to switch delta to Catppuccin Latte.
+- `core/.config/git/config` is the global config (git reads `~/.config/git/config` alongside `~/.gitconfig`). It also defines the delta Catppuccin themes (`catppuccin.gitconfig`) but doesn't pick one.
+- It includes `local.gitconfig` last, so a machine package can override anything. `mocha` uses it to pick delta's `catppuccin-mocha`, `latte` picks `catppuccin-latte`.
 - `~/.gitconfig` is read after `~/.config/git/config` and wins on any overlap. Keep only machine-specific bits there (e.g. `gh` credential helpers).
 
 ## Fish
 
 - `core/.config/fish` holds the shared config: `config.fish`, `conf.d/` (env, PATH), `features/` (aliases plus one file per theme-independent tool integration: atuin, starship, zoxide, ...), `functions/`.
 - `config.fish` sources every `features/*.fish`, and stow merges that folder from all packages.
-- Themed features (`00-theme.fish`, `fzf.fish`, `bat-theme.fish`) are Mocha in `dev`; `work-pc` ships Latte copies with the same names. `.stowrc` passes `--override` for them, so list the machine package last. Edit both copies when changing one.
-- Fish needs no theme files: Catppuccin is built into fish 4.4+. `dev` picks `catppuccin-mocha --color-theme=dark`, `work-pc` picks `catppuccin-mocha --color-theme=light` (Latte). Delete any old `~/.config/fish/conf.d/fish_frozen_theme.fish`.
+- Themed features (`fish-theme.fish`, `fzf.fish`, `bat-theme.fish`) exist in both `mocha` and `latte` with the same names. Edit both copies when changing one.
+- Fish needs no theme files: Catppuccin is built into fish 4.4+. `mocha` picks `catppuccin-mocha --color-theme=dark`, `latte` picks `catppuccin-mocha --color-theme=light` (Latte). Delete any old `~/.config/fish/conf.d/fish_frozen_theme.fish`.
 
 ## Themes (Catppuccin)
 
-`dev` ships Mocha (dark); `work-pc` adds Latte (light).
+`core` has no theme (each tool's default); `mocha` ships Mocha (dark), `latte` ships Latte (light).
 
-- **bat**: `dev` has `Catppuccin Mocha.tmTheme`, `work-pc` has `Catppuccin Latte.tmTheme` (also used by delta's `syntax-theme`). `core`'s `features/bat.fish` reruns `bat cache --build` at shell start when a theme file is newer than bat's cache.
+- **bat**: `mocha` has `Catppuccin Mocha.tmTheme`, `latte` has `Catppuccin Latte.tmTheme` (also used by delta's `syntax-theme`). `core`'s `features/bat.fish` reruns `bat cache --build` at shell start when a theme file is newer than bat's cache.
 - **fish**: see [Fish](#fish) above.
-- **ghostty**: `dev/.config/ghostty/config` sets Mocha and ends with `config-file = ?config.local` (optional, loaded last so it overrides). `work-pc/.config/ghostty/config.local` switches to Latte and sets the font.
-- **starship**: no include support, so `work-pc/.config/starship/starship.toml` is a full copy of `dev`'s with the Latte palette. The repo-root `.stowrc` passes `--override` for it, so the **last package listed wins**: always list the machine package last. Edit both copies when changing the prompt.
-- **television**: only `work-pc` has a config (Latte theme).
-- **btop**: only `work-pc` ships a theme (`catppuccin_latte.theme`); `btop.conf` isn't tracked, so pick the theme in btop's options menu (Esc → Options).
+- **helix**: `core/.config/helix/config.toml` uses `theme = "custom"`. Helix has no includes, and 25.07 can't switch light/dark by itself. So `themes/custom.toml` comes from the machine: `core` ships a `base16_default` fallback, `mocha` / `latte` replace it (`--override` in `.stowrc`, so list the theme package after `core`). Each one also clears `ui.background` so the terminal's background shows through.
+- **ghostty**: `core/.config/ghostty/config` sets no theme and ends with `config-file = ?config.local` (optional, loaded last so it overrides). `mocha`'s `config.local` sets Mocha; `latte`'s sets Latte and the font.
+- **starship**: no include support, so `latte/.config/starship/starship.toml` is a full copy of `mocha`'s with the Latte palette. Edit both copies when changing the prompt.
+- **btop**: only `latte` ships a theme (`catppuccin_latte.theme`); `btop.conf` isn't tracked, so pick the theme in btop's options menu (Esc → Options).
 - Theme files come from [catppuccin/btop](https://github.com/catppuccin/btop/tree/main/themes) and [catppuccin/bat](https://github.com/catppuccin/bat/tree/main/themes).
 
 ## Zellij
 
 - `core/.config/zellij/config.kdl` sets `theme_dark` / `theme_light` to zellij's built-in `catppuccin-mocha` / `catppuccin-latte`. Zellij switches between them based on the color scheme the terminal reports. Don't set `theme`: it locks zellij to one theme and turns off switching. If a terminal doesn't report its scheme, set `explicit_theme_hue "light"`.
-- Zellij has no include or local-config file. Machine packages can still add files to `themes/` (custom themes) and `layouts/`; anything else needs a full `config.kdl` copy plus an `--override` line, like starship.
+- Zellij has no include or local-config file. Theme packages can still add files to `themes/` (custom themes) and `layouts/`; anything else needs a full `config.kdl` copy plus an `--override` line, like helix's theme.
 - Local, untracked layouts can go straight in `~/.config/zellij/layouts/` (per-file links, see `--no-folding`).
 - The settings screen can write to `config.kdl`, which is a link into the repo, so check `git status` after changing settings there.
 
 ## Other commands
 
 ```sh
-stow -D work-pc   # remove a package's links
+stow -D latte   # remove a package's links
 ```
 
-Unstow/restow all of a machine's packages together (`stow -D core dev work-pc`). Unstowing just one can fold a shared folder (e.g. `~/.config/ghostty`) into a link to the remaining package, and the next stow then aborts with "neither a link nor a directory".
+Unstow/restow all of a machine's packages together (`stow -D core latte`). Unstowing just one can fold a shared folder (e.g. `~/.config/ghostty`) into a link to the remaining package, and the next stow then aborts with "neither a link nor a directory".

@@ -1,5 +1,5 @@
-# Dev machines (pairs with the dev stow package)
-# brew bundle --file=brew/Brewfile.dev
+# Mocha machines (pairs with the mocha stow package): dev tools
+# brew bundle --file=brew/Brewfile.mocha
 
 # git
 brew "gh"

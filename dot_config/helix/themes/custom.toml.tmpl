@@ -1,8 +1,0 @@
-{{ if hasKey . "lightMode" }}
-inherits = "catppuccin_latte"
-{{ else if hasKey . "slim" }}
-inherits = "base16_default"
-{{ else }}
-inherits = "catppuccin_mocha"
-{{ end }}
-"ui.background" = {}

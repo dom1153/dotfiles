@@ -1,3 +1,32 @@
+[[language]]
+name = "fish"
+language-servers = [ "fish-lsp" ]
+
+[language-server.fish-lsp]
+command = "fish-lsp"
+args= ["start"]
+environment = { "fish_lsp_show_client_popups" = "false" }
+
+[[language]]
+name = "just"
+language-servers = ["just-lsp"]
+
+[language-server.just-lsp]
+command = "just-lsp"
+args = [""]
+
+[language-server.yaml-language-server.config.yaml.schemas]
+"https://json.schemastore.org/mprocs-0.6.4.json" = "mprocs.yaml"
+
+# chezmoi templates (remove once dot_config/ is fully migrated)
+[[language]]
+name = "gotmpl"
+file-types = ["gotmpl", { glob = "dot_config/**/*.tmpl" }]
+
+[[language]]
+name = "go"
+formatter = { command = "goimports" }
+
 ### > phpactor status
 [language-server.phpactor]
 command = "phpactor"

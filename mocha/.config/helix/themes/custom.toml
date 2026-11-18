@@ -1,0 +1,3 @@
+# Catppuccin Mocha (dark). latte ships the Latte version.
+inherits = "catppuccin_mocha"
+"ui.background" = {} # transparent terminal background
