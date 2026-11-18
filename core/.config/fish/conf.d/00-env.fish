@@ -17,12 +17,8 @@ if command -q fish
     set -gx SHELL (command -s fish)
 end
 
-### set EDITOR
-if command -q hx
-    set -gx EDITOR hx
-else
-    set -gx EDITOR vi
-end
+### Use vi for helix -> alt-g (lazygit) -> e (edit file) integration. helix inception doesn't work.
+set -gx EDITOR vi
 
 # PATH config
 fish_add_path -g -p $HOME/go/bin

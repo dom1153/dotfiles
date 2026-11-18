@@ -4,5 +4,3 @@ git:
     - command: delta --{{colorScheme}} --paging=never
     - command: difft --color=always  --background={{colorScheme}} --context={{diffContext}}
       type: extDiff
-os:
-  editPreset: 'helix (hx)'

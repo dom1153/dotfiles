@@ -6,9 +6,8 @@
 [pull]
 	rebase = true
 
-### TODO_DD: migrate to lazygit config
-# delta config: themes are defined here, picked in local.gitconfig
-# (mocha: catppuccin-mocha, latte: catppuccin-latte)
+# delta themes (catppuccin-*); not git's pager, lazygit picks one with --features
+# (mocha / latte: ~/.config/lazygit/theme.yml)
 [include]
 	path = catppuccin.gitconfig
 [merge]

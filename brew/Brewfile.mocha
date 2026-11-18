@@ -3,9 +3,7 @@
 
 # git
 brew "gh"
-brew "lazygit"
 brew "gitui"
-brew "difftastic"
 brew "diffnav"
 
 # terminal workspace

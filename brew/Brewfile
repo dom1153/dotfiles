@@ -12,6 +12,11 @@ brew "navi"
 brew "yazi"
 brew "helix"
 
+# git TUI (lg abbreviation, helix A-g) and its diff renderers (core/.config/lazygit)
+brew "lazygit"
+brew "git-delta"
+brew "difftastic"
+
 # abbreviation targets (core/.config/fish/features/ZZ_alias.fish)
 brew "bat"
 brew "btop"
