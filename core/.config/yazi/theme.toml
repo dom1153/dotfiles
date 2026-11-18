@@ -1,8 +1,9 @@
 #? https://github.com/sxyazi/yazi/blob/main/yazi-config/preset/theme-dark.toml
 #:schema https://yazi-rs.github.io/schemas/theme.json
 
+# Assume a dark terminal: Mocha for both, so a failed light/dark detection can't change it
 [flavor]
-light = "catppuccin-latte"
+light = "catppuccin-mocha"
 dark = "catppuccin-mocha"
 
 #? https://yazi-rs.github.io/docs/faq/#dont-like-nerd-fonts
