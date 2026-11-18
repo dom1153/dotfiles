@@ -4,9 +4,9 @@ Migrating from chezmoi to [GNU Stow](https://www.gnu.org/software/stow/). Each t
 
 | Package       | Purpose                                   |
 | ------------- | ----------------------------------------- |
-| `core`        | Shared config for every machine (fish, git, ghostty, helix, lazygit, starship, zellij), no theme |
-| `mocha`       | Catppuccin Mocha (dark) plus dev tools: fastfetch, wezterm; bat/fish/ghostty/delta/helix/lazygit/starship/zellij themes |
-| `latte`       | Catppuccin Latte (light): gitui, btop; bat/fish/ghostty/delta/helix/lazygit/starship/zellij themes, ghostty font |
+| `core`        | Shared config for every machine (fish, git, ghostty, helix, lazygit, starship, yazi, zellij), no theme |
+| `mocha`       | Catppuccin Mocha (dark) plus dev tools: fastfetch, wezterm; bat/fish/ghostty/delta/helix/lazygit/starship/yazi/zellij themes |
+| `latte`       | Catppuccin Latte (light): gitui, btop; bat/fish/ghostty/delta/helix/lazygit/starship/yazi/zellij themes, ghostty font |
 | `extra`       | Optional extras                           |
 
 Run stow from the repo root. The target defaults to the parent folder (`~`), so `-t` isn't needed.
@@ -72,6 +72,7 @@ Brewfiles are Ruby: guard OS-specific lines with `if OS.linux?` / `if OS.mac?` (
   - core's `features/starship.fish` only sets `STARSHIP_CONFIG` if it's unset, so the feature wins whichever is sourced first.
   - `palette` must stay a top-level key, above the first `[table]`: placed after one, TOML assigns it to that table and starship ignores it.
 - **lazygit**: see [Lazygit](#lazygit) below.
+- **yazi**: `core/.config/yazi/theme.toml` names both flavors (`[flavor] dark = "catppuccin-mocha"`, `light = "catppuccin-latte"`) and yazi picks one from the background color the terminal reports. `mocha` ships only `flavors/catppuccin-mocha.yazi/flavor.toml`, `latte` only the Latte one, both from [yazi-rs/flavors](https://github.com/yazi-rs/flavors). A missing flavor isn't an error: yazi falls back to its default colors (so `core` alone gets defaults). If the terminal doesn't answer the query (some multiplexers, SSH), yazi assumes dark, so a `latte` machine gets defaults rather than Latte.
 - **btop**: only `latte` ships a theme (`catppuccin_latte.theme`); `btop.conf` isn't tracked, so pick the theme in btop's options menu (Esc → Options).
 - Theme files come from [catppuccin/btop](https://github.com/catppuccin/btop/tree/main/themes) and [catppuccin/bat](https://github.com/catppuccin/bat/tree/main/themes).
 
