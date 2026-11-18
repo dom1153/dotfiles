@@ -26,8 +26,11 @@ keybinds {
     }
 }
 
-theme_dark "catppuccin-mocha"
-theme_light "catppuccin-latte"
+// Zellij's built-in themes. A file in themes/ that defines the same name replaces the built-in
+// (theme files are merged after the built-ins): mocha/.config/zellij/themes/default.kdl and
+// latte/.config/zellij/themes/default-light.kdl. Don't set `theme`: it turns off switching.
+theme_dark "default"
+theme_light "default-light"
 
 show_startup_tips false
 simplified_ui true
