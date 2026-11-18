@@ -1,29 +1,17 @@
-# Every machine: the shell and the tools core/.config/fish uses
-# brew bundle --file=brew/Brewfile
+### Install with brew bundle --file=Brewfile
 
-brew "fish"
-brew "stow"
-brew "chezmoi" # remove once the stow migration is finished
-
-# fish integrations (core/.config/fish/features)
-brew "starship"
-brew "zoxide"
-brew "navi"
-brew "yazi"
-brew "helix"
-
-# git TUI (lg abbreviation, helix A-g) and its diff renderers (core/.config/lazygit)
-brew "lazygit"
-brew "git-delta"
-brew "difftastic"
-
-# abbreviation targets (core/.config/fish/features/ZZ_alias.fish)
 brew "bat"
-brew "btop"
-brew "ripgrep"
-brew "trash-cli" if OS.linux? # macOS uses the built-in /usr/bin/trash
-
-# everyday CLI
-brew "fd"
+brew "difftastic"
 brew "dua-cli"
-brew "sevenzip"
+brew "fd"
+brew "fish"
+brew "git-delta"
+brew "helix"
+brew "lazygit"
+brew "navi"
+brew "ripgrep"
+brew "starship"
+brew "stow"
+brew "trash-cli" if OS.linux?
+brew "yazi"
+brew "zoxide"
