@@ -1,0 +1,5 @@
+[merge]
+	conflictStyle = zdiff3
+
+[include]
+	path = delta-lazygit-theme.gitconfig

@@ -1,3 +1,4 @@
+### Apply local git config overrides to ~/.gitconfig
 [user]
 	name = dom1153
 	email = dominicdangjobs@gmail.com
@@ -6,12 +7,5 @@
 [pull]
 	rebase = true
 
-# delta themes (catppuccin-*); not git's pager, lazygit picks one with --features
-# (mocha / latte: ~/.config/lazygit/theme.yml)
 [include]
-	path = catppuccin.gitconfig
-[merge]
-	conflictStyle = zdiff3
-# optional machine config, loaded last so it overrides anything above
-[include]
-	path = local.gitconfig
+	path = delta-lazygit.gitconfig

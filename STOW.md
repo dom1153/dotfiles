@@ -48,8 +48,8 @@ Brewfiles are Ruby: guard OS-specific lines with `if OS.linux?` / `if OS.mac?` (
 
 ## Git config
 
-- `core/.config/git/config` is the global config (git reads `~/.config/git/config` alongside `~/.gitconfig`). It also defines the delta Catppuccin themes (`catppuccin.gitconfig`) but doesn't pick one: delta isn't git's pager, only lazygit runs it (see [Lazygit](#lazygit)).
-- It includes `local.gitconfig` last (optional, no package ships one), so an untracked `~/.config/git/local.gitconfig` can override anything.
+- `core/.config/git/config` is the global config (git reads `~/.config/git/config` alongside `~/.gitconfig`).
+- It includes `delta-lazygit.gitconfig` (`merge.conflictStyle = zdiff3`), which in turn includes `delta-lazygit-theme.gitconfig`. The theme file is optional: `mocha` and `latte` each ship one with their delta Catppuccin theme (from [catppuccin/delta](https://github.com/catppuccin/delta)) and `[delta] features = catppuccin-<flavor>` to turn it on. Delta isn't git's pager, so only lazygit uses it (see [Lazygit](#lazygit)).
 - `~/.gitconfig` is read after `~/.config/git/config` and wins on any overlap. Keep only machine-specific bits there (e.g. `gh` credential helpers).
 
 ## Fish
@@ -93,7 +93,7 @@ Brewfiles are Ruby: guard OS-specific lines with `if OS.linux?` / `if OS.mac?` (
 
 - `core/.config/lazygit/config.yml` is the shared config: esc quits (files open in `$EDITOR`), and two diff renderers (cycle with `|`): delta, and difftastic as an external diff. `{{colorScheme}}` / `{{diffContext}}` are lazygit's own placeholders.
 - Lazygit has no include, but `LG_CONFIG_FILE` takes a comma-separated list of files, merged left to right. `features/lazygit.fish` in `mocha` / `latte` sets it to `config.yml,theme.yml`. A core-only machine doesn't set it and gets lazygit's default colors.
-- Each package's `theme.yml` is [catppuccin/lazygit](https://github.com/catppuccin/lazygit)'s `themes-mergable/<flavor>/green.yml`, plus `git.diffRenderers` with `--features catppuccin-<flavor>` added to delta (the themes come from `catppuccin.gitconfig`). Lists replace rather than merge, so when changing core's renderers, update both `theme.yml` copies too.
+- Each package's `theme.yml` is [catppuccin/lazygit](https://github.com/catppuccin/lazygit)'s `themes-mergable/<flavor>/green.yml`. The delta colors come from git config instead (the package's `delta-lazygit-theme.gitconfig`), so core's renderers need no per-flavor copy.
 - The variable is set only in fish. Lazygit started from another shell (or a GUI) reads plain `config.yml`.
 
 ## Other commands
