@@ -1,7 +1,6 @@
 ### env config
 set -gx COLORTERM truecolor
-set -gx PNPM_HOME "$HOME/.local/share/pnpm"
-set -gx XDG_CONFIG_HOME "$HOME/.config" # MacOS: avoids configs in ~/Library/Application Support (e.g. lazygit)
+set -gx XDG_CONFIG_HOME $HOME/.config # MacOS: avoids configs in ~/Library/Application Support (e.g. lazygit)
 set -gx HOMEBREW_NO_ENV_HINTS 1
 
 ### source homebrew (Apple Silicon, Intel macOS, Linux system, Linux user)
@@ -12,14 +11,12 @@ for brew in /opt/homebrew/bin/brew /usr/local/bin/brew /home/linuxbrew/.linuxbre
     end
 end
 
-### set shell
+### set SHELL
 if command -q fish
     set -gx SHELL (command -s fish)
 end
 
 ### Use vi for helix -> alt-g (lazygit) -> e (edit file) integration. helix inception doesn't work.
-set -gx EDITOR vi
-
-# PATH config
-fish_add_path -g -p $HOME/go/bin
-fish_add_path -g -p $PNPM_HOME
+if command -q vi
+    set -gx EDITOR vi
+end

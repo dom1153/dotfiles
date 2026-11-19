@@ -21,7 +21,7 @@ end
 
 set folders_to_move
 for folder in $package/.config/*
-    set relative_path (string replace -- "$package/" "" $folder)
+    set relative_path (string replace -- $package/ "" $folder)
     set home_relative_path ~/$relative_path
 
     # -o -L is useful for broken symlinks
@@ -42,7 +42,7 @@ for relative_path in $folders_to_move
 
     # list tracked and untracked files
     for file in (find $home_folder \( -type f -o -type l \) -print0 | string split0)
-        set relative_file (string replace -- "$home_folder/" "" $file)
+        set relative_file (string replace -- $home_folder/ "" $file)
         if test -e $package/$relative_path/$relative_file
             echo "    $relative_file"
         else

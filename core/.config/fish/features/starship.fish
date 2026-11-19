@@ -21,7 +21,7 @@ if exists starship
         end
         set -gx STARSHIP_CONFIG $themed
     else
-        set -gx STARSHIP_CONFIG "$HOME/.config/starship/starship.toml"
+        set -gx STARSHIP_CONFIG $HOME/.config/starship/starship.toml
     end
 
     # should remove warning for git branch taking too long to load
