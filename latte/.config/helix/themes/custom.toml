@@ -1,3 +1,2 @@
-# Catppuccin Latte (light).
 inherits = "catppuccin_latte"
-"ui.background" = {} # transparent terminal background
+"ui.background" = {}

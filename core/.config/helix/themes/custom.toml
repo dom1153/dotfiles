@@ -1,3 +1,2 @@
-# Fallback for machines without a themed package. mocha/latte replace this file (see .stowrc --override).
 inherits = "base16_default"
-"ui.background" = {} # transparent terminal background
+"ui.background" = {}
