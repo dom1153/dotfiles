@@ -56,7 +56,9 @@ Brewfiles are Ruby: guard OS-specific lines with `if OS.linux?` / `if OS.mac?` (
 
 - `core/.config/fish` holds the shared config: `config.fish`, `conf.d/` (env, PATH), `features/` (aliases plus one file per theme-independent tool integration: atuin, starship, zoxide, ...), `functions/`.
 - `config.fish` sources every `features/*.fish`, and stow merges that folder from all packages.
-- Themed features (`fish-theme.fish`, `fzf.fish`, `bat-theme.fish`, `starship-theme.fish`, `lazygit.fish`) exist in both `mocha` and `latte` with the same names. Edit both copies when changing one.
+- Themed features (`fzf.fish`, `bat-theme.fish`) exist in both `mocha` and `latte` with the same names. Edit both copies when changing one.
+- `conf.d/fish-theme.fish` (in `mocha` and `latte`) picks the fish theme. It lives in `conf.d` so it runs before `features/`, which can then read the theme.
+- `features/starship.fish` (core) writes `~/.cache/starship/starship.toml` with the matching palette and points `STARSHIP_CONFIG` at it, only when fish's theme is Catppuccin Latte or Mocha. Otherwise starship uses core's `starship.toml`.
 - Fish needs no theme files: Catppuccin is built into fish 4.4+. `mocha` picks `catppuccin-mocha --color-theme=dark`, `latte` picks `catppuccin-mocha --color-theme=light` (Latte). Delete any old `~/.config/fish/conf.d/fish_frozen_theme.fish`.
 
 ## Themes (Catppuccin)
