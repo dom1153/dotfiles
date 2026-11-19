@@ -12,13 +12,7 @@ confirm-close-surface="false"
 # don't leave instances in dock (macos)
 quit-after-last-window-closed="true"
 
-# auto-inject term-info, does not work with orbstack (custom ssh config)
+# attempt to auto-inject term-info over ssh
 shell-integration-features=ssh-terminfo,ssh-env
 
-### keybinds
-keybind=super+shift+equal=increase_font_size:1 # macos
-keybind=ctrl+shift+plus=increase_font_size:1   # linux
-
-# optional machine config, loaded after this file so it overrides anything above
-# (mocha / latte packages set the theme)
 config-file = ?config.local
