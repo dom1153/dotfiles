@@ -1,7 +1,5 @@
-# Read by stow when run from the repo root.
-# Always link per file, never a whole folder: tools (and local zellij layouts) can then add
-# files next to the links without them landing in the repo.
+# Always link per file, not the whole folder (allows for local configs: e.g. zellij layotus)
 --no-folding
-# Profiles are `core mocha` or `core latte`. The theme packages don't overlap each other,
-# but both replace core's helix fallback theme, which has no include support.
+
+# allow last package specified to win for given files (e.g. stow core latte)
 --override=\.config/helix/themes/custom\.toml

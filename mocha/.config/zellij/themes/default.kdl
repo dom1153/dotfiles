@@ -1,5 +1,4 @@
-// Catppuccin Mocha, defined as "default": overrides the built-in theme of that name (core sets theme_dark "default").
-// Copied from zellij v0.46.0 (zellij-utils/assets/themes/catppuccin-mocha.kdl), only renamed.
+//? https://github.com/zellij-org/zellij/blob/main/zellij-utils/assets/themes/catppuccin-mocha.kdl
 themes {
     default {
         text_unselected {

@@ -81,11 +81,10 @@ Brewfiles are Ruby: guard OS-specific lines with `if OS.linux?` / `if OS.mac?` (
 
 ## Zellij
 
-- `core/.config/zellij/config.kdl` sets `theme_dark "default"` and `theme_light "default-light"`, zellij's built-in themes. Zellij switches between them based on the color scheme the terminal reports. If a terminal doesn't report its scheme, set `explicit_theme_hue "light"`.
-- Zellij loads the built-in themes first, then the files in `themes/`, so a file that defines a built-in's name replaces it. `mocha/.config/zellij/themes/default.kdl` defines `default` as Catppuccin Mocha; `latte/.config/zellij/themes/default-light.kdl` defines `default-light` as Catppuccin Latte. Both are zellij's own `catppuccin-*.kdl` from v0.46.0, renamed. The theme picker therefore lists them as "default" / "default-light".
-- Result: `core` alone gets zellij's built-ins for both hues, `mocha` gets Mocha for dark, `latte` gets Latte for light. No fallback file is needed.
-- Don't set `theme`: it locks zellij to one theme and turns off switching.
-- If a zellij update renames its built-in themes, the overrides silently stop applying: check `zellij-utils/assets/themes/` in the release.
+- `core/.config/zellij/config.kdl` sets `theme "default"`, zellij's built-in theme.
+- Zellij loads the built-in themes first, then the files in `themes/`, so a file that defines a built-in's name replaces it. `mocha/.config/zellij/themes/default.kdl` and `latte/.config/zellij/themes/default.kdl` define `default` as Catppuccin Mocha and Latte. Both are zellij's own `catppuccin-*.kdl` from v0.46.0, renamed. The theme picker therefore lists them as "default".
+- Result: `core` alone gets zellij's built-in `default`, and `mocha` / `latte` replace it with their flavor.
+- If a zellij update renames its built-in `default` theme, the overrides silently stop applying: check `zellij-utils/assets/themes/` in the release.
 - Zellij has no include or local-config file. Theme packages can still add files to `themes/` (custom themes) and `layouts/`; anything else needs a full `config.kdl` copy plus an `--override` line, like helix's theme.
 - Local, untracked layouts can go straight in `~/.config/zellij/layouts/` (per-file links, see `--no-folding`).
 - The settings screen can write to `config.kdl`, which is a link into the repo, so check `git status` after changing settings there.

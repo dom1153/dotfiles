@@ -1,7 +1,6 @@
-// Catppuccin Latte, defined as "default-light": overrides the built-in theme of that name (core sets theme_light "default-light").
-// Copied from zellij v0.46.0 (zellij-utils/assets/themes/catppuccin-latte.kdl), only renamed.
+//? https://github.com/zellij-org/zellij/blob/main/zellij-utils/assets/themes/catppuccin-latte.kdl
 themes {
-    default-light {
+    default {
         text_unselected {
             base 63 66 91
             background 220 224 232
