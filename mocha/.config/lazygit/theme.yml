@@ -1,5 +1,4 @@
-# Catppuccin Mocha (green), from https://github.com/catppuccin/lazygit themes-mergable/mocha/green.yml
-# Merged on top of core's config.yml (features/lazygit.fish).
+# Catppuccin Mocha (green)
 gui:
   theme:
     activeBorderColor:
@@ -29,10 +28,3 @@ gui:
       - '#cdd6f4'
     authorColors:
       '*': '#b4befe'
-# Lists aren't merged, so this replaces core's whole list: keep the two in sync.
-# --features picks the delta theme defined in ~/.config/git/catppuccin.gitconfig.
-git:
-  diffRenderers:
-    - command: delta --{{colorScheme}} --paging=never --features catppuccin-mocha
-    - command: difft --color=always  --background={{colorScheme}} --context={{diffContext}}
-      type: extDiff

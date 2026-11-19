@@ -1,5 +1,4 @@
-# Catppuccin Latte (green), from https://github.com/catppuccin/lazygit themes-mergable/latte/green.yml
-# Merged on top of core's config.yml (features/lazygit.fish).
+# Catppuccin Latte (green)
 gui:
   theme:
     activeBorderColor:
@@ -29,10 +28,3 @@ gui:
       - '#4c4f69'
     authorColors:
       '*': '#7287fd'
-# Lists aren't merged, so this replaces core's whole list: keep the two in sync.
-# --features picks the delta theme defined in ~/.config/git/catppuccin.gitconfig.
-git:
-  diffRenderers:
-    - command: delta --{{colorScheme}} --paging=never --features catppuccin-latte
-    - command: difft --color=always  --background={{colorScheme}} --context={{diffContext}}
-      type: extDiff
