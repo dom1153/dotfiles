@@ -1,0 +1,49 @@
+# ~/.localrc: shared shell init, sourced from ~/.bashrc (Linux) or ~/.zshrc (macOS).
+# scripts/bootstrap.sh appends the line that sources it, so the system's rc file stays as-is.
+# Must work in both bash and zsh (macOS bash is 3.2: no bash 4+ features).
+
+### Homebrew (Apple Silicon, Intel macOS, Linux system, Linux user)
+for _brew in /opt/homebrew/bin/brew /usr/local/bin/brew /home/linuxbrew/.linuxbrew/bin/brew "$HOME/.linuxbrew/bin/brew"; do
+    if [ -x "$_brew" ]; then
+        if [ -n "${ZSH_VERSION:-}" ]; then
+            eval "$("$_brew" shellenv zsh)"
+        else
+            eval "$("$_brew" shellenv bash)"
+        fi
+        break
+    fi
+done
+unset _brew
+
+### Hand interactive shells over to fish
+# Skipped when:
+#   - the shell isn't interactive, or stdin isn't a terminal (scripts, scp, `bash -c`)
+#   - $SHELL is already fish: fish exports it (conf.d/00-env.fish), so `bash` typed in fish stays bash
+#   - NO_FISH is set: `NO_FISH=1 bash` for a one-off bash
+case $- in
+    *i*)
+        case ${SHELL:-} in
+            *fish) ;;
+            *)
+                if [ -t 0 ] && [ -z "${BASH_EXECUTION_STRING:-}" ] && [ -z "${NO_FISH:-}" ] \
+                    && command -v fish >/dev/null 2>&1; then
+                    if [ -n "${ZSH_VERSION:-}" ]; then
+                        [[ -o login ]] && exec fish --login
+                    else
+                        shopt -q login_shell && exec fish --login
+                    fi
+                    exec fish
+                fi
+                ;;
+        esac
+        ;;
+esac
+
+### Only reached when staying in bash/zsh
+if command -v starship >/dev/null 2>&1; then
+    if [ -n "${ZSH_VERSION:-}" ]; then
+        eval "$(starship init zsh)"
+    else
+        eval "$(starship init bash)"
+    fi
+fi
