@@ -39,7 +39,7 @@ trim_at = '.'
 style = 'blue bold'
 
 [git_branch]
-format = '[$branch]($style)'
+format = '[$branch]($style) '
 style = 'subtext0'
 
 [git_status]
