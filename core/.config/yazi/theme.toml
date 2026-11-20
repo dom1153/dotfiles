@@ -2,7 +2,7 @@
 #:schema https://yazi-rs.github.io/schemas/theme.json
 
 [flavor]
-light = "catppuccin-mocha"
+light = "catppuccin-latte"
 dark = "catppuccin-mocha"
 
 #? https://yazi-rs.github.io/docs/faq/#dont-like-nerd-fonts
