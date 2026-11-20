@@ -1,32 +1,24 @@
 #!/usr/bin/env -S fish --no-config
-# Move the ~/.config folders a package provides (e.g. bat, git) into a backup folder.
-# Usage: scripts/reset.fish [package]   (default: core)
-
-set backup_destination ~/dots-(date +%Y-%m-%d-%H-%M-%S).bak
+# Move the ~/.config folders the packages provide (e.g. bat, git) into a backup folder.
+# Usage: scripts/reset.fish
 
 # cd to repository root
 cd (status dirname)/..; or exit 1
 
-if test (count $argv) -gt 1
-    echo "Usage: scripts/reset.fish [package]"
-    exit 1
-end
-
-# TODO: scan all packages, by list
-# default to 'core'
-set package core
-if set -q argv[1]
-    set package $argv[1]
-end
+set backup_destination ~/dots-(date +%Y-%m-%d-%H-%M-%S).bak
+set packages core latte mocha
 
 set folders_to_move
-for folder in $package/.config/*
-    set relative_path (string replace -- $package/ "" $folder)
-    set home_relative_path ~/$relative_path
+for package in $packages
+    for folder in $package/.config/*
+        set relative_path (string replace -- $package/ "" $folder)
+        set home_relative_path ~/$relative_path
 
-    # -o -L is useful for broken symlinks
-    if test -e $home_relative_path -o -L $home_relative_path
-        set -a folders_to_move $relative_path
+        # -o -L is useful for broken symlinks
+        if test -e $home_relative_path -o -L $home_relative_path
+            and not contains -- $relative_path $folders_to_move
+            set -a folders_to_move $relative_path
+        end
     end
 end
 
@@ -43,10 +35,17 @@ for relative_path in $folders_to_move
     # list tracked and untracked files
     for file in (find $home_folder \( -type f -o -type l \) -print0 | string split0)
         set relative_file (string replace -- $home_folder/ "" $file)
-        if test -e $package/$relative_path/$relative_file
+        set tracked false
+        for package in $packages
+            if test -e $package/$relative_path/$relative_file
+                set tracked true
+                break
+            end
+        end
+        if $tracked
             echo "    $relative_file"
         else
-            echo "    $relative_file (untracked)"
+            echo "    $relative_file "(set_color yellow)"(untracked)"(set_color normal)
         end
     end
 end
