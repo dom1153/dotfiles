@@ -1,0 +1,48 @@
+# Paneru configuration
+
+[options]
+focus_follows_mouse = true
+mouse_follows_focus = true
+window_resize_cycle = false
+
+[decorations]
+workspace_menu_status = false
+workspace_popup_status = true
+
+[padding]
+top = 7
+bottom = 7
+left = 7
+right = 7
+
+[bindings]
+window_focus_west = "alt - h"
+window_focus_east = "alt - l"
+window_focus_north = "alt - k"
+window_focus_south = "alt - j"
+window_swap_west = "alt + shift - h"
+window_swap_east = "alt + shift - l"
+window_swap_north = "alt + shift - k"
+window_swap_south = "alt + shift - j"
+window_stack = "alt - ["
+window_unstack = "alt - ]"
+window_grow = "alt - equal"
+window_shrink = "alt - minus"
+window_fullwidth = "alt - f"
+window_nextdisplay = "alt + shift - rightarrow"
+mouse_nextdisplay = "alt - rightarrow"
+window_resize = "alt - r"
+window_center = "alt - c"
+window_manage = "alt - grave"
+quit = "ctrl + alt - q"
+
+[windows.all]
+title = ".*"
+horizontal_padding = 7
+vertical_padding = 7
+
+[decorations.active.border]
+enabled = true
+color = "#72C358"
+width = 2.0
+radius = "auto"
